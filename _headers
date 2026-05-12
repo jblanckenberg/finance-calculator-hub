@@ -6,11 +6,14 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Strict-Transport-Security: max-age=15768000; includeSubDomains
 
-# Static assets: 1 year immutable
+# Static assets: 1 year immutable (filenames don't change, so this is safe)
 /css/*
   Cache-Control: public, max-age=31536000, immutable
 
 /js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
 /*.woff2
@@ -25,16 +28,21 @@
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
 
-# HTML pages: revalidate every hour (allows fast deploys)
+# HTML pages: short browser cache + long CDN cache + stale-while-revalidate.
+# - max-age=600       browsers re-check every 10 min
+# - s-maxage=86400    Cloudflare edge holds for 24h
+# - stale-while-revalidate=604800   serve stale up to 7d while refreshing
+#                     in the background — eliminates origin-trip latency
+#                     spikes when cache expires
 /*.html
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: public, max-age=600, s-maxage=86400, stale-while-revalidate=604800
 
 /*/
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: public, max-age=600, s-maxage=86400, stale-while-revalidate=604800
 
-# Root
+# Root explicit (some Pages versions need it)
 /
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: public, max-age=600, s-maxage=86400, stale-while-revalidate=604800
 
 # Sitemap and robots: 24 hours
 /sitemap.xml
