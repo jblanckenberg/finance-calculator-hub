@@ -1,0 +1,62 @@
+name: Purge Cloudflare Cache
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - '**.css'
+      - '**.js'
+      - '**.woff2'
+      - '**.png'
+      - '**.svg'
+      - 'sitemap.xml'
+      - 'robots.txt'
+      - 'llms.txt'
+      - '_headers'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Cloudflare Pages build to land
+        # Cloudflare Pages typically builds + deploys in 30-90 seconds after
+        # a push. Sleeping 120s ensures the new files are live at the edge
+        # before we purge — otherwise we'd purge an empty cache and the
+        # NEXT request would re-cache the old content from a slow build.
+        run: |
+          echo "Waiting 120s for Cloudflare Pages to build + deploy..."
+          sleep 120
+
+      - name: Purge Cloudflare cache
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ZONE_ID:   ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${CF_API_TOKEN:-}" ] || [ -z "${CF_ZONE_ID:-}" ]; then
+            echo "::warning::CLOUDFLARE_API_TOKEN or CLOUDFLARE_ZONE_ID not set in repo secrets. Skipping purge — see README in workflow for setup."
+            exit 0
+          fi
+
+          RESPONSE=$(curl --silent --show-error --fail-with-body \
+            -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}')
+
+          echo "Cloudflare response: $RESPONSE"
+
+          SUCCESS=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin).get('success',False))" 2>/dev/null || echo "False")
+
+          if [ "$SUCCESS" != "True" ]; then
+            echo "::error::Cloudflare cache purge failed"
+            exit 1
+          fi
+
+          echo "Cache purged successfully."
