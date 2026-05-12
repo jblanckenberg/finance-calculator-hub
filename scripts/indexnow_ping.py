@@ -31,7 +31,7 @@ HOST = 'finncalc.com'
 # IndexNow → Generate, which is required for Bing's IndexNow service to recognize
 # the submitter as the verified site owner. (Generic indexnow.org-generated keys
 # return 403 UserForbiddedToAccessSite even when the key file is hosted correctly.)
-DEFAULT_KEY = 'dc36bbbc8cd845228a69a8a0962bc5c1'
+DEFAULT_KEY = 'cd975860879e4460864ab673b9055f7e'
 KEY = os.environ.get('INDEXNOW_KEY') or DEFAULT_KEY
 # Allow overriding the verification URL too. Defaults to /<key>.txt at the host root.
 KEY_LOCATION = os.environ.get('INDEXNOW_KEY_LOCATION') or f'https://{HOST}/{KEY}.txt'
