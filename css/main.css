@@ -153,6 +153,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 24px 28px;
 }
 
 /* === FC-WAVE2-ADDITIONS === */
+/* ───── Article meta (byline + date) — used on blog posts ───── */
+.article-meta{font-size:13px;color:var(--muted);margin-bottom:28px}
+.article-meta a{color:var(--accent);text-decoration:none}
+.article-meta a:hover{text-decoration:underline}
+
 /* ───── Self-hosted Inter font ───── */
 @font-face {
   font-family: 'Inter';
