@@ -1,0 +1,24 @@
+# Build artifacts and backups
+*.zip
+FinCalcHub_Site_v*
+
+# Source documents (not for deploy)
+*.pdf
+*.docx
+
+# Stale / mystery files
+test_write.txt
+zi6GQwzV
+zifB24pq
+site/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python (defensive — venv lives one dir up, but just in case)
+.venv/
+__pycache__/
+*.pyc

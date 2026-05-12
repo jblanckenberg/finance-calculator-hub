@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | FinCalcHub</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .error-wrap{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;}
+    .error-code{font-size:96px;font-weight:700;color:var(--accent);line-height:1;margin-bottom:12px;}
+    .error-title{font-size:1.5rem;font-weight:600;color:var(--navy);margin-bottom:12px;}
+    .error-msg{color:var(--muted);margin-bottom:32px;max-width:420px;margin-left:auto;margin-right:auto;}
+    .calc-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px;}
+    .calc-link{background:var(--navy);color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;transition:opacity .2s;}
+    .calc-link:hover{opacity:.85;}
+  </style>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+
+</head>
+<body>
+<header><a href="/" class="logo">&#9889; FinCalcHub</a></header>
+<div class="container">
+  <div class="error-wrap">
+    <div>
+      <div class="error-code">404</div>
+      <div class="error-title">Page not found</div>
+      <p class="error-msg">The page you&rsquo;re looking for doesn&rsquo;t exist or has been moved. Search the site or try one of our calculators below.</p>
+
+      <form action="/search/" method="get" style="display:flex;gap:8px;max-width:480px;margin:0 auto 28px">
+        <input type="search" name="q" placeholder="Search compound interest, mortgage, tax..." required
+               aria-label="Search FinCalcHub"
+               style="flex:1;padding:11px 14px;font-size:15px;border:1px solid var(--border);border-radius:8px">
+        <button type="submit" class="btn-calc" style="padding:11px 22px">Search</button>
+      </form>
+
+      <a href="/" class="btn-calc" style="display:inline-block;text-decoration:none;margin-bottom:32px;">&#8592; Back to All Calculators</a>
+      <div class="calc-links">
+        <a href="/compound-interest/" class="calc-link">&#128200; Compound Interest</a>
+        <a href="/retirement-savings/" class="calc-link">&#127958; Retirement</a>
+        <a href="/take-home-pay/" class="calc-link">&#128176; Take-Home Pay</a>
+        <a href="/mortgage/" class="calc-link">&#127968; Mortgage</a>
+        <a href="/savings-goal/" class="calc-link">&#127919; Savings Goal</a>
+        <a href="/loan-payoff/" class="calc-link">&#128200; Loan Payoff</a>
+        <a href="/budget/" class="calc-link">&#128203; Budget Planner</a>
+        <a href="/net-worth/" class="calc-link">&#127974; Net Worth</a>
+        <a href="/investment-growth/" class="calc-link">&#128640; Investment Growth</a>
+        <a href="/emergency-fund/" class="calc-link">&#128737; Emergency Fund</a>
+        <a href="/credit-card-payoff/" class="calc-link">&#128179; Credit Card Payoff</a>
+        <a href="/inflation-impact/" class="calc-link">&#128185; Inflation Impact</a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer><div class="footer-inner"><div class="footer-bottom"><p>&copy; 2024 FinCalcHub &middot; <a href="/privacy/" style="color:rgba(255,255,255,.6)">Privacy Policy</a></p></div></div></footer>
+</body>
+</html>
