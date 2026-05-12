@@ -151,3 +151,105 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 24px 28px;
   .result-grid{grid-template-columns:1fr 1fr}
   .action-bar{flex-direction:column}
 }
+
+/* === FC-WAVE2-ADDITIONS === */
+/* ───── Self-hosted Inter font ───── */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-500.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ───── Touch targets >= 48px on mobile (WCAG 2.5.5 / SEO mobile-UX) ───── */
+@media (max-width: 768px) {
+  .region-btn { padding: 11px 22px; font-size: 14px; min-height: 48px; }
+  .btn-calc { padding: 16px; min-height: 50px; }
+  .btn-hero { padding: 16px 32px; min-height: 50px; }
+  .btn-action { padding: 12px 16px; min-height: 44px; }
+  nav a { padding: 10px 14px; min-height: 44px; }
+  .calc-card { padding: 18px; min-height: 96px; }
+  .related-card { padding: 14px 16px; min-height: 48px; }
+  input[type="number"], input[type="text"], input[type="search"], select {
+    padding: 14px 14px;
+    font-size: 16px; /* prevents iOS Safari auto-zoom */
+    min-height: 48px;
+  }
+  .footer-links a { padding: 8px 0; min-height: 36px; display: inline-flex; align-items: center; }
+}
+
+/* ───── Cookie consent banner ───── */
+.fc-cookie-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  padding: 18px 20px;
+  z-index: 9999;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.55;
+  display: none;
+}
+.fc-cookie-banner.show { display: block; }
+.fc-cookie-banner p { margin: 0 0 12px; }
+.fc-cookie-banner a { color: var(--accent); text-decoration: none; }
+.fc-cookie-banner a:hover { text-decoration: underline; }
+.fc-cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.fc-cookie-actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  min-height: 44px;
+}
+.fc-cookie-actions .fc-accept {
+  background: var(--navy);
+  color: #fff;
+}
+.fc-cookie-actions .fc-accept:hover { background: var(--navy2); }
+.fc-cookie-actions .fc-decline {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.fc-cookie-actions .fc-decline:hover { color: var(--text); border-color: var(--text); }
+@media (max-width: 480px) {
+  .fc-cookie-banner { font-size: 13px; padding: 14px 16px; left: 8px; right: 8px; bottom: 8px; }
+}
+/* === END FC-WAVE2-ADDITIONS === */
