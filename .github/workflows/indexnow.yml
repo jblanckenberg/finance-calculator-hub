@@ -1,0 +1,65 @@
+name: IndexNow
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Submission mode'
+        type: choice
+        options: [changed, all]
+        default: changed
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with history for diff)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Submit URLs to IndexNow
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA:  ${{ github.sha }}
+          MODE:       ${{ github.event.inputs.mode || 'changed' }}
+        run: |
+          set -euo pipefail
+
+          # workflow_dispatch with mode=all → full sweep
+          if [ "$MODE" = "all" ]; then
+            echo "Mode: full sweep"
+            python scripts/indexnow_ping.py --all
+            exit 0
+          fi
+
+          # First push or force-push lands without a usable BEFORE_SHA → full sweep
+          if [ -z "${BEFORE_SHA:-}" ] || [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            echo "No previous commit on remote — submitting every page."
+            python scripts/indexnow_ping.py --all
+            exit 0
+          fi
+
+          # Normal incremental: only changed HTML files
+          if ! git cat-file -e "$BEFORE_SHA" 2>/dev/null; then
+            echo "Previous SHA $BEFORE_SHA not in history (force-push?) — submitting every page."
+            python scripts/indexnow_ping.py --all
+            exit 0
+          fi
+
+          echo "Diffing $BEFORE_SHA..$AFTER_SHA"
+          git diff --name-only "$BEFORE_SHA" "$AFTER_SHA" \
+            | tee /tmp/changed.txt \
+            | python scripts/indexnow_ping.py --changed
