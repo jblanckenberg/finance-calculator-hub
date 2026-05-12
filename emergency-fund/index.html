@@ -151,6 +151,10 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wpt2jq739l");
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".subtitle"]}}
+</script>
+
 
 
 
@@ -170,8 +174,8 @@
   <p class="subtitle">Find out exactly how much you need in your emergency fund — and how long it will take to get there.</p>
   <div class="card"><div class="card-title">Your Monthly Expenses</div>
 <div class="form-row">
-  <div class="form-group"><label>Monthly Take-Home Income <span class="hint" id="s1">($)</span></label><input type="number" id="income" value="5000" min="0" oninput="calculate()"></div>
-  <div class="form-group"><label>Monthly Essential Expenses <span class="hint" id="s2">($)</span></label><input type="number" id="expenses" value="3500" min="0" oninput="calculate()"></div>
+  <div class="form-group"><label>Monthly Take-Home Income <span class="hint" id="s1">($)</span></label><input type="number" id="income" value="5000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label>Monthly Essential Expenses <span class="hint" id="s2">($)</span></label><input type="number" id="expenses" value="3500" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <div class="form-row">
   <div class="form-group"><label>Job Security</label>
@@ -182,10 +186,10 @@
       <option value="12">Very Low — Self-employed / freelance</option>
     </select>
   </div>
-  <div class="form-group"><label>Dependants (children / others)</label><input type="number" id="deps" value="0" min="0" max="10" oninput="calculate()"></div>
+  <div class="form-group"><label>Dependants (children / others)</label><input type="number" id="deps" value="0" min="0" max="10" oninput="calculate()" inputmode="decimal"></div>
 </div>
-<div class="form-group"><label>Current Emergency Fund <span class="hint" id="s3">($)</span></label><input type="number" id="current" value="1000" min="0" oninput="calculate()"></div>
-<div class="form-group"><label>Monthly Amount You Can Save <span class="hint" id="s4">($)</span></label><input type="number" id="monthlySave" value="300" min="0" oninput="calculate()"></div>
+<div class="form-group"><label>Current Emergency Fund <span class="hint" id="s3">($)</span></label><input type="number" id="current" value="1000" min="0" oninput="calculate()" inputmode="decimal"></div>
+<div class="form-group"><label>Monthly Amount You Can Save <span class="hint" id="s4">($)</span></label><input type="number" id="monthlySave" value="300" min="0" oninput="calculate()" inputmode="decimal"></div>
 <button class="btn-calc" onclick="calculate()">Calculate →</button></div>
   <div class="results" id="results"><div class="results-title">Your Emergency Fund</div>
 <div class="result-grid">
@@ -211,7 +215,7 @@
   <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How many months of expenses should my emergency fund cover?</div><div class="faq-a">3 months is the minimum. 6 months is the standard recommendation. If you have dependants, variable income, or work in a difficult job market, aim for 9–12 months. This calculator sets your target based on your personal situation.</div></div><div class="faq-item"><div class="faq-q">Where should I keep my emergency fund?</div><div class="faq-a">In a high-yield savings account — not invested in stocks. It must be instantly accessible without risk of loss. In South Africa, a 32-day notice account or money market fund is a good option. In the UK, an easy-access Cash ISA keeps it tax-free.</div></div></div>
   <div class="ad-slot">Advertisement</div>
 </div>
-<footer><div class="footer-inner"><div class="footer-top"><a href="/" class="logo" style="color:#fff">⚡ FinCalcHub</a><div class="footer-links"><a href="/">All Calculators</a><a href="/privacy/">Privacy Policy</a></div></div><div class="footer-bottom"><p>© 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
+<footer><div class="footer-inner"><div class="footer-top"><a href="/" class="logo" style="color:#fff">⚡ FinCalcHub</a><div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div></div><div class="footer-bottom"><p>© 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
 <script src="/js/region.js" defer></script><script src="/js/main.js" defer></script>
 <script>
 var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:"$",UK:"£",SA:"R"}[r]||"$";["s1","s2","s3","s4"].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent="("+s+")";});if(document.getElementById("results").classList.contains("show"))calculate();};

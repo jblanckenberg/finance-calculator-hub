@@ -156,6 +156,10 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wpt2jq739l");
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".subtitle"]}}
+</script>
+
 
 
 
@@ -175,19 +179,19 @@
   <div class="card">
     <div class="card-title">Your Details</div>
     <div class="form-row">
-      <div class="form-group"><label>Current Age</label><input type="number" id="curAge" value="35" min="18" max="80" oninput="calculate()"></div>
-      <div class="form-group"><label>Target Retirement Age</label><input type="number" id="retAge" value="65" min="40" max="85" oninput="calculate()"></div>
+      <div class="form-group"><label>Current Age</label><input type="number" id="curAge" value="35" min="18" max="80" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label>Target Retirement Age</label><input type="number" id="retAge" value="65" min="40" max="85" oninput="calculate()" inputmode="decimal"></div>
     </div>
     <div class="form-row">
-      <div class="form-group"><label>Current Retirement Savings <span class="hint" id="sym1">($)</span></label><input type="number" id="curSavings" value="50000" min="0" oninput="calculate()"></div>
-      <div class="form-group"><label>Monthly Contribution <span class="hint" id="sym2">($)</span></label><input type="number" id="monthlyContrib" value="500" min="0" oninput="calculate()"></div>
+      <div class="form-group"><label>Current Retirement Savings <span class="hint" id="sym1">($)</span></label><input type="number" id="curSavings" value="50000" min="0" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label>Monthly Contribution <span class="hint" id="sym2">($)</span></label><input type="number" id="monthlyContrib" value="500" min="0" oninput="calculate()" inputmode="decimal"></div>
     </div>
     <div class="form-row">
-      <div class="form-group"><label>Expected Annual Return (%)</label><input type="number" id="returnRate" value="7" min="0" max="30" step="0.5" oninput="calculate()"></div>
-      <div class="form-group"><label>Years in Retirement</label><input type="number" id="retYears" value="25" min="5" max="50" oninput="calculate()"></div>
+      <div class="form-group"><label>Expected Annual Return (%)</label><input type="number" id="returnRate" value="7" min="0" max="30" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label>Years in Retirement</label><input type="number" id="retYears" value="25" min="5" max="50" oninput="calculate()" inputmode="decimal"></div>
     </div>
-    <div class="form-group"><label>Desired Annual Retirement Income <span class="hint" id="sym3">($)</span></label><input type="number" id="desiredIncome" value="60000" min="0" oninput="calculate()"></div>
-    <div class="form-group" data-region="USA"><label>Employer 401(k) Match (% of salary) <span class="hint">optional</span></label><input type="number" id="employerMatch" value="3" min="0" max="20" step="0.5" oninput="calculate()"></div>
+    <div class="form-group"><label>Desired Annual Retirement Income <span class="hint" id="sym3">($)</span></label><input type="number" id="desiredIncome" value="60000" min="0" oninput="calculate()" inputmode="decimal"></div>
+    <div class="form-group" data-region="USA"><label>Employer 401(k) Match (% of salary) <span class="hint">optional</span></label><input type="number" id="employerMatch" value="3" min="0" max="20" step="0.5" oninput="calculate()" inputmode="decimal"></div>
     <button class="btn-calc" onclick="calculate()">Calculate Retirement Plan &rarr;</button>
   </div>
   <div class="results" id="results">
@@ -229,7 +233,7 @@
   <h2>From the Blog</h2>
   <div class="related-grid"><a href="/blog/how-much-to-save-for-retirement-at-35/" class="related-card">🏕️ How Much to Save for Retirement at 35</a><a href="/blog/4-percent-rule-retirement/" class="related-card">📊 The 4% Rule: Does It Still Work?</a><a href="/blog/how-much-to-retire-at-55/" class="related-card">⏰ How Much Do You Need to Retire at 55?</a></div>
 </div>
-<footer><div class="footer-inner"><div class="footer-top"><a href="/" class="logo" style="color:#fff">&#9889; FinCalcHub</a><div class="footer-links"><a href="/">All Calculators</a><a href="/privacy/">Privacy Policy</a></div></div><div class="footer-bottom"><p>&copy; 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
+<footer><div class="footer-inner"><div class="footer-top"><a href="/" class="logo" style="color:#fff">&#9889; FinCalcHub</a><div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div></div><div class="footer-bottom"><p>&copy; 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
 <script src="/js/region.js" defer></script><script src="/js/main.js" defer></script>
 <script>
 var origSet = setRegion;

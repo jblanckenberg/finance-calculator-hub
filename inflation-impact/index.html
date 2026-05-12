@@ -151,6 +151,10 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wpt2jq739l");
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".subtitle"]}}
+</script>
+
 
 
 
@@ -170,10 +174,10 @@
   <p class="subtitle">See how inflation erodes the value of money over time — and what it means for your savings.</p>
   <div class="card"><div class="card-title">Your Details</div>
 <div class="form-row">
-  <div class="form-group"><label>Current Amount <span class="hint" id="s1">($)</span></label><input type="number" id="amount" value="10000" min="1" oninput="calculate()"></div>
-  <div class="form-group"><label>Annual Inflation Rate (%)</label><input type="number" id="infRate" value="3" min="0" max="50" step="0.1" oninput="calculate()"></div>
+  <div class="form-group"><label>Current Amount <span class="hint" id="s1">($)</span></label><input type="number" id="amount" value="10000" min="1" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label>Annual Inflation Rate (%)</label><input type="number" id="infRate" value="3" min="0" max="50" step="0.1" oninput="calculate()" inputmode="decimal"></div>
 </div>
-<div class="form-group"><label>Number of Years</label><input type="number" id="years" value="20" min="1" max="100" oninput="calculate()"></div>
+<div class="form-group"><label>Number of Years</label><input type="number" id="years" value="20" min="1" max="100" oninput="calculate()" inputmode="decimal"></div>
 <button class="btn-calc" onclick="calculate()">Calculate →</button></div>
   <div class="results" id="results"><div class="results-title">Inflation Impact</div>
 <div class="result-grid">
@@ -199,7 +203,7 @@
   <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What is inflation?</div><div class="faq-a">Inflation is the rate at which prices rise over time, reducing the purchasing power of money. At 3% annual inflation, something costing $100 today will cost $134 in 10 years and $181 in 20 years.</div></div><div class="faq-item"><div class="faq-q">What inflation rate should I use?</div><div class="faq-a">Long-term average CPI inflation: USA ~3%, UK ~2.5%, South Africa ~5%. For conservative planning, use a slightly higher rate than the current official figure.</div></div></div>
   <div class="ad-slot">Advertisement</div>
 </div>
-<footer><div class="footer-inner"><div class="footer-top"><a href="/" class="logo" style="color:#fff">⚡ FinCalcHub</a><div class="footer-links"><a href="/">All Calculators</a><a href="/privacy/">Privacy Policy</a></div></div><div class="footer-bottom"><p>© 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
+<footer><div class="footer-inner"><div class="footer-top"><a href="/" class="logo" style="color:#fff">⚡ FinCalcHub</a><div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div></div><div class="footer-bottom"><p>© 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
 <script src="/js/region.js" defer></script><script src="/js/main.js" defer></script>
 <script>
 var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:"$",UK:"£",SA:"R"}[r]||"$";var el=document.getElementById("s1");if(el)el.textContent="("+s+")";if(document.getElementById("results").classList.contains("show"))calculate();};

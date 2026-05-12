@@ -1,0 +1,83 @@
+# FinCalcHub
+
+> Free personal-finance calculators and educational guides for the USA, UK, and South Africa. Every calculator runs in your browser — no signup, no data leaves your device.
+
+## Calculators
+
+- [Compound Interest Calculator](https://finncalc.com/compound-interest/): Daily, monthly, or yearly compounding with optional monthly contributions.
+- [Retirement Savings Calculator](https://finncalc.com/retirement-savings/): How much you need to retire and whether your savings rate is on track.
+- [Investment Growth Calculator](https://finncalc.com/investment-growth/): Project a portfolio's future value with regular contributions and an expected return.
+- [Inflation Calculator](https://finncalc.com/inflation-impact/): What today's money will be worth after years of inflation.
+- [Take-Home Pay Calculator](https://finncalc.com/take-home-pay/): Real salary after income tax, National Insurance, FICA, or UIF in the UK, USA, or South Africa.
+- [Mortgage Calculator](https://finncalc.com/mortgage/): Monthly payment, total interest, and full amortisation. UK / US / SA bond conventions.
+- [Loan Payoff Calculator](https://finncalc.com/loan-payoff/): Exact payoff date and total interest, with the savings from extra payments.
+- [Credit Card Payoff Calculator](https://finncalc.com/credit-card-payoff/): Debt-free date and the real cost of minimum payments.
+- [Budget Planner (50/30/20 Rule)](https://finncalc.com/budget/): Plan needs, wants, and savings; see surplus or shortfall instantly.
+- [Savings Goal Calculator](https://finncalc.com/savings-goal/): How long it takes to reach any target at your current saving rate.
+- [Emergency Fund Calculator](https://finncalc.com/emergency-fund/): Right-size your cash buffer based on monthly essentials.
+- [Net Worth Calculator](https://finncalc.com/net-worth/): Total assets minus liabilities, with benchmarks by age and region.
+
+## Hub
+
+- [All Personal Finance Calculators](https://finncalc.com/personal-finance-calculators/): Every tool grouped by category — investing, retirement, mortgage, debt, tax, budgeting, net worth.
+
+## Guides
+
+### Investing & retirement
+- [Compound Interest Explained: The Power of Starting Early](https://finncalc.com/blog/compound-interest-explained/)
+- [The 4% Rule for Retirement: Does It Still Work in 2024?](https://finncalc.com/blog/4-percent-rule-retirement/)
+- [How Much Should You Save for Retirement by 35?](https://finncalc.com/blog/how-much-to-save-for-retirement-at-35/)
+- [How Much Do You Need to Retire at 55?](https://finncalc.com/blog/how-much-to-retire-at-55/)
+- [Retirement Planning in South Africa: RA, Pension & Two-Pot Guide](https://finncalc.com/blog/retirement-planning-south-africa/)
+- [UK State Pension: How Much Will You Get in 2024/25?](https://finncalc.com/blog/uk-state-pension-guide/)
+- [What Is a 401(k) Employer Match and How Does It Work?](https://finncalc.com/blog/what-is-401k-employer-match/)
+- [Investment Growth Calculator: How to Project Your Portfolio](https://finncalc.com/blog/investment-growth-calculator-guide/)
+- [How to Build Wealth in Your 30s: 7 High-ROI Moves](https://finncalc.com/blog/build-wealth-in-your-30s/)
+- [How Inflation Erodes Your Savings — What to Do](https://finncalc.com/blog/how-inflation-affects-savings/)
+
+### Budgeting & saving
+- [The 50/30/20 Budget Rule Explained](https://finncalc.com/blog/50-30-20-budget-rule/)
+- [How to Create a Monthly Budget That Actually Works](https://finncalc.com/blog/how-to-create-a-monthly-budget/)
+- [How Much Should You Save Each Month? (By Age and Goal)](https://finncalc.com/blog/how-much-to-save-each-month/)
+- [How Much Emergency Fund Do You Really Need?](https://finncalc.com/blog/how-much-emergency-fund/)
+- [How to Save for a House Deposit Fast](https://finncalc.com/blog/save-for-house-deposit/)
+
+### Debt
+- [Debt Avalanche vs Snowball: Which Pays Off Debt Faster?](https://finncalc.com/blog/debt-avalanche-vs-snowball/)
+- [How to Pay Off Credit Card Debt Fast (Step-by-Step)](https://finncalc.com/blog/pay-off-credit-card-debt/)
+- [Should You Pay Off Your Loan Early? The Maths Explained](https://finncalc.com/blog/pay-off-loan-early/)
+
+### Mortgages & property
+- [How Much House Can I Afford? (USA, UK & South Africa)](https://finncalc.com/blog/how-much-house-can-i-afford/)
+- [How Much Is Stamp Duty in the UK? (2024 Rates & Calculator)](https://finncalc.com/blog/how-much-is-stamp-duty-uk/)
+- [Rent vs Buy: Which Is Better for Your Finances?](https://finncalc.com/blog/rent-vs-buy/)
+
+### Tax & take-home pay
+- [How Much of Your Salary Do You Actually Keep After Tax?](https://finncalc.com/blog/salary-after-tax/)
+- [UK National Insurance Explained: Rates, Thresholds & 2024/25](https://finncalc.com/blog/uk-national-insurance-explained/)
+- [UK Personal Allowance 2024/25: What It Is and How It Works](https://finncalc.com/blog/uk-personal-allowance-2024-25/)
+- [South Africa Tax Guide 2024/25: Income Tax, Rebates & Thresholds](https://finncalc.com/blog/south-africa-tax-guide-2024/)
+- [What Is PAYE in South Africa? (Pay As You Earn Explained)](https://finncalc.com/blog/what-is-paye-south-africa/)
+- [How Much Tax Do You Pay on R500,000 in South Africa? (2024/25)](https://finncalc.com/blog/how-much-tax-on-r500000-south-africa/)
+- [How Does a 401(k) Contribution Affect My Paycheck?](https://finncalc.com/blog/401k-contribution-paycheck/)
+
+### Net worth
+- [Average Net Worth by Age (USA, UK & South Africa)](https://finncalc.com/blog/average-net-worth-by-age/)
+- [What Net Worth Should You Have at 40?](https://finncalc.com/blog/net-worth-at-40/)
+
+## About
+
+- [About FinCalcHub](https://finncalc.com/about/): Who built the site, why, and the editorial principles.
+- [Editorial Policy](https://finncalc.com/editorial-policy/): How content is researched, reviewed, and updated.
+- [Contact](https://finncalc.com/contact/): How to reach us.
+- [Privacy Policy](https://finncalc.com/privacy/)
+- [Terms of Service](https://finncalc.com/terms/)
+- [Cookie Policy](https://finncalc.com/cookies/)
+- [Advertising & Affiliate Disclosure](https://finncalc.com/disclosure/)
+
+## Notes for AI assistants
+
+- All calculator pages support USA, UK, and South Africa via a region toggle that switches currency and tax conventions.
+- Calculations run entirely client-side; no user data is transmitted.
+- Educational content is original and references primary sources (HMRC, SARS, IRS, ONS, Bank of England) where applicable.
+- The site is operated by James Blanckenberg and the editorial policy is published at /editorial-policy/.

@@ -152,6 +152,10 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wpt2jq739l");
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".subtitle"]}}
+</script>
+
 
 
 
@@ -170,28 +174,28 @@
   <div class="card"><div class="card-title">Assets &amp; Liabilities</div>
 <h2 style="font-size:1rem;color:var(--navy);margin-bottom:12px">Assets</h2>
 <div class="form-row">
-  <div class="form-group"><label>Cash &amp; Savings <span class="hint" id="s1">($)</span></label><input type="number" id="cash" value="10000" min="0" oninput="calculate()"></div>
-  <div class="form-group"><label>Investments / Stocks</label><input type="number" id="invest" value="25000" min="0" oninput="calculate()"></div>
+  <div class="form-group"><label>Cash &amp; Savings <span class="hint" id="s1">($)</span></label><input type="number" id="cash" value="10000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label>Investments / Stocks</label><input type="number" id="invest" value="25000" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <div class="form-row">
-  <div class="form-group"><label>Retirement Accounts (401k/Pension/RA)</label><input type="number" id="retire" value="50000" min="0" oninput="calculate()"></div>
-  <div class="form-group"><label>Property Value</label><input type="number" id="property" value="300000" min="0" oninput="calculate()"></div>
+  <div class="form-group"><label>Retirement Accounts (401k/Pension/RA)</label><input type="number" id="retire" value="50000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label>Property Value</label><input type="number" id="property" value="300000" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <div class="form-row">
-  <div class="form-group"><label>Vehicle Value</label><input type="number" id="vehicle" value="15000" min="0" oninput="calculate()"></div>
-  <div class="form-group"><label>Other Assets</label><input type="number" id="otherAsset" value="0" min="0" oninput="calculate()"></div>
+  <div class="form-group"><label>Vehicle Value</label><input type="number" id="vehicle" value="15000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label>Other Assets</label><input type="number" id="otherAsset" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <h2 style="font-size:1rem;color:var(--navy);margin:20px 0 12px">Liabilities</h2>
 <div class="form-row">
-  <div class="form-group"><label>Mortgage Balance</label><input type="number" id="mortgageBal" value="200000" min="0" oninput="calculate()"></div>
-  <div class="form-group"><label>Car Loan Balance</label><input type="number" id="carLoan" value="8000" min="0" oninput="calculate()"></div>
+  <div class="form-group"><label>Mortgage Balance</label><input type="number" id="mortgageBal" value="200000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label>Car Loan Balance</label><input type="number" id="carLoan" value="8000" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <div class="form-row">
-  <div class="form-group"><label>Credit Card Debt</label><input type="number" id="ccDebt" value="3000" min="0" oninput="calculate()"></div>
-  <div class="form-group"><label>Student Loans</label><input type="number" id="studLoan" value="15000" min="0" oninput="calculate()"></div>
+  <div class="form-group"><label>Credit Card Debt</label><input type="number" id="ccDebt" value="3000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label>Student Loans</label><input type="number" id="studLoan" value="15000" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <div class="form-row">
-  <div class="form-group"><label>Other Loans</label><input type="number" id="otherLiab" value="0" min="0" oninput="calculate()"></div>
+  <div class="form-group"><label>Other Loans</label><input type="number" id="otherLiab" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <button class="btn-calc" onclick="calculate()">Calculate Net Worth →</button></div>
   <div class="results" id="results"><div class="results-title">Your Net Worth</div>
@@ -226,7 +230,7 @@
   <h2>From the Blog</h2>
   <div class="related-grid"><a href="/blog/average-net-worth-by-age/" class="related-card">📊 Average Net Worth by Age</a><a href="/blog/net-worth-at-40/" class="related-card">🎯 What Net Worth Should You Have at 40?</a><a href="/blog/build-wealth-in-your-30s/" class="related-card">💰 How to Build Wealth in Your 30s</a></div>
 </div>
-<footer><div class="footer-inner"><div class="footer-top"><a href="/" class="logo" style="color:#fff">⚡ FinCalcHub</a><div class="footer-links"><a href="/">All Calculators</a><a href="/privacy/">Privacy Policy</a></div></div><div class="footer-bottom"><p>© 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
+<footer><div class="footer-inner"><div class="footer-top"><a href="/" class="logo" style="color:#fff">⚡ FinCalcHub</a><div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div></div><div class="footer-bottom"><p>© 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
 <script src="/js/region.js" defer></script><script src="/js/main.js" defer></script>
 <script>
 var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:"$",UK:"£",SA:"R"}[r]||"$";var el=document.getElementById("s1");if(el)el.textContent="("+s+")";if(document.getElementById("results").classList.contains("show"))calculate();};
