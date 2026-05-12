@@ -258,3 +258,28 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 24px 28px;
   .fc-cookie-banner { font-size: 13px; padding: 14px 16px; left: 8px; right: 8px; bottom: 8px; }
 }
 /* === END FC-WAVE2-ADDITIONS === */
+
+/* === FC-WAVE3-QUICK-ANSWER === */
+.quick-answer{
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 20px 24px;
+  margin: 20px auto 28px;
+  max-width: 820px;
+}
+.quick-answer h2{
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 8px;
+}
+.quick-answer p{
+  color: var(--text);
+  line-height: 1.65;
+  margin: 0;
+  font-size: 15px;
+}
+.quick-answer strong{color: var(--navy)}
+.quick-answer sup{font-size: 0.7em}
+/* === END FC-WAVE3-QUICK-ANSWER === */
