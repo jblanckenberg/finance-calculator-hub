@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment Growth Calculator: How to Project Your Portfolio | FinCalcHub</title>
+<meta name="description" content="Learn how to use an investment growth calculator to project your portfolio. Understand return assumptions, compound frequency, inflation adjustment, and realistic planning.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://finncalc.com/blog/investment-growth-calculator-guide/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Investment Growth Calculator: How to Project Your Portfolio",
+  "description": "How to use an investment growth calculator to project your portfolio accurately.",
+  "image": [
+    "https://finncalc.com/og-image.png"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "FinCalcHub",
+    "url": "https://finncalc.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "FinCalcHub",
+    "url": "https://finncalc.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://finncalc.com/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "datePublished": "2024-11-01",
+  "dateModified": "2026-05-12",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://finncalc.com/blog/investment-growth-calculator-guide/"
+  },
+  "url": "https://finncalc.com/blog/investment-growth-calculator-guide/",
+  "inLanguage": "en",
+  "articleSection": "Investing"
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#F5F7FA;color:#1B3A5C;line-height:1.7}
+header{background:#1B3A5C;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.logo{color:#fff;font-weight:700;font-size:1.2rem;text-decoration:none}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;margin-left:18px;font-size:.9rem}
+nav a:hover{color:#fff}
+.container{max-width:780px;margin:0 auto;padding:28px 20px 60px}
+.breadcrumb{font-size:.82rem;color:#6B7C93;margin-bottom:18px}
+.breadcrumb a{color:#1E88E5;text-decoration:none}
+h1{font-size:2rem;font-weight:700;color:#1B3A5C;margin-bottom:10px;line-height:1.2}
+.meta{font-size:.82rem;color:#6B7C93;margin-bottom:28px}
+h2{font-size:1.25rem;font-weight:600;color:#1B3A5C;margin:32px 0 12px}
+p{margin-bottom:14px;color:#334E68}
+ul,ol{margin:0 0 14px 22px;color:#334E68}
+li{margin-bottom:6px}
+.art-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.9rem}
+.art-table th{background:#1B3A5C;color:#fff;padding:9px 12px;text-align:left}
+.art-table td{padding:8px 12px;border-bottom:1px solid #D1D9E0}
+.art-table tr:nth-child(even) td{background:#EEF2F7}
+.key-box{background:#E3F0FF;border-left:4px solid #1E88E5;padding:14px 18px;border-radius:6px;margin:20px 0;font-size:.95rem}
+.key-box strong{display:block;margin-bottom:6px;color:#1B3A5C}
+.cta-box{background:#1B3A5C;color:#fff;border-radius:10px;padding:24px;margin:32px 0;text-align:center}
+.cta-box h3{font-size:1.1rem;margin-bottom:8px}
+.cta-box p{color:rgba(255,255,255,.85);font-size:.92rem;margin-bottom:16px}
+.cta-btn{display:inline-block;background:#1E88E5;color:#fff;padding:11px 26px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.95rem}
+.cta-btn:hover{background:#1565C0}
+.related{margin-top:48px}
+.related h2{margin-bottom:16px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.related-card{display:block;background:#fff;border:1px solid #D1D9E0;border-radius:8px;padding:14px;text-align:center;text-decoration:none;color:#1B3A5C;font-weight:500;font-size:.88rem;transition:border-color .2s}
+.related-card:hover{border-color:#1E88E5}
+.ad-slot{background:#f0f0f0;border:1px dashed #ccc;text-align:center;padding:18px;color:#999;font-size:.8rem;margin:24px 0;border-radius:4px}
+footer{background:#1B3A5C;color:rgba(255,255,255,.7);padding:24px;text-align:center;font-size:.82rem}
+footer a{color:rgba(255,255,255,.6);text-decoration:none}
+@media(max-width:600px){h1{font-size:1.5rem}nav{display:none}}
+</style>
+  <meta property="og:title" content="Investment Growth Calculator: How to Project Your Portfolio | FinCalcHub">
+  <meta property="og:description" content="Learn how to use an investment growth calculator to project your portfolio. Understand return assumptions, compound frequency, inflation adjustment, and realistic planning.">
+  <meta property="og:url" content="https://finncalc.com/blog/investment-growth-calculator-guide/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Investment Growth Calculator: How to Project Your Portfolio">
+  <meta name="twitter:description" content="Learn how to use an investment growth calculator to project your portfolio. Understand return assumptions, compound frequency, inflation adjustment, and realistic planning.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finncalc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://finncalc.com/blog/"},{"@type":"ListItem","position":3,"name":"Investment Growth Calculator: How to Project Your Portfolio","item":"https://finncalc.com/blog/investment-growth-calculator-guide/"}]}
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+
+
+
+</head>
+<body>
+<header><a href="/" class="logo">&#9889; FinCalcHub</a><nav><a href="/compound-interest/">Compound Interest</a><a href="/retirement-savings/">Retirement</a><a href="/take-home-pay/">Take-Home Pay</a><a href="/mortgage/">Mortgage</a></nav></header>
+<div class="container">
+<div class="ad-slot">Advertisement</div>
+<p class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Investment Growth Calculator: How to Project Your Portfolio</p>
+<h1>Investment Growth Calculator: How to Project Your Portfolio</h1>
+    <div class="cta-box" data-fc-calc-cta="top">
+      <h3>Skip the maths — use the Investment Growth Calculator</h3>
+      <p>Get exact numbers for your situation in seconds. Free, no signup.</p>
+      <a href="/investment-growth/" class="btn-calc">Open the Investment Growth Calculator →</a>
+    </div>
+<p class="meta">&#128337; 6 min read &nbsp;&middot;&nbsp; FinCalcHub Editorial</p>
+
+<p>An investment growth calculator is one of the most powerful financial planning tools available — but only if you feed it realistic inputs. This guide explains each input and how to choose numbers grounded in reality rather than optimism.</p>
+<h2>The Core Formula</h2>
+<div class="key-box"><strong>Future Value = P(1+r)ⁿ + PMT × [(1+r)ⁿ − 1] / r</strong><br>Where P = starting balance, r = periodic rate, n = number of periods, PMT = periodic contribution.</div>
+<h2>Starting Balance (P)</h2>
+<p>Use your current investable assets — brokerage accounts, ISAs, TFSAs, RAs. Don't include home equity or pension entitlements you can't invest; these are separate calculations. If starting from zero, P = 0 and contributions alone drive the formula.</p>
+<h2>Choosing a Realistic Return Rate</h2>
+<table class="art-table"><thead><tr><th>Asset Class</th><th>Historical nominal return</th><th>Conservative planning rate</th></tr></thead><tbody>
+<tr><td>Global equity index funds</td><td>~9–10%/year</td><td>7%</td></tr>
+<tr><td>SA equity (JSE All Share)</td><td>~12–14%/year nominal</td><td>9% (inflation ~5%)</td></tr>
+<tr><td>UK equity (FTSE All Share)</td><td>~7–8%/year nominal</td><td>6%</td></tr>
+<tr><td>Bonds (diversified)</td><td>~3–5%/year</td><td>3%</td></tr>
+<tr><td>60/40 portfolio (equity/bond)</td><td>~7–8%/year</td><td>6%</td></tr>
+</tbody></table>
+<p>Use 7% for a mixed portfolio. Use 5% for a more conservative projection. Never plan on 12%+ unless you have a specific reason — that's the optimism trap that leaves people short.</p>
+<h2>Monthly Contribution (PMT)</h2>
+<p>Use your current contribution amount, not your aspirational one. Run two scenarios: your current contribution and what happens if you increase by $100–$200/month. The difference is often stunning.</p>
+<h2>Time Horizon (n)</h2>
+<p>Years until you need the money. For retirement: target retirement age minus current age. Be conservative — if you think you might retire at 62, model to 65. The extra cushion doesn't hurt.</p>
+<h2>Inflation Adjustment</h2>
+<p>A nominal 7% return with 3% inflation gives a real return of ~4%. For long-term planning (20+ years), always also run the real-return scenario to understand purchasing power:</p>
+<table class="art-table"><thead><tr><th>Nominal rate</th><th>Inflation</th><th>Real return</th><th>$500k today worth in 20yr real terms</th></tr></thead><tbody>
+<tr><td>7%</td><td>3%</td><td>~4%</td><td>$1.1M in real purchasing power</td></tr>
+<tr><td>9%</td><td>5% (SA)</td><td>~4%</td><td>Similar in real terms</td></tr>
+</tbody></table>
+<h2>Common Mistakes in Investment Projections</h2>
+<ul>
+<li><strong>Using gross returns, not net-of-fees:</strong> A fund charging 1.5% on a 7% return gives you 5.5%. Over 30 years this costs hundreds of thousands.</li>
+<li><strong>Ignoring tax on withdrawals:</strong> Not all accounts are tax-free at withdrawal. Model the tax bill too.</li>
+<li><strong>Assuming contributions never increase:</strong> Most people earn more over time. Even modelling 2–3% annual contribution increases makes projections significantly higher.</li>
+<li><strong>Not accounting for investment gaps:</strong> Career breaks, parental leave, illness. A 2-year gap early in the investment horizon costs significantly at the end.</li>
+</ul>
+<div class="cta-box"><h3>Project Your Portfolio Now</h3><p>Enter your starting balance, monthly contribution, and expected return. See your balance at any future date.</p><a href="/investment-growth/" class="cta-btn">Open Investment Growth Calculator &rarr;</a></div>
+<h2>Sensitivity Analysis: Run Three Scenarios</h2>
+<p>Always model three scenarios: bear (5% return), base (7%), and bull (9%). The range between bear and bull shows you the uncertainty in financial planning. If even your bear case gives you enough to retire on, your plan is robust.</p>
+<div class="ad-slot">Advertisement</div>
+<div class="related"><h2>Related Calculators</h2><div class="related-grid"><a href="/investment-growth/" class="related-card">🚀 Investment Growth</a><a href="/compound-interest/" class="related-card">📈 Compound Interest</a><a href="/retirement-savings/" class="related-card">🏕️ Retirement</a><a href="/savings-goal/" class="related-card">🎯 Savings Goal</a></div></div>
+</div>
+<footer><p>&copy; 2024 FinCalcHub &middot; <a href="/privacy/">Privacy Policy</a> &middot; For informational purposes only. Not financial advice.</p></footer>
+</body>
+</html>

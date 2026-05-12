@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Monthly Budget Calculator (50/30/20 Rule) | FinCalcHub</title>
+<meta name="description" content="Free monthly budget calculator using the 50/30/20 rule. Plan needs, wants, and savings — see your surplus or shortfall instantly. USA, UK, SA.">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://finncalc.com/budget/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/css/print.css" media="print">
+<style>
+.budget-bar-wrap{margin:18px 0 8px;background:rgba(255,255,255,.1);border-radius:8px;overflow:hidden;height:22px;display:flex;}
+.budget-bar-needs{background:#1E88E5;height:100%;transition:width .4s;}
+.budget-bar-wants{background:#43A047;height:100%;transition:width .4s;}
+.budget-bar-savings{background:#FB8C00;height:100%;transition:width .4s;}
+.budget-legend{display:flex;gap:18px;font-size:12px;margin-bottom:18px;flex-wrap:wrap;}
+.budget-legend span{display:flex;align-items:center;gap:6px;}
+.budget-legend .dot{width:10px;height:10px;border-radius:50%;}
+.cat-row{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;margin-bottom:10px;}
+.cat-row input{width:130px;}
+.cat-label{font-size:13px;color:rgba(255,255,255,.8);}
+.cat-pct{font-size:12px;color:rgba(255,255,255,.5);white-space:nowrap;}
+.section-head{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:6px;}
+.surplus-pos{color:#4CAF50;font-weight:700;}
+.surplus-neg{color:#EF5350;font-weight:700;}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the 50/30/20 budget rule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 50/30/20 rule is a simple budgeting framework: 50% of your after-tax income goes to needs (housing, food, transport, utilities), 30% to wants (dining, entertainment, hobbies), and 20% to savings and debt repayment. It was popularised by US Senator Elizabeth Warren in her book \"All Your Worth\" and provides an easy starting point for anyone building a budget."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What counts as a “need” vs a “want”?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Needs are expenses you cannot live without and that are required for basic functioning: housing, electricity, water, minimum food, essential transport to work, and minimum debt payments. Wants are things that improve your quality of life but are not strictly necessary: restaurants, streaming services, hobbies, upgraded clothing, and holidays. The line can be blurry — a car might be a need in a rural area but a want in a city with public transport."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my needs already exceed 50%?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In high cost-of-living cities, needs often exceed 50%. This is normal. The 50/30/20 rule is a guideline, not a strict law. If your needs are 60%, aim to cut wants to 20% and still protect 20% for savings. The most important number is your savings rate — aim for at least 10-15% minimum regardless of your other splits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much should I keep in an emergency fund?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The standard recommendation is 3–6 months of essential expenses. If you are self-employed, have variable income, or have dependants, aim for 6–12 months. Use our Emergency Fund Calculator to find your exact target. Keep emergency funds in a high-yield savings account, not invested in the market."
+      }
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "50/30/20 Budget Planner",
+  "description": "Split your income into needs, wants, and savings using the 50/30/20 rule",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "url": "https://finncalc.com/budget/",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "FinCalcHub", "url": "https://finncalc.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finncalc.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Budget Planner", "item": "https://finncalc.com/budget/"}
+  ]
+}
+</script>
+  <meta property="og:title" content="Free Monthly Budget Calculator (50/30/20 Rule) | FinCalcHub">
+  <meta property="og:description" content="Free monthly budget calculator using the 50/30/20 rule. Plan needs, wants, and savings — see your surplus or shortfall instantly. USA, UK, SA.">
+  <meta property="og:url" content="https://finncalc.com/budget/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Monthly Budget Calculator (50/30/20 Rule)">
+  <meta name="twitter:description" content="Free monthly budget calculator using the 50/30/20 rule. Plan needs, wants, and savings — see your surplus or shortfall instantly. USA, UK, SA.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the 50/30/20 Budget Planner",
+  "description": "Apply the 50/30/20 rule to your income \u2014 needs, wants, and savings.",
+  "totalTime": "PT2M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Enter your monthly take-home pay",
+      "text": "Type your net (after-tax) monthly income."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Enter your essential expenses (needs)",
+      "text": "Add housing, utilities, groceries, transport, insurance, minimum debt."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Enter your discretionary expenses (wants)",
+      "text": "Add dining out, subscriptions, shopping, hobbies, personal care."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Enter your savings and investments",
+      "text": "Add emergency fund, retirement, investments, and extra debt repayment."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Review your 50/30/20 split",
+      "text": "See the percentage going to each category and your surplus or shortfall."
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "50/30/20 Budget Planner"
+    }
+  ]
+}
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+
+
+
+</head>
+<body>
+<header><a href="/" class="logo">&#9889; FinCalcHub</a><nav><a href="/compound-interest/">Compound Interest</a><a href="/retirement-savings/">Retirement</a><a href="/take-home-pay/">Take-Home Pay</a><a href="/mortgage/">Mortgage</a></nav></header>
+<div class="region-wrap"><div class="region-bar">
+  <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')">&#127482;&#127480; USA</button>
+  <button class="region-btn" id="btn-UK" onclick="setRegion('UK')">&#127468;&#127463; United Kingdom</button>
+  <button class="region-btn" id="btn-SA" onclick="setRegion('SA')">&#127487;&#127462; South Africa</button>
+</div></div>
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> &rsaquo; Budget Planner</p>
+  <h1>&#128203; Budget Planner</h1>
+  <p class="subtitle">Plan your monthly budget using the 50/30/20 rule — needs, wants, and savings — and see exactly where your money goes.</p>
+  <div class="card">
+    <div class="card-title">Your Income</div>
+    <div class="form-row">
+      <div class="form-group"><label>Monthly Take-Home Pay <span class="hint" id="s1">($)</span></label><input type="number" id="income" value="5000" min="1" oninput="calculate()"></div>
+      <div class="form-group"><label>Other Monthly Income <span class="hint" id="s2">($) optional</span></label><input type="number" id="otherIncome" value="0" min="0" oninput="calculate()"></div>
+    </div>
+    <div class="card-title" style="margin-top:20px">50% — Needs (Essential Expenses)</div>
+    <div class="cat-row"><span class="cat-label">Housing (rent/mortgage)</span><input type="number" id="housing" value="1500" min="0" oninput="calculate()"><span class="cat-pct" id="p-housing">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Utilities &amp; Bills</span><input type="number" id="utilities" value="200" min="0" oninput="calculate()"><span class="cat-pct" id="p-utilities">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Groceries &amp; Food</span><input type="number" id="groceries" value="400" min="0" oninput="calculate()"><span class="cat-pct" id="p-groceries">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Transport</span><input type="number" id="transport" value="300" min="0" oninput="calculate()"><span class="cat-pct" id="p-transport">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Insurance &amp; Medical</span><input type="number" id="insurance" value="150" min="0" oninput="calculate()"><span class="cat-pct" id="p-insurance">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Minimum Debt Payments</span><input type="number" id="debtmin" value="100" min="0" oninput="calculate()"><span class="cat-pct" id="p-debtmin">0%</span></div>
+    <div class="card-title" style="margin-top:20px">30% — Wants (Discretionary)</div>
+    <div class="cat-row"><span class="cat-label">Dining Out &amp; Entertainment</span><input type="number" id="dining" value="200" min="0" oninput="calculate()"><span class="cat-pct" id="p-dining">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Shopping &amp; Clothing</span><input type="number" id="shopping" value="150" min="0" oninput="calculate()"><span class="cat-pct" id="p-shopping">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Subscriptions &amp; Streaming</span><input type="number" id="subscriptions" value="50" min="0" oninput="calculate()"><span class="cat-pct" id="p-subscriptions">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Hobbies &amp; Recreation</span><input type="number" id="hobbies" value="100" min="0" oninput="calculate()"><span class="cat-pct" id="p-hobbies">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Personal Care</span><input type="number" id="personal" value="80" min="0" oninput="calculate()"><span class="cat-pct" id="p-personal">0%</span></div>
+    <div class="card-title" style="margin-top:20px">20% — Savings &amp; Investments</div>
+    <div class="cat-row"><span class="cat-label">Emergency Fund</span><input type="number" id="emergency" value="100" min="0" oninput="calculate()"><span class="cat-pct" id="p-emergency">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Retirement Savings</span><input type="number" id="retirement" value="300" min="0" oninput="calculate()"><span class="cat-pct" id="p-retirement">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Investments</span><input type="number" id="investments" value="100" min="0" oninput="calculate()"><span class="cat-pct" id="p-investments">0%</span></div>
+    <div class="cat-row"><span class="cat-label">Extra Debt Repayment</span><input type="number" id="debtextra" value="0" min="0" oninput="calculate()"><span class="cat-pct" id="p-debtextra">0%</span></div>
+    <button class="btn-calc" onclick="calculate()">Analyse My Budget &rarr;</button>
+  </div>
+  <div class="results" id="results">
+    <div class="results-title">Your Budget Analysis</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-income">$0</div><div class="result-label">Total Monthly Income</div></div>
+      <div class="result-item"><div class="result-value" id="r-total-spend">$0</div><div class="result-label">Total Monthly Spending</div></div>
+      <div class="result-item"><div class="result-value" id="r-surplus">$0</div><div class="result-label">Monthly Surplus / Deficit</div></div>
+      <div class="result-item"><div class="result-value positive" id="r-savings-rate">0%</div><div class="result-label">Savings Rate</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Spending vs 50/30/20 Target</div>
+    <div class="budget-bar-wrap"><div class="budget-bar-needs" id="bar-needs" style="width:0%"></div><div class="budget-bar-wants" id="bar-wants" style="width:0%"></div><div class="budget-bar-savings" id="bar-savings" style="width:0%"></div></div>
+    <div class="budget-legend"><span><span class="dot" style="background:#1E88E5"></span>Needs</span><span><span class="dot" style="background:#43A047"></span>Wants</span><span><span class="dot" style="background:#FB8C00"></span>Savings</span></div>
+    <table class="breakdown-table"><thead><tr><th>Category</th><th class="td-right">Your Spend</th><th class="td-right">50/30/20 Target</th><th class="td-right">Status</th></tr></thead>
+    <tbody id="breakdown-body"></tbody></table>
+    <div id="region-note" style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.6"></div>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">&#128424; Print</button>
+      <button class="btn-action" onclick="saveToFile()">&#128190; Save</button>
+    </div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/emergency-fund/" class="related-card">🛡️ Emergency Fund</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/credit-card-payoff/" class="related-card">💳 Credit Card Payoff</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    </div></div>
+  <div class="faq"><h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">What is the 50/30/20 budget rule?</div><div class="faq-a">The 50/30/20 rule is a simple budgeting framework: 50% of your after-tax income goes to needs (housing, food, transport, utilities), 30% to wants (dining, entertainment, hobbies), and 20% to savings and debt repayment. It was popularised by US Senator Elizabeth Warren in her book "All Your Worth" and provides an easy starting point for anyone building a budget.</div></div>
+    <div class="faq-item"><div class="faq-q">What counts as a &ldquo;need&rdquo; vs a &ldquo;want&rdquo;?</div><div class="faq-a">Needs are expenses you cannot live without and that are required for basic functioning: housing, electricity, water, minimum food, essential transport to work, and minimum debt payments. Wants are things that improve your quality of life but are not strictly necessary: restaurants, streaming services, hobbies, upgraded clothing, and holidays. The line can be blurry &mdash; a car might be a need in a rural area but a want in a city with public transport.</div></div>
+    <div class="faq-item"><div class="faq-q">What if my needs already exceed 50%?</div><div class="faq-a">In high cost-of-living cities, needs often exceed 50%. This is normal. The 50/30/20 rule is a guideline, not a strict law. If your needs are 60%, aim to cut wants to 20% and still protect 20% for savings. The most important number is your savings rate &mdash; aim for at least 10-15% minimum regardless of your other splits.</div></div>
+    <div class="faq-item"><div class="faq-q">How much should I keep in an emergency fund?</div><div class="faq-a">The standard recommendation is 3&ndash;6 months of essential expenses. If you are self-employed, have variable income, or have dependants, aim for 6&ndash;12 months. Use our Emergency Fund Calculator to find your exact target. Keep emergency funds in a high-yield savings account, not invested in the market.</div></div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+</div>
+
+<div class="related" style="margin-top:32px">
+  <h2>From the Blog</h2>
+  <div class="related-grid"><a href="/blog/50-30-20-budget-rule/" class="related-card">📋 The 50/30/20 Budget Rule Explained</a><a href="/blog/how-to-create-a-monthly-budget/" class="related-card">🗓️ How to Create a Monthly Budget</a><a href="/blog/how-much-to-save-each-month/" class="related-card">💰 How Much Should You Save Each Month?</a></div>
+</div>
+<footer><div class="footer-inner"><div class="footer-top"><a href="/" class="logo" style="color:#fff">&#9889; FinCalcHub</a><div class="footer-links"><a href="/">All Calculators</a><a href="/privacy/">Privacy Policy</a></div></div><div class="footer-bottom"><p>&copy; 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
+<script src="/js/region.js" defer></script><script src="/js/main.js" defer></script>
+<script>
+var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:'$',UK:'\u00a3',SA:'R'}[r]||'$';['s1','s2'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent='('+s+')';});if(document.getElementById('results').classList.contains('show'))calculate();};
+function v(id){return +document.getElementById(id).value||0;}
+function pct(amt,total){return total>0?(amt/total*100).toFixed(1)+'%':'0%';}
+function statusBadge(actual,target){
+  var diff=actual-target;
+  if(Math.abs(diff)<target*0.05) return'<span style="color:#4CAF50">&#10003; On Target</span>';
+  if(diff>0) return'<span style="color:#EF5350">+'+formatMoney(diff)+' over</span>';
+  return'<span style="color:#4CAF50">'+formatMoney(Math.abs(diff))+' under</span>';
+}
+function calculate(){
+  var income=v('income')+v('otherIncome');
+  if(income<=0)return;
+  var needs=v('housing')+v('utilities')+v('groceries')+v('transport')+v('insurance')+v('debtmin');
+  var wants=v('dining')+v('shopping')+v('subscriptions')+v('hobbies')+v('personal');
+  var savings=v('emergency')+v('retirement')+v('investments')+v('debtextra');
+  var total=needs+wants+savings;
+  var surplus=income-total;
+  var savingsRate=income>0?((savings/income)*100).toFixed(1):0;
+  document.getElementById('r-income').textContent=formatMoney(income);
+  document.getElementById('r-total-spend').textContent=formatMoney(total);
+  var surplusEl=document.getElementById('r-surplus');
+  surplusEl.textContent=(surplus>=0?'+':'')+formatMoney(surplus);
+  surplusEl.className='result-value '+(surplus>=0?'surplus-pos':'surplus-neg');
+  document.getElementById('r-savings-rate').textContent=savingsRate+'%';
+  var needsPct=income>0?needs/income*100:0;
+  var wantsPct=income>0?wants/income*100:0;
+  var savPct=income>0?savings/income*100:0;
+  document.getElementById('bar-needs').style.width=Math.min(needsPct,100)+'%';
+  document.getElementById('bar-wants').style.width=Math.min(wantsPct,100-(needsPct>100?100:needsPct))+'%';
+  document.getElementById('bar-savings').style.width=Math.min(savPct,100-(needsPct>100?100:needsPct)-(wantsPct>0?Math.min(wantsPct,100-needsPct):0))+'%';
+  var needsTarget=income*0.50;
+  var wantsTarget=income*0.30;
+  var savingsTarget=income*0.20;
+  var rows=[
+    ['Needs (50% target)',formatMoney(needs),formatMoney(needsTarget),statusBadge(needs,needsTarget)],
+    ['Wants (30% target)',formatMoney(wants),formatMoney(wantsTarget),statusBadge(wants,wantsTarget)],
+    ['Savings (20% target)',formatMoney(savings),formatMoney(savingsTarget),statusBadge(savings,savingsTarget)],
+    ['Unallocated Surplus',formatMoney(Math.max(0,surplus)),'—',surplus>=0?'<span style="color:#4CAF50">\u2713 Surplus</span>':' <span style="color:#EF5350">\u26a0 Deficit</span>'],
+  ];
+  document.getElementById('breakdown-body').innerHTML=rows.map(function(r){return'<tr><td>'+r[0]+'</td><td class="td-right">'+r[1]+'</td><td class="td-right">'+r[2]+'</td><td class="td-right">'+r[3]+'</td></tr>';}).join('');
+  var cats=[
+    ['housing','Housing'],['utilities','Utilities'],['groceries','Groceries'],['transport','Transport'],['insurance','Insurance'],['debtmin','Min Debt Pmts'],
+    ['dining','Dining'],['shopping','Shopping'],['subscriptions','Subscriptions'],['hobbies','Hobbies'],['personal','Personal Care'],
+    ['emergency','Emergency Fund'],['retirement','Retirement'],['investments','Investments'],['debtextra','Extra Debt']
+  ];
+  cats.forEach(function(c){
+    var el=document.getElementById('p-'+c[0]);
+    if(el) el.textContent=pct(v(c[0]),income);
+  });
+  var notes={USA:'\ud83d\udccc USA: Median household income ~$78k/yr. Average rent $1,700/mo. Aim to keep housing under 28% of gross income (lender rule). Max 401(k) contribution $23,000 in 2024.',UK:'\ud83d\udccc UK: Average household income ~\u00a335k/yr after tax. Aim to keep rent/mortgage under 33% of take-home. ISA allowance \u00a320,000/yr. Auto-enrolment pension minimum 8%.',SA:'\ud83d\udccc SA: Average household spends ~60% on needs due to cost of living. Aim for at least 10% savings rate. RA contributions tax-deductible up to 27.5% of income. Emergency fund especially important given higher unemployment risk.'};
+  document.getElementById('region-note').textContent=notes[currentRegion]||notes.USA;
+  document.getElementById('results').classList.add('show');
+}
+document.addEventListener('DOMContentLoaded',function(){calculate();});
+</script>
+</body></html>
