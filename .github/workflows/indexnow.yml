@@ -32,9 +32,10 @@ jobs:
 
       - name: Submit URLs to IndexNow
         env:
-          BEFORE_SHA: ${{ github.event.before }}
-          AFTER_SHA:  ${{ github.sha }}
-          MODE:       ${{ github.event.inputs.mode || 'changed' }}
+          BEFORE_SHA:   ${{ github.event.before }}
+          AFTER_SHA:    ${{ github.sha }}
+          MODE:         ${{ github.event.inputs.mode || 'changed' }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
         run: |
           set -euo pipefail
 

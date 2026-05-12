@@ -24,8 +24,13 @@ import urllib.request
 from pathlib import Path
 
 HOST = 'finncalc.com'
-KEY = '811c4bf047664bc28cc38c4a3e344b4b'
-KEY_LOCATION = f'https://{HOST}/{KEY}.txt'
+# Key is sourced from the INDEXNOW_KEY env var (set as a GitHub Actions secret in CI).
+# IndexNow keys are public by design — they're hosted at a verification file on the
+# site — so the fallback below is safe and keeps local + first-time runs working.
+DEFAULT_KEY = '811c4bf047664bc28cc38c4a3e344b4b'
+KEY = os.environ.get('INDEXNOW_KEY') or DEFAULT_KEY
+# Allow overriding the verification URL too. Defaults to /<key>.txt at the host root.
+KEY_LOCATION = os.environ.get('INDEXNOW_KEY_LOCATION') or f'https://{HOST}/{KEY}.txt'
 ENDPOINT = 'https://api.indexnow.org/IndexNow'
 SITE = f'https://{HOST}'
 
