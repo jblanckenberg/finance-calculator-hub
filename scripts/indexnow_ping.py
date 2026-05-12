@@ -27,7 +27,11 @@ HOST = 'finncalc.com'
 # Key is sourced from the INDEXNOW_KEY env var (set as a GitHub Actions secret in CI).
 # IndexNow keys are public by design — they're hosted at a verification file on the
 # site — so the fallback below is safe and keeps local + first-time runs working.
-DEFAULT_KEY = '811c4bf047664bc28cc38c4a3e344b4b'
+# This default is the BWT-bound key generated 2026-05-12 via Bing Webmaster Tools →
+# IndexNow → Generate, which is required for Bing's IndexNow service to recognize
+# the submitter as the verified site owner. (Generic indexnow.org-generated keys
+# return 403 UserForbiddedToAccessSite even when the key file is hosted correctly.)
+DEFAULT_KEY = 'dc36bbbc8cd845228a69a8a0962bc5c1'
 KEY = os.environ.get('INDEXNOW_KEY') or DEFAULT_KEY
 # Allow overriding the verification URL too. Defaults to /<key>.txt at the host root.
 KEY_LOCATION = os.environ.get('INDEXNOW_KEY_LOCATION') or f'https://{HOST}/{KEY}.txt'
