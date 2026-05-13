@@ -203,28 +203,28 @@
   <div class="card"><div class="card-title">Assets &amp; Liabilities</div>
 <h2 style="font-size:1rem;color:var(--navy);margin-bottom:12px">Assets</h2>
 <div class="form-row">
-  <div class="form-group"><label>Cash &amp; Savings <span class="hint" id="s1">($)</span></label><input type="number" id="cash" value="10000" min="0" oninput="calculate()" inputmode="decimal"></div>
-  <div class="form-group"><label>Investments / Stocks</label><input type="number" id="invest" value="25000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="cash">Cash &amp; Savings <span class="hint" id="s1">($)</span></label><input type="number" id="cash" value="10000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="invest">Investments / Stocks</label><input type="number" id="invest" value="25000" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <div class="form-row">
-  <div class="form-group"><label>Retirement Accounts (401k/Pension/RA)</label><input type="number" id="retire" value="50000" min="0" oninput="calculate()" inputmode="decimal"></div>
-  <div class="form-group"><label>Property Value</label><input type="number" id="property" value="300000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="retire">Retirement Accounts (401k/Pension/RA)</label><input type="number" id="retire" value="50000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="property">Property Value</label><input type="number" id="property" value="300000" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <div class="form-row">
-  <div class="form-group"><label>Vehicle Value</label><input type="number" id="vehicle" value="15000" min="0" oninput="calculate()" inputmode="decimal"></div>
-  <div class="form-group"><label>Other Assets</label><input type="number" id="otherAsset" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="vehicle">Vehicle Value</label><input type="number" id="vehicle" value="15000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="otherAsset">Other Assets</label><input type="number" id="otherAsset" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <h2 style="font-size:1rem;color:var(--navy);margin:20px 0 12px">Liabilities</h2>
 <div class="form-row">
-  <div class="form-group"><label>Mortgage Balance</label><input type="number" id="mortgageBal" value="200000" min="0" oninput="calculate()" inputmode="decimal"></div>
-  <div class="form-group"><label>Car Loan Balance</label><input type="number" id="carLoan" value="8000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="mortgageBal">Mortgage Balance</label><input type="number" id="mortgageBal" value="200000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="carLoan">Car Loan Balance</label><input type="number" id="carLoan" value="8000" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <div class="form-row">
-  <div class="form-group"><label>Credit Card Debt</label><input type="number" id="ccDebt" value="3000" min="0" oninput="calculate()" inputmode="decimal"></div>
-  <div class="form-group"><label>Student Loans</label><input type="number" id="studLoan" value="15000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="ccDebt">Credit Card Debt</label><input type="number" id="ccDebt" value="3000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="studLoan">Student Loans</label><input type="number" id="studLoan" value="15000" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <div class="form-row">
-  <div class="form-group"><label>Other Loans</label><input type="number" id="otherLiab" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="otherLiab">Other Loans</label><input type="number" id="otherLiab" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <button class="btn-calc" onclick="calculate()">Calculate Net Worth →</button></div>
   <div class="results" id="results"><div class="results-title">Your Net Worth</div>

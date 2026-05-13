@@ -209,12 +209,12 @@
   <div class="card">
     <div class="card-title">Your Loan Details</div>
     <div class="form-row">
-      <div class="form-group"><label>Current Loan Balance <span class="hint" id="s1">($)</span></label><input type="number" id="balance" value="15000" min="1" oninput="calculate()" inputmode="decimal"></div>
-      <div class="form-group"><label>Annual Interest Rate (%)</label><input type="number" id="rate" value="8.5" min="0" max="50" step="0.1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="balance">Current Loan Balance <span class="hint" id="s1">($)</span></label><input type="number" id="balance" value="15000" min="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="rate">Annual Interest Rate (%)</label><input type="number" id="rate" value="8.5" min="0" max="50" step="0.1" oninput="calculate()" inputmode="decimal"></div>
     </div>
     <div class="form-row">
-      <div class="form-group"><label>Monthly Payment <span class="hint" id="s2">($)</span></label><input type="number" id="payment" value="350" min="1" oninput="calculate()" inputmode="decimal"></div>
-      <div class="form-group"><label>Extra Monthly Payment <span class="hint" id="s3">($) optional</span></label><input type="number" id="extra" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="payment">Monthly Payment <span class="hint" id="s2">($)</span></label><input type="number" id="payment" value="350" min="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="extra">Extra Monthly Payment <span class="hint" id="s3">($) optional</span></label><input type="number" id="extra" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
     </div>
     <button class="btn-calc" onclick="calculate()">Calculate →</button>
   </div>
