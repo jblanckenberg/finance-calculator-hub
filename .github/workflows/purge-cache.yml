@@ -44,18 +44,23 @@ jobs:
             exit 0
           fi
 
-          RESPONSE=$(curl --silent --show-error --fail-with-body \
+          # Don't use --fail-with-body — that exits curl before we can log the
+          # response body. Capture status + body separately so HTTP 401/403/404
+          # show their full Cloudflare error JSON in the run log.
+          HTTP_CODE=$(curl --silent --output /tmp/cf-resp.json --write-out '%{http_code}' \
             -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
             -H "Authorization: Bearer ${CF_API_TOKEN}" \
             -H "Content-Type: application/json" \
             --data '{"purge_everything":true}')
+          RESPONSE=$(cat /tmp/cf-resp.json)
 
-          echo "Cloudflare response: $RESPONSE"
+          echo "Cloudflare HTTP status: $HTTP_CODE"
+          echo "Cloudflare response body: $RESPONSE"
 
           SUCCESS=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin).get('success',False))" 2>/dev/null || echo "False")
 
-          if [ "$SUCCESS" != "True" ]; then
-            echo "::error::Cloudflare cache purge failed"
+          if [ "$HTTP_CODE" != "200" ] || [ "$SUCCESS" != "True" ]; then
+            echo "::error::Cloudflare cache purge failed (HTTP $HTTP_CODE, success=$SUCCESS). See response body above."
             exit 1
           fi
 
