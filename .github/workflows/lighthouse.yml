@@ -24,6 +24,10 @@ jobs:
             https://finncalc.com/compound-interest/
             https://finncalc.com/mortgage/
             https://finncalc.com/take-home-pay/
+            https://finncalc.com/stamp-duty-calculator/
+            https://finncalc.com/take-home-pay-comparison/
+            https://finncalc.com/sa-tax-calculator/
+            https://finncalc.com/glossary/
             https://finncalc.com/blog/
             https://finncalc.com/blog/compound-interest-explained/
           uploadArtifacts: true
