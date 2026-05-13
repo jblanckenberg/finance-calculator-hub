@@ -180,8 +180,8 @@
   <div class="card">
     <div class="card-title">Your Salary Details</div>
     <div class="form-row">
-      <div class="form-group"><label>Gross Annual Salary <span class="hint" id="sal-sym">($)</span></label><input type="number" id="salary" value="75000" min="0" oninput="calculate()" inputmode="decimal"></div>
-      <div class="form-group"><label>Pay Frequency</label>
+      <div class="form-group"><label for="salary">Gross Annual Salary <span class="hint" id="sal-sym">($)</span></label><input type="number" id="salary" value="75000" min="0" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="payFreq">Pay Frequency</label>
         <select id="payFreq" onchange="calculate()">
           <option value="12">Monthly</option>
           <option value="26">Bi-Weekly</option>
@@ -193,14 +193,14 @@
     <!-- USA only -->
     <div data-region="USA">
       <div class="form-row">
-        <div class="form-group"><label>Filing Status</label>
+        <div class="form-group"><label for="filingStatus">Filing Status</label>
           <select id="filingStatus" onchange="calculate()">
             <option value="single">Single</option>
             <option value="married">Married Filing Jointly</option>
             <option value="hoh">Head of Household</option>
           </select>
         </div>
-        <div class="form-group"><label>State</label>
+        <div class="form-group"><label for="stateSelect">State</label>
           <select id="stateSelect" onchange="calculate()">
             <option value="0">No State Tax / Not Listed</option>
             <option value="0" data-state="AK">Alaska (0%)</option>
@@ -230,15 +230,15 @@
         </div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>401(k) Contribution (%)</label><input type="number" id="contrib401k" value="0" min="0" max="100" step="0.5" oninput="calculate()" inputmode="decimal"></div>
-        <div class="form-group"><label>Other Pre-Tax Deductions ($)</label><input type="number" id="pretaxOther" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+        <div class="form-group"><label for="contrib401k">401(k) Contribution (%)</label><input type="number" id="contrib401k" value="0" min="0" max="100" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+        <div class="form-group"><label for="pretaxOther">Other Pre-Tax Deductions ($)</label><input type="number" id="pretaxOther" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
       </div>
     </div>
     <!-- UK only -->
     <div data-region="UK" style="display:none">
       <div class="form-row">
-        <div class="form-group"><label>Pension Contribution (%)</label><input type="number" id="ukPension" value="5" min="0" max="100" step="0.5" oninput="calculate()" inputmode="decimal"></div>
-        <div class="form-group"><label>Student Loan Plan</label>
+        <div class="form-group"><label for="ukPension">Pension Contribution (%)</label><input type="number" id="ukPension" value="5" min="0" max="100" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+        <div class="form-group"><label for="ukStudentLoan">Student Loan Plan</label>
           <select id="ukStudentLoan" onchange="calculate()">
             <option value="0">None</option>
             <option value="1">Plan 1 (&pound;24,990 threshold)</option>
@@ -252,17 +252,17 @@
     <div data-region="SA" style="display:none">
       <p class="hint" style="margin-bottom:12px"><a href="/sa-tax-calculator/">🇿🇦 Use our dedicated SA Tax Calculator →</a> (focused SA page with rebates, medical credits, RA, UIF).</p>
       <div class="form-row">
-        <div class="form-group"><label>Age</label>
+        <div class="form-group"><label for="saAge">Age</label>
           <select id="saAge" onchange="calculate()">
             <option value="1">Under 65</option>
             <option value="2">65 to 74</option>
             <option value="3">75 and over</option>
           </select>
         </div>
-        <div class="form-group"><label>Medical Aid Members</label><input type="number" id="saMedical" value="1" min="0" max="10" oninput="calculate()" inputmode="decimal"></div>
+        <div class="form-group"><label for="saMedical">Medical Aid Members</label><input type="number" id="saMedical" value="1" min="0" max="10" oninput="calculate()" inputmode="decimal"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>RA / Pension Contribution (R/month)</label><input type="number" id="saRA" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+        <div class="form-group"><label for="saRA">RA / Pension Contribution (R/month)</label><input type="number" id="saRA" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
       </div>
     </div>
     <button class="btn-calc" onclick="calculate()">Calculate Take-Home Pay &rarr;</button>

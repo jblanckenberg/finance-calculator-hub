@@ -231,22 +231,22 @@
 
     <div class="form-row">
       <div class="form-group">
-        <label>Starting Amount <span class="hint" id="currency-label">($)</span></label>
+        <label for="principal">Starting Amount <span class="hint" id="currency-label">($)</span></label>
         <input type="number" id="principal" value="1000" min="0" placeholder="1000" oninput="calculate()" inputmode="decimal">
       </div>
       <div class="form-group">
-        <label>Annual Interest Rate (%)</label>
+        <label for="rate">Annual Interest Rate (%)</label>
         <input type="number" id="rate" value="7" min="0" max="100" step="0.1" placeholder="7" oninput="calculate()" inputmode="decimal">
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group">
-        <label>Number of Years</label>
+        <label for="years">Number of Years</label>
         <input type="number" id="years" value="10" min="1" max="50" placeholder="10" oninput="calculate()" inputmode="decimal">
       </div>
       <div class="form-group">
-        <label>Compounding Frequency</label>
+        <label for="frequency">Compounding Frequency</label>
         <select id="frequency" onchange="calculate()">
           <option value="1">Yearly</option>
           <option value="4">Quarterly</option>
@@ -257,7 +257,7 @@
     </div>
 
     <div class="form-group">
-      <label>Monthly Contribution <span class="hint" id="contrib-label">(optional, $)</span></label>
+      <label for="monthly">Monthly Contribution <span class="hint" id="contrib-label">(optional, $)</span></label>
       <input type="number" id="monthly" value="100" min="0" placeholder="0" oninput="calculate()" inputmode="decimal">
     </div>
 
