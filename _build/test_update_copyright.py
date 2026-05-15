@@ -1,4 +1,3 @@
-import subprocess
 from pathlib import Path
 from update_copyright import sweep, OLD_YEAR, NEW_YEAR
 
@@ -28,3 +27,17 @@ def test_sweep_skips_already_current(tmp_path: Path):
     f.write_text(f"<footer>© {NEW_YEAR} FinCalcHub</footer>", encoding="utf-8")
     n = sweep(tmp_path, dry_run=False)
     assert n == 0
+
+def test_sweep_skips_excluded_directories(tmp_path: Path):
+    nm = tmp_path / "node_modules" / "vendor"
+    nm.mkdir(parents=True)
+    vendor = nm / "page.html"
+    vendor.write_text(f"<footer>© {OLD_YEAR} FinCalcHub</footer>", encoding="utf-8")
+
+    real = tmp_path / "real_page.html"
+    real.write_text(f"<footer>© {OLD_YEAR} FinCalcHub</footer>", encoding="utf-8")
+
+    n = sweep(tmp_path, dry_run=False)
+    assert n == 1
+    assert f"© {OLD_YEAR} FinCalcHub" in vendor.read_text(encoding="utf-8")
+    assert f"© {NEW_YEAR} FinCalcHub" in real.read_text(encoding="utf-8")

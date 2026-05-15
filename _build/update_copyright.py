@@ -7,6 +7,8 @@ from pathlib import Path
 OLD_YEAR = 2024
 NEW_YEAR = 2026
 
+EXCLUDES = frozenset({"node_modules", ".git", "__pycache__"})
+
 REPLACEMENTS = (
     (f"© {OLD_YEAR} FinCalcHub", f"© {NEW_YEAR} FinCalcHub"),
     (f"Calculator {OLD_YEAR} — USA", f"Calculator {NEW_YEAR} — USA"),
@@ -16,6 +18,8 @@ def sweep(root: Path, dry_run: bool = True) -> int:
     """Return the count of files that contain at least one replacement target."""
     hits = 0
     for html in root.rglob("*.html"):
+        if any(part in EXCLUDES for part in html.parts):
+            continue
         text = html.read_text(encoding="utf-8")
         new_text = text
         for old, new in REPLACEMENTS:
