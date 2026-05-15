@@ -283,3 +283,10 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 24px 28px;
 .quick-answer strong{color: var(--navy)}
 .quick-answer sup{font-size: 0.7em}
 /* === END FC-WAVE3-QUICK-ANSWER === */
+.flag {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 2px;
+}
