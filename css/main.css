@@ -290,3 +290,15 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 24px 28px;
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 2px;
 }
+.newsletter {
+  margin: 32px 0;
+  padding: 24px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  text-align: center;
+}
+.newsletter h2 { font-size: 18px; margin: 0 0 8px; color: #fff; }
+.newsletter p { font-size: 14px; color: rgba(255,255,255,.85); margin: 0 0 16px; }
+.newsletter input { padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(255,255,255,.2); margin-right: 8px; min-width: 240px; }
+.newsletter button { padding: 8px 16px; border-radius: 4px; background: #ffb612; color: #1B3A5C; border: 0; font-weight: 600; cursor: pointer; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
