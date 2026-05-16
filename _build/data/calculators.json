@@ -28,7 +28,8 @@
         "q": "What interest rate should I use for retirement planning?",
         "a": "The S&P 500 has historically returned approximately 10% per year before inflation, or roughly 7% after inflation. Financial planners commonly use 6–8% as a conservative real-return assumption for long-term retirement projections."
       }
-    ]
+    ],
+    "comparison_slugs": ["compound-interest-vs-simple-interest"]
   },
   "mortgage": {
     "slug": "mortgage",
@@ -59,7 +60,8 @@
         "q": "UK: What is stamp duty?",
         "a": "Stamp Duty Land Tax (SDLT) is paid on property purchases in England and Northern Ireland. From April 2025, the nil-rate threshold returns to £125,000 (2% on £125k–£250k, 5% on £250k–£925k). First-time buyers get relief up to £425,000 until March 2025, then £300,000. Scotland and Wales have their own equivalent taxes."
       }
-    ]
+    ],
+    "comparison_slugs": ["30-year-vs-15-year-mortgage"]
   },
   "take-home-pay": {
     "slug": "take-home-pay",

@@ -1,0 +1,98 @@
+{# templates/comparisons/roth-ira-vs-traditional-ira.html — article body (draft). #}
+<p class="lead">
+  A <strong>Roth IRA</strong> takes after-tax dollars in and pays you tax-free withdrawals in retirement. A <strong>Traditional IRA</strong> takes pre-tax dollars in and taxes you on the way out. The right account depends almost entirely on whether your tax bracket today is higher or lower than the one you expect in retirement.
+</p>
+
+<div class="operator-todo">
+  <strong>OPERATOR_TO_FILL &mdash; ~150w intro</strong>:
+  Set the scene for the US tax-advantaged IRA landscape in 2026. Mention the 2026 contribution limits ($7,000 / $8,000 catch-up), why these are the two flagship retirement accounts outside a workplace 401(k), and who typically reaches for an IRA &mdash; self-employed savers, those wanting more investment choice than their 401(k) plan menu, and high earners using a backdoor Roth.
+</div>
+
+<h2>Roth IRA vs Traditional IRA: at-a-glance</h2>
+
+<table class="article-table">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Roth IRA</th>
+      <th>Traditional IRA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tax treatment of contribution</td>
+      <td>After-tax (no deduction)</td>
+      <td>Pre-tax (deductible, subject to income limits if covered by a workplace plan)</td>
+    </tr>
+    <tr>
+      <td>Tax on growth</td>
+      <td>None</td>
+      <td>None (tax-deferred)</td>
+    </tr>
+    <tr>
+      <td>Tax on qualified withdrawals</td>
+      <td>None</td>
+      <td>Ordinary income tax</td>
+    </tr>
+    <tr>
+      <td>2026 contribution limit</td>
+      <td>$7,000 ($8,000 if 50+)</td>
+      <td>$7,000 ($8,000 if 50+)</td>
+    </tr>
+    <tr>
+      <td>2026 income phase-out (single)</td>
+      <td>$150,000&ndash;$165,000 MAGI</td>
+      <td>No income limit to contribute; deduction phases out if workplace plan covered</td>
+    </tr>
+    <tr>
+      <td>Required minimum distributions (RMDs)</td>
+      <td>None for original owner</td>
+      <td>Yes, beginning at age 73</td>
+    </tr>
+    <tr>
+      <td>Early withdrawal of contributions</td>
+      <td>Allowed any time, tax- and penalty-free</td>
+      <td>Subject to 10% penalty + tax (with exceptions)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>When the Roth wins</h2>
+
+<div class="operator-todo">
+  <strong>OPERATOR_TO_FILL &mdash; ~250w</strong>:
+  Cover the scenarios where the Roth is the better account: young savers early in their career (lower current bracket, decades of tax-free growth ahead), those expecting income to climb meaningfully, savers who want tax diversification alongside a Traditional 401(k), and those drawn to the no-RMD rule for estate-planning reasons. Mention the five-year rule and the backdoor Roth in passing.
+</div>
+
+<h2>When the Traditional wins</h2>
+
+<div class="operator-todo">
+  <strong>OPERATOR_TO_FILL &mdash; ~200w</strong>:
+  Cover the scenarios where Traditional wins: peak-earning years in a high marginal bracket (28%+), those planning to retire in a lower-tax state, savers who will rely on the deduction to free up cash for other goals, and the case for &ldquo;tax now or tax later&rdquo; that hinges on expected bracket.
+</div>
+
+<h2>Run the numbers</h2>
+
+{% with embed_mode=comparison.embedMode, embeds_calc_slug=comparison.embedsCalcSlug %}
+  {% include "partials/comparison_embed.html" %}
+{% endwith %}
+
+<div class="cta-box">
+  <h3>What to model</h3>
+  <p>
+    Compare the after-tax balance of contributing $7,000 per year for 30 years in a Roth vs the same $7,000 (gross, before tax) in a Traditional. Use a 7% annual return and your expected marginal tax bracket in retirement. The two break even when today&rsquo;s bracket equals tomorrow&rsquo;s.
+  </p>
+</div>
+
+<h2>Common mistakes</h2>
+
+<div class="operator-todo">
+  <strong>OPERATOR_TO_FILL &mdash; ~200w</strong>:
+  Cover the most common mistakes: contributing to a Roth above the income limit (and not recharacterising), forgetting that pro-rata rules apply if you have any pre-tax IRA money when doing a backdoor Roth, treating the $7,000 limit as a per-account limit rather than a combined limit across all IRAs, and ignoring the five-year clock on Roth conversions.
+</div>
+
+<h2>The decision rule</h2>
+
+<p>
+  Pick the Roth if you expect your retirement tax bracket to be equal to or higher than today&rsquo;s. Pick the Traditional if you expect it to be meaningfully lower. When unsure, split the difference: many savers contribute to both throughout their career to hedge bracket risk and keep their withdrawal mix flexible.
+</p>

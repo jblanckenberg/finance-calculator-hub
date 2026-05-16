@@ -1,0 +1,94 @@
+{# templates/comparisons/30-year-vs-15-year-mortgage.html — article body. #}
+<p class="lead">
+  A <strong>30-year mortgage</strong> gives you the lowest required monthly payment and the most cash-flow flexibility. A <strong>15-year mortgage</strong> roughly doubles the monthly payment but cuts the total interest bill by more than half. On a $300,000 loan at 7%, that trade-off saves about $234,000 over the life of the loan.
+</p>
+
+<h2>The headline numbers</h2>
+
+<p>
+  Same loan, same rate, two terms. Here is what changes:
+</p>
+
+<table class="article-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>30-year @ 7%</th>
+      <th>15-year @ 6.5%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Loan amount</td>
+      <td>$300,000</td>
+      <td>$300,000</td>
+    </tr>
+    <tr>
+      <td>Monthly P&amp;I payment</td>
+      <td>$1,995.91</td>
+      <td>$2,613.32</td>
+    </tr>
+    <tr>
+      <td>Total payments</td>
+      <td>$718,527</td>
+      <td>$470,397</td>
+    </tr>
+    <tr>
+      <td>Total interest</td>
+      <td>$418,527</td>
+      <td>$170,397</td>
+    </tr>
+    <tr>
+      <td>Equity after 5 years</td>
+      <td>~$18,500</td>
+      <td>~$76,400</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  The 15-year payment is about 31% higher, but the interest saving is roughly 60%. Note that 15-year mortgages typically price about 0.5%&ndash;0.75% lower than 30-year mortgages in the same market, which is why the table above uses 6.5% and 7%; the gap further widens the lifetime savings.
+</p>
+
+<h2>Run your own numbers</h2>
+
+{% with embed_mode=comparison.embedMode, embeds_calc_slug=comparison.embedsCalcSlug %}
+  {% include "partials/comparison_embed.html" %}
+{% endwith %}
+
+<div class="cta-box">
+  <h3>Try this scenario</h3>
+  <p>
+    Enter your loan amount, set the rate to whatever your lender has quoted, and switch the term between 30 and 15 years. Then look at the &ldquo;total interest&rdquo; line &mdash; that is the real cost of the longer term.
+  </p>
+</div>
+
+<h2>The case for the 30-year</h2>
+
+<ul>
+  <li><strong>Cash-flow flexibility.</strong> A lower required payment is a permanent option, not a one-time decision. You can always pay more.</li>
+  <li><strong>Larger loan qualification.</strong> Lenders use the required monthly payment in your debt-to-income calculation, so a 30-year term often qualifies you for a more expensive home.</li>
+  <li><strong>Opportunity cost.</strong> The cash freed up by the lower payment can be invested elsewhere &mdash; in a workplace 401(k) match, a Roth IRA, or a brokerage account. At long-run equity returns, that money may grow faster than the mortgage costs you.</li>
+  <li><strong>Inflation hedge.</strong> Your nominal payment is fixed for 30 years; your income and the dollar both inflate around it, making the real burden lighter over time.</li>
+</ul>
+
+<h2>The case for the 15-year</h2>
+
+<ul>
+  <li><strong>Lower interest rate.</strong> Lenders price shorter terms at lower rates, typically 0.5&ndash;0.75 percentage points lower.</li>
+  <li><strong>Massive interest saving.</strong> On a typical loan the lifetime interest bill is less than half.</li>
+  <li><strong>Faster equity build-up.</strong> A bigger share of every payment goes to principal from day one.</li>
+  <li><strong>Forced discipline.</strong> The higher required payment leaves less to be tempted away by lifestyle inflation.</li>
+</ul>
+
+<h2>The hybrid most people miss</h2>
+
+<p>
+  Take the 30-year mortgage <em>and</em> overpay each month by the difference between the 15-year and 30-year payments. You replicate the 15-year payoff schedule almost exactly, but you keep the optionality of dropping back to the lower required payment if your income falls, you change jobs, or an unexpected expense lands. On most US and UK mortgages, overpayments are penalty-free up to generous limits.
+</p>
+
+<h2>The decision rule</h2>
+
+<p>
+  Choose the 15-year if the higher payment is comfortable, your job is stable, your emergency fund is full, and you would otherwise spend the cash flow rather than invest it. Choose the 30-year (and overpay) if you value the flexibility, want to invest the difference, or are stretching to buy your home. Either way, run the numbers on this page before you commit &mdash; the lifetime cost is too big to estimate.
+</p>

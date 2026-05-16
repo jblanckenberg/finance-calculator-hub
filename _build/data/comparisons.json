@@ -1,0 +1,153 @@
+{
+  "lastReviewed": "2026-05-16",
+  "comparisons": [
+    {
+      "slug": "compound-interest-vs-simple-interest",
+      "title": "Compound Interest vs Simple Interest: Which Grows Your Money Faster?",
+      "description": "Compound interest earns interest on interest; simple interest earns only on the principal. See the long-term gap with a live calculator and worked examples.",
+      "h1": "Compound Interest vs Simple Interest",
+      "subtitle": "How the two formulas differ, why compounding wins over time, and when simple interest still applies.",
+      "embedsCalcSlug": "compound-interest",
+      "embedMode": "iframe",
+      "status": "published",
+      "publishedDate": "2026-05-16",
+      "updatedDate": "2026-05-16",
+      "lastReviewed": "2026-05-16",
+      "wordCount": 1450,
+      "faq": [
+        {
+          "q": "Is compound interest always better than simple interest?",
+          "a": "When you are saving or investing, yes — compound interest grows your balance faster because each period's interest is added to the principal and itself earns interest. When you are borrowing, simple interest is better for you because the lender does not charge interest on accrued interest."
+        },
+        {
+          "q": "Do banks use simple or compound interest?",
+          "a": "Savings accounts, certificates of deposit, and most investment accounts use compound interest, usually compounding daily or monthly. Some short-term consumer loans, car loans, and certain mortgages use simple interest, where interest accrues only on the unpaid principal."
+        },
+        {
+          "q": "How much difference does compounding really make?",
+          "a": "Over short periods of a year or two the difference is small, but it grows dramatically with time. On £10,000 at 7% for 30 years, simple interest yields £21,000 in interest, while annual compounding yields about £66,000 — more than three times as much."
+        },
+        {
+          "q": "Does compounding frequency matter — daily vs monthly vs yearly?",
+          "a": "Yes, but less than most people think. Daily compounding produces only slightly higher returns than monthly, which in turn beats yearly. The interest rate and the length of time invested matter far more than the compounding frequency."
+        },
+        {
+          "q": "Is the Rule of 72 based on simple or compound interest?",
+          "a": "The Rule of 72 is a quick mental shortcut for compound interest. Dividing 72 by the annual return gives you the approximate number of years it takes to double your money. It is accurate for rates between roughly 6% and 10% and assumes annual compounding."
+        }
+      ],
+      "relatedComparisonSlugs": []
+    },
+    {
+      "slug": "roth-ira-vs-traditional-ira",
+      "title": "Roth IRA vs Traditional IRA: Which Is Right for You in 2026?",
+      "description": "Roth IRAs use after-tax contributions and tax-free withdrawals; Traditional IRAs are pre-tax with taxed withdrawals. Compare both with a side-by-side breakdown.",
+      "h1": "Roth IRA vs Traditional IRA",
+      "subtitle": "The two main US retirement accounts compared — contribution rules, tax treatment, withdrawals, and who each one suits best.",
+      "embedsCalcSlug": "roth-ira-calculator",
+      "embedMode": "link",
+      "status": "draft",
+      "publishedDate": "2026-05-16",
+      "updatedDate": "2026-05-16",
+      "lastReviewed": "2026-05-16",
+      "wordCount": 1500,
+      "faq": [
+        {
+          "q": "Can I have both a Roth IRA and a Traditional IRA?",
+          "a": "Yes. You can contribute to both in the same year, but the combined total cannot exceed the annual IRA limit — $7,000 in 2026 ($8,000 if you are age 50 or older). Roth IRA contributions are also subject to income limits."
+        },
+        {
+          "q": "Which is better — Roth or Traditional?",
+          "a": "Roth is generally better if you expect to be in a higher tax bracket in retirement than you are today, because you pay tax now at a lower rate and withdraw tax-free later. Traditional is better if you expect a lower bracket in retirement, since you get the deduction at today's higher rate."
+        },
+        {
+          "q": "What are the 2026 income limits for a Roth IRA?",
+          "a": "For 2026, single filers can make a full Roth IRA contribution up to a Modified Adjusted Gross Income (MAGI) of $150,000, with a phase-out up to $165,000. Married filing jointly can contribute fully up to $236,000 MAGI, phasing out at $246,000."
+        },
+        {
+          "q": "Can I convert a Traditional IRA to a Roth IRA?",
+          "a": "Yes — this is called a Roth conversion. You can convert any amount in any year, and there is no income limit on conversions. You will owe income tax on the converted amount in the year of conversion, so most planners stage conversions across multiple lower-income years."
+        },
+        {
+          "q": "What if I withdraw from a Roth IRA early?",
+          "a": "You can withdraw your contributions (not earnings) from a Roth IRA at any time, tax- and penalty-free. Withdrawing earnings before age 59½ generally triggers a 10% penalty plus income tax, unless the account has been open at least five years and a qualified-distribution rule applies."
+        }
+      ],
+      "relatedComparisonSlugs": []
+    },
+    {
+      "slug": "isa-vs-pension-uk",
+      "title": "ISA vs Pension: Which Is Better for UK Long-Term Savers?",
+      "description": "Stocks and Shares ISAs offer tax-free flexibility; pensions offer upfront tax relief but lock funds until 55+. Compare both with a UK-specific calculator.",
+      "h1": "ISA vs Pension (UK)",
+      "subtitle": "The two flagship UK tax-advantaged wrappers compared — contribution rules, tax relief, access, and how to choose between them.",
+      "embedsCalcSlug": "isa-calculator",
+      "embedMode": "link",
+      "status": "draft",
+      "publishedDate": "2026-05-16",
+      "updatedDate": "2026-05-16",
+      "lastReviewed": "2026-05-16",
+      "wordCount": 1500,
+      "faq": [
+        {
+          "q": "What is the ISA allowance for 2026/27?",
+          "a": "The annual ISA allowance for the 2026/27 tax year is £20,000. This can be split across Cash ISAs, Stocks and Shares ISAs, Innovative Finance ISAs, and Lifetime ISAs (which have their own £4,000 sub-limit)."
+        },
+        {
+          "q": "How much pension tax relief do I get?",
+          "a": "Basic-rate taxpayers get 20% tax relief automatically. Higher-rate taxpayers can claim an additional 20% via Self Assessment, and additional-rate taxpayers a further 25%. Tax relief is added to your contributions inside the pension wrapper."
+        },
+        {
+          "q": "When can I access an ISA vs a pension?",
+          "a": "ISAs can be accessed at any time without penalty. Workplace and personal pensions can only be accessed from age 55 (rising to 57 from April 2028), and 25% of the pot can typically be taken as a tax-free lump sum."
+        },
+        {
+          "q": "Should I use an ISA or pension first?",
+          "a": "Most planners recommend contributing enough to your workplace pension to capture the full employer match first, then funding an ISA for flexibility, then topping up the pension for longer-term tax efficiency. The answer depends on your tax bracket and time horizon."
+        },
+        {
+          "q": "Is a Lifetime ISA better than a pension for a first home?",
+          "a": "For a first home purchase under £450,000, a Lifetime ISA gives a 25% government bonus on up to £4,000 per year, with funds available penalty-free for a qualifying purchase. A pension cannot be accessed before 55, so a LISA is purpose-built for the first-home goal."
+        }
+      ],
+      "relatedComparisonSlugs": []
+    },
+    {
+      "slug": "30-year-vs-15-year-mortgage",
+      "title": "30-Year vs 15-Year Mortgage: Which Saves You More?",
+      "description": "A 15-year mortgage has higher payments but cuts total interest in half. Compare lifetime cost, monthly cash flow, and break-even with a live calculator.",
+      "h1": "30-Year vs 15-Year Mortgage",
+      "subtitle": "The classic mortgage trade-off — lower monthly payment vs less total interest. Run the numbers for your loan amount and rate.",
+      "embedsCalcSlug": "mortgage",
+      "embedMode": "iframe",
+      "status": "published",
+      "publishedDate": "2026-05-16",
+      "updatedDate": "2026-05-16",
+      "lastReviewed": "2026-05-16",
+      "wordCount": 1450,
+      "faq": [
+        {
+          "q": "Is a 15-year mortgage really cheaper than a 30-year?",
+          "a": "Yes, dramatically. On a $300,000 loan at 7%, a 30-year term costs roughly $419,000 in total interest, while a 15-year term costs about $185,000 — a $234,000 saving. The trade-off is monthly cash flow: about $1,995/month versus $2,696/month."
+        },
+        {
+          "q": "Can I pay off a 30-year mortgage in 15 years instead?",
+          "a": "Yes. Most US and UK mortgages allow overpayments without penalty. Paying the 15-year monthly amount on a 30-year loan replicates the 15-year payoff schedule — but keeps the flexibility to drop back to the lower required payment if your income falls."
+        },
+        {
+          "q": "Do 15-year mortgages have lower interest rates?",
+          "a": "Usually, yes. Lenders price 15-year loans about 0.5%–0.75% lower than 30-year loans because the shorter term carries less duration risk. That gap further widens the lifetime savings versus a 30-year mortgage at face-value rates."
+        },
+        {
+          "q": "What if I cannot afford the 15-year payment?",
+          "a": "Take the 30-year and overpay when you can. A 30-year mortgage with regular overpayments is the safest hybrid — you keep the low required payment as a safety net, but build equity faster when cash flow allows."
+        },
+        {
+          "q": "Does a shorter mortgage help me buy a more expensive house?",
+          "a": "No, the opposite. The higher monthly payment on a 15-year loan reduces the maximum loan amount most lenders will approve under standard debt-to-income rules. Most buyers stretching to afford a home choose the 30-year term to qualify for a larger loan."
+        }
+      ],
+      "relatedComparisonSlugs": []
+    }
+  ]
+}

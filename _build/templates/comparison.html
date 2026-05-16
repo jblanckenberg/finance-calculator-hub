@@ -1,0 +1,124 @@
+{# templates/comparison.html — long-form comparison article page.
+   Required context vars (in addition to standard _base.html vars):
+     comparison: dict from comparisons.json
+     author:     dict from author.json
+     article_ld:        Article JSON-LD object (built by generator)
+     comparison_faq_ld: FAQPage JSON-LD object
+     comparison_breadcrumb_ld: BreadcrumbList JSON-LD
+#}
+{% extends "_base.html" %}
+
+{% block extra_head %}
+<script type="application/ld+json">{{ article_ld | tojson }}</script>
+<script type="application/ld+json">{{ comparison_faq_ld | tojson }}</script>
+<script type="application/ld+json">{{ comparison_breadcrumb_ld | tojson }}</script>
+<style>
+  .article-wrap { max-width: 760px; margin: 0 auto; padding: 16px 0 48px; }
+  .article-wrap p { line-height: 1.7; margin: 0 0 16px; }
+  .article-wrap h2 { margin: 32px 0 12px; color: #1B3A5C; }
+  .article-wrap h3 { margin: 24px 0 8px; color: #1B3A5C; }
+  .article-wrap p.lead { font-size: 1.1rem; color: #444; }
+  .article-meta { color: #666; font-size: 0.92rem; margin: 8px 0 24px; }
+  .article-meta a { color: #1B3A5C; }
+  .cta-box {
+    margin: 32px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-left: 4px solid #1B3A5C;
+    border-radius: 6px;
+  }
+  .cta-box h3 { margin: 0 0 8px; color: #1B3A5C; }
+  table.article-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 0.95rem;
+  }
+  table.article-table th,
+  table.article-table td {
+    border: 1px solid #e5e7eb;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.article-table th { background: #f8f9fa; color: #1B3A5C; }
+  .faq-block { margin: 40px 0 24px; }
+  .faq-block h2 { margin: 0 0 16px; color: #1B3A5C; }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 0 0 12px;
+    background: #fff;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #1B3A5C;
+  }
+  .faq-item p { margin: 10px 0 0; }
+  .related-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .related-cards a {
+    display: block;
+    padding: 14px 16px;
+    background: #f8f9fa;
+    color: #1B3A5C;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #e5e7eb;
+  }
+  .related-cards a:hover { background: #eef2f7; }
+  .operator-todo {
+    margin: 12px 0;
+    padding: 12px 16px;
+    border: 2px dashed #f59e0b;
+    background: #fffbeb;
+    color: #78350f;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+</style>
+{% endblock %}
+
+{% block body_main %}
+<div class="container">
+  <article class="article-wrap" itemscope itemtype="https://schema.org/Article">
+    <p class="article-meta">
+      By <a href="/about/" rel="author">{{ author.name }}</a>
+      &middot; Published <time datetime="{{ comparison.publishedDate }}">{{ comparison.publishedDate }}</time>
+      {% if comparison.updatedDate and comparison.updatedDate != comparison.publishedDate %}
+      &middot; Updated <time datetime="{{ comparison.updatedDate }}">{{ comparison.updatedDate }}</time>
+      {% endif %}
+    </p>
+
+    {% include "comparisons/" ~ comparison.slug ~ ".html" %}
+
+    <section class="faq-block" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently asked questions</h2>
+      {% for item in comparison.faq %}
+      <details class="faq-item">
+        <summary>{{ item.q }}</summary>
+        <p>{{ item.a }}</p>
+      </details>
+      {% endfor %}
+    </section>
+
+    <section class="related-cards-wrap" aria-labelledby="related-heading">
+      <h2 id="related-heading">Keep exploring</h2>
+      <div class="related-cards">
+        <a href="/{{ comparison.embedsCalcSlug }}/">Open the {{ comparison.embedsCalcSlug.replace('-', ' ') }} calculator</a>
+        {% for related_slug in comparison.relatedComparisonSlugs %}
+        <a href="/compare/{{ related_slug }}/">{{ related_slug.replace('-', ' ') }}</a>
+        {% endfor %}
+        <a href="/compare/">All comparisons</a>
+      </div>
+    </section>
+  </article>
+</div>
+{% endblock %}

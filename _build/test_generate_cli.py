@@ -14,7 +14,9 @@ def test_generate_cli_writes_all_pages(tmp_path):
     shutil.copytree(ROOT / "templates", site / "_build" / "templates")
     shutil.copytree(ROOT / "bodies", site / "_build" / "bodies")
     shutil.copytree(ROOT / "data", site / "_build" / "data")
+    shutil.copytree(ROOT / "schemas", site / "_build" / "schemas")
     shutil.copy(ROOT / "generate.py", site / "_build" / "generate.py")
+    shutil.copy(ROOT / "generate_comparisons.py", site / "_build" / "generate_comparisons.py")
 
     result = subprocess.run(
         [sys.executable, str(site / "_build" / "generate.py"), "--apply"],
@@ -34,7 +36,9 @@ def test_generate_cli_dry_run_does_not_write(tmp_path):
     shutil.copytree(ROOT / "templates", site / "_build" / "templates")
     shutil.copytree(ROOT / "bodies", site / "_build" / "bodies")
     shutil.copytree(ROOT / "data", site / "_build" / "data")
+    shutil.copytree(ROOT / "schemas", site / "_build" / "schemas")
     shutil.copy(ROOT / "generate.py", site / "_build" / "generate.py")
+    shutil.copy(ROOT / "generate_comparisons.py", site / "_build" / "generate_comparisons.py")
 
     result = subprocess.run(
         [sys.executable, str(site / "_build" / "generate.py")],

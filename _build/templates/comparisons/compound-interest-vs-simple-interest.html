@@ -1,0 +1,90 @@
+{# templates/comparisons/compound-interest-vs-simple-interest.html — article body. #}
+<p class="lead">
+  <strong>Compound interest</strong> earns interest on both your original deposit and on the interest that has already accumulated. <strong>Simple interest</strong> only ever earns interest on the original deposit. Over a single year the gap is small. Over thirty years it is the difference between &pound;21,000 and &pound;66,000 of growth on the same starting balance &mdash; an unmistakable case for picking the right account type early.
+</p>
+
+<h2>The two formulas, side by side</h2>
+
+<p>
+  Simple interest is the straightforward calculation most people meet first. You multiply the principal by the rate and by the number of years &mdash; that is your total interest, no matter how long you leave the money invested.
+</p>
+
+<p><strong>Simple interest:</strong> <code>I = P &times; r &times; t</code></p>
+<p><strong>Compound interest:</strong> <code>A = P (1 + r/n)^(nt)</code></p>
+
+<p>
+  In the compound formula, <code>n</code> is the number of compounding periods per year and <code>A</code> is the final amount including the principal. The crucial mechanic is the exponent: as <code>t</code> grows, the multiplier grows non-linearly. That is the &ldquo;snowball&rdquo; effect you have probably heard about.
+</p>
+
+<h2>A worked example: &pound;10,000 at 7% for 30 years</h2>
+
+<table class="article-table">
+  <thead>
+    <tr>
+      <th>Interest type</th>
+      <th>Interest earned</th>
+      <th>Final balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Simple interest</td>
+      <td>&pound;21,000</td>
+      <td>&pound;31,000</td>
+    </tr>
+    <tr>
+      <td>Compound (annual)</td>
+      <td>&pound;66,123</td>
+      <td>&pound;76,123</td>
+    </tr>
+    <tr>
+      <td>Compound (monthly)</td>
+      <td>&pound;71,303</td>
+      <td>&pound;81,303</td>
+    </tr>
+    <tr>
+      <td>Compound (daily)</td>
+      <td>&pound;71,705</td>
+      <td>&pound;81,705</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Even at moderate rates, compounding produces roughly three times the interest of simple interest over thirty years. The jump from yearly to monthly compounding adds about &pound;5,000; the jump from monthly to daily adds only another &pound;400. The interest rate and the length of time invested matter far more than the compounding frequency.
+</p>
+
+<h2>Run your own numbers</h2>
+
+{% with embed_mode=comparison.embedMode, embeds_calc_slug=comparison.embedsCalcSlug %}
+  {% include "partials/comparison_embed.html" %}
+{% endwith %}
+
+<div class="cta-box">
+  <h3>Try this scenario</h3>
+  <p>
+    Set the principal to <strong>10,000</strong>, the annual rate to <strong>7%</strong>, the term to <strong>30 years</strong>, and toggle the compounding frequency between yearly, monthly, and daily to see the numbers from the table above for yourself.
+  </p>
+</div>
+
+<h2>When is simple interest still used?</h2>
+
+<p>
+  Most savings and investment accounts use compound interest. Simple interest still shows up in a few places, almost always for borrowers rather than savers:
+</p>
+<ul>
+  <li><strong>Short-term consumer loans</strong> &mdash; some car loans and personal loans charge simple interest on the outstanding balance.</li>
+  <li><strong>Some mortgages</strong> &mdash; a small subset of mortgages, particularly in the US, use a daily simple-interest method.</li>
+  <li><strong>Promissory notes and seller financing</strong> &mdash; private loans often default to simple-interest accrual.</li>
+  <li><strong>Treasury bills</strong> &mdash; short-duration government debt is typically quoted on a simple-interest basis.</li>
+</ul>
+
+<p>
+  As a borrower, simple interest is almost always in your favour because the lender cannot charge interest on accrued but unpaid interest. As a saver, compound interest is what you want.
+</p>
+
+<h2>The takeaway</h2>
+
+<p>
+  When you are saving or investing for a goal that is more than a few years away &mdash; a house deposit, a retirement pot, your children&rsquo;s university fund &mdash; pick an account that compounds. The compounding frequency matters a little; the rate and the time matter enormously. Start as early as you can, contribute regularly, and let the formula do the work.
+</p>

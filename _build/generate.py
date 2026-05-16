@@ -15,11 +15,16 @@ import datetime as _dt
 import html as _html
 import json
 import re as _re
+import sys as _sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+
+# Make sibling modules importable when this file is run as a script.
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
+from generate_comparisons import render_all as render_comparisons  # noqa: E402
 
 SITE_URL = "https://finncalc.com"
 
@@ -264,7 +269,9 @@ if __name__ == "__main__":
     import sys
     apply = "--apply" in sys.argv
     n = write_all(apply=apply)
+    comp_files = render_comparisons(apply=apply)
+    n_comp = len(comp_files) if apply else 0
     if apply:
-        print(f"[apply] wrote {n} files")
+        print(f"[apply] wrote {n + n_comp} files total ({n} calc/variant + {n_comp} comparison)")
     else:
         print("[dry-run] (use --apply to write)")

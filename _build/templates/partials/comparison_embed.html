@@ -1,0 +1,17 @@
+{# templates/partials/comparison_embed.html — embeds the calculator inline or links out.
+   Required context: embed_mode ("iframe"|"link"), embeds_calc_slug (str). #}
+{% if embed_mode == "iframe" %}
+<div class="comparison-embed" data-comparison-embed="{{ embeds_calc_slug }}" style="margin:24px 0">
+  <iframe
+    src="/embed/{{ embeds_calc_slug }}/"
+    title="{{ embeds_calc_slug }} calculator"
+    loading="lazy"
+    style="width:100%;min-height:640px;border:1px solid #e5e7eb;border-radius:8px;background:#fff"></iframe>
+</div>
+{% else %}
+<div class="comparison-embed" data-comparison-embed="{{ embeds_calc_slug }}" style="margin:24px 0">
+  <a href="/{{ embeds_calc_slug }}/" class="btn-calc" style="display:inline-block;padding:14px 24px;background:#1B3A5C;color:#fff;border-radius:6px;text-decoration:none;font-weight:600">
+    Open the calculator &rarr;
+  </a>
+</div>
+{% endif %}

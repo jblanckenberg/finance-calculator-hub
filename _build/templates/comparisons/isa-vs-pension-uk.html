@@ -1,0 +1,98 @@
+{# templates/comparisons/isa-vs-pension-uk.html — article body (draft). #}
+<p class="lead">
+  An <strong>ISA</strong> gives you tax-free growth and tax-free withdrawals, with full access at any age. A <strong>pension</strong> gives you upfront tax relief on your contributions but locks the money up until age 55 (rising to 57 from April 2028). For most UK savers the answer is not &ldquo;one or the other&rdquo; &mdash; it is the right mix.
+</p>
+
+<div class="operator-todo">
+  <strong>OPERATOR_TO_FILL &mdash; ~150w intro</strong>:
+  Set the UK context: &pound;20,000 annual ISA allowance for 2026/27, the pension Annual Allowance of &pound;60,000 (or 100% of relevant earnings if lower), the role of workplace pensions and auto-enrolment, and why this comparison matters most for the &pound;20k&ndash;&pound;80k earnings band where both wrappers compete for the same monthly surplus.
+</div>
+
+<h2>ISA vs pension: at-a-glance</h2>
+
+<table class="article-table">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Stocks &amp; Shares ISA</th>
+      <th>Pension (SIPP / Workplace)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tax on the way in</td>
+      <td>After-tax (no relief)</td>
+      <td>Pre-tax (20% basic-rate relief automatic; higher/additional via Self Assessment)</td>
+    </tr>
+    <tr>
+      <td>Tax on growth</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Tax on the way out</td>
+      <td>None</td>
+      <td>25% tax-free lump sum; balance taxed as income</td>
+    </tr>
+    <tr>
+      <td>2026/27 annual allowance</td>
+      <td>&pound;20,000</td>
+      <td>&pound;60,000 (or 100% of relevant earnings if lower)</td>
+    </tr>
+    <tr>
+      <td>Access age</td>
+      <td>Any age</td>
+      <td>55 (rising to 57 in April 2028)</td>
+    </tr>
+    <tr>
+      <td>Employer contributions</td>
+      <td>No</td>
+      <td>Yes &mdash; auto-enrolment minimum 3% from employer</td>
+    </tr>
+    <tr>
+      <td>Inheritance tax treatment</td>
+      <td>In your estate</td>
+      <td>Generally outside your estate (defined-contribution pensions)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>When the ISA wins</h2>
+
+<div class="operator-todo">
+  <strong>OPERATOR_TO_FILL &mdash; ~250w</strong>:
+  Cover scenarios where ISA is the better choice: pre-retirement goals (house deposit, sabbatical, early retirement bridge), basic-rate taxpayers who do not benefit much from extra pension relief, those who want full flexibility, and savers worried about future changes to pension tax rules. Mention the Lifetime ISA for first-time buyers.
+</div>
+
+<h2>When the pension wins</h2>
+
+<div class="operator-todo">
+  <strong>OPERATOR_TO_FILL &mdash; ~250w</strong>:
+  Cover scenarios where pension wins: higher-rate and additional-rate taxpayers (40% / 45% relief is huge), anyone whose employer matches contributions (free money &mdash; always take the full match first), salary-sacrifice arrangements that also save National Insurance, and the IHT efficiency of leaving a pension pot to beneficiaries.
+</div>
+
+<h2>Run the numbers</h2>
+
+{% with embed_mode=comparison.embedMode, embeds_calc_slug=comparison.embedsCalcSlug %}
+  {% include "partials/comparison_embed.html" %}
+{% endwith %}
+
+<div class="cta-box">
+  <h3>What to model</h3>
+  <p>
+    Compare the after-tax value of contributing &pound;500/month into an ISA vs an equivalent gross-of-tax-relief pension contribution over 25 years. Use a 6% real return. The pension will look larger pre-withdrawal; remember to apply your expected retirement marginal rate to 75% of the pot before declaring a winner.
+  </p>
+</div>
+
+<h2>The order most planners recommend</h2>
+
+<p>
+  A common decision order is: <strong>1.</strong> contribute enough to your workplace pension to capture the full employer match; <strong>2.</strong> fill the ISA for flexibility and tax-free withdrawals; <strong>3.</strong> top up the pension for additional tax relief, especially in higher-rate years. The exact split depends on your bracket, time horizon, and access needs &mdash; but starting with the free employer money is almost never wrong.
+</p>
+
+<h2>A note on the Lifetime ISA</h2>
+
+<div class="operator-todo">
+  <strong>OPERATOR_TO_FILL &mdash; ~150w</strong>:
+  Briefly cover the Lifetime ISA as a third option for first-time buyers under 40: &pound;4,000 annual limit, 25% government bonus (&pound;1,000), penalty-free for first home or after age 60. Note the 25% withdrawal penalty for other uses which can leave you worse off than you started.
+</div>
