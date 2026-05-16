@@ -8,9 +8,7 @@
 </div>
 {% else %}
 <section class="variant-intro" style="margin:16px 0;max-width:760px">
-{% for para in intro_paragraphs %}
-  <p>{{ para }}</p>
-{% endfor %}
+{{ intro_html | safe }}
 </section>
 {% endif %}
 {% endblock %}

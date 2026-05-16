@@ -35,8 +35,15 @@ def test_geo_variants_have_hreflang_country():
             if v["kind"] == "geo":
                 assert v["hreflangCountry"] in {"en-US", "en-GB", "en-ZA"}, v
 
-def test_every_intro_is_operator_stub_initially():
+def test_no_intro_is_stub():
     data = _load()
     for cm in data.values():
         for v in cm.values():
-            assert v["intro"].startswith("[OPERATOR_TO_FILL:"), v
+            assert not v["intro"].startswith("[OPERATOR_TO_FILL:"), f"{v['slug']} still has a stub intro"
+
+def test_every_intro_min_300_words():
+    data = _load()
+    for cm in data.values():
+        for v in cm.values():
+            words = len(v["intro"].split())
+            assert words >= 300, f"{v['slug']} intro is {words} words; minimum is 300"

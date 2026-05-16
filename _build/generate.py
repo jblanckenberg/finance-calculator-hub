@@ -12,7 +12,9 @@ Writes:
 from __future__ import annotations
 
 import datetime as _dt
+import html as _html
 import json
+import re as _re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
@@ -23,11 +25,39 @@ SITE_URL = "https://finncalc.com"
 
 OPERATOR_STUB_PREFIX = "[OPERATOR_TO_FILL:"
 
+_BOLD_RE = _re.compile(r"\*\*([^*]+)\*\*")
+
+
 def is_operator_stub(intro: str) -> bool:
     return intro.startswith(OPERATOR_STUB_PREFIX)
 
 def paragraphs_from(text: str) -> list[str]:
     return [p.strip() for p in text.split("\n\n") if p.strip()]
+
+def _inline(text: str) -> str:
+    """Escape HTML then convert **bold** to <strong>."""
+    escaped = _html.escape(text)
+    return _BOLD_RE.sub(r"<strong>\1</strong>", escaped)
+
+def render_intro_html(intro: str) -> str:
+    """Convert minimal-markdown intro to safe HTML.
+
+    - Splits paragraphs on \\n\\n.
+    - Any paragraph whose every non-empty line begins with '- ' becomes a <ul>.
+    - Other paragraphs become <p>.
+    - **bold** spans inside any text become <strong>.
+    - All other content is HTML-escaped (safe to pass through Jinja `| safe`).
+    """
+    out_parts: list[str] = []
+    for para in paragraphs_from(intro):
+        lines = [l.strip() for l in para.split("\n") if l.strip()]
+        is_list = bool(lines) and all(l.startswith("- ") for l in lines)
+        if is_list:
+            items = "\n".join(f"  <li>{_inline(l[2:])}</li>" for l in lines)
+            out_parts.append(f"<ul>\n{items}\n</ul>")
+        else:
+            out_parts.append(f"<p>{_inline(para)}</p>")
+    return "\n".join(out_parts)
 
 def build_web_application_ld(
     *, slug: str, name: str, description: str, parent_slug: str | None
@@ -173,6 +203,7 @@ class Renderer:
         ctx["intro"] = intro
         ctx["intro_is_stub"] = stub
         ctx["intro_paragraphs"] = paragraphs_from(intro) if not stub else []
+        ctx["intro_html"] = render_intro_html(intro) if not stub else ""
         tpl = self.env.get_template("variant.html")
         return tpl.render(**ctx)
 
