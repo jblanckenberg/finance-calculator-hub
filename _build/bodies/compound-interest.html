@@ -1,0 +1,141 @@
+<!-- Calculator -->
+<div class="container" style="padding-top:0">
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="principal">Starting Amount <span class="hint" id="currency-label">($)</span></label>
+        <input type="number" id="principal" value="1000" min="0" placeholder="1000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="rate">Annual Interest Rate (%)</label>
+        <input type="number" id="rate" value="7" min="0" max="100" step="0.1" placeholder="7" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="years">Number of Years</label>
+        <input type="number" id="years" value="10" min="1" max="50" placeholder="10" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="frequency">Compounding Frequency</label>
+        <select id="frequency" onchange="calculate()">
+          <option value="1">Yearly</option>
+          <option value="4">Quarterly</option>
+          <option value="12" selected>Monthly</option>
+          <option value="365">Daily</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="monthly">Monthly Contribution <span class="hint" id="contrib-label">(optional, $)</span></label>
+      <input type="number" id="monthly" value="100" min="0" placeholder="0" oninput="calculate()" inputmode="decimal">
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="results-title">Your Results</div>
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-value positive" id="r-final">$0</div>
+        <div class="result-label">Final Balance</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-interest">$0</div>
+        <div class="result-label">Interest Earned</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-contrib">$0</div>
+        <div class="result-label">Total Contributed</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-ear">0%</div>
+        <div class="result-label">Effective Annual Rate</div>
+      </div>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Year-by-Year Growth</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table" id="breakdown-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th class="td-right">Balance</th>
+            <th class="td-right">Interest This Year</th>
+            <th class="td-right">Total Contributions</th>
+          </tr>
+        </thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print Results</button>
+      <button class="btn-action" onclick="saveToFile()">💾 Save as Text</button>
+    </div>
+  </div>
+
+  <!-- Ad slot mid -->
+  <div class="ad-slot">Advertisement</div>
+
+  <!-- Related Calculators -->
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/investment-growth/" class="related-card">🚀 Investment Growth</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/mortgage/" class="related-card">🏠 Mortgage</a>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator implements the standard compound-interest formula: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">A = P(1 + r/n)^(nt) + PMT × [((1 + r/n)^(nt) − 1) / (r/n)]</code>. Region-specific tax and rate defaults are sourced directly from each country's primary government source and reviewed against the publication date below.</p>
+    <ul style="margin:12px 0">
+      <li><strong>USA:</strong> <a href="https://www.irs.gov/" rel="noopener">IRS</a> — federal income tax brackets and contribution limits.</li>
+      <li><strong>UK:</strong> <a href="https://www.gov.uk/" rel="noopener">GOV.UK</a> — HMRC personal allowance, National Insurance, and dividend rates.</li>
+      <li><strong>SA:</strong> <a href="https://www.sars.gov.za/" rel="noopener">SARS</a> — personal income tax brackets and tax rebates.</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is compound interest?</div>
+      <div class="faq-a">Compound interest is interest calculated on both the initial principal and the interest that has already been earned. This means your interest earns interest — causing your money to grow at an accelerating rate over time. Albert Einstein reportedly called it the "eighth wonder of the world".</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How is compound interest calculated?</div>
+      <div class="faq-a">The formula is: A = P(1 + r/n)^(nt) + PMT × [((1 + r/n)^(nt) − 1) / (r/n)], where P is the principal, r is the annual rate, n is the number of compounding periods per year, t is time in years, and PMT is the regular contribution per period.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How often should interest compound for the best results?</div>
+      <div class="faq-a">More frequent compounding results in slightly higher returns. Daily compounding earns marginally more than monthly, which earns more than yearly. However, the difference is smaller than most people expect — the interest rate and time invested matter far more than compounding frequency.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the Rule of 72?</div>
+      <div class="faq-a">The Rule of 72 is a quick mental calculation: divide 72 by the annual interest rate to find roughly how many years it takes to double your money. At 7% per year, your money doubles every 72 ÷ 7 ≈ 10 years. This calculator shows the exact figure.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What interest rate should I use for retirement planning?</div>
+      <div class="faq-a">The S&amp;P 500 has historically returned approximately 10% per year before inflation, or roughly 7% after inflation. Financial planners commonly use 6–8% as a conservative real-return assumption for long-term retirement projections.</div>
+    </div>
+  </div>
+
+  <!-- Ad slot bottom -->
+  <div class="ad-slot">Advertisement</div>
+
+</div><!-- /container -->

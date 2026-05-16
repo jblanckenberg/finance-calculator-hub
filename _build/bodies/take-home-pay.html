@@ -1,0 +1,149 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> &rsaquo; Take-Home Pay Calculator</p>
+  <h1>&#128176; Take-Home Pay Calculator</h1>
+  <p class="subtitle">See your exact salary after all taxes and deductions &mdash; updated for 2026/27 tax rules in the USA, UK, and South Africa.</p>
+<p class="hint" style="margin-top:8px"><a href="/take-home-pay-comparison/">🌍 Compare across USA, UK, and South Africa side-by-side →</a></p>
+<div class="quick-answer">
+  <h2>How is take-home pay calculated?</h2>
+  <p>Take-home pay is your gross salary minus income tax, social security or national insurance, and any pre-tax pension or retirement contributions. UK: income-tax bands + 8% National Insurance above £12,570. USA: federal/state tax + 7.65% FICA. South Africa: PAYE per SARS tax tables + 1% UIF, less rebates.</p>
+</div>
+
+  <div class="card">
+    <div class="card-title">Your Salary Details</div>
+    <div class="form-row">
+      <div class="form-group"><label for="salary">Gross Annual Salary <span class="hint" id="sal-sym">($)</span></label><input type="number" id="salary" value="75000" min="0" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="payFreq">Pay Frequency</label>
+        <select id="payFreq" onchange="calculate()">
+          <option value="12">Monthly</option>
+          <option value="26">Bi-Weekly</option>
+          <option value="52">Weekly</option>
+          <option value="1">Annual</option>
+        </select>
+      </div>
+    </div>
+    <!-- USA only -->
+    <div data-region="USA">
+      <div class="form-row">
+        <div class="form-group"><label for="filingStatus">Filing Status</label>
+          <select id="filingStatus" onchange="calculate()">
+            <option value="single">Single</option>
+            <option value="married">Married Filing Jointly</option>
+            <option value="hoh">Head of Household</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="stateSelect">State</label>
+          <select id="stateSelect" onchange="calculate()">
+            <option value="0">No State Tax / Not Listed</option>
+            <option value="0" data-state="AK">Alaska (0%)</option>
+            <option value="0" data-state="FL">Florida (0%)</option>
+            <option value="0" data-state="NV">Nevada (0%)</option>
+            <option value="0" data-state="NH">New Hampshire (0%)</option>
+            <option value="0" data-state="SD">South Dakota (0%)</option>
+            <option value="0" data-state="TN">Tennessee (0%)</option>
+            <option value="0" data-state="TX">Texas (0%)</option>
+            <option value="0" data-state="WA">Washington (0%)</option>
+            <option value="0" data-state="WY">Wyoming (0%)</option>
+            <option value="0.02" data-state="AZ">Arizona (2.5% flat)</option>
+            <option value="0.05" data-state="CO">Colorado (4.4% flat)</option>
+            <option value="0.0475" data-state="GA">Georgia (5.75%)</option>
+            <option value="0.055" data-state="IL">Illinois (4.95% flat)</option>
+            <option value="0.032" data-state="IN">Indiana (3.15% flat)</option>
+            <option value="0.06" data-state="MA">Massachusetts (5% flat)</option>
+            <option value="0.0425" data-state="MD">Maryland (4.75%)</option>
+            <option value="0.0495" data-state="MI">Michigan (4.25% flat)</option>
+            <option value="0.0985" data-state="CA">California (up to 9.3%)</option>
+            <option value="0.0685" data-state="NY">New York (up to 6.85%)</option>
+            <option value="0.05" data-state="NC">North Carolina (4.5% flat)</option>
+            <option value="0.0399" data-state="OH">Ohio (up to 3.99%)</option>
+            <option value="0.0495" data-state="PA">Pennsylvania (3.07% flat)</option>
+            <option value="0.06" data-state="VA">Virginia (5.75%)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label for="contrib401k">401(k) Contribution (%)</label><input type="number" id="contrib401k" value="0" min="0" max="100" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+        <div class="form-group"><label for="pretaxOther">Other Pre-Tax Deductions ($)</label><input type="number" id="pretaxOther" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+      </div>
+    </div>
+    <!-- UK only -->
+    <div data-region="UK" style="display:none">
+      <div class="form-row">
+        <div class="form-group"><label for="ukPension">Pension Contribution (%)</label><input type="number" id="ukPension" value="5" min="0" max="100" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+        <div class="form-group"><label for="ukStudentLoan">Student Loan Plan</label>
+          <select id="ukStudentLoan" onchange="calculate()">
+            <option value="0">None</option>
+            <option value="1">Plan 1 (&pound;24,990 threshold)</option>
+            <option value="2">Plan 2 (&pound;27,295 threshold)</option>
+            <option value="4">Plan 4 (Scotland, &pound;31,395 threshold)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- SA only -->
+    <div data-region="SA" style="display:none">
+      <p class="hint" style="margin-bottom:12px"><a href="/sa-tax-calculator/"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> Use our dedicated SA Tax Calculator →</a> (focused SA page with rebates, medical credits, RA, UIF).</p>
+      <div class="form-row">
+        <div class="form-group"><label for="saAge">Age</label>
+          <select id="saAge" onchange="calculate()">
+            <option value="1">Under 65</option>
+            <option value="2">65 to 74</option>
+            <option value="3">75 and over</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="saMedical">Medical Aid Members</label><input type="number" id="saMedical" value="1" min="0" max="10" oninput="calculate()" inputmode="decimal"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label for="saRA">RA / Pension Contribution (R/month)</label><input type="number" id="saRA" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate Take-Home Pay &rarr;</button>
+  </div>
+  <div class="results" id="results">
+    <div class="results-title">Your Take-Home Pay</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-takehome">$0</div><div class="result-label">Annual Take-Home Pay</div></div>
+      <div class="result-item"><div class="result-value" id="r-perperiod">$0</div><div class="result-label">Per Pay Period</div></div>
+      <div class="result-item"><div class="result-value" id="r-effective">0%</div><div class="result-label">Effective Tax Rate</div></div>
+      <div class="result-item"><div class="result-value" id="r-total-deductions">$0</div><div class="result-label">Total Annual Deductions</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Full Deductions Breakdown</div>
+    <table class="breakdown-table">
+      <thead><tr><th>Deduction</th><th class="td-right">Annual</th><th class="td-right">Per Period</th></tr></thead>
+      <tbody id="breakdown-body"></tbody>
+    </table>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">&#128424; Print</button>
+      <button class="btn-action" onclick="saveToFile()">&#128190; Save</button>
+    </div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/budget/" class="related-card">📋 Budget Planner</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/emergency-fund/" class="related-card">🛡️ Emergency Fund</a>
+      <a href="/mortgage/" class="related-card">🏠 Mortgage</a>
+    </div></div>
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator implements progressive income tax with NI/FICA/PAYE bands: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">Take-home = Gross − Σ(bracket_i × marginal_rate_i) − NI/FICA contributions</code>. Region-specific tax and rate defaults are sourced directly from each country's primary government source and reviewed against the publication date below.</p>
+    <ul style="margin:12px 0">
+      <li><strong>USA:</strong> <a href="https://www.irs.gov/" rel="noopener">IRS</a> — federal income tax brackets and contribution limits.</li>
+      <li><strong>UK:</strong> <a href="https://www.gov.uk/" rel="noopener">GOV.UK</a> — HMRC personal allowance, National Insurance, and dividend rates.</li>
+      <li><strong>SA:</strong> <a href="https://www.sars.gov.za/" rel="noopener">SARS</a> — personal income tax brackets and tax rebates.</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">How is take-home pay calculated in the USA?</div><div class="faq-a">US take-home pay is your gross salary minus federal income tax (tax year 2026 brackets: 10%&ndash;37%), FICA Social Security (6.2% up to $184,500), Medicare (1.45% + 0.9% over $200k), state income tax, and any pre-tax deductions like 401(k) contributions. Your standard deduction ($16,100 single / $32,200 married for 2026) reduces your taxable income before federal tax is applied.</div></div>
+    <div class="faq-item"><div class="faq-q">What is National Insurance in the UK?</div><div class="faq-a">National Insurance (NI) is a UK payroll contribution used to fund state benefits. For 2026/27, employees pay 8% on earnings between &pound;12,570 and &pound;50,270, then 2% above that. Your NI contributions also count toward your State Pension entitlement. NI is calculated separately from income tax.</div></div>
+    <div class="faq-item"><div class="faq-q">South Africa: what is UIF?</div><div class="faq-a">UIF (Unemployment Insurance Fund) is a mandatory South African payroll deduction. Employees contribute 1% of gross salary, capped at a monthly salary of R17,712 (so max R177.12/month). Employers also contribute 1%. UIF provides short-term relief for workers who become unemployed, ill, or take maternity leave.</div></div>
+    <div class="faq-item"><div class="faq-q">What is the UK Personal Allowance taper?</div><div class="faq-a">In the UK, the personal allowance (&pound;12,570, frozen through 2026/27 and 2027/28) is reduced by &pound;1 for every &pound;2 of income over &pound;100,000. This means it is completely eliminated at income of &pound;125,140, creating an effective 60% marginal tax rate between &pound;100,000 and &pound;125,140. This calculator applies the taper automatically.</div></div>
+    <div class="faq-item"><div class="faq-q">How do I reduce my tax bill in South Africa?</div><div class="faq-a">The most effective strategies are: (1) Contribute to a Retirement Annuity (RA) &mdash; contributions are tax-deductible up to 27.5% of taxable income, capped at R350,000/yr. (2) Contribute to a pension or provident fund via your employer. (3) Claim medical aid tax credits (R376/month for the first two members, R254/month for additional members, for 2026/27). This calculator applies all standard credits automatically.</div></div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+</div>

@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> › 🏦 Net Worth Calculator</p>
+  <h1>🏦 Net Worth Calculator</h1>
+  <p class="subtitle">Calculate your total net worth by entering your assets and liabilities below.</p>
+<div class="quick-answer">
+  <h2>How is net worth calculated?</h2>
+  <p>Net worth is the total value of everything you own (assets) minus everything you owe (liabilities). <strong>Assets</strong>: cash, investments, property, vehicles, retirement accounts. <strong>Liabilities</strong>: mortgages, loans, credit-card balances, and any other debts. Positive net worth means assets exceed debts; negative means the reverse.</p>
+</div>
+
+  <div class="card"><div class="card-title">Assets &amp; Liabilities</div>
+<h2 style="font-size:1rem;color:var(--navy);margin-bottom:12px">Assets</h2>
+<div class="form-row">
+  <div class="form-group"><label for="cash">Cash &amp; Savings <span class="hint" id="s1">($)</span></label><input type="number" id="cash" value="10000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="invest">Investments / Stocks</label><input type="number" id="invest" value="25000" min="0" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<div class="form-row">
+  <div class="form-group"><label for="retire">Retirement Accounts (401k/Pension/RA)</label><input type="number" id="retire" value="50000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="property">Property Value</label><input type="number" id="property" value="300000" min="0" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<div class="form-row">
+  <div class="form-group"><label for="vehicle">Vehicle Value</label><input type="number" id="vehicle" value="15000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="otherAsset">Other Assets</label><input type="number" id="otherAsset" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<h2 style="font-size:1rem;color:var(--navy);margin:20px 0 12px">Liabilities</h2>
+<div class="form-row">
+  <div class="form-group"><label for="mortgageBal">Mortgage Balance</label><input type="number" id="mortgageBal" value="200000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="carLoan">Car Loan Balance</label><input type="number" id="carLoan" value="8000" min="0" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<div class="form-row">
+  <div class="form-group"><label for="ccDebt">Credit Card Debt</label><input type="number" id="ccDebt" value="3000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="studLoan">Student Loans</label><input type="number" id="studLoan" value="15000" min="0" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<div class="form-row">
+  <div class="form-group"><label for="otherLiab">Other Loans</label><input type="number" id="otherLiab" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<button class="btn-calc" onclick="calculate()">Calculate Net Worth →</button></div>
+  <div class="results" id="results"><div class="results-title">Your Net Worth</div>
+<div class="result-grid">
+  <div class="result-item"><div class="result-value" id="r-nw">$0</div><div class="result-label">Net Worth</div></div>
+  <div class="result-item"><div class="result-value positive" id="r-assets">$0</div><div class="result-label">Total Assets</div></div>
+  <div class="result-item"><div class="result-value" id="r-liab">$0</div><div class="result-label">Total Liabilities</div></div>
+  <div class="result-item"><div class="result-value" id="r-ratio">0%</div><div class="result-label">Asset-to-Debt Ratio</div></div>
+</div>
+<hr class="results-divider">
+<div class="breakdown-title">Full Breakdown</div>
+<table class="breakdown-table"><thead><tr><th>Item</th><th class="td-right">Value</th><th class="td-right">% of Total</th></tr></thead>
+<tbody id="breakdown-body"></tbody></table>
+<div class="action-bar">
+  <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+  <button class="btn-action" onclick="saveToFile()">💾 Save</button>
+</div></div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/investment-growth/" class="related-card">🚀 Investment Growth</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/mortgage/" class="related-card">🏠 Mortgage</a>
+      <a href="/loan-payoff/" class="related-card">📉 Loan Payoff</a>
+      <a href="/budget/" class="related-card">📋 Budget Planner</a>
+    </div></div>
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What is net worth?</div><div class="faq-a">Net worth is the total value of everything you own (assets) minus everything you owe (liabilities). It is the single most important number in personal finance — a snapshot of your overall financial health. Positive net worth means you own more than you owe.</div></div><div class="faq-item"><div class="faq-q">What is a good net worth by age?</div><div class="faq-a">A common benchmark: by 30, have 1x your annual salary saved; by 40, 3x; by 50, 6x; by 60, 8x. These are guidelines only — your goals, lifestyle, and country matter more than benchmarks.</div></div><div class="faq-item"><div class="faq-q">What counts as an asset in net worth?</div><div class="faq-a">Anything you own that has resale value: cash, bank balances, retirement accounts, taxable investments, property at its current market value, vehicles at their used market value, valuable collectibles. Exclude personal effects (clothes, kitchenware) unless individually valuable. Use realistic prices — not what you paid or what you'd like to sell for.</div></div><div class="faq-item"><div class="faq-q">How often should I update my net worth?</div><div class="faq-a">Quarterly is enough for most people. Monthly if you're aggressively paying down debt or building a deposit and want the feedback loop. Annually is the minimum — pick a date (e.g. each birthday or January 1) and stick with it. The trend matters far more than the absolute number.</div></div><div class="faq-item"><div class="faq-q">Does net worth include retirement accounts?</div><div class="faq-a">Yes. Include the full balance of 401(k), IRA, RA, SIPP, and pension fund accounts at their current market value. Some people calculate a separate 'liquid net worth' excluding retirement and home equity to see what they could access if needed today — both numbers are useful.</div></div></div>
+  <div class="ad-slot">Advertisement</div>
+</div>

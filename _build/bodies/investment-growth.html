@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> › 🚀 Investment Growth Calculator</p>
+  <h1>🚀 Investment Growth Calculator</h1>
+  <p class="subtitle">See how your investment portfolio grows over time with regular contributions and compound returns.</p>
+<div class="quick-answer">
+  <h2>How fast will my investments grow?</h2>
+  <p>The Rule of 72 gives a quick estimate: <strong>72 ÷ annual return = years to double</strong>. At a 7% real return, money doubles roughly every 10 years. With a $500 monthly contribution and 7% real growth, a $10,000 starting balance grows to about $250,000 over 20 years and $830,000 over 35 years.</p>
+</div>
+
+  <div class="card"><div class="card-title">Your Investment Details</div>
+<div class="form-row">
+  <div class="form-group"><label for="initial">Initial Investment <span class="hint" id="s1">($)</span></label><input type="number" id="initial" value="10000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="annual">Annual Contribution <span class="hint" id="s2">($)</span></label><input type="number" id="annual" value="6000" min="0" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<div class="form-row">
+  <div class="form-group"><label for="rate">Expected Annual Return (%)</label><input type="number" id="rate" value="8" min="0" max="50" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="years">Investment Period (Years)</label><input type="number" id="years" value="20" min="1" max="60" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<button class="btn-calc" onclick="calculate()">Calculate Growth →</button></div>
+  <div class="results" id="results"><div class="results-title">Portfolio Projection</div>
+<div class="result-grid">
+  <div class="result-item"><div class="result-value positive" id="r-final">$0</div><div class="result-label">Final Portfolio Value</div></div>
+  <div class="result-item"><div class="result-value" id="r-gain">$0</div><div class="result-label">Total Investment Gains</div></div>
+  <div class="result-item"><div class="result-value" id="r-invested">$0</div><div class="result-label">Total Amount Invested</div></div>
+  <div class="result-item"><div class="result-value" id="r-multiple">0x</div><div class="result-label">Money Multiplier</div></div>
+</div>
+<hr class="results-divider">
+<div class="breakdown-title">5-Year Growth Milestones</div>
+<table class="breakdown-table"><thead><tr><th>Year</th><th class="td-right">Portfolio Value</th><th class="td-right">Total Invested</th><th class="td-right">Total Gains</th></tr></thead>
+<tbody id="breakdown-body"></tbody></table>
+<div class="action-bar"><button class="btn-action" onclick="window.print()">🖨️ Print</button><button class="btn-action" onclick="saveToFile()">💾 Save</button></div></div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/mortgage/" class="related-card">🏠 Mortgage</a>
+    </div></div>
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What annual return should I use?</div><div class="faq-a">The S&amp;P 500 has averaged ~10%/year before inflation (~7% real). For a balanced portfolio, 6–8% is a common planning assumption. Use a lower rate to be conservative.</div></div><div class="faq-item"><div class="faq-q">How powerful is compound growth?</div><div class="faq-a">Investing $10,000 at 8% for 30 years grows to $100,627 — a 10x return. Add $6,000 per year and it grows to $849,000. Time in the market is the most powerful factor.</div></div><div class="faq-item"><div class="faq-q">What is the Rule of 72?</div><div class="faq-a">A mental shortcut: 72 divided by your annual rate of return is roughly the number of years it takes for your money to double. At 6%, money doubles every 12 years. At 9%, every 8 years. It's accurate within 1% for rates between 5% and 12% — good enough for back-of-envelope retirement planning.</div></div><div class="faq-item"><div class="faq-q">How long does it take to double an investment at 7% return?</div><div class="faq-a">About 10.3 years. The Rule of 72 estimates 72÷7 ≈ 10.3 years, and the exact compound calculation confirms it: $10,000 at 7% compounded annually reaches $19,672 in year 10 and $21,049 in year 11. A 35-year-old investing today doubles their money by age 45 and quadruples it by 55.</div></div><div class="faq-item"><div class="faq-q">Should I use real or nominal returns when projecting growth?</div><div class="faq-a">Real returns (after subtracting inflation) for retirement and long-term goals — they tell you what your money will actually buy. Nominal returns work for short-term goals (under 5 years) where inflation matters less. The S&amp;P 500 has averaged roughly 10% nominal and 7% real over the past century.</div></div></div>
+  <div class="ad-slot">Advertisement</div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> › 📊 Inflation Impact Calculator</p>
+  <h1>📊 Inflation Impact Calculator</h1>
+  <p class="subtitle">See how inflation erodes the value of money over time — and what it means for your savings.</p>
+<div class="quick-answer">
+  <h2>How does inflation affect savings?</h2>
+  <p>Inflation erodes the real (purchasing) value of money over time. At 3% annual inflation, $100 today has the same buying power as about <strong>$74 in 10 years</strong> and <strong>$55 in 20 years</strong>. To preserve real wealth, your investments must return at least the inflation rate; to grow real wealth they must exceed it.</p>
+</div>
+
+  <div class="card"><div class="card-title">Your Details</div>
+<div class="form-row">
+  <div class="form-group"><label for="amount">Current Amount <span class="hint" id="s1">($)</span></label><input type="number" id="amount" value="10000" min="1" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="infRate">Annual Inflation Rate (%)</label><input type="number" id="infRate" value="3" min="0" max="50" step="0.1" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<div class="form-group"><label for="years">Number of Years</label><input type="number" id="years" value="20" min="1" max="100" oninput="calculate()" inputmode="decimal"></div>
+<button class="btn-calc" onclick="calculate()">Calculate →</button></div>
+  <div class="results" id="results"><div class="results-title">Inflation Impact</div>
+<div class="result-grid">
+  <div class="result-item"><div class="result-value" id="r-future">$0</div><div class="result-label">Future Cost (same goods)</div></div>
+  <div class="result-item"><div class="result-value" id="r-power">$0</div><div class="result-label">Purchasing Power Today</div></div>
+  <div class="result-item"><div class="result-value" id="r-loss">$0</div><div class="result-label">Value Lost to Inflation</div></div>
+  <div class="result-item"><div class="result-value" id="r-pct">0%</div><div class="result-label">Purchasing Power Lost</div></div>
+</div>
+<hr class="results-divider">
+<div class="breakdown-title">Year-by-Year Purchasing Power</div>
+<div style="overflow-x:auto"><table class="breakdown-table"><thead><tr><th>Year</th><th class="td-right">Future Price</th><th class="td-right">Purchasing Power</th><th class="td-right">Value Lost</th></tr></thead>
+<tbody id="breakdown-body"></tbody></table></div>
+<div class="action-bar"><button class="btn-action" onclick="window.print()">🖨️ Print</button><button class="btn-action" onclick="saveToFile()">💾 Save</button></div></div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">🚀 Investment Growth</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+    </div></div>
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What is inflation?</div><div class="faq-a">Inflation is the rate at which prices rise over time, reducing the purchasing power of money. At 3% annual inflation, something costing $100 today will cost $134 in 10 years and $181 in 20 years.</div></div><div class="faq-item"><div class="faq-q">What inflation rate should I use?</div><div class="faq-a">Long-term average CPI inflation: USA ~3%, UK ~2.5%, South Africa ~5%. For conservative planning, use a slightly higher rate than the current official figure.</div></div><div class="faq-item"><div class="faq-q">What is the difference between real and nominal returns?</div><div class="faq-a">Nominal return is the headline rate before inflation. Real return subtracts inflation: real = nominal − inflation. If your investment returns 8% nominal and inflation is 3%, your real return is 5% — what your purchasing power actually grew. Always plan retirement and long-term goals in real terms.</div></div><div class="faq-item"><div class="faq-q">How does inflation affect retirement savings?</div><div class="faq-a">Inflation compounds against your savings just like interest compounds for them. A retirement target of £40,000 a year today needs about £72,000 a year in 25 years at 2.5% inflation. Plan your retirement income in today's money, then use the calculator to convert to a future nominal figure using your expected inflation rate.</div></div><div class="faq-item"><div class="faq-q">Is high inflation good or bad for borrowers?</div><div class="faq-a">Good for borrowers with fixed-rate debt — the real value of what you owe shrinks each year while your nominal income tends to rise with inflation. Bad for savers earning less than the inflation rate (real return is negative). Variable-rate borrowers face the opposite: higher rates as central banks fight inflation.</div></div></div>
+  <div class="ad-slot">Advertisement</div>
+</div>

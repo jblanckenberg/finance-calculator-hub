@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> &rsaquo; Mortgage Calculator</p>
+  <h1>&#127968; Mortgage Calculator</h1>
+  <p class="subtitle">Calculate your monthly repayment, total interest, and full amortisation schedule for any home loan.</p>
+<div class="quick-answer">
+  <h2>How is a mortgage payment calculated?</h2>
+  <p>A standard fixed-rate mortgage uses the amortising annuity formula: <strong>M = P × r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup>−1)</strong>, where P is the loan amount, r is the monthly interest rate (annual ÷ 12), and n is the total number of monthly payments. Most of each early payment goes to interest; the principal share grows over time.</p>
+</div>
+
+  <div class="card">
+    <div class="card-title">Your Mortgage Details</div>
+    <div class="form-row">
+      <div class="form-group"><label for="homePrice">Home Price <span class="hint" id="s1">($)</span></label><input type="number" id="homePrice" value="400000" min="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="downPayment">Down Payment <span class="hint" id="s2">($)</span></label><input type="number" id="downPayment" value="80000" min="0" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="rate">Annual Interest Rate (%)</label><input type="number" id="rate" value="7.0" min="0.1" max="30" step="0.05" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="termYears">Loan Term (years)</label><input type="number" id="termYears" value="30" min="1" max="40" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="propTax">Monthly Property Tax <span class="hint" id="s3">($) optional</span></label><input type="number" id="propTax" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="insurance">Monthly Insurance <span class="hint" id="s4">($) optional</span></label><input type="number" id="insurance" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate Mortgage &rarr;</button>
+  </div>
+  <div class="results" id="results">
+    <div class="results-title">Your Mortgage Summary</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-monthly">$0</div><div class="result-label">Monthly P&amp;I Payment</div></div>
+      <div class="result-item"><div class="result-value" id="r-total-monthly">$0</div><div class="result-label">Total Monthly (incl. tax &amp; ins.)</div></div>
+      <div class="result-item"><div class="result-value" id="r-interest">$0</div><div class="result-label">Total Interest Paid</div></div>
+      <div class="result-item"><div class="result-value" id="r-total-cost">$0</div><div class="result-label">Total Cost of Loan</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Mortgage Summary</div>
+    <table class="breakdown-table"><thead><tr><th>Item</th><th class="td-right">Value</th></tr></thead><tbody id="breakdown-body"></tbody></table>
+    <div id="region-note" style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.6"></div>
+    <hr class="results-divider" style="margin-top:20px">
+    <div class="breakdown-title">Amortisation Schedule (first 24 months)</div>
+    <div style="overflow-x:auto"><table class="breakdown-table"><thead><tr><th>Month</th><th class="td-right">Payment</th><th class="td-right">Principal</th><th class="td-right">Interest</th><th class="td-right">Balance</th></tr></thead>
+    <tbody id="amort-body"></tbody></table></div>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">&#128424; Print</button>
+      <button class="btn-action" onclick="saveToFile()">&#128190; Save</button>
+    </div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/stamp-duty-calculator/" class="related-card">🏡 UK Stamp Duty</a>
+      <a href="/loan-payoff/" class="related-card">📉 Loan Payoff</a>
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/budget/" class="related-card">📋 Budget Planner</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/emergency-fund/" class="related-card">🛡️ Emergency Fund</a>
+    </div></div>
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator implements the standard mortgage amortisation formula: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">M = P × [r(1+r)^n] / [(1+r)^n − 1]</code>. Region-specific tax and rate defaults are sourced directly from each country's primary government source and reviewed against the publication date below.</p>
+    <ul style="margin:12px 0">
+      <li><strong>USA:</strong> <a href="https://www.irs.gov/" rel="noopener">IRS</a> — federal income tax brackets and contribution limits.</li>
+      <li><strong>UK:</strong> <a href="https://www.gov.uk/" rel="noopener">GOV.UK</a> — HMRC personal allowance, National Insurance, and dividend rates.</li>
+      <li><strong>SA:</strong> <a href="https://www.sars.gov.za/" rel="noopener">SARS</a> — personal income tax brackets and tax rebates.</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">How is a mortgage payment calculated?</div><div class="faq-a">Your principal and interest payment uses the formula M = P &times; r(1+r)&sup;n / ((1+r)&sup;n &minus; 1), where P is the loan amount, r is the monthly interest rate (annual rate &divide; 12), and n is the total number of payments (years &times; 12). This gives a fixed payment that fully repays the loan over the term.</div></div>
+    <div class="faq-item"><div class="faq-q">How much deposit do I need?</div><div class="faq-a">In the USA, a 20% down payment avoids Private Mortgage Insurance (PMI). In the UK, most lenders require 5&ndash;10% with better rates at 25%+. In South Africa, banks typically require 10% though 100% bonds are sometimes available to qualifying first-time buyers. A larger deposit always reduces your monthly payment and total interest.</div></div>
+    <div class="faq-item"><div class="faq-q">Should I choose a 15 or 30 year mortgage?</div><div class="faq-a">A 15-year mortgage has higher monthly payments but you pay significantly less interest overall &mdash; often less than half. A 30-year mortgage offers lower monthly payments and cash flow flexibility. If you can comfortably afford the 15-year payment, you will build equity much faster and save substantially on interest.</div></div>
+    <div class="faq-item"><div class="faq-q">South Africa: What is transfer duty?</div><div class="faq-a">Transfer duty is a government tax on property transfers. Properties up to R1,100,000 are exempt. Above that, rates range from 3% to 13% on a sliding scale. Transfer duty is a once-off cost paid by the buyer on registration and is separate from your monthly bond repayment.</div></div>
+    <div class="faq-item"><div class="faq-q">UK: What is stamp duty?</div><div class="faq-a">Stamp Duty Land Tax (SDLT) is paid on property purchases in England and Northern Ireland. From April 2025, the nil-rate threshold returns to &pound;125,000 (2% on &pound;125k&ndash;&pound;250k, 5% on &pound;250k&ndash;&pound;925k). First-time buyers get relief up to &pound;425,000 until March 2025, then &pound;300,000. Scotland and Wales have their own equivalent taxes.</div></div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+</div>

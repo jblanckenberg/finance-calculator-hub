@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> &rsaquo; Retirement Savings Calculator</p>
+  <h1>&#127958; Retirement Savings Calculator</h1>
+  <p class="subtitle">Find out if you&#39;re on track to retire comfortably - and exactly how much you need to save each month.</p>
+<div class="quick-answer">
+  <h2>How much do I need to retire?</h2>
+  <p>A common rule of thumb is 25× your expected annual spending in retirement — the inverse of the 4% safe-withdrawal rate. If you plan to spend $40,000 a year, you need about $1 million invested. Your exact target depends on retirement age, expected real returns, inflation, and any other income such as a state pension or social security.</p>
+</div>
+
+  <div class="card">
+    <div class="card-title">Your Details</div>
+    <div class="form-row">
+      <div class="form-group"><label for="curAge">Current Age</label><input type="number" id="curAge" value="35" min="18" max="80" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="retAge">Target Retirement Age</label><input type="number" id="retAge" value="65" min="40" max="85" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="curSavings">Current Retirement Savings <span class="hint" id="sym1">($)</span></label><input type="number" id="curSavings" value="50000" min="0" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="monthlyContrib">Monthly Contribution <span class="hint" id="sym2">($)</span></label><input type="number" id="monthlyContrib" value="500" min="0" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="returnRate">Expected Annual Return (%)</label><input type="number" id="returnRate" value="7" min="0" max="30" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="retYears">Years in Retirement</label><input type="number" id="retYears" value="25" min="5" max="50" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-group"><label for="desiredIncome">Desired Annual Retirement Income <span class="hint" id="sym3">($)</span></label><input type="number" id="desiredIncome" value="60000" min="0" oninput="calculate()" inputmode="decimal"></div>
+    <div class="form-group" data-region="USA"><label for="employerMatch">Employer 401(k) Match (% of salary) <span class="hint">optional</span></label><input type="number" id="employerMatch" value="3" min="0" max="20" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+    <button class="btn-calc" onclick="calculate()">Calculate Retirement Plan &rarr;</button>
+  </div>
+  <div class="results" id="results">
+    <div class="results-title">Your Retirement Projection</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-balance">$0</div><div class="result-label">Projected Balance at Retirement</div></div>
+      <div class="result-item"><div class="result-value" id="r-income">$0</div><div class="result-label">Monthly Income Possible</div></div>
+      <div class="result-item"><div class="result-value" id="r-gap">$0</div><div class="result-label">Monthly Shortfall / Surplus</div></div>
+      <div class="result-item"><div class="result-value" id="r-needed">$0</div><div class="result-label">Extra Monthly Saving Needed</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Retirement Summary</div>
+    <table class="breakdown-table"><thead><tr><th>Item</th><th class="td-right">Value</th></tr></thead><tbody id="breakdown-body"></tbody></table>
+    <div id="region-note" style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.6"></div>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">&#128424; Print</button>
+      <button class="btn-action" onclick="saveToFile()">&#128190; Save</button>
+    </div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">🚀 Investment Growth</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+      <a href="/budget/" class="related-card">📋 Budget Planner</a>
+    </div></div>
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator implements the standard retirement growth + drawdown formula: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">Future value = PV × (1+r)^n + PMT × [((1+r)^n − 1) / r]</code>. Region-specific tax and rate defaults are sourced directly from each country's primary government source and reviewed against the publication date below.</p>
+    <ul style="margin:12px 0">
+      <li><strong>USA:</strong> <a href="https://www.irs.gov/" rel="noopener">IRS</a> — federal income tax brackets and contribution limits.</li>
+      <li><strong>UK:</strong> <a href="https://www.gov.uk/" rel="noopener">GOV.UK</a> — HMRC personal allowance, National Insurance, and dividend rates.</li>
+      <li><strong>SA:</strong> <a href="https://www.sars.gov.za/" rel="noopener">SARS</a> — personal income tax brackets and tax rebates.</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">What is the 4% rule for retirement?</div><div class="faq-a">The 4% rule states you can safely withdraw 4% of your retirement savings each year with very low risk of running out over a 30-year retirement. To find your target balance: multiply your desired annual income by 25. For $60,000/year you need $1,500,000.</div></div>
+    <div class="faq-item"><div class="faq-q">How much should I save each month?</div><div class="faq-a">The standard guideline is 15% of pre-tax income including any employer match. This calculator shows your exact number based on your age, current savings, and income goal.</div></div>
+    <div class="faq-item"><div class="faq-q">USA: 401(k) vs IRA - which first?</div><div class="faq-a">Always contribute to your 401(k) up to the full employer match first (free money). Then fund a Roth IRA up to the limit ($7,000 in 2024). Then return to the 401(k) for additional contributions. 2024 401(k) limit: $23,000 ($30,500 if 50+).</div></div>
+    <div class="faq-item"><div class="faq-q">South Africa: Are RA contributions tax-deductible?</div><div class="faq-a">Yes. Retirement Annuity contributions are tax-deductible up to 27.5% of taxable income, capped at R350,000 per year. This means contributing to an RA directly reduces your tax bill - making it one of the most tax-efficient savings tools available in South Africa.</div></div>
+  <div class="faq-item"><div class="faq-q">When should I start saving for retirement?</div><div class="faq-a">As early as possible. The first decade of contributions is worth more than every subsequent decade combined because of compound growth. £200 a month from age 25 to 35, then nothing, beats £200 a month from 35 to 65 at the same return. If you haven't started, start now — late beats never by a wide margin.</div></div></div>
+  <div class="ad-slot">Advertisement</div>
+</div>

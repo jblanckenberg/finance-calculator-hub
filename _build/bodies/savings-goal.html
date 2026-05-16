@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> › Savings Goal Calculator</p>
+  <h1>🎯 Savings Goal Calculator</h1>
+  <p class="subtitle">Enter your target amount and monthly savings to find out exactly when you'll reach your goal.</p>
+<div class="quick-answer">
+  <h2>How long will it take to save?</h2>
+  <p>Time to save = (goal − starting amount) ÷ monthly contribution, adjusted upward for interest earned. Saving $50,000 from zero at $500/month with 4% annual interest takes about 7 years and 8 months. Higher interest rates and bigger contributions compress the timeline meaningfully — and starting early matters more than starting big.</p>
+</div>
+
+  <div class="card">
+    <div class="card-title">Your Goal</div>
+    <div class="form-row">
+      <div class="form-group"><label for="target">Target Amount <span class="hint" id="s1">($)</span></label><input type="number" id="target" value="20000" min="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="current">Current Savings <span class="hint" id="s2">($)</span></label><input type="number" id="current" value="2000" min="0" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="monthly">Monthly Contribution <span class="hint" id="s3">($)</span></label><input type="number" id="monthly" value="500" min="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="rate">Annual Interest Rate (%)</label><input type="number" id="rate" value="4" min="0" max="30" step="0.1" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+  <div class="results" id="results">
+    <div class="results-title">Your Results</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-months">0</div><div class="result-label">Months to Goal</div></div>
+      <div class="result-item"><div class="result-value" id="r-date">—</div><div class="result-label">Target Date</div></div>
+      <div class="result-item"><div class="result-value" id="r-contrib">$0</div><div class="result-label">Total Contributed</div></div>
+      <div class="result-item"><div class="result-value positive" id="r-interest">$0</div><div class="result-label">Interest Earned</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Progress Milestones</div>
+    <table class="breakdown-table"><thead><tr><th>Milestone</th><th class="td-right">Balance</th><th class="td-right">Date</th></tr></thead>
+    <tbody id="breakdown-body"></tbody></table>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+      <button class="btn-action" onclick="saveToFile()">💾 Save</button>
+    </div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/emergency-fund/" class="related-card">🛡️ Emergency Fund</a>
+      <a href="/budget/" class="related-card">📋 Budget Planner</a>
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">🚀 Investment Growth</a>
+      <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    </div></div>
+  <div class="faq"><h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">How is the savings time calculated?</div><div class="faq-a">The calculator uses the future value formula to find the number of months needed: n = log((FV × r/PMT) + 1) / log(1 + r), where FV is your target, PMT is your monthly contribution, and r is the monthly interest rate. If your rate is 0%, it simply divides the remaining amount by your monthly contribution.</div></div>
+    <div class="faq-item"><div class="faq-q">What interest rate should I use for a savings account?</div><div class="faq-a">For a high-yield savings account or cash ISA, use the current rate you're earning — typically 4–5% in 2024. For a stock market investment with a longer time horizon (5+ years), 6–8% is a reasonable assumption. Use a lower rate to be conservative.</div></div>
+  <div class="faq-item"><div class="faq-q">How much should I save each month?</div><div class="faq-a">At minimum 10-15% of gross income across all goals. The breakdown depends on your stage: 20-somethings should weight short-term goals (emergency fund, deposit); 30-40-year-olds should emphasise retirement contributions to capture employer matches and compound time; 50-plus should run retirement projections and increase contributions if behind.</div></div><div class="faq-item"><div class="faq-q">Should I use a high-yield savings account for short-term goals?</div><div class="faq-a">Yes, for goals under three years. The interest rate matters less than capital preservation — you can't afford a 30% drawdown on house deposit savings the year before completion. A high-yield savings account or premium-bond-equivalent gives a few percent without market risk. Longer-horizon goals can take more equity exposure.</div></div><div class="faq-item"><div class="faq-q">Should I save for a deposit before investing?</div><div class="faq-a">If you intend to buy within 3-5 years: yes, prioritise the deposit. Stock markets can fall 30% or more in a year — fine over a 20-year horizon, devastating against a 2-year house plan. Once your deposit is funded and an emergency buffer exists, redirect every additional pound or dollar to long-term investments.</div></div></div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> › 💳 Credit Card Payoff Calculator</p>
+  <h1>💳 Credit Card Payoff Calculator</h1>
+  <p class="subtitle">See how long it takes to pay off your credit card — and how much interest you can save with extra payments.</p>
+<div class="quick-answer">
+  <h2>How long will it take to pay off my credit card?</h2>
+  <p>Paying only the minimum on a typical credit card at 20% APR can stretch repayment past 15 years and cost more in interest than the original balance. Doubling the minimum payment usually drops the timeline to roughly four years. The avalanche method (highest APR first) minimises total interest when you have multiple cards.</p>
+</div>
+
+  <div class="card"><div class="card-title">Your Credit Card Details</div>
+<div class="form-row">
+  <div class="form-group"><label for="balance">Current Balance <span class="hint" id="s1">($)</span></label><input type="number" id="balance" value="5000" min="1" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="apr">Annual Interest Rate / APR (%)</label><input type="number" id="apr" value="22" min="0" max="100" step="0.1" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<div class="form-row">
+  <div class="form-group"><label for="payment">Monthly Payment <span class="hint" id="s2">($)</span></label><input type="number" id="payment" value="200" min="1" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="extra">Extra Monthly Payment <span class="hint" id="s3">($) optional</span></label><input type="number" id="extra" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<button class="btn-calc" onclick="calculate()">Calculate →</button></div>
+  <div class="results" id="results"><div class="results-title">Your Payoff Plan</div>
+<div class="result-grid">
+  <div class="result-item"><div class="result-value positive" id="r-months">0 mo</div><div class="result-label">Months to Pay Off</div></div>
+  <div class="result-item"><div class="result-value" id="r-date">—</div><div class="result-label">Debt-Free Date</div></div>
+  <div class="result-item"><div class="result-value" id="r-interest">$0</div><div class="result-label">Total Interest You'll Pay</div></div>
+  <div class="result-item"><div class="result-value positive" id="r-saving">$0</div><div class="result-label">Interest Saved (Extra Pmts)</div></div>
+</div>
+<hr class="results-divider">
+<div class="breakdown-title">Payment Schedule (first 24 months)</div>
+<div style="overflow-x:auto"><table class="breakdown-table"><thead><tr><th>Month</th><th class="td-right">Payment</th><th class="td-right">Interest</th><th class="td-right">Principal</th><th class="td-right">Balance</th></tr></thead>
+<tbody id="breakdown-body"></tbody></table></div>
+<div class="action-bar"><button class="btn-action" onclick="window.print()">🖨️ Print</button><button class="btn-action" onclick="saveToFile()">💾 Save</button></div></div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/loan-payoff/" class="related-card">📉 Loan Payoff</a>
+      <a href="/budget/" class="related-card">📋 Budget Planner</a>
+      <a href="/emergency-fund/" class="related-card">🛡️ Emergency Fund</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+    </div></div>
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">Why does the minimum payment take so long?</div><div class="faq-a">Credit card minimum payments are designed to keep you in debt as long as possible. On a $5,000 balance at 22% APR, paying only the minimum ($100) takes over 9 years and costs $4,300 in interest — nearly doubling the original debt. Even small extra payments dramatically shorten the timeline.</div></div><div class="faq-item"><div class="faq-q">What is the debt avalanche method?</div><div class="faq-a">Pay minimums on all cards, then direct all extra money to the card with the highest interest rate first. This minimises total interest paid. The alternative (debt snowball) pays smallest balances first for psychological wins. This calculator shows the impact of extra payments on any single card.</div></div><div class="faq-item"><div class="faq-q">What is the avalanche vs snowball method?</div><div class="faq-a">Avalanche pays the highest-APR card first while paying minimums on the rest — mathematically optimal, lowest total interest. Snowball pays the smallest balance first — slower in pure pound-cost terms but the visible wins build momentum. If you've stopped previous repayment attempts, snowball's psychology often beats avalanche's maths.</div></div><div class="faq-item"><div class="faq-q">Does a balance transfer help pay off credit card debt?</div><div class="faq-a">Yes, if you'll genuinely clear the balance during the 0% promotional period (typically 12-21 months). A 3% transfer fee on £10,000 is £300 — usually cheaper than several months of 20-25% APR interest. The trap is treating the transfer as breathing room and adding new spending — that defeats the purpose.</div></div><div class="faq-item"><div class="faq-q">How long does it take to pay off $10,000 in credit card debt?</div><div class="faq-a">At 20% APR paying just the minimum (~2% of balance), it takes roughly 30 years and over $10,000 in interest. Paying $250 a month clears it in just over 5 years with about $5,000 in interest. Paying $500 a month finishes in 2 years with under $2,000 in interest.</div></div></div>
+  <div class="ad-slot">Advertisement</div>
+</div>

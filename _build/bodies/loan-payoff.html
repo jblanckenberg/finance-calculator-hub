@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> › Loan Payoff Calculator</p>
+  <h1>📉 Loan Payoff Calculator</h1>
+  <p class="subtitle">See exactly when your loan is paid off, how much interest you'll pay, and how extra payments slash your debt.</p>
+<div class="quick-answer">
+  <h2>How long does it take to pay off a loan?</h2>
+  <p>The payoff timeline depends on the loan balance, the interest rate, and your monthly payment. Once your payment exceeds the monthly interest charge, every extra rand or dollar attacks the principal directly. Even a small extra payment each month often shaves years off the loan and saves thousands in interest over the life of the debt.</p>
+</div>
+
+  <div class="card">
+    <div class="card-title">Your Loan Details</div>
+    <div class="form-row">
+      <div class="form-group"><label for="balance">Current Loan Balance <span class="hint" id="s1">($)</span></label><input type="number" id="balance" value="15000" min="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="rate">Annual Interest Rate (%)</label><input type="number" id="rate" value="8.5" min="0" max="50" step="0.1" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="payment">Monthly Payment <span class="hint" id="s2">($)</span></label><input type="number" id="payment" value="350" min="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="extra">Extra Monthly Payment <span class="hint" id="s3">($) optional</span></label><input type="number" id="extra" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+  <div class="results" id="results">
+    <div class="results-title">Your Loan Payoff</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-months">0 mo</div><div class="result-label">Months to Payoff</div></div>
+      <div class="result-item"><div class="result-value" id="r-date">—</div><div class="result-label">Payoff Date</div></div>
+      <div class="result-item"><div class="result-value" id="r-interest">$0</div><div class="result-label">Total Interest Paid</div></div>
+      <div class="result-item"><div class="result-value positive" id="r-saving">$0</div><div class="result-label">Interest Saved (Extra Pmts)</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Amortisation Schedule (first 24 months)</div>
+    <div style="overflow-x:auto"><table class="breakdown-table"><thead><tr><th>Month</th><th class="td-right">Payment</th><th class="td-right">Principal</th><th class="td-right">Interest</th><th class="td-right">Balance</th></tr></thead>
+    <tbody id="breakdown-body"></tbody></table></div>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+      <button class="btn-action" onclick="saveToFile()">💾 Save</button>
+    </div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/mortgage/" class="related-card">🏠 Mortgage</a>
+      <a href="/credit-card-payoff/" class="related-card">💳 Credit Card Payoff</a>
+      <a href="/budget/" class="related-card">📋 Budget Planner</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/emergency-fund/" class="related-card">🛡️ Emergency Fund</a>
+    </div></div>
+  <div class="faq"><h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">How do extra loan payments work?</div><div class="faq-a">Extra payments go directly to your principal balance, which reduces the amount interest is calculated on. Even a small extra payment each month can shave years off your loan and save thousands in interest. The calculator shows exactly how much you save.</div></div>
+    <div class="faq-item"><div class="faq-q">What is loan amortisation?</div><div class="faq-a">Amortisation is the process of paying off a loan in equal installments over time. In the early months, most of your payment goes to interest. Over time, as the balance decreases, more goes to principal. The amortisation schedule shows this breakdown for each payment.</div></div>
+  <div class="faq-item"><div class="faq-q">Is it better to pay off a loan early or invest the difference?</div><div class="faq-a">Mathematically, if your expected investment return exceeds the loan's interest rate, investing wins. A 7% mortgage vs a 10% expected stock return favours investing. But debt-free certainty has a value too — paying off a high-rate personal loan or credit card almost always beats investing because the after-tax return on debt repayment is the loan's rate.</div></div><div class="faq-item"><div class="faq-q">Will paying off a loan early affect my credit score?</div><div class="faq-a">Slightly and temporarily. Closing an installment loan can shorten your average account age and reduce your credit mix, so your score may dip 5-15 points for a few months. The long-term benefit — lower debt-to-income ratio and zero interest paid — is far bigger than the short-term score wobble.</div></div><div class="faq-item"><div class="faq-q">How is total interest calculated on a loan?</div><div class="faq-a">Total interest equals the sum of all scheduled payments minus the original principal. For a fixed-rate loan, each month's interest is calculated on the remaining balance, and the rest of your payment reduces principal. Early in the loan most of each payment is interest; later it flips.</div></div></div>
+</div>

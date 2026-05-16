@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> › 🛡️ Emergency Fund Calculator</p>
+  <h1>🛡️ Emergency Fund Calculator</h1>
+  <p class="subtitle">Find out exactly how much you need in your emergency fund — and how long it will take to get there.</p>
+<div class="quick-answer">
+  <h2>How much should an emergency fund be?</h2>
+  <p>Most financial planners recommend <strong>three to six months of essential expenses</strong> — enough to cover rent or mortgage, utilities, food and minimum debt payments through a job loss or unexpected event. If you are self-employed, have variable income, or have dependants, aim for six to twelve months. Hold it in a high-yield savings account, not invested in the market.</p>
+</div>
+
+  <div class="card"><div class="card-title">Your Monthly Expenses</div>
+<div class="form-row">
+  <div class="form-group"><label for="income">Monthly Take-Home Income <span class="hint" id="s1">($)</span></label><input type="number" id="income" value="5000" min="0" oninput="calculate()" inputmode="decimal"></div>
+  <div class="form-group"><label for="expenses">Monthly Essential Expenses <span class="hint" id="s2">($)</span></label><input type="number" id="expenses" value="3500" min="0" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<div class="form-row">
+  <div class="form-group"><label for="jobSec">Job Security</label>
+    <select id="jobSec" onchange="calculate()">
+      <option value="3">High — Stable employment, easy to rehire</option>
+      <option value="6" selected>Medium — Average job market</option>
+      <option value="9">Low — Variable income or difficult market</option>
+      <option value="12">Very Low — Self-employed / freelance</option>
+    </select>
+  </div>
+  <div class="form-group"><label for="deps">Dependants (children / others)</label><input type="number" id="deps" value="0" min="0" max="10" oninput="calculate()" inputmode="decimal"></div>
+</div>
+<div class="form-group"><label for="current">Current Emergency Fund <span class="hint" id="s3">($)</span></label><input type="number" id="current" value="1000" min="0" oninput="calculate()" inputmode="decimal"></div>
+<div class="form-group"><label for="monthlySave">Monthly Amount You Can Save <span class="hint" id="s4">($)</span></label><input type="number" id="monthlySave" value="300" min="0" oninput="calculate()" inputmode="decimal"></div>
+<button class="btn-calc" onclick="calculate()">Calculate →</button></div>
+  <div class="results" id="results"><div class="results-title">Your Emergency Fund</div>
+<div class="result-grid">
+  <div class="result-item"><div class="result-value positive" id="r-target">$0</div><div class="result-label">Recommended Fund Size</div></div>
+  <div class="result-item"><div class="result-value" id="r-months-cover">0 months</div><div class="result-label">Recommended Coverage</div></div>
+  <div class="result-item"><div class="result-value" id="r-gap">$0</div><div class="result-label">Amount Still Needed</div></div>
+  <div class="result-item"><div class="result-value" id="r-time">0 mo</div><div class="result-label">Months to Reach Goal</div></div>
+</div>
+<hr class="results-divider">
+<div class="breakdown-title">Fund Breakdown</div>
+<table class="breakdown-table"><thead><tr><th>Scenario</th><th class="td-right">Recommended Fund</th><th class="td-right">Months to Save</th></tr></thead>
+<tbody id="breakdown-body"></tbody></table>
+<div class="action-bar"><button class="btn-action" onclick="window.print()">🖨️ Print</button><button class="btn-action" onclick="saveToFile()">💾 Save</button></div></div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/budget/" class="related-card">📋 Budget Planner</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+      <a href="/credit-card-payoff/" class="related-card">💳 Credit Card Payoff</a>
+      <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
+    </div></div>
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How many months of expenses should my emergency fund cover?</div><div class="faq-a">3 months is the minimum. 6 months is the standard recommendation. If you have dependants, variable income, or work in a difficult job market, aim for 9–12 months. This calculator sets your target based on your personal situation.</div></div><div class="faq-item"><div class="faq-q">Where should I keep my emergency fund?</div><div class="faq-a">In a high-yield savings account — not invested in stocks. It must be instantly accessible without risk of loss. In South Africa, a 32-day notice account or money market fund is a good option. In the UK, an easy-access Cash ISA keeps it tax-free.</div></div><div class="faq-item"><div class="faq-q">Should I build an emergency fund before paying off debt?</div><div class="faq-a">Build a starter fund of one month's essential expenses first, then aggressively pay high-interest debt (over 10% APR), then build the full 3-6 month fund. A starter fund prevents new debt during a small emergency. Going debt-first with zero cash buffer almost always triggers more credit-card debt within months.</div></div><div class="faq-item"><div class="faq-q">Is 6 months expenses enough for an emergency fund?</div><div class="faq-a">For most salaried employees with stable income and dependants, yes. Single-income households, the self-employed, those in volatile industries, or anyone with health conditions should aim for 9-12 months. The figure is essential expenses — rent, food, utilities, minimum debt, insurance — not your full lifestyle spend.</div></div><div class="faq-item"><div class="faq-q">Can I invest my emergency fund to earn more?</div><div class="faq-a">No — capital preservation matters more than yield for an emergency fund. A 30% market drawdown the same week you lose your job is the exact scenario this money exists to prevent. Stick to a high-yield savings or money-market account. If you have more than 12 months saved, the excess can be invested separately.</div></div></div>
+  <div class="ad-slot">Advertisement</div>
+</div>

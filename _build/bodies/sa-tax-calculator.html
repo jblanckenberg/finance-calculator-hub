@@ -1,0 +1,144 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="/">Home</a> › SA Tax Calculator</p>
+  <h1>South Africa Tax Calculator (PAYE + UIF)</h1>
+  <p class="subtitle">Work out your South African income tax for the 2026/27 tax year. Includes PAYE, UIF, medical scheme tax credits, retirement-annuity deductions, and SARS rebates for age 65+.</p>
+<div class="quick-answer">
+  <h2>How is income tax calculated in South Africa?</h2>
+  <p>SARS calculates income tax in seven progressive bands. Your gross salary is reduced by deductible retirement-annuity contributions (up to 27.5% or R350,000). The taxable amount is then taxed by band: 18% on the first R245,100, rising to 45% above R1,878,600. The primary rebate (R17,820 for 2026/27) and medical-aid tax credits are subtracted from the gross tax. UIF of 1% (capped at R177.12 per month) is also deducted from your gross.</p>
+</div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="gross">Salary (R)</label>
+        <input type="number" id="gross" value="500000" min="0" placeholder="500000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="payFreq">Pay Frequency</label>
+        <select id="payFreq" onchange="calculate()">
+          <option value="12" selected>Annual</option>
+          <option value="1">Monthly</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="ageSlot">Age</label>
+        <select id="ageSlot" onchange="calculate()">
+          <option value="1" selected>Under 65</option>
+          <option value="2">65 – 74</option>
+          <option value="3">75 or older</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="medMem">Medical Aid Members (incl. you)</label>
+        <select id="medMem" onchange="calculate()">
+          <option value="0">None</option>
+          <option value="1" selected>1 (just me)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 or more</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="raAnnual">Retirement Annuity Contribution per Year (R)</label>
+      <input type="number" id="raAnnual" value="0" min="0" placeholder="0" oninput="calculate()" inputmode="decimal">
+      <span class="hint">Tax-deductible up to 27.5% of income or R350,000, whichever is lower.</span>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <div class="results" id="results">
+    <div class="results-title">Your Results</div>
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-value positive" id="r-net-annual">R0</div>
+        <div class="result-label">Annual Take-Home</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-net-monthly">R0</div>
+        <div class="result-label">Monthly Take-Home</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-tax-annual">R0</div>
+        <div class="result-label">Annual PAYE</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-eff">0%</div>
+        <div class="result-label">Effective Tax Rate</div>
+      </div>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Breakdown</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table" id="breakdown-table">
+        <thead>
+          <tr><th>Item</th><th class="td-right">Annual</th><th class="td-right">Monthly</th></tr>
+        </thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print Results</button>
+      <button class="btn-action" onclick="saveToFile()">💾 Save as Text</button>
+    </div>
+  </div>
+
+  <div class="ad-slot">Advertisement</div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/take-home-pay/" class="related-card">💸 Take-Home Pay (multi-region)</a>
+      <a href="/take-home-pay-comparison/" class="related-card">🌍 Compare USA / UK / SA</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+    </div>
+  </div>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is PAYE in South Africa?</div>
+      <div class="faq-a">PAYE (Pay As You Earn) is the income tax deducted from an employee's salary by their employer and paid to SARS each month. The amount is determined by SARS's annual tax tables and reduced by personal rebates and medical scheme tax credits.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How is South African income tax calculated?</div>
+      <div class="faq-a">SARS uses seven progressive bands. The first R245,100 of taxable income is taxed at 18%; each subsequent band has a higher marginal rate up to 45% on income above R1,878,600. Your taxable income is gross minus deductible retirement contributions. After the bracketed tax is calculated, the primary rebate (R17,820 for 2026/27) plus age-based rebates and medical-aid credits are subtracted.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is UIF and who pays it?</div>
+      <div class="faq-a">UIF (Unemployment Insurance Fund) is a 1% payroll deduction on gross salary, capped at R177.12 per month (R2,125.44 per year). Employers contribute another 1%. The fund pays short-term benefits for unemployment, illness, and maternity leave.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How much tax do I pay on R500,000 or R1,000,000 in South Africa?</div>
+      <div class="faq-a">For the 2026/27 tax year, on R500,000 (no RA, under 65, no dependants): roughly R98,417 income tax and R2,125 UIF, leaving about R399,458 net. On R1,000,000 (same assumptions): roughly R288,293 income tax and R2,125 UIF, leaving about R709,582 net. Adding a medical scheme membership and/or RA contributions reduces the tax further. Use the calculator above for the exact figure.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does a Retirement Annuity reduce my tax?</div>
+      <div class="faq-a">Retirement Annuity (RA) contributions are deductible up to the lesser of 27.5% of your taxable income or R350,000 per tax year. Contributing reduces your taxable income, which reduces both the marginal tax you pay and the average effective rate. This is one of the most powerful legal tax-reduction tools for individuals in South Africa.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What are SARS medical aid tax credits?</div>
+      <div class="faq-a">For the 2026/27 tax year the medical scheme fees tax credit is R376 per month for the main member, R376 per month for the first dependant, and R254 per month for each additional dependant. These credits reduce your tax bill directly (not your taxable income), so the value is the same regardless of your marginal rate.</div>
+    </div>
+  </div>
+
+  <div class="ad-slot">Advertisement</div>
+</div>
