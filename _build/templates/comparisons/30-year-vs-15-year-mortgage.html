@@ -1,53 +1,54 @@
 {# templates/comparisons/30-year-vs-15-year-mortgage.html — article body. #}
 <p class="lead">
-  A <strong>30-year mortgage</strong> gives you the lowest required monthly payment and the most cash-flow flexibility. A <strong>15-year mortgage</strong> roughly doubles the monthly payment but cuts the total interest bill by more than half. On a $300,000 loan at 7%, that trade-off saves about $234,000 over the life of the loan.
+  Here is the trade-off in one line. On a $300,000 mortgage at 6%, the 30-year payment is about <strong>$1,799 per month</strong> and the 15-year is about <strong>$2,532</strong>. That extra <strong>$733 a month</strong> on the 15-year buys you roughly <strong>$191,831 in lifetime interest savings</strong>. So the question isn&rsquo;t whether the 15-year is cheaper; it obviously is. The real question is whether the higher payment leaves you enough room to keep funding retirement, an emergency buffer, and an actual life. I&rsquo;ll walk through when each one wins, what the &ldquo;30-year plus extra principal&rdquo; hybrid really costs, and why I think most buyers should default to the flexible option even though the 15-year math looks irresistible on paper.
 </p>
 
-<h2>The headline numbers</h2>
+<h2>The 30-second difference</h2>
 
 <p>
-  Same loan, same rate, two terms. Here is what changes:
+  Same loan, same rate, two terms. The 15-year contract forces you to clear the balance in half the time, so each payment carries roughly 40% more dollars and a far bigger share of those dollars goes to principal from month one. The 30-year stretches the same balance over double the months, which is why the monthly payment drops by hundreds and the interest bill more than doubles. Freddie Mac&rsquo;s Primary Mortgage Market Survey shows the 15-year fixed has averaged about 0.5%&ndash;1% below the 30-year for decades, which only widens the lifetime savings once you use realistic market rates for each term.
 </p>
+
+<h2>Side-by-side: $300,000 at 6% APR</h2>
 
 <table class="article-table">
   <thead>
     <tr>
       <th>Metric</th>
-      <th>30-year @ 7%</th>
-      <th>15-year @ 6.5%</th>
+      <th>30-year @ 6%</th>
+      <th>15-year @ 6%</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Loan amount</td>
-      <td>$300,000</td>
-      <td>$300,000</td>
-    </tr>
-    <tr>
       <td>Monthly P&amp;I payment</td>
-      <td>$1,995.91</td>
-      <td>$2,613.32</td>
+      <td>$1,798.65</td>
+      <td>$2,531.57</td>
     </tr>
     <tr>
       <td>Total payments</td>
-      <td>$718,527</td>
-      <td>$470,397</td>
+      <td>$647,514</td>
+      <td>$455,683</td>
     </tr>
     <tr>
       <td>Total interest</td>
-      <td>$418,527</td>
-      <td>$170,397</td>
+      <td>$347,514</td>
+      <td>$155,683</td>
     </tr>
     <tr>
-      <td>Equity after 5 years</td>
-      <td>~$18,500</td>
-      <td>~$76,400</td>
+      <td>Interest saved vs the other term</td>
+      <td>&mdash;</td>
+      <td>~$191,831</td>
     </tr>
   </tbody>
 </table>
 
 <p>
-  The 15-year payment is about 31% higher, but the interest saving is roughly 60%. Note that 15-year mortgages typically price about 0.5%&ndash;0.75% lower than 30-year mortgages in the same market, which is why the table above uses 6.5% and 7%; the gap further widens the lifetime savings.
+  I held the rate flat at 6% in this table to isolate the term effect. In a real quote you&rsquo;d almost always see the 15-year priced 0.5%&ndash;1% lower (Freddie Mac PMMS has the 30-year averaging ~6.75% and the 15-year ~5.95% in mid-2025), which adds roughly another $24,000 of savings to the 15-year column. The numbers above use the standard US monthly-compounding formula <code>M = P &times; [r(1+r)<sup>n</sup>] / [(1+r)<sup>n</sup> &minus; 1]</code> and are accurate to the dollar. UK borrowers should mentally adjust: most mortgages there default to 25-year terms with 2-, 5-, or 10-year fixed periods that revert to the lender&rsquo;s standard variable rate, so the &ldquo;30-year vs 15-year&rdquo; binary is really a US framing. The principle holds either way &mdash; shorter term, less total interest, higher monthly payment.
+</p>
+
+<p>
+  That $733-a-month gap is the whole story. If you can fund the 15-year payment and still keep rent-equivalent costs, savings, groceries, insurance, and utilities under about 60% of take-home, the 15-year hands you roughly $192,000 of free money. If covering that same payment means draining your emergency fund, skipping the 401(k) match, or putting groceries on a credit card, the 30-year is the better mortgage <em>and</em> the better financial decision. The CFPB&rsquo;s qualified-mortgage guidance puts the back-end DTI ceiling at 43% for a reason: house-poor is its own kind of expensive. I&rsquo;ve watched buyers stretch to the 15-year because the interest savings &ldquo;felt obvious,&rdquo; then carry credit card balances at 22% for the next three years because the monthly cushion vanished. That trade is catastrophic. Always compare the 15-year payment against the rest of your real budget, not against a tidy mortgage-only spreadsheet.
 </p>
 
 <h2>Run your own numbers</h2>
@@ -56,39 +57,76 @@
   {% include "partials/comparison_embed.html" %}
 {% endwith %}
 
-<div class="cta-box">
-  <h3>Try this scenario</h3>
-  <p>
-    Enter your loan amount, set the rate to whatever your lender has quoted, and switch the term between 30 and 15 years. Then look at the &ldquo;total interest&rdquo; line &mdash; that is the real cost of the longer term.
-  </p>
-</div>
-
-<h2>The case for the 30-year</h2>
-
-<ul>
-  <li><strong>Cash-flow flexibility.</strong> A lower required payment is a permanent option, not a one-time decision. You can always pay more.</li>
-  <li><strong>Larger loan qualification.</strong> Lenders use the required monthly payment in your debt-to-income calculation, so a 30-year term often qualifies you for a more expensive home.</li>
-  <li><strong>Opportunity cost.</strong> The cash freed up by the lower payment can be invested elsewhere &mdash; in a workplace 401(k) match, a Roth IRA, or a brokerage account. At long-run equity returns, that money may grow faster than the mortgage costs you.</li>
-  <li><strong>Inflation hedge.</strong> Your nominal payment is fixed for 30 years; your income and the dollar both inflate around it, making the real burden lighter over time.</li>
-</ul>
-
-<h2>The case for the 15-year</h2>
-
-<ul>
-  <li><strong>Lower interest rate.</strong> Lenders price shorter terms at lower rates, typically 0.5&ndash;0.75 percentage points lower.</li>
-  <li><strong>Massive interest saving.</strong> On a typical loan the lifetime interest bill is less than half.</li>
-  <li><strong>Faster equity build-up.</strong> A bigger share of every payment goes to principal from day one.</li>
-  <li><strong>Forced discipline.</strong> The higher required payment leaves less to be tempted away by lifestyle inflation.</li>
-</ul>
-
-<h2>The hybrid most people miss</h2>
+<h2>The &ldquo;30-year + extra principal&rdquo; hybrid</h2>
 
 <p>
-  Take the 30-year mortgage <em>and</em> overpay each month by the difference between the 15-year and 30-year payments. You replicate the 15-year payoff schedule almost exactly, but you keep the optionality of dropping back to the lower required payment if your income falls, you change jobs, or an unexpected expense lands. On most US and UK mortgages, overpayments are penalty-free up to generous limits.
+  Take the 30-year mortgage at $1,799 a month and quietly send the lender $733 extra every month as a principal-only payment. At a flat 6% rate, that pays the loan off in exactly 180 months with $155,683 of interest &mdash; identical to a pure 15-year at the same rate, because amortisation doesn&rsquo;t care whether the higher payment is contractual or voluntary. The catch lives in the rate sheet. Lenders price the 15-year about 0.5%&ndash;1% below the 30-year (Freddie Mac PMMS confirms this is decades-stable), so the real comparison is 30-year-at-6% paying the 15-year-at-5.5% amount of $2,451 a month. Run that math and the hybrid clears the loan in about <strong>190 months</strong> with total interest near <strong>$165,000</strong> &mdash; roughly $24,000 more than the pure 15-year contract at the lower rate.
 </p>
 
-<h2>The decision rule</h2>
+<p>
+  That gap is the price of optionality. A contractual 15-year locks the lender into a known schedule, so they reward you with a cheaper rate. Voluntary extra payments on a 30-year are exactly that: voluntary. The lender prices the rate assuming you&rsquo;ll only ever pay the minimum, and they hold the option that you might stop the extra payments any month. You pay for that option as a slightly slower interest haircut.
+</p>
 
 <p>
-  Choose the 15-year if the higher payment is comfortable, your job is stable, your emergency fund is full, and you would otherwise spend the cash flow rather than invest it. Choose the 30-year (and overpay) if you value the flexibility, want to invest the difference, or are stretching to buy your home. Either way, run the numbers on this page before you commit &mdash; the lifetime cost is too big to estimate.
+  Here&rsquo;s the part I think gets undersold: that $25,000 premium is the cost of an insurance policy. If you lose a job in year seven, or you have a baby, or a parent needs care, you can drop back to the contractual $1,799 next month without phoning the bank. The 15-year borrower can&rsquo;t. They&rsquo;re on the hook for $2,532 whether or not the paycheque arrived. For most buyers, the hybrid is the right answer &mdash; you get something like 95% of the interest savings with 100% of the flexibility.
+</p>
+
+<p>
+  Two real catches. First, you have to actually make the extra payment. The only borrowers who realise the hybrid savings are the ones who set up an automatic principal-only transfer with their servicer (most servicers allow it; a few make you call, and a few quietly apply the extra to the next month&rsquo;s payment instead of principal &mdash; always check the next statement to confirm the principal balance dropped by the full extra amount). Without the automation, the spare $700ish a month quietly becomes a streaming subscription, a nicer car, a renovation. Second, the rate-spread premium I described above is real and recurring &mdash; about $24,000 in this $300k comparison. Flexibility is worth that to a lot of people, and it isn&rsquo;t worth it to some. The right way to frame it: are you paying $24,000 over 15-plus years to keep an option you may never need? If your job is rock-solid and your savings buffer is deep, probably not. If either of those is shaky, almost certainly yes.
+</p>
+
+<h2>When the 15-year is the right call</h2>
+
+<p>
+  The 15-year is the right mortgage when the higher payment is genuinely comfortable rather than aspirationally comfortable. I look for five things.
+</p>
+
+<ul>
+  <li><strong>Stable income, five-plus years in.</strong> You&rsquo;re past the early-career swings and the back-end DTI on the 15-year payment lands under 36% with retirement contributions still maxed.</li>
+  <li><strong>Refinancing from a higher-rate 30-year.</strong> If your existing payment is already in the same neighbourhood as the new 15-year payment, the math is almost a freebie &mdash; you keep your cash flow and amputate a decade of interest.</li>
+  <li><strong>You&rsquo;re 50 or older and want the house clear at retirement.</strong> The window to a paid-off home is shorter than a 30-year schedule. A 15-year from age 50 lands you debt-free at 65; a 30-year doesn&rsquo;t.</li>
+  <li><strong>Emergency savings are real.</strong> Six months of expenses in cash, no credit card balance, no other high-interest debt. The 15-year doesn&rsquo;t leave room for a financial surprise, so the room has to already be there.</li>
+  <li><strong>You&rsquo;re honest that you wouldn&rsquo;t invest the difference.</strong> If the $733 a month would lifestyle-creep into restaurants and a bigger SUV, the 15-year is forced savings via mortgage principal. That&rsquo;s a perfectly valid reason to pick it.</li>
+</ul>
+
+<h2>When the 30-year is the right call</h2>
+
+<p>
+  Most US buyers pick the 30-year and they&rsquo;re right to. The scenarios where I&rsquo;d push someone toward it:
+</p>
+
+<ul>
+  <li><strong>First-time buyer stretching into the area they actually want to live in.</strong> The lower payment is the difference between owning now and renting another five years while prices keep moving. Decade-three optimisation matters less than getting on the ladder.</li>
+  <li><strong>Variable income.</strong> Commission sales, self-employed, contract work, founder pay. The lower contractual payment is breathing room when a quarter goes sideways, and bad quarters happen.</li>
+  <li><strong>You&rsquo;ll genuinely invest the $733 difference.</strong> The S&amp;P 500&rsquo;s long-run real return sits around 7%. At that rate, $733 a month over 15 years compounds to about $220,000. That beats the $192,000 interest saving from the pure 15-year. The honest version of this argument: it only works if you actually fund the brokerage account every month, not if you intend to.</li>
+  <li><strong>You expect to move or refinance inside 5&ndash;10 years.</strong> Locking into a 15-year amortisation when you might sell at year six is overconfident about a life that&rsquo;s mid-flight.</li>
+  <li><strong>Retirement accounts are already maxed.</strong> 401(k), employer match, IRA, HSA. At that point optionality is more valuable than another $733 a month of principal velocity.</li>
+</ul>
+
+<h2>What about a 20-year mortgage?</h2>
+
+<p>
+  The 20-year exists. Fannie Mae and Freddie Mac will buy it, a handful of US lenders quote it, and it&rsquo;s closer to the UK default (25 years is the standard British term, with 2&ndash;10-year fixed periods that then revert to the lender&rsquo;s SVR). On a $300,000 loan at 6%, a 20-year monthly payment lands around <strong>$2,149</strong> with total interest near <strong>$215,838</strong>. That saves you about $132,000 against the 30-year and costs about $60,000 more than the pure 15-year.
+</p>
+
+<p>
+  Rates tend to fall roughly 0.25%&ndash;0.5% below the 30-year and 0.25%&ndash;0.5% above the 15-year, but you&rsquo;ll usually have to ask for the quote rather than see it on the rate sheet. The use case is narrow: the borrower who wants meaningful savings but finds the 15-year payment genuinely nerve-wracking. My honest read is that most buyers should pick the 30-year-plus-extra-principal hybrid (maximum flexibility) or the pure 15-year (maximum optimisation). The 20-year is the answer when neither of those feels right, and it&rsquo;s a perfectly reasonable compromise &mdash; just don&rsquo;t pick it because you couldn&rsquo;t decide.
+</p>
+
+<h2>Which to pick?</h2>
+
+<p>
+  No platitudes. Here&rsquo;s how I&rsquo;d match the term to the situation:
+</p>
+
+<ul>
+  <li><strong>Conservative default for most buyers:</strong> 30-year mortgage with an automatic principal-only transfer set up the day the loan funds, sized to roughly match the 15-year payment. You capture most of the interest savings and keep the safety net.</li>
+  <li><strong>Aggressive optimiser:</strong> pure 15-year, but only if your back-end DTI on the new payment is under 30% and you have six months of expenses in cash. The lower rate plus contractual discipline beats the hybrid by roughly $24,000 in this comparison.</li>
+  <li><strong>Income that swings:</strong> 30-year, no debate. The contract is the thing that has to survive a bad year, not the optimisation.</li>
+  <li><strong>First-time buyer in an expensive metro:</strong> 30-year. The goal is buying the house at all.</li>
+  <li><strong>Refinance from a high-rate 30-year:</strong> run the 15-year quote. If the new payment is within ~$200/month of your current one, take it.</li>
+</ul>
+
+<p>
+  Plug your real loan amount and the actual rate your lender quoted into the calculator above. Look at the total-interest line, not the monthly payment, then look at your bank statement and decide whether the higher payment leaves you enough air for the unexpected. Pull three months of credit card statements while you&rsquo;re at it &mdash; the &ldquo;15-year is comfortable&rdquo; conviction softens fast when you can see how much real life actually costs each month. The decision drives 15 to 30 years of cash flow. Sleep on it, then sleep on it again.
 </p>

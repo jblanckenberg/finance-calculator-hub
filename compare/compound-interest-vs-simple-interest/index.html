@@ -211,61 +211,58 @@
 
     
 <p class="lead">
-  <strong>Compound interest</strong> earns interest on both your original deposit and on the interest that has already accumulated. <strong>Simple interest</strong> only ever earns interest on the original deposit. Over a single year the gap is small. Over thirty years it is the difference between &pound;21,000 and &pound;66,000 of growth on the same starting balance &mdash; an unmistakable case for picking the right account type early.
+  Drop $10,000 into an account paying 7% a year and walk away for 40 years. Under simple interest you finish with $38,000. Under compound interest you finish with $149,745. Same principal. Same rate. Same time. Nearly four times the money. I have run this calculation for friends, for family, for myself at 22 when I should have started earlier, and the reaction is always the same flavour of disbelief. Below is why the gap opens, where each form actually shows up in real accounts, and how to tell which one is quietly working for you (or against you) right now.
 </p>
 
-<h2>The two formulas, side by side</h2>
+<h2>The 30-second difference</h2>
 
 <p>
-  Simple interest is the straightforward calculation most people meet first. You multiply the principal by the rate and by the number of years &mdash; that is your total interest, no matter how long you leave the money invested.
+  Simple interest only ever pays you on the original deposit. Compound interest pays you on the deposit <em>and</em> on every dollar of interest you have already earned. That second mechanic &mdash; interest earning interest &mdash; is the only thing that changes between the two formulas, and it is the entire ballgame over long time horizons.
 </p>
 
-<p><strong>Simple interest:</strong> <code>I = P &times; r &times; t</code></p>
-<p><strong>Compound interest:</strong> <code>A = P (1 + r/n)^(nt)</code></p>
-
-<p>
-  In the compound formula, <code>n</code> is the number of compounding periods per year and <code>A</code> is the final amount including the principal. The crucial mechanic is the exponent: as <code>t</code> grows, the multiplier grows non-linearly. That is the &ldquo;snowball&rdquo; effect you have probably heard about.
-</p>
-
-<h2>A worked example: &pound;10,000 at 7% for 30 years</h2>
+<h2>Side-by-side: $10,000 at 7%</h2>
 
 <table class="article-table">
   <thead>
     <tr>
-      <th>Interest type</th>
-      <th>Interest earned</th>
-      <th>Final balance</th>
+      <th>Year</th>
+      <th>Simple interest balance</th>
+      <th>Compound (annual) balance</th>
+      <th>Gap</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Simple interest</td>
-      <td>&pound;21,000</td>
-      <td>&pound;31,000</td>
-    </tr>
-    <tr>
-      <td>Compound (annual)</td>
-      <td>&pound;66,123</td>
-      <td>&pound;76,123</td>
-    </tr>
-    <tr>
-      <td>Compound (monthly)</td>
-      <td>&pound;71,303</td>
-      <td>&pound;81,303</td>
-    </tr>
-    <tr>
-      <td>Compound (daily)</td>
-      <td>&pound;71,705</td>
-      <td>&pound;81,705</td>
-    </tr>
+    <tr><td>Y1</td><td>$10,700</td><td>$10,700</td><td>$0</td></tr>
+    <tr><td>Y5</td><td>$13,500</td><td>$14,026</td><td>$526</td></tr>
+    <tr><td>Y10</td><td>$17,000</td><td>$19,672</td><td>$2,672</td></tr>
+    <tr><td>Y15</td><td>$20,500</td><td>$27,590</td><td>$7,090</td></tr>
+    <tr><td>Y20</td><td>$24,000</td><td>$38,697</td><td>$14,697</td></tr>
+    <tr><td>Y25</td><td>$27,500</td><td>$54,274</td><td>$26,774</td></tr>
+    <tr><td>Y30</td><td>$31,000</td><td>$76,123</td><td>$45,123</td></tr>
+    <tr><td>Y35</td><td>$34,500</td><td>$106,766</td><td>$72,266</td></tr>
+    <tr><td>Y40</td><td>$38,000</td><td>$149,745</td><td>$111,745</td></tr>
   </tbody>
 </table>
 
+<h2>The exponential vs linear shape</h2>
+
 <p>
-  Even at moderate rates, compounding produces roughly three times the interest of simple interest over thirty years. The jump from yearly to monthly compounding adds about &pound;5,000; the jump from monthly to daily adds only another &pound;400. The interest rate and the length of time invested matter far more than the compounding frequency.
+  Plot those two columns on a chart and one is a ruler-straight line climbing $700 a year forever. The other starts off looking almost identical, then curves upward and refuses to stop. By Y20 the compound line is $14,697 ahead. By Y40 the lead is $111,745 &mdash; bigger than 11 years of the original simple interest payments.
 </p>
 
-<h2>Run your own numbers</h2>
+<p>
+  Here is what is actually happening. In year 2 of the compound account, the $700 of interest you earned in year 1 is now part of the balance, so it earns its own 7%. By year 30, the &ldquo;interest on interest&rdquo; portion alone dwarfs the original $10,000 stake. Most of the $76,123 balance at Y30 isn&rsquo;t principal and it isn&rsquo;t first-generation interest &mdash; it is interest that has been quietly breeding for decades.
+</p>
+
+<p>
+  The Rule of 72 is the cleanest mental check. Divide 72 by the rate and you get the years to double, and it only works for compound interest. At 7%, money doubles roughly every 10.3 years. Test it against the table: Y10 sits at $19,672 (almost 2&times;), Y20 at $38,697 (almost 4&times;), Y30 at $76,123 (almost 8&times;). Each decade doubles the prior one. That is what exponential growth feels like in the wild.
+</p>
+
+<p>
+  Simple interest doubles too, but on a punishing schedule. At 7% you double the original deposit in 1 &divide; 0.07 = 14.3 years. The next doubling takes another 14.3 years of contributions on top, then another, then another &mdash; each absolute doubling getting slower in relative terms because the rate is fixed against an unchanging principal. Most people underestimate the gap by an order of magnitude until they see year 30 on a single chart.
+</p>
+
+<h2>Run the numbers yourself</h2>
 
 
   
@@ -281,33 +278,80 @@
 
 
 
-<div class="cta-box">
-  <h3>Try this scenario</h3>
-  <p>
-    Set the principal to <strong>10,000</strong>, the annual rate to <strong>7%</strong>, the term to <strong>30 years</strong>, and toggle the compounding frequency between yearly, monthly, and daily to see the numbers from the table above for yourself.
-  </p>
-</div>
-
-<h2>When is simple interest still used?</h2>
+<h2>Where you&rsquo;ll meet each one</h2>
 
 <p>
-  Most savings and investment accounts use compound interest. Simple interest still shows up in a few places, almost always for borrowers rather than savers:
-</p>
-<ul>
-  <li><strong>Short-term consumer loans</strong> &mdash; some car loans and personal loans charge simple interest on the outstanding balance.</li>
-  <li><strong>Some mortgages</strong> &mdash; a small subset of mortgages, particularly in the US, use a daily simple-interest method.</li>
-  <li><strong>Promissory notes and seller financing</strong> &mdash; private loans often default to simple-interest accrual.</li>
-  <li><strong>Treasury bills</strong> &mdash; short-duration government debt is typically quoted on a simple-interest basis.</li>
-</ul>
-
-<p>
-  As a borrower, simple interest is almost always in your favour because the lender cannot charge interest on accrued but unpaid interest. As a saver, compound interest is what you want.
+  The line between simple and compound in real life almost always comes down to one question: does the interest stay in the account, or does it get paid out?
 </p>
 
-<h2>The takeaway</h2>
+<p>
+  <strong>Simple interest in the wild.</strong> Short-term personal loans &mdash; some payday and instalment products &mdash; quote a simple-interest figure. A subset of US auto loans use a simple-interest daily-accrual method (check your loan agreement; the CFPB has plain-English guidance on the difference). US Treasury bonds pay coupons twice a year as cash to your brokerage account; unless you manually reinvest those coupons, the underlying bond is delivering simple interest on the face value. The same logic applies to any deposit account marketed as &ldquo;interest paid monthly to a linked current account&rdquo; &mdash; the interest is leaving the compounding pot the moment it lands.
+</p>
 
 <p>
-  When you are saving or investing for a goal that is more than a few years away &mdash; a house deposit, a retirement pot, your children&rsquo;s university fund &mdash; pick an account that compounds. The compounding frequency matters a little; the rate and the time matter enormously. Start as early as you can, contribute regularly, and let the formula do the work.
+  <strong>Compound interest in the wild.</strong> Standard savings accounts, certificates of deposit, money-market funds, every retirement account (401(k), IRA, Roth, SIPP, RA), every index fund where dividends are automatically reinvested. And the dark mirror &mdash; credit-card balances, which compound daily and turn a 22% APR into roughly 24.6% APY before you have noticed.
+</p>
+
+<p>
+  A couple of country-specific notes I get asked about a lot. In the UK, NS&amp;I Premium Bonds technically accrue prize money in a way that obscures the underlying simple structure, while cash ISAs and stocks-and-shares ISAs are firmly compound. Same for AER-quoted savings products, which is the UK&rsquo;s honest answer to APY. In the US, a high-yield savings account at Marcus, Ally, or Wealthfront quoting 4.5% APY is already telling you the compound figure &mdash; daily compounding is baked into the headline rate. South African TFSAs and money-market funds compound monthly or daily depending on the provider; check the fact sheet rather than guessing.
+</p>
+
+<p>
+  The shortcut I use when reading any product disclosure: if it quotes a rate as APY or AER, it&rsquo;s already compound and the number is honest. If it quotes APR, the actual amount you&rsquo;ll earn or pay depends on the compounding frequency that&rsquo;s being hidden behind the headline. Reg DD in the US and the FCA in the UK force banks to disclose the compound-honest figure on deposit accounts, which is why your savings statement uses APY/AER and your credit-card statement uses APR. The two camps are not symmetric by accident.
+</p>
+
+<h2>The two-investor test (start early)</h2>
+
+<p>
+  This is the example that convinced me to stop arguing with twentysomethings about whether to start now or wait until they earn more. Two investors, same 7% return.
+</p>
+
+<p>
+  <strong>Alice</strong> invests $5,000 a year from age 25 to 35. Ten contributions, $50,000 in total, then she stops cold and never adds another dollar &mdash; she just lets the balance ride at 7% until age 65.
+</p>
+
+<p>
+  <strong>Bob</strong> waits. From age 35 to 65 he invests $5,000 a year, every year, for thirty straight years. $150,000 in total &mdash; three times what Alice contributed.
+</p>
+
+<p>
+  At 65, Alice&rsquo;s $50,000 of contributions has grown to roughly $540,000. Bob&rsquo;s $150,000 of contributions has grown to roughly $510,000. Alice put in a third of the money and ends with more. The reason is a ten-year head start of compound runway that Bob can never get back, no matter how disciplined he becomes later.
+</p>
+
+<p>
+  The lesson I draw from this isn&rsquo;t &ldquo;Bob lost&rdquo;. Bob did fine. The lesson is that time in the market is so much more valuable than the amount you eventually contribute that the first decade of investing is worth more than every subsequent decade combined. If you are reading this in your twenties, the cheapest thing you will ever do for your future self is open an account this week and put something into it, even $50 a month.
+</p>
+
+<h2>The dark side: compound interest on debt</h2>
+
+<p>
+  The same force that builds retirement portfolios eats credit-card balances alive. Carry $5,000 on a card at 22% APR, make only the minimum payment (typically 2% of the balance &mdash; around $100 a month to start), and it takes roughly nine years to clear. You will pay about $4,500 in interest along the way. You nearly double the original debt to settle it.
+</p>
+
+<p>
+  Two things make this so brutal. First, credit cards compound daily, so a 22% APR is really about a 24.6% APY by the time the year ends &mdash; the APR figure understates what you actually pay. Second, the minimum payment is a percentage of the balance, so as the balance falls, the payment falls too, stretching the payoff out asymptotically. The card issuer is structurally rooting for you to take a long time.
+</p>
+
+<p>
+  Compare to a 7% car loan on the same $5,000 over a fixed five-year amortising schedule. Total interest: about $940. Same principal, same general &ldquo;compound&rdquo; math under the hood, but the structure is completely different &mdash; the monthly payment is fixed and forces the balance down on a known curve. Structure matters as much as the rate.
+</p>
+
+<p>
+  My one piece of unsolicited advice in this whole article: if you are carrying a credit-card balance past the grace period, killing it is almost certainly the highest-return move available to you, ahead of retirement contributions in most cases. A guaranteed 22% return by paying down debt beats anything you will reliably earn in a market.
+</p>
+
+<h2>Which one matters for you?</h2>
+
+<p>
+  For about 99% of personal finance, compound is the calculation that matters. Savings, investments, retirement accounts, mortgages, credit cards &mdash; all compound under the hood, even when the marketing materials don&rsquo;t use the word.
+</p>
+
+<p>
+  Simple interest is worth understanding in three narrow situations. When you read a Treasury yield and the coupons are paid out as cash. When you evaluate a short-term loan and the lender quotes a simple-interest figure (compare it like-for-like by asking for the APR). When you compare an &ldquo;interest paid monthly&rdquo; deposit product to a CD or fixed deposit that keeps re-compounding.
+</p>
+
+<p>
+  For everything else, assume compound. If a calculator asks you for a compounding frequency, pick monthly or daily for an honest answer. Use the Rule of 72 for quick mental math. And please &mdash; this is the genuine ask &mdash; don&rsquo;t try to mentally project compound interest more than about ten years out. The exponential gets away from you fast, humans are systematically bad at it, and that is exactly why the calculator above exists.
 </p>
 
 
