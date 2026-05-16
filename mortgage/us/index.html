@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>US Mortgage Calculator — 30-Year Repayment + PMI | FinCalcHub</title>
   <meta name="description" content="Free US mortgage calculator. Monthly P&amp;I, PMI, total interest. Includes 30-year fixed, conforming loan limits, and Federal Reserve rate context.">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://finncalc.com/mortgage/us/">
   <meta property="og:title" content="US Mortgage Calculator — 30-Year Repayment + PMI | FinCalcHub">
   <meta property="og:description" content="Free US mortgage calculator. Monthly P&amp;I, PMI, total interest. Includes 30-year fixed, conforming loan limits, and Federal Reserve rate context.">
@@ -127,9 +127,30 @@
   <p class="subtitle">Calculate your monthly repayment, total interest, and full amortisation schedule for any home loan.</p>
 
 
-<div class="operator-todo" style="margin:16px 0;padding:16px;border:2px dashed #f59e0b;background:#fffbeb;color:#78350f;border-radius:6px;font-size:14px">
-  <strong>OPERATOR_TO_FILL — </strong><code>[OPERATOR_TO_FILL: ~400 words about US 30-year mortgage, conforming loan limit, PMI]</code>
-</div>
+<section class="variant-intro" style="margin:16px 0;max-width:760px">
+
+  <p>A standard US 30-year fixed-rate mortgage amortises monthly using M = P × [r(1+r)^n] ÷ [(1+r)^n − 1]. The Freddie Mac Primary Mortgage Market Survey publishes the weekly national rate, and the FHFA sets the annual conforming loan limit ($766,550 in 2024, higher in designated high-cost areas).</p>
+
+  <p>The US 30-year fixed-rate mortgage is a uniquely American instrument. Most developed economies don&#39;t offer it because the prepayment optionality embedded in the borrower&#39;s right to refinance creates a risk profile no commercial lender wants to hold. The reason it exists in the US is securitisation through Fannie Mae and Freddie Mac, who absorb that prepayment risk through MBS pricing.</p>
+
+  <p>This calculator handles the loan products US homebuyers actually face:</p>
+
+  <p>- **Conforming 30-year fixed** — up to the FHFA&#39;s annual conforming loan limit, backed by Fannie/Freddie, lowest available rates, 20% down avoids PMI
+- **FHA** — 3.5% minimum down with 580+ FICO; upfront 1.75% MIP plus annual 0.55-1.05% MIP, with MIP for the life of the loan if down payment is under 10%
+- **VA** — for eligible veterans, active duty, and surviving spouses; 0% down, no PMI, with a one-time funding fee of 1.4-3.6% (waivable for disabled veterans)
+- **USDA Rural Development** — 0% down in designated rural areas, income limits apply
+- **Jumbo** — above the conforming limit, tighter qualification (700+ FICO, 20%+ down, 6-12 months reserves)
+- **ARMs (5/1, 7/1, 10/1)** — fixed for the initial period, then resets annually against SOFR + margin</p>
+
+  <p>Beyond P&amp;I, the calculator handles the rest of PITI and additional carrying costs:
+- **Property tax** — varies widely, from 0.3% (Hawaii) to over 2% (New Jersey, Illinois) of assessed value annually
+- **Homeowners insurance** — $1,200-2,500/year typical, materially higher in CA, FL, and coastal areas
+- **PMI** — 0.3-1.5% per year of the loan balance if down payment is under 20% on a conforming loan
+- **HOA dues** — where applicable, typically $200-800/month for condos and planned communities</p>
+
+  <p>The 28%/36% rule remains the lender baseline: housing should sit under 28% of gross monthly income, total debt under 36%. For loan-program details, the Consumer Financial Protection Bureau&#39;s mortgage guides and the FHFA&#39;s annual conforming loan limits page are the authoritative federal references.</p>
+
+</section>
 
 
 </div>

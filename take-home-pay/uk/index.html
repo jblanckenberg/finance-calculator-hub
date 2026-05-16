@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UK Take-Home Pay Calculator (PAYE + NI 2026/27) | FinCalcHub</title>
   <meta name="description" content="Free UK take-home pay calculator. Real salary after PAYE income tax, Class 1 NI, and personal allowance. HMRC 2026/27 brackets — instant result.">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://finncalc.com/take-home-pay/uk/">
   <meta property="og:title" content="UK Take-Home Pay Calculator (PAYE + NI 2026/27) | FinCalcHub">
   <meta property="og:description" content="Free UK take-home pay calculator. Real salary after PAYE income tax, Class 1 NI, and personal allowance. HMRC 2026/27 brackets — instant result.">
@@ -127,9 +127,37 @@
   <p class="subtitle">See your exact salary after all taxes and deductions — updated for 2026/27 tax rules in the USA, UK, and South Africa.</p>
 
 
-<div class="operator-todo" style="margin:16px 0;padding:16px;border:2px dashed #f59e0b;background:#fffbeb;color:#78350f;border-radius:6px;font-size:14px">
-  <strong>OPERATOR_TO_FILL — </strong><code>[OPERATOR_TO_FILL: ~400 words about UK PAYE, NI Class 1, personal allowance]</code>
-</div>
+<section class="variant-intro" style="margin:16px 0;max-width:760px">
+
+  <p>UK take-home pay is gross salary minus PAYE income tax, Employee National Insurance, student loans (if applicable), and pension. The 2026/27 personal allowance is £12,570, basic rate 20% applies £12,571-£50,270, higher rate 40% applies £50,271-£125,140. HMRC publishes the official rate tables each year.</p>
+
+  <p>UK take-home pay has six standard deductions, and getting the order right matters because each layer is calculated on the post-previous-layer figure. The deduction stack runs as follows.</p>
+
+  <p>**1. Pension contribution** (where employer-deducted before tax under a net-pay or salary-sacrifice arrangement) — reduces gross before tax is applied.</p>
+
+  <p>**2. Income tax (PAYE)** on the remaining gross:
+- Personal allowance: £12,570 at 0%
+- Basic rate band: £12,571 to £50,270 at 20%
+- Higher rate band: £50,271 to £125,140 at 40% (with the personal allowance tapering £1 for every £2 of income above £100,000 — creating the notorious 60% marginal trap)
+- Additional rate: above £125,140 at 45%</p>
+
+  <p>**3. Employee National Insurance:**
+- Up to £12,570: 0%
+- £12,570 to £50,270: 8%
+- Above £50,270: 2%</p>
+
+  <p>**4. Student loan repayments** (if applicable):
+- Plan 1: 9% above £24,990 — Plan 2: 9% above £27,295 — Plan 4 (Scotland): 9% above £31,395 — Plan 5: 9% above £25,000 — Postgraduate Loan: 6% above £21,000</p>
+
+  <p>**5. Workplace pension** (auto-enrolment minimum is 5% employee + 3% employer of qualifying earnings unless opted out).</p>
+
+  <p>**6. Salary sacrifice arrangements** (cycle-to-work, EV lease, additional pension) — applied to gross, reducing both income tax and NI.</p>
+
+  <p>Scotland uses different income tax bands and rates (starter, basic, intermediate, higher, advanced, and top rates ranging from 19% to 48% in 2026/27) — the calculator includes a Scotland toggle to apply the correct schedule.</p>
+
+  <p>The calculator outputs annual gross-to-net, monthly cash-in-hand, weekly and daily equivalents, marginal rate on the next £1 earned (revealing the 60% marginal trap between £100k and £125,140), and overall effective rate. For the underlying tax tables and NI thresholds, HMRC&#39;s rates and thresholds for employers page on gov.uk is the authoritative source, updated each year at the Budget.</p>
+
+</section>
 
 
 </div>

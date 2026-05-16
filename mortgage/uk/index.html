@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UK Mortgage Calculator — Repayment + Affordability | FinCalcHub</title>
   <meta name="description" content="Free UK mortgage calculator. Monthly repayment, total interest, full amortisation. Tracks Bank of England base rate, SVR, and fixed-rate options.">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://finncalc.com/mortgage/uk/">
   <meta property="og:title" content="UK Mortgage Calculator — Repayment + Affordability | FinCalcHub">
   <meta property="og:description" content="Free UK mortgage calculator. Monthly repayment, total interest, full amortisation. Tracks Bank of England base rate, SVR, and fixed-rate options.">
@@ -127,9 +127,29 @@
   <p class="subtitle">Calculate your monthly repayment, total interest, and full amortisation schedule for any home loan.</p>
 
 
-<div class="operator-todo" style="margin:16px 0;padding:16px;border:2px dashed #f59e0b;background:#fffbeb;color:#78350f;border-radius:6px;font-size:14px">
-  <strong>OPERATOR_TO_FILL — </strong><code>[OPERATOR_TO_FILL: ~400 words about UK mortgages, BoE base rate, SVR vs fixed]</code>
-</div>
+<section class="variant-intro" style="margin:16px 0;max-width:760px">
+
+  <p>A UK mortgage repayment is calculated using the standard amortisation formula M = P × [r(1+r)^n] ÷ [(1+r)^n − 1]. The Bank of England base rate drives variable products; fixed-rate deals price off SONIA swap rates. The FCA&#39;s Mortgage Conduct of Business handbook governs UK affordability rules.</p>
+
+  <p>UK mortgage maths in 2026 sits in a meaningfully different regime from the pre-2022 era of sub-2% rates. Borrowers refinancing from deals struck in 2018-2021 are landing in 4-5% products, and the affordability stress test embedded in lender models has materially compressed how much most households can borrow.</p>
+
+  <p>This calculator handles the four mortgage products UK borrowers actually use:</p>
+
+  <p>1. **Fixed rate (2, 5, 10-year)** — most popular for owner-occupiers. Rate is locked, monthly payment doesn&#39;t move with BoE. Pricing is set against SONIA swaps plus a margin
+2. **Tracker** — follows BoE base + a margin (e.g. base + 0.99%). No early repayment charge typically; risk if base rises
+3. **Standard Variable Rate (SVR)** — the lender&#39;s default after a fixed/tracker period ends. Almost always the most expensive product on the lender&#39;s book; refinance immediately on expiry
+4. **Discount variable** — SVR minus a margin for a fixed period; variants on tracker logic</p>
+
+  <p>Beyond the headline rate, the calculator handles:
+- **Capital repayment vs interest-only** — capital repayment is the default for residential; interest-only is typically restricted to buy-to-let or high-net-worth lending
+- **Term length** — 25 years is standard, but 30-35 year terms are increasingly common to pass affordability. Extending term raises lifetime interest cost materially
+- **Loan-to-value tiers** — pricing steps at 60% / 75% / 85% / 90% / 95% LTV. Below 60% gets the best rates; 95% LTV (via the Mortgage Guarantee Scheme) carries the biggest premium
+- **Affordability** — lenders cap at 4-4.5x income, with FCA-mandated stress-testing against SVR+1%
+- **Stamp Duty Land Tax** — separate calculation; first-time buyers pay no SDLT up to £425,000 in England/NI</p>
+
+  <p>For underlying rules, the FCA&#39;s MCOB handbook governs UK mortgage advice and the Bank of England&#39;s monthly Money and Credit statistical release covers current SME and household lending rates. HMRC&#39;s Stamp Duty Land Tax calculator on gov.uk handles the SDLT calculation separately.</p>
+
+</section>
 
 
 </div>
