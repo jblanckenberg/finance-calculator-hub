@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://finncalc.com/_build/schema.json",
+  "definitions": {
+    "Calculator": {
+      "type": "object",
+      "required": ["slug", "name", "title", "description", "h1", "subtitle"],
+      "additionalProperties": true,
+      "properties": {
+        "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "name": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string", "minLength": 50, "maxLength": 200 },
+        "h1": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "formula": { "type": "string" },
+        "voiceAnswer": { "type": "string" },
+        "faq": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["q", "a"],
+            "properties": {
+              "q": { "type": "string" },
+              "a": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "Variant": {
+      "type": "object",
+      "required": ["slug", "kind", "label", "h1Suffix", "title", "description", "intro"],
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "kind": { "enum": ["geo", "scenario", "audience"] },
+        "label": { "type": "string" },
+        "h1Suffix": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "voiceAnswer": { "type": ["string", "null"] },
+        "intro": { "type": "string" },
+        "hreflangCountry": { "enum": ["en-US", "en-GB", "en-ZA", null] }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "patternProperties": { "^[a-z0-9-]+$": { "$ref": "#/definitions/Calculator" } }
+    },
+    {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z0-9-]+$": {
+          "type": "object",
+          "patternProperties": { "^[a-z0-9-]+$": { "$ref": "#/definitions/Variant" } }
+        }
+      }
+    }
+  ]
+}
