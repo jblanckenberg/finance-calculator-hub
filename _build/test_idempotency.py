@@ -52,3 +52,17 @@ def test_render_includes_current_year_in_footer():
     import datetime as dt
     out = _render_compound_interest()
     assert f"© {dt.date.today().year} FinCalcHub" in out
+
+def test_render_includes_og_image_meta():
+    out = _render_compound_interest()
+    assert 'property="og:image" content="https://finncalc.com/og-image.png"' in out
+    assert 'property="og:image:width" content="1200"' in out
+
+def test_render_includes_twitter_card_meta():
+    out = _render_compound_interest()
+    assert 'name="twitter:card" content="summary_large_image"' in out
+
+def test_render_includes_adsense_lazy_loader():
+    out = _render_compound_interest()
+    assert "adsbygoogle.js" in out
+    assert "IntersectionObserver" in out
