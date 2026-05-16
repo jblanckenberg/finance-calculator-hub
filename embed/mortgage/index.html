@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Calculator (Embed) | FinCalcHub</title>
+  <meta name="description" content="Embedded mortgage calculator widget by FinCalcHub.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://finncalc.com/mortgage/">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    body { padding: 0; }
+    .container { padding: 12px 16px; max-width: 100%; }
+    .embed-credit { margin: 12px 16px 8px; font-size: 11px; color: #6B7280; text-align: right; }
+    .embed-credit a { color: #1E88E5; text-decoration: none; }
+  </style>
+  <script defer data-domain="embed.finncalc.com" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+
+<div class="region-wrap" style="position:relative;top:0">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK" onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA" onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+<div class="container">
+  <h1 style="font-size:20px;margin-bottom:8px">Mortgage Calculator</h1>
+  <div class="card">
+    <div class="card-title">Your Mortgage Details</div>
+    <div class="form-row">
+      <div class="form-group"><label for="homePrice">Home Price <span class="hint" id="s1">($)</span></label><input type="number" id="homePrice" value="400000" min="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="downPayment">Down Payment <span class="hint" id="s2">($)</span></label><input type="number" id="downPayment" value="80000" min="0" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="rate">Annual Interest Rate (%)</label><input type="number" id="rate" value="7.0" min="0.1" max="30" step="0.05" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="termYears">Loan Term (years)</label><input type="number" id="termYears" value="30" min="1" max="40" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate Mortgage &rarr;</button>
+  </div>
+  <div class="results" id="results">
+    <div class="results-title">Your Mortgage Summary</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-monthly">$0</div><div class="result-label">Monthly Payment</div></div>
+      <div class="result-item"><div class="result-value" id="r-interest">$0</div><div class="result-label">Total Interest</div></div>
+      <div class="result-item"><div class="result-value" id="r-total-cost">$0</div><div class="result-label">Total Cost</div></div>
+    </div>
+  </div>
+</div>
+
+<p class="embed-credit">
+  Open the full calculator at
+  <a href="https://finncalc.com/mortgage/?utm_source=embed&amp;utm_medium=widget&amp;utm_campaign=mortgage" target="_blank" rel="noopener">FinCalcHub</a>.
+</p>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+<script>
+var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:'$',UK:'£',SA:'R'}[r]||'$';['s1','s2'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent='('+s+')';});if(document.getElementById('results').classList.contains('show'))calculate();};
+function calculate(){
+  var hp=+document.getElementById('homePrice').value||400000;
+  var dp=+document.getElementById('downPayment').value||0;
+  var apr=+document.getElementById('rate').value||7;
+  var term=+document.getElementById('termYears').value||30;
+  var P=hp-dp; if(P<=0) return;
+  var r=apr/100/12; var n=term*12;
+  var monthly=r>0?P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):P/n;
+  var totalPaid=monthly*n; var totalInterest=totalPaid-P;
+  document.getElementById('r-monthly').textContent=formatMoney(monthly)+'/mo';
+  document.getElementById('r-interest').textContent=formatMoney(totalInterest);
+  document.getElementById('r-total-cost').textContent=formatMoney(totalPaid);
+  document.getElementById('results').classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){ calculate(); });
+</script>
+<script src="/js/embed-resizer.js" defer></script>
+</body>
+</html>
