@@ -1,0 +1,183 @@
+{
+  "compound-interest": {
+    "uk": {
+      "slug": "uk",
+      "kind": "geo",
+      "label": "UK",
+      "h1Suffix": " (UK)",
+      "title": "Compound Interest Calculator UK (ISAs, Base Rate) | FinCalcHub",
+      "description": "Free UK compound interest calculator. See how ISAs and savings grow at current Bank of England base rates. HMRC tax rules included for 2026/27.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about UK compound interest, ISAs, base rate]",
+      "hreflangCountry": "en-GB"
+    },
+    "us": {
+      "slug": "us",
+      "kind": "geo",
+      "label": "USA",
+      "h1Suffix": " (US)",
+      "title": "Compound Interest Calculator USA (APY, IRS Reporting) | FinCalcHub",
+      "description": "Free USA compound interest calculator. See how APY beats APR on savings, money markets, and CDs. IRS Form 1099-INT reporting rules included.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about US compound interest, APY vs APR, IRS reporting]",
+      "hreflangCountry": "en-US"
+    },
+    "with-monthly-contributions": {
+      "slug": "with-monthly-contributions",
+      "kind": "scenario",
+      "label": "With Monthly Contributions",
+      "h1Suffix": " + Monthly Deposits",
+      "title": "Compound Interest with Monthly Contributions | FinCalcHub",
+      "description": "Compound interest calculator with monthly contributions. See the power of dollar-cost averaging plus future value of an annuity over decades.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about future-value-of-annuity, dollar-cost averaging]",
+      "hreflangCountry": null
+    }
+  },
+  "mortgage": {
+    "uk": {
+      "slug": "uk",
+      "kind": "geo",
+      "label": "UK",
+      "h1Suffix": " (UK)",
+      "title": "UK Mortgage Calculator — Repayment + Affordability | FinCalcHub",
+      "description": "Free UK mortgage calculator. Monthly repayment, total interest, full amortisation. Tracks Bank of England base rate, SVR, and fixed-rate options.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about UK mortgages, BoE base rate, SVR vs fixed]",
+      "hreflangCountry": "en-GB"
+    },
+    "us": {
+      "slug": "us",
+      "kind": "geo",
+      "label": "US",
+      "h1Suffix": " (US)",
+      "title": "US Mortgage Calculator — 30-Year Repayment + PMI | FinCalcHub",
+      "description": "Free US mortgage calculator. Monthly P&I, PMI, total interest. Includes 30-year fixed, conforming loan limits, and Federal Reserve rate context.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about US 30-year mortgage, conforming loan limit, PMI]",
+      "hreflangCountry": "en-US"
+    },
+    "first-time-buyer": {
+      "slug": "first-time-buyer",
+      "kind": "audience",
+      "label": "First-Time Buyer",
+      "h1Suffix": " for First-Time Buyers",
+      "title": "First-Time Buyer Mortgage Calculator (UK, US, SA) | FinCalcHub",
+      "description": "First-time buyer mortgage calculator. Compares UK Help to Buy, US FHA loans, and SA FLISP support so you know what monthly repayment fits.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about first-time-buyer schemes (UK Help to Buy, US FHA, SA FLISP)]",
+      "hreflangCountry": null
+    }
+  },
+  "take-home-pay": {
+    "uk": {
+      "slug": "uk",
+      "kind": "geo",
+      "label": "UK",
+      "h1Suffix": " (UK)",
+      "title": "UK Take-Home Pay Calculator (PAYE + NI 2026/27) | FinCalcHub",
+      "description": "Free UK take-home pay calculator. Real salary after PAYE income tax, Class 1 NI, and personal allowance. HMRC 2026/27 brackets — instant result.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about UK PAYE, NI Class 1, personal allowance]",
+      "hreflangCountry": "en-GB"
+    },
+    "us": {
+      "slug": "us",
+      "kind": "geo",
+      "label": "US",
+      "h1Suffix": " (US)",
+      "title": "US Take-Home Pay Calculator (Federal + FICA + State) | FinCalcHub",
+      "description": "Free US take-home pay calculator. Net salary after federal tax, FICA, and state income tax. IRS 2026 brackets and state-by-state variance covered.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about US federal tax brackets, FICA, state-tax variance]",
+      "hreflangCountry": "en-US"
+    },
+    "za": {
+      "slug": "za",
+      "kind": "geo",
+      "label": "SA",
+      "h1Suffix": " (SA)",
+      "title": "South Africa Take-Home Pay Calculator (PAYE + UIF) | FinCalcHub",
+      "description": "Free South Africa take-home pay calculator. Net pay after PAYE, UIF, primary rebate, medical-aid credits. SARS 2026/27 brackets — instant result.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about SA PAYE, SARS brackets, rebates, UIF]",
+      "hreflangCountry": "en-ZA"
+    }
+  },
+  "retirement-savings": {
+    "uk": {
+      "slug": "uk",
+      "kind": "geo",
+      "label": "UK",
+      "h1Suffix": " (UK)",
+      "title": "UK Retirement Savings Calculator (SIPP, Pension) | FinCalcHub",
+      "description": "Free UK retirement savings calculator. SIPP, workplace pension, lifetime allowance, drawdown rules. HMRC 2026/27 limits — see your retirement gap.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about UK pensions, SIPP, lifetime allowance, drawdown]",
+      "hreflangCountry": "en-GB"
+    },
+    "us": {
+      "slug": "us",
+      "kind": "geo",
+      "label": "US",
+      "h1Suffix": " (US)",
+      "title": "US Retirement Savings Calculator (401k + Roth IRA) | FinCalcHub",
+      "description": "Free US retirement savings calculator. 401(k) match, Roth IRA, SECURE 2.0 catch-up rules. IRS 2026 contribution limits — see your retirement gap.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about US 401(k) match, Roth IRA, SECURE 2.0 rules]",
+      "hreflangCountry": "en-US"
+    }
+  },
+  "investment-growth": {
+    "uk": {
+      "slug": "uk",
+      "kind": "geo",
+      "label": "UK",
+      "h1Suffix": " (UK)",
+      "title": "UK Investment Growth Calculator (Stocks & Shares ISA) | FinCalcHub",
+      "description": "Free UK investment growth calculator. Project a Stocks & Shares ISA over decades. HMRC capital gains and dividend allowance rules for 2026/27.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about UK Stocks & Shares ISA, capital gains, dividend allowance]",
+      "hreflangCountry": "en-GB"
+    }
+  },
+  "savings-goal": {
+    "house-deposit": {
+      "slug": "house-deposit",
+      "kind": "scenario",
+      "label": "House Deposit",
+      "h1Suffix": " to Save a House Deposit",
+      "title": "House Deposit Savings Goal Calculator | FinCalcHub",
+      "description": "House deposit savings goal calculator. Set your target, see your timeline, and compare Help to Save, LISA, FHSA, and high-yield account options.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about house-deposit timelines, Help to Save, FHSA equivalents]",
+      "hreflangCountry": null
+    }
+  },
+  "net-worth": {
+    "by-age": {
+      "slug": "by-age",
+      "kind": "scenario",
+      "label": "By Age",
+      "h1Suffix": " by Age",
+      "title": "Net Worth by Age Calculator (US, UK, SA Medians) | FinCalcHub",
+      "description": "Net worth by age calculator. Compare your number to US, UK, and South Africa medians at each age decile. See how you rank against your peer group.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about net worth percentiles by age, US/UK/SA medians]",
+      "hreflangCountry": null
+    }
+  },
+  "inflation-impact": {
+    "uk": {
+      "slug": "uk",
+      "kind": "geo",
+      "label": "UK",
+      "h1Suffix": " (UK)",
+      "title": "UK Inflation Calculator (CPI, RPI, Real Returns) | FinCalcHub",
+      "description": "Free UK inflation calculator. See how CPI and RPI erode purchasing power. Real returns after inflation — ONS data, 2026 context. Plan in today's money.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about UK CPI/RPI, real return after inflation]",
+      "hreflangCountry": "en-GB"
+    }
+  }
+}
