@@ -175,3 +175,65 @@ class Renderer:
         ctx["intro_paragraphs"] = paragraphs_from(intro) if not stub else []
         tpl = self.env.get_template("variant.html")
         return tpl.render(**ctx)
+
+
+def write_all(*, apply: bool, root: Path | None = None) -> int:
+    """Write every calculator + variant page. Returns count of files written (apply) or N/A (dry-run)."""
+    root = root or Path(__file__).resolve().parent.parent
+    build_dir = Path(__file__).resolve().parent
+    renderer = Renderer(template_dir=build_dir / "templates")
+    calcs = json.loads((build_dir / "data" / "calculators.json").read_text(encoding="utf-8"))
+    variants = json.loads((build_dir / "data" / "variants.json").read_text(encoding="utf-8"))
+
+    written = 0
+    for slug, data in calcs.items():
+        body_path = build_dir / "bodies" / f"{slug}.html"
+        if not body_path.exists():
+            print(f"[skip] no body file for {slug}")
+            continue
+        body_html = body_path.read_text(encoding="utf-8")
+        out = renderer.render_calculator(slug=slug, data=data, body_html=body_html)
+        target = root / slug / "index.html"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if apply:
+            target.write_text(out, encoding="utf-8")
+            written += 1
+        else:
+            print(f"[dry-run] would write {target.relative_to(root)} ({len(out)} chars)")
+
+    for parent_slug, variant_map in variants.items():
+        parent_data = calcs.get(parent_slug)
+        if parent_data is None:
+            print(f"[skip] variant for unknown calc {parent_slug}")
+            continue
+        body_path = build_dir / "bodies" / f"{parent_slug}.html"
+        if not body_path.exists():
+            print(f"[skip] no parent body for {parent_slug}")
+            continue
+        body_html = body_path.read_text(encoding="utf-8")
+        for variant_slug, variant_data in variant_map.items():
+            out = renderer.render_variant(
+                parent_slug=parent_slug,
+                parent_data=parent_data,
+                variant_data=variant_data,
+                body_html=body_html,
+            )
+            target = root / parent_slug / variant_slug / "index.html"
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if apply:
+                target.write_text(out, encoding="utf-8")
+                written += 1
+            else:
+                print(f"[dry-run] would write {target.relative_to(root)} ({len(out)} chars)")
+
+    return written
+
+
+if __name__ == "__main__":
+    import sys
+    apply = "--apply" in sys.argv
+    n = write_all(apply=apply)
+    if apply:
+        print(f"[apply] wrote {n} files")
+    else:
+        print("[dry-run] (use --apply to write)")
