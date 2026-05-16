@@ -1,0 +1,370 @@
+{
+  "compound-interest": {
+    "slug": "compound-interest",
+    "name": "Compound Interest Calculator",
+    "title": "Compound Interest Calculator (Daily, Monthly, Yearly) | FinCalcHub",
+    "description": "Free compound interest calculator. See how money grows with daily, monthly, or yearly compounding. Add monthly contributions. USA, UK & South Africa.",
+    "h1": "Compound Interest Calculator",
+    "subtitle": "See how your money grows over time with the power of compounding. Add monthly contributions to maximise your results.",
+    "formula": "A = P(1 + r/n)^(nt) + PMT × [((1 + r/n)^(nt) − 1) / (r/n)]",
+    "faq": [
+      {
+        "q": "What is compound interest?",
+        "a": "Compound interest is interest calculated on both the initial principal and the interest that has already been earned. This means your interest earns interest — causing your money to grow at an accelerating rate over time. Albert Einstein reportedly called it the \"eighth wonder of the world\"."
+      },
+      {
+        "q": "How is compound interest calculated?",
+        "a": "The formula is: A = P(1 + r/n)^(nt) + PMT × [((1 + r/n)^(nt) − 1) / (r/n)], where P is the principal, r is the annual rate, n is the number of compounding periods per year, t is time in years, and PMT is the regular contribution per period."
+      },
+      {
+        "q": "How often should interest compound for the best results?",
+        "a": "More frequent compounding results in slightly higher returns. Daily compounding earns marginally more than monthly, which earns more than yearly. However, the difference is smaller than most people expect — the interest rate and time invested matter far more than compounding frequency."
+      },
+      {
+        "q": "What is the Rule of 72?",
+        "a": "The Rule of 72 is a quick mental calculation: divide 72 by the annual interest rate to find roughly how many years it takes to double your money. At 7% per year, your money doubles every 72 ÷ 7 ≈ 10 years. This calculator shows the exact figure."
+      },
+      {
+        "q": "What interest rate should I use for retirement planning?",
+        "a": "The S&P 500 has historically returned approximately 10% per year before inflation, or roughly 7% after inflation. Financial planners commonly use 6–8% as a conservative real-return assumption for long-term retirement projections."
+      }
+    ]
+  },
+  "mortgage": {
+    "slug": "mortgage",
+    "name": "🏠 Mortgage Calculator",
+    "title": "Mortgage Calculator UK / US — Repayment + Affordability | FinCalcHub",
+    "description": "Free mortgage calculator for the UK and US. Get your monthly payment, total interest, and full amortisation. Includes affordability and SA bonds.",
+    "h1": "🏠 Mortgage Calculator",
+    "subtitle": "Calculate your monthly repayment, total interest, and full amortisation schedule for any home loan.",
+    "formula": "M = P × [r(1+r)^n] / [(1+r)^n − 1]",
+    "faq": [
+      {
+        "q": "How is a mortgage payment calculated?",
+        "a": "Your principal and interest payment uses the formula M = P × r(1+r)⊃n / ((1+r)⊃n − 1), where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12), and n is the total number of payments (years × 12). This gives a fixed payment that fully repays the loan over the term."
+      },
+      {
+        "q": "How much deposit do I need?",
+        "a": "In the USA, a 20% down payment avoids Private Mortgage Insurance (PMI). In the UK, most lenders require 5–10% with better rates at 25%+. In South Africa, banks typically require 10% though 100% bonds are sometimes available to qualifying first-time buyers. A larger deposit always reduces your monthly payment and total interest."
+      },
+      {
+        "q": "Should I choose a 15 or 30 year mortgage?",
+        "a": "A 15-year mortgage has higher monthly payments but you pay significantly less interest overall — often less than half. A 30-year mortgage offers lower monthly payments and cash flow flexibility. If you can comfortably afford the 15-year payment, you will build equity much faster and save substantially on interest."
+      },
+      {
+        "q": "South Africa: What is transfer duty?",
+        "a": "Transfer duty is a government tax on property transfers. Properties up to R1,100,000 are exempt. Above that, rates range from 3% to 13% on a sliding scale. Transfer duty is a once-off cost paid by the buyer on registration and is separate from your monthly bond repayment."
+      },
+      {
+        "q": "UK: What is stamp duty?",
+        "a": "Stamp Duty Land Tax (SDLT) is paid on property purchases in England and Northern Ireland. From April 2025, the nil-rate threshold returns to £125,000 (2% on £125k–£250k, 5% on £250k–£925k). First-time buyers get relief up to £425,000 until March 2025, then £300,000. Scotland and Wales have their own equivalent taxes."
+      }
+    ]
+  },
+  "take-home-pay": {
+    "slug": "take-home-pay",
+    "name": "💰 Take-Home Pay Calculator",
+    "title": "Take-Home Pay Calculator 2026 — UK, US, South Africa | FinCalcHub",
+    "description": "Free take-home pay calculator 2026. See your real salary after income tax, NI, FICA, or UIF in the UK, USA, or South Africa. Instant — no signup.",
+    "h1": "💰 Take-Home Pay Calculator",
+    "subtitle": "See your exact salary after all taxes and deductions — updated for 2026/27 tax rules in the USA, UK, and South Africa.",
+    "formula": "Take-home = Gross − Σ(bracket_i × marginal_rate_i) − NI/FICA contributions",
+    "faq": [
+      {
+        "q": "How is take-home pay calculated in the USA?",
+        "a": "US take-home pay is your gross salary minus federal income tax (tax year 2026 brackets: 10%–37%), FICA Social Security (6.2% up to $184,500), Medicare (1.45% + 0.9% over $200k), state income tax, and any pre-tax deductions like 401(k) contributions. Your standard deduction ($16,100 single / $32,200 married for 2026) reduces your taxable income before federal tax is applied."
+      },
+      {
+        "q": "What is National Insurance in the UK?",
+        "a": "National Insurance (NI) is a UK payroll contribution used to fund state benefits. For 2026/27, employees pay 8% on earnings between £12,570 and £50,270, then 2% above that. Your NI contributions also count toward your State Pension entitlement. NI is calculated separately from income tax."
+      },
+      {
+        "q": "South Africa: what is UIF?",
+        "a": "UIF (Unemployment Insurance Fund) is a mandatory South African payroll deduction. Employees contribute 1% of gross salary, capped at a monthly salary of R17,712 (so max R177.12/month). Employers also contribute 1%. UIF provides short-term relief for workers who become unemployed, ill, or take maternity leave."
+      },
+      {
+        "q": "What is the UK Personal Allowance taper?",
+        "a": "In the UK, the personal allowance (£12,570, frozen through 2026/27 and 2027/28) is reduced by £1 for every £2 of income over £100,000. This means it is completely eliminated at income of £125,140, creating an effective 60% marginal tax rate between £100,000 and £125,140. This calculator applies the taper automatically."
+      },
+      {
+        "q": "How do I reduce my tax bill in South Africa?",
+        "a": "The most effective strategies are: (1) Contribute to a Retirement Annuity (RA) — contributions are tax-deductible up to 27.5% of taxable income, capped at R350,000/yr. (2) Contribute to a pension or provident fund via your employer. (3) Claim medical aid tax credits (R376/month for the first two members, R254/month for additional members, for 2026/27). This calculator applies all standard credits automatically."
+      }
+    ]
+  },
+  "retirement-savings": {
+    "slug": "retirement-savings",
+    "name": "🏖 Retirement Savings Calculator",
+    "title": "Retirement Savings Calculator — How Much You Need | FinCalcHub",
+    "description": "Free retirement savings calculator. See exactly how much you need to retire and whether your savings rate is on track. USA, UK & South Africa.",
+    "h1": "🏖 Retirement Savings Calculator",
+    "subtitle": "Find out if you're on track to retire comfortably - and exactly how much you need to save each month.",
+    "formula": "Future value = PV × (1+r)^n + PMT × [((1+r)^n − 1) / r]",
+    "faq": [
+      {
+        "q": "What is the 4% rule for retirement?",
+        "a": "The 4% rule states you can safely withdraw 4% of your retirement savings each year with very low risk of running out over a 30-year retirement. To find your target balance: multiply your desired annual income by 25. For $60,000/year you need $1,500,000."
+      },
+      {
+        "q": "How much should I save each month?",
+        "a": "The standard guideline is 15% of pre-tax income including any employer match. This calculator shows your exact number based on your age, current savings, and income goal."
+      },
+      {
+        "q": "USA: 401(k) vs IRA - which first?",
+        "a": "Always contribute to your 401(k) up to the full employer match first (free money). Then fund a Roth IRA up to the limit ($7,000 in 2024). Then return to the 401(k) for additional contributions. 2024 401(k) limit: $23,000 ($30,500 if 50+)."
+      },
+      {
+        "q": "South Africa: Are RA contributions tax-deductible?",
+        "a": "Yes. Retirement Annuity contributions are tax-deductible up to 27.5% of taxable income, capped at R350,000 per year. This means contributing to an RA directly reduces your tax bill - making it one of the most tax-efficient savings tools available in South Africa."
+      },
+      {
+        "q": "When should I start saving for retirement?",
+        "a": "As early as possible. The first decade of contributions is worth more than every subsequent decade combined because of compound growth. £200 a month from age 25 to 35, then nothing, beats £200 a month from 35 to 65 at the same return. If you haven't started, start now — late beats never by a wide margin."
+      }
+    ]
+  },
+  "investment-growth": {
+    "slug": "investment-growth",
+    "name": "🚀 Investment Growth Calculator",
+    "title": "Investment Growth Calculator — Future Value | FinCalcHub",
+    "description": "Free investment growth calculator. Project your portfolio future value with regular contributions, expected returns, and inflation. Instant results.",
+    "h1": "🚀 Investment Growth Calculator",
+    "subtitle": "See how your investment portfolio grows over time with regular contributions and compound returns.",
+    "faq": [
+      {
+        "q": "What annual return should I use?",
+        "a": "The S&P 500 has averaged ~10%/year before inflation (~7% real). For a balanced portfolio, 6–8% is a common planning assumption. Use a lower rate to be conservative."
+      },
+      {
+        "q": "How powerful is compound growth?",
+        "a": "Investing $10,000 at 8% for 30 years grows to $100,627 — a 10x return. Add $6,000 per year and it grows to $849,000. Time in the market is the most powerful factor."
+      },
+      {
+        "q": "What is the Rule of 72?",
+        "a": "A mental shortcut: 72 divided by your annual rate of return is roughly the number of years it takes for your money to double. At 6%, money doubles every 12 years. At 9%, every 8 years. It's accurate within 1% for rates between 5% and 12% — good enough for back-of-envelope retirement planning."
+      },
+      {
+        "q": "How long does it take to double an investment at 7% return?",
+        "a": "About 10.3 years. The Rule of 72 estimates 72÷7 ≈ 10.3 years, and the exact compound calculation confirms it: $10,000 at 7% compounded annually reaches $19,672 in year 10 and $21,049 in year 11. A 35-year-old investing today doubles their money by age 45 and quadruples it by 55."
+      },
+      {
+        "q": "Should I use real or nominal returns when projecting growth?",
+        "a": "Real returns (after subtracting inflation) for retirement and long-term goals — they tell you what your money will actually buy. Nominal returns work for short-term goals (under 5 years) where inflation matters less. The S&P 500 has averaged roughly 10% nominal and 7% real over the past century."
+      }
+    ]
+  },
+  "savings-goal": {
+    "slug": "savings-goal",
+    "name": "🎯 Savings Goal Calculator",
+    "title": "Savings Goal Calculator — Reach Your Target Faster | FinCalcHub",
+    "description": "Free savings goal calculator. Set any target — see how long it takes to save at your current rate, or how much more per month to get there faster.",
+    "h1": "🎯 Savings Goal Calculator",
+    "subtitle": "Enter your target amount and monthly savings to find out exactly when you'll reach your goal.",
+    "faq": [
+      {
+        "q": "How is the savings time calculated?",
+        "a": "The calculator uses the future value formula to find the number of months needed: n = log((FV × r/PMT) + 1) / log(1 + r), where FV is your target, PMT is your monthly contribution, and r is the monthly interest rate. If your rate is 0%, it simply divides the remaining amount by your monthly contribution."
+      },
+      {
+        "q": "What interest rate should I use for a savings account?",
+        "a": "For a high-yield savings account or cash ISA, use the current rate you're earning — typically 4–5% in 2024. For a stock market investment with a longer time horizon (5+ years), 6–8% is a reasonable assumption. Use a lower rate to be conservative."
+      },
+      {
+        "q": "How much should I save each month?",
+        "a": "At minimum 10-15% of gross income across all goals. The breakdown depends on your stage: 20-somethings should weight short-term goals (emergency fund, deposit); 30-40-year-olds should emphasise retirement contributions to capture employer matches and compound time; 50-plus should run retirement projections and increase contributions if behind."
+      },
+      {
+        "q": "Should I use a high-yield savings account for short-term goals?",
+        "a": "Yes, for goals under three years. The interest rate matters less than capital preservation — you can't afford a 30% drawdown on house deposit savings the year before completion. A high-yield savings account or premium-bond-equivalent gives a few percent without market risk. Longer-horizon goals can take more equity exposure."
+      },
+      {
+        "q": "Should I save for a deposit before investing?",
+        "a": "If you intend to buy within 3-5 years: yes, prioritise the deposit. Stock markets can fall 30% or more in a year — fine over a 20-year horizon, devastating against a 2-year house plan. Once your deposit is funded and an emergency buffer exists, redirect every additional pound or dollar to long-term investments."
+      }
+    ]
+  },
+  "inflation-impact": {
+    "slug": "inflation-impact",
+    "name": "📊 Inflation Impact Calculator",
+    "title": "Inflation Calculator — What Your Money Is Worth | FinCalcHub",
+    "description": "Free inflation calculator. See exactly how inflation erodes the purchasing power of your money over time. Plan for real returns, not nominal.",
+    "h1": "📊 Inflation Impact Calculator",
+    "subtitle": "See how inflation erodes the value of money over time — and what it means for your savings.",
+    "faq": [
+      {
+        "q": "What is inflation?",
+        "a": "Inflation is the rate at which prices rise over time, reducing the purchasing power of money. At 3% annual inflation, something costing $100 today will cost $134 in 10 years and $181 in 20 years."
+      },
+      {
+        "q": "What inflation rate should I use?",
+        "a": "Long-term average CPI inflation: USA ~3%, UK ~2.5%, South Africa ~5%. For conservative planning, use a slightly higher rate than the current official figure."
+      },
+      {
+        "q": "What is the difference between real and nominal returns?",
+        "a": "Nominal return is the headline rate before inflation. Real return subtracts inflation: real = nominal − inflation. If your investment returns 8% nominal and inflation is 3%, your real return is 5% — what your purchasing power actually grew. Always plan retirement and long-term goals in real terms."
+      },
+      {
+        "q": "How does inflation affect retirement savings?",
+        "a": "Inflation compounds against your savings just like interest compounds for them. A retirement target of £40,000 a year today needs about £72,000 a year in 25 years at 2.5% inflation. Plan your retirement income in today's money, then use the calculator to convert to a future nominal figure using your expected inflation rate."
+      },
+      {
+        "q": "Is high inflation good or bad for borrowers?",
+        "a": "Good for borrowers with fixed-rate debt — the real value of what you owe shrinks each year while your nominal income tends to rise with inflation. Bad for savers earning less than the inflation rate (real return is negative). Variable-rate borrowers face the opposite: higher rates as central banks fight inflation."
+      }
+    ]
+  },
+  "net-worth": {
+    "slug": "net-worth",
+    "name": "🏦 Net Worth Calculator",
+    "title": "Net Worth Calculator — Track Yours in Minutes | FinCalcHub",
+    "description": "Free net worth calculator. Add your assets and liabilities — see your total net worth and how it compares to typical figures for your age and region.",
+    "h1": "🏦 Net Worth Calculator",
+    "subtitle": "Calculate your total net worth by entering your assets and liabilities below.",
+    "faq": [
+      {
+        "q": "What is net worth?",
+        "a": "Net worth is the total value of everything you own (assets) minus everything you owe (liabilities). It is the single most important number in personal finance — a snapshot of your overall financial health. Positive net worth means you own more than you owe."
+      },
+      {
+        "q": "What is a good net worth by age?",
+        "a": "A common benchmark: by 30, have 1x your annual salary saved; by 40, 3x; by 50, 6x; by 60, 8x. These are guidelines only — your goals, lifestyle, and country matter more than benchmarks."
+      },
+      {
+        "q": "What counts as an asset in net worth?",
+        "a": "Anything you own that has resale value: cash, bank balances, retirement accounts, taxable investments, property at its current market value, vehicles at their used market value, valuable collectibles. Exclude personal effects (clothes, kitchenware) unless individually valuable. Use realistic prices — not what you paid or what you'd like to sell for."
+      },
+      {
+        "q": "How often should I update my net worth?",
+        "a": "Quarterly is enough for most people. Monthly if you're aggressively paying down debt or building a deposit and want the feedback loop. Annually is the minimum — pick a date (e.g. each birthday or January 1) and stick with it. The trend matters far more than the absolute number."
+      },
+      {
+        "q": "Does net worth include retirement accounts?",
+        "a": "Yes. Include the full balance of 401(k), IRA, RA, SIPP, and pension fund accounts at their current market value. Some people calculate a separate 'liquid net worth' excluding retirement and home equity to see what they could access if needed today — both numbers are useful."
+      }
+    ]
+  },
+  "loan-payoff": {
+    "slug": "loan-payoff",
+    "name": "📉 Loan Payoff Calculator",
+    "title": "Loan Payoff Calculator — See Your Payoff Date | FinCalcHub",
+    "description": "Free loan payoff calculator. See your exact payoff date, total interest, and how extra payments cut years off any loan. USA, UK, or South Africa.",
+    "h1": "📉 Loan Payoff Calculator",
+    "subtitle": "See exactly when your loan is paid off, how much interest you'll pay, and how extra payments slash your debt.",
+    "faq": [
+      {
+        "q": "How do extra loan payments work?",
+        "a": "Extra payments go directly to your principal balance, which reduces the amount interest is calculated on. Even a small extra payment each month can shave years off your loan and save thousands in interest. The calculator shows exactly how much you save."
+      },
+      {
+        "q": "What is loan amortisation?",
+        "a": "Amortisation is the process of paying off a loan in equal installments over time. In the early months, most of your payment goes to interest. Over time, as the balance decreases, more goes to principal. The amortisation schedule shows this breakdown for each payment."
+      },
+      {
+        "q": "Is it better to pay off a loan early or invest the difference?",
+        "a": "Mathematically, if your expected investment return exceeds the loan's interest rate, investing wins. A 7% mortgage vs a 10% expected stock return favours investing. But debt-free certainty has a value too — paying off a high-rate personal loan or credit card almost always beats investing because the after-tax return on debt repayment is the loan's rate."
+      },
+      {
+        "q": "Will paying off a loan early affect my credit score?",
+        "a": "Slightly and temporarily. Closing an installment loan can shorten your average account age and reduce your credit mix, so your score may dip 5-15 points for a few months. The long-term benefit — lower debt-to-income ratio and zero interest paid — is far bigger than the short-term score wobble."
+      },
+      {
+        "q": "How is total interest calculated on a loan?",
+        "a": "Total interest equals the sum of all scheduled payments minus the original principal. For a fixed-rate loan, each month's interest is calculated on the remaining balance, and the rest of your payment reduces principal. Early in the loan most of each payment is interest; later it flips."
+      }
+    ]
+  },
+  "credit-card-payoff": {
+    "slug": "credit-card-payoff",
+    "name": "💳 Credit Card Payoff Calculator",
+    "title": "Credit Card Payoff Calculator — Debt-Free Date | FinCalcHub",
+    "description": "Free credit card payoff calculator. See your debt-free date, the real cost of minimum payments, and how much paying more saves in interest.",
+    "h1": "💳 Credit Card Payoff Calculator",
+    "subtitle": "See how long it takes to pay off your credit card — and how much interest you can save with extra payments.",
+    "faq": [
+      {
+        "q": "Why does the minimum payment take so long?",
+        "a": "Credit card minimum payments are designed to keep you in debt as long as possible. On a $5,000 balance at 22% APR, paying only the minimum ($100) takes over 9 years and costs $4,300 in interest — nearly doubling the original debt. Even small extra payments dramatically shorten the timeline."
+      },
+      {
+        "q": "What is the debt avalanche method?",
+        "a": "Pay minimums on all cards, then direct all extra money to the card with the highest interest rate first. This minimises total interest paid. The alternative (debt snowball) pays smallest balances first for psychological wins. This calculator shows the impact of extra payments on any single card."
+      },
+      {
+        "q": "What is the avalanche vs snowball method?",
+        "a": "Avalanche pays the highest-APR card first while paying minimums on the rest — mathematically optimal, lowest total interest. Snowball pays the smallest balance first — slower in pure pound-cost terms but the visible wins build momentum. If you've stopped previous repayment attempts, snowball's psychology often beats avalanche's maths."
+      },
+      {
+        "q": "Does a balance transfer help pay off credit card debt?",
+        "a": "Yes, if you'll genuinely clear the balance during the 0% promotional period (typically 12-21 months). A 3% transfer fee on £10,000 is £300 — usually cheaper than several months of 20-25% APR interest. The trap is treating the transfer as breathing room and adding new spending — that defeats the purpose."
+      },
+      {
+        "q": "How long does it take to pay off $10,000 in credit card debt?",
+        "a": "At 20% APR paying just the minimum (~2% of balance), it takes roughly 30 years and over $10,000 in interest. Paying $250 a month clears it in just over 5 years with about $5,000 in interest. Paying $500 a month finishes in 2 years with under $2,000 in interest."
+      }
+    ]
+  },
+  "emergency-fund": {
+    "slug": "emergency-fund",
+    "name": "🛡️ Emergency Fund Calculator",
+    "title": "Emergency Fund Calculator — How Much You Need | FinCalcHub",
+    "description": "Free emergency fund calculator. Find out how much cash buffer you need and how long to build it. Three to twelve months covered, all regions.",
+    "h1": "🛡️ Emergency Fund Calculator",
+    "subtitle": "Find out exactly how much you need in your emergency fund — and how long it will take to get there.",
+    "faq": [
+      {
+        "q": "How many months of expenses should my emergency fund cover?",
+        "a": "3 months is the minimum. 6 months is the standard recommendation. If you have dependants, variable income, or work in a difficult job market, aim for 9–12 months. This calculator sets your target based on your personal situation."
+      },
+      {
+        "q": "Where should I keep my emergency fund?",
+        "a": "In a high-yield savings account — not invested in stocks. It must be instantly accessible without risk of loss. In South Africa, a 32-day notice account or money market fund is a good option. In the UK, an easy-access Cash ISA keeps it tax-free."
+      },
+      {
+        "q": "Should I build an emergency fund before paying off debt?",
+        "a": "Build a starter fund of one month's essential expenses first, then aggressively pay high-interest debt (over 10% APR), then build the full 3-6 month fund. A starter fund prevents new debt during a small emergency. Going debt-first with zero cash buffer almost always triggers more credit-card debt within months."
+      },
+      {
+        "q": "Is 6 months expenses enough for an emergency fund?",
+        "a": "For most salaried employees with stable income and dependants, yes. Single-income households, the self-employed, those in volatile industries, or anyone with health conditions should aim for 9-12 months. The figure is essential expenses — rent, food, utilities, minimum debt, insurance — not your full lifestyle spend."
+      },
+      {
+        "q": "Can I invest my emergency fund to earn more?",
+        "a": "No — capital preservation matters more than yield for an emergency fund. A 30% market drawdown the same week you lose your job is the exact scenario this money exists to prevent. Stick to a high-yield savings or money-market account. If you have more than 12 months saved, the excess can be invested separately."
+      }
+    ]
+  },
+  "sa-tax-calculator": {
+    "slug": "sa-tax-calculator",
+    "name": "South Africa Tax Calculator (PAYE + UIF)",
+    "title": "South Africa Tax Calculator 2026/27 (PAYE + UIF) | FinCalcHub",
+    "description": "Free South Africa income tax calculator. SARS 2026/27 brackets, PAYE, UIF, medical-aid credits, retirement-annuity deduction. Monthly & annual.",
+    "h1": "South Africa Tax Calculator (PAYE + UIF)",
+    "subtitle": "Work out your South African income tax for the 2026/27 tax year. Includes PAYE, UIF, medical scheme tax credits, retirement-annuity deductions, and SARS rebates for age 65+.",
+    "faq": [
+      {
+        "q": "What is PAYE in South Africa?",
+        "a": "PAYE (Pay As You Earn) is the income tax deducted from an employee's salary by their employer and paid to SARS each month. The amount is determined by SARS's annual tax tables and reduced by personal rebates and medical scheme tax credits."
+      },
+      {
+        "q": "How is South African income tax calculated?",
+        "a": "SARS uses seven progressive bands. The first R245,100 of taxable income is taxed at 18%; each subsequent band has a higher marginal rate up to 45% on income above R1,878,600. Your taxable income is gross minus deductible retirement contributions. After the bracketed tax is calculated, the primary rebate (R17,820 for 2026/27) plus age-based rebates and medical-aid credits are subtracted."
+      },
+      {
+        "q": "What is UIF and who pays it?",
+        "a": "UIF (Unemployment Insurance Fund) is a 1% payroll deduction on gross salary, capped at R177.12 per month (R2,125.44 per year). Employers contribute another 1%. The fund pays short-term benefits for unemployment, illness, and maternity leave."
+      },
+      {
+        "q": "How much tax do I pay on R500,000 or R1,000,000 in South Africa?",
+        "a": "For the 2026/27 tax year, on R500,000 (no RA, under 65, no dependants): roughly R98,417 income tax and R2,125 UIF, leaving about R399,458 net. On R1,000,000 (same assumptions): roughly R288,293 income tax and R2,125 UIF, leaving about R709,582 net. Adding a medical scheme membership and/or RA contributions reduces the tax further. Use the calculator above for the exact figure."
+      },
+      {
+        "q": "How does a Retirement Annuity reduce my tax?",
+        "a": "Retirement Annuity (RA) contributions are deductible up to the lesser of 27.5% of your taxable income or R350,000 per tax year. Contributing reduces your taxable income, which reduces both the marginal tax you pay and the average effective rate. This is one of the most powerful legal tax-reduction tools for individuals in South Africa."
+      },
+      {
+        "q": "What are SARS medical aid tax credits?",
+        "a": "For the 2026/27 tax year the medical scheme fees tax credit is R376 per month for the main member, R376 per month for the first dependant, and R254 per month for each additional dependant. These credits reduce your tax bill directly (not your taxable income), so the value is the same regardless of your marginal rate."
+      }
+    ]
+  }
+}
