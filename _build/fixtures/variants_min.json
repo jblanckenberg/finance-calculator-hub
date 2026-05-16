@@ -1,0 +1,15 @@
+{
+  "compound-interest": {
+    "uk": {
+      "slug": "uk",
+      "kind": "geo",
+      "label": "UK",
+      "h1Suffix": " (UK)",
+      "title": "Compound Interest UK | FinCalcHub",
+      "description": "UK compound interest calculator.",
+      "voiceAnswer": null,
+      "intro": "[OPERATOR_TO_FILL: ~400 words about UK compound interest]",
+      "hreflangCountry": "en-GB"
+    }
+  }
+}
