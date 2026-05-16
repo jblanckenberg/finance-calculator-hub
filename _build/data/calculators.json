@@ -366,5 +366,630 @@
         "a": "For the 2026/27 tax year the medical scheme fees tax credit is R376 per month for the main member, R376 per month for the first dependant, and R254 per month for each additional dependant. These credits reduce your tax bill directly (not your taxable income), so the value is the same regardless of your marginal rate."
       }
     ]
+  },
+  "401k-calculator": {
+    "slug": "401k-calculator",
+    "name": "401(k) Calculator",
+    "title": "401(k) Calculator: Project Your Retirement Balance | FinCalcHub",
+    "description": "Free 401(k) calculator. Project your retirement balance with employer match, salary growth, and 2026 IRS limits ($23,500 / $31,000 catch-up). USA-focused.",
+    "h1": "💼 401(k) Retirement Calculator",
+    "subtitle": "See how your 401(k) grows with employer match, salary increases, and decades of compounding. USA — 2026 IRS limits applied.",
+    "metaDescription": "Free 401(k) calculator. Project your retirement balance with employer match, salary growth, and 2026 IRS limits ($23,500 / $31,000 catch-up). USA-focused.",
+    "regions": [
+      "USA"
+    ],
+    "primaryKeyword": "401k calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "401(k) Calculator",
+      "description": "Free USA 401(k) projection calculator with 2026 IRS limits and employer match.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to use the 401(k) Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your annual salary",
+        "Set your contribution % and your employer's match formula",
+        "Add your current 401(k) balance and your age",
+        "Pick a target retirement age and expected return",
+        "Review your projected balance, total contributions, and employer match"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is the 401(k) contribution limit for 2026?",
+        "a": "The IRS sets the 2026 employee elective deferral limit at $23,500. If you are 50 or older, you can contribute an additional $7,500 catch-up, for a total of $31,000. The combined employee + employer limit is $70,000 ($77,500 with catch-up)."
+      },
+      {
+        "q": "Should I always contribute enough to get the full employer match?",
+        "a": "Almost always yes. An employer match is a guaranteed 50% to 100% return on the contribution dollars that qualify — no investment in the world reliably beats that. Contribute at least up to the match cap before allocating money elsewhere."
+      },
+      {
+        "q": "What's a realistic 401(k) growth rate?",
+        "a": "The S&P 500 has returned roughly 10% per year nominally and 7% real (after inflation) over the long run. 6 to 8 percent is the standard planning assumption. This calculator defaults to 7%."
+      },
+      {
+        "q": "Is a 401(k) better than a Roth IRA?",
+        "a": "They serve different roles. A 401(k) gives you the tax deduction now and a higher contribution limit; a Roth IRA gives you tax-free withdrawals later but caps at $7,000 a year. Most planners recommend: contribute to the 401(k) up to the match → max the Roth IRA → return to the 401(k)."
+      },
+      {
+        "q": "Can I use this calculator if I'm self-employed?",
+        "a": "Solo 401(k) plans follow the same employee deferral limit ($23,500) but you can also contribute as the employer up to 25% of net self-employment income, capped at the $70,000 total. Set the employer match cap to match your planned employer-side contribution."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits",
+        "label": "IRS — 401(k) and Profit-Sharing Plan Contribution Limits"
+      },
+      {
+        "url": "https://www.irs.gov/retirement-plans/cost-of-living-adjustments-for-retirement-items",
+        "label": "IRS — Cost-of-Living Adjustments for Retirement Items"
+      }
+    ],
+    "related": [
+      {
+        "slug": "roth-ira-calculator",
+        "label": "💰 Roth IRA"
+      },
+      {
+        "slug": "retirement-savings",
+        "label": "🏖️ Retirement Savings"
+      },
+      {
+        "slug": "compound-interest",
+        "label": "📈 Compound Interest"
+      },
+      {
+        "slug": "investment-growth",
+        "label": "🚀 Investment Growth"
+      },
+      {
+        "slug": "net-worth",
+        "label": "🏦 Net Worth"
+      },
+      {
+        "slug": "take-home-pay",
+        "label": "💰 Take-Home Pay"
+      }
+    ]
+  },
+  "roth-ira-calculator": {
+    "slug": "roth-ira-calculator",
+    "name": "💰 Roth IRA Calculator",
+    "title": "Roth IRA Calculator 2026: Tax-Free Retirement Growth | FinCalcHub",
+    "description": "Free Roth IRA calculator. Project tax-free growth with 2026 limits ($7,000 / $8,000 catch-up) and built-in MAGI phase-out for single, MFJ, and MFS filers.",
+    "h1": "💰 Roth IRA Calculator",
+    "subtitle": "See your tax-free retirement balance with 2026 IRS contribution limits and MAGI phase-out applied automatically. USA.",
+    "metaDescription": "Free Roth IRA calculator. Project tax-free growth with 2026 limits ($7,000 / $8,000 catch-up) and built-in MAGI phase-out for single, MFJ, and MFS filers.",
+    "regions": [
+      "USA"
+    ],
+    "primaryKeyword": "roth ira calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "Roth IRA Calculator",
+      "description": "Free USA Roth IRA growth calculator with 2026 IRS contribution limits and MAGI phase-out logic.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to use the Roth IRA Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your current Roth IRA balance and intended annual contribution",
+        "Add your age, target retirement age, and expected return",
+        "Enter your Modified Adjusted Gross Income (MAGI) and filing status",
+        "The calculator applies 2026 IRS phase-out automatically",
+        "Review your tax-free balance, total contributions, and tax savings vs a taxable account"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is the Roth IRA contribution limit for 2026?",
+        "a": "$7,000 if you are under 50, or $8,000 if you are 50 or older. Both numbers can be reduced or eliminated based on your modified adjusted gross income (MAGI) and filing status."
+      },
+      {
+        "q": "At what income am I phased out of a Roth IRA?",
+        "a": "For 2026, single filers phase out between $150,000 and $165,000 of MAGI. Married filing jointly phases out between $236,000 and $246,000. Married filing separately while living with your spouse phases out between $0 and $10,000."
+      },
+      {
+        "q": "Can I contribute to a Roth IRA if I have a 401(k)?",
+        "a": "Yes. The 401(k) and Roth IRA limits are separate. You can max both — $23,500 to your 401(k) plus $7,000 to your Roth IRA in 2026, subject to the MAGI phase-out for the Roth."
+      },
+      {
+        "q": "What is a backdoor Roth IRA?",
+        "a": "If your MAGI exceeds the Roth phase-out, you can contribute to a Traditional IRA (no income limit) and then convert it to a Roth. The conversion is taxable to the extent of pre-tax dollars in the IRA. This calculator does not model conversions — it shows direct contribution growth only."
+      },
+      {
+        "q": "Are Roth IRA withdrawals really tax-free?",
+        "a": "Qualified withdrawals are tax-free and penalty-free if the account is at least 5 years old AND you are at least 59½. Contributions (not earnings) can be withdrawn anytime without tax or penalty."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/amount-of-roth-ira-contributions-that-you-can-make-for-2025",
+        "label": "IRS — Roth IRA Contribution Limits"
+      },
+      {
+        "url": "https://www.irs.gov/publications/p590a",
+        "label": "IRS Pub 590-A — Contributions to IRAs"
+      }
+    ],
+    "related": [
+      {
+        "slug": "401k-calculator",
+        "label": "💼 401(k)"
+      },
+      {
+        "slug": "retirement-savings",
+        "label": "🏖️ Retirement Savings"
+      },
+      {
+        "slug": "compound-interest",
+        "label": "📈 Compound Interest"
+      },
+      {
+        "slug": "investment-growth",
+        "label": "🚀 Investment Growth"
+      },
+      {
+        "slug": "savings-goal",
+        "label": "🎯 Savings Goal"
+      },
+      {
+        "slug": "net-worth",
+        "label": "🏦 Net Worth"
+      }
+    ]
+  },
+  "student-loan-calculator": {
+    "slug": "student-loan-calculator",
+    "name": "🎓 Student Loan Calculator",
+    "title": "Student Loan Repayment Calculator: UK Plans 1/2/4/5/9 + USA Federal | FinCalcHub",
+    "description": "Free UK + USA student loan repayment calculator. UK Plan 2/4/5/9 thresholds, USA Federal Direct, PSLF 120-payment cap. Shows write-off and total interest.",
+    "h1": "🎓 Student Loan Repayment Calculator",
+    "subtitle": "UK Plan 1/2/4/5/9 income-contingent repayment, plus USA Federal Direct (Standard, Graduated, Extended, PSLF). Built from gov.uk and studentaid.gov rules.",
+    "metaDescription": "Free UK + USA student loan repayment calculator. UK Plan 2/4/5/9 thresholds, USA Federal Direct, PSLF 120-payment cap. Shows write-off and total interest.",
+    "regions": [
+      "UK",
+      "USA"
+    ],
+    "primaryKeyword": "student loan calculator uk",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "Student Loan Repayment Calculator",
+      "description": "UK income-contingent + USA federal student loan repayment projection.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to use the Student Loan Calculator",
+      "totalTime": "PT3M",
+      "steps": [
+        "Choose your region — UK or USA",
+        "Enter your loan balance and interest rate",
+        "UK: pick your Plan (1, 2, 4, 5, or 9) and enter your salary",
+        "USA: pick your repayment plan and any extra monthly payment",
+        "Review your total payments, interest, payoff date, and amount written off"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is the UK student loan threshold for Plan 2?",
+        "a": "For 2026, Plan 2 borrowers repay 9% of every pound earned above £28,470 per year. Anything below the threshold means zero repayment that month. Any balance left after 30 years from the first April after course completion is written off."
+      },
+      {
+        "q": "What is Plan 5 and who is on it?",
+        "a": "Plan 5 is for English students starting university from 1 August 2023. The threshold is £25,000 (lower than Plan 2), the rate is still 9%, but the write-off period is extended to 40 years. Most Plan 5 borrowers will pay back significantly more total interest than Plan 2 borrowers."
+      },
+      {
+        "q": "How does PSLF (Public Service Loan Forgiveness) work?",
+        "a": "PSLF cancels the remaining balance on US Federal Direct loans after you make 120 qualifying monthly payments while working full-time for a qualifying public-service employer. The forgiven amount is not taxed federally. This calculator caps the schedule at 120 payments and treats the remainder as forgiven."
+      },
+      {
+        "q": "Should I make extra student loan payments?",
+        "a": "USA Federal: yes if your interest rate exceeds your expected investment return, and only after maxing employer 401(k) match and any high-interest credit card debt. UK income-contingent: rarely worth it — extra payments only help if you would otherwise pay back the full loan before write-off, which only happens for high earners on Plan 1, 2, or 4."
+      },
+      {
+        "q": "What's the difference between UK and USA student loans?",
+        "a": "UK student loans are income-contingent (you only pay above a salary threshold, and the balance is written off after 25 to 40 years) — they behave more like a graduate tax. USA Federal Direct loans are amortising — you pay a fixed schedule until paid off, with PSLF as the only mainstream forgiveness route."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.gov.uk/repaying-your-student-loan",
+        "label": "GOV.UK — Repaying your student loan"
+      },
+      {
+        "url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+        "label": "GOV.UK — What you pay"
+      },
+      {
+        "url": "https://studentaid.gov/manage-loans/repayment/plans/standard",
+        "label": "studentaid.gov — Standard Repayment Plan"
+      },
+      {
+        "url": "https://studentaid.gov/manage-loans/forgiveness-cancellation/public-service",
+        "label": "studentaid.gov — Public Service Loan Forgiveness"
+      }
+    ],
+    "related": [
+      {
+        "slug": "loan-payoff",
+        "label": "📉 Loan Payoff"
+      },
+      {
+        "slug": "debt-snowball-calculator",
+        "label": "❄️ Debt Snowball"
+      },
+      {
+        "slug": "credit-card-payoff",
+        "label": "💳 Credit Card Payoff"
+      },
+      {
+        "slug": "take-home-pay",
+        "label": "💰 Take-Home Pay"
+      },
+      {
+        "slug": "emergency-fund",
+        "label": "🛡️ Emergency Fund"
+      },
+      {
+        "slug": "savings-goal",
+        "label": "🎯 Savings Goal"
+      }
+    ]
+  },
+  "debt-snowball-calculator": {
+    "slug": "debt-snowball-calculator",
+    "name": "❄️ Debt Snowball Calculator",
+    "title": "Debt Snowball Calculator (vs Avalanche): Get Out of Debt Faster | FinCalcHub",
+    "description": "Free debt snowball calculator. Compare snowball (smallest balance first) vs avalanche (highest APR first). Add unlimited debts and see your debt-free date.",
+    "h1": "❄️ Debt Snowball Calculator",
+    "subtitle": "Pay off multiple debts using the snowball or avalanche method. See your debt-free date, total interest, and which strategy saves more.",
+    "metaDescription": "Free debt snowball calculator. Compare snowball (smallest balance first) vs avalanche (highest APR first). Add unlimited debts and see your debt-free date.",
+    "regions": [
+      "USA",
+      "UK",
+      "SA"
+    ],
+    "primaryKeyword": "debt snowball calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "Debt Snowball Calculator",
+      "description": "Multi-debt payoff calculator with snowball and avalanche strategy comparison.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to use the Debt Snowball Calculator",
+      "totalTime": "PT4M",
+      "steps": [
+        "Add each debt with its balance, APR, and minimum payment",
+        "Click 'Add another debt' until all debts are listed",
+        "Enter how much extra you can pay each month",
+        "Choose snowball (smallest balance first) or avalanche (highest APR first)",
+        "Review your debt-free date, payoff order, and total interest"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is the debt snowball method?",
+        "a": "The snowball method, popularised by Dave Ramsey, is to pay minimums on every debt and direct any extra cash at the smallest balance first. When that debt is gone, you 'snowball' its minimum payment into the next-smallest debt, and so on. The wins-first psychology beats the slightly worse maths for most people."
+      },
+      {
+        "q": "Snowball vs avalanche — which is better?",
+        "a": "Avalanche (highest APR first) saves more interest mathematically. Snowball (smallest balance first) gives quicker emotional wins. The interest difference is usually small — a few hundred dollars — and the snowball wins more often in real life because people stick with it. Use this calculator to see your specific gap."
+      },
+      {
+        "q": "Should I include my mortgage in the snowball?",
+        "a": "Usually no. Mortgages are low-rate, long-term, and tax-treated. Standard advice is to snowball consumer debt (credit cards, personal loans, car loans, store cards) and treat the mortgage as a separate, low-priority payoff goal."
+      },
+      {
+        "q": "What if my minimum payments don't cover the interest?",
+        "a": "You're going backward — interest is being added faster than payments reduce the balance. The calculator returns an error in this case. Increase the extra monthly payment or call the lender to negotiate a hardship plan."
+      },
+      {
+        "q": "How does extra money 'snowball'?",
+        "a": "When debt #1 clears, its minimum payment is freed up and added to your extra payment for debt #2. When debt #2 clears, both freed minimums plus extra hit debt #3. Each clear-out grows the snowball — the last debt is paid off astonishingly fast."
+      }
+    ],
+    "sources": [],
+    "related": [
+      {
+        "slug": "loan-payoff",
+        "label": "📉 Loan Payoff"
+      },
+      {
+        "slug": "credit-card-payoff",
+        "label": "💳 Credit Card Payoff"
+      },
+      {
+        "slug": "student-loan-calculator",
+        "label": "🎓 Student Loan"
+      },
+      {
+        "slug": "emergency-fund",
+        "label": "🛡️ Emergency Fund"
+      },
+      {
+        "slug": "take-home-pay",
+        "label": "💰 Take-Home Pay"
+      },
+      {
+        "slug": "net-worth",
+        "label": "🏦 Net Worth"
+      }
+    ]
+  },
+  "fire-calculator": {
+    "slug": "fire-calculator",
+    "name": "🔥 FIRE Calculator",
+    "title": "FIRE Calculator: Financial Independence + Retire Early | FinCalcHub",
+    "description": "Free FIRE (Financial Independence Retire Early) calculator. Lean / Regular / Fat / Coast tiers. Customisable safe withdrawal rate. Closed-form math, no waiting.",
+    "h1": "🔥 FIRE Calculator",
+    "subtitle": "Lean, Regular, Fat, and Coast FIRE in one calculator. Set your spending, savings rate, and SWR — see exactly when you reach financial independence.",
+    "metaDescription": "Free FIRE (Financial Independence Retire Early) calculator. Lean / Regular / Fat / Coast tiers. Customisable safe withdrawal rate. Closed-form math, no waiting.",
+    "regions": [
+      "USA",
+      "UK",
+      "SA"
+    ],
+    "primaryKeyword": "fire calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "FIRE Calculator",
+      "description": "Financial Independence calculator with Lean, Regular, Fat, and Coast FIRE tiers and adjustable safe withdrawal rate.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to use the FIRE Calculator",
+      "totalTime": "PT3M",
+      "steps": [
+        "Enter your current investments and age",
+        "Add your annual after-tax income and current spending",
+        "Pick a real return assumption (5% is the standard FIRE default)",
+        "Choose your safe withdrawal rate (4% by default — Trinity Study)",
+        "Pick your FIRE tier: Lean (0.7×), Regular (1.0×), Fat (2.0×), or Coast",
+        "Review your FI number, years to FI, and coast number"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is FIRE (Financial Independence Retire Early)?",
+        "a": "FIRE is a movement built around aggressive saving (typically 50%+ of income) and low-cost index investing to reach financial independence decades before traditional retirement age. The 'retire early' part is optional — many FIRE achievers continue working but on their own terms."
+      },
+      {
+        "q": "What is the 4% rule?",
+        "a": "The 4% rule comes from the 1998 Trinity Study and the earlier Bengen (1994) paper. It found that a portfolio of 50–75% stocks and 25–50% bonds could safely sustain 4% annual withdrawals (inflation-adjusted) over a 30-year retirement with very low failure risk. For longer retirements common in FIRE, many planners use 3.0–3.5% as more conservative."
+      },
+      {
+        "q": "Lean FIRE vs Fat FIRE — what's the difference?",
+        "a": "Lean FIRE means low spending in retirement (typically 0.5–0.7× a normal middle-class lifestyle). Fat FIRE means generous spending (2.0× or more — think $200,000+ a year). Regular FIRE sits in between. The cheaper you live, the smaller your FI number — Lean FIRE on $30,000 a year is $750,000; Fat FIRE on $120,000 a year is $3 million."
+      },
+      {
+        "q": "What is Coast FIRE?",
+        "a": "Coast FIRE means you have enough invested today that, with no further contributions, compound growth alone will get you to a regular FI number by traditional retirement age (e.g. 65). Reach Coast FIRE and you can downshift — work less, change careers, take a sabbatical — knowing the math will catch you."
+      },
+      {
+        "q": "Is the 4% rule still safe in 2026?",
+        "a": "It's debated. Bond yields and equity valuations both affect future safe withdrawal rates. Many FIRE practitioners use a 'guardrails' approach (Guyton-Klinger) or a lower starting rate (3.25–3.5%) for retirements lasting 40+ years. This calculator lets you set the SWR yourself."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.aaii.com/files/pdf/6794_retirement-savings-choosing-a-withdrawal-rate-that-is-sustainable.pdf",
+        "label": "Trinity Study (Cooley, Hubbard, Walz)"
+      },
+      {
+        "url": "https://www.bogleheads.org/wiki/Safe_withdrawal_rates",
+        "label": "Bogleheads Wiki — Safe Withdrawal Rates"
+      }
+    ],
+    "related": [
+      {
+        "slug": "retirement-savings",
+        "label": "🏖️ Retirement Savings"
+      },
+      {
+        "slug": "compound-interest",
+        "label": "📈 Compound Interest"
+      },
+      {
+        "slug": "investment-growth",
+        "label": "🚀 Investment Growth"
+      },
+      {
+        "slug": "net-worth",
+        "label": "🏦 Net Worth"
+      },
+      {
+        "slug": "savings-goal",
+        "label": "🎯 Savings Goal"
+      },
+      {
+        "slug": "401k-calculator",
+        "label": "💼 401(k)"
+      }
+    ]
+  },
+  "isa-calculator": {
+    "slug": "isa-calculator",
+    "name": "🇬🇧 ISA Calculator",
+    "title": "ISA Calculator UK 2026/27: Stocks & Shares, Cash, and Lifetime ISA | FinCalcHub",
+    "description": "Free UK ISA calculator. Stocks & Shares, Cash, and Lifetime ISA (LISA) options. £20,000 annual allowance, £4,000 LISA cap, 25% government bonus modelled.",
+    "h1": "🇬🇧 ISA Calculator (UK)",
+    "subtitle": "Project your tax-free ISA growth — Stocks & Shares, Cash, or Lifetime ISA. £20,000 annual limit and 25% LISA government bonus applied automatically.",
+    "metaDescription": "Free UK ISA calculator. Stocks & Shares, Cash, and Lifetime ISA (LISA) options. £20,000 annual allowance, £4,000 LISA cap, 25% government bonus modelled.",
+    "regions": [
+      "UK"
+    ],
+    "primaryKeyword": "isa calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "ISA Calculator UK",
+      "description": "UK ISA growth calculator covering Stocks & Shares, Cash, and Lifetime ISA with current allowances.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to use the ISA Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Pick your ISA type — Stocks & Shares, Cash, or Lifetime ISA",
+        "Enter your current ISA balance and intended annual contribution",
+        "Add your age and how many years you'll keep contributing",
+        "Set the expected annual return (use 5–7% for S&S, 3% for cash)",
+        "Review your tax-free balance, government bonus, and how much more you'd have vs a Cash ISA"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What's the ISA allowance for 2026/27?",
+        "a": "£20,000 across all your ISAs combined for the 2026/27 tax year. You can split it between Stocks & Shares, Cash, Innovative Finance, and Lifetime ISAs in any proportion. The Lifetime ISA itself caps at £4,000 of that £20,000."
+      },
+      {
+        "q": "What is a Lifetime ISA (LISA)?",
+        "a": "A Lifetime ISA gives you a 25% government bonus on contributions up to £4,000 a year (so up to £1,000 free per year). You can use it for a first home up to £450,000, or withdraw penalty-free from age 60. Withdrawals for any other reason carry a 25% penalty — which actually loses you slightly more than the bonus you received."
+      },
+      {
+        "q": "Stocks & Shares ISA vs Cash ISA — which is better?",
+        "a": "For investment horizons of 5+ years, Stocks & Shares historically beat Cash ISAs by a wide margin (S&P 500 ~7% real return vs cash ~0–2% real). For short-term goals or emergency funds, Cash ISAs win because the principal is safe. This calculator shows the typical gap on your specific numbers."
+      },
+      {
+        "q": "Can I have both a Stocks & Shares ISA and a Cash ISA?",
+        "a": "Yes. You can pay into one of each type per tax year (S&S, Cash, Innovative Finance, LISA) as long as the total across all of them stays under £20,000. From April 2024 you can also split contributions between multiple S&S or multiple Cash ISAs — a rule change that simplified things considerably."
+      },
+      {
+        "q": "What happens to my ISA if I die?",
+        "a": "Your spouse or civil partner inherits an Additional Permitted Subscription (APS) equal to the ISA's value at your death — they can shelter that extra amount in their own ISA on top of the normal £20k. The investments themselves remain in the estate."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.gov.uk/individual-savings-accounts",
+        "label": "GOV.UK — Individual Savings Accounts (ISAs)"
+      },
+      {
+        "url": "https://www.gov.uk/lifetime-isa",
+        "label": "GOV.UK — Lifetime ISA"
+      },
+      {
+        "url": "https://www.moneyhelper.org.uk/en/savings/types-of-savings/cash-isas",
+        "label": "MoneyHelper — Cash ISAs"
+      }
+    ],
+    "related": [
+      {
+        "slug": "compound-interest",
+        "label": "📈 Compound Interest"
+      },
+      {
+        "slug": "retirement-savings",
+        "label": "🏖️ Retirement Savings"
+      },
+      {
+        "slug": "savings-goal",
+        "label": "🎯 Savings Goal"
+      },
+      {
+        "slug": "investment-growth",
+        "label": "🚀 Investment Growth"
+      },
+      {
+        "slug": "take-home-pay",
+        "label": "💰 Take-Home Pay"
+      },
+      {
+        "slug": "net-worth",
+        "label": "🏦 Net Worth"
+      }
+    ]
+  },
+  "tfsa-calculator": {
+    "slug": "tfsa-calculator",
+    "name": "🇿🇦 TFSA Calculator",
+    "title": "TFSA Calculator South Africa 2026: Tax-Free Savings Growth | FinCalcHub",
+    "description": "Free South African TFSA calculator. R36,000 annual / R500,000 lifetime limits enforced. See your tax-free balance and when you'll hit the cap.",
+    "h1": "🇿🇦 TFSA Calculator (South Africa)",
+    "subtitle": "Project your tax-free TFSA growth with the R36,000 annual cap and R500,000 lifetime cap enforced. SARS s12T rules applied.",
+    "metaDescription": "Free South African TFSA calculator. R36,000 annual / R500,000 lifetime limits enforced. See your tax-free balance and when you'll hit the cap.",
+    "regions": [
+      "SA"
+    ],
+    "primaryKeyword": "tfsa calculator south africa",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "TFSA Calculator South Africa",
+      "description": "South African Tax-Free Savings Account growth calculator with annual + lifetime allowance enforcement.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to use the TFSA Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your current TFSA balance and how much you've contributed in total to date",
+        "Set your intended annual contribution (capped at R36,000)",
+        "Add your age and how many years you'll keep contributing",
+        "Pick an expected real return (5–7% is typical for a balanced equity portfolio)",
+        "Review your tax-free balance, lifetime allowance used, and the year you hit the R500,000 cap"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is the TFSA contribution limit for 2026?",
+        "a": "R36,000 per year and R500,000 in your lifetime, set by Section 12T of the Income Tax Act and unchanged since 1 March 2020. At the maximum R36,000 a year, you'll hit the lifetime cap in 13 years and 11 months."
+      },
+      {
+        "q": "What happens if I contribute more than R36,000?",
+        "a": "Excess contributions are taxed at 40%. SARS Section 12T(7) imposes the penalty on any amount above either the annual or lifetime cap. The penalty applies even if you withdraw the excess in the same tax year — withdrawals do not restore your allowance."
+      },
+      {
+        "q": "Can I withdraw from my TFSA?",
+        "a": "Yes, anytime, with no tax. But any withdrawal is permanent for cap purposes — the contribution slot is used up. If you contributed R36,000 and withdrew R30,000, your remaining annual room is R0 (not R30,000), and the withdrawal still counts against your lifetime R500,000."
+      },
+      {
+        "q": "TFSA vs Retirement Annuity (RA) — which first?",
+        "a": "Both are valuable. RAs give an upfront tax deduction (up to 27.5% of taxable income) but are locked until 55+ and partly taxable on payout. TFSAs have no deduction but everything is tax-free forever. Most planners recommend: contribute to RA up to your tax-deduction sweet spot → max the TFSA → return to RA. The TFSA shines for medium-term goals (10–20 years) and as a tax-free emergency fund."
+      },
+      {
+        "q": "What investments can I hold in a TFSA?",
+        "a": "Cash, unit trusts, ETFs, REITs, government bonds, and approved fixed-deposit products. Direct-share TFSAs (e.g. EasyEquities) and fund-based TFSAs (e.g. Allan Gray, Ninety One) are both common. The R36k cap is the same regardless of the underlying investment."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.sars.gov.za/individuals/tax-free-investments/",
+        "label": "SARS — Tax-Free Investments"
+      },
+      {
+        "url": "https://www.gov.za/sites/default/files/gcis_document/201409/incomex58of1962.pdf",
+        "label": "Income Tax Act 58 of 1962 — Section 12T"
+      }
+    ],
+    "related": [
+      {
+        "slug": "sa-tax-calculator",
+        "label": "🇿🇦 SA Income Tax"
+      },
+      {
+        "slug": "compound-interest",
+        "label": "📈 Compound Interest"
+      },
+      {
+        "slug": "retirement-savings",
+        "label": "🏖️ Retirement Savings"
+      },
+      {
+        "slug": "savings-goal",
+        "label": "🎯 Savings Goal"
+      },
+      {
+        "slug": "net-worth",
+        "label": "🏦 Net Worth"
+      },
+      {
+        "slug": "investment-growth",
+        "label": "🚀 Investment Growth"
+      }
+    ]
   }
 }

@@ -16,6 +16,13 @@
 - [Savings Goal Calculator](https://finncalc.com/savings-goal/): How long it takes to reach any target at your current saving rate.
 - [Emergency Fund Calculator](https://finncalc.com/emergency-fund/): Right-size your cash buffer based on monthly essentials.
 - [Net Worth Calculator](https://finncalc.com/net-worth/): Total assets minus liabilities, with benchmarks by age and region.
+- [401(k) Calculator](https://finncalc.com/401k-calculator/): Project your 401(k) balance with employer match and 2026 IRS limits ($23,500 base / $31,000 catch-up). USA.
+- [Roth IRA Calculator](https://finncalc.com/roth-ira-calculator/): Tax-free retirement growth with 2026 limits ($7,000 / $8,000 catch-up) and MAGI phase-out for single, MFJ, MFS. USA.
+- [Student Loan Repayment Calculator](https://finncalc.com/student-loan-calculator/): UK Plan 1/2/4/5/9 income-contingent repayment and USA Federal Direct with PSLF cap. UK + USA.
+- [Debt Snowball Calculator](https://finncalc.com/debt-snowball-calculator/): Multi-debt payoff with snowball (smallest balance first) vs avalanche (highest APR first) comparison.
+- [FIRE Calculator](https://finncalc.com/fire-calculator/): Financial Independence / Retire Early projection with Lean, Regular, Fat, and Coast tiers and adjustable safe withdrawal rate.
+- [ISA Calculator (UK)](https://finncalc.com/isa-calculator/): Stocks & Shares, Cash, and Lifetime ISA growth with the £20,000 annual allowance and 25% LISA bonus enforced.
+- [TFSA Calculator (South Africa)](https://finncalc.com/tfsa-calculator/): SARS s12T tax-free savings projection with R36,000 annual + R500,000 lifetime caps enforced.
 
 ## Hub
 

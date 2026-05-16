@@ -6,15 +6,20 @@ DATA = Path(__file__).resolve().parent / "data" / "calculators.json"
 SCHEMA = Path(__file__).resolve().parent / "data" / "schema.json"
 
 EXPECTED_SLUGS = {
+    # Phase 1-3 calcs
     "compound-interest", "mortgage", "take-home-pay", "retirement-savings",
     "investment-growth", "savings-goal", "inflation-impact", "net-worth",
     "loan-payoff", "credit-card-payoff", "emergency-fund", "sa-tax-calculator",
+    # Phase 4 calcs (added 2026-05-16)
+    "401k-calculator", "roth-ira-calculator", "student-loan-calculator",
+    "debt-snowball-calculator", "fire-calculator", "isa-calculator",
+    "tfsa-calculator",
 }
 
 def test_calculators_file_exists():
     assert DATA.exists(), f"missing {DATA}"
 
-def test_calculators_has_all_12():
+def test_calculators_has_expected_slugs():
     data = json.loads(DATA.read_text(encoding="utf-8"))
     assert set(data.keys()) == EXPECTED_SLUGS
 

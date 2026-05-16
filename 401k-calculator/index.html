@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>401(k) Calculator: Project Your Retirement Balance | FinCalcHub</title>
+  <meta name="description" content="Free 401(k) calculator. Project your retirement balance with employer match, salary growth, and 2026 IRS limits ($23,500 / $31,000 catch-up). USA-focused.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/401k-calculator/">
+  <meta property="og:title" content="401(k) Calculator: Project Your Retirement Balance | FinCalcHub">
+  <meta property="og:description" content="Free 401(k) calculator. Project your retirement balance with employer match, salary growth, and 2026 IRS limits ($23,500 / $31,000 catch-up). USA-focused.">
+  <meta property="og:url" content="https://finncalc.com/401k-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="401(k) Calculator: Project Your Retirement Balance | FinCalcHub">
+  <meta name="twitter:description" content="Free 401(k) calculator. Project your retirement balance with employer match, salary growth, and 2026 IRS limits ($23,500 / $31,000 catch-up). USA-focused.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "description": "Free 401(k) calculator. Project your retirement balance with employer match, salary growth, and 2026 IRS limits ($23,500 / $31,000 catch-up). USA-focused.", "name": "401(k) Calculator", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "url": "https://finncalc.com/401k-calculator/"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The IRS sets the 2026 employee elective deferral limit at $23,500. If you are 50 or older, you can contribute an additional $7,500 catch-up, for a total of $31,000. The combined employee + employer limit is $70,000 ($77,500 with catch-up)."}, "name": "What is the 401(k) contribution limit for 2026?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Almost always yes. An employer match is a guaranteed 50% to 100% return on the contribution dollars that qualify \u2014 no investment in the world reliably beats that. Contribute at least up to the match cap before allocating money elsewhere."}, "name": "Should I always contribute enough to get the full employer match?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The S\u0026P 500 has returned roughly 10% per year nominally and 7% real (after inflation) over the long run. 6 to 8 percent is the standard planning assumption. This calculator defaults to 7%."}, "name": "What\u0027s a realistic 401(k) growth rate?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "They serve different roles. A 401(k) gives you the tax deduction now and a higher contribution limit; a Roth IRA gives you tax-free withdrawals later but caps at $7,000 a year. Most planners recommend: contribute to the 401(k) up to the match \u2192 max the Roth IRA \u2192 return to the 401(k)."}, "name": "Is a 401(k) better than a Roth IRA?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Solo 401(k) plans follow the same employee deferral limit ($23,500) but you can also contribute as the employer up to 25% of net self-employment income, capped at the $70,000 total. Set the employer match cap to match your planned employer-side contribution."}, "name": "Can I use this calculator if I\u0027m self-employed?"}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/401k-calculator/", "name": "401(k) Calculator", "position": 2}]}</script>
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/compound-interest/">Compound Interest</a>
+    <a href="/retirement-savings/">Retirement</a>
+    <a href="/take-home-pay/">Take-Home Pay</a>
+    <a href="/mortgage/">Mortgage</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+<!-- Ad slot top -->
+<div class="container">
+  
+<div class="ad-slot">Advertisement</div>
+
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> › 401(k) Calculator</p>
+  <h1>💼 401(k) Retirement Calculator</h1>
+  <p class="subtitle">See how your 401(k) grows with employer match, salary increases, and decades of compounding. USA — 2026 IRS limits applied.</p>
+
+</div>
+
+
+
+<!-- 401(k) Calculator -->
+<div class="container" style="padding-top:0">
+
+  <div class="operator-todo" style="margin:16px 0;padding:16px;border:2px dashed #f59e0b;background:#fffbeb;color:#78350f;border-radius:6px;font-size:14px">
+    <strong>OPERATOR_TO_FILL:</strong> ~400-word intro copy for 401(k) calculator.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your 401(k) Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="salary">Annual Salary ($)</label>
+        <input type="number" id="salary" value="75000" min="0" max="1000000" step="1000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="contribPct">Your Contribution (% of salary)</label>
+        <input type="number" id="contribPct" value="10" min="0" max="100" step="0.5" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="matchPct">Employer Match <span class="hint">(% of your contribution, e.g. 50 = 50% match)</span></label>
+        <input type="number" id="matchPct" value="50" min="0" max="200" step="5" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="matchCapPct">Employer Match Cap (% of salary)</label>
+        <input type="number" id="matchCapPct" value="6" min="0" max="25" step="0.5" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentBalance">Current 401(k) Balance ($)</label>
+        <input type="number" id="currentBalance" value="25000" min="0" max="10000000" step="1000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" value="35" min="18" max="75" step="1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="retireAge">Target Retirement Age</label>
+        <input type="number" id="retireAge" value="65" min="30" max="80" step="1" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="expectedReturn">Expected Annual Return (%)</label>
+        <input type="number" id="expectedReturn" value="7" min="0" max="20" step="0.5" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="salaryGrowth">Annual Salary Increase (%)</label>
+      <input type="number" id="salaryGrowth" value="2" min="0" max="15" step="0.5" oninput="calculate()" inputmode="decimal">
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="results-title">Your Retirement Projection</div>
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-value positive" id="r-balance">$0</div>
+        <div class="result-label">Projected Balance at Retirement</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-employee">$0</div>
+        <div class="result-label">Total Employee Contributions</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-employer">$0</div>
+        <div class="result-label">Total Employer Match Received</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-growth">$0</div>
+        <div class="result-label">Total Investment Growth</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-overlimit">0 of 0</div>
+        <div class="result-label">Years You'd Hit IRS Contribution Limit</div>
+      </div>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Year-by-Year Breakdown</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table" id="breakdown-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Age</th>
+            <th class="td-right">Salary</th>
+            <th class="td-right">Employee Contrib</th>
+            <th class="td-right">Employer Match</th>
+            <th class="td-right">Year-End Balance</th>
+          </tr>
+        </thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print Results</button>
+    </div>
+  </div>
+
+  <!-- Ad slot mid -->
+  <div class="ad-slot">Advertisement</div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator projects your 401(k) balance year by year. Each year: employee contribution = salary × contribution %, capped at the IRS elective deferral limit (with catch-up from age 50). Employer match = (salary × match cap %) × match %, capped so total additions do not exceed the IRS combined limit. Year-end balance = prior balance × (1 + return) + contributions × (1 + return ÷ 2), which approximates mid-year contribution timing. Salary grows at the chosen annual rate.</p>
+    <p>IRS limits hard-coded for 2026: <strong>$23,500</strong> employee elective deferral, <strong>$7,500</strong> catch-up (age 50+), <strong>$70,000</strong> total additions cap. These are refreshed every January against the official IRS notice.</p>
+    <ul style="margin:12px 0">
+      <li><strong>USA:</strong> <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits" rel="noopener">IRS — 401(k) and Profit-Sharing Plan Contribution Limits</a></li>
+      <li><strong>USA:</strong> <a href="https://www.irs.gov/retirement-plans/cost-of-living-adjustments-for-retirement-items" rel="noopener">IRS — Cost-of-Living Adjustments for Retirement Items</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is the 401(k) contribution limit for 2026?</div>
+      <div class="faq-a">The IRS sets the 2026 employee elective deferral limit at $23,500. If you are 50 or older, you can contribute an additional $7,500 catch-up, for a total of $31,000. The combined employee + employer limit is $70,000 ($77,500 with catch-up).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Should I always contribute enough to get the full employer match?</div>
+      <div class="faq-a">Almost always yes. An employer match is a guaranteed 50% to 100% return on the contribution dollars that qualify — no investment in the world reliably beats that. Contribute at least up to the match cap before allocating money elsewhere.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What's a realistic 401(k) growth rate?</div>
+      <div class="faq-a">The S&amp;P 500 has returned roughly 10% per year nominally and 7% real (after inflation) over the long run. 6 to 8 percent is the standard planning assumption. This calculator defaults to 7%.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is a 401(k) better than a Roth IRA?</div>
+      <div class="faq-a">They serve different roles. A 401(k) gives you the tax deduction now and a higher contribution limit; a Roth IRA gives you tax-free withdrawals later but caps at $7,000 a year. Most planners recommend: contribute to the 401(k) up to the match → max the Roth IRA → return to the 401(k).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use this calculator if I'm self-employed?</div>
+      <div class="faq-a">Solo 401(k) plans follow the same employee deferral limit ($23,500) but you can also contribute as the employer up to 25% of net self-employment income, capped at the $70,000 total. Set the employer match cap to match your planned employer-side contribution.</div>
+    </div>
+  </div>
+
+  <!-- Related Calculators -->
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/roth-ira-calculator/" class="related-card">💰 Roth IRA</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">🚀 Investment Growth</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+    </div>
+  </div>
+
+  <!-- Ad slot bottom -->
+  <div class="ad-slot">Advertisement</div>
+
+</div><!-- /container -->
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="401k-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+<script src="/js/calc/401k-calculator.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(typeof setRegion==='function')setRegion('USA');
+  ['UK','SA'].forEach(function(r){var b=document.getElementById('btn-'+r);if(b)b.style.display='none';});
+  if(typeof calculate==='function')calculate();
+});
+function calculate(){
+  var p = {
+    salary: +document.getElementById('salary').value,
+    contribPct: +document.getElementById('contribPct').value,
+    matchPct: +document.getElementById('matchPct').value,
+    matchCapPct: +document.getElementById('matchCapPct').value,
+    currentBalance: +document.getElementById('currentBalance').value,
+    currentAge: +document.getElementById('currentAge').value,
+    retireAge: +document.getElementById('retireAge').value,
+    expectedReturn: +document.getElementById('expectedReturn').value,
+    salaryGrowth: +document.getElementById('salaryGrowth').value,
+  };
+  if(!window.FCH_401k) return;
+  var R = window.FCH_401k.project(p);
+  var fmt = function(n){ return '$' + Math.round(n).toLocaleString('en-US'); };
+  document.getElementById('r-balance').textContent  = fmt(R.finalBalance);
+  document.getElementById('r-employee').textContent = fmt(R.totalEmployee);
+  document.getElementById('r-employer').textContent = fmt(R.totalEmployer);
+  document.getElementById('r-growth').textContent   = fmt(R.totalGrowth);
+  document.getElementById('r-overlimit').textContent= R.yearsOverLimit + ' of ' + R.schedule.length;
+  var rows = R.schedule.map(function(s){
+    return '<tr><td>'+s.year+'</td><td>'+s.age+'</td><td class="td-right">'+fmt(s.salary)+'</td><td class="td-right">'+fmt(s.employee)+'</td><td class="td-right">'+fmt(s.employer)+'</td><td class="td-right">'+fmt(s.balance)+'</td></tr>';
+  }).join('');
+  document.getElementById('breakdown-body').innerHTML = rows;
+}
+</script>
+
+
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!-- Student Loan Repayment Calculator -->
+<div class="container" style="padding-top:0">
+
+  <!-- Operator stub banner -->
+  <div style="margin:0 0 20px 0;padding:12px 16px;border:2px dashed #d97706;background:#fffbeb;color:#92400e;border-radius:8px;font-size:13px;line-height:1.5">
+    <strong>Operator note:</strong> UK Plan thresholds reflect the 2026/27 tax year (gov.uk). USA Federal limits are 2026 Direct Loan rates (studentaid.gov). Graduated and Extended plans are approximated as Standard in v1 — refinements ship in a future pass.
+  </div>
+
+  <!-- Form card -->
+  <div class="card">
+    <div class="card-title">Your Student Loan Details</div>
+
+    <!-- Common inputs -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="loanBalance">Current Loan Balance <span class="hint" id="bal-sym">(£)</span></label>
+        <input type="number" id="loanBalance" value="30000" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="interestRate">Annual Interest Rate (%)</label>
+        <input type="number" id="interestRate" value="7.0" min="0" max="30" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <!-- UK-only inputs -->
+    <div data-region="UK" class="region-section">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ukPlan">Repayment Plan</label>
+          <select id="ukPlan" onchange="calculate()">
+            <option value="plan1">Plan 1 (pre-2012 / Scotland / NI)</option>
+            <option value="plan2" selected>Plan 2 (2012–2023 England &amp; Wales)</option>
+            <option value="plan4">Plan 4 (Scotland post-2021)</option>
+            <option value="plan5">Plan 5 (Aug 2023 onwards)</option>
+            <option value="plan9">Plan 9 (Postgraduate)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ukSalary">Pre-Tax Annual Salary (£)</label>
+          <input type="number" id="ukSalary" value="35000" min="0" step="500" oninput="calculate()" inputmode="decimal">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ukSalaryGrowth">Annual Salary Growth (%)</label>
+        <input type="number" id="ukSalaryGrowth" value="2" min="0" max="20" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <!-- USA-only inputs -->
+    <div data-region="USA" class="region-section" style="display:none">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="usPlan">Repayment Plan</label>
+          <select id="usPlan" onchange="calculate()">
+            <option value="standard" selected>Standard (10yr)</option>
+            <option value="graduated">Graduated (≈ Standard v1)</option>
+            <option value="extended">Extended (≈ Standard v1)</option>
+            <option value="pslf">PSLF (forgiven after 120 payments)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usTermYears">Repayment Term (years)</label>
+          <input type="number" id="usTermYears" value="10" min="1" max="30" oninput="calculate()" inputmode="decimal">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="usExtraPmt">Extra Monthly Payment ($)</label>
+        <input type="number" id="usExtraPmt" value="0" min="0" step="10" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">Calculate Repayment →</button>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="results-title">Your Repayment Summary</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-totalPaid">£0</div><div class="result-label">Total Amount Paid</div></div>
+      <div class="result-item"><div class="result-value" id="r-totalInterest">£0</div><div class="result-label">Total Interest Paid</div></div>
+      <div class="result-item"><div class="result-value" id="r-payoffDate">—</div><div class="result-label">Payoff / Write-Off Date</div></div>
+      <div class="result-item"><div class="result-value" id="r-monthlyPmt">£0</div><div class="result-label">Effective Monthly Payment</div></div>
+      <div class="result-item"><div class="result-value" id="r-saved">£0</div><div class="result-label">Saved vs Standard / Written Off</div></div>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Year-by-Year Breakdown</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table" id="breakdown-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th class="td-right">Salary</th>
+            <th class="td-right">Annual Payment</th>
+            <th class="td-right">Interest Charged</th>
+            <th class="td-right">Principal Paid</th>
+            <th class="td-right">Balance</th>
+          </tr>
+        </thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print Results</button>
+    </div>
+  </div>
+
+  <!-- Ad slot mid -->
+  <div class="ad-slot">Advertisement</div>
+
+  <!-- Methodology -->
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>UK projections apply each plan's income-contingent formula — 9% (or 6% for Plan 9) of salary above the relevant threshold, with the balance written off after the plan's term (25, 30, or 40 years). USA Standard uses the amortising annuity formula: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">M = P × r(1+r)^n / ((1+r)^n − 1)</code>. PSLF caps the payment schedule at 120 months and forgives the remainder. Graduated and Extended plans are approximated as Standard in v1.</p>
+    <ul style="margin:12px 0">
+      <li><strong>UK:</strong> <a href="https://www.gov.uk/repaying-your-student-loan" rel="noopener">GOV.UK — Repaying your student loan</a></li>
+      <li><strong>UK:</strong> <a href="https://www.gov.uk/repaying-your-student-loan/what-you-pay" rel="noopener">GOV.UK — What you pay</a></li>
+      <li><strong>USA:</strong> <a href="https://studentaid.gov/manage-loans/repayment/plans/standard" rel="noopener">studentaid.gov — Standard Repayment Plan</a></li>
+      <li><strong>USA:</strong> <a href="https://studentaid.gov/manage-loans/forgiveness-cancellation/public-service" rel="noopener">studentaid.gov — Public Service Loan Forgiveness</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">What is the UK student loan threshold for Plan 2?</div><div class="faq-a">For 2026, Plan 2 borrowers repay 9% of every pound earned above £28,470 per year. Anything below the threshold means zero repayment that month. Any balance left after 30 years from the first April after course completion is written off.</div></div>
+    <div class="faq-item"><div class="faq-q">What is Plan 5 and who is on it?</div><div class="faq-a">Plan 5 is for English students starting university from 1 August 2023. The threshold is £25,000 (lower than Plan 2), the rate is still 9%, but the write-off period is extended to 40 years. Most Plan 5 borrowers will pay back significantly more total interest than Plan 2 borrowers.</div></div>
+    <div class="faq-item"><div class="faq-q">How does PSLF (Public Service Loan Forgiveness) work?</div><div class="faq-a">PSLF cancels the remaining balance on US Federal Direct loans after you make 120 qualifying monthly payments while working full-time for a qualifying public-service employer. The forgiven amount is not taxed federally. This calculator caps the schedule at 120 payments and treats the remainder as forgiven.</div></div>
+    <div class="faq-item"><div class="faq-q">Should I make extra student loan payments?</div><div class="faq-a">USA Federal: yes if your interest rate exceeds your expected investment return, and only after maxing employer 401(k) match and any high-interest credit card debt. UK income-contingent: rarely worth it — extra payments only help if you would otherwise pay back the full loan before write-off, which only happens for high earners on Plan 1, 2, or 4.</div></div>
+    <div class="faq-item"><div class="faq-q">What's the difference between UK and USA student loans?</div><div class="faq-a">UK student loans are income-contingent (you only pay above a salary threshold, and the balance is written off after 25 to 40 years) — they behave more like a graduate tax. USA Federal Direct loans are amortising — you pay a fixed schedule until paid off, with PSLF as the only mainstream forgiveness route.</div></div>
+  </div>
+
+  <!-- Related Calculators -->
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/loan-payoff/" class="related-card">📉 Loan Payoff</a>
+      <a href="/debt-snowball-calculator/" class="related-card">❄️ Debt Snowball</a>
+      <a href="/credit-card-payoff/" class="related-card">💳 Credit Card Payoff</a>
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+      <a href="/emergency-fund/" class="related-card">🛡️ Emergency Fund</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+    </div>
+  </div>
+
+  <!-- Ad slot bottom -->
+  <div class="ad-slot">Advertisement</div>
+
+</div><!-- /container -->
+
+<!-- Embed CTA -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="student-loan-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/student-loan-calculator.js" defer></script>
+<script>
+function setRegionVisibility(region){
+  document.querySelectorAll('[data-region]').forEach(function(el){
+    el.style.display = (el.getAttribute('data-region') === region) ? '' : 'none';
+  });
+  // Update currency hint on balance label
+  var sym = (region === 'UK') ? '(£)' : '($)';
+  var symEl = document.getElementById('bal-sym');
+  if (symEl) symEl.textContent = sym;
+}
+document.addEventListener('DOMContentLoaded',function(){
+  // Hide SA in region bar (UK+USA only calc)
+  var saBtn = document.getElementById('btn-SA');
+  if(saBtn) saBtn.style.display = 'none';
+  // Initial region
+  var initial = (typeof currentRegion !== 'undefined' && currentRegion) ? currentRegion : 'UK';
+  if(initial === 'SA') initial = 'UK';
+  setRegionVisibility(initial);
+  if(typeof setRegion === 'function') setRegion(initial);
+  // Listen for region button clicks
+  ['UK','USA'].forEach(function(r){
+    var btn = document.getElementById('btn-'+r);
+    if(btn) btn.addEventListener('click', function(){ setRegionVisibility(r); calculate(); });
+  });
+  if(typeof calculate === 'function') calculate();
+});
+function calculate(){
+  if(!window.FCH_StudentLoan) return;
+  var region = (typeof currentRegion !== 'undefined') ? currentRegion : 'UK';
+  if(region === 'SA') region = 'UK';
+  var common = {
+    loanBalance: +document.getElementById('loanBalance').value,
+    interestRate: +document.getElementById('interestRate').value,
+  };
+  var R;
+  if(region === 'UK'){
+    R = window.FCH_StudentLoan.projectUK(Object.assign({}, common, {
+      plan: document.getElementById('ukPlan').value,
+      salary: +document.getElementById('ukSalary').value,
+      salaryGrowth: +document.getElementById('ukSalaryGrowth').value,
+    }));
+  } else {
+    R = window.FCH_StudentLoan.projectUSA(Object.assign({}, common, {
+      plan: document.getElementById('usPlan').value,
+      termYears: +document.getElementById('usTermYears').value,
+      extraPmt: +document.getElementById('usExtraPmt').value,
+    }));
+  }
+  var sym = region === 'UK' ? '£' : '$';
+  var fmt = function(n){ return sym + Math.round(n).toLocaleString('en-US'); };
+  if(R.error){
+    document.getElementById('r-totalPaid').textContent = 'Error';
+    document.getElementById('r-totalInterest').textContent = R.error;
+    return;
+  }
+  document.getElementById('r-totalPaid').textContent     = fmt(R.totalPaid);
+  document.getElementById('r-totalInterest').textContent = fmt(R.totalInterest);
+  var dateStr = R.payoffDate.toLocaleDateString('en-GB',{year:'numeric',month:'short'});
+  document.getElementById('r-payoffDate').textContent    = (region === 'UK' && !R.paidOff) ? 'Written off ' + dateStr : dateStr;
+  document.getElementById('r-monthlyPmt').textContent    = fmt(R.monthlyPmt);
+  document.getElementById('r-saved').textContent         = fmt(R.savedVsBase || R.writtenOff || 0);
+  var rows = R.schedule.map(function(s){
+    var salaryCell = (region === 'UK') ? '<td class="td-right">'+fmt(s.salary)+'</td>' : '<td class="td-right">—</td>';
+    return '<tr><td>'+s.year+'</td>'+salaryCell+'<td class="td-right">'+fmt(s.payment)+'</td><td class="td-right">'+fmt(s.interest)+'</td><td class="td-right">'+fmt(s.principal)+'</td><td class="td-right">'+fmt(s.balance)+'</td></tr>';
+  }).join('');
+  document.getElementById('breakdown-body').innerHTML = rows;
+}
+</script>

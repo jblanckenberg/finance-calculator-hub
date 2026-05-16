@@ -1,0 +1,205 @@
+<!-- Calculator -->
+<div class="container" style="padding-top:0">
+
+  <!-- Operator stub -->
+  <div class="card" style="background:#fff8e1;border-left:4px solid #f5b800;margin-bottom:16px">
+    <strong>🔥 FIRE Calculator</strong> — Lean, Regular, Fat, and Coast FIRE in one tool. Closed-form math, instant results.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentSavings">Current Investments <span class="hint">($)</span></label>
+        <input type="number" id="currentSavings" value="50000" min="0" placeholder="50000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" value="30" min="18" max="80" placeholder="30" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="annualIncome">Annual After-Tax Income <span class="hint">($)</span></label>
+        <input type="number" id="annualIncome" value="70000" min="0" placeholder="70000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="annualSpending">Current Annual Spending <span class="hint">($)</span></label>
+        <input type="number" id="annualSpending" value="40000" min="0" placeholder="40000" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="expectedReturn">Expected Real Return (%, after inflation)</label>
+        <input type="number" id="expectedReturn" value="5" min="0" max="20" step="0.1" placeholder="5" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="swr">Safe Withdrawal Rate (%)</label>
+        <input type="number" id="swr" value="4.0" min="0.5" max="10" step="0.1" placeholder="4.0" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fireType">FIRE Tier</label>
+      <select id="fireType" onchange="calculate()">
+        <option value="lean">Lean FIRE (0.7× spending)</option>
+        <option value="regular" selected>Regular FIRE (1.0× spending)</option>
+        <option value="fat">Fat FIRE (2.0× spending)</option>
+        <option value="coast">Coast FIRE</option>
+      </select>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="results-title">Your Results</div>
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-value positive" id="r-fiNumber">$0</div>
+        <div class="result-label">Your FI Number</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-yearsToFI">—</div>
+        <div class="result-label">Years to FI</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-ageAtFI">—</div>
+        <div class="result-label">Age at FI</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-savingsRate">0%</div>
+        <div class="result-label">Implied Savings Rate</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-coastNumber">$0</div>
+        <div class="result-label">Coast FI Number (today's age)</div>
+      </div>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Year-by-Year Projection</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table" id="breakdown-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Age</th>
+            <th class="td-right">Year-End Investments</th>
+            <th class="td-right">% to FI</th>
+          </tr>
+        </thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Ad slot mid -->
+  <div class="ad-slot">Advertisement</div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator uses the closed-form FIRE projection: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">years = ln((FI·r + S) / (PV·r + S)) / ln(1 + r)</code>, where PV is current investments, S is annual savings (income − spending), r is the expected real return, and FI is your target number. The FI number itself is derived from your <strong>safe withdrawal rate</strong>: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">FI = (spending × tier multiplier) / SWR</code>. Tier multipliers: Lean 0.7×, Regular 1.0×, Fat 2.0×, Coast 1.0× (with separate today-discounted target).</p>
+    <ul style="margin:12px 0">
+      <li><strong>4% rule:</strong> <a href="https://www.aaii.com/files/pdf/6794_retirement-savings-choosing-a-withdrawal-rate-that-is-sustainable.pdf" rel="noopener">Trinity Study (Cooley, Hubbard, Walz)</a> — original safe-withdrawal research.</li>
+      <li><strong>Modern guidance:</strong> <a href="https://www.bogleheads.org/wiki/Safe_withdrawal_rates" rel="noopener">Bogleheads Wiki — Safe Withdrawal Rates</a> — practitioner-reviewed SWR discussion for long retirements.</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is FIRE (Financial Independence Retire Early)?</div>
+      <div class="faq-a">FIRE is a movement built around aggressive saving (typically 50%+ of income) and low-cost index investing to reach financial independence decades before traditional retirement age. The "retire early" part is optional — many FIRE achievers continue working but on their own terms.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the 4% rule?</div>
+      <div class="faq-a">The 4% rule comes from the 1998 Trinity Study and the earlier Bengen (1994) paper. It found that a portfolio of 50–75% stocks and 25–50% bonds could safely sustain 4% annual withdrawals (inflation-adjusted) over a 30-year retirement with very low failure risk. For longer retirements common in FIRE, many planners use 3.0–3.5% as more conservative.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Lean FIRE vs Fat FIRE — what's the difference?</div>
+      <div class="faq-a">Lean FIRE means low spending in retirement (typically 0.5–0.7× a normal middle-class lifestyle). Fat FIRE means generous spending (2.0× or more — think $200,000+ a year). Regular FIRE sits in between. The cheaper you live, the smaller your FI number — Lean FIRE on $30,000 a year is $750,000; Fat FIRE on $120,000 a year is $3 million.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is Coast FIRE?</div>
+      <div class="faq-a">Coast FIRE means you have enough invested today that, with no further contributions, compound growth alone will get you to a regular FI number by traditional retirement age (e.g. 65). Reach Coast FIRE and you can downshift — work less, change careers, take a sabbatical — knowing the math will catch you.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is the 4% rule still safe in 2026?</div>
+      <div class="faq-a">It's debated. Bond yields and equity valuations both affect future safe withdrawal rates. Many FIRE practitioners use a "guardrails" approach (Guyton-Klinger) or a lower starting rate (3.25–3.5%) for retirements lasting 40+ years. This calculator lets you set the SWR yourself.</div>
+    </div>
+  </div>
+
+  <!-- Related Calculators -->
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">🚀 Investment Growth</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/401k-calculator/" class="related-card">💼 401(k)</a>
+    </div>
+  </div>
+
+  <!-- Ad slot bottom -->
+  <div class="ad-slot">Advertisement</div>
+
+</div><!-- /container -->
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="fire-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/fire-calculator.js" defer></script>
+<script>
+function currencySymbol(){
+  var r = (typeof currentRegion !== 'undefined') ? currentRegion : 'USA';
+  return r === 'UK' ? '£' : (r === 'SA' ? 'R' : '$');
+}
+function calculate(){
+  if(!window.FCH_FIRE) return;
+  var p = {
+    currentSavings: +document.getElementById('currentSavings').value,
+    currentAge: +document.getElementById('currentAge').value,
+    annualIncome: +document.getElementById('annualIncome').value,
+    annualSpending: +document.getElementById('annualSpending').value,
+    expectedReturn: +document.getElementById('expectedReturn').value,
+    swr: +document.getElementById('swr').value,
+    fireType: document.getElementById('fireType').value,
+  };
+  var sym = currencySymbol();
+  var fmt = function(n){ return sym + Math.round(n).toLocaleString('en-US'); };
+  var R = window.FCH_FIRE.project(p);
+  document.getElementById('r-fiNumber').textContent = fmt(R.fiNumber);
+  if(R.yearsToFI === null){
+    document.getElementById('r-yearsToFI').textContent = R.alreadyFI ? '0 (already FI!)' : (R.error || 'Not on track');
+    document.getElementById('r-ageAtFI').textContent   = R.alreadyFI ? p.currentAge : '—';
+  } else {
+    document.getElementById('r-yearsToFI').textContent = (Math.round(R.yearsToFI * 10) / 10) + ' years';
+    document.getElementById('r-ageAtFI').textContent   = Math.round((R.ageAtFI || 0) * 10) / 10;
+  }
+  document.getElementById('r-savingsRate').textContent = Math.round(R.savingsRate * 1000) / 10 + '%';
+  document.getElementById('r-coastNumber').textContent = fmt(R.coastNumber);
+  document.getElementById('breakdown-body').innerHTML = R.schedule.map(function(s){
+    return '<tr><td>'+s.year+'</td><td>'+s.age+'</td><td class="td-right">'+fmt(s.balance)+'</td><td class="td-right">'+s.percentToFI+'%</td></tr>';
+  }).join('');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  ['USA','UK','SA'].forEach(function(r){
+    var btn = document.getElementById('btn-'+r);
+    if(btn) btn.addEventListener('click', function(){ setTimeout(calculate, 50); });
+  });
+  if(typeof calculate === 'function') calculate();
+});
+</script>

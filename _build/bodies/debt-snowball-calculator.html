@@ -1,0 +1,246 @@
+<!-- Calculator -->
+<div class="container" style="padding-top:0">
+
+  <!-- Operator stub: status banner -->
+  <div class="ad-slot" style="background:#fff8e1;border-left:4px solid #f0b400;color:#5c4a00">
+    🧮 Debt Snowball / Avalanche Calculator — list each debt, pick a strategy, and see your debt-free date in seconds.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Debts</div>
+
+    <div id="debt-rows-container"></div>
+
+    <div style="margin:8px 0 16px">
+      <button type="button" class="btn-action" onclick="addDebtRow()">+ Add another debt</button>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="extraMonthly">Extra Monthly Payment <span class="hint" id="extra-currency-label">($)</span></label>
+        <input type="number" id="extraMonthly" value="200" min="0" placeholder="200" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="strategy">Strategy</label>
+        <select id="strategy" onchange="calculate()">
+          <option value="snowball" selected>Snowball (smallest balance first)</option>
+          <option value="avalanche">Avalanche (highest APR first)</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="results-title">Your Results</div>
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-value positive" id="r-payoffMonths">0</div>
+        <div class="result-label">Months to Debt-Free</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-payoffDate">—</div>
+        <div class="result-label">Debt-Free Date</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-totalInterest">$0</div>
+        <div class="result-label">Total Interest Paid</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-vsAvalanche">$0</div>
+        <div class="result-label">Difference vs Other Strategy</div>
+      </div>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Payoff Order</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table">
+        <thead>
+          <tr>
+            <th>Debt Name</th>
+            <th class="td-right">Month Cleared</th>
+          </tr>
+        </thead>
+        <tbody id="payoff-order-body"></tbody>
+      </table>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Monthly Schedule (first 36 months)</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th class="td-right">Total Balance</th>
+          </tr>
+        </thead>
+        <tbody id="schedule-body"></tbody>
+      </table>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print Results</button>
+    </div>
+  </div>
+
+  <!-- Ad slot mid -->
+  <div class="ad-slot">Advertisement</div>
+
+  <!-- Methodology -->
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology</h2>
+    <p>The calculator runs a month-by-month amortisation across all debts. For each month it: (1) accrues interest on each balance at <code style="background:#fff;padding:2px 6px;border-radius:3px">APR ÷ 12</code>, (2) applies the minimum payment to every debt, then (3) directs your extra monthly payment plus any freed-up minimums (the "snowball") at the focus debt. The focus debt is the smallest remaining balance under <strong>snowball</strong>, or the highest APR under <strong>avalanche</strong>. When a debt is cleared, its minimum is rolled into next month's snowball — which is why the last few debts disappear so quickly.</p>
+    <p>The snowball strategy is most associated with Dave Ramsey's <em>The Total Money Makeover</em> (2003), which popularised the smallest-balance-first approach for its behavioural momentum. Avalanche is the mathematically optimal interest-minimising order. This is a pure-math calculator with no external data sources — the only inputs are the ones you enter above.</p>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is the debt snowball method?</div>
+      <div class="faq-a">The snowball method, popularised by Dave Ramsey, is to pay minimums on every debt and direct any extra cash at the smallest balance first. When that debt is gone, you "snowball" its minimum payment into the next-smallest debt, and so on. The wins-first psychology beats the slightly worse maths for most people.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Snowball vs avalanche — which is better?</div>
+      <div class="faq-a">Avalanche (highest APR first) saves more interest mathematically. Snowball (smallest balance first) gives quicker emotional wins. The interest difference is usually small — a few hundred dollars — and the snowball wins more often in real life because people stick with it. Use this calculator to see your specific gap.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Should I include my mortgage in the snowball?</div>
+      <div class="faq-a">Usually no. Mortgages are low-rate, long-term, and tax-treated. Standard advice is to snowball consumer debt (credit cards, personal loans, car loans, store cards) and treat the mortgage as a separate, low-priority payoff goal.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if my minimum payments don't cover the interest?</div>
+      <div class="faq-a">You're going backward — interest is being added faster than payments reduce the balance. The calculator returns an error in this case. Increase the extra monthly payment or call the lender to negotiate a hardship plan.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does extra money "snowball"?</div>
+      <div class="faq-a">When debt #1 clears, its minimum payment is freed up and added to your extra payment for debt #2. When debt #2 clears, both freed minimums plus extra hit debt #3. Each clear-out grows the snowball — the last debt is paid off astonishingly fast.</div>
+    </div>
+  </div>
+
+  <!-- Related Calculators -->
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/loan-payoff/" class="related-card">📉 Loan Payoff</a>
+      <a href="/credit-card-payoff/" class="related-card">💳 Credit Card Payoff</a>
+      <a href="/student-loan-calculator/" class="related-card">🎓 Student Loan</a>
+      <a href="/emergency-fund/" class="related-card">🛡️ Emergency Fund</a>
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+    </div>
+  </div>
+
+  <!-- Ad slot bottom -->
+  <div class="ad-slot">Advertisement</div>
+
+</div><!-- /container -->
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="debt-snowball-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/debt-snowball-calculator.js" defer></script>
+<script>
+var DEBT_DEFAULTS = [
+  {name:'Credit Card 1', balance:5000, apr:22, minPmt:150},
+  {name:'Credit Card 2', balance:2500, apr:18, minPmt:75},
+];
+function renderDebtRows(){
+  var c = document.getElementById('debt-rows-container');
+  if(!c) return;
+  c.innerHTML = '';
+  DEBT_DEFAULTS.forEach(function(d, idx){
+    var row = document.createElement('div');
+    row.className = 'debt-row form-row';
+    row.setAttribute('data-debt-idx', idx);
+    row.style.alignItems = 'flex-end';
+    row.style.gap = '8px';
+    row.innerHTML = ''
+      + '<div class="form-group" style="flex:2"><label>Name</label><input type="text" class="d-name" value="'+d.name+'" oninput="syncDebtsAndRecalc()"></div>'
+      + '<div class="form-group" style="flex:1"><label>Balance</label><input type="number" class="d-balance" value="'+d.balance+'" min="0" oninput="syncDebtsAndRecalc()" inputmode="decimal"></div>'
+      + '<div class="form-group" style="flex:1"><label>APR %</label><input type="number" class="d-apr" value="'+d.apr+'" min="0" max="100" step="0.1" oninput="syncDebtsAndRecalc()" inputmode="decimal"></div>'
+      + '<div class="form-group" style="flex:1"><label>Min Pmt</label><input type="number" class="d-min" value="'+d.minPmt+'" min="0" oninput="syncDebtsAndRecalc()" inputmode="decimal"></div>'
+      + '<button type="button" class="btn-action" onclick="removeDebtRow('+idx+')" style="margin-bottom:4px">✕</button>';
+    c.appendChild(row);
+  });
+}
+function syncDebtsFromDom(){
+  var rows = document.querySelectorAll('#debt-rows-container .debt-row');
+  DEBT_DEFAULTS = Array.prototype.slice.call(rows).map(function(r){
+    return {
+      name: r.querySelector('.d-name').value,
+      balance: +r.querySelector('.d-balance').value,
+      apr: +r.querySelector('.d-apr').value,
+      minPmt: +r.querySelector('.d-min').value,
+    };
+  });
+}
+function syncDebtsAndRecalc(){ syncDebtsFromDom(); calculate(); }
+function addDebtRow(){
+  syncDebtsFromDom();
+  DEBT_DEFAULTS.push({name:'Debt ' + (DEBT_DEFAULTS.length+1), balance:1000, apr:15, minPmt:30});
+  renderDebtRows(); calculate();
+}
+function removeDebtRow(idx){
+  syncDebtsFromDom();
+  if(DEBT_DEFAULTS.length > 1) DEBT_DEFAULTS.splice(idx,1);
+  renderDebtRows(); calculate();
+}
+function currencySymbol(){
+  var r = (typeof currentRegion !== 'undefined') ? currentRegion : 'USA';
+  return r === 'UK' ? '£' : (r === 'SA' ? 'R' : '$');
+}
+function calculate(){
+  if(!window.FCH_DebtSnowball) return;
+  syncDebtsFromDom();
+  var inputs = {
+    debts: DEBT_DEFAULTS,
+    extraMonthly: +document.getElementById('extraMonthly').value,
+    strategy: document.getElementById('strategy').value,
+  };
+  var sym = currencySymbol();
+  var fmt = function(n){ return sym + Math.round(n).toLocaleString('en-US'); };
+  var extraLabel = document.getElementById('extra-currency-label');
+  if(extraLabel) extraLabel.textContent = '(' + sym + ')';
+  var R = window.FCH_DebtSnowball.project(inputs);
+  if(R.error){
+    document.getElementById('r-payoffMonths').textContent  = '—';
+    document.getElementById('r-payoffDate').textContent    = R.error;
+    document.getElementById('r-totalInterest').textContent = '—';
+    document.getElementById('r-vsAvalanche').textContent   = '—';
+    document.getElementById('payoff-order-body').innerHTML = '';
+    document.getElementById('schedule-body').innerHTML     = '';
+    return;
+  }
+  document.getElementById('r-payoffMonths').textContent  = R.months;
+  document.getElementById('r-payoffDate').textContent    = R.payoffDate.toLocaleDateString('en-GB',{year:'numeric',month:'short'});
+  document.getElementById('r-totalInterest').textContent = fmt(R.totalInterest);
+  var cmp = window.FCH_DebtSnowball.compare(inputs);
+  var otherInt = inputs.strategy === 'snowball' ? cmp.avalanche.totalInterest : cmp.snowball.totalInterest;
+  document.getElementById('r-vsAvalanche').textContent   = fmt(R.totalInterest - otherInt);
+  document.getElementById('payoff-order-body').innerHTML = R.payoffOrder.map(function(o){
+    return '<tr><td>'+o.name+'</td><td class="td-right">'+o.monthCleared+'</td></tr>';
+  }).join('');
+  document.getElementById('schedule-body').innerHTML = R.schedule.map(function(s){
+    return '<tr><td>'+s.month+'</td><td class="td-right">'+fmt(s.totalBalance)+'</td></tr>';
+  }).join('');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  renderDebtRows();
+  ['USA','UK','SA'].forEach(function(r){
+    var btn = document.getElementById('btn-'+r);
+    if(btn) btn.addEventListener('click', function(){ setTimeout(calculate, 50); });
+  });
+  if(typeof calculate === 'function') calculate();
+});
+</script>

@@ -1,0 +1,204 @@
+<!-- ISA Calculator (UK-only) -->
+<div class="container" style="padding-top:0">
+
+  <!-- Operator stub banner -->
+  <div style="margin:0 0 16px 0;padding:10px 14px;background:#eef2ff;border-left:4px solid #1B3A5C;border-radius:4px;font-size:0.92em;color:#1B3A5C">
+    <strong>UK-only calculator.</strong> Region locked to United Kingdom. Figures use the 2026/27 ISA allowances: £20,000 total / £4,000 Lifetime ISA cap / 25% government bonus.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="isaType">ISA Type</label>
+        <select id="isaType" onchange="calculate()">
+          <option value="stocks_shares" selected>Stocks &amp; Shares ISA</option>
+          <option value="cash">Cash ISA</option>
+          <option value="lisa">Lifetime ISA (LISA)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="currentBalance">Current ISA Balance (£)</label>
+        <input type="number" id="currentBalance" value="5000" min="0" placeholder="5000" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="annualContrib">Annual Contribution (£)</label>
+        <input type="number" id="annualContrib" value="5000" min="0" max="20000" placeholder="5000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" value="30" min="18" max="80" placeholder="30" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="years">Years Invested</label>
+        <input type="number" id="years" value="20" min="0" max="60" placeholder="20" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="expectedReturn">Expected Annual Return (%)</label>
+        <input type="number" id="expectedReturn" value="6" min="0" max="20" step="0.1" placeholder="6" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <!-- Warning banners (conditional) -->
+  <div id="lisa-invalid-age-banner" style="display:none;margin:16px 0;padding:12px;border:2px solid #dc3545;background:#fff5f5;color:#7f1d1d;border-radius:6px">
+    <strong>⚠ Lifetime ISA age limit:</strong> Lifetime ISAs can only be opened between ages 18 and 39. Your current age is over 39 — you can't open a new LISA.
+  </div>
+  <div id="lisa-warning-banner" style="display:none;margin:16px 0;padding:12px;border:2px solid #f59e0b;background:#fffbeb;color:#78350f;border-radius:6px">
+    <strong>Heads up:</strong> LISA withdrawals before 60 (other than for a first home up to £450k) incur a 25% penalty — you'd lose more than the bonus.
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="results-title">Your Results</div>
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-value positive" id="r-balance">£0</div>
+        <div class="result-label">Tax-Free Balance</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-contrib">£0</div>
+        <div class="result-label">Total Contributions</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-growth">£0</div>
+        <div class="result-label">Total Tax-Free Growth</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-govBonus">£0</div>
+        <div class="result-label">Government Bonus (LISA)</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-vsCash">£0</div>
+        <div class="result-label">S&amp;S vs Cash ISA Difference</div>
+      </div>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Year-by-Year Breakdown</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table" id="breakdown-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Age</th>
+            <th class="td-right">Contribution</th>
+            <th class="td-right">Gov Bonus</th>
+            <th class="td-right">Year-End Balance</th>
+          </tr>
+        </thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print Results</button>
+    </div>
+  </div>
+
+  <!-- Ad slot mid -->
+  <div class="ad-slot">Advertisement</div>
+
+  <!-- Methodology -->
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator models the UK Individual Savings Account (ISA) using the 2026/27 tax-year rules. The annual ISA allowance is <strong>£20,000</strong> spread across Stocks &amp; Shares, Cash, Innovative Finance, and Lifetime ISAs. The Lifetime ISA has a separate annual cap of <strong>£4,000</strong> (counted within the £20k total) and attracts a <strong>25% government bonus</strong> on contributions until age 50. LISAs can only be opened between ages 18 and 39. All growth and withdrawals within an ISA wrapper are free of UK income tax and capital gains tax.</p>
+    <ul style="margin:12px 0">
+      <li><strong>ISA rules &amp; allowances:</strong> <a href="https://www.gov.uk/individual-savings-accounts" rel="noopener">GOV.UK — Individual Savings Accounts (ISAs)</a></li>
+      <li><strong>Lifetime ISA bonus &amp; rules:</strong> <a href="https://www.gov.uk/lifetime-isa" rel="noopener">GOV.UK — Lifetime ISA</a></li>
+      <li><strong>Cash ISA guidance:</strong> <a href="https://www.moneyhelper.org.uk/en/savings/types-of-savings/cash-isas" rel="noopener">MoneyHelper — Cash ISAs</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What's the ISA allowance for 2026/27?</div>
+      <div class="faq-a">£20,000 across all your ISAs combined for the 2026/27 tax year. You can split it between Stocks &amp; Shares, Cash, Innovative Finance, and Lifetime ISAs in any proportion. The Lifetime ISA itself caps at £4,000 of that £20,000.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is a Lifetime ISA (LISA)?</div>
+      <div class="faq-a">A Lifetime ISA gives you a 25% government bonus on contributions up to £4,000 a year (so up to £1,000 free per year). You can use it for a first home up to £450,000, or withdraw penalty-free from age 60. Withdrawals for any other reason carry a 25% penalty — which actually loses you slightly more than the bonus you received.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Stocks &amp; Shares ISA vs Cash ISA — which is better?</div>
+      <div class="faq-a">For investment horizons of 5+ years, Stocks &amp; Shares historically beat Cash ISAs by a wide margin (S&amp;P 500 ~7% real return vs cash ~0–2% real). For short-term goals or emergency funds, Cash ISAs win because the principal is safe. This calculator shows the typical gap on your specific numbers.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I have both a Stocks &amp; Shares ISA and a Cash ISA?</div>
+      <div class="faq-a">Yes. You can pay into one of each type per tax year (S&amp;S, Cash, Innovative Finance, LISA) as long as the total across all of them stays under £20,000. From April 2024 you can also split contributions between multiple S&amp;S or multiple Cash ISAs — a rule change that simplified things considerably.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What happens to my ISA if I die?</div>
+      <div class="faq-a">Your spouse or civil partner inherits an Additional Permitted Subscription (APS) equal to the ISA's value at your death — they can shelter that extra amount in their own ISA on top of the normal £20k. The investments themselves remain in the estate.</div>
+    </div>
+  </div>
+
+  <!-- Related Calculators -->
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/investment-growth/" class="related-card">🚀 Investment Growth</a>
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+    </div>
+  </div>
+
+  <!-- Ad slot bottom -->
+  <div class="ad-slot">Advertisement</div>
+
+</div><!-- /container -->
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="isa-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<!-- Calculator JS + region lock -->
+<script src="/js/calc/isa-calculator.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(typeof setRegion==='function')setRegion('UK');
+  ['USA','SA'].forEach(function(r){var b=document.getElementById('btn-'+r);if(b)b.style.display='none';});
+  if(typeof calculate==='function')calculate();
+});
+function calculate(){
+  if(!window.FCH_ISA) return;
+  var p = {
+    isaType: document.getElementById('isaType').value,
+    currentBalance: +document.getElementById('currentBalance').value,
+    annualContrib: +document.getElementById('annualContrib').value,
+    currentAge: +document.getElementById('currentAge').value,
+    years: +document.getElementById('years').value,
+    expectedReturn: +document.getElementById('expectedReturn').value,
+  };
+  var R = window.FCH_ISA.project(p);
+  var fmt = function(n){ return '£' + Math.round(n).toLocaleString('en-GB'); };
+  document.getElementById('r-balance').textContent  = fmt(R.finalBalance);
+  document.getElementById('r-contrib').textContent  = fmt(R.totalContrib);
+  document.getElementById('r-growth').textContent   = fmt(R.totalGrowth);
+  document.getElementById('r-govBonus').textContent = fmt(R.totalBonus);
+  document.getElementById('r-vsCash').textContent   = fmt(R.vsCashDelta);
+  document.getElementById('lisa-invalid-age-banner').style.display = R.lisaInvalidAge ? '' : 'none';
+  document.getElementById('lisa-warning-banner').style.display     = (p.isaType === 'lisa') ? '' : 'none';
+  document.getElementById('breakdown-body').innerHTML = R.schedule.map(function(s){
+    return '<tr><td>'+s.year+'</td><td>'+s.age+'</td><td class="td-right">'+fmt(s.contribution)+'</td><td class="td-right">'+fmt(s.bonus)+'</td><td class="td-right">'+fmt(s.balance)+'</td></tr>';
+  }).join('');
+}
+</script>

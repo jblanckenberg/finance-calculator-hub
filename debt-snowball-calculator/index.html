@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debt Snowball Calculator (vs Avalanche): Get Out of Debt Faster | FinCalcHub</title>
+  <meta name="description" content="Free debt snowball calculator. Compare snowball (smallest balance first) vs avalanche (highest APR first). Add unlimited debts and see your debt-free date.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/debt-snowball-calculator/">
+  <meta property="og:title" content="Debt Snowball Calculator (vs Avalanche): Get Out of Debt Faster | FinCalcHub">
+  <meta property="og:description" content="Free debt snowball calculator. Compare snowball (smallest balance first) vs avalanche (highest APR first). Add unlimited debts and see your debt-free date.">
+  <meta property="og:url" content="https://finncalc.com/debt-snowball-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Debt Snowball Calculator (vs Avalanche): Get Out of Debt Faster | FinCalcHub">
+  <meta name="twitter:description" content="Free debt snowball calculator. Compare snowball (smallest balance first) vs avalanche (highest APR first). Add unlimited debts and see your debt-free date.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "description": "Free debt snowball calculator. Compare snowball (smallest balance first) vs avalanche (highest APR first). Add unlimited debts and see your debt-free date.", "name": "\u2744\ufe0f Debt Snowball Calculator", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "url": "https://finncalc.com/debt-snowball-calculator/"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The snowball method, popularised by Dave Ramsey, is to pay minimums on every debt and direct any extra cash at the smallest balance first. When that debt is gone, you \u0027snowball\u0027 its minimum payment into the next-smallest debt, and so on. The wins-first psychology beats the slightly worse maths for most people."}, "name": "What is the debt snowball method?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Avalanche (highest APR first) saves more interest mathematically. Snowball (smallest balance first) gives quicker emotional wins. The interest difference is usually small \u2014 a few hundred dollars \u2014 and the snowball wins more often in real life because people stick with it. Use this calculator to see your specific gap."}, "name": "Snowball vs avalanche \u2014 which is better?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Usually no. Mortgages are low-rate, long-term, and tax-treated. Standard advice is to snowball consumer debt (credit cards, personal loans, car loans, store cards) and treat the mortgage as a separate, low-priority payoff goal."}, "name": "Should I include my mortgage in the snowball?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You\u0027re going backward \u2014 interest is being added faster than payments reduce the balance. The calculator returns an error in this case. Increase the extra monthly payment or call the lender to negotiate a hardship plan."}, "name": "What if my minimum payments don\u0027t cover the interest?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "When debt #1 clears, its minimum payment is freed up and added to your extra payment for debt #2. When debt #2 clears, both freed minimums plus extra hit debt #3. Each clear-out grows the snowball \u2014 the last debt is paid off astonishingly fast."}, "name": "How does extra money \u0027snowball\u0027?"}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/debt-snowball-calculator/", "name": "\u2744\ufe0f Debt Snowball Calculator", "position": 2}]}</script>
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/compound-interest/">Compound Interest</a>
+    <a href="/retirement-savings/">Retirement</a>
+    <a href="/take-home-pay/">Take-Home Pay</a>
+    <a href="/mortgage/">Mortgage</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+<!-- Ad slot top -->
+<div class="container">
+  
+<div class="ad-slot">Advertisement</div>
+
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> › ❄️ Debt Snowball Calculator</p>
+  <h1>❄️ Debt Snowball Calculator</h1>
+  <p class="subtitle">Pay off multiple debts using the snowball or avalanche method. See your debt-free date, total interest, and which strategy saves more.</p>
+
+</div>
+
+
+
+<!-- Calculator -->
+<div class="container" style="padding-top:0">
+
+  <!-- Operator stub: status banner -->
+  <div class="ad-slot" style="background:#fff8e1;border-left:4px solid #f0b400;color:#5c4a00">
+    🧮 Debt Snowball / Avalanche Calculator — list each debt, pick a strategy, and see your debt-free date in seconds.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Debts</div>
+
+    <div id="debt-rows-container"></div>
+
+    <div style="margin:8px 0 16px">
+      <button type="button" class="btn-action" onclick="addDebtRow()">+ Add another debt</button>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="extraMonthly">Extra Monthly Payment <span class="hint" id="extra-currency-label">($)</span></label>
+        <input type="number" id="extraMonthly" value="200" min="0" placeholder="200" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="strategy">Strategy</label>
+        <select id="strategy" onchange="calculate()">
+          <option value="snowball" selected>Snowball (smallest balance first)</option>
+          <option value="avalanche">Avalanche (highest APR first)</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="results-title">Your Results</div>
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-value positive" id="r-payoffMonths">0</div>
+        <div class="result-label">Months to Debt-Free</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-payoffDate">—</div>
+        <div class="result-label">Debt-Free Date</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-totalInterest">$0</div>
+        <div class="result-label">Total Interest Paid</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-vsAvalanche">$0</div>
+        <div class="result-label">Difference vs Other Strategy</div>
+      </div>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Payoff Order</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table">
+        <thead>
+          <tr>
+            <th>Debt Name</th>
+            <th class="td-right">Month Cleared</th>
+          </tr>
+        </thead>
+        <tbody id="payoff-order-body"></tbody>
+      </table>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Monthly Schedule (first 36 months)</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th class="td-right">Total Balance</th>
+          </tr>
+        </thead>
+        <tbody id="schedule-body"></tbody>
+      </table>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print Results</button>
+    </div>
+  </div>
+
+  <!-- Ad slot mid -->
+  <div class="ad-slot">Advertisement</div>
+
+  <!-- Methodology -->
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology</h2>
+    <p>The calculator runs a month-by-month amortisation across all debts. For each month it: (1) accrues interest on each balance at <code style="background:#fff;padding:2px 6px;border-radius:3px">APR ÷ 12</code>, (2) applies the minimum payment to every debt, then (3) directs your extra monthly payment plus any freed-up minimums (the "snowball") at the focus debt. The focus debt is the smallest remaining balance under <strong>snowball</strong>, or the highest APR under <strong>avalanche</strong>. When a debt is cleared, its minimum is rolled into next month's snowball — which is why the last few debts disappear so quickly.</p>
+    <p>The snowball strategy is most associated with Dave Ramsey's <em>The Total Money Makeover</em> (2003), which popularised the smallest-balance-first approach for its behavioural momentum. Avalanche is the mathematically optimal interest-minimising order. This is a pure-math calculator with no external data sources — the only inputs are the ones you enter above.</p>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is the debt snowball method?</div>
+      <div class="faq-a">The snowball method, popularised by Dave Ramsey, is to pay minimums on every debt and direct any extra cash at the smallest balance first. When that debt is gone, you "snowball" its minimum payment into the next-smallest debt, and so on. The wins-first psychology beats the slightly worse maths for most people.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Snowball vs avalanche — which is better?</div>
+      <div class="faq-a">Avalanche (highest APR first) saves more interest mathematically. Snowball (smallest balance first) gives quicker emotional wins. The interest difference is usually small — a few hundred dollars — and the snowball wins more often in real life because people stick with it. Use this calculator to see your specific gap.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Should I include my mortgage in the snowball?</div>
+      <div class="faq-a">Usually no. Mortgages are low-rate, long-term, and tax-treated. Standard advice is to snowball consumer debt (credit cards, personal loans, car loans, store cards) and treat the mortgage as a separate, low-priority payoff goal.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if my minimum payments don't cover the interest?</div>
+      <div class="faq-a">You're going backward — interest is being added faster than payments reduce the balance. The calculator returns an error in this case. Increase the extra monthly payment or call the lender to negotiate a hardship plan.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does extra money "snowball"?</div>
+      <div class="faq-a">When debt #1 clears, its minimum payment is freed up and added to your extra payment for debt #2. When debt #2 clears, both freed minimums plus extra hit debt #3. Each clear-out grows the snowball — the last debt is paid off astonishingly fast.</div>
+    </div>
+  </div>
+
+  <!-- Related Calculators -->
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/loan-payoff/" class="related-card">📉 Loan Payoff</a>
+      <a href="/credit-card-payoff/" class="related-card">💳 Credit Card Payoff</a>
+      <a href="/student-loan-calculator/" class="related-card">🎓 Student Loan</a>
+      <a href="/emergency-fund/" class="related-card">🛡️ Emergency Fund</a>
+      <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+    </div>
+  </div>
+
+  <!-- Ad slot bottom -->
+  <div class="ad-slot">Advertisement</div>
+
+</div><!-- /container -->
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="debt-snowball-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/debt-snowball-calculator.js" defer></script>
+<script>
+var DEBT_DEFAULTS = [
+  {name:'Credit Card 1', balance:5000, apr:22, minPmt:150},
+  {name:'Credit Card 2', balance:2500, apr:18, minPmt:75},
+];
+function renderDebtRows(){
+  var c = document.getElementById('debt-rows-container');
+  if(!c) return;
+  c.innerHTML = '';
+  DEBT_DEFAULTS.forEach(function(d, idx){
+    var row = document.createElement('div');
+    row.className = 'debt-row form-row';
+    row.setAttribute('data-debt-idx', idx);
+    row.style.alignItems = 'flex-end';
+    row.style.gap = '8px';
+    row.innerHTML = ''
+      + '<div class="form-group" style="flex:2"><label>Name</label><input type="text" class="d-name" value="'+d.name+'" oninput="syncDebtsAndRecalc()"></div>'
+      + '<div class="form-group" style="flex:1"><label>Balance</label><input type="number" class="d-balance" value="'+d.balance+'" min="0" oninput="syncDebtsAndRecalc()" inputmode="decimal"></div>'
+      + '<div class="form-group" style="flex:1"><label>APR %</label><input type="number" class="d-apr" value="'+d.apr+'" min="0" max="100" step="0.1" oninput="syncDebtsAndRecalc()" inputmode="decimal"></div>'
+      + '<div class="form-group" style="flex:1"><label>Min Pmt</label><input type="number" class="d-min" value="'+d.minPmt+'" min="0" oninput="syncDebtsAndRecalc()" inputmode="decimal"></div>'
+      + '<button type="button" class="btn-action" onclick="removeDebtRow('+idx+')" style="margin-bottom:4px">✕</button>';
+    c.appendChild(row);
+  });
+}
+function syncDebtsFromDom(){
+  var rows = document.querySelectorAll('#debt-rows-container .debt-row');
+  DEBT_DEFAULTS = Array.prototype.slice.call(rows).map(function(r){
+    return {
+      name: r.querySelector('.d-name').value,
+      balance: +r.querySelector('.d-balance').value,
+      apr: +r.querySelector('.d-apr').value,
+      minPmt: +r.querySelector('.d-min').value,
+    };
+  });
+}
+function syncDebtsAndRecalc(){ syncDebtsFromDom(); calculate(); }
+function addDebtRow(){
+  syncDebtsFromDom();
+  DEBT_DEFAULTS.push({name:'Debt ' + (DEBT_DEFAULTS.length+1), balance:1000, apr:15, minPmt:30});
+  renderDebtRows(); calculate();
+}
+function removeDebtRow(idx){
+  syncDebtsFromDom();
+  if(DEBT_DEFAULTS.length > 1) DEBT_DEFAULTS.splice(idx,1);
+  renderDebtRows(); calculate();
+}
+function currencySymbol(){
+  var r = (typeof currentRegion !== 'undefined') ? currentRegion : 'USA';
+  return r === 'UK' ? '£' : (r === 'SA' ? 'R' : '$');
+}
+function calculate(){
+  if(!window.FCH_DebtSnowball) return;
+  syncDebtsFromDom();
+  var inputs = {
+    debts: DEBT_DEFAULTS,
+    extraMonthly: +document.getElementById('extraMonthly').value,
+    strategy: document.getElementById('strategy').value,
+  };
+  var sym = currencySymbol();
+  var fmt = function(n){ return sym + Math.round(n).toLocaleString('en-US'); };
+  var extraLabel = document.getElementById('extra-currency-label');
+  if(extraLabel) extraLabel.textContent = '(' + sym + ')';
+  var R = window.FCH_DebtSnowball.project(inputs);
+  if(R.error){
+    document.getElementById('r-payoffMonths').textContent  = '—';
+    document.getElementById('r-payoffDate').textContent    = R.error;
+    document.getElementById('r-totalInterest').textContent = '—';
+    document.getElementById('r-vsAvalanche').textContent   = '—';
+    document.getElementById('payoff-order-body').innerHTML = '';
+    document.getElementById('schedule-body').innerHTML     = '';
+    return;
+  }
+  document.getElementById('r-payoffMonths').textContent  = R.months;
+  document.getElementById('r-payoffDate').textContent    = R.payoffDate.toLocaleDateString('en-GB',{year:'numeric',month:'short'});
+  document.getElementById('r-totalInterest').textContent = fmt(R.totalInterest);
+  var cmp = window.FCH_DebtSnowball.compare(inputs);
+  var otherInt = inputs.strategy === 'snowball' ? cmp.avalanche.totalInterest : cmp.snowball.totalInterest;
+  document.getElementById('r-vsAvalanche').textContent   = fmt(R.totalInterest - otherInt);
+  document.getElementById('payoff-order-body').innerHTML = R.payoffOrder.map(function(o){
+    return '<tr><td>'+o.name+'</td><td class="td-right">'+o.monthCleared+'</td></tr>';
+  }).join('');
+  document.getElementById('schedule-body').innerHTML = R.schedule.map(function(s){
+    return '<tr><td>'+s.month+'</td><td class="td-right">'+fmt(s.totalBalance)+'</td></tr>';
+  }).join('');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  renderDebtRows();
+  ['USA','UK','SA'].forEach(function(r){
+    var btn = document.getElementById('btn-'+r);
+    if(btn) btn.addEventListener('click', function(){ setTimeout(calculate, 50); });
+  });
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>

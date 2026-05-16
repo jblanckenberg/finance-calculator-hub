@@ -1,0 +1,206 @@
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="/">Home</a> › TFSA Calculator</p>
+
+  <div style="margin:16px 0;padding:14px;border:1px dashed #f59e0b;background:#fffbeb;color:#78350f;border-radius:6px;font-size:0.95em">
+    <strong>OPERATOR_TO_FILL:</strong> ~400-word intro copy for SA TFSA calculator.
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentBalance">Current TFSA Balance (R)</label>
+        <input type="number" id="currentBalance" value="50000" min="0" placeholder="50000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="lifetimeContribSoFar">Lifetime Contributions To Date (R)</label>
+        <input type="number" id="lifetimeContribSoFar" value="50000" min="0" placeholder="50000" oninput="calculate()" inputmode="decimal">
+        <span class="hint">Total ever contributed to any TFSA (across all providers).</span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="annualContrib">Annual Contribution (R)</label>
+        <input type="number" id="annualContrib" value="36000" min="0" placeholder="36000" oninput="calculate()" inputmode="decimal">
+        <span class="hint">SARS annual cap: R36,000.</span>
+      </div>
+      <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" value="30" min="0" max="100" placeholder="30" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="years">Years Invested</label>
+        <input type="number" id="years" value="20" min="0" max="80" placeholder="20" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="expectedReturn">Expected Annual Return (%)</label>
+        <input type="number" id="expectedReturn" value="7" min="0" max="30" step="0.1" placeholder="7" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <!-- Conditional banners -->
+  <div id="tfsa-excess-banner" style="display:none;margin:16px 0;padding:12px;border:2px solid #dc3545;background:#fff5f5;color:#7f1d1d;border-radius:6px">
+    <strong>Excess contribution warning:</strong> Contributions above R36,000/year incur a 40% excess penalty from SARS (s12T(7)).
+  </div>
+  <div id="tfsa-cap-banner" style="display:none;margin:16px 0;padding:12px;border:2px solid #f59e0b;background:#fffbeb;color:#78350f;border-radius:6px">
+    <strong>Lifetime cap reached:</strong> You've reached the R500,000 lifetime TFSA cap — further contributions trigger the 40% penalty.
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="results-title">Your Results</div>
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-value positive" id="r-balance">R0</div>
+        <div class="result-label">Tax-Free Balance</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-contrib">R0</div>
+        <div class="result-label">Total Contributions Over Period</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-growth">R0</div>
+        <div class="result-label">Total Tax-Free Growth</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-lifetimeUsed">R0 of R500 000 (0%)</div>
+        <div class="result-label">Lifetime Allowance Used</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value" id="r-yearLimitHit">Not reached</div>
+        <div class="result-label">Year You Hit Lifetime Cap</div>
+      </div>
+    </div>
+
+    <hr class="results-divider">
+
+    <div class="breakdown-title">Year-by-Year Projection</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table" id="breakdown-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Age</th>
+            <th class="td-right">Contribution</th>
+            <th class="td-right">Cumulative Lifetime</th>
+            <th class="td-right">Year-End Balance</th>
+          </tr>
+        </thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print Results</button>
+      <button class="btn-action" onclick="saveToFile()">💾 Save as Text</button>
+    </div>
+  </div>
+
+  <!-- Ad slot mid -->
+  <div class="ad-slot">Advertisement</div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator applies South Africa's Tax-Free Savings Account (TFSA) rules from <strong>Section 12T of the Income Tax Act 58 of 1962</strong>. The annual contribution cap is R36,000 and the lifetime cap is R500,000 — unchanged since 1 March 2020. Any contribution above either cap is taxed at 40% under s12T(7). Growth (interest, dividends, capital gains) inside the TFSA is fully tax-free.</p>
+    <p>The projection uses mid-year compounding to approximate even monthly contributions: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">balance = balance × (1 + r) + contribution × (1 + r/2)</code>. When a year's contribution would breach the lifetime cap, it is clipped to the remaining allowance.</p>
+    <ul style="margin:12px 0">
+      <li><a href="https://www.sars.gov.za/individuals/tax-free-investments/" rel="noopener">SARS — Tax-Free Investments</a></li>
+      <li><a href="https://www.gov.za/sites/default/files/gcis_document/201409/incomex58of1962.pdf" rel="noopener">Income Tax Act 58 of 1962 — Section 12T</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is the TFSA contribution limit for 2026?</div>
+      <div class="faq-a">R36,000 per year and R500,000 in your lifetime, set by Section 12T of the Income Tax Act and unchanged since 1 March 2020. At the maximum R36,000 a year, you'll hit the lifetime cap in 13 years and 11 months.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What happens if I contribute more than R36,000?</div>
+      <div class="faq-a">Excess contributions are taxed at 40%. SARS Section 12T(7) imposes the penalty on any amount above either the annual or lifetime cap. The penalty applies even if you withdraw the excess in the same tax year — withdrawals do not restore your allowance.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I withdraw from my TFSA?</div>
+      <div class="faq-a">Yes, anytime, with no tax. But any withdrawal is permanent for cap purposes — the contribution slot is used up. If you contributed R36,000 and withdrew R30,000, your remaining annual room is R0 (not R30,000), and the withdrawal still counts against your lifetime R500,000.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">TFSA vs Retirement Annuity (RA) — which first?</div>
+      <div class="faq-a">Both are valuable. RAs give an upfront tax deduction (up to 27.5% of taxable income) but are locked until 55+ and partly taxable on payout. TFSAs have no deduction but everything is tax-free forever. Most planners recommend: contribute to RA up to your tax-deduction sweet spot → max the TFSA → return to RA. The TFSA shines for medium-term goals (10–20 years) and as a tax-free emergency fund.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What investments can I hold in a TFSA?</div>
+      <div class="faq-a">Cash, unit trusts, ETFs, REITs, government bonds, and approved fixed-deposit products. Direct-share TFSAs (e.g. EasyEquities) and fund-based TFSAs (e.g. Allan Gray, Ninety One) are both common. The R36k cap is the same regardless of the underlying investment.</div>
+    </div>
+  </div>
+
+  <!-- Related Calculators -->
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/sa-tax-calculator/" class="related-card">🇿🇦 SA Income Tax</a>
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
+      <a href="/investment-growth/" class="related-card">🚀 Investment Growth</a>
+    </div>
+  </div>
+
+  <!-- Ad slot bottom -->
+  <div class="ad-slot">Advertisement</div>
+
+</div><!-- /container -->
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="tfsa-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/tfsa-calculator.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(typeof setRegion==='function')setRegion('SA');
+  ['USA','UK'].forEach(function(r){var b=document.getElementById('btn-'+r);if(b)b.style.display='none';});
+  if(typeof calculate==='function')calculate();
+});
+function calculate(){
+  if(!window.FCH_TFSA) return;
+  var p = {
+    currentBalance: +document.getElementById('currentBalance').value,
+    lifetimeContribSoFar: +document.getElementById('lifetimeContribSoFar').value,
+    annualContrib: +document.getElementById('annualContrib').value,
+    currentAge: +document.getElementById('currentAge').value,
+    years: +document.getElementById('years').value,
+    expectedReturn: +document.getElementById('expectedReturn').value,
+  };
+  var R = window.FCH_TFSA.project(p);
+  var fmt = function(n){ return 'R' + Math.round(n).toLocaleString('en-ZA').replace(/,/g, ' '); };
+  document.getElementById('r-balance').textContent  = fmt(R.finalBalance);
+  document.getElementById('r-contrib').textContent  = fmt(R.totalContrib);
+  document.getElementById('r-growth').textContent   = fmt(R.totalGrowth);
+  document.getElementById('r-lifetimeUsed').textContent = fmt(R.lifetimeUsed) + ' of R500 000 (' + Math.round(R.lifetimePctUsed) + '%)';
+  document.getElementById('r-yearLimitHit').textContent = R.yearCapHit ? ('Year ' + R.yearCapHit + ' (age ' + R.ageCapHit + ')') : 'Not reached';
+  document.getElementById('tfsa-excess-banner').style.display = R.warnExcess ? '' : 'none';
+  document.getElementById('tfsa-cap-banner').style.display    = R.lifetimePctUsed >= 100 ? '' : 'none';
+  document.getElementById('breakdown-body').innerHTML = R.schedule.map(function(s){
+    return '<tr><td>'+s.year+'</td><td>'+s.age+'</td><td class="td-right">'+fmt(s.contribution)+'</td><td class="td-right">'+fmt(s.cumulativeLifetime)+'</td><td class="td-right">'+fmt(s.balance)+'</td></tr>';
+  }).join('');
+}
+</script>
