@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Savings Calculator (Embed) | FinCalcHub</title>
+  <meta name="description" content="Embedded retirement savings calculator widget by FinCalcHub.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://finncalc.com/retirement-savings/">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    body { padding: 0; }
+    .container { padding: 12px 16px; max-width: 100%; }
+    .embed-credit { margin: 12px 16px 8px; font-size: 11px; color: #6B7280; text-align: right; }
+    .embed-credit a { color: #1E88E5; text-decoration: none; }
+  </style>
+  <script defer data-domain="embed.finncalc.com" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+
+<div class="region-wrap" style="position:relative;top:0">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+<div class="container">
+  <h1 style="font-size:20px;margin-bottom:8px">Retirement Savings Calculator</h1>
+  <div class="card">
+    <div class="card-title">Your Details</div>
+    <div class="form-row">
+      <div class="form-group"><label for="curAge">Current Age</label><input type="number" id="curAge" value="35" min="18" max="80" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="retAge">Target Retirement Age</label><input type="number" id="retAge" value="65" min="40" max="85" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="curSavings">Current Retirement Savings <span class="hint" id="sym1">($)</span></label><input type="number" id="curSavings" value="50000" min="0" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="monthlyContrib">Monthly Contribution <span class="hint" id="sym2">($)</span></label><input type="number" id="monthlyContrib" value="500" min="0" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="returnRate">Expected Annual Return (%)</label><input type="number" id="returnRate" value="7" min="0" max="30" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="retYears">Years in Retirement</label><input type="number" id="retYears" value="25" min="5" max="50" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-group"><label for="desiredIncome">Desired Annual Retirement Income <span class="hint" id="sym3">($)</span></label><input type="number" id="desiredIncome" value="60000" min="0" oninput="calculate()" inputmode="decimal"></div>
+    <button class="btn-calc" onclick="calculate()">Calculate Retirement Plan &rarr;</button>
+  </div>
+  <div class="results" id="results">
+    <div class="results-title">Your Retirement Projection</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-balance">$0</div><div class="result-label">Projected Balance at Retirement</div></div>
+      <div class="result-item"><div class="result-value" id="r-income">$0</div><div class="result-label">Monthly Income Possible</div></div>
+      <div class="result-item"><div class="result-value" id="r-gap">$0</div><div class="result-label">Monthly Shortfall / Surplus</div></div>
+      <div class="result-item"><div class="result-value" id="r-needed">$0</div><div class="result-label">Extra Monthly Saving Needed</div></div>
+    </div>
+  </div>
+</div>
+
+<p class="embed-credit">
+  Open the full calculator at
+  <a href="https://finncalc.com/retirement-savings/?utm_source=embed&amp;utm_medium=widget&amp;utm_campaign=retirement-savings" target="_blank" rel="noopener">FinCalcHub</a>.
+</p>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+<script>
+var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:'$',UK:'£',SA:'R'}[r]||'$';['sym1','sym2','sym3'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent='('+s+')';});if(document.getElementById('results').classList.contains('show'))calculate();};
+function calculate(){
+  var curAge=+document.getElementById('curAge').value||35;
+  var retAge=+document.getElementById('retAge').value||65;
+  var curSavings=+document.getElementById('curSavings').value||0;
+  var monthly=+document.getElementById('monthlyContrib').value||0;
+  var rate=(+document.getElementById('returnRate').value||7)/100;
+  var retYears=+document.getElementById('retYears').value||25;
+  var desired=+document.getElementById('desiredIncome').value||0;
+  var years=Math.max(0,retAge-curAge);
+  var n=years*12; var r=rate/12;
+  var balance;
+  if(r===0){ balance=curSavings + monthly*n; }
+  else { var growth=Math.pow(1+r,n); balance=curSavings*growth + monthly*((growth-1)/r); }
+  // Drawdown — sustainable monthly income from balance over retYears at same return
+  var rN=retYears*12;
+  var monthlyIncome;
+  if(r===0){ monthlyIncome=balance/rN; }
+  else { monthlyIncome = balance * r / (1 - Math.pow(1+r,-rN)); }
+  var desiredMonthly=desired/12;
+  var gap=monthlyIncome-desiredMonthly;
+  // Extra monthly contribution needed to hit desired income
+  // Required balance at retirement to fund desired income for retYears
+  var requiredBal;
+  if(r===0){ requiredBal=desiredMonthly*rN; }
+  else { requiredBal=desiredMonthly*(1-Math.pow(1+r,-rN))/r; }
+  var fvCurrent;
+  if(r===0){ fvCurrent=curSavings; }
+  else { fvCurrent=curSavings*Math.pow(1+r,n); }
+  var shortfallFV=Math.max(0,requiredBal-fvCurrent);
+  var extraNeeded;
+  if(n===0){ extraNeeded=0; }
+  else if(r===0){ extraNeeded=shortfallFV/n - monthly; }
+  else { extraNeeded=shortfallFV*r/(Math.pow(1+r,n)-1) - monthly; }
+  extraNeeded=Math.max(0,extraNeeded);
+  document.getElementById('r-balance').textContent=formatMoney(balance);
+  document.getElementById('r-income').textContent=formatMoney(monthlyIncome)+'/mo';
+  document.getElementById('r-gap').textContent=(gap>=0?'+':'')+formatMoney(gap)+'/mo';
+  document.getElementById('r-needed').textContent=formatMoney(extraNeeded)+'/mo';
+  document.getElementById('results').classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){ calculate(); });
+</script>
+<script src="/js/embed-resizer.js" defer></script>
+</body>
+</html>
