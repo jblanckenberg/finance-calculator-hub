@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take-Home Pay Calculator (Embed) | FinCalcHub</title>
+  <meta name="description" content="Embedded take-home pay calculator widget by FinCalcHub.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://finncalc.com/take-home-pay/">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    body { padding: 0; }
+    .container { padding: 12px 16px; max-width: 100%; }
+    .embed-credit { margin: 12px 16px 8px; font-size: 11px; color: #6B7280; text-align: right; }
+    .embed-credit a { color: #1E88E5; text-decoration: none; }
+  </style>
+  <script defer data-domain="embed.finncalc.com" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+
+<div class="region-wrap" style="position:relative;top:0">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+<div class="container">
+  <h1 style="font-size:20px;margin-bottom:8px">Take-Home Pay Calculator</h1>
+  <div class="card">
+    <div class="card-title">Your Salary Details</div>
+    <div class="form-row">
+      <div class="form-group"><label for="salary">Gross Annual Salary <span class="hint" id="sal-sym">($)</span></label><input type="number" id="salary" value="75000" min="0" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="payFreq">Pay Frequency</label>
+        <select id="payFreq" onchange="calculate()">
+          <option value="12">Monthly</option>
+          <option value="26">Bi-Weekly</option>
+          <option value="52">Weekly</option>
+          <option value="1">Annual</option>
+        </select>
+      </div>
+    </div>
+    <div data-region="USA">
+      <div class="form-row">
+        <div class="form-group"><label for="filingStatus">Filing Status</label>
+          <select id="filingStatus" onchange="calculate()">
+            <option value="single">Single</option>
+            <option value="married">Married Filing Jointly</option>
+            <option value="hoh">Head of Household</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="stateRate">State Tax Rate (%)</label><input type="number" id="stateRate" value="0" min="0" max="15" step="0.1" oninput="calculate()" inputmode="decimal"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label for="contrib401k">401(k) Contribution (%)</label><input type="number" id="contrib401k" value="0" min="0" max="100" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+        <div class="form-group"><label for="pretaxOther">Other Pre-Tax Deductions ($)</label><input type="number" id="pretaxOther" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+      </div>
+    </div>
+    <div data-region="UK" style="display:none">
+      <div class="form-row">
+        <div class="form-group"><label for="ukPension">Pension Contribution (%)</label><input type="number" id="ukPension" value="5" min="0" max="100" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+      </div>
+    </div>
+    <div data-region="SA" style="display:none">
+      <div class="form-row">
+        <div class="form-group"><label for="saAge">Age</label>
+          <select id="saAge" onchange="calculate()">
+            <option value="1">Under 65</option>
+            <option value="2">65 to 74</option>
+            <option value="3">75 and over</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="saRA">RA / Pension (R/month)</label><input type="number" id="saRA" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate Take-Home Pay &rarr;</button>
+  </div>
+  <div class="results" id="results">
+    <div class="results-title">Your Take-Home Pay</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-takehome">$0</div><div class="result-label">Annual Take-Home Pay</div></div>
+      <div class="result-item"><div class="result-value" id="r-perperiod">$0</div><div class="result-label">Per Pay Period</div></div>
+      <div class="result-item"><div class="result-value" id="r-effective">0%</div><div class="result-label">Effective Tax Rate</div></div>
+      <div class="result-item"><div class="result-value" id="r-total-deductions">$0</div><div class="result-label">Total Annual Deductions</div></div>
+    </div>
+  </div>
+</div>
+
+<p class="embed-credit">
+  Open the full calculator at
+  <a href="https://finncalc.com/take-home-pay/?utm_source=embed&amp;utm_medium=widget&amp;utm_campaign=take-home-pay" target="_blank" rel="noopener">FinCalcHub</a>.
+</p>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+<script>
+var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:'$',UK:'£',SA:'R'}[r]||'$';var el=document.getElementById('sal-sym');if(el)el.textContent='('+s+')';if(document.getElementById('results').classList.contains('show'))calculate();};
+
+// Tax tables — 2026 estimates, USA single brackets simplified, UK England/Wales/NI, SA SARS 2026/27.
+var US_BRACKETS = {
+  single:   [[11600,0.10],[47150,0.12],[100525,0.22],[191950,0.24],[243725,0.32],[609350,0.35],[Infinity,0.37]],
+  married:  [[23200,0.10],[94300,0.12],[201050,0.22],[383900,0.24],[487450,0.32],[731200,0.35],[Infinity,0.37]],
+  hoh:      [[16550,0.10],[63100,0.12],[100500,0.22],[191950,0.24],[243700,0.32],[609350,0.35],[Infinity,0.37]]
+};
+var UK_BRACKETS = [[12570,0],[50270,0.20],[125140,0.40],[Infinity,0.45]];
+var SA_BRACKETS = [[237100,0.18],[370500,0.26],[512800,0.31],[673000,0.36],[857900,0.39],[1817000,0.41],[Infinity,0.45]];
+var SA_REBATES = { 1: 17235, 2: 26679, 3: 29824 }; // primary/secondary/tertiary 2026
+
+function progressiveTax(income, brackets){
+  var tax=0; var prev=0;
+  for(var i=0;i<brackets.length;i++){
+    var cap=brackets[i][0]; var rate=brackets[i][1];
+    if(income<=cap){ tax += (income-prev)*rate; return tax; }
+    tax += (cap-prev)*rate; prev=cap;
+  }
+  return tax;
+}
+
+function calculate(){
+  var region = window.currentRegion || 'USA';
+  var salary = +document.getElementById('salary').value || 0;
+  var freq = +document.getElementById('payFreq').value || 12;
+  var federalTax=0, stateTax=0, fica=0, ni=0, paye=0, uif=0, pension=0, other=0, rebate=0;
+
+  if(region==='USA'){
+    var status = document.getElementById('filingStatus').value;
+    var stateRate = (+document.getElementById('stateRate').value || 0)/100;
+    var pct401k = (+document.getElementById('contrib401k').value || 0)/100;
+    other = +document.getElementById('pretaxOther').value || 0;
+    pension = salary * pct401k;
+    var taxable = Math.max(0, salary - pension - other);
+    federalTax = progressiveTax(taxable, US_BRACKETS[status] || US_BRACKETS.single);
+    stateTax = taxable * stateRate;
+    // FICA: 6.2% SS up to wage base $168,600 + 1.45% Medicare uncapped
+    var ss = Math.min(salary, 168600) * 0.062;
+    var medicare = salary * 0.0145;
+    fica = ss + medicare;
+  } else if(region==='UK'){
+    var pctPension = (+document.getElementById('ukPension').value || 0)/100;
+    pension = salary * pctPension;
+    var taxableUK = Math.max(0, salary - pension);
+    federalTax = progressiveTax(taxableUK, UK_BRACKETS);
+    // National Insurance: 8% between £12,570 and £50,270, 2% above
+    if(salary > 12570){
+      var niBand1 = Math.min(salary, 50270) - 12570;
+      var niBand2 = Math.max(0, salary - 50270);
+      ni = niBand1*0.08 + niBand2*0.02;
+    }
+  } else if(region==='SA'){
+    var ageKey = document.getElementById('saAge').value;
+    var raMonth = +document.getElementById('saRA').value || 0;
+    pension = raMonth*12;
+    var taxableSA = Math.max(0, salary - pension);
+    paye = progressiveTax(taxableSA, SA_BRACKETS);
+    rebate = SA_REBATES[ageKey] || SA_REBATES[1];
+    if(ageKey==='2') rebate = SA_REBATES[1] + (SA_REBATES[2]-SA_REBATES[1]);
+    if(ageKey==='3') rebate = SA_REBATES[3];
+    paye = Math.max(0, paye - rebate);
+    // UIF: 1% capped at R17,712/yr
+    uif = Math.min(salary*0.01, 17712);
+  }
+
+  var totalTax = federalTax + stateTax + fica + ni + paye + uif;
+  var totalDeductions = totalTax + pension + other;
+  var takehome = salary - totalDeductions;
+  var perPeriod = takehome / freq;
+  var effective = salary>0 ? (totalTax/salary)*100 : 0;
+
+  document.getElementById('r-takehome').textContent = formatMoney(takehome);
+  document.getElementById('r-perperiod').textContent = formatMoney(perPeriod);
+  document.getElementById('r-effective').textContent = effective.toFixed(1)+'%';
+  document.getElementById('r-total-deductions').textContent = formatMoney(totalDeductions);
+  document.getElementById('results').classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){ calculate(); });
+</script>
+<script src="/js/embed-resizer.js" defer></script>
+</body>
+</html>
