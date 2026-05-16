@@ -54,3 +54,20 @@
 # llms.txt: 24 hours
 /llms.txt
   Cache-Control: public, max-age=86400
+
+# Embed widget pages — allow cross-origin framing + permissive CORS so any host
+# can iframe /embed/<slug>/. Override universal X-Frame-Options + add CSP.
+/embed/*
+  Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin
+  Content-Security-Policy: frame-ancestors *;
+  X-Frame-Options: ALLOWALL
+  Cache-Control: public, max-age=300, s-maxage=86400
+
+# Embed bundle JS — served cross-origin to host pages (overrides /js/* immutable
+# cache because bundle content can change when origin substitution is updated).
+/js/embed/*.js
+  Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=300, s-maxage=86400
