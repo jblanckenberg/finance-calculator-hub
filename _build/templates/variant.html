@@ -1,0 +1,20 @@
+{# templates/variant.html — variant page. Re-uses parent calc body via `body_html` and prepends a variant intro block. #}
+{% extends "_base.html" %}
+
+{% block hero_extras %}
+{% if intro_is_stub %}
+<div class="operator-todo" style="margin:16px 0;padding:16px;border:2px dashed #f59e0b;background:#fffbeb;color:#78350f;border-radius:6px;font-size:14px">
+  <strong>OPERATOR_TO_FILL — </strong><code>{{ intro }}</code>
+</div>
+{% else %}
+<section class="variant-intro" style="margin:16px 0;max-width:760px">
+{% for para in intro_paragraphs %}
+  <p>{{ para }}</p>
+{% endfor %}
+</section>
+{% endif %}
+{% endblock %}
+
+{% block body_main %}
+{{ body_html | safe }}
+{% endblock %}

@@ -1,0 +1,9 @@
+{# templates/calculator.html — per-calculator page. Body content comes from a per-slug body file (raw HTML). #}
+{% extends "_base.html" %}
+
+{% block body_main %}
+{# The per-calc body — calculator form, results, FAQ — is loaded as raw HTML from
+   _build/bodies/<slug>.html during the migration. This keeps the live calculator JS
+   untouched while the head/header/footer are templated. #}
+{{ body_html | safe }}
+{% endblock %}
