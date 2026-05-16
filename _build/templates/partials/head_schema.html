@@ -1,0 +1,14 @@
+{# templates/partials/head_schema.html — JSON-LD blocks. The variant page passes is_variant=True. #}
+  <!-- Google AdSense: paste your code here after approval -->
+{% if web_application_ld %}
+  <script type="application/ld+json">{{ web_application_ld | tojson }}</script>
+{% endif %}
+{% if faq_ld %}
+<script type="application/ld+json">{{ faq_ld | tojson }}</script>
+{% endif %}
+{% if breadcrumb_ld %}
+<script type="application/ld+json">{{ breadcrumb_ld | tojson }}</script>
+{% endif %}
+{% if howto_ld %}
+<script type="application/ld+json">{{ howto_ld | tojson }}</script>
+{% endif %}

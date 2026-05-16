@@ -1,0 +1,37 @@
+{# templates/_base.html — root template; calculator.html and variant.html extend this. #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "partials/head_meta.html" %}
+{% include "partials/head_schema.html" %}
+{% include "partials/analytics.html" %}
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+{% include "partials/header.html" %}
+
+<!-- Ad slot top -->
+<div class="container">
+  {% include "partials/ad_slot.html" %}
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb">{{ breadcrumb_html | safe }}</p>
+  <h1>{{ h1 }}</h1>
+  <p class="subtitle">{{ subtitle }}</p>
+{% block hero_extras %}{% endblock %}
+</div>
+
+{% block body_main %}{% endblock %}
+
+{% include "partials/footer.html" %}
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+{% block body_scripts %}{% endblock %}
+</body>
+</html>
