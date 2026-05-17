@@ -38,6 +38,26 @@
       {
         "q": "What interest rate should I use for retirement planning?",
         "a": "The S&P 500 has historically returned approximately 10% per year before inflation, or roughly 7% after inflation. Financial planners commonly use 6–8% as a conservative real-return assumption for long-term retirement projections."
+      },
+      {
+        "q": "USA vs UK vs South Africa: where is compounding interest taxed differently?",
+        "a": "Interest is taxable income everywhere, but tax-sheltered wrappers change the after-tax compound effect. USA: Roth IRA + 401(k) compound fully tax-free or tax-deferred. UK: Cash ISA and Stocks & Shares ISA wrappers shelter interest up to £20,000 per tax year. South Africa: TFSAs shelter interest up to R36,000/year (R500,000 lifetime). Compounding outside these wrappers is reduced by your marginal income tax rate each year."
+      },
+      {
+        "q": "What's the most common mistake people make with compound interest?",
+        "a": "Underestimating time and overestimating timing. People delay starting because the early years look unspectacular — $1,000 at 7% earns only $70 in year one. But that same dollar invested at age 25 grows to about $14,974 by age 65, versus $5,427 if started at age 40. Time, not return rate or contribution size, is the dominant lever for most savers."
+      },
+      {
+        "q": "What if the interest rate is 0% or negative?",
+        "a": "At 0% your balance grows only by contributions — there's no compounding effect, so a 30-year projection is just contributions × months. Negative real rates (when inflation exceeds the nominal interest rate) shrink purchasing power even as the nominal balance grows. The calculator handles 0% with a simple linear formula and lets you enter any rate (including below inflation) to model real-loss scenarios."
+      },
+      {
+        "q": "I have my final balance — what should I do next?",
+        "a": "First, sanity-check the inputs: was the rate realistic for the asset class, and have you included taxes if held outside a wrapper? Then act: if the balance falls short of your goal, increase monthly contributions (the variable you most control), extend the time horizon, or shift to a tax-sheltered account. If it exceeds the goal, consider de-risking gradually in the 5–10 years before you need the money."
+      },
+      {
+        "q": "Compound interest vs simple interest — what's the practical difference?",
+        "a": "Simple interest pays interest only on the original principal — $1,000 at 7% simple over 30 years pays $2,100 in total interest. Compound interest pays interest on the principal plus all previously earned interest — the same $1,000 at 7% compounded annually grows by about $6,612 in interest. Over long horizons compound interest typically produces 3–10× the return of simple interest at the same headline rate."
       }
     ],
     "comparison_slugs": ["compound-interest-vs-simple-interest"]
@@ -81,6 +101,26 @@
       {
         "q": "UK: What is stamp duty?",
         "a": "Stamp Duty Land Tax (SDLT) is paid on property purchases in England and Northern Ireland. From April 2025, the nil-rate threshold returns to £125,000 (2% on £125k–£250k, 5% on £250k–£925k). First-time buyers get relief up to £425,000 until March 2025, then £300,000. Scotland and Wales have their own equivalent taxes."
+      },
+      {
+        "q": "USA vs UK vs South Africa: how do mortgage interest rates differ?",
+        "a": "USA: 30-year fixed dominates (~6–7% in 2026), backed by Fannie Mae/Freddie Mac standardised products. UK: 2-, 5-, and 10-year fixes are the norm (~4–5%), then borrowers must remortgage or revert to a variable Standard Variable Rate. South Africa: most bonds are linked to prime (currently ~11%) with limited fixed-rate options. The same loan size carries very different lifetime interest in each market."
+      },
+      {
+        "q": "What's the most common mortgage mistake first-time buyers make?",
+        "a": "Maxing out 'how much can I borrow?' instead of 'how much should I borrow?' Lenders often approve at 4–4.5× income but spending the full amount leaves no margin for rate rises, repairs, or income shocks. A safer rule: keep total housing costs (PITI + maintenance) under 28% of gross income, and don't exhaust your savings on the deposit — keep 3–6 months of expenses in cash."
+      },
+      {
+        "q": "What happens if my mortgage rate rises during a fixed term ending?",
+        "a": "At the end of a UK fix, your rate rolls to the lender's Standard Variable Rate (often 2–4% above your fixed rate) unless you remortgage. In the USA, the 30-year fixed never resets. ARM borrowers face the same risk at each reset point. Use the calculator with the new rate to see your new monthly payment — for many UK borrowers a fix-to-fix increase of 2 points raises monthly cost by £200–£400 on a typical £200,000 loan."
+      },
+      {
+        "q": "I have my monthly payment — now what?",
+        "a": "Compare it against your gross monthly income: housing costs above ~28% will squeeze other goals. Then stress-test: rerun the calculator with the rate 2 points higher to confirm you can still afford the loan if you remortgage at a worse rate. Finally, decide whether to overpay — even £100 a month extra on a 25-year £200k mortgage at 5% shaves about 3 years and £15,000 of interest."
+      },
+      {
+        "q": "Mortgage vs renting — which builds wealth faster?",
+        "a": "Depends on rate, term, deposit, and house-price growth. Renting + investing the deposit difference can beat buying if rents stay low and equity returns exceed both house-price growth and your mortgage rate. Buying tends to win when (a) you stay 7+ years, (b) house prices keep pace with inflation, and (c) the mortgage rate is below long-run equity returns. Use this calculator alongside an investment-growth calculator to compare scenarios on your numbers."
       }
     ],
     "comparison_slugs": ["30-year-vs-15-year-mortgage"]
@@ -125,6 +165,26 @@
       {
         "q": "How do I reduce my tax bill in South Africa?",
         "a": "The most effective strategies are: (1) Contribute to a Retirement Annuity (RA) — contributions are tax-deductible up to 27.5% of taxable income, capped at R350,000/yr. (2) Contribute to a pension or provident fund via your employer. (3) Claim medical aid tax credits (R376/month for the first two members, R254/month for additional members, for 2026/27). This calculator applies all standard credits automatically."
+      },
+      {
+        "q": "USA vs UK vs South Africa: which has the highest top marginal tax rate?",
+        "a": "Top federal marginal rates as of 2026: USA 37% (kicks in above ~$626,350 single), UK 45% (above £125,140 — note the 60% effective rate between £100k and £125,140 from personal allowance taper), South Africa 45% (above R1,878,600). USA totals can exceed 50% once state tax is added (e.g. California adds 13.3%). UK and SA include national-insurance-style contributions on top."
+      },
+      {
+        "q": "What's the most common take-home pay mistake?",
+        "a": "Forgetting employer-side pre-tax contributions. 401(k) salary deferrals, UK pension salary-sacrifice, and SA RA contributions all reduce taxable income — but only if you actually enter them. People also routinely ignore the UK personal allowance taper (£100k+) and SA medical aid credits, both of which can move take-home by hundreds of pounds or rand per month."
+      },
+      {
+        "q": "What if I have multiple income sources or side income?",
+        "a": "This calculator models a single salary source. For multiple employments, the second job often has all income taxed at your marginal rate because the personal allowance/standard deduction is used up by the first job — use the combined gross figure to estimate. Self-employment income is taxed separately (Schedule C in USA, Self-Assessment in UK, IRP6 provisional tax in SA) and typically needs a quarterly estimated-tax calculation, not this monthly take-home view."
+      },
+      {
+        "q": "My take-home looks low — what can I actually change?",
+        "a": "Five legal levers: (1) increase tax-advantaged retirement contributions (401(k), pension, RA) to lower taxable income; (2) claim every available credit — medical aid (SA), child credits (USA), marriage allowance (UK); (3) check your tax code (UK) or W-4 (USA) is correct — wrong codes cost thousands; (4) for high earners near £100k UK, sacrifice salary into pension to reclaim the personal allowance; (5) if self-employed, time deductible expenses into the higher-income year."
+      },
+      {
+        "q": "Take-home pay vs gross pay — which figure should I budget against?",
+        "a": "Always net (take-home) pay. Budgeting from gross is the single most common cause of overspending — a £50,000 UK salary lands at about £39,200 net, an $80,000 US salary at roughly $58,000–$62,000 depending on state, and an R600,000 SA salary at about R430,000 after PAYE + UIF. The gap between gross and net is real money you never see in your account."
       }
     ]
   },
@@ -168,6 +228,26 @@
       {
         "q": "When should I start saving for retirement?",
         "a": "As early as possible. The first decade of contributions is worth more than every subsequent decade combined because of compound growth. £200 a month from age 25 to 35, then nothing, beats £200 a month from 35 to 65 at the same return. If you haven't started, start now — late beats never by a wide margin."
+      },
+      {
+        "q": "USA vs UK vs South Africa: how much can I shelter from tax in retirement accounts?",
+        "a": "Annual contribution caps as of 2026: USA — $23,500 to 401(k) plus $7,000 to Roth/Traditional IRA (total $30,500, or $38,000 if 50+ with catch-ups). UK — £60,000 annual allowance into pensions (tapered for high earners) plus £20,000 ISA allowance. South Africa — Retirement Annuity deduction up to 27.5% of taxable income capped at R350,000, plus R36,000 TFSA. Country-by-country these are very different shelter sizes."
+      },
+      {
+        "q": "What's the most common retirement-savings mistake?",
+        "a": "Withdrawing from retirement accounts mid-career — typically when changing jobs. Cashing out a $30,000 401(k) at age 30 means losing roughly $300,000 of compounded growth by age 65 (at 7%). Always roll over to a new 401(k) or IRA. The other common mistake is investing too conservatively in your 30s and 40s, locking in low returns when you have the time horizon to ride out volatility."
+      },
+      {
+        "q": "What if I'm 50+ and behind on retirement saving?",
+        "a": "You have three levers: contribute more (USA: $7,500 401(k) catch-up + $1,000 IRA catch-up; UK: pension carry-forward of unused allowance for 3 years; SA: increase RA contribution within the 27.5%/R350k cap), work longer (each extra year is one fewer year of withdrawal + one more year of contributions and compounding), or downsize spending in retirement. Most 50+ savers behind plan need at least two of the three."
+      },
+      {
+        "q": "I have my target number — what's the next step?",
+        "a": "Translate it into a monthly contribution and automate it: payroll-deduct to a 401(k), set up direct debits to an ISA or RA. Then check your asset allocation matches your time horizon — being 100% in equities at 60 is as risky as being 100% in cash at 30. Finally, recheck the plan annually: salary rises, market returns, and tax-law changes all move the target."
+      },
+      {
+        "q": "Retirement Annuity vs employer pension fund — which first?",
+        "a": "USA: always 401(k) up to the employer match (free money), then IRA/Roth, then return to the 401(k). UK: workplace pension up to your employer's contribution cap, then SIPP or further workplace contributions. South Africa: employer pension/provident fund first if there's a match, then top up with an RA — both share the 27.5%/R350k annual deduction cap. The principle is identical across regions: never leave free employer match on the table."
       }
     ]
   },
@@ -209,6 +289,26 @@
       {
         "q": "Should I use real or nominal returns when projecting growth?",
         "a": "Real returns (after subtracting inflation) for retirement and long-term goals — they tell you what your money will actually buy. Nominal returns work for short-term goals (under 5 years) where inflation matters less. The S&P 500 has averaged roughly 10% nominal and 7% real over the past century."
+      },
+      {
+        "q": "USA vs UK vs South Africa: where can I invest tax-free?",
+        "a": "USA: Roth IRA ($7,000/yr) and Roth 401(k) ($23,500/yr) — qualified withdrawals are tax-free. UK: Stocks & Shares ISA (£20,000/yr) — gains, dividends, and interest never taxed. South Africa: TFSA (R36,000/yr, R500,000 lifetime) — all returns tax-free. Investing inside these wrappers can add 1–2 percentage points to your effective return over a 20-year horizon versus a taxed account."
+      },
+      {
+        "q": "What's the most common investment-growth mistake?",
+        "a": "Trying to time the market. Decades of data show that missing the 10 best market days each decade can roughly halve total returns. Most missed days happen in volatile periods right after big drops — exactly when nervous investors sell. Setting a fixed monthly contribution (dollar/pound/rand-cost averaging) and ignoring short-term noise outperforms timing for almost every retail investor."
+      },
+      {
+        "q": "What if my actual returns are negative for several years?",
+        "a": "It's normal — the S&P 500 has had multiple 3-year stretches with negative real returns since 1900. The calculator's projected balance assumes a smooth average, but real markets are lumpy. The defence is time horizon (a 25-year run smooths almost any sequence) and dollar-cost averaging (steady contributions buy more units when prices are low). If you're 5 years from needing the money, derisk gradually."
+      },
+      {
+        "q": "I have my projected portfolio value — what's next?",
+        "a": "Three actions: (1) confirm the contribution rate is automated, not aspirational; (2) check fees — a 1% annual fee versus 0.1% can shave 25% off a 30-year balance, so use low-cost index funds where possible; (3) decide your withdrawal plan now, not later — at the typical 4% safe-withdrawal rate, a $500,000 portfolio supports $20,000/year of withdrawals, a $1M portfolio supports $40,000."
+      },
+      {
+        "q": "Investment growth vs simple savings — when does each fit?",
+        "a": "Use investment growth for goals 5+ years out — historical equity returns of 7% real beat savings rates of 1–2% real by a wide margin once you have time to ride out volatility. Use savings (high-yield account, money-market, Cash ISA) for emergency funds and goals under 3 years — capital preservation matters more than yield when you'll need the money soon. The 3–5 year zone is the grey area; a balanced fund often fits."
       }
     ]
   },
@@ -250,6 +350,26 @@
       {
         "q": "Should I save for a deposit before investing?",
         "a": "If you intend to buy within 3-5 years: yes, prioritise the deposit. Stock markets can fall 30% or more in a year — fine over a 20-year horizon, devastating against a 2-year house plan. Once your deposit is funded and an emergency buffer exists, redirect every additional pound or dollar to long-term investments."
+      },
+      {
+        "q": "USA vs UK vs South Africa: best account for short-term savings?",
+        "a": "USA: high-yield savings accounts (HYSAs) at online banks like Ally or Marcus pay 4–5% in 2026 — taxable but liquid. UK: easy-access Cash ISA (tax-free, ~4%) or fixed-rate bonds for known dates. South Africa: a money-market unit trust or a fixed-deposit notice account (32-day or 90-day) typically pays 7–9% in 2026, taxable above the R23,800 annual interest exemption (R34,500 if 65+)."
+      },
+      {
+        "q": "What's the most common savings-goal mistake?",
+        "a": "Setting a single big target without milestones. A 'save $20,000 for a house' goal feels distant for the 2–3 years it takes, so motivation wavers. Break it into monthly micro-targets ($600 in month 1, $1,200 by month 2, etc.) and review weekly — the same end-date, much higher completion rate. The calculator's month-by-month breakdown is built for exactly this kind of milestone-tracking."
+      },
+      {
+        "q": "What if my monthly contribution can't reach the goal in time?",
+        "a": "Three options shown by the calculator: (1) extend the deadline — adding 6 months often closes a stubborn gap; (2) increase the monthly amount; (3) increase the interest rate by shifting from cash to investments — but only if your time horizon is 5+ years. If none of those work, the goal amount itself probably needs to come down."
+      },
+      {
+        "q": "I'll hit my savings goal — what should I do once it's funded?",
+        "a": "First, sweep the funded balance to its final destination (deposit to solicitor, holiday booking paid, debt settled) so you don't accidentally spend it. Then redirect the freed-up monthly contribution to the next goal — emergency fund, retirement top-up, or a stretch goal. Most people slow saving after a goal hits because the habit lapses; keep the direct debit running and just change the destination account."
+      },
+      {
+        "q": "Savings goal vs emergency fund — which first?",
+        "a": "Emergency fund every time. A holiday or deposit goal can be paused; an emergency cannot. The standard order is: starter emergency fund (1 month of essential expenses) → pay off high-interest debt (over 10% APR) → build emergency fund to 3–6 months → then fund discretionary savings goals. Skipping the emergency-fund step is the most common reason people end up on credit cards mid-saving."
       }
     ]
   },
@@ -291,6 +411,26 @@
       {
         "q": "Is high inflation good or bad for borrowers?",
         "a": "Good for borrowers with fixed-rate debt — the real value of what you owe shrinks each year while your nominal income tends to rise with inflation. Bad for savers earning less than the inflation rate (real return is negative). Variable-rate borrowers face the opposite: higher rates as central banks fight inflation."
+      },
+      {
+        "q": "USA vs UK vs South Africa: which inflation index should I use?",
+        "a": "USA: the BLS Consumer Price Index for All Urban Consumers (CPI-U) is the standard headline rate, with Core CPI (excludes food + energy) for trend. UK: ONS publishes CPI (the Bank of England target index, 2% target) and CPIH (which includes owner-occupier housing costs). South Africa: Stats SA publishes Headline CPI (SARB target 3–6%). Use your country's headline CPI for long-term planning; long-run averages are USA ~3%, UK ~2.5%, SA ~5%."
+      },
+      {
+        "q": "What's the most common inflation-planning mistake?",
+        "a": "Anchoring on a single recent year. People plan with 2022's 8% headline inflation or 2020's 1% — neither is a useful long-run number. Use a 30+ year average (USA 3%, UK 2.5%, SA 5%) plus a small buffer for conservatism. The other common error is forgetting to inflate target amounts: a £40k/year retirement target today needs £72k in 25 years at 2.5% inflation."
+      },
+      {
+        "q": "What if inflation suddenly spikes to 10%+?",
+        "a": "Short bursts (1–2 years) of high inflation barely move 30-year projections — the long-run average is the dominant input. Sustained high inflation hurts cash and bonds; equities historically keep pace with inflation over 5+ year periods because company revenues rise with prices. The biggest practical risk is variable-rate debt: at 10% rates, a £200k mortgage costs about £900 more per month than at 4%."
+      },
+      {
+        "q": "I see the lost purchasing power — what's the next action?",
+        "a": "Confirm every long-term goal is denominated in real terms (today's money), then check your investments earn at least the inflation rate. Cash sitting in a low-yield account is guaranteed to lose real value; high-yield savings, ISAs, TFSAs, and equity investments are the standard defences. If you have fixed-rate debt at below current inflation, you're already winning — don't rush to pay it off early."
+      },
+      {
+        "q": "Inflation vs interest rates — what's the relationship?",
+        "a": "Central banks (Fed, BoE, SARB) raise interest rates when inflation runs above target and cut when it's below. The real return on cash equals nominal rate minus inflation. From 2022–2024 most developed countries had negative real rates (cash interest below inflation) — that's why investors moved into equities and fixed-rate bonds despite the volatility. Real rates above 1% are historically rare and usually short-lived."
       }
     ]
   },
@@ -332,6 +472,26 @@
       {
         "q": "Does net worth include retirement accounts?",
         "a": "Yes. Include the full balance of 401(k), IRA, RA, SIPP, and pension fund accounts at their current market value. Some people calculate a separate 'liquid net worth' excluding retirement and home equity to see what they could access if needed today — both numbers are useful."
+      },
+      {
+        "q": "USA vs UK vs South Africa: what's the median net worth?",
+        "a": "Federal Reserve Survey of Consumer Finances (2022 latest, USA): median household net worth $192,700. UK (ONS Wealth and Assets Survey, 2020): median household wealth £302,500 (heavily inflated by pension and property values). South Africa (Stats SA, 2017): median is much lower, around R125,000 — wealth inequality is far higher in SA. Compare against your age band rather than the overall median, which is dominated by older households."
+      },
+      {
+        "q": "What's the most common net-worth tracking mistake?",
+        "a": "Inflating asset values. People mark property at peak market, vehicles at sticker price, and crypto at the all-time high. Use realistic, market-comparable prices: property at the Zillow/Zoopla/Property24 estimate or a fresh valuation; vehicles at the Kelly Blue Book/Auto Trader/AutoTrader.co.za 'trade-in' price; investments at the actual portfolio value. Optimistic valuations make tracking trends meaningless."
+      },
+      {
+        "q": "What if my net worth is negative?",
+        "a": "Common in your 20s — student loans, car loans, no investments yet. The metric to watch is monthly change, not the absolute number. As long as net worth is rising each quarter (paying down debt or building savings), you're moving in the right direction. The fastest paths out: aggressive student-loan repayment, building a starter emergency fund, then 401(k)/ISA/RA contributions to capture compounding."
+      },
+      {
+        "q": "I have my net worth — what's the next move?",
+        "a": "Compare it against the age benchmarks (1× salary by 30, 3× by 40, 6× by 50). If you're behind, the levers are: increase savings rate, capture employer match, pay down high-rate debt. If you're ahead, focus on asset allocation and tax-shelter usage. Track quarterly using a consistent date — your birthday or January 1 are popular — to see the trend rather than noise."
+      },
+      {
+        "q": "Net worth vs liquid net worth — which matters more?",
+        "a": "Both, for different decisions. Total net worth tells you long-term wealth and retirement readiness — it includes home equity and locked-up retirement accounts. Liquid net worth (cash + non-retirement investments minus all debt) tells you what's actually available for emergencies, opportunities, or career changes. Aim to grow both; a high total net worth with near-zero liquid net worth is fragile."
       }
     ]
   },
@@ -373,6 +533,26 @@
       {
         "q": "How is total interest calculated on a loan?",
         "a": "Total interest equals the sum of all scheduled payments minus the original principal. For a fixed-rate loan, each month's interest is calculated on the remaining balance, and the rest of your payment reduces principal. Early in the loan most of each payment is interest; later it flips."
+      },
+      {
+        "q": "USA vs UK vs South Africa: are early-repayment penalties allowed?",
+        "a": "USA: federal law bans prepayment penalties on most mortgages originated since 2014 (Dodd-Frank); auto and personal loans vary by lender — always check. UK: Early Repayment Charges (ERCs) are common on fixed-rate mortgages (typically 1–5% during the fixed term, zero afterward); FCA-regulated personal loans are limited to 28-day interest charge. South Africa: NCA-regulated loans must allow early settlement; lenders can charge up to 3 months of interest as a penalty on home loans."
+      },
+      {
+        "q": "What's the most common loan-payoff mistake?",
+        "a": "Refinancing into a longer term to lower the monthly payment, then never overpaying. A $15,000 loan at 8.5% becomes about $7,000 cheaper in interest if you keep the original 5-year term vs stretching to 10 years — even though the 10-year monthly payment is lower. Lower monthly cost feels good; total interest cost is what actually matters."
+      },
+      {
+        "q": "What if my extra payment isn't applied to principal?",
+        "a": "Some lenders apply extra payments forward (to future scheduled payments) by default, not to principal. This earns you nothing — interest still accrues on the same balance. Always specify 'apply to principal' in writing or via the lender's online portal. If the lender refuses, the loan's pay-down schedule is the same as without the extra payment, just with months 'pre-paid'."
+      },
+      {
+        "q": "I'll be debt-free in X months — what's next?",
+        "a": "Don't drop the monthly payment back into spending. Redirect that exact dollar/pound/rand amount into an emergency fund (if not at 3–6 months) then to retirement contributions. The 'debt-free dividend' is the single biggest opportunity to boost savings rate, and most people miss it because they normalise the cash-flow improvement within months."
+      },
+      {
+        "q": "Loan payoff vs investing the extra — when does each win?",
+        "a": "Math says invest when expected after-tax return exceeds the loan rate. A 4% mortgage vs a 7% expected stock return favours investing. A 22% credit card vs the same 7% return favours payoff. Between 6–10% it's close — psychology and risk tolerance break the tie. Always pay the minimum on every debt first, capture employer 401(k) match, then choose between extra payoff and extra investing."
       }
     ]
   },
@@ -414,6 +594,26 @@
       {
         "q": "How long does it take to pay off $10,000 in credit card debt?",
         "a": "At 20% APR paying just the minimum (~2% of balance), it takes roughly 30 years and over $10,000 in interest. Paying $250 a month clears it in just over 5 years with about $5,000 in interest. Paying $500 a month finishes in 2 years with under $2,000 in interest."
+      },
+      {
+        "q": "USA vs UK vs South Africa: typical credit card APRs in 2026?",
+        "a": "USA: average is around 22–24% APR (Federal Reserve G.19 release), with rewards cards higher and credit-union cards lower. UK: average purchase APR is roughly 24–28% (FCA data), with balance-transfer cards offering 0% promos of 12–24 months. South Africa: NCA-regulated maximum is repo rate + 14% (about 22% in 2026); many SA store cards run at the cap. All three are far above any reasonable expected investment return — paying credit cards off is always the right call mathematically."
+      },
+      {
+        "q": "What's the most common credit card payoff mistake?",
+        "a": "Clearing one card and immediately running it up again because the available limit is now a 'safety net'. The behavioural fix is to close the cleared card (accept the small temporary credit-score dip), or move the card into a drawer and remove it from online wallets. Re-charging during a payoff plan is the single biggest reason multi-year payoff plans stall."
+      },
+      {
+        "q": "What if my interest rate is above 25% or my balance is more than my annual income?",
+        "a": "You're in financial-hardship territory. Options: (1) call the card issuer and ask for a 'hardship rate' — many drop to 6–10% for 6–12 months; (2) a balance transfer to a 0% card if your credit still allows it; (3) a debt consolidation loan at a lower rate; (4) for USA, a non-profit credit counselling agency Debt Management Plan. UK equivalents: StepChange, National Debtline. SA: Debt Counselling under the NCA."
+      },
+      {
+        "q": "Card is paid off — now what?",
+        "a": "Keep the account open (closing reduces your credit utilisation ratio and shortens credit history, both of which hurt your score). Set up automatic full-statement-balance payments going forward so you never carry interest again. Redirect what you were paying in minimums and extra into an emergency fund — most people need at least one month of expenses in cash before they can stay credit-card-free in a crunch."
+      },
+      {
+        "q": "Credit card vs personal loan — which is cheaper?",
+        "a": "Personal loans almost always. A typical unsecured personal loan is 8–14% APR; a typical credit card is 20–28% APR. Consolidating $10,000 of credit card debt at 22% into a 3-year personal loan at 12% saves roughly $2,500 in interest over the payoff. The trap: only consolidate if you can resist re-borrowing on the now-empty cards — otherwise you double the debt."
       }
     ]
   },
@@ -455,6 +655,26 @@
       {
         "q": "Can I invest my emergency fund to earn more?",
         "a": "No — capital preservation matters more than yield for an emergency fund. A 30% market drawdown the same week you lose your job is the exact scenario this money exists to prevent. Stick to a high-yield savings or money-market account. If you have more than 12 months saved, the excess can be invested separately."
+      },
+      {
+        "q": "USA vs UK vs South Africa: best account to hold an emergency fund?",
+        "a": "USA: high-yield savings account at an FDIC-insured online bank (Ally, Marcus, Discover) currently paying 4–5% — interest is taxable. UK: easy-access Cash ISA (tax-free interest, FSCS-protected up to £85,000 per institution) or instant-access savings — currently around 4%. South Africa: a money-market unit trust or a 32-day notice account at a major bank, currently 7–9% — interest is taxable above the annual interest exemption (R23,800 under 65, R34,500 if 65+)."
+      },
+      {
+        "q": "What's the most common emergency-fund mistake?",
+        "a": "Keeping it in the same checking account as everyday spending. Money you can see is money you'll spend — research consistently shows people raid 'mental' emergency funds for non-emergencies. Use a separately named account at a different bank from your day-to-day account, and don't link a debit card to it. The friction of moving money back to checking is the friction that protects the fund."
+      },
+      {
+        "q": "What if I lose my job before the fund is fully built?",
+        "a": "A partial fund still helps. Three weeks of expenses is better than zero — it covers immediate bills while you file for unemployment (USA), Universal Credit (UK), or UIF benefits (SA). The standard advice is to immediately cut variable spending to essential-only (rent/bond, food, utilities, minimum debt, insurance) — this stretches a partial fund from say 2 months to 4 months of essential-only coverage."
+      },
+      {
+        "q": "I've reached my target — what's next?",
+        "a": "Redirect what you were saving each month to the next-priority goal: high-interest debt → retirement contributions → other savings goals. Set a quarterly reminder to top the fund back up if you ever draw from it, and rebalance the target every year as your essential expenses change (rent rises, new mortgage, children, etc.). Most people set a target once and never recalibrate."
+      },
+      {
+        "q": "Emergency fund vs debt payoff — which first?",
+        "a": "Build one month of essential expenses first, then aggressively pay off debt above 10% APR, then build the rest of the 3–6 month fund. Going debt-only without a starter fund leads to new debt the first time a car repair or medical bill hits — which is why most pure 'debt-first' plans fail. The Dave Ramsey order (small fund → debt → full fund) reflects two decades of real-world data on what actually works."
       }
     ]
   },
@@ -500,6 +720,22 @@
       {
         "q": "What are SARS medical aid tax credits?",
         "a": "For the 2026/27 tax year the medical scheme fees tax credit is R376 per month for the main member, R376 per month for the first dependant, and R254 per month for each additional dependant. These credits reduce your tax bill directly (not your taxable income), so the value is the same regardless of your marginal rate."
+      },
+      {
+        "q": "Provisional taxpayer or PAYE only — what's the difference for me?",
+        "a": "If salary is your only income, your employer deducts PAYE monthly and you usually don't need to file a return unless above R500,000/year or with other income. If you earn rental, freelance, or investment income, you're a provisional taxpayer — you must register with SARS, pay estimated tax twice a year (end of August and end of February), and reconcile the year on your annual return. Missing the August payment triggers underestimation penalties."
+      },
+      {
+        "q": "What's the most common SARS tax-filing mistake?",
+        "a": "Forgetting to claim medical aid main-member credit when you pay the scheme yourself (not through payroll). Many salaried South Africans pay medical aid privately and have the credit applied at the SARS-filing stage, not via PAYE — easy to miss and worth R4,512 a year per member. The second-most-common error is over-contributing to your RA above the 27.5%/R350k cap — excess contributions aren't lost (they roll forward) but they don't reduce tax in the current year either."
+      },
+      {
+        "q": "I have my take-home — what should I do next?",
+        "a": "Three steps: (1) confirm your IRP5 matches the calculator output within R500/month — if not, your employer may have set up PAYE incorrectly; (2) check whether maxing your RA at 27.5% of income (or your medical aid tax credits) would meaningfully cut your tax — if so, talk to your payroll or open an RA; (3) if you owe SARS at year-end, set up provisional tax to avoid penalties on side income."
+      },
+      {
+        "q": "South Africa tax vs UK/USA tax — which has the highest effective rate on R600,000?",
+        "a": "R600,000 SA salary (about £25,500 or $32,000 at 2026 rates, single, no dependants, no RA): effective tax rate roughly 23% in SA — leaving R459,000 net. In the UK at £25,500: about 13% effective leaving £22,200. In the USA at $32,000: about 11% effective leaving $28,400. South Africa taxes middle incomes more heavily than the UK or USA because the lowest bracket is 18% (vs UK 20% above £12,570 personal allowance and US 10–12% with $14,600 standard deduction)."
       }
     ]
   },
@@ -552,6 +788,26 @@
       {
         "q": "Can I use this calculator if I'm self-employed?",
         "a": "Solo 401(k) plans follow the same employee deferral limit ($23,500) but you can also contribute as the employer up to 25% of net self-employment income, capped at the $70,000 total. Set the employer match cap to match your planned employer-side contribution."
+      },
+      {
+        "q": "USA-only or are there UK/SA equivalents I can use this calculator for?",
+        "a": "This is a USA-specific tool — 401(k) rules and limits don't apply elsewhere. Closest equivalents: UK uses workplace pensions with auto-enrolment (employer contributes 3% minimum, employee 5%); the £60,000 annual allowance includes both contributions and tax relief. South Africa uses employer pension/provident funds plus Retirement Annuities, deductible up to 27.5% of taxable income (R350k cap). Use our ISA Calculator (UK) or TFSA Calculator (SA) for region-specific tools."
+      },
+      {
+        "q": "What's the most common 401(k) mistake?",
+        "a": "Leaving the employer match on the table. Studies (Vanguard 2024) show roughly 20% of eligible employees miss part of their available match — that's a guaranteed 50–100% return forfeited. The second-most-common mistake is investing 401(k) funds in your own employer's stock (concentration risk + correlation with your salary). Default index funds beat employer stock for almost every retiree."
+      },
+      {
+        "q": "What if I switch jobs — do I lose the 401(k)?",
+        "a": "No. You keep all your own contributions and earnings on them, immediately and unconditionally. Employer match is subject to a vesting schedule (commonly 3-year cliff or 6-year graded) — any non-vested employer money is forfeited if you leave early. Options at job change: leave the 401(k) at the old employer, roll into the new employer's 401(k), or roll into an IRA. Never cash out — the 10% early-withdrawal penalty plus income tax can destroy 35–40% of the balance."
+      },
+      {
+        "q": "I've maxed my 401(k) — where next?",
+        "a": "Order of operations after 401(k) match: max the 401(k) to the $23,500 limit → fund a Roth IRA to $7,000 (subject to MAGI phase-out) → HSA if eligible → mega backdoor Roth if your plan allows after-tax contributions → taxable brokerage account. Use this calculator alongside our Roth IRA Calculator to see the long-run tax difference between traditional and Roth contributions."
+      },
+      {
+        "q": "401(k) vs IRA vs taxable brokerage — when do I need each?",
+        "a": "401(k) first for the employer match (free money). Roth IRA next for tax diversification — different tax treatment at retirement gives flexibility. Then more 401(k) up to $23,500 for the tax deduction in your peak earning years. Taxable brokerage last, for amounts above all the tax-advantaged limits or for goals before age 59½. Each vehicle solves a different problem; most retirees benefit from having all three at retirement."
       }
     ],
     "sources": [
@@ -640,6 +896,26 @@
       {
         "q": "Are Roth IRA withdrawals really tax-free?",
         "a": "Qualified withdrawals are tax-free and penalty-free if the account is at least 5 years old AND you are at least 59½. Contributions (not earnings) can be withdrawn anytime without tax or penalty."
+      },
+      {
+        "q": "USA-only — what's the closest UK/SA equivalent?",
+        "a": "Roth IRA is a USA-only account. Closest equivalents by tax treatment: UK — Stocks & Shares ISA (£20,000/yr, contributions from after-tax income, all gains and withdrawals tax-free at any age). South Africa — TFSA (R36,000/yr, R500,000 lifetime, same after-tax-in, tax-free-out structure). The Roth IRA's main differentiator is the age 59½ qualified-withdrawal rule; ISAs and TFSAs allow withdrawals at any age without penalty."
+      },
+      {
+        "q": "What's the most common Roth IRA mistake?",
+        "a": "Contributing while above the MAGI phase-out limit. The penalty is a 6% excise tax per year on the excess until corrected — and many high earners only discover it at tax-filing time the following spring. The fix is to withdraw the excess (and any growth on it) before the tax deadline, or recharacterise to a traditional IRA. Always check your MAGI before contributing if your income is anywhere near $150k single or $236k MFJ."
+      },
+      {
+        "q": "What if I'm phased out — is there a workaround?",
+        "a": "Yes, the backdoor Roth IRA. You contribute to a non-deductible Traditional IRA (no income limit), then immediately convert it to a Roth IRA. The conversion is taxable only on any earnings between contribution and conversion (usually negligible if done quickly) and on any pre-tax IRA balance you already hold (the pro-rata rule). Mega backdoor Roth via after-tax 401(k) contributions allows even larger amounts if your employer's plan supports it."
+      },
+      {
+        "q": "I've contributed — what's the next step?",
+        "a": "Pick your investments. A common low-cost choice is a target-date retirement fund matching your retirement year, or a 3-fund portfolio (US total market + international + bond index). Don't leave Roth IRA contributions sitting in cash — the tax-free growth benefit only matters if the money is actually invested. Recheck contribution limits every year — the IRS adjusts them for inflation."
+      },
+      {
+        "q": "Roth IRA vs Traditional IRA — which wins?",
+        "a": "Roth wins if your marginal tax rate at retirement is HIGHER than now (typical for younger savers expecting career growth). Traditional wins if your marginal tax rate now is HIGHER than at retirement (typical for peak-earnings 50-somethings). A diversification approach: contribute to both across your career so retirement withdrawals can be tax-optimised by drawing from whichever bucket has the better treatment that year."
       }
     ],
     "sources": [
@@ -729,6 +1005,26 @@
       {
         "q": "What's the difference between UK and USA student loans?",
         "a": "UK student loans are income-contingent (you only pay above a salary threshold, and the balance is written off after 25 to 40 years) — they behave more like a graduate tax. USA Federal Direct loans are amortising — you pay a fixed schedule until paid off, with PSLF as the only mainstream forgiveness route."
+      },
+      {
+        "q": "Which UK Plan am I on if I don't know?",
+        "a": "Look at the year and country of your first course. England + Northern Ireland: Plan 1 (started before 2012), Plan 2 (2012–July 2023), Plan 5 (from August 2023). Scotland: Plan 4. Wales: Plan 2 or Plan 5 depending on year. Postgraduate Master's/PhD: Plan 9 (formerly PGL). Log in to studentloanrepayment.co.uk to confirm — the wrong plan gives the wrong threshold and write-off rules."
+      },
+      {
+        "q": "What's the most common student-loan mistake?",
+        "a": "UK borrowers overpaying when they shouldn't. If you're unlikely to clear the balance before write-off (most Plan 2/5 borrowers don't), every extra pound is wasted. Run your salary trajectory through the calculator first — if it shows substantial write-off, redirect the overpayment to a pension or ISA instead. USA borrowers' most common mistake is missing PSLF certification deadlines, which can void years of qualifying payments."
+      },
+      {
+        "q": "What if my salary stays below the UK threshold for many years?",
+        "a": "You pay zero each month, interest still accrues on the balance, and the entire balance is eventually written off at the 25/30/40-year mark (depending on Plan). For low-earning careers (typically below the threshold by year 5), the write-off is highly likely — making any extra payments unwise. The calculator caps total payments at 0 if your salary trajectory never breaches the threshold."
+      },
+      {
+        "q": "I've seen my projected total — what should I do?",
+        "a": "USA: if total payments well exceed the principal, look into Income-Driven Repayment (IDR) plans (PAYE, SAVE) which cap monthly payment at 5–10% of discretionary income and forgive after 20–25 years. UK Plan 2/5: confirm whether you'll clear the loan before write-off — if not, stop any overpayments. UK Plan 4 (Scotland) and Plan 1: lower thresholds + 25-year write-off mean overpayment can save real money for high earners."
+      },
+      {
+        "q": "Student loan vs other debt — which to pay off first?",
+        "a": "Hierarchy: credit cards (20%+ APR) → personal loans (8–14%) → mortgage (4–7%) → USA Federal student loans (4–8%). UK income-contingent loans should usually NOT be prioritised — they behave like a 9% marginal tax above the threshold, not a normal loan. Capture employer 401(k)/pension match before any extra debt payments — it's a guaranteed 50–100% return that beats every debt's interest rate."
       }
     ],
     "sources": [
@@ -827,6 +1123,26 @@
       {
         "q": "How does extra money 'snowball'?",
         "a": "When debt #1 clears, its minimum payment is freed up and added to your extra payment for debt #2. When debt #2 clears, both freed minimums plus extra hit debt #3. Each clear-out grows the snowball — the last debt is paid off astonishingly fast."
+      },
+      {
+        "q": "USA vs UK vs South Africa: does the strategy change by region?",
+        "a": "The math is identical worldwide — sort by balance (snowball) or APR (avalanche) and direct extra payments accordingly. The country-specific tweak is which debts to include. USA: include federal student loans only if they're not on income-driven repayment. UK: exclude income-contingent student loans (they're effectively a tax, not a normal debt). South Africa: include retail/store cards (often at the NCA cap of ~22%) and any 'in-duplum' debts (interest capped at 100% of principal)."
+      },
+      {
+        "q": "What's the most common debt-snowball mistake?",
+        "a": "Adding new debt during the payoff. People free up cash from cleared debts and then use the new payment slack to finance a car upgrade or holiday — restarting the cycle. The second-most-common mistake is choosing snowball when an avalanche would save thousands in interest just because snowball 'feels good'; for debt totals above $30k or rate spreads above 10 percentage points the math gap can be substantial."
+      },
+      {
+        "q": "What if one debt has a 0% promo that's about to expire?",
+        "a": "Prioritise clearing the 0% promo balance before the deferred-interest deadline — many cards charge full back-interest on the original balance if it isn't paid off in full. The calculator doesn't model promo expirations, so manually elevate that debt to top of the snowball/avalanche order until it's cleared, then resume the strategy on remaining debts."
+      },
+      {
+        "q": "I have my debt-free date — what's next?",
+        "a": "Don't let the freed-up payments slip back into spending. Set up an automatic transfer of the same total amount into emergency fund + retirement accounts on the first day you're debt-free. The behavioural lift from 'paying nothing' to 'paying yourself' is huge — and it converts the debt-payoff habit into a wealth-building habit without any change in cash flow."
+      },
+      {
+        "q": "Snowball vs debt consolidation loan — when does each fit?",
+        "a": "Consolidation wins when the consolidation rate is at least 3–4 points below the weighted-average rate of your current debts AND you have the discipline not to re-borrow on cleared cards. Snowball/avalanche wins when consolidation isn't available at a better rate, when you have a mix of secured + unsecured debts, or when you've previously taken consolidation loans and run the original debts back up — a strong signal that you need behavioural change, not a refinance."
       }
     ],
     "sources": [],
@@ -909,6 +1225,26 @@
       {
         "q": "Is the 4% rule still safe in 2026?",
         "a": "It's debated. Bond yields and equity valuations both affect future safe withdrawal rates. Many FIRE practitioners use a 'guardrails' approach (Guyton-Klinger) or a lower starting rate (3.25–3.5%) for retirements lasting 40+ years. This calculator lets you set the SWR yourself."
+      },
+      {
+        "q": "USA vs UK vs South Africa: where is FIRE easiest?",
+        "a": "USA has the largest FIRE community thanks to high-income tech jobs, Roth IRA + 401(k) tax shelters, and low-cost index investing. UK works well with full ISA usage (£20k/yr tax-free) + workplace pension (pension access at 55–57). South Africa is hardest — higher inflation (5%+), Reserve Bank-imposed offshore investment caps (45% of TFSAs), and only R36k/yr of TFSA room mean South African FIRE typically requires a higher savings rate and broader use of taxable accounts."
+      },
+      {
+        "q": "What's the most common FIRE mistake?",
+        "a": "Targeting Lean FIRE because it sounds achievable, without accounting for lifestyle inflation, healthcare, or wanting kids later. A 30-year-old planning to retire on $30k/year often discovers at 40 that they want more — and recovering five lost years of higher savings rate is brutal. Most FIRE veterans now recommend planning for Regular FIRE with the optional ability to scale down rather than aiming for Lean from day one."
+      },
+      {
+        "q": "What if equity returns are lower than 5% real over my horizon?",
+        "a": "Sequence-of-returns risk hits hardest in the first 5 years of withdrawal — bad returns then can permanently impair the portfolio. Defences: hold 1–3 years of expenses in cash/bonds at FI so you don't sell equities during a drawdown; use a variable withdrawal rule (Guyton-Klinger guardrails) that adjusts spending in down years; or aim for a lower SWR (3.25–3.5%) for a wider safety margin. Re-run the calculator with a 4% real return to stress-test your plan."
+      },
+      {
+        "q": "I've hit my FI number — what's the actual next step?",
+        "a": "Don't quit on Friday. Most successful FIRE practitioners recommend a 6–12 month 'soft retire' transition: reduce hours, take a sabbatical, or test the spending in pre-retirement mode. Confirm health-care coverage (USA: ACA marketplace or COBRA), confirm withdrawal accounts and the tax mechanics, and run a Monte Carlo sim of your plan. The math says you can retire — psychology and logistics decide when you actually do."
+      },
+      {
+        "q": "FIRE vs traditional retirement — what changes?",
+        "a": "Time horizon. A traditional 30-year retirement (65 to 95) has well-established 4% safe-withdrawal data. A 50-year FIRE retirement (40 to 90) has far less historical data and requires lower SWR (3–3.5%) for the same failure probability. Other differences: no Social Security/State Pension/SASSA until later, no employer health insurance, and a longer compounding period for any side income — which is why many FIRE retirees end up Coast-FI'ing or Barista-FI'ing with part-time work."
       }
     ],
     "sources": [
@@ -997,6 +1333,26 @@
       {
         "q": "What happens to my ISA if I die?",
         "a": "Your spouse or civil partner inherits an Additional Permitted Subscription (APS) equal to the ISA's value at your death — they can shelter that extra amount in their own ISA on top of the normal £20k. The investments themselves remain in the estate."
+      },
+      {
+        "q": "UK-only — what's the closest USA/SA equivalent to an ISA?",
+        "a": "USA: Roth IRA ($7,000/yr — much lower limit) or 529 plan for education (state-administered, tax-free for qualified expenses) — there's no direct equivalent to the £20k flexible ISA. South Africa: TFSA (R36,000/yr, R500,000 lifetime — also lower than the ISA). The ISA is unusually generous by international standards: £20k/year, no lifetime cap, and full flexibility on withdrawals and re-contributions for flexible ISAs."
+      },
+      {
+        "q": "What's the most common ISA mistake?",
+        "a": "Holding too much in a Cash ISA when the goal is long-term. Cash ISAs at 4% lose to inflation in real terms over 20+ years; Stocks & Shares ISAs at 7% real return roughly double the long-term outcome. The opposite mistake: putting an emergency fund in a Stocks & Shares ISA where a 30% drawdown can hit just when you need the money. Match the ISA type to the time horizon."
+      },
+      {
+        "q": "What if I accidentally pay into two of the same ISA type in one tax year?",
+        "a": "Pre-April 2024 this voided the second ISA. From April 2024 you can pay into multiple Cash ISAs or multiple S&S ISAs in the same year as long as the total across all stays under £20k. The remaining restriction: only one LISA contribution per tax year. If you go over the £20k total, HMRC will write to you and ask you to remove the excess plus any growth — interest earned on the excess is taxable."
+      },
+      {
+        "q": "I've reached the £20k cap — what's next?",
+        "a": "After £20k ISA, fill the workplace pension to the £60k annual allowance (or your salary level, whichever is lower) for tax relief. Then consider a General Investment Account (GIA) — gains above the £3k capital gains allowance and dividends above £500 are taxed, but otherwise unrestricted. For high earners, also look at VCTs or EIS for income tax relief, though these are higher-risk."
+      },
+      {
+        "q": "ISA vs pension — which first?",
+        "a": "Pension if your employer matches contributions (free money). Then ISA up to £20k/yr for flexibility — accessible at any age, fully tax-free withdrawals. Then back to pension for the tax relief on income — basic-rate taxpayers get 20% relief, higher-rate 40%, additional-rate 45%. ISA wins on flexibility (any age), pension wins on tax efficiency (especially for higher-rate taxpayers). Most savers benefit from holding both."
       }
     ],
     "sources": [
@@ -1089,6 +1445,26 @@
       {
         "q": "What investments can I hold in a TFSA?",
         "a": "Cash, unit trusts, ETFs, REITs, government bonds, and approved fixed-deposit products. Direct-share TFSAs (e.g. EasyEquities) and fund-based TFSAs (e.g. Allan Gray, Ninety One) are both common. The R36k cap is the same regardless of the underlying investment."
+      },
+      {
+        "q": "SA-only — what's the closest UK/USA equivalent to a TFSA?",
+        "a": "UK: Stocks & Shares ISA (£20,000/yr, ~R460k at 2026 rates — much more generous than the R36k TFSA limit) with no lifetime cap. USA: Roth IRA ($7,000/yr, ~R130k — closer to TFSA in size) with income phase-out; no lifetime cap but a 59½ qualified-withdrawal age. The TFSA's R500,000 lifetime cap is the harshest restriction of the three — once hit, your only options for further tax-free growth are inside the existing account."
+      },
+      {
+        "q": "What's the most common TFSA mistake?",
+        "a": "Withdrawing then trying to 'replace' the contribution. Unlike a flexible UK ISA, SA TFSA withdrawals are permanent for cap purposes — contributed R36k, withdrew R10k, then contributing R10k more in the same year is treated as a R10k excess and taxed at 40%. The second-most-common mistake is leaving the TFSA in cash earning 6% when an equity unit trust would compound at 10–12% — the tax shelter only matters if returns are substantial."
+      },
+      {
+        "q": "What if I'm close to the R500,000 lifetime cap?",
+        "a": "Once you hit the cap, no further contributions are allowed for life — even if you withdraw and re-contribute. The account continues to grow tax-free indefinitely (the cap is on contributions, not balance), so it's actually optimal to leave funded TFSAs untouched and let them compound for decades. Hitting the cap by age 35 with maximum contributions gives 30+ years of tax-free compounding — potentially R5m+ at retirement at 7% real."
+      },
+      {
+        "q": "I've maxed my TFSA this year — what's next?",
+        "a": "Order: TFSA → employer pension/provident fund (capture any employer match) → top up to the 27.5%/R350k RA cap → discretionary investments. For under-65s with less than R23,800/yr of taxable interest, a unit trust outside the TFSA is also tax-efficient because of the annual interest exemption. Don't put cash-equivalent investments in a TFSA — waste the wrapper on higher-growth equity instead."
+      },
+      {
+        "q": "TFSA vs RA — which builds more wealth?",
+        "a": "RA wins on the way in (deductible — saves up to 45% in tax in the year of contribution), TFSA wins on the way out (all withdrawals tax-free vs RA's mix of tax-free lump sum + taxable annuity). For high-marginal-rate earners, RA usually edges out over a 30-year horizon. For low-marginal-rate earners, TFSA edges out. Most planners recommend both — RA for the deduction, TFSA for the tax-free withdrawal flexibility."
       }
     ],
     "sources": [
