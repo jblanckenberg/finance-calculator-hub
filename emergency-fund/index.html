@@ -158,7 +158,7 @@
 <div class="form-group"><label for="current">Current Emergency Fund <span class="hint" id="s3">($)</span></label><input type="number" id="current" value="1000" min="0" oninput="calculate()" inputmode="decimal"></div>
 <div class="form-group"><label for="monthlySave">Monthly Amount You Can Save <span class="hint" id="s4">($)</span></label><input type="number" id="monthlySave" value="300" min="0" oninput="calculate()" inputmode="decimal"></div>
 <button class="btn-calc" onclick="calculate()">Calculate →</button></div>
-  <div class="results" id="results"><div class="results-title">Your Emergency Fund</div>
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result"><div class="results-title">Your Emergency Fund</div>
 <div class="result-grid">
   <div class="result-item"><div class="result-value positive" id="r-target">$0</div><div class="result-label">Recommended Fund Size</div></div>
   <div class="result-item"><div class="result-value" id="r-months-cover">0 months</div><div class="result-label">Recommended Coverage</div></div>

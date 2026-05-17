@@ -146,7 +146,7 @@
 </div>
 <div class="form-group"><label for="years">Number of Years</label><input type="number" id="years" value="20" min="1" max="100" oninput="calculate()" inputmode="decimal"></div>
 <button class="btn-calc" onclick="calculate()">Calculate →</button></div>
-  <div class="results" id="results"><div class="results-title">Inflation Impact</div>
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result"><div class="results-title">Inflation Impact</div>
 <div class="result-grid">
   <div class="result-item"><div class="result-value" id="r-future">$0</div><div class="result-label">Future Cost (same goods)</div></div>
   <div class="result-item"><div class="result-value" id="r-power">$0</div><div class="result-label">Purchasing Power Today</div></div>
