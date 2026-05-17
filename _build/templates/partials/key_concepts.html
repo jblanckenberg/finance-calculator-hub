@@ -1,0 +1,11 @@
+{# templates/partials/key_concepts.html — short, plain-English explainer of
+   the core ideas a user needs to interpret the calculator's output. Stored as
+   raw HTML in calculators.json::keyConcepts and emitted verbatim. #}
+{% if key_concepts_html %}
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    {{ key_concepts_html | safe }}
+  </section>
+</div>
+{% endif %}

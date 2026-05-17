@@ -6,4 +6,9 @@
    _build/bodies/<slug>.html during the migration. This keeps the live calculator JS
    untouched while the head/header/footer are templated. #}
 {{ body_html | safe }}
+
+{# Blueprint sections that all 19 calcs share — rendered from data, not body source. #}
+{% include "partials/how_to_steps.html" %}
+{% include "partials/try_scenarios.html" %}
+{% include "partials/key_concepts.html" %}
 {% endblock %}

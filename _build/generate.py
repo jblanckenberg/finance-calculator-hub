@@ -201,6 +201,32 @@ def _step_name(text: str, position: int) -> str:
     return short or f"Step {position}"
 
 
+_ISO8601_DURATION = _re.compile(r"^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$")
+
+
+def humanise_iso_duration(value: str | None) -> str | None:
+    """Convert an ISO-8601 duration like PT2M or PT1H30M into a short human
+    label suited to visible 'Takes about X' copy. Returns None for unparseable
+    input so the template can omit the line."""
+    if not value:
+        return None
+    match = _ISO8601_DURATION.match(value)
+    if not match:
+        return None
+    hours, minutes, seconds = match.groups()
+    parts: list[str] = []
+    if hours:
+        h = int(hours)
+        parts.append(f"{h} hour" + ("s" if h != 1 else ""))
+    if minutes:
+        m = int(minutes)
+        parts.append(f"{m} minute" + ("s" if m != 1 else ""))
+    if seconds and not (hours or minutes):
+        s = int(seconds)
+        parts.append(f"{s} second" + ("s" if s != 1 else ""))
+    return " ".join(parts) or None
+
+
 def build_article_ld(
     *, slug: str, name: str, description: str, canonical_url: str, author: dict | None
 ) -> dict:
@@ -296,6 +322,14 @@ class Renderer:
             canonical_url=canonical,
             author=self._author,
         )
+        # Visible-blueprint sections rendered from data (HowTo steps, Try
+        # scenarios, Key concepts). All three are optional so legacy calcs
+        # without the new fields still render cleanly.
+        how_to_data = data.get("schemaHowTo") or {}
+        ctx["how_to_steps"] = how_to_data.get("steps") or []
+        ctx["how_to_total_time_display"] = humanise_iso_duration(how_to_data.get("totalTime"))
+        ctx["scenarios"] = data.get("scenarios") or []
+        ctx["key_concepts_html"] = data.get("keyConcepts") or ""
         ctx["body_html"] = body_html
         tpl = self.env.get_template("calculator.html")
         return tpl.render(**ctx)
@@ -332,6 +366,12 @@ class Renderer:
         ctx["faq_ld"] = None
         ctx["howto_ld"] = None
         ctx["article_ld"] = None
+        # Variant pages currently don't render the new blueprint sections;
+        # supply empty defaults so partials short-circuit cleanly.
+        ctx["how_to_steps"] = []
+        ctx["how_to_total_time_display"] = None
+        ctx["scenarios"] = []
+        ctx["key_concepts_html"] = ""
         ctx["body_html"] = body_html
         ctx["intro"] = intro
         ctx["intro_is_stub"] = stub
