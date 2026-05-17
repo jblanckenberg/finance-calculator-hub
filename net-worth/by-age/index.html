@@ -194,7 +194,7 @@
   <div class="form-group"><label for="otherLiab">Other Loans</label><input type="number" id="otherLiab" value="0" min="0" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <button class="btn-calc" onclick="calculate()">Calculate Net Worth →</button></div>
-  <div class="results" id="results"><div class="results-title">Your Net Worth</div>
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result"><div class="results-title">Your Net Worth</div>
 <div class="result-grid">
   <div class="result-item"><div class="result-value" id="r-nw">$0</div><div class="result-label">Net Worth</div></div>
   <div class="result-item"><div class="result-value positive" id="r-assets">$0</div><div class="result-label">Total Assets</div></div>
