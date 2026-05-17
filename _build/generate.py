@@ -32,6 +32,11 @@ SITE_URL = "https://finncalc.com"
 # Google sees the same "Last verified" date that's visible in page copy.
 SCHEMA_DATE_MODIFIED = "2026-05-17"
 
+# Editorial review trail — surfaces in the per-page byline so readers (and
+# Google's E-E-A-T evaluators) see who wrote and reviewed each calculator.
+LAST_REVIEWED_ISO = "2026-05-17"
+LAST_REVIEWED_DISPLAY = "17 May 2026"
+
 OPERATOR_STUB_PREFIX = "[OPERATOR_TO_FILL:"
 
 _BOLD_RE = _re.compile(r"\*\*([^*]+)\*\*")
@@ -136,6 +141,13 @@ class Renderer:
             autoescape=select_autoescape(["html"]),
             keep_trailing_newline=True,
         )
+        # Author profile — same source as comparison pages so the editorial
+        # block in _base.html stays in sync with the byline on /compare/ pages.
+        author_path = Path(__file__).resolve().parent / "data" / "author.json"
+        try:
+            self._author = json.loads(author_path.read_text(encoding="utf-8"))
+        except FileNotFoundError:
+            self._author = None
 
     def _common_ctx(self, *, page_title: str, page_description: str, canonical_url: str, h1: str, subtitle: str, breadcrumb_items: list[tuple[str, str]]) -> dict:
         crumbs_html_parts: list[str] = []
@@ -154,6 +166,9 @@ class Renderer:
             "subtitle": subtitle,
             "current_year": _dt.date.today().year,
             "breadcrumb_html": "".join(crumbs_html_parts),
+            "author": self._author,
+            "last_reviewed_iso": LAST_REVIEWED_ISO,
+            "last_reviewed_display": LAST_REVIEWED_DISPLAY,
         }
 
     def render_calculator(self, *, slug: str, data: dict, body_html: str) -> str:

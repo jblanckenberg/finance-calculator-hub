@@ -28,6 +28,11 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 SITE_URL = "https://finncalc.com"
 
+# Keep in sync with generate.py — surfaces in the editorial block at the foot
+# of every comparison page so the byline matches the calc pages.
+LAST_REVIEWED_ISO = "2026-05-17"
+LAST_REVIEWED_DISPLAY = "17 May 2026"
+
 BUILD_DIR = Path(__file__).resolve().parent
 ROOT_DIR = BUILD_DIR.parent
 TEMPLATE_DIR = BUILD_DIR / "templates"
@@ -141,6 +146,9 @@ def render_one(comparison: dict, author: dict, *, env: Environment | None = None
         "faq_ld": None,
         "breadcrumb_ld": None,
         "howto_ld": None,
+        # editorial block (rendered by _base.html)
+        "last_reviewed_iso": LAST_REVIEWED_ISO,
+        "last_reviewed_display": LAST_REVIEWED_DISPLAY,
         # comparison-specific
         "comparison": comparison,
         "author": author,

@@ -28,6 +28,18 @@
 
 {% block body_main %}{% endblock %}
 
+{% if author %}
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written by <a href="/authors/{{ author.slug }}/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none">{{ author.name }}</a>, {{ author.jobTitle }}.
+      Editorial review by <strong>{{ author.name }}</strong>, {{ author.jobTitle }}.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="{{ last_reviewed_iso }}">{{ last_reviewed_display }}</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+{% endif %}
+
 {% include "partials/footer.html" %}
 
 <script src="/js/region.js"></script>
