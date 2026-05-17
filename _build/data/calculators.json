@@ -76,7 +76,8 @@
         "label": "Aggressive: $1k start + $1k/month at 9% for 20 years",
         "query": "principal=1000&rate=9&years=20&frequency=12&monthly=1000"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Principal vs. interest.</strong> Your principal is the money you put in; interest is what the bank or market pays you for letting it sit. Compounding means the interest you earned in year one starts earning its own interest in year two — and the effect snowballs over decades.</p><p><strong>Compounding frequency.</strong> Interest can be credited annually, monthly, or daily. More frequent compounding gives a slightly higher effective return, but the gap is small compared with what changing the headline rate or time horizon does.</p><p><strong>Rule of 72.</strong> Divide 72 by your annual rate to estimate how many years it takes your money to double. At 7%, that's roughly 10 years; at 10%, about 7.</p><p><strong>Real vs. nominal returns.</strong> A 7% nominal return with 3% inflation is only a 4% real return in purchasing-power terms. For long-horizon planning, focus on real returns. The U.S. S&amp;P 500's long-run real return is about 7% before taxes (<a href=\"https://www.federalreserve.gov/\" rel=\"noopener\">Federal Reserve</a> and Robert Shiller data).</p><p><strong>Tax wrappers matter.</strong> Compounding inside an ISA (UK), Roth IRA (US), or TFSA (SA) is tax-free; outside, interest is taxed annually at your marginal rate, which slows growth materially over 20+ years.</p>"
   },
   "mortgage": {
     "slug": "mortgage",
@@ -155,7 +156,8 @@
         "label": "First-home: $250k, 5% down, 30-yr at 7.25%",
         "query": "homePrice=250000&downPayment=12500&rate=7.25&termYears=30"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Principal vs. interest.</strong> Every mortgage payment is split between principal (reducing what you owe) and interest (the lender's fee). Early in a 30-year loan, most of each payment is interest; only after 15+ years does principal start dominating — this is the <em>amortisation curve</em>.</p><p><strong>LTV (loan-to-value).</strong> Your loan divided by the home's price. A 20% deposit gives an 80% LTV. In the US, an LTV above 80% triggers Private Mortgage Insurance (PMI); in the UK, lower LTV typically unlocks better rates (<a href=\"https://www.fca.org.uk/\" rel=\"noopener\">FCA</a> rules).</p><p><strong>Fixed vs. variable rate.</strong> A fixed rate locks your payment for the fix period (typically 2, 5, or 10 years in the UK; whole-term in the US). A variable rate moves with central-bank policy — cheaper when rates fall, painful when they rise.</p><p><strong>PITI and escrow.</strong> In the US, lenders often bundle property tax and homeowner's insurance into your monthly payment via an escrow account — Principal, Interest, Taxes, Insurance. The calculator's optional fields add these for a true monthly housing cost.</p><p><strong>Total interest paid.</strong> Over a 30-year, $400k loan at 7%, you may pay more in interest than the home cost. Shortening to 15 years roughly halves total interest at the cost of a higher monthly payment.</p>"
   },
   "take-home-pay": {
     "slug": "take-home-pay",
@@ -232,7 +234,8 @@
         "label": "$120,000 USA, married, 10% 401(k)",
         "query": "salary=120000&payFreq=annual&filingStatus=married&stateSelect=CA&contrib401k=10"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Gross vs. net.</strong> Your gross salary is the headline figure on your contract; your net (take-home) is what lands in your bank account after income tax, social-security contributions, and any pre-tax deductions like pension or health insurance.</p><p><strong>Marginal vs. effective rate.</strong> Your marginal rate is the tax on your next dollar earned; your effective rate is your total tax divided by total income. Most people quote marginal but plan with effective. Progressive systems (<a href=\"https://www.irs.gov/\" rel=\"noopener\">IRS</a>, <a href=\"https://www.gov.uk/income-tax-rates\" rel=\"noopener\">HMRC</a>) tax higher slices of income at higher rates, so the average is always below the top marginal bracket.</p><p><strong>Pre-tax vs. post-tax contributions.</strong> US 401(k) and UK pension salary-sacrifice contributions come off gross — they reduce taxable income and increase take-home relative to the equivalent post-tax saving. Roth contributions are post-tax but grow tax-free.</p><p><strong>State and regional layers.</strong> The US adds state income tax (zero in TX, FL, WA; up to 13% in CA). The UK has separate Scottish bands. The calculator applies the right layer based on your selection.</p><p><strong>FICA / National Insurance.</strong> Social-security contributions are flat or near-flat rate up to a cap — 7.65% FICA in the US (until the SS wage base) and 8% Class 1 NI in the UK above the primary threshold.</p>"
   },
   "retirement-savings": {
     "slug": "retirement-savings",
@@ -309,7 +312,8 @@
         "label": "FIRE pace: 30, $2,000/month, retire at 55",
         "query": "curAge=30&retAge=55&curSavings=20000&monthlyContrib=2000&returnRate=7&retYears=35"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Time is the dominant variable.</strong> A 25-year-old saving $300/month until 65 at a 7% real return ends with roughly $720k. The same person starting at 40 needs to save about $900/month to land at the same number. Compounding rewards early decades disproportionately.</p><p><strong>Real return assumption.</strong> Most planners use a 4-7% real (after-inflation) return for a diversified equity-heavy portfolio. The US S&amp;P 500's long-run average is around 7% real (<a href=\"https://www.federalreserve.gov/\" rel=\"noopener\">Federal Reserve</a> and Shiller data); add bonds and the figure drops.</p><p><strong>The 4% rule.</strong> William Bengen's 1994 research showed a retiree could withdraw 4% of their starting balance, adjusted for inflation, for 30 years with very high success across historical periods. It's a starting point — not a guarantee.</p><p><strong>Withdrawal-phase years.</strong> The calculator's 'retirement years' input matters: a 30-year retirement needs a bigger pot than a 20-year one at the same spending level. Plan to age 95 if you have family longevity.</p><p><strong>Sequence-of-returns risk.</strong> A bear market in your first five years of retirement does more damage than the same drawdown 20 years in. This is why many planners shift to a more conservative asset mix in the run-up to retirement.</p>"
   },
   "investment-growth": {
     "slug": "investment-growth",
@@ -384,7 +388,8 @@
         "label": "Aggressive: $5k start + $1,000/month at 9% for 25 years",
         "query": "initial=5000&annual=12000&rate=9&years=25"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Lump sum vs. drip-feed.</strong> A lump-sum invested at day one mathematically outperforms the same money drip-fed monthly, because more of it spends more time in the market. Vanguard research finds lump-sum wins roughly two-thirds of the time over a 10-year horizon. The downside: bigger short-term regret if the market drops the week after you invest.</p><p><strong>Dollar-cost averaging.</strong> Spreading contributions monthly smooths your average purchase price and protects against bad timing. It's mathematically suboptimal but psychologically easier — and most people earn money monthly anyway.</p><p><strong>Real vs. nominal growth.</strong> A 7% nominal return with 3% inflation is a 4% real return. The calculator can be run either way — for long-horizon planning, real returns give you a meaningful purchasing-power figure.</p><p><strong>Sequence and volatility.</strong> Two portfolios with the same average return but different paths end up at different places because of how returns interact with contributions and withdrawals. Higher volatility erodes the compound average (the 'variance drain').</p><p><strong>Costs compound too.</strong> A 1% annual fee on a 7% return is a 14% drag on your gross return. Over 30 years, the difference between a 0.1% index fund and a 1% active fund can be 20-25% of your final balance.</p>"
   },
   "savings-goal": {
     "slug": "savings-goal",
@@ -459,7 +464,8 @@
         "label": "$10k holiday in 12 months",
         "query": "target=10000&current=2000&monthly=700&rate=4"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Target, time, contribution, rate.</strong> Every savings goal has four levers: how much you need (target), when you need it (time), how much you can put in each month (contribution), and what return you expect (rate). Fix any three and the fourth is determined.</p><p><strong>Inflation matters less for short goals.</strong> For a 2-year deposit goal, inflation barely shifts the target. For a 10-year goal, build in a 2-3% annual uplift or your future deposit may fall short.</p><p><strong>Goal type drives risk.</strong> Money you need in under 3 years belongs in cash savings or short-dated bonds — the stock market is too volatile for a known near-term liability. Money you need in 10+ years can take on equity risk for the extra return.</p><p><strong>High-yield accounts.</strong> US online banks routinely offer 4-5% on FDIC-insured savings as of 2026; UK easy-access cash ISAs run similar (FSCS-protected to &pound;85k). South African 32-day notice accounts pay 8-9%. The default 4% rate in this calculator is a conservative middle.</p><p><strong>Pay yourself first.</strong> Behavioural research consistently finds automated transfers on payday — before discretionary spending — outperform willpower-based budgeting. Treat the savings transfer as a fixed expense.</p>"
   },
   "inflation-impact": {
     "slug": "inflation-impact",
@@ -534,7 +540,8 @@
         "label": "$1m in 30 years at 2.5%",
         "query": "amount=1000000&infRate=2.5&years=30"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>What inflation does.</strong> Inflation is the steady erosion of money's purchasing power. At 3% annual inflation, $100 today buys what $74 buys in 10 years and $55 in 20 years. The calculator runs this in reverse: it shows what your future amount is worth in today's dollars.</p><p><strong>How it's measured.</strong> Headline inflation is the Consumer Price Index (CPI) — a basket of typical household spending. The <a href=\"https://www.bls.gov/cpi/\" rel=\"noopener\">U.S. BLS</a>, <a href=\"https://www.ons.gov.uk/\" rel=\"noopener\">UK ONS</a>, and <a href=\"https://www.statssa.gov.za/\" rel=\"noopener\">Stats SA</a> all publish monthly CPI figures. 'Core' inflation strips out volatile food and energy.</p><p><strong>Personal inflation differs.</strong> Your actual inflation depends on what you buy. Healthcare and college tuition have outpaced headline CPI in the US for decades. Tech goods often fall in price.</p><p><strong>Inflation hedges.</strong> Historically, stocks, Treasury Inflation-Protected Securities (TIPS), and inflation-linked gilts have kept pace with inflation over long horizons. Cash and nominal bonds lose purchasing power when inflation exceeds their yield.</p><p><strong>Long-term averages.</strong> The US has averaged about 3% CPI inflation since 1913. The UK averaged 2-3% post-1992 (since inflation targeting). South Africa has run 5-6% over the past two decades. Use a regional average, not the headline of any single year.</p>"
   },
   "net-worth": {
     "slug": "net-worth",
@@ -609,7 +616,8 @@
         "label": "Pre-retiree, paid-off home",
         "query": "cash=50000&invest=200000&retire=600000&property=500000&vehicle=20000&otherAsset=10000&mortgageBal=0&carLoan=0"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Assets minus liabilities.</strong> Net worth is the cleanest single measure of financial position: everything you own (cash, investments, property, vehicles) minus everything you owe (mortgage, car loan, credit cards). Track it quarterly — the trend matters more than any single number.</p><p><strong>Liquid vs. illiquid assets.</strong> Cash and investments can be sold quickly without a major price hit. Property and vehicles can't — and forced-sale values are typically 10-20% below market. Always know what fraction of your net worth you can convert to cash inside a month.</p><p><strong>Home equity is real but trapped.</strong> If your home is worth $400k and you owe $250k, your equity is $150k — but you can't spend it without selling, downsizing, or taking a HELOC / further-advance. Many net-worth statements over-weight home equity as a result.</p><p><strong>Retirement accounts at face value.</strong> A $200k 401(k) or pension pot isn't $200k in your pocket — withdrawing in pre-retirement triggers tax plus a 10% penalty in the US. Most planners count retirement balances at pre-tax face value but remember they're not freely spendable.</p><p><strong>Benchmarks.</strong> A common rule of thumb (Stanley &amp; Danko, <em>The Millionaire Next Door</em>): your expected net worth equals age &times; pre-tax income / 10. Double that figure puts you in the 'prodigious accumulator' category. Use as a directional gauge, not a target.</p>"
   },
   "loan-payoff": {
     "slug": "loan-payoff",
@@ -684,7 +692,8 @@
         "label": "$30k loan at 10%, $500/month + $250 extra",
         "query": "balance=30000&rate=10&payment=500&extra=250"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Amortisation basics.</strong> A standard loan is paid down on a schedule where each payment covers the month's interest first, then chips away at the principal. Early in the loan, most of your payment is interest; only near the end does principal dominate.</p><p><strong>Why extra payments help so much.</strong> Every extra dollar paid on principal saves you the interest that dollar would have accrued for the remaining loan term. On a $15k loan at 8% over 5 years, an extra $100/month cuts about a year off the term and saves a few hundred in interest.</p><p><strong>APR vs. interest rate.</strong> The APR (Annual Percentage Rate) includes fees and is the regulated comparison figure in the US (<a href=\"https://www.consumerfinance.gov/\" rel=\"noopener\">CFPB</a>) and UK (<a href=\"https://www.fca.org.uk/\" rel=\"noopener\">FCA</a>). A loan with a low headline rate and high arrangement fee can have a higher APR than a no-fee loan with a higher headline rate.</p><p><strong>Prepayment penalties.</strong> Some loans (especially older mortgages and subprime auto loans) penalise early payoff. Always check the contract before making lump-sum overpayments — modern personal loans rarely have them, but it's worth verifying.</p><p><strong>Refinance breakeven.</strong> If you can refinance to a meaningfully lower rate, the savings often outweigh refinance fees within 12-24 months. A general rule: refinance if your rate would drop by at least 1 percentage point and you'll stay in the loan past the breakeven date.</p>"
   },
   "credit-card-payoff": {
     "slug": "credit-card-payoff",
@@ -759,7 +768,8 @@
         "label": "$10k at 24% APR, $400/month",
         "query": "balance=10000&apr=24&payment=400&extra=0"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Why credit-card debt is uniquely bad.</strong> US average APRs sit above 20% as of 2026 (<a href=\"https://www.federalreserve.gov/releases/g19/current/\" rel=\"noopener\">Federal Reserve G.19</a>); UK averages run 22-24% APR; SA credit cards typically 18-25%. At these rates, a balance left to revolve doubles every 3-4 years if you only pay the minimum.</p><p><strong>The minimum-payment trap.</strong> US minimums are typically 1-3% of the balance plus interest. On a $5k balance at 22% APR with a 2% minimum, you'd take almost 30 years to pay off and pay more in interest than the original balance — lenders are required by the <a href=\"https://www.consumerfinance.gov/\" rel=\"noopener\">CFPB</a> to show this on US statements.</p><p><strong>Daily compounding.</strong> Most cards apply interest daily based on your average daily balance. That means carrying a balance even partway through the cycle racks up interest from the transaction date if your prior balance wasn't paid in full.</p><p><strong>0% balance-transfer cards.</strong> Many issuers offer 12-21 months at 0% on transferred balances for a 3-5% upfront fee. The maths almost always favours the transfer if you can clear the balance within the promo window. Miss it and the rate snaps back to a high regular APR.</p><p><strong>Avalanche over snowball.</strong> Mathematically, paying highest-APR debt first (avalanche) saves the most money. Behaviourally, paying smallest-balance first (snowball) gives motivating quick wins. For card debt specifically, the APRs are high enough that the avalanche maths matters.</p>"
   },
   "emergency-fund": {
     "slug": "emergency-fund",
@@ -834,7 +844,8 @@
         "label": "Freelancer, variable income",
         "query": "income=6000&expenses=4200&jobSec=unstable&deps=1&current=2500&monthlySave=600"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>The 3-6 month rule.</strong> Most personal-finance authorities — Vanguard, the FCA's MoneyHelper service, Investopedia — converge on holding 3-6 months of essential expenses (not income) in accessible cash. Single earners with dependents should aim higher; dual earners can sit at the lower end.</p><p><strong>Expenses, not income.</strong> What matters is what you must pay each month if income stops — rent or mortgage, utilities, food, insurance, minimum debt payments. Discretionary spending pauses in a crisis, so don't size the fund against your current lifestyle.</p><p><strong>Job-security weighting.</strong> Tenured, in-demand, or unionised roles warrant smaller funds (3 months). Contract, freelance, commission, or industry-shock exposure warrants 6-12 months. The 2008 financial crisis had the average US unemployment spell run 9 months.</p><p><strong>Where to hold it.</strong> A high-yield savings account, money-market fund, or short-term Treasury bill ladder. The point is FDIC / FSCS protection and instant-to-five-day access — not return. Don't put emergency funds in stocks: downturns and job losses correlate.</p><p><strong>How long to build it.</strong> If you can save 10-20% of net income, a 6-month fund typically takes 1-2 years to build from zero. Some prefer to build a starter $1k cushion fast, attack high-interest debt next, then top up to the full 3-6 months — Dave Ramsey's Baby Steps codify this order.</p>"
   },
   "sa-tax-calculator": {
     "slug": "sa-tax-calculator",
@@ -909,7 +920,8 @@
         "label": "R1,000,000/year, age 67, retirement income",
         "query": "gross=1000000&payFreq=annual&ageSlot=65to74&medMem=1&raAnnual=0"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Progressive SARS bands.</strong> South Africa applies a progressive income tax: each slice of taxable income is taxed at a higher rate. For the 2025/26 tax year the bands run from 18% up to 45% above R1.817m (<a href=\"https://www.sars.gov.za/\" rel=\"noopener\">SARS</a>). Your average rate is always lower than your top marginal rate.</p><p><strong>Primary, secondary, tertiary rebates.</strong> Every taxpayer gets a primary rebate (R17,235 for 2025/26) that reduces tax owed. Aged 65+ receive an additional secondary rebate, and 75+ a tertiary rebate. Below the tax threshold (R95,750 for under-65s), no income tax is owed.</p><p><strong>Medical scheme tax credits.</strong> A monthly tax credit applies for each member of a registered medical scheme — R364 for the main member and first dependant, R246 for each additional dependant (2025/26 amounts). These are credits against tax owed, not deductions from income.</p><p><strong>Retirement annuity (RA) deduction.</strong> Contributions to retirement funds (RA, pension, provident) are deductible up to 27.5% of the higher of taxable income or remuneration, capped at R350,000 per tax year. Excess contributions roll forward.</p><p><strong>What this calculator excludes.</strong> The calculator handles PAYE on salaried income, retirement and medical credits. It does <em>not</em> model capital-gains tax, dividend withholding tax (20%), or provisional-tax additions for non-salaried income — those need a registered tax practitioner.</p>"
   },
   "401k-calculator": {
     "slug": "401k-calculator",
@@ -1031,7 +1043,8 @@
         "label": "$200k salary, max 23k contrib, partial match",
         "query": "salary=200000&contribPct=11.5&matchPct=100&matchCapPct=5&currentBalance=200000&currentAge=45&retireAge=67&expectedReturn=7"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Employer match is free money.</strong> A typical match is 50-100% of your contribution up to 3-6% of salary. Not contributing enough to capture the full match is a guaranteed loss — there's no investment that beats an instant 50-100% return.</p><p><strong>IRS contribution limits.</strong> For 2026 the employee elective deferral limit is $23,500 (<a href=\"https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits\" rel=\"noopener\">IRS</a>); ages 50+ can add a $7,500 catch-up. The total annual contribution cap (employee + employer) is $70,000 for 2026.</p><p><strong>Traditional vs. Roth 401(k).</strong> Traditional contributions reduce today's taxable income; withdrawals in retirement are taxed as ordinary income. Roth contributions are post-tax now; qualified withdrawals are tax-free. The right choice depends on whether your retirement tax bracket will be higher or lower than today's.</p><p><strong>Vesting schedules.</strong> Employer match contributions may vest over 2-6 years. Leave before fully vested and you forfeit the unvested portion. Always check your plan's vesting schedule before changing jobs.</p><p><strong>Early-withdrawal penalty.</strong> Withdrawals before age 59&frac12; trigger a 10% federal penalty plus income tax (unless qualifying exceptions apply: hardship, separation from service at 55+, Rule of 55). Required Minimum Distributions start at age 73.</p>"
   },
   "roth-ira-calculator": {
     "slug": "roth-ira-calculator",
@@ -1153,7 +1166,8 @@
         "label": "Couple, $14k/yr combined, MAGI $200k",
         "query": "currentBalance=100000&annualContrib=14000&currentAge=40&retireAge=67&expectedReturn=7&magi=200000&filingStatus=married"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Tax-free growth, tax-free withdrawals.</strong> A Roth IRA is funded with post-tax money, but qualified withdrawals — earnings included — are completely tax-free after age 59&frac12; and 5 years of account age. For long-horizon investors in low-to-mid tax brackets today, this is typically the most powerful retirement wrapper available.</p><p><strong>2026 contribution limits.</strong> $7,000/year if under 50; $8,000/year if 50+ (<a href=\"https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits\" rel=\"noopener\">IRS</a>). Contributions can be made up to the tax-filing deadline of the following April.</p><p><strong>MAGI phase-outs.</strong> For 2026, single-filer contributions phase out between $150k-$165k Modified Adjusted Gross Income; married-filing-jointly between $236k-$246k. Above these, direct contributions aren't allowed — though the 'backdoor Roth' conversion remains an option for many.</p><p><strong>Contributions vs. earnings.</strong> You can withdraw your contributions (but not earnings) at any time, tax- and penalty-free. This makes the Roth uniquely flexible compared with a 401(k) — though using it as a slush fund defeats the long-term compounding benefit.</p><p><strong>No required minimum distributions.</strong> Unlike a traditional IRA or 401(k), a Roth has no RMDs during the original owner's lifetime. This makes it ideal for legacy planning — money can keep compounding tax-free indefinitely.</p>"
   },
   "student-loan-calculator": {
     "slug": "student-loan-calculator",
@@ -1284,7 +1298,8 @@
         "label": "UK Plan 5: £35k loan, £30k salary",
         "query": "loanBalance=35000&interestRate=7.3&ukPlan=plan5&ukSalary=30000&ukSalaryGrowth=3"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>UK plans: income-contingent.</strong> UK student loans are repaid as a percentage of salary above a threshold (Plan 2: 9% above &pound;28,470; Plan 5: 9% above &pound;25,000) and written off after 30-40 years depending on the plan (<a href=\"https://www.gov.uk/repaying-your-student-loan\" rel=\"noopener\">GOV.UK</a>). If you never earn above the threshold, you never repay — and many graduates never fully repay before write-off.</p><p><strong>US plans: fixed-term amortisation.</strong> US federal loans default to a 10-year standard repayment, but Income-Driven Repayment (IDR) plans — IBR, PAYE, SAVE — cap monthly payments at a percentage of discretionary income and forgive remaining balance after 20-25 years (<a href=\"https://studentaid.gov/\" rel=\"noopener\">Federal Student Aid</a>).</p><p><strong>Interest treatment differs.</strong> UK Plan 2 and 5 interest tracks RPI plus a margin tied to income. US federal loans have fixed rates set at origination. The 'real' cost depends on whether you'll fully repay or hit forgiveness.</p><p><strong>Refinance trade-off.</strong> US borrowers can refinance to a private lender at a lower rate — but lose access to IDR plans, forbearance protections, and Public Service Loan Forgiveness. Only refinance if you're confident in 10-year standard-style repayment.</p><p><strong>Mental-model shift.</strong> Treat UK student loans more like a graduate tax than a debt — they don't show on credit files and don't affect mortgage applications beyond the cash-flow impact. Treat US loans like real debt because they are: bankruptcy discharge is nearly impossible.</p>"
   },
   "debt-snowball-calculator": {
     "slug": "debt-snowball-calculator",
@@ -1399,7 +1414,8 @@
         "label": "Minimums only — no extra payment",
         "query": "extraMonthly=0&strategy=snowball"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>Snowball vs. avalanche.</strong> The snowball pays smallest balances first for psychological wins. The avalanche pays highest-APR debts first for the lowest total interest. Avalanche always wins on maths; snowball often wins on follow-through. Dave Ramsey popularised snowball precisely because behavioural research shows quick wins build momentum.</p><p><strong>How extra payments compound.</strong> When you clear one debt, its former minimum payment rolls onto the next debt. Each clearance accelerates the rest — the snowball gets bigger as it rolls. This is why even a modest extra payment can cut years off a payoff timeline.</p><p><strong>Always pay all minimums.</strong> Neither strategy works if you miss minimums — late fees, rate hikes, and credit-score damage compound faster than any principal reduction. Extra goes to the target debt; everything else stays on schedule.</p><p><strong>When the gap is huge.</strong> If your highest-APR debt is dramatically more expensive (say 24% credit card vs. 5% car loan), avalanche can save thousands. If APRs are similar, snowball's behavioural advantage usually wins. Personal-finance researchers including Northwestern's Kellogg School have found snowball completers outperform avalanche planners in long-run debt elimination.</p><p><strong>Stop the bleeding first.</strong> Neither strategy works if you keep adding to balances. Build a small emergency cushion ($500-$1,000) so unexpected expenses don't go on the card you're trying to pay down — then attack the debts in earnest.</p>"
   },
   "fire-calculator": {
     "slug": "fire-calculator",
@@ -1524,7 +1540,8 @@
         "label": "Fat FIRE: $150k spending, 3.5% SWR",
         "query": "currentSavings=400000&currentAge=35&annualIncome=300000&annualSpending=150000&expectedReturn=7&swr=3.5&fireType=fat"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>FIRE basics.</strong> Financial Independence, Retire Early. The core formula: save enough that 4% of your portfolio covers your annual spending. At a 4% Safe Withdrawal Rate, your FI number is annual spending &times; 25.</p><p><strong>The 4% rule's origin.</strong> William Bengen's 1994 study found a retiree withdrawing 4% of their starting balance, adjusted for inflation, had a very high success rate over 30-year retirements across all historical US periods. The follow-up Trinity Study (1998) confirmed this. For 50+ year FIRE retirements, many recommend 3.0-3.5% to be safer.</p><p><strong>Lean, regular, fat, coast.</strong> Lean FIRE = lower-budget life (US$30-50k spending); regular = middle (US$50-100k); fat = comfortable (US$100k+). Coast FIRE = enough invested that compounding alone gets you to regular FIRE by traditional retirement age — you only need to cover current expenses until then.</p><p><strong>Sequence-of-returns risk.</strong> A bear market in your first decade of retirement does disproportionate damage because you're selling assets at low prices to fund spending. FIRE retirees often hold 2-3 years of expenses in cash / short bonds to ride out drawdowns without selling equities.</p><p><strong>What FIRE leaves out.</strong> Healthcare (especially pre-Medicare in the US), one-off lumpy expenses (roof, car), and lifestyle inflation. Most FIRE planners add 10-20% to their base spending number to absorb these. The calculator's annual-spending input should reflect a realistic post-retirement number, not your tightest possible budget.</p>"
   },
   "isa-calculator": {
     "slug": "isa-calculator",
@@ -1650,7 +1667,8 @@
         "label": "LISA: £4k/year for first home",
         "query": "isaType=lifetime&currentBalance=0&annualContrib=4000&currentAge=25&years=10&expectedReturn=5"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>The &pound;20,000 annual allowance.</strong> Every UK adult can contribute up to &pound;20,000 across all ISAs per tax year (6 April - 5 April). The allowance doesn't roll over — unused, it's lost (<a href=\"https://www.gov.uk/individual-savings-accounts\" rel=\"noopener\">GOV.UK</a>).</p><p><strong>Cash, S&amp;S, Lifetime, Innovative Finance.</strong> Cash ISAs work like a savings account but tax-free. Stocks &amp; Shares ISAs hold funds, ETFs, or shares tax-free. Lifetime ISAs (under-40s) get a 25% government bonus on up to &pound;4,000/year, restricted to first-home purchase or age-60+ withdrawal. Innovative Finance ISAs hold peer-to-peer loans.</p><p><strong>Tax-free growth and withdrawals.</strong> Interest, dividends, and capital gains inside an ISA are completely tax-free, and withdrawals don't count as income. For high earners hit by the dividend allowance (&pound;500 from 2024/25), this is increasingly valuable.</p><p><strong>Flexible vs. non-flexible.</strong> Some Cash ISA providers offer 'flexible' ISAs where money withdrawn in the same tax year can be replaced without using fresh allowance. Stocks &amp; Shares ISAs are typically non-flexible — once you withdraw, that allowance is gone for the year.</p><p><strong>LISA penalties matter.</strong> Withdrawing from a LISA before 60 for any purpose other than a first home triggers a 25% government penalty — that's larger than the 25% bonus because it's calculated on the withdrawn amount, not the original contribution. Always model the worst-case withdrawal scenario before opening one.</p>"
   },
   "tfsa-calculator": {
     "slug": "tfsa-calculator",
@@ -1772,6 +1790,7 @@
         "label": "Conservative: R1,500/month at 6%",
         "query": "currentBalance=10000&lifetimeContribSoFar=10000&annualContrib=18000&currentAge=40&years=25&expectedReturn=6"
       }
-    ]
+    ],
+    "keyConcepts": "<p><strong>The R36,000 annual cap.</strong> South African TFSAs allow contributions up to R36,000 per tax year (1 March - end February) with a R500,000 lifetime cap (<a href=\"https://www.sars.gov.za/types-of-tax/personal-income-tax/tax-free-investments/\" rel=\"noopener\">SARS</a>). Excess contributions are penalised at 40% — one of the harshest tax-wrapper penalties globally.</p><p><strong>Tax-free interest, dividends, capital gains.</strong> All growth inside a TFSA is exempt from income tax, dividend withholding tax (normally 20%), and capital gains tax (effective 18% for individuals). Withdrawals are tax-free at any age.</p><p><strong>Withdrawals don't restore allowance.</strong> Unlike some flexible ISAs, if you withdraw R50,000 from your TFSA, that R50,000 still counts against your lifetime R500,000 cap. The annual R36,000 cap also can't be backdated. Treat the TFSA as a long-term tax shelter, not a flexible savings account.</p><p><strong>Underlying investment matters.</strong> A TFSA is a wrapper, not an investment. You can hold cash, money market, unit trusts, ETFs, or eligible individual shares inside it. For a 20-30 year horizon, an equity ETF (e.g. Satrix Top 40 or a global tracker) typically produces meaningfully higher tax-free growth than a cash TFSA.</p><p><strong>Combine with retirement annuity.</strong> A TFSA and an RA solve different problems. RA contributions reduce taxable income today (up to 27.5% / R350k cap) but are locked to age 55. TFSA contributions are post-tax but accessible at any age. Most planners fund both — RA for tax deduction, TFSA for liquidity and post-retirement tax management.</p>"
   }
 }
