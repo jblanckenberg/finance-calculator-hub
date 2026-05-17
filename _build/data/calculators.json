@@ -7,6 +7,17 @@
     "h1": "Compound Interest Calculator",
     "subtitle": "See how your money grows over time with the power of compounding. Add monthly contributions to maximise your results.",
     "formula": "A = P(1 + r/n)^(nt) + PMT × [((1 + r/n)^(nt) − 1) / (r/n)]",
+    "schemaHowTo": {
+      "name": "How to use the Compound Interest Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your starting amount (principal) in the Starting Amount field",
+        "Set the annual interest rate you expect to earn",
+        "Pick the number of years you'll let the money grow",
+        "Choose how often interest compounds — daily, monthly, quarterly, or yearly",
+        "Add an optional monthly contribution and click Calculate to see your final balance and year-by-year growth"
+      ]
+    },
     "faq": [
       {
         "q": "What is compound interest?",
@@ -39,6 +50,17 @@
     "h1": "🏠 Mortgage Calculator",
     "subtitle": "Calculate your monthly repayment, total interest, and full amortisation schedule for any home loan.",
     "formula": "M = P × [r(1+r)^n] / [(1+r)^n − 1]",
+    "schemaHowTo": {
+      "name": "How to use the Mortgage Calculator",
+      "totalTime": "PT3M",
+      "steps": [
+        "Enter the home price and your down payment",
+        "Set the annual interest rate and the loan term in years",
+        "Optionally add monthly property tax and home insurance to get a full PITI figure",
+        "Click Calculate to see your monthly payment, total interest, and full amortisation schedule",
+        "Adjust the down payment or term and recalculate to compare scenarios"
+      ]
+    },
     "faq": [
       {
         "q": "How is a mortgage payment calculated?",
@@ -71,6 +93,18 @@
     "h1": "💰 Take-Home Pay Calculator",
     "subtitle": "See your exact salary after all taxes and deductions — updated for 2026/27 tax rules in the USA, UK, and South Africa.",
     "formula": "Take-home = Gross − Σ(bracket_i × marginal_rate_i) − NI/FICA contributions",
+    "schemaHowTo": {
+      "name": "How to use the Take-Home Pay Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Pick your region — USA, UK, or South Africa — to load the right tax tables",
+        "Enter your gross annual salary and choose your pay frequency",
+        "USA: pick your filing status and state, then add 401(k) % and pre-tax deductions",
+        "UK: enter your pension contribution % and choose any student loan plan",
+        "South Africa: select your age band, medical aid members, and any monthly RA contribution",
+        "Review your monthly and annual take-home pay plus the full tax breakdown"
+      ]
+    },
     "faq": [
       {
         "q": "How is take-home pay calculated in the USA?",
@@ -102,6 +136,18 @@
     "h1": "🏖 Retirement Savings Calculator",
     "subtitle": "Find out if you're on track to retire comfortably - and exactly how much you need to save each month.",
     "formula": "Future value = PV × (1+r)^n + PMT × [((1+r)^n − 1) / r]",
+    "schemaHowTo": {
+      "name": "How to use the Retirement Savings Calculator",
+      "totalTime": "PT3M",
+      "steps": [
+        "Enter your current age and the age you'd like to retire",
+        "Add your current retirement savings and the amount you contribute each month",
+        "Set the expected annual return — 6 to 8 percent is a standard real-return assumption",
+        "Enter the desired annual retirement income you want your portfolio to support",
+        "USA only: add your employer 401(k) match percentage if applicable",
+        "Review your projected balance, the 4% safe-withdrawal income it generates, and your savings gap"
+      ]
+    },
     "faq": [
       {
         "q": "What is the 4% rule for retirement?",
@@ -132,6 +178,17 @@
     "description": "Free investment growth calculator. Project your portfolio future value with regular contributions, expected returns, and inflation. Instant results.",
     "h1": "🚀 Investment Growth Calculator",
     "subtitle": "See how your investment portfolio grows over time with regular contributions and compound returns.",
+    "schemaHowTo": {
+      "name": "How to use the Investment Growth Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your initial investment amount",
+        "Add the annual contribution you plan to make on top",
+        "Set the expected annual return — 7 percent is a common long-term equity assumption",
+        "Pick the investment period in years",
+        "Click Calculate to see your projected portfolio value, total contributions, and interest earned"
+      ]
+    },
     "faq": [
       {
         "q": "What annual return should I use?",
@@ -162,6 +219,17 @@
     "description": "Free savings goal calculator. Set any target — see how long it takes to save at your current rate, or how much more per month to get there faster.",
     "h1": "🎯 Savings Goal Calculator",
     "subtitle": "Enter your target amount and monthly savings to find out exactly when you'll reach your goal.",
+    "schemaHowTo": {
+      "name": "How to use the Savings Goal Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your target savings amount",
+        "Add what you've already saved towards the goal",
+        "Set the monthly contribution you can realistically make",
+        "Enter the annual interest rate you expect to earn",
+        "Click Calculate to see the exact month you'll reach your goal and the total interest contributed"
+      ]
+    },
     "faq": [
       {
         "q": "How is the savings time calculated?",
@@ -192,6 +260,17 @@
     "description": "Free inflation calculator. See exactly how inflation erodes the purchasing power of your money over time. Plan for real returns, not nominal.",
     "h1": "📊 Inflation Impact Calculator",
     "subtitle": "See how inflation erodes the value of money over time — and what it means for your savings.",
+    "schemaHowTo": {
+      "name": "How to use the Inflation Impact Calculator",
+      "totalTime": "PT1M",
+      "steps": [
+        "Enter the current amount of money you want to project",
+        "Set an annual inflation rate (USA ~3%, UK ~2.5%, South Africa ~5% long-run averages)",
+        "Pick the number of years over which to apply the inflation effect",
+        "Click Calculate to see the future cost of the same goods and the lost purchasing power",
+        "Review the year-by-year breakdown to see how the erosion compounds"
+      ]
+    },
     "faq": [
       {
         "q": "What is inflation?",
@@ -222,6 +301,17 @@
     "description": "Free net worth calculator. Add your assets and liabilities — see your total net worth and how it compares to typical figures for your age and region.",
     "h1": "🏦 Net Worth Calculator",
     "subtitle": "Calculate your total net worth by entering your assets and liabilities below.",
+    "schemaHowTo": {
+      "name": "How to use the Net Worth Calculator",
+      "totalTime": "PT3M",
+      "steps": [
+        "Enter every cash and savings balance in the Assets section",
+        "Add the current market value of investments, retirement accounts, property, and vehicles",
+        "Move to Liabilities and enter your mortgage, car loan, credit card, and student loan balances",
+        "Add any other loans or debts outstanding",
+        "Click Calculate to see your net worth (assets minus liabilities) and asset/liability mix"
+      ]
+    },
     "faq": [
       {
         "q": "What is net worth?",
@@ -252,6 +342,17 @@
     "description": "Free loan payoff calculator. See your exact payoff date, total interest, and how extra payments cut years off any loan. USA, UK, or South Africa.",
     "h1": "📉 Loan Payoff Calculator",
     "subtitle": "See exactly when your loan is paid off, how much interest you'll pay, and how extra payments slash your debt.",
+    "schemaHowTo": {
+      "name": "How to use the Loan Payoff Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your current loan balance",
+        "Add the annual interest rate from your loan agreement",
+        "Enter your current scheduled monthly payment",
+        "Add any extra monthly payment you can make on top of the minimum",
+        "Click Calculate to see your payoff date, total interest, and the months saved by paying extra"
+      ]
+    },
     "faq": [
       {
         "q": "How do extra loan payments work?",
@@ -282,6 +383,17 @@
     "description": "Free credit card payoff calculator. See your debt-free date, the real cost of minimum payments, and how much paying more saves in interest.",
     "h1": "💳 Credit Card Payoff Calculator",
     "subtitle": "See how long it takes to pay off your credit card — and how much interest you can save with extra payments.",
+    "schemaHowTo": {
+      "name": "How to use the Credit Card Payoff Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your current credit card balance",
+        "Add the APR shown on your most recent statement",
+        "Set the monthly payment you currently make",
+        "Add any extra monthly payment you can afford on top",
+        "Click Calculate to see your debt-free date, total interest, and savings versus minimum payments"
+      ]
+    },
     "faq": [
       {
         "q": "Why does the minimum payment take so long?",
@@ -312,6 +424,17 @@
     "description": "Free emergency fund calculator. Find out how much cash buffer you need and how long to build it. Three to twelve months covered, all regions.",
     "h1": "🛡️ Emergency Fund Calculator",
     "subtitle": "Find out exactly how much you need in your emergency fund — and how long it will take to get there.",
+    "schemaHowTo": {
+      "name": "How to use the Emergency Fund Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your monthly take-home income and essential monthly expenses",
+        "Select your job security band (stable, average, variable, or self-employed)",
+        "Add the number of dependants in your household",
+        "Enter what's already saved in your emergency fund and how much you can save each month",
+        "Click Calculate to see your target fund size and the months it will take to fully build it"
+      ]
+    },
     "faq": [
       {
         "q": "How many months of expenses should my emergency fund cover?",
@@ -342,6 +465,17 @@
     "description": "Free South Africa income tax calculator. SARS 2026/27 brackets, PAYE, UIF, medical-aid credits, retirement-annuity deduction. Monthly & annual.",
     "h1": "South Africa Tax Calculator (PAYE + UIF)",
     "subtitle": "Work out your South African income tax for the 2026/27 tax year. Includes PAYE, UIF, medical scheme tax credits, retirement-annuity deductions, and SARS rebates for age 65+.",
+    "schemaHowTo": {
+      "name": "How to use the South Africa Tax Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your gross salary in Rand and pick your pay frequency",
+        "Select your age band to apply the correct SARS rebates (primary, secondary, tertiary)",
+        "Choose how many medical aid members you cover (you + dependants)",
+        "Add any annual Retirement Annuity contribution to claim the s11(k) deduction",
+        "Review your PAYE, UIF, monthly and annual take-home, and effective tax rate"
+      ]
+    },
     "faq": [
       {
         "q": "What is PAYE in South Africa?",

@@ -32,10 +32,25 @@ SITE_URL = "https://finncalc.com"
 # Google sees the same "Last verified" date that's visible in page copy.
 SCHEMA_DATE_MODIFIED = "2026-05-17"
 
+# Original publication date for the Article JSON-LD block. Held constant so
+# subsequent edits only bump dateModified, not datePublished.
+SCHEMA_DATE_PUBLISHED = "2025-08-01"
+
 # Editorial review trail — surfaces in the per-page byline so readers (and
 # Google's E-E-A-T evaluators) see who wrote and reviewed each calculator.
 LAST_REVIEWED_ISO = "2026-05-17"
 LAST_REVIEWED_DISPLAY = "17 May 2026"
+
+# Canonical publisher block used by Article JSON-LD.
+PUBLISHER_LD = {
+    "@type": "Organization",
+    "name": "FinCalcHub",
+    "url": f"{SITE_URL}/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": f"{SITE_URL}/og-image.png",
+    },
+}
 
 OPERATOR_STUB_PREFIX = "[OPERATOR_TO_FILL:"
 
@@ -131,6 +146,85 @@ def build_faq_ld(faq: Iterable[dict]) -> dict:
     }
 
 
+def build_person_ld(author: dict) -> dict:
+    """Canonical Person JSON-LD for the editorial author. Uses a stable @id
+    so HowTo and Article blocks can reference the same node by URL."""
+    person: dict = {
+        "@type": "Person",
+        "name": author["name"],
+        "jobTitle": author.get("jobTitle", ""),
+        "url": author.get("url", ""),
+    }
+    if author.get("id"):
+        person["@id"] = author["id"]
+    if author.get("sameAs"):
+        person["sameAs"] = author["sameAs"]
+    return person
+
+
+def build_how_to_ld(
+    *, how_to: dict, calc_name: str, calc_url: str, author: dict | None
+) -> dict | None:
+    """HowTo JSON-LD for a calculator. `how_to` is the schemaHowTo dict from
+    calculators.json with keys: name, totalTime, steps (list of step strings)."""
+    if not how_to or not how_to.get("steps"):
+        return None
+    steps = how_to["steps"]
+    ld: dict = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": how_to.get("name") or f"How to use the {calc_name}",
+        "description": how_to.get("description") or f"Step-by-step guide to using the {calc_name}.",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": i + 1,
+                "name": _step_name(text, i + 1),
+                "text": text,
+                "url": f"{calc_url}#step-{i + 1}",
+            }
+            for i, text in enumerate(steps)
+        ],
+    }
+    if how_to.get("totalTime"):
+        ld["totalTime"] = how_to["totalTime"]
+    if author:
+        ld["author"] = {"@type": "Person", "@id": author.get("id"), "name": author["name"]} if author.get("id") else {"@type": "Person", "name": author["name"]}
+    return ld
+
+
+def _step_name(text: str, position: int) -> str:
+    """Distil a HowToStep name from the longer text — first ~7 words, no trailing punctuation."""
+    first = text.split(". ")[0].strip()
+    words = first.split()
+    short = " ".join(words[:7]).rstrip(",;:")
+    return short or f"Step {position}"
+
+
+def build_article_ld(
+    *, slug: str, name: str, description: str, canonical_url: str, author: dict | None
+) -> dict:
+    """Article JSON-LD wrapping the page's educational prose body."""
+    article: dict = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": name,
+        "description": description,
+        "datePublished": SCHEMA_DATE_PUBLISHED,
+        "dateModified": SCHEMA_DATE_MODIFIED,
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": canonical_url,
+        },
+        "publisher": PUBLISHER_LD,
+        "url": canonical_url,
+        "inLanguage": "en",
+    }
+    if author:
+        article["author"] = build_person_ld(author)
+    return article
+
+
 @dataclass
 class Renderer:
     template_dir: Path
@@ -189,7 +283,19 @@ class Renderer:
             ("Home", f"{SITE_URL}/"), (data["name"], canonical),
         ])
         ctx["faq_ld"] = build_faq_ld(data["faq"]) if data.get("faq") else None
-        ctx["howto_ld"] = None
+        ctx["howto_ld"] = build_how_to_ld(
+            how_to=data.get("schemaHowTo") or {},
+            calc_name=data["name"],
+            calc_url=canonical,
+            author=self._author,
+        )
+        ctx["article_ld"] = build_article_ld(
+            slug=slug,
+            name=data["name"],
+            description=data["description"],
+            canonical_url=canonical,
+            author=self._author,
+        )
         ctx["body_html"] = body_html
         tpl = self.env.get_template("calculator.html")
         return tpl.render(**ctx)
@@ -225,6 +331,7 @@ class Renderer:
         ])
         ctx["faq_ld"] = None
         ctx["howto_ld"] = None
+        ctx["article_ld"] = None
         ctx["body_html"] = body_html
         ctx["intro"] = intro
         ctx["intro_is_stub"] = stub
