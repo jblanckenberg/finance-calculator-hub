@@ -735,7 +735,7 @@
       },
       {
         "q": "South Africa tax vs UK/USA tax — which has the highest effective rate on R600,000?",
-        "a": "R600,000 SA salary (about £25,500 or $32,000 at 2026 rates, single, no dependants, no RA): effective tax rate roughly 23% in SA — leaving R459,000 net. In the UK at £25,500: about 13% effective leaving £22,200. In the USA at $32,000: about 11% effective leaving $28,400. South Africa taxes middle incomes more heavily than the UK or USA because the lowest bracket is 18% (vs UK 20% above £12,570 personal allowance and US 10–12% with $14,600 standard deduction)."
+        "a": "R600,000 SA salary (about £25,500 or $32,000 at 2026 rates, single, no dependants, no RA): effective tax rate roughly 23% in SA — leaving about R465,000 net. In the UK at £25,500: about 13% effective leaving £22,200. In the USA at $32,000: about 11% effective leaving $28,400. South Africa taxes middle incomes more heavily than the UK or USA because the lowest bracket is 18% (vs UK 20% above £12,570 personal allowance and US 10–12% with $14,600 standard deduction)."
       }
     ]
   },
@@ -795,7 +795,7 @@
       },
       {
         "q": "What's the most common 401(k) mistake?",
-        "a": "Leaving the employer match on the table. Studies (Vanguard 2024) show roughly 20% of eligible employees miss part of their available match — that's a guaranteed 50–100% return forfeited. The second-most-common mistake is investing 401(k) funds in your own employer's stock (concentration risk + correlation with your salary). Default index funds beat employer stock for almost every retiree."
+        "a": "Leaving the employer match on the table. Studies show roughly 20% of eligible employees miss part of their available match — that's a guaranteed 50–100% return forfeited. The second-most-common mistake is investing 401(k) funds in your own employer's stock (concentration risk + correlation with your salary). Default index funds beat employer stock for almost every retiree."
       },
       {
         "q": "What if I switch jobs — do I lose the 401(k)?",
@@ -1456,7 +1456,7 @@
       },
       {
         "q": "What if I'm close to the R500,000 lifetime cap?",
-        "a": "Once you hit the cap, no further contributions are allowed for life — even if you withdraw and re-contribute. The account continues to grow tax-free indefinitely (the cap is on contributions, not balance), so it's actually optimal to leave funded TFSAs untouched and let them compound for decades. Hitting the cap by age 35 with maximum contributions gives 30+ years of tax-free compounding — potentially R5m+ at retirement at 7% real."
+        "a": "Once you hit the cap, no further contributions are allowed for life — even if you withdraw and re-contribute. The account continues to grow tax-free indefinitely (the cap is on contributions, not balance), so it's actually optimal to leave funded TFSAs untouched and let them compound for decades. Hitting the cap by age 35 with maximum contributions gives 30+ years of tax-free compounding — potentially R4m+ at retirement at 7% real."
       },
       {
         "q": "I've maxed my TFSA this year — what's next?",
