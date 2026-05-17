@@ -28,6 +28,10 @@ from generate_comparisons import render_all as render_comparisons  # noqa: E402
 
 SITE_URL = "https://finncalc.com"
 
+# Blueprint baseline freshness signal — surfaces in WebApplication JSON-LD so
+# Google sees the same "Last verified" date that's visible in page copy.
+SCHEMA_DATE_MODIFIED = "2026-05-17"
+
 OPERATOR_STUB_PREFIX = "[OPERATOR_TO_FILL:"
 
 _BOLD_RE = _re.compile(r"\*\*([^*]+)\*\*")
@@ -79,6 +83,7 @@ def build_web_application_ld(
             "applicationCategory": "FinanceApplication",
             "operatingSystem": "Web Browser",
             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+            "dateModified": SCHEMA_DATE_MODIFIED,
         }
         return ld
     parent_url = f"{SITE_URL}/{parent_slug}/"
@@ -93,6 +98,7 @@ def build_web_application_ld(
         "operatingSystem": "Web Browser",
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
         "isPartOf": {"@type": "WebApplication", "@id": parent_url},
+        "dateModified": SCHEMA_DATE_MODIFIED,
     }
 
 def build_breadcrumb_ld(*, items: list[tuple[str, str]]) -> dict:
