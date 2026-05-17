@@ -38,6 +38,17 @@ if (document.readyState === 'loading') {
   applyScenarioFromURL();
 }
 
+// If no calculate() function exists on this page, hide try-scenarios block
+// (clicking a scenario would populate inputs but the results wouldn't recompute,
+// which is misleading. This is a defensive guard until the underlying calc JS
+// is restored on the affected pages — see _docs/calc-functions-missing.md)
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof calculate !== "function") {
+    var ts = document.querySelector(".try-scenarios");
+    if (ts) ts.style.display = "none";
+  }
+});
+
 function saveToFile() {
   var h1 = document.querySelector('h1');
   var calcName = h1 ? h1.textContent : 'Calculator';
