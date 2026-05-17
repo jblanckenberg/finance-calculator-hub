@@ -1,5 +1,43 @@
 /* FinCalcHub — Shared Utilities */
 
+/* Try-these-scenarios loader.
+ *
+ * The blueprint Try-these-scenarios section links to ?param=value... URLs that
+ * pre-fill the calculator above. On every calc page we read the query string,
+ * set matching inputs by id, fire an input/change event so any inline change
+ * listeners run, then call calculate() once if it's defined.
+ *
+ * Conservative: only acts on inputs that already exist with a matching id, so
+ * any param that doesn't map is silently ignored (no false-positive writes).
+ */
+function applyScenarioFromURL() {
+  try {
+    var params = new URLSearchParams(window.location.search);
+    if (!params || !params.toString()) return;
+    var anyApplied = false;
+    params.forEach(function(value, key) {
+      var el = document.getElementById(key);
+      if (!el) return;
+      var tag = (el.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'select' || tag === 'textarea') {
+        el.value = value;
+        var evt = (tag === 'select') ? 'change' : 'input';
+        try { el.dispatchEvent(new Event(evt, { bubbles: true })); } catch (e) {}
+        anyApplied = true;
+      }
+    });
+    if (anyApplied && typeof calculate === 'function') {
+      try { calculate(); } catch (e) {}
+    }
+  } catch (e) { /* never block the page on a malformed URL */ }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', applyScenarioFromURL);
+} else {
+  applyScenarioFromURL();
+}
+
 function saveToFile() {
   var h1 = document.querySelector('h1');
   var calcName = h1 ? h1.textContent : 'Calculator';

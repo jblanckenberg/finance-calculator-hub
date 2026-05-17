@@ -60,7 +60,23 @@
         "a": "Simple interest pays interest only on the original principal — $1,000 at 7% simple over 30 years pays $2,100 in total interest. Compound interest pays interest on the principal plus all previously earned interest — the same $1,000 at 7% compounded annually grows by about $6,612 in interest. Over long horizons compound interest typically produces 3–10× the return of simple interest at the same headline rate."
       }
     ],
-    "comparison_slugs": ["compound-interest-vs-simple-interest"]
+    "comparison_slugs": [
+      "compound-interest-vs-simple-interest"
+    ],
+    "scenarios": [
+      {
+        "label": "Save $500/month at 7% for 30 years",
+        "query": "principal=1000&rate=7&years=30&frequency=12&monthly=500"
+      },
+      {
+        "label": "$10k lump sum at 5% for 10 years (no contributions)",
+        "query": "principal=10000&rate=5&years=10&frequency=12&monthly=0"
+      },
+      {
+        "label": "Aggressive: $1k start + $1k/month at 9% for 20 years",
+        "query": "principal=1000&rate=9&years=20&frequency=12&monthly=1000"
+      }
+    ]
   },
   "mortgage": {
     "slug": "mortgage",
@@ -123,7 +139,23 @@
         "a": "Depends on rate, term, deposit, and house-price growth. Renting + investing the deposit difference can beat buying if rents stay low and equity returns exceed both house-price growth and your mortgage rate. Buying tends to win when (a) you stay 7+ years, (b) house prices keep pace with inflation, and (c) the mortgage rate is below long-run equity returns. Use this calculator alongside an investment-growth calculator to compare scenarios on your numbers."
       }
     ],
-    "comparison_slugs": ["30-year-vs-15-year-mortgage"]
+    "comparison_slugs": [
+      "30-year-vs-15-year-mortgage"
+    ],
+    "scenarios": [
+      {
+        "label": "$400k home, 20% down, 30-yr at 7%",
+        "query": "homePrice=400000&downPayment=80000&rate=7&termYears=30"
+      },
+      {
+        "label": "$300k home, 10% down, 15-yr at 6.5%",
+        "query": "homePrice=300000&downPayment=30000&rate=6.5&termYears=15"
+      },
+      {
+        "label": "First-home: $250k, 5% down, 30-yr at 7.25%",
+        "query": "homePrice=250000&downPayment=12500&rate=7.25&termYears=30"
+      }
+    ]
   },
   "take-home-pay": {
     "slug": "take-home-pay",
@@ -185,6 +217,20 @@
       {
         "q": "Take-home pay vs gross pay — which figure should I budget against?",
         "a": "Always net (take-home) pay. Budgeting from gross is the single most common cause of overspending — a £50,000 UK salary lands at about £39,200 net, an $80,000 US salary at roughly $58,000–$62,000 depending on state, and an R600,000 SA salary at about R430,000 after PAYE + UIF. The gap between gross and net is real money you never see in your account."
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "$75,000 USA salary, single filer",
+        "query": "salary=75000&payFreq=annual&filingStatus=single&stateSelect=TX&contrib401k=0"
+      },
+      {
+        "label": "£40,000 UK salary, 5% pension",
+        "query": "salary=40000&payFreq=annual&ukPension=5"
+      },
+      {
+        "label": "$120,000 USA, married, 10% 401(k)",
+        "query": "salary=120000&payFreq=annual&filingStatus=married&stateSelect=CA&contrib401k=10"
       }
     ]
   },
@@ -249,6 +295,20 @@
         "q": "Retirement Annuity vs employer pension fund — which first?",
         "a": "USA: always 401(k) up to the employer match (free money), then IRA/Roth, then return to the 401(k). UK: workplace pension up to your employer's contribution cap, then SIPP or further workplace contributions. South Africa: employer pension/provident fund first if there's a match, then top up with an RA — both share the 27.5%/R350k annual deduction cap. The principle is identical across regions: never leave free employer match on the table."
       }
+    ],
+    "scenarios": [
+      {
+        "label": "Start at 30, retire at 65, $500/month",
+        "query": "curAge=30&retAge=65&curSavings=10000&monthlyContrib=500&returnRate=7&retYears=25"
+      },
+      {
+        "label": "Late starter: 45, $1,500/month",
+        "query": "curAge=45&retAge=65&curSavings=50000&monthlyContrib=1500&returnRate=7&retYears=25"
+      },
+      {
+        "label": "FIRE pace: 30, $2,000/month, retire at 55",
+        "query": "curAge=30&retAge=55&curSavings=20000&monthlyContrib=2000&returnRate=7&retYears=35"
+      }
     ]
   },
   "investment-growth": {
@@ -309,6 +369,20 @@
       {
         "q": "Investment growth vs simple savings — when does each fit?",
         "a": "Use investment growth for goals 5+ years out — historical equity returns of 7% real beat savings rates of 1–2% real by a wide margin once you have time to ride out volatility. Use savings (high-yield account, money-market, Cash ISA) for emergency funds and goals under 3 years — capital preservation matters more than yield when you'll need the money soon. The 3–5 year zone is the grey area; a balanced fund often fits."
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "$10k start + $500/month at 7% for 20 years",
+        "query": "initial=10000&annual=6000&rate=7&years=20"
+      },
+      {
+        "label": "$50k lump sum at 6% for 15 years",
+        "query": "initial=50000&annual=0&rate=6&years=15"
+      },
+      {
+        "label": "Aggressive: $5k start + $1,000/month at 9% for 25 years",
+        "query": "initial=5000&annual=12000&rate=9&years=25"
       }
     ]
   },
@@ -371,6 +445,20 @@
         "q": "Savings goal vs emergency fund — which first?",
         "a": "Emergency fund every time. A holiday or deposit goal can be paused; an emergency cannot. The standard order is: starter emergency fund (1 month of essential expenses) → pay off high-interest debt (over 10% APR) → build emergency fund to 3–6 months → then fund discretionary savings goals. Skipping the emergency-fund step is the most common reason people end up on credit cards mid-saving."
       }
+    ],
+    "scenarios": [
+      {
+        "label": "$20k house deposit in 3 years",
+        "query": "target=20000&current=0&monthly=500&rate=4"
+      },
+      {
+        "label": "$50k emergency fund from $5k starter",
+        "query": "target=50000&current=5000&monthly=800&rate=4"
+      },
+      {
+        "label": "$10k holiday in 12 months",
+        "query": "target=10000&current=2000&monthly=700&rate=4"
+      }
     ]
   },
   "inflation-impact": {
@@ -431,6 +519,20 @@
       {
         "q": "Inflation vs interest rates — what's the relationship?",
         "a": "Central banks (Fed, BoE, SARB) raise interest rates when inflation runs above target and cut when it's below. The real return on cash equals nominal rate minus inflation. From 2022–2024 most developed countries had negative real rates (cash interest below inflation) — that's why investors moved into equities and fixed-rate bonds despite the volatility. Real rates above 1% are historically rare and usually short-lived."
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "$100,000 in 20 years at 3%",
+        "query": "amount=100000&infRate=3&years=20"
+      },
+      {
+        "label": "$50,000 in 10 years at 4%",
+        "query": "amount=50000&infRate=4&years=10"
+      },
+      {
+        "label": "$1m in 30 years at 2.5%",
+        "query": "amount=1000000&infRate=2.5&years=30"
       }
     ]
   },
@@ -493,6 +595,20 @@
         "q": "Net worth vs liquid net worth — which matters more?",
         "a": "Both, for different decisions. Total net worth tells you long-term wealth and retirement readiness — it includes home equity and locked-up retirement accounts. Liquid net worth (cash + non-retirement investments minus all debt) tells you what's actually available for emergencies, opportunities, or career changes. Aim to grow both; a high total net worth with near-zero liquid net worth is fragile."
       }
+    ],
+    "scenarios": [
+      {
+        "label": "Renter, $50k savings",
+        "query": "cash=10000&invest=20000&retire=15000&property=0&vehicle=10000&otherAsset=0&mortgageBal=0&carLoan=5000"
+      },
+      {
+        "label": "Homeowner with mortgage",
+        "query": "cash=15000&invest=40000&retire=80000&property=400000&vehicle=25000&otherAsset=5000&mortgageBal=280000&carLoan=10000"
+      },
+      {
+        "label": "Pre-retiree, paid-off home",
+        "query": "cash=50000&invest=200000&retire=600000&property=500000&vehicle=20000&otherAsset=10000&mortgageBal=0&carLoan=0"
+      }
     ]
   },
   "loan-payoff": {
@@ -553,6 +669,20 @@
       {
         "q": "Loan payoff vs investing the extra — when does each win?",
         "a": "Math says invest when expected after-tax return exceeds the loan rate. A 4% mortgage vs a 7% expected stock return favours investing. A 22% credit card vs the same 7% return favours payoff. Between 6–10% it's close — psychology and risk tolerance break the tie. Always pay the minimum on every debt first, capture employer 401(k) match, then choose between extra payoff and extra investing."
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "$15k loan at 8%, $300/month + $100 extra",
+        "query": "balance=15000&rate=8&payment=300&extra=100"
+      },
+      {
+        "label": "$5k loan at 6%, $200/month",
+        "query": "balance=5000&rate=6&payment=200&extra=0"
+      },
+      {
+        "label": "$30k loan at 10%, $500/month + $250 extra",
+        "query": "balance=30000&rate=10&payment=500&extra=250"
       }
     ]
   },
@@ -615,6 +745,20 @@
         "q": "Credit card vs personal loan — which is cheaper?",
         "a": "Personal loans almost always. A typical unsecured personal loan is 8–14% APR; a typical credit card is 20–28% APR. Consolidating $10,000 of credit card debt at 22% into a 3-year personal loan at 12% saves roughly $2,500 in interest over the payoff. The trap: only consolidate if you can resist re-borrowing on the now-empty cards — otherwise you double the debt."
       }
+    ],
+    "scenarios": [
+      {
+        "label": "$5k at 21% APR, $150/month",
+        "query": "balance=5000&apr=21&payment=150&extra=0"
+      },
+      {
+        "label": "$3k at 18% APR, $200/month + $50 extra",
+        "query": "balance=3000&apr=18&payment=200&extra=50"
+      },
+      {
+        "label": "$10k at 24% APR, $400/month",
+        "query": "balance=10000&apr=24&payment=400&extra=0"
+      }
     ]
   },
   "emergency-fund": {
@@ -676,6 +820,20 @@
         "q": "Emergency fund vs debt payoff — which first?",
         "a": "Build one month of essential expenses first, then aggressively pay off debt above 10% APR, then build the rest of the 3–6 month fund. Going debt-only without a starter fund leads to new debt the first time a car repair or medical bill hits — which is why most pure 'debt-first' plans fail. The Dave Ramsey order (small fund → debt → full fund) reflects two decades of real-world data on what actually works."
       }
+    ],
+    "scenarios": [
+      {
+        "label": "Single earner, low expenses, stable job",
+        "query": "income=4500&expenses=2200&jobSec=stable&deps=0&current=1000&monthlySave=400"
+      },
+      {
+        "label": "Family, mortgage, average risk",
+        "query": "income=7500&expenses=5800&jobSec=average&deps=2&current=5000&monthlySave=500"
+      },
+      {
+        "label": "Freelancer, variable income",
+        "query": "income=6000&expenses=4200&jobSec=unstable&deps=1&current=2500&monthlySave=600"
+      }
     ]
   },
   "sa-tax-calculator": {
@@ -736,6 +894,20 @@
       {
         "q": "South Africa tax vs UK/USA tax — which has the highest effective rate on R600,000?",
         "a": "R600,000 SA salary (about £25,500 or $32,000 at 2026 rates, single, no dependants, no RA): effective tax rate roughly 23% in SA — leaving about R465,000 net. In the UK at £25,500: about 13% effective leaving £22,200. In the USA at $32,000: about 11% effective leaving $28,400. South Africa taxes middle incomes more heavily than the UK or USA because the lowest bracket is 18% (vs UK 20% above £12,570 personal allowance and US 10–12% with $14,600 standard deduction)."
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "R420,000/year, age 35, no extras",
+        "query": "gross=420000&payFreq=annual&ageSlot=under65&medMem=0&raAnnual=0"
+      },
+      {
+        "label": "R600,000/year + R30k RA + 2 medical members",
+        "query": "gross=600000&payFreq=annual&ageSlot=under65&medMem=2&raAnnual=30000"
+      },
+      {
+        "label": "R1,000,000/year, age 67, retirement income",
+        "query": "gross=1000000&payFreq=annual&ageSlot=65to74&medMem=1&raAnnual=0"
       }
     ]
   },
@@ -845,6 +1017,20 @@
         "slug": "take-home-pay",
         "label": "💰 Take-Home Pay"
       }
+    ],
+    "scenarios": [
+      {
+        "label": "$60k salary, 6% contrib, 100% match to 4%",
+        "query": "salary=60000&contribPct=6&matchPct=100&matchCapPct=4&currentBalance=10000&currentAge=30&retireAge=65&expectedReturn=7"
+      },
+      {
+        "label": "$120k salary, 15% contrib, 50% match to 6%",
+        "query": "salary=120000&contribPct=15&matchPct=50&matchCapPct=6&currentBalance=50000&currentAge=40&retireAge=65&expectedReturn=7"
+      },
+      {
+        "label": "$200k salary, max 23k contrib, partial match",
+        "query": "salary=200000&contribPct=11.5&matchPct=100&matchCapPct=5&currentBalance=200000&currentAge=45&retireAge=67&expectedReturn=7"
+      }
     ]
   },
   "roth-ira-calculator": {
@@ -952,6 +1138,20 @@
       {
         "slug": "net-worth",
         "label": "🏦 Net Worth"
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "25-year-old, $7k/yr until 65, MAGI $60k",
+        "query": "currentBalance=0&annualContrib=7000&currentAge=25&retireAge=65&expectedReturn=7&magi=60000&filingStatus=single"
+      },
+      {
+        "label": "35-year-old with $20k, $7k/yr, MAGI $120k",
+        "query": "currentBalance=20000&annualContrib=7000&currentAge=35&retireAge=65&expectedReturn=7&magi=120000&filingStatus=single"
+      },
+      {
+        "label": "Couple, $14k/yr combined, MAGI $200k",
+        "query": "currentBalance=100000&annualContrib=14000&currentAge=40&retireAge=67&expectedReturn=7&magi=200000&filingStatus=married"
       }
     ]
   },
@@ -1070,6 +1270,20 @@
         "slug": "savings-goal",
         "label": "🎯 Savings Goal"
       }
+    ],
+    "scenarios": [
+      {
+        "label": "UK Plan 2: £40k loan, £35k salary",
+        "query": "loanBalance=40000&interestRate=7.3&ukPlan=plan2&ukSalary=35000&ukSalaryGrowth=3"
+      },
+      {
+        "label": "US Standard 10-year: $30k at 6%",
+        "query": "loanBalance=30000&interestRate=6&usPlan=standard&usTermYears=10"
+      },
+      {
+        "label": "UK Plan 5: £35k loan, £30k salary",
+        "query": "loanBalance=35000&interestRate=7.3&ukPlan=plan5&ukSalary=30000&ukSalaryGrowth=3"
+      }
     ]
   },
   "debt-snowball-calculator": {
@@ -1170,6 +1384,20 @@
       {
         "slug": "net-worth",
         "label": "🏦 Net Worth"
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "Snowball strategy, $200 extra/month",
+        "query": "extraMonthly=200&strategy=snowball"
+      },
+      {
+        "label": "Avalanche strategy, $500 extra/month",
+        "query": "extraMonthly=500&strategy=avalanche"
+      },
+      {
+        "label": "Minimums only — no extra payment",
+        "query": "extraMonthly=0&strategy=snowball"
       }
     ]
   },
@@ -1281,6 +1509,20 @@
       {
         "slug": "401k-calculator",
         "label": "💼 401(k)"
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "Lean FIRE: $60k spending, 4% SWR",
+        "query": "currentSavings=100000&currentAge=30&annualIncome=100000&annualSpending=60000&expectedReturn=7&swr=4&fireType=lean"
+      },
+      {
+        "label": "Regular FIRE: $80k spending",
+        "query": "currentSavings=200000&currentAge=35&annualIncome=150000&annualSpending=80000&expectedReturn=7&swr=4&fireType=regular"
+      },
+      {
+        "label": "Fat FIRE: $150k spending, 3.5% SWR",
+        "query": "currentSavings=400000&currentAge=35&annualIncome=300000&annualSpending=150000&expectedReturn=7&swr=3.5&fireType=fat"
       }
     ]
   },
@@ -1394,6 +1636,20 @@
         "slug": "net-worth",
         "label": "🏦 Net Worth"
       }
+    ],
+    "scenarios": [
+      {
+        "label": "Stocks & Shares ISA, £500/month at 6%",
+        "query": "isaType=stocks&currentBalance=0&annualContrib=6000&currentAge=30&years=25&expectedReturn=6"
+      },
+      {
+        "label": "Cash ISA, £20k/year at 4.5%",
+        "query": "isaType=cash&currentBalance=10000&annualContrib=20000&currentAge=40&years=15&expectedReturn=4.5"
+      },
+      {
+        "label": "LISA: £4k/year for first home",
+        "query": "isaType=lifetime&currentBalance=0&annualContrib=4000&currentAge=25&years=10&expectedReturn=5"
+      }
     ]
   },
   "tfsa-calculator": {
@@ -1501,6 +1757,20 @@
       {
         "slug": "investment-growth",
         "label": "🚀 Investment Growth"
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "R3,000/month for 20 years at 8%",
+        "query": "currentBalance=0&lifetimeContribSoFar=0&annualContrib=36000&currentAge=30&years=20&expectedReturn=8"
+      },
+      {
+        "label": "Max contributions until lifetime cap",
+        "query": "currentBalance=50000&lifetimeContribSoFar=50000&annualContrib=36000&currentAge=35&years=15&expectedReturn=8"
+      },
+      {
+        "label": "Conservative: R1,500/month at 6%",
+        "query": "currentBalance=10000&lifetimeContribSoFar=10000&annualContrib=18000&currentAge=40&years=25&expectedReturn=6"
       }
     ]
   }
