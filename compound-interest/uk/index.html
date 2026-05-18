@@ -342,6 +342,66 @@
   <div id="embed-cta-slot" data-slug="compound-interest"></div>
 </div>
 <script src="/js/embed-cta.js" defer></script>
+<script>
+function calculate(){
+  var P  = parseFloat(document.getElementById('principal').value) || 0;
+  var r  = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+  var t  = parseInt(document.getElementById('years').value, 10) || 0;
+  var n  = parseInt(document.getElementById('frequency').value, 10) || 12;
+  var PMT_monthly = parseFloat(document.getElementById('monthly').value) || 0;
+
+  // Convert monthly PMT into a per-compounding-period equivalent so the
+  // standard FV-of-annuity formula stays correct regardless of frequency.
+  var PMT = PMT_monthly * (12 / n);
+
+  var rPer = r / n;
+  var periods = n * t;
+  var final, interest, totalContrib;
+
+  if(r === 0){
+    final = P + PMT * periods;
+  } else {
+    final = P * Math.pow(1 + rPer, periods)
+          + PMT * (Math.pow(1 + rPer, periods) - 1) / rPer;
+  }
+  totalContrib = PMT_monthly * 12 * t;
+  interest = final - P - totalContrib;
+  if(interest < 0) interest = 0;
+
+  // Effective annual rate (compounding effect of nominal rate)
+  var ear = (r === 0) ? 0 : (Math.pow(1 + rPer, n) - 1) * 100;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-final').textContent    = fmt(final);
+  document.getElementById('r-interest').textContent = fmt(interest);
+  document.getElementById('r-contrib').textContent  = fmt(totalContrib);
+  document.getElementById('r-ear').textContent      = (Math.round(ear * 100) / 100) + '%';
+
+  // Year-by-year breakdown
+  var rows = '';
+  var bal = P;
+  var cumulContrib = 0;
+  for(var y = 1; y <= t; y++){
+    var startBal = bal;
+    var yearInterest = 0;
+    for(var p = 0; p < n; p++){
+      var iThis = bal * rPer;
+      bal = bal + iThis + PMT;
+      yearInterest += iThis;
+    }
+    cumulContrib += PMT_monthly * 12;
+    rows += '<tr><td>' + y + '</td><td class="td-right">' + fmt(bal) + '</td><td class="td-right">' + fmt(yearInterest) + '</td><td class="td-right">' + fmt(cumulContrib) + '</td></tr>';
+  }
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
 
 
 

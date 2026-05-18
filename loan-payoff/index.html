@@ -258,6 +258,79 @@
 
   <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How do extra loan payments work?</div><div class="faq-a">Extra payments go directly to your principal balance, which reduces the amount interest is calculated on. Even a small extra payment each month can shave years off your loan and save thousands in interest. The calculator shows exactly how much you save.</div></div><div class="faq-item"><div class="faq-q">What is loan amortisation?</div><div class="faq-a">Amortisation is the process of paying off a loan in equal installments over time. In the early months, most of your payment goes to interest. Over time, as the balance decreases, more goes to principal. The amortisation schedule shows this breakdown for each payment.</div></div><div class="faq-item"><div class="faq-q">Is it better to pay off a loan early or invest the difference?</div><div class="faq-a">Mathematically, if your expected investment return exceeds the loan&#x27;s interest rate, investing wins. A 7% mortgage vs a 10% expected stock return favours investing. But debt-free certainty has a value too — paying off a high-rate personal loan or credit card almost always beats investing because the after-tax return on debt repayment is the loan&#x27;s rate.</div></div><div class="faq-item"><div class="faq-q">Will paying off a loan early affect my credit score?</div><div class="faq-a">Slightly and temporarily. Closing an installment loan can shorten your average account age and reduce your credit mix, so your score may dip 5-15 points for a few months. The long-term benefit — lower debt-to-income ratio and zero interest paid — is far bigger than the short-term score wobble.</div></div><div class="faq-item"><div class="faq-q">How is total interest calculated on a loan?</div><div class="faq-a">Total interest equals the sum of all scheduled payments minus the original principal. For a fixed-rate loan, each month&#x27;s interest is calculated on the remaining balance, and the rest of your payment reduces principal. Early in the loan most of each payment is interest; later it flips.</div></div><div class="faq-item"><div class="faq-q">USA vs UK vs South Africa: are early-repayment penalties allowed?</div><div class="faq-a">USA: federal law bans prepayment penalties on most mortgages originated since 2014 (Dodd-Frank); auto and personal loans vary by lender — always check. UK: Early Repayment Charges (ERCs) are common on fixed-rate mortgages (typically 1–5% during the fixed term, zero afterward); FCA-regulated personal loans are limited to 28-day interest charge. South Africa: NCA-regulated loans must allow early settlement; lenders can charge up to 3 months of interest as a penalty on home loans.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common loan-payoff mistake?</div><div class="faq-a">Refinancing into a longer term to lower the monthly payment, then never overpaying. A $15,000 loan at 8.5% becomes about $7,000 cheaper in interest if you keep the original 5-year term vs stretching to 10 years — even though the 10-year monthly payment is lower. Lower monthly cost feels good; total interest cost is what actually matters.</div></div><div class="faq-item"><div class="faq-q">What if my extra payment isn&#x27;t applied to principal?</div><div class="faq-a">Some lenders apply extra payments forward (to future scheduled payments) by default, not to principal. This earns you nothing — interest still accrues on the same balance. Always specify &#x27;apply to principal&#x27; in writing or via the lender&#x27;s online portal. If the lender refuses, the loan&#x27;s pay-down schedule is the same as without the extra payment, just with months &#x27;pre-paid&#x27;.</div></div><div class="faq-item"><div class="faq-q">I&#x27;ll be debt-free in X months — what&#x27;s next?</div><div class="faq-a">Don&#x27;t drop the monthly payment back into spending. Redirect that exact dollar/pound/rand amount into an emergency fund (if not at 3–6 months) then to retirement contributions. The &#x27;debt-free dividend&#x27; is the single biggest opportunity to boost savings rate, and most people miss it because they normalise the cash-flow improvement within months.</div></div><div class="faq-item"><div class="faq-q">Loan payoff vs investing the extra — when does each win?</div><div class="faq-a">Math says invest when expected after-tax return exceeds the loan rate. A 4% mortgage vs a 7% expected stock return favours investing. A 22% credit card vs the same 7% return favours payoff. Between 6–10% it&#x27;s close — psychology and risk tolerance break the tie. Always pay the minimum on every debt first, capture employer 401(k) match, then choose between extra payoff and extra investing.</div></div></div>
 </div>
+<script>
+function calculate(){
+  var balance = parseFloat(document.getElementById('balance').value) || 0;
+  var rate    = parseFloat(document.getElementById('rate').value)    || 0;
+  var payment = parseFloat(document.getElementById('payment').value) || 0;
+  var extra   = parseFloat(document.getElementById('extra').value)   || 0;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  function simulate(pmt){
+    var b = balance;
+    var r = (rate / 100) / 12;
+    var totalInt = 0;
+    var schedule = [];
+    var m = 0;
+    var maxMonths = 12 * 100;
+    if(pmt <= b * r){
+      // Payment doesn't cover monthly interest — non-amortising.
+      return { months: Infinity, interest: Infinity, schedule: [] };
+    }
+    while(b > 0.005 && m < maxMonths){
+      var iThis = b * r;
+      var principal = pmt - iThis;
+      if(principal > b){ principal = b; }
+      var payThis = principal + iThis;
+      b -= principal;
+      totalInt += iThis;
+      m++;
+      schedule.push({ month: m, payment: payThis, principal: principal, interest: iThis, balance: Math.max(0, b) });
+    }
+    return { months: m, interest: totalInt, schedule: schedule };
+  }
+
+  var withExtra = simulate(payment + extra);
+  var baseline  = simulate(payment);
+
+  var monthsEl   = document.getElementById('r-months');
+  var dateEl     = document.getElementById('r-date');
+  var interestEl = document.getElementById('r-interest');
+  var savingEl   = document.getElementById('r-saving');
+
+  if(!isFinite(withExtra.months)){
+    monthsEl.textContent = 'Payment too low';
+    dateEl.textContent = '—';
+    interestEl.textContent = '—';
+    savingEl.textContent = fmt(0);
+    document.getElementById('breakdown-body').innerHTML = '<tr><td colspan="5">Monthly payment must exceed the monthly interest charge (' + fmt(balance * (rate/100)/12) + ') to amortise.</td></tr>';
+    return;
+  }
+
+  monthsEl.textContent   = withExtra.months + (withExtra.months === 1 ? ' month' : ' months');
+  interestEl.textContent = fmt(withExtra.interest);
+  var saving = (isFinite(baseline.interest) && extra > 0) ? Math.max(0, baseline.interest - withExtra.interest) : 0;
+  savingEl.textContent   = fmt(saving);
+
+  var d = new Date();
+  d.setMonth(d.getMonth() + withExtra.months);
+  var mn = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  dateEl.textContent = mn[d.getMonth()] + ' ' + d.getFullYear();
+
+  // First 24 months of amortisation
+  var rows = withExtra.schedule.slice(0, 24).map(function(s){
+    return '<tr><td>' + s.month + '</td><td class="td-right">' + fmt(s.payment) + '</td><td class="td-right">' + fmt(s.principal) + '</td><td class="td-right">' + fmt(s.interest) + '</td><td class="td-right">' + fmt(s.balance) + '</td></tr>';
+  }).join('');
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
 
 
 

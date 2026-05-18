@@ -304,6 +304,94 @@
   <div id="embed-cta-slot" data-slug="mortgage"></div>
 </div>
 <script src="/js/embed-cta.js" defer></script>
+<script>
+function calculate(){
+  var homePrice   = parseFloat(document.getElementById('homePrice').value)   || 0;
+  var downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+  var rate        = parseFloat(document.getElementById('rate').value)        || 0;
+  var termYears   = parseInt(document.getElementById('termYears').value, 10) || 0;
+  var propTax     = parseFloat(document.getElementById('propTax').value)     || 0;
+  var insurance   = parseFloat(document.getElementById('insurance').value)   || 0;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+  var region = (typeof currentRegion !== 'undefined') ? currentRegion : 'USA';
+
+  var loanAmount = Math.max(0, homePrice - downPayment);
+  var n = termYears * 12;
+  var r = (rate / 100) / 12;
+
+  var monthly;
+  if(loanAmount <= 0 || n <= 0){
+    monthly = 0;
+  } else if(r === 0){
+    monthly = loanAmount / n;
+  } else {
+    // M = P × r(1+r)^n / ((1+r)^n − 1)
+    var pow = Math.pow(1 + r, n);
+    monthly = loanAmount * (r * pow) / (pow - 1);
+  }
+  var totalMonthly = monthly + propTax + insurance;
+  var totalInterest = (monthly * n) - loanAmount;
+  if(totalInterest < 0) totalInterest = 0;
+  var totalCost = loanAmount + totalInterest;
+
+  document.getElementById('r-monthly').textContent       = fmt(monthly);
+  document.getElementById('r-total-monthly').textContent = fmt(totalMonthly);
+  document.getElementById('r-interest').textContent      = fmt(totalInterest);
+  document.getElementById('r-total-cost').textContent    = fmt(totalCost);
+
+  // Summary table
+  var summary = [
+    ['Home price',          fmt(homePrice)],
+    ['Down payment',        fmt(downPayment) + ' (' + (homePrice > 0 ? Math.round(downPayment / homePrice * 100) : 0) + '%)'],
+    ['Loan amount',         fmt(loanAmount)],
+    ['Interest rate',       (Math.round(rate * 100) / 100) + '% APR'],
+    ['Loan term',           termYears + ' years (' + n + ' months)'],
+    ['Monthly P&I',         fmt(monthly)],
+    ['Monthly property tax',fmt(propTax)],
+    ['Monthly insurance',   fmt(insurance)],
+    ['Total monthly',       fmt(totalMonthly)],
+    ['Total interest paid', fmt(totalInterest)],
+    ['Total cost of loan',  fmt(totalCost)]
+  ];
+  document.getElementById('breakdown-body').innerHTML = summary.map(function(s){
+    return '<tr><td>' + s[0] + '</td><td class="td-right">' + s[1] + '</td></tr>';
+  }).join('');
+
+  // Region-aware footnote with typical 2026 rates so users can sanity-check
+  // their assumptions against the published benchmark for their country.
+  var notes = {
+    USA: 'USA reference: 30-year fixed averages ~7.0–7.5% in 2026 (Freddie Mac PMMS). Property tax + homeowners insurance vary widely by state.',
+    UK:  'UK reference: 5-year fixed averages ~4.5–5.0% in 2026 (Bank of England). UK mortgages roll to Standard Variable Rate at the end of the fix unless remortgaged.',
+    SA:  'SA reference: prime rate ~11.25% in 2026 (SARB). Most SA bonds are linked to prime; transfer duty applies above R1.1m at registration.'
+  };
+  var noteEl = document.getElementById('region-note');
+  if(noteEl) noteEl.textContent = notes[region] || notes.USA;
+
+  // First 24 months of amortisation
+  if(loanAmount > 0 && n > 0 && monthly > 0){
+    var bal = loanAmount;
+    var rows = '';
+    var rowsToShow = Math.min(24, n);
+    for(var m = 1; m <= rowsToShow; m++){
+      var iThis = bal * r;
+      var principal = monthly - iThis;
+      if(principal > bal){ principal = bal; }
+      bal -= principal;
+      rows += '<tr><td>' + m + '</td><td class="td-right">' + fmt(monthly) + '</td><td class="td-right">' + fmt(principal) + '</td><td class="td-right">' + fmt(iThis) + '</td><td class="td-right">' + fmt(Math.max(0, bal)) + '</td></tr>';
+    }
+    document.getElementById('amort-body').innerHTML = rows;
+  } else {
+    document.getElementById('amort-body').innerHTML = '';
+  }
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
 
 
 
