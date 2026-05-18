@@ -118,3 +118,108 @@
 
   <div class="ad-slot">Advertisement</div>
 </div>
+<script>
+// SA Tax Calculator — PAYE + UIF for the 2026/27 tax year.
+// Brackets, rebates and medical credits from SARS budget review.
+
+function _bracketTax(taxable, bands){
+  var tax = 0, last = 0;
+  for(var i = 0; i < bands.length; i++){
+    var top = bands[i].upTo;
+    var chunk = Math.max(0, Math.min(taxable, top) - last);
+    tax += chunk * bands[i].rate;
+    last = top;
+    if(taxable <= top) break;
+  }
+  return tax;
+}
+
+function calculate(){
+  var grossInput = parseFloat(document.getElementById('gross').value) || 0;
+  var payFreq    = parseInt(document.getElementById('payFreq').value, 10) || 12;
+  var ageSlot    = parseInt(document.getElementById('ageSlot').value, 10) || 1;
+  var medMem     = parseInt(document.getElementById('medMem').value, 10) || 0;
+  var raAnnual   = parseFloat(document.getElementById('raAnnual').value) || 0;
+
+  // payFreq = 12 means input is annual; payFreq = 1 means input is monthly.
+  // (Value represents months-per-year that the entered amount covers.)
+  var gross = (payFreq === 1) ? grossInput * 12 : grossInput;
+
+  // SARS 2026/27 brackets
+  var bands = [
+    { upTo: 245100,   rate: 0.18 },
+    { upTo: 370500,   rate: 0.26 },
+    { upTo: 512800,   rate: 0.31 },
+    { upTo: 673000,   rate: 0.36 },
+    { upTo: 857900,   rate: 0.39 },
+    { upTo: 1878600,  rate: 0.41 },
+    { upTo: Infinity, rate: 0.45 }
+  ];
+
+  // RA deduction capped at 27.5% of remuneration or R350,000
+  var raDed = Math.min(raAnnual, gross * 0.275, 350000);
+  var taxable = Math.max(0, gross - raDed);
+  var grossTax = _bracketTax(taxable, bands);
+
+  // Rebates
+  var rebate = 17820;
+  if(ageSlot >= 2) rebate += 9792;
+  if(ageSlot >= 3) rebate += 3260;
+
+  // Medical scheme fees tax credit: R376 main + R376 1st dep + R254 each extra (per month).
+  var medCreditMonthly = 0;
+  if(medMem >= 1) medCreditMonthly += 376;
+  if(medMem >= 2) medCreditMonthly += 376;
+  if(medMem > 2)  medCreditMonthly += 254 * (medMem - 2);
+  var medCredit = medCreditMonthly * 12;
+
+  var paye = Math.max(0, grossTax - rebate - medCredit);
+
+  // UIF: 1% capped at R177.12/month
+  var uifMonthly = Math.min((gross / 12) * 0.01, 177.12);
+  var uifAnnual  = uifMonthly * 12;
+
+  var netAnnual  = gross - paye - uifAnnual - raAnnual;
+  var netMonthly = netAnnual / 12;
+  var effective  = gross > 0 ? ((paye + uifAnnual) / gross) * 100 : 0;
+
+  var fmtR = function(v){
+    var n = Math.round(v);
+    var sign = n < 0 ? '-' : '';
+    return sign + 'R' + Math.abs(n).toLocaleString('en-ZA');
+  };
+
+  document.getElementById('r-net-annual').textContent  = fmtR(netAnnual);
+  document.getElementById('r-net-monthly').textContent = fmtR(netMonthly);
+  document.getElementById('r-tax-annual').textContent  = fmtR(paye);
+  document.getElementById('r-eff').textContent         = (Math.round(effective * 10) / 10) + '%';
+
+  var rows = [
+    ['Gross salary',                       gross],
+    ['Less: RA deduction (capped)',        -raDed],
+    ['Taxable income',                     taxable],
+    ['Gross tax (before rebates)',         grossTax],
+    ['Less: primary rebate',               -17820]
+  ];
+  if(ageSlot >= 2) rows.push(['Less: secondary rebate (65+)', -9792]);
+  if(ageSlot >= 3) rows.push(['Less: tertiary rebate (75+)',  -3260]);
+  if(medCredit > 0) rows.push(['Less: medical aid tax credit', -medCredit]);
+  rows.push(['PAYE payable',     paye]);
+  rows.push(['UIF (1%, capped)', uifAnnual]);
+  if(raAnnual > 0) rows.push(['RA contribution (cash out)', raAnnual]);
+  rows.push(['Net take-home',     netAnnual]);
+
+  document.getElementById('breakdown-body').innerHTML = rows.map(function(r){
+    return '<tr><td>' + r[0] + '</td><td class="td-right">' + fmtR(r[1]) + '</td><td class="td-right">' + fmtR(r[1] / 12) + '</td></tr>';
+  }).join('');
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  // Lock region to SA — this is a SA-only calculator.
+  if(typeof setRegion === 'function') setRegion('SA');
+  ['USA','UK'].forEach(function(r){ var b = document.getElementById('btn-' + r); if(b) b.style.display = 'none'; });
+  if(typeof calculate === 'function') calculate();
+});
+</script>

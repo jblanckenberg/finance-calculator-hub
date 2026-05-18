@@ -74,3 +74,116 @@
   <div id="embed-cta-slot" data-slug="retirement-savings"></div>
 </div>
 <script src="/js/embed-cta.js" defer></script>
+<script>
+function calculate(){
+  var curAge          = parseInt(document.getElementById('curAge').value, 10)        || 0;
+  var retAge          = parseInt(document.getElementById('retAge').value, 10)        || 0;
+  var curSavings      = parseFloat(document.getElementById('curSavings').value)      || 0;
+  var monthlyContrib  = parseFloat(document.getElementById('monthlyContrib').value)  || 0;
+  var returnRate      = parseFloat(document.getElementById('returnRate').value)      || 0;
+  var retYears        = parseInt(document.getElementById('retYears').value, 10)      || 0;
+  var desiredIncome   = parseFloat(document.getElementById('desiredIncome').value)   || 0;
+  var employerMatchEl = document.getElementById('employerMatch');
+  var employerMatch   = employerMatchEl ? (parseFloat(employerMatchEl.value) || 0) : 0;
+
+  var region = (typeof currentRegion !== 'undefined') ? currentRegion : 'USA';
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  var yearsToRet = Math.max(0, retAge - curAge);
+  var r_annual = returnRate / 100;
+  var r_month  = r_annual / 12;
+  var n_months = yearsToRet * 12;
+
+  // Employer match only applies to USA (the input is hidden in other regions).
+  // We treat the figure as % of salary, but since the form does not capture
+  // salary directly we approximate using monthlyContrib as the employee leg —
+  // a common 401(k) pattern is employer matches up to X% of salary.
+  // Conservative: add employer match as a flat % uplift on monthly contribution.
+  var effectiveMonthly = monthlyContrib;
+  if(region === 'USA' && employerMatch > 0){
+    // Treat employerMatch as the share of monthlyContrib the employer adds
+    // (common interpretation: "3% match" ≈ +3% of pay, which for a saver
+    // contributing 5% is effectively a 60% boost on their contribution).
+    // To keep the maths intuitive and conservative we add the match as a
+    // direct percentage uplift on the user's monthly contribution.
+    effectiveMonthly = monthlyContrib * (1 + employerMatch / 100);
+  }
+
+  // FV = PV*(1+r)^n + PMT*[((1+r)^n - 1)/r]
+  var fvFactor = Math.pow(1 + r_month, n_months);
+  var balance;
+  if(r_month === 0){
+    balance = curSavings + effectiveMonthly * n_months;
+  } else {
+    balance = curSavings * fvFactor + effectiveMonthly * ((fvFactor - 1) / r_month);
+  }
+
+  // Monthly income possible: PMT that exhausts balance over retYears at the same return.
+  var monthsRet = retYears * 12;
+  var monthlyIncome;
+  if(r_month === 0 || monthsRet === 0){
+    monthlyIncome = monthsRet > 0 ? balance / monthsRet : 0;
+  } else {
+    // PMT = PV * r / (1 − (1+r)^-n)
+    monthlyIncome = balance * r_month / (1 - Math.pow(1 + r_month, -monthsRet));
+  }
+
+  var desiredMonthly = desiredIncome / 12;
+  var gap = monthlyIncome - desiredMonthly; // positive = surplus
+
+  // Extra monthly saving needed during accumulation to reach desired income.
+  // Required balance to fund desired monthly withdrawal:
+  var requiredBalance;
+  if(r_month === 0){
+    requiredBalance = desiredMonthly * monthsRet;
+  } else {
+    requiredBalance = desiredMonthly * (1 - Math.pow(1 + r_month, -monthsRet)) / r_month;
+  }
+  var shortfallBal = Math.max(0, requiredBalance - balance);
+  var extraNeeded;
+  if(shortfallBal === 0 || n_months === 0){
+    extraNeeded = 0;
+  } else if(r_month === 0){
+    extraNeeded = shortfallBal / n_months;
+  } else {
+    extraNeeded = shortfallBal * r_month / (fvFactor - 1);
+  }
+
+  document.getElementById('r-balance').textContent = fmt(balance);
+  document.getElementById('r-income').textContent  = fmt(monthlyIncome);
+  var gapEl = document.getElementById('r-gap');
+  gapEl.textContent = (gap >= 0 ? '+' : '') + fmt(gap);
+  gapEl.classList.toggle('positive', gap >= 0);
+  gapEl.classList.toggle('negative', gap < 0);
+  document.getElementById('r-needed').textContent  = extraNeeded > 0 ? fmt(extraNeeded) : 'On track';
+
+  // Summary
+  var summary = [
+    ['Years to retirement', yearsToRet + ' years'],
+    ['Effective monthly contribution', fmt(effectiveMonthly) + (region === 'USA' && employerMatch > 0 ? ' (incl. ' + employerMatch + '% match)' : '')],
+    ['Projected balance at retirement', fmt(balance)],
+    ['Required balance for goal', fmt(requiredBalance)],
+    ['Sustainable monthly income', fmt(monthlyIncome)],
+    ['Desired monthly income', fmt(desiredMonthly)],
+    ['Monthly shortfall / surplus', (gap >= 0 ? '+' : '') + fmt(gap)],
+    ['Years in retirement modelled', retYears + ' years']
+  ];
+  document.getElementById('breakdown-body').innerHTML = summary.map(function(s){
+    return '<tr><td>' + s[0] + '</td><td class="td-right">' + s[1] + '</td></tr>';
+  }).join('');
+
+  var notes = {
+    USA: 'USA reference: 2026 401(k) employee limit $23,500 ($31,000 with age-50 catch-up). Standard planning assumption: 6–8% nominal expected return on a balanced portfolio.',
+    UK:  'UK reference: 2026/27 pension annual allowance £60,000; state pension full new rate ~£11,500/yr from age 67. Plan figures in real terms to absorb 2.5% inflation.',
+    SA:  'SA reference: RA contributions deductible to 27.5% of taxable income (cap R350,000). TFSA cap R36,000/yr (R500,000 lifetime). Long-run JSE total return ~5% real.'
+  };
+  var noteEl = document.getElementById('region-note');
+  if(noteEl) noteEl.textContent = notes[region] || notes.USA;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
