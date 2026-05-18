@@ -183,7 +183,7 @@
       <div class="form-group"><label for="retYears">Years in Retirement</label><input type="number" id="retYears" value="25" min="5" max="50" oninput="calculate()" inputmode="decimal"></div>
     </div>
     <div class="form-group"><label for="desiredIncome">Desired Annual Retirement Income <span class="hint" id="sym3">($)</span></label><input type="number" id="desiredIncome" value="60000" min="0" oninput="calculate()" inputmode="decimal"></div>
-    <div class="form-group" data-region="USA"><label for="employerMatch">Employer 401(k) Match (% of salary) <span class="hint">optional</span></label><input type="number" id="employerMatch" value="3" min="0" max="20" step="0.5" oninput="calculate()" inputmode="decimal"></div>
+    <div class="form-group" data-region="USA"><label for="employerMatch">Employer Top-up (% on top of your contribution) <span class="hint">optional</span></label><input type="number" id="employerMatch" value="3" min="0" max="100" step="0.5" oninput="calculate()" inputmode="decimal"><span class="hint" style="display:block;margin-top:6px">Approximate. For a true 401(k) match calculation, multiply your salary's match% by your salary directly — this field adds a flat % uplift on your own monthly contribution, which understates a typical 401(k) match.</span></div>
     <button class="btn-calc" onclick="calculate()">Calculate Retirement Plan &rarr;</button>
   </div>
   <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
@@ -318,18 +318,14 @@ function calculate(){
   var r_month  = r_annual / 12;
   var n_months = yearsToRet * 12;
 
-  // Employer match only applies to USA (the input is hidden in other regions).
-  // We treat the figure as % of salary, but since the form does not capture
-  // salary directly we approximate using monthlyContrib as the employee leg —
-  // a common 401(k) pattern is employer matches up to X% of salary.
-  // Conservative: add employer match as a flat % uplift on monthly contribution.
+  // Employer top-up only applies to USA (the input is hidden in other regions).
+  // NOTE: this field is a flat percentage uplift on the user's own monthly
+  // contribution — NOT a true 401(k) match (which is computed as match% × salary).
+  // The label and helper text on the input make this explicit. A user wanting a
+  // true 401(k) match estimate should add (matchPct × salary / 12) to their own
+  // monthly contribution before entering it here.
   var effectiveMonthly = monthlyContrib;
   if(region === 'USA' && employerMatch > 0){
-    // Treat employerMatch as the share of monthlyContrib the employer adds
-    // (common interpretation: "3% match" ≈ +3% of pay, which for a saver
-    // contributing 5% is effectively a 60% boost on their contribution).
-    // To keep the maths intuitive and conservative we add the match as a
-    // direct percentage uplift on the user's monthly contribution.
     effectiveMonthly = monthlyContrib * (1 + employerMatch / 100);
   }
 
@@ -384,7 +380,7 @@ function calculate(){
   // Summary
   var summary = [
     ['Years to retirement', yearsToRet + ' years'],
-    ['Effective monthly contribution', fmt(effectiveMonthly) + (region === 'USA' && employerMatch > 0 ? ' (incl. ' + employerMatch + '% match)' : '')],
+    ['Effective monthly contribution', fmt(effectiveMonthly) + (region === 'USA' && employerMatch > 0 ? ' (incl. ' + employerMatch + '% top-up)' : '')],
     ['Projected balance at retirement', fmt(balance)],
     ['Required balance for goal', fmt(requiredBalance)],
     ['Sustainable monthly income', fmt(monthlyIncome)],
@@ -411,6 +407,16 @@ document.addEventListener('DOMContentLoaded', function(){
   if(typeof calculate === 'function') calculate();
 });
 </script>
+
+<script>
+// Variant region lock — URL implies region (e.g. /<calc>/uk/), so override
+// the browser-detected default. Mirrors the sa-tax-calculator pattern.
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof setRegion === 'function') setRegion('USA');
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
 
 
 

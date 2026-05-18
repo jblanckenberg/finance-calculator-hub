@@ -380,6 +380,15 @@ class Renderer:
         ctx["intro_is_stub"] = stub
         ctx["intro_paragraphs"] = paragraphs_from(intro) if not stub else []
         ctx["intro_html"] = render_intro_html(intro) if not stub else ""
+        # Region-lock for geo variants: the URL implies a region (e.g.
+        # /take-home-pay/uk/ should show UK calcs immediately, not the
+        # browser-default region). Maps variant slug -> region code used by
+        # the on-page setRegion() helper. Non-geo variants (scenario, kind)
+        # inherit the default region detection.
+        region_lock = None
+        if variant_data.get("kind") == "geo":
+            region_lock = {"uk": "UK", "us": "USA", "za": "SA"}.get(variant_data["slug"])
+        ctx["region_lock"] = region_lock
         tpl = self.env.get_template("variant.html")
         return tpl.render(**ctx)
 

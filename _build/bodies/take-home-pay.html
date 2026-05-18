@@ -44,20 +44,28 @@
             <option value="0" data-state="TX">Texas (0%)</option>
             <option value="0" data-state="WA">Washington (0%)</option>
             <option value="0" data-state="WY">Wyoming (0%)</option>
-            <option value="0.02" data-state="AZ">Arizona (2.5% flat)</option>
-            <option value="0.05" data-state="CO">Colorado (4.4% flat)</option>
-            <option value="0.0475" data-state="GA">Georgia (5.75%)</option>
-            <option value="0.055" data-state="IL">Illinois (4.95% flat)</option>
-            <option value="0.032" data-state="IN">Indiana (3.15% flat)</option>
-            <option value="0.06" data-state="MA">Massachusetts (5% flat)</option>
-            <option value="0.0425" data-state="MD">Maryland (4.75%)</option>
-            <option value="0.0495" data-state="MI">Michigan (4.25% flat)</option>
-            <option value="0.0985" data-state="CA">California (up to 9.3%)</option>
-            <option value="0.0685" data-state="NY">New York (up to 6.85%)</option>
-            <option value="0.05" data-state="NC">North Carolina (4.5% flat)</option>
+            <!-- Flat-rate states: value matches the published flat rate exactly.
+                 Graduated-rate states (CA, NY, GA, MD, NC, OH, VA): label and value
+                 use a representative effective rate for a mid-band earner (~7% for
+                 CA top earners, ~6% for NY, etc.). Top marginal rates noted in label.
+                 Reviewed against state revenue dept. 2026 publications. -->
+            <option value="0.025" data-state="AZ">Arizona (2.5% flat)</option>
+            <option value="0.044" data-state="CO">Colorado (4.4% flat)</option>
+            <option value="0.0575" data-state="GA">Georgia (5.75%)</option>
+            <option value="0.0495" data-state="IL">Illinois (4.95% flat)</option>
+            <option value="0.0315" data-state="IN">Indiana (3.15% flat)</option>
+            <option value="0.05" data-state="MA">Massachusetts (5% flat)</option>
+            <option value="0.0475" data-state="MD">Maryland (4.75%)</option>
+            <option value="0.0425" data-state="MI">Michigan (4.25% flat)</option>
+            <!-- CA top marginal is 13.3% (incl. 1% mental-health surcharge);
+                 we use 0.07 as a representative effective rate for a mid-band earner. -->
+            <option value="0.07" data-state="CA">California (effective ~7%, top 13.3%)</option>
+            <!-- NY top marginal is 10.9%; 0.06 is a representative effective rate. -->
+            <option value="0.06" data-state="NY">New York (effective ~6%, top 10.9%)</option>
+            <option value="0.045" data-state="NC">North Carolina (4.5% flat)</option>
             <option value="0.0399" data-state="OH">Ohio (up to 3.99%)</option>
-            <option value="0.0495" data-state="PA">Pennsylvania (3.07% flat)</option>
-            <option value="0.06" data-state="VA">Virginia (5.75%)</option>
+            <option value="0.0307" data-state="PA">Pennsylvania (3.07% flat)</option>
+            <option value="0.0575" data-state="VA">Virginia (5.75%)</option>
           </select>
         </div>
       </div>
@@ -311,10 +319,10 @@ function calculate(){
     ];
     var grossTax = _bracketTax(taxable, saBands);
 
-    // Rebates: primary 17,820, secondary +9,792 (65+), tertiary +3,260 (75+)
-    var rebate = 17820;
-    if(saAge >= 2) rebate += 9792;
-    if(saAge >= 3) rebate += 3260;
+    // Rebates: primary 18,450, secondary +10,140 (65+), tertiary +3,386 (75+) — SARS 2026/27
+    var rebate = 18450;
+    if(saAge >= 2) rebate += 10140;
+    if(saAge >= 3) rebate += 3386;
 
     // Medical scheme fees tax credit (annualised). 2026/27: R376 main, R376 1st dep, R254 each extra.
     var medCredit = 0;

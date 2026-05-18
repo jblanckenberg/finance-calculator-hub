@@ -29,4 +29,14 @@
 {{ _body_middle | safe }}
 {% include "partials/key_concepts.html" %}
 {{ _body_below_keyconcepts | safe }}
+{% if region_lock %}
+<script>
+// Variant region lock — URL implies region (e.g. /<calc>/uk/), so override
+// the browser-detected default. Mirrors the sa-tax-calculator pattern.
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof setRegion === 'function') setRegion('{{ region_lock }}');
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+{% endif %}
 {% endblock %}

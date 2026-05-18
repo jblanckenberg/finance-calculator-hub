@@ -391,6 +391,16 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 
+<script>
+// Variant region lock — URL implies region (e.g. /<calc>/uk/), so override
+// the browser-detected default. Mirrors the sa-tax-calculator pattern.
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof setRegion === 'function') setRegion('USA');
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+
 
 
 <div class="container" style="padding-top:0">
