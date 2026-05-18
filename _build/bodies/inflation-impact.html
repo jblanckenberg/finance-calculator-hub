@@ -41,3 +41,41 @@
   <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What is inflation?</div><div class="faq-a">Inflation is the rate at which prices rise over time, reducing the purchasing power of money. At 3% annual inflation, something costing $100 today will cost $134 in 10 years and $181 in 20 years.</div></div><div class="faq-item"><div class="faq-q">What inflation rate should I use?</div><div class="faq-a">Long-term average CPI inflation: USA ~3%, UK ~2.5%, South Africa ~5%. For conservative planning, use a slightly higher rate than the current official figure.</div></div><div class="faq-item"><div class="faq-q">What is the difference between real and nominal returns?</div><div class="faq-a">Nominal return is the headline rate before inflation. Real return subtracts inflation: real = nominal − inflation. If your investment returns 8% nominal and inflation is 3%, your real return is 5% — what your purchasing power actually grew. Always plan retirement and long-term goals in real terms.</div></div><div class="faq-item"><div class="faq-q">How does inflation affect retirement savings?</div><div class="faq-a">Inflation compounds against your savings just like interest compounds for them. A retirement target of £40,000 a year today needs about £72,000 a year in 25 years at 2.5% inflation. Plan your retirement income in today&#x27;s money, then use the calculator to convert to a future nominal figure using your expected inflation rate.</div></div><div class="faq-item"><div class="faq-q">Is high inflation good or bad for borrowers?</div><div class="faq-a">Good for borrowers with fixed-rate debt — the real value of what you owe shrinks each year while your nominal income tends to rise with inflation. Bad for savers earning less than the inflation rate (real return is negative). Variable-rate borrowers face the opposite: higher rates as central banks fight inflation.</div></div><div class="faq-item"><div class="faq-q">USA vs UK vs South Africa: which inflation index should I use?</div><div class="faq-a">USA: the BLS Consumer Price Index for All Urban Consumers (CPI-U) is the standard headline rate, with Core CPI (excludes food + energy) for trend. UK: ONS publishes CPI (the Bank of England target index, 2% target) and CPIH (which includes owner-occupier housing costs). South Africa: Stats SA publishes Headline CPI (SARB target 3–6%). Use your country&#x27;s headline CPI for long-term planning; long-run averages are USA ~3%, UK ~2.5%, SA ~5%.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common inflation-planning mistake?</div><div class="faq-a">Anchoring on a single recent year. People plan with 2022&#x27;s 8% headline inflation or 2020&#x27;s 1% — neither is a useful long-run number. Use a 30+ year average (USA 3%, UK 2.5%, SA 5%) plus a small buffer for conservatism. The other common error is forgetting to inflate target amounts: a £40k/year retirement target today needs £72k in 25 years at 2.5% inflation.</div></div><div class="faq-item"><div class="faq-q">What if inflation suddenly spikes to 10%+?</div><div class="faq-a">Short bursts (1–2 years) of high inflation barely move 30-year projections — the long-run average is the dominant input. Sustained high inflation hurts cash and bonds; equities historically keep pace with inflation over 5+ year periods because company revenues rise with prices. The biggest practical risk is variable-rate debt: at 10% rates, a £200k mortgage costs about £900 more per month than at 4%.</div></div><div class="faq-item"><div class="faq-q">I see the lost purchasing power — what&#x27;s the next action?</div><div class="faq-a">Confirm every long-term goal is denominated in real terms (today&#x27;s money), then check your investments earn at least the inflation rate. Cash sitting in a low-yield account is guaranteed to lose real value; high-yield savings, ISAs, TFSAs, and equity investments are the standard defences. If you have fixed-rate debt at below current inflation, you&#x27;re already winning — don&#x27;t rush to pay it off early.</div></div><div class="faq-item"><div class="faq-q">Inflation vs interest rates — what&#x27;s the relationship?</div><div class="faq-a">Central banks (Fed, BoE, SARB) raise interest rates when inflation runs above target and cut when it&#x27;s below. The real return on cash equals nominal rate minus inflation. From 2022–2024 most developed countries had negative real rates (cash interest below inflation) — that&#x27;s why investors moved into equities and fixed-rate bonds despite the volatility. Real rates above 1% are historically rare and usually short-lived.</div></div></div>
   <div class="ad-slot">Advertisement</div>
 </div>
+<script>
+function calculate(){
+  var amount  = parseFloat(document.getElementById('amount').value)  || 0;
+  var infRate = parseFloat(document.getElementById('infRate').value) || 0;
+  var years   = parseInt(document.getElementById('years').value, 10) || 0;
+
+  var i = infRate / 100;
+  // Future nominal price of the same basket; today's purchasing power of that nominal sum.
+  var future = amount * Math.pow(1 + i, years);
+  var power  = amount / Math.pow(1 + i, years);
+  var loss   = amount - power;
+  var pctLost = amount > 0 ? (loss / amount) * 100 : 0;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-future').textContent = fmt(future);
+  document.getElementById('r-power').textContent  = fmt(power);
+  document.getElementById('r-loss').textContent   = fmt(loss);
+  document.getElementById('r-pct').textContent    = (Math.round(pctLost * 10) / 10) + '%';
+
+  // Year-by-year — keep table reasonable (cap rows shown at 30)
+  var maxRows = Math.min(years, 30);
+  var rows = '';
+  for(var y = 1; y <= maxRows; y++){
+    var f = amount * Math.pow(1 + i, y);
+    var p = amount / Math.pow(1 + i, y);
+    var l = amount - p;
+    rows += '<tr><td>' + y + '</td><td class="td-right">' + fmt(f) + '</td><td class="td-right">' + fmt(p) + '</td><td class="td-right">' + fmt(l) + '</td></tr>';
+  }
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>

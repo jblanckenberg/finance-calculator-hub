@@ -294,6 +294,62 @@
   <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What is net worth?</div><div class="faq-a">Net worth is the total value of everything you own (assets) minus everything you owe (liabilities). It is the single most important number in personal finance — a snapshot of your overall financial health. Positive net worth means you own more than you owe.</div></div><div class="faq-item"><div class="faq-q">What is a good net worth by age?</div><div class="faq-a">A common benchmark: by 30, have 1x your annual salary saved; by 40, 3x; by 50, 6x; by 60, 8x. These are guidelines only — your goals, lifestyle, and country matter more than benchmarks.</div></div><div class="faq-item"><div class="faq-q">What counts as an asset in net worth?</div><div class="faq-a">Anything you own that has resale value: cash, bank balances, retirement accounts, taxable investments, property at its current market value, vehicles at their used market value, valuable collectibles. Exclude personal effects (clothes, kitchenware) unless individually valuable. Use realistic prices — not what you paid or what you&#x27;d like to sell for.</div></div><div class="faq-item"><div class="faq-q">How often should I update my net worth?</div><div class="faq-a">Quarterly is enough for most people. Monthly if you&#x27;re aggressively paying down debt or building a deposit and want the feedback loop. Annually is the minimum — pick a date (e.g. each birthday or January 1) and stick with it. The trend matters far more than the absolute number.</div></div><div class="faq-item"><div class="faq-q">Does net worth include retirement accounts?</div><div class="faq-a">Yes. Include the full balance of 401(k), IRA, RA, SIPP, and pension fund accounts at their current market value. Some people calculate a separate &#x27;liquid net worth&#x27; excluding retirement and home equity to see what they could access if needed today — both numbers are useful.</div></div><div class="faq-item"><div class="faq-q">USA vs UK vs South Africa: what&#x27;s the median net worth?</div><div class="faq-a">Federal Reserve Survey of Consumer Finances (2022 latest, USA): median household net worth $192,700. UK (ONS Wealth and Assets Survey, 2020): median household wealth £302,500 (heavily inflated by pension and property values). South Africa (Stats SA, 2017): median is much lower, around R125,000 — wealth inequality is far higher in SA. Compare against your age band rather than the overall median, which is dominated by older households.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common net-worth tracking mistake?</div><div class="faq-a">Inflating asset values. People mark property at peak market, vehicles at sticker price, and crypto at the all-time high. Use realistic, market-comparable prices: property at the Zillow/Zoopla/Property24 estimate or a fresh valuation; vehicles at the Kelly Blue Book/Auto Trader/AutoTrader.co.za &#x27;trade-in&#x27; price; investments at the actual portfolio value. Optimistic valuations make tracking trends meaningless.</div></div><div class="faq-item"><div class="faq-q">What if my net worth is negative?</div><div class="faq-a">Common in your 20s — student loans, car loans, no investments yet. The metric to watch is monthly change, not the absolute number. As long as net worth is rising each quarter (paying down debt or building savings), you&#x27;re moving in the right direction. The fastest paths out: aggressive student-loan repayment, building a starter emergency fund, then 401(k)/ISA/RA contributions to capture compounding.</div></div><div class="faq-item"><div class="faq-q">I have my net worth — what&#x27;s the next move?</div><div class="faq-a">Compare it against the age benchmarks (1× salary by 30, 3× by 40, 6× by 50). If you&#x27;re behind, the levers are: increase savings rate, capture employer match, pay down high-rate debt. If you&#x27;re ahead, focus on asset allocation and tax-shelter usage. Track quarterly using a consistent date — your birthday or January 1 are popular — to see the trend rather than noise.</div></div><div class="faq-item"><div class="faq-q">Net worth vs liquid net worth — which matters more?</div><div class="faq-a">Both, for different decisions. Total net worth tells you long-term wealth and retirement readiness — it includes home equity and locked-up retirement accounts. Liquid net worth (cash + non-retirement investments minus all debt) tells you what&#x27;s actually available for emergencies, opportunities, or career changes. Aim to grow both; a high total net worth with near-zero liquid net worth is fragile.</div></div></div>
   <div class="ad-slot">Advertisement</div>
 </div>
+<script>
+function calculate(){
+  function val(id){ return parseFloat(document.getElementById(id).value) || 0; }
+
+  var assets = [
+    { label: 'Cash & Savings',          v: val('cash')       },
+    { label: 'Investments / Stocks',    v: val('invest')     },
+    { label: 'Retirement Accounts',     v: val('retire')     },
+    { label: 'Property Value',          v: val('property')   },
+    { label: 'Vehicle Value',           v: val('vehicle')    },
+    { label: 'Other Assets',            v: val('otherAsset') }
+  ];
+  var liabs = [
+    { label: 'Mortgage Balance',        v: val('mortgageBal') },
+    { label: 'Car Loan Balance',        v: val('carLoan')     },
+    { label: 'Credit Card Debt',        v: val('ccDebt')      },
+    { label: 'Student Loans',           v: val('studLoan')    },
+    { label: 'Other Loans',             v: val('otherLiab')   }
+  ];
+
+  var totalAssets = assets.reduce(function(a, x){ return a + x.v; }, 0);
+  var totalLiabs  = liabs.reduce(function(a, x){ return a + x.v; }, 0);
+  var netWorth    = totalAssets - totalLiabs;
+  var ratio       = totalLiabs > 0 ? (totalAssets / totalLiabs) * 100 : 0;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-nw').textContent     = fmt(netWorth);
+  document.getElementById('r-assets').textContent = fmt(totalAssets);
+  document.getElementById('r-liab').textContent   = fmt(totalLiabs);
+  document.getElementById('r-ratio').textContent  = totalLiabs > 0 ? Math.round(ratio) + '%' : '∞';
+
+  // Recolour net worth red when negative
+  var nwEl = document.getElementById('r-nw');
+  nwEl.classList.toggle('positive', netWorth >= 0);
+  nwEl.classList.toggle('negative', netWorth < 0);
+
+  var total = totalAssets + totalLiabs;
+  function row(label, v, isLiab){
+    var pct = total > 0 ? (v / total) * 100 : 0;
+    var sign = isLiab ? '−' : '';
+    return '<tr><td>' + (isLiab ? '<em>' + label + '</em>' : label) + '</td>'
+         + '<td class="td-right">' + sign + fmt(v) + '</td>'
+         + '<td class="td-right">' + (Math.round(pct * 10) / 10) + '%</td></tr>';
+  }
+  var rows = assets.map(function(a){ return row(a.label, a.v, false); }).join('')
+           + liabs.map(function(a){  return row(a.label, a.v, true);  }).join('');
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
 
 
 
