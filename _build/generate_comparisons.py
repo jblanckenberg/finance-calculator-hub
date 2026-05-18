@@ -39,6 +39,7 @@ TEMPLATE_DIR = BUILD_DIR / "templates"
 DATA_FILE = BUILD_DIR / "data" / "comparisons.json"
 SCHEMA_FILE = BUILD_DIR / "schemas" / "comparison.schema.json"
 AUTHOR_FILE = BUILD_DIR / "data" / "author.json"
+ADSENSE_FILE = BUILD_DIR / "data" / "adsense.json"
 
 
 def load_data() -> dict:
@@ -51,6 +52,15 @@ def load_schema() -> dict:
 
 def load_author() -> dict:
     return json.loads(AUTHOR_FILE.read_text(encoding="utf-8"))
+
+
+def load_adsense() -> dict | None:
+    """Mirror of generate.py's adsense loader — comparison pages share the
+    same _base.html footer leaderboard slot, so they need the same context."""
+    try:
+        return json.loads(ADSENSE_FILE.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return None
 
 
 def validate_all(data: dict, schema: dict) -> None:
@@ -128,7 +138,7 @@ def build_breadcrumb_html(comparison: dict) -> str:
     )
 
 
-def render_one(comparison: dict, author: dict, *, env: Environment | None = None) -> str:
+def render_one(comparison: dict, author: dict, *, env: Environment | None = None, adsense: dict | None = None) -> str:
     env = env or _env()
     canonical = f"{SITE_URL}/compare/{comparison['slug']}/"
     ctx = {
@@ -149,6 +159,9 @@ def render_one(comparison: dict, author: dict, *, env: Environment | None = None
         # editorial block (rendered by _base.html)
         "last_reviewed_iso": LAST_REVIEWED_ISO,
         "last_reviewed_display": LAST_REVIEWED_DISPLAY,
+        # AdSense slot IDs — same source of truth as calc pages so the top
+        # leaderboard + footer leaderboard render on /compare/ pages too.
+        "adsense": adsense,
         # comparison-specific
         "comparison": comparison,
         "author": author,
@@ -178,6 +191,7 @@ def render_all(
     data = load_data()
     validate_all(data, load_schema())
     author = load_author()
+    adsense = load_adsense()
     env = _env()
     written: list[Path] = []
     skipped_drafts: list[str] = []
@@ -187,7 +201,7 @@ def render_all(
         if c["status"] != "published" and not include_drafts:
             skipped_drafts.append(c["slug"])
             continue
-        html = render_one(c, author, env=env)
+        html = render_one(c, author, env=env, adsense=adsense)
         if apply:
             target = write_one(c, html, root=root)
             written.append(target)

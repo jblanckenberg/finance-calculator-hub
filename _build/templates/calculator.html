@@ -17,9 +17,20 @@
 {% set _body_below_keyconcepts = _parts2[1] if _parts2|length > 1 else '' %}
 
 {{ _body_above_howto | safe }}
+{# RESULTS ad — sits between the calc widget and the educational HowTo
+   block, which is the same position as the legacy mid-page placeholder. #}
+<div class="container" style="padding-top:0">
+  {% set slot_name = 'results' %}
+  {% include "partials/ad_slot.html" %}
+</div>
 {% include "partials/how_to_steps.html" %}
 {% include "partials/try_scenarios.html" %}
 {{ _body_middle | safe }}
 {% include "partials/key_concepts.html" %}
+{# EDU ad — sits between Key concepts and the FAQ / editorial trailer. #}
+<div class="container" style="padding-top:0">
+  {% set slot_name = 'edu' %}
+  {% include "partials/ad_slot.html" %}
+</div>
 {{ _body_below_keyconcepts | safe }}
 {% endblock %}

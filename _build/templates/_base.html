@@ -13,8 +13,9 @@
 <body>
 {% include "partials/header.html" %}
 
-<!-- Ad slot top -->
+<!-- Ad slot top (leaderboard above H1) -->
 <div class="container">
+  {% set slot_name = 'top' %}
   {% include "partials/ad_slot.html" %}
 </div>
 
@@ -38,6 +39,16 @@
   </section>
 </div>
 {% endif %}
+
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+  {% set slot_name = 'footer' %}
+  {% include "partials/ad_slot.html" %}
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
 
 {% include "partials/footer.html" %}
 

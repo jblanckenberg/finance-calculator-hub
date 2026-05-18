@@ -268,6 +268,14 @@ class Renderer:
             self._author = json.loads(author_path.read_text(encoding="utf-8"))
         except FileNotFoundError:
             self._author = None
+        # AdSense slot IDs — single source of truth for the 4 manual placements
+        # (top, results, edu, footer). Templates render `<ins class="adsbygoogle">`
+        # blocks from these IDs; missing file degrades gracefully (no ad markup).
+        adsense_path = Path(__file__).resolve().parent / "data" / "adsense.json"
+        try:
+            self._adsense = json.loads(adsense_path.read_text(encoding="utf-8"))
+        except FileNotFoundError:
+            self._adsense = None
 
     def _common_ctx(self, *, page_title: str, page_description: str, canonical_url: str, h1: str, subtitle: str, breadcrumb_items: list[tuple[str, str]]) -> dict:
         crumbs_html_parts: list[str] = []
@@ -287,6 +295,7 @@ class Renderer:
             "current_year": _dt.date.today().year,
             "breadcrumb_html": "".join(crumbs_html_parts),
             "author": self._author,
+            "adsense": self._adsense,
             "last_reviewed_iso": LAST_REVIEWED_ISO,
             "last_reviewed_display": LAST_REVIEWED_DISPLAY,
         }

@@ -1,2 +1,31 @@
-{# templates/partials/ad_slot.html #}
-<div class="ad-slot">Advertisement</div>
+{# templates/partials/ad_slot.html
+   Renders one <ins class="adsbygoogle"> block for the slot named in `slot_name`.
+
+   Usage from a parent template:
+     {% set slot_name = 'top' %}{% include 'partials/ad_slot.html' %}
+     {% set slot_name = 'results' %}{% include 'partials/ad_slot.html' %}
+     {% set slot_name = 'edu' %}{% include 'partials/ad_slot.html' %}
+     {% set slot_name = 'footer' %}{% include 'partials/ad_slot.html' %}
+
+   `slot_name` keys into adsense.slots (loaded from data/adsense.json by
+   generate.py and exposed via _common_ctx). Per-slot CLS-defending min-heights
+   are set inline so the layout reserves space even before the ad fills.
+
+   The AdSense library (adsbygoogle.js) is lazy-loaded once by
+   partials/analytics.html via an IntersectionObserver watching .ad-slot.
+   Each rendered block here keeps that .ad-slot class so the loader still
+   triggers on first viewport intersection. #}
+{% if adsense and slot_name and adsense.slots[slot_name] %}
+{% set _slot_id = adsense.slots[slot_name] %}
+{% set _min_height = {'top': 90, 'results': 250, 'edu': 250, 'footer': 90}[slot_name] %}
+{% set _format = {'top': 'horizontal', 'results': 'auto', 'edu': 'auto', 'footer': 'horizontal'}[slot_name] %}
+<div class="ad-slot ad-slot-{{ slot_name }}" style="min-height:{{ _min_height }}px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:{{ _min_height }}px"
+       data-ad-client="{{ adsense.client }}"
+       data-ad-slot="{{ _slot_id }}"
+       data-ad-format="{{ _format }}"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{% endif %}

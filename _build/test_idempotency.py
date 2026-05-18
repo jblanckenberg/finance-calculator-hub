@@ -66,3 +66,33 @@ def test_render_includes_adsense_lazy_loader():
     out = _render_compound_interest()
     assert "adsbygoogle.js" in out
     assert "IntersectionObserver" in out
+
+
+def test_render_emits_four_adsbygoogle_ins_blocks():
+    """FC Task 1.3 — four manual AdSense placements: top, results, edu, footer.
+
+    Confirms every calc page renders all four <ins class="adsbygoogle">
+    blocks (one per slot) so AdSense fills them based on consent state."""
+    out = _render_compound_interest()
+    assert out.count('class="adsbygoogle"') == 4
+
+
+def test_render_includes_each_adsense_slot_id_once():
+    """Each of the four slot IDs must appear exactly once per page so we
+    don't accidentally double-render a slot via overlapping template paths."""
+    out = _render_compound_interest()
+    for slot_id in ("4461919959", "7963163804", "1620134192", "5980987973"):
+        assert out.count(f'data-ad-slot="{slot_id}"') == 1, f"slot {slot_id} not rendered exactly once"
+
+
+def test_render_includes_adsense_client_id():
+    out = _render_compound_interest()
+    assert 'data-ad-client="ca-pub-5092336325075679"' in out
+
+
+def test_render_footer_slot_is_desktop_only():
+    """Footer leaderboard must be wrapped in the hidden-on-mobile container
+    so we don't violate AdSense policy on mobile (no anchor-style sticky)."""
+    out = _render_compound_interest()
+    assert "ad-footer-desktop" in out
+    assert "@media (min-width: 768px)" in out
