@@ -2,13 +2,24 @@
 {% extends "_base.html" %}
 
 {% block body_main %}
-{# The per-calc body — calculator form, results, FAQ — is loaded as raw HTML from
-   _build/bodies/<slug>.html during the migration. This keeps the live calculator JS
-   untouched while the head/header/footer are templated. #}
-{{ body_html | safe }}
+{# The per-calc body — calculator form, results, methodology, FAQ — is loaded
+   as raw HTML from _build/bodies/<slug>.html. Two marker comments inside the
+   body let us inject the blueprint sections in the right order:
+     - <!-- HOWTO_AFTER_CALC -->       splits body into pre-calc-end / post
+     - <!-- KEYCONCEPTS_BEFORE_FAQ --> splits post into pre-FAQ / FAQ-and-after
+   So the final visible order is: calc widget → HowTo → Try scenarios → prose
+   (methodology, related) → Key concepts → FAQ → editorial trailer. #}
+{% set _parts1 = body_html.split('<!-- HOWTO_AFTER_CALC -->') %}
+{% set _body_above_howto = _parts1[0] %}
+{% set _body_rest = _parts1[1] if _parts1|length > 1 else '' %}
+{% set _parts2 = _body_rest.split('<!-- KEYCONCEPTS_BEFORE_FAQ -->') %}
+{% set _body_middle = _parts2[0] %}
+{% set _body_below_keyconcepts = _parts2[1] if _parts2|length > 1 else '' %}
 
-{# Blueprint sections that all 19 calcs share — rendered from data, not body source. #}
+{{ _body_above_howto | safe }}
 {% include "partials/how_to_steps.html" %}
 {% include "partials/try_scenarios.html" %}
+{{ _body_middle | safe }}
 {% include "partials/key_concepts.html" %}
+{{ _body_below_keyconcepts | safe }}
 {% endblock %}
