@@ -158,6 +158,14 @@
 </div>
 
 
+
+
+
+
+
+
+
+
 <div class="container">
   <div class="ad-slot">Advertisement</div>
   <p class="breadcrumb"><a href="/">Home</a> › 📊 Inflation Impact Calculator</p>
@@ -187,6 +195,58 @@
 <div style="overflow-x:auto"><table class="breakdown-table"><thead><tr><th>Year</th><th class="td-right">Future Price</th><th class="td-right">Purchasing Power</th><th class="td-right">Value Lost</th></tr></thead>
 <tbody id="breakdown-body"></tbody></table></div>
 <div class="action-bar"><button class="btn-action" onclick="window.print()">🖨️ Print</button><button class="btn-action" onclick="saveToFile()">💾 Save</button></div></div>
+  
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 1 minute.</p>
+    
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter the current amount of money you want to project</li>
+      
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Set an annual inflation rate (USA ~3%, UK ~2.5%, South Africa ~5% long-run averages)</li>
+      
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Pick the number of years over which to apply the inflation effect</li>
+      
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Click Calculate to see the future cost of the same goods and the lost purchasing power</li>
+      
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Review the year-by-year breakdown to see how the erosion compounds</li>
+      
+    </ol>
+  </section>
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="try-scenarios" aria-labelledby="try-scenarios-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#f4f6fb;border-radius:8px">
+    <h2 id="try-scenarios-heading" style="margin:0 0 6px;color:#1B3A5C;font-size:1.25rem">Try these scenarios</h2>
+    <p style="margin:0 0 12px;font-size:0.95em;color:#444">Tap a scenario to load it into the calculator above.</p>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      
+      <li>
+        <a class="try-scenario-link" href="?amount=100000&amp;infRate=3&amp;years=20#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">$100,000 in 20 years at 3%</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?amount=50000&amp;infRate=4&amp;years=10#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">$50,000 in 10 years at 4%</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?amount=1000000&amp;infRate=2.5&amp;years=30#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">$1m in 30 years at 2.5%</a>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+
+
+
   <div class="ad-slot">Advertisement</div>
   <div class="related"><h2>Related Calculators</h2><div class="related-grid">
       <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
@@ -196,6 +256,18 @@
       <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
       <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
     </div></div>
+  
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>What inflation does.</strong> Inflation is the steady erosion of money's purchasing power. At 3% annual inflation, $100 today buys what $74 buys in 10 years and $55 in 20 years. The calculator runs this in reverse: it shows what your future amount is worth in today's dollars.</p><p><strong>How it's measured.</strong> Headline inflation is the Consumer Price Index (CPI) — a basket of typical household spending. The <a href="https://www.bls.gov/cpi/" rel="noopener">U.S. BLS</a>, <a href="https://www.ons.gov.uk/" rel="noopener">UK ONS</a>, and <a href="https://www.statssa.gov.za/" rel="noopener">Stats SA</a> all publish monthly CPI figures. 'Core' inflation strips out volatile food and energy.</p><p><strong>Personal inflation differs.</strong> Your actual inflation depends on what you buy. Healthcare and college tuition have outpaced headline CPI in the US for decades. Tech goods often fall in price.</p><p><strong>Inflation hedges.</strong> Historically, stocks, Treasury Inflation-Protected Securities (TIPS), and inflation-linked gilts have kept pace with inflation over long horizons. Cash and nominal bonds lose purchasing power when inflation exceeds their yield.</p><p><strong>Long-term averages.</strong> The US has averaged about 3% CPI inflation since 1913. The UK averaged 2-3% post-1992 (since inflation targeting). South Africa has run 5-6% over the past two decades. Use a regional average, not the headline of any single year.</p>
+  </section>
+</div>
+
+
+
   <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What is inflation?</div><div class="faq-a">Inflation is the rate at which prices rise over time, reducing the purchasing power of money. At 3% annual inflation, something costing $100 today will cost $134 in 10 years and $181 in 20 years.</div></div><div class="faq-item"><div class="faq-q">What inflation rate should I use?</div><div class="faq-a">Long-term average CPI inflation: USA ~3%, UK ~2.5%, South Africa ~5%. For conservative planning, use a slightly higher rate than the current official figure.</div></div><div class="faq-item"><div class="faq-q">What is the difference between real and nominal returns?</div><div class="faq-a">Nominal return is the headline rate before inflation. Real return subtracts inflation: real = nominal − inflation. If your investment returns 8% nominal and inflation is 3%, your real return is 5% — what your purchasing power actually grew. Always plan retirement and long-term goals in real terms.</div></div><div class="faq-item"><div class="faq-q">How does inflation affect retirement savings?</div><div class="faq-a">Inflation compounds against your savings just like interest compounds for them. A retirement target of £40,000 a year today needs about £72,000 a year in 25 years at 2.5% inflation. Plan your retirement income in today&#x27;s money, then use the calculator to convert to a future nominal figure using your expected inflation rate.</div></div><div class="faq-item"><div class="faq-q">Is high inflation good or bad for borrowers?</div><div class="faq-a">Good for borrowers with fixed-rate debt — the real value of what you owe shrinks each year while your nominal income tends to rise with inflation. Bad for savers earning less than the inflation rate (real return is negative). Variable-rate borrowers face the opposite: higher rates as central banks fight inflation.</div></div><div class="faq-item"><div class="faq-q">USA vs UK vs South Africa: which inflation index should I use?</div><div class="faq-a">USA: the BLS Consumer Price Index for All Urban Consumers (CPI-U) is the standard headline rate, with Core CPI (excludes food + energy) for trend. UK: ONS publishes CPI (the Bank of England target index, 2% target) and CPIH (which includes owner-occupier housing costs). South Africa: Stats SA publishes Headline CPI (SARB target 3–6%). Use your country&#x27;s headline CPI for long-term planning; long-run averages are USA ~3%, UK ~2.5%, SA ~5%.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common inflation-planning mistake?</div><div class="faq-a">Anchoring on a single recent year. People plan with 2022&#x27;s 8% headline inflation or 2020&#x27;s 1% — neither is a useful long-run number. Use a 30+ year average (USA 3%, UK 2.5%, SA 5%) plus a small buffer for conservatism. The other common error is forgetting to inflate target amounts: a £40k/year retirement target today needs £72k in 25 years at 2.5% inflation.</div></div><div class="faq-item"><div class="faq-q">What if inflation suddenly spikes to 10%+?</div><div class="faq-a">Short bursts (1–2 years) of high inflation barely move 30-year projections — the long-run average is the dominant input. Sustained high inflation hurts cash and bonds; equities historically keep pace with inflation over 5+ year periods because company revenues rise with prices. The biggest practical risk is variable-rate debt: at 10% rates, a £200k mortgage costs about £900 more per month than at 4%.</div></div><div class="faq-item"><div class="faq-q">I see the lost purchasing power — what&#x27;s the next action?</div><div class="faq-a">Confirm every long-term goal is denominated in real terms (today&#x27;s money), then check your investments earn at least the inflation rate. Cash sitting in a low-yield account is guaranteed to lose real value; high-yield savings, ISAs, TFSAs, and equity investments are the standard defences. If you have fixed-rate debt at below current inflation, you&#x27;re already winning — don&#x27;t rush to pay it off early.</div></div><div class="faq-item"><div class="faq-q">Inflation vs interest rates — what&#x27;s the relationship?</div><div class="faq-a">Central banks (Fed, BoE, SARB) raise interest rates when inflation runs above target and cut when it&#x27;s below. The real return on cash equals nominal rate minus inflation. From 2022–2024 most developed countries had negative real rates (cash interest below inflation) — that&#x27;s why investors moved into equities and fixed-rate bonds despite the volatility. Real rates above 1% are historically rare and usually short-lived.</div></div></div>
   <div class="ad-slot">Advertisement</div>
 </div>

@@ -14,5 +14,19 @@
 {% endblock %}
 
 {% block body_main %}
-{{ body_html | safe }}
+{# Variant pages share their parent calc's body, so the same HOWTO_AFTER_CALC
+   and KEYCONCEPTS_BEFORE_FAQ markers govern blueprint section placement. #}
+{% set _parts1 = body_html.split('<!-- HOWTO_AFTER_CALC -->') %}
+{% set _body_above_howto = _parts1[0] %}
+{% set _body_rest = _parts1[1] if _parts1|length > 1 else '' %}
+{% set _parts2 = _body_rest.split('<!-- KEYCONCEPTS_BEFORE_FAQ -->') %}
+{% set _body_middle = _parts2[0] %}
+{% set _body_below_keyconcepts = _parts2[1] if _parts2|length > 1 else '' %}
+
+{{ _body_above_howto | safe }}
+{% include "partials/how_to_steps.html" %}
+{% include "partials/try_scenarios.html" %}
+{{ _body_middle | safe }}
+{% include "partials/key_concepts.html" %}
+{{ _body_below_keyconcepts | safe }}
 {% endblock %}

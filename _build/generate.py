@@ -366,12 +366,15 @@ class Renderer:
         ctx["faq_ld"] = None
         ctx["howto_ld"] = None
         ctx["article_ld"] = None
-        # Variant pages currently don't render the new blueprint sections;
-        # supply empty defaults so partials short-circuit cleanly.
-        ctx["how_to_steps"] = []
-        ctx["how_to_total_time_display"] = None
-        ctx["scenarios"] = []
-        ctx["key_concepts_html"] = ""
+        # Variant pages reuse the parent calc's body (same widget, same prose,
+        # same FAQ), so the parent's HowTo steps, Try scenarios, and Key
+        # concepts apply unchanged. Each partial short-circuits when its data
+        # field is empty, so calcs without these fields still render cleanly.
+        parent_how_to = parent_data.get("schemaHowTo") or {}
+        ctx["how_to_steps"] = parent_how_to.get("steps") or []
+        ctx["how_to_total_time_display"] = humanise_iso_duration(parent_how_to.get("totalTime"))
+        ctx["scenarios"] = parent_data.get("scenarios") or []
+        ctx["key_concepts_html"] = parent_data.get("keyConcepts") or ""
         ctx["body_html"] = body_html
         ctx["intro"] = intro
         ctx["intro_is_stub"] = stub
