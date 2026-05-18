@@ -27,7 +27,7 @@
 <div class="form-group"><label for="current">Current Emergency Fund <span class="hint" id="s3">($)</span></label><input type="number" id="current" value="1000" min="0" oninput="calculate()" inputmode="decimal"></div>
 <div class="form-group"><label for="monthlySave">Monthly Amount You Can Save <span class="hint" id="s4">($)</span></label><input type="number" id="monthlySave" value="300" min="0" oninput="calculate()" inputmode="decimal"></div>
 <button class="btn-calc" onclick="calculate()">Calculate →</button></div>
-  <div class="results" id="results"><div class="results-title">Your Emergency Fund</div>
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result"><div class="results-title">Your Emergency Fund</div>
 <div class="result-grid">
   <div class="result-item"><div class="result-value positive" id="r-target">$0</div><div class="result-label">Recommended Fund Size</div></div>
   <div class="result-item"><div class="result-value" id="r-months-cover">0 months</div><div class="result-label">Recommended Coverage</div></div>
@@ -39,6 +39,7 @@
 <table class="breakdown-table"><thead><tr><th>Scenario</th><th class="td-right">Recommended Fund</th><th class="td-right">Months to Save</th></tr></thead>
 <tbody id="breakdown-body"></tbody></table>
 <div class="action-bar"><button class="btn-action" onclick="window.print()">🖨️ Print</button><button class="btn-action" onclick="saveToFile()">💾 Save</button></div></div>
+  <!-- HOWTO_AFTER_CALC -->
   <div class="ad-slot">Advertisement</div>
   <div class="related"><h2>Related Calculators</h2><div class="related-grid">
       <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
@@ -48,6 +49,54 @@
       <a href="/credit-card-payoff/" class="related-card">💳 Credit Card Payoff</a>
       <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
     </div></div>
-  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How many months of expenses should my emergency fund cover?</div><div class="faq-a">3 months is the minimum. 6 months is the standard recommendation. If you have dependants, variable income, or work in a difficult job market, aim for 9–12 months. This calculator sets your target based on your personal situation.</div></div><div class="faq-item"><div class="faq-q">Where should I keep my emergency fund?</div><div class="faq-a">In a high-yield savings account — not invested in stocks. It must be instantly accessible without risk of loss. In South Africa, a 32-day notice account or money market fund is a good option. In the UK, an easy-access Cash ISA keeps it tax-free.</div></div><div class="faq-item"><div class="faq-q">Should I build an emergency fund before paying off debt?</div><div class="faq-a">Build a starter fund of one month's essential expenses first, then aggressively pay high-interest debt (over 10% APR), then build the full 3-6 month fund. A starter fund prevents new debt during a small emergency. Going debt-first with zero cash buffer almost always triggers more credit-card debt within months.</div></div><div class="faq-item"><div class="faq-q">Is 6 months expenses enough for an emergency fund?</div><div class="faq-a">For most salaried employees with stable income and dependants, yes. Single-income households, the self-employed, those in volatile industries, or anyone with health conditions should aim for 9-12 months. The figure is essential expenses — rent, food, utilities, minimum debt, insurance — not your full lifestyle spend.</div></div><div class="faq-item"><div class="faq-q">Can I invest my emergency fund to earn more?</div><div class="faq-a">No — capital preservation matters more than yield for an emergency fund. A 30% market drawdown the same week you lose your job is the exact scenario this money exists to prevent. Stick to a high-yield savings or money-market account. If you have more than 12 months saved, the excess can be invested separately.</div></div></div>
+  <!-- KEYCONCEPTS_BEFORE_FAQ -->
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How many months of expenses should my emergency fund cover?</div><div class="faq-a">3 months is the minimum. 6 months is the standard recommendation. If you have dependants, variable income, or work in a difficult job market, aim for 9–12 months. This calculator sets your target based on your personal situation.</div></div><div class="faq-item"><div class="faq-q">Where should I keep my emergency fund?</div><div class="faq-a">In a high-yield savings account — not invested in stocks. It must be instantly accessible without risk of loss. In South Africa, a 32-day notice account or money market fund is a good option. In the UK, an easy-access Cash ISA keeps it tax-free.</div></div><div class="faq-item"><div class="faq-q">Should I build an emergency fund before paying off debt?</div><div class="faq-a">Build a starter fund of one month&#x27;s essential expenses first, then aggressively pay high-interest debt (over 10% APR), then build the full 3-6 month fund. A starter fund prevents new debt during a small emergency. Going debt-first with zero cash buffer almost always triggers more credit-card debt within months.</div></div><div class="faq-item"><div class="faq-q">Is 6 months expenses enough for an emergency fund?</div><div class="faq-a">For most salaried employees with stable income and dependants, yes. Single-income households, the self-employed, those in volatile industries, or anyone with health conditions should aim for 9-12 months. The figure is essential expenses — rent, food, utilities, minimum debt, insurance — not your full lifestyle spend.</div></div><div class="faq-item"><div class="faq-q">Can I invest my emergency fund to earn more?</div><div class="faq-a">No — capital preservation matters more than yield for an emergency fund. A 30% market drawdown the same week you lose your job is the exact scenario this money exists to prevent. Stick to a high-yield savings or money-market account. If you have more than 12 months saved, the excess can be invested separately.</div></div><div class="faq-item"><div class="faq-q">USA vs UK vs South Africa: best account to hold an emergency fund?</div><div class="faq-a">USA: high-yield savings account at an FDIC-insured online bank (Ally, Marcus, Discover) currently paying 4–5% — interest is taxable. UK: easy-access Cash ISA (tax-free interest, FSCS-protected up to £85,000 per institution) or instant-access savings — currently around 4%. South Africa: a money-market unit trust or a 32-day notice account at a major bank, currently 7–9% — interest is taxable above the annual interest exemption (R23,800 under 65, R34,500 if 65+).</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common emergency-fund mistake?</div><div class="faq-a">Keeping it in the same checking account as everyday spending. Money you can see is money you&#x27;ll spend — research consistently shows people raid &#x27;mental&#x27; emergency funds for non-emergencies. Use a separately named account at a different bank from your day-to-day account, and don&#x27;t link a debit card to it. The friction of moving money back to checking is the friction that protects the fund.</div></div><div class="faq-item"><div class="faq-q">What if I lose my job before the fund is fully built?</div><div class="faq-a">A partial fund still helps. Three weeks of expenses is better than zero — it covers immediate bills while you file for unemployment (USA), Universal Credit (UK), or UIF benefits (SA). The standard advice is to immediately cut variable spending to essential-only (rent/bond, food, utilities, minimum debt, insurance) — this stretches a partial fund from say 2 months to 4 months of essential-only coverage.</div></div><div class="faq-item"><div class="faq-q">I&#x27;ve reached my target — what&#x27;s next?</div><div class="faq-a">Redirect what you were saving each month to the next-priority goal: high-interest debt → retirement contributions → other savings goals. Set a quarterly reminder to top the fund back up if you ever draw from it, and rebalance the target every year as your essential expenses change (rent rises, new mortgage, children, etc.). Most people set a target once and never recalibrate.</div></div><div class="faq-item"><div class="faq-q">Emergency fund vs debt payoff — which first?</div><div class="faq-a">Build one month of essential expenses first, then aggressively pay off debt above 10% APR, then build the rest of the 3–6 month fund. Going debt-only without a starter fund leads to new debt the first time a car repair or medical bill hits — which is why most pure &#x27;debt-first&#x27; plans fail. The Dave Ramsey order (small fund → debt → full fund) reflects two decades of real-world data on what actually works.</div></div></div>
   <div class="ad-slot">Advertisement</div>
 </div>
+<script>
+function calculate(){
+  var income      = parseFloat(document.getElementById('income').value)      || 0;
+  var expenses    = parseFloat(document.getElementById('expenses').value)    || 0;
+  var jobSec      = parseFloat(document.getElementById('jobSec').value)      || 6;
+  var deps        = parseFloat(document.getElementById('deps').value)        || 0;
+  var current     = parseFloat(document.getElementById('current').value)     || 0;
+  var monthlySave = parseFloat(document.getElementById('monthlySave').value) || 0;
+
+  // Recommended coverage in months. Job-security baseline plus +1 month per
+  // dependant (capped so very large families don't push the figure absurd).
+  var depAdjust = Math.min(deps, 6);
+  var months = Math.max(1, Math.round(jobSec + depAdjust));
+
+  var target = expenses * months;
+  var gap    = Math.max(0, target - current);
+  var time   = (monthlySave > 0 && gap > 0) ? Math.ceil(gap / monthlySave) : 0;
+
+  // Localise currency through the global helper from /js/region.js
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-target').textContent       = fmt(target);
+  document.getElementById('r-months-cover').textContent = months + ' months';
+  document.getElementById('r-gap').textContent          = fmt(gap);
+  document.getElementById('r-time').textContent         = (gap === 0) ? 'Funded' : (time + ' mo');
+
+  // Scenario breakdown — 3 / 6 / 9 / 12 months
+  var scenarios = [
+    { label: '3 months (minimum)',     m: 3  },
+    { label: '6 months (standard)',    m: 6  },
+    { label: '9 months (variable income)', m: 9 },
+    { label: '12 months (self-employed)',  m: 12 }
+  ];
+  var rows = scenarios.map(function(s){
+    var fund = expenses * s.m;
+    var moNeeded = (monthlySave > 0) ? Math.ceil(Math.max(0, fund - current) / monthlySave) : '—';
+    return '<tr><td>' + s.label + '</td><td class="td-right">' + fmt(fund) + '</td><td class="td-right">' + (moNeeded === '—' ? '—' : (moNeeded + ' mo')) + '</td></tr>';
+  }).join('');
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>

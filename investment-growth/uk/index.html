@@ -35,11 +35,12 @@
 
   <!-- Google AdSense: paste your code here after approval -->
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "description": "Free UK investment growth calculator. Project a Stocks \u0026 Shares ISA over decades. HMRC capital gains and dividend allowance rules for 2026/27.", "isPartOf": {"@id": "https://finncalc.com/investment-growth/", "@type": "WebApplication"}, "name": "UK Investment Growth Calculator (Stocks \u0026 Shares ISA)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "url": "https://finncalc.com/investment-growth/uk/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "dateModified": "2026-05-17", "description": "Free UK investment growth calculator. Project a Stocks \u0026 Shares ISA over decades. HMRC capital gains and dividend allowance rules for 2026/27.", "isPartOf": {"@id": "https://finncalc.com/investment-growth/", "@type": "WebApplication"}, "name": "UK Investment Growth Calculator (Stocks \u0026 Shares ISA)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "url": "https://finncalc.com/investment-growth/uk/"}</script>
 
 
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/investment-growth/", "name": "\ud83d\ude80 Investment Growth Calculator", "position": 2}, {"@type": "ListItem", "item": "https://finncalc.com/investment-growth/uk/", "name": "UK", "position": 3}]}</script>
+
 
 
 
@@ -155,6 +156,14 @@
 </div>
 
 
+
+
+
+
+
+
+
+
 <div class="container">
   <div class="ad-slot">Advertisement</div>
   <p class="breadcrumb"><a href="/">Home</a> › 🚀 Investment Growth Calculator</p>
@@ -175,7 +184,7 @@
   <div class="form-group"><label for="years">Investment Period (Years)</label><input type="number" id="years" value="20" min="1" max="60" oninput="calculate()" inputmode="decimal"></div>
 </div>
 <button class="btn-calc" onclick="calculate()">Calculate Growth →</button></div>
-  <div class="results" id="results"><div class="results-title">Portfolio Projection</div>
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result"><div class="results-title">Portfolio Projection</div>
 <div class="result-grid">
   <div class="result-item"><div class="result-value positive" id="r-final">$0</div><div class="result-label">Final Portfolio Value</div></div>
   <div class="result-item"><div class="result-value" id="r-gain">$0</div><div class="result-label">Total Investment Gains</div></div>
@@ -187,6 +196,58 @@
 <table class="breakdown-table"><thead><tr><th>Year</th><th class="td-right">Portfolio Value</th><th class="td-right">Total Invested</th><th class="td-right">Total Gains</th></tr></thead>
 <tbody id="breakdown-body"></tbody></table>
 <div class="action-bar"><button class="btn-action" onclick="window.print()">🖨️ Print</button><button class="btn-action" onclick="saveToFile()">💾 Save</button></div></div>
+  
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter your initial investment amount</li>
+      
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Add the annual contribution you plan to make on top</li>
+      
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Set the expected annual return — 7 percent is a common long-term equity assumption</li>
+      
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Pick the investment period in years</li>
+      
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Click Calculate to see your projected portfolio value, total contributions, and interest earned</li>
+      
+    </ol>
+  </section>
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="try-scenarios" aria-labelledby="try-scenarios-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#f4f6fb;border-radius:8px">
+    <h2 id="try-scenarios-heading" style="margin:0 0 6px;color:#1B3A5C;font-size:1.25rem">Try these scenarios</h2>
+    <p style="margin:0 0 12px;font-size:0.95em;color:#444">Tap a scenario to load it into the calculator above.</p>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      
+      <li>
+        <a class="try-scenario-link" href="?initial=10000&amp;annual=6000&amp;rate=7&amp;years=20#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">$10k start + $500/month at 7% for 20 years</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?initial=50000&amp;annual=0&amp;rate=6&amp;years=15#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">$50k lump sum at 6% for 15 years</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?initial=5000&amp;annual=12000&amp;rate=9&amp;years=25#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Aggressive: $5k start + $1,000/month at 9% for 25 years</a>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+
+
+
   <div class="ad-slot">Advertisement</div>
   <div class="related"><h2>Related Calculators</h2><div class="related-grid">
       <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
@@ -196,8 +257,85 @@
       <a href="/net-worth/" class="related-card">🏦 Net Worth</a>
       <a href="/mortgage/" class="related-card">🏠 Mortgage</a>
     </div></div>
-  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What annual return should I use?</div><div class="faq-a">The S&amp;P 500 has averaged ~10%/year before inflation (~7% real). For a balanced portfolio, 6–8% is a common planning assumption. Use a lower rate to be conservative.</div></div><div class="faq-item"><div class="faq-q">How powerful is compound growth?</div><div class="faq-a">Investing $10,000 at 8% for 30 years grows to $100,627 — a 10x return. Add $6,000 per year and it grows to $849,000. Time in the market is the most powerful factor.</div></div><div class="faq-item"><div class="faq-q">What is the Rule of 72?</div><div class="faq-a">A mental shortcut: 72 divided by your annual rate of return is roughly the number of years it takes for your money to double. At 6%, money doubles every 12 years. At 9%, every 8 years. It's accurate within 1% for rates between 5% and 12% — good enough for back-of-envelope retirement planning.</div></div><div class="faq-item"><div class="faq-q">How long does it take to double an investment at 7% return?</div><div class="faq-a">About 10.3 years. The Rule of 72 estimates 72÷7 ≈ 10.3 years, and the exact compound calculation confirms it: $10,000 at 7% compounded annually reaches $19,672 in year 10 and $21,049 in year 11. A 35-year-old investing today doubles their money by age 45 and quadruples it by 55.</div></div><div class="faq-item"><div class="faq-q">Should I use real or nominal returns when projecting growth?</div><div class="faq-a">Real returns (after subtracting inflation) for retirement and long-term goals — they tell you what your money will actually buy. Nominal returns work for short-term goals (under 5 years) where inflation matters less. The S&amp;P 500 has averaged roughly 10% nominal and 7% real over the past century.</div></div></div>
+  
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>Lump sum vs. drip-feed.</strong> A lump-sum invested at day one mathematically outperforms the same money drip-fed monthly, because more of it spends more time in the market. Vanguard research finds lump-sum wins roughly two-thirds of the time over a 10-year horizon. The downside: bigger short-term regret if the market drops the week after you invest.</p><p><strong>Dollar-cost averaging.</strong> Spreading contributions monthly smooths your average purchase price and protects against bad timing. It's mathematically suboptimal but psychologically easier — and most people earn money monthly anyway.</p><p><strong>Real vs. nominal growth.</strong> A 7% nominal return with 3% inflation is a 4% real return. The calculator can be run either way — for long-horizon planning, real returns give you a meaningful purchasing-power figure.</p><p><strong>Sequence and volatility.</strong> Two portfolios with the same average return but different paths end up at different places because of how returns interact with contributions and withdrawals. Higher volatility erodes the compound average (the 'variance drain').</p><p><strong>Costs compound too.</strong> A 1% annual fee on a 7% return is a 14% drag on your gross return. Over 30 years, the difference between a 0.1% index fund and a 1% active fund can be 20-25% of your final balance.</p>
+  </section>
+</div>
+
+
+
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What annual return should I use?</div><div class="faq-a">The S&amp;P 500 has averaged ~10%/year before inflation (~7% real). For a balanced portfolio, 6–8% is a common planning assumption. Use a lower rate to be conservative.</div></div><div class="faq-item"><div class="faq-q">How powerful is compound growth?</div><div class="faq-a">Investing $10,000 at 8% for 30 years grows to $100,627 — a 10x return. Add $6,000 per year and it grows to $849,000. Time in the market is the most powerful factor.</div></div><div class="faq-item"><div class="faq-q">What is the Rule of 72?</div><div class="faq-a">A mental shortcut: 72 divided by your annual rate of return is roughly the number of years it takes for your money to double. At 6%, money doubles every 12 years. At 9%, every 8 years. It&#x27;s accurate within 1% for rates between 5% and 12% — good enough for back-of-envelope retirement planning.</div></div><div class="faq-item"><div class="faq-q">How long does it take to double an investment at 7% return?</div><div class="faq-a">About 10.3 years. The Rule of 72 estimates 72÷7 ≈ 10.3 years, and the exact compound calculation confirms it: $10,000 at 7% compounded annually reaches $19,672 in year 10 and $21,049 in year 11. A 35-year-old investing today doubles their money by age 45 and quadruples it by 55.</div></div><div class="faq-item"><div class="faq-q">Should I use real or nominal returns when projecting growth?</div><div class="faq-a">Real returns (after subtracting inflation) for retirement and long-term goals — they tell you what your money will actually buy. Nominal returns work for short-term goals (under 5 years) where inflation matters less. The S&amp;P 500 has averaged roughly 10% nominal and 7% real over the past century.</div></div><div class="faq-item"><div class="faq-q">USA vs UK vs South Africa: where can I invest tax-free?</div><div class="faq-a">USA: Roth IRA ($7,000/yr) and Roth 401(k) ($23,500/yr) — qualified withdrawals are tax-free. UK: Stocks &amp; Shares ISA (£20,000/yr) — gains, dividends, and interest never taxed. South Africa: TFSA (R36,000/yr, R500,000 lifetime) — all returns tax-free. Investing inside these wrappers can add 1–2 percentage points to your effective return over a 20-year horizon versus a taxed account.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common investment-growth mistake?</div><div class="faq-a">Trying to time the market. Decades of data show that missing the 10 best market days each decade can roughly halve total returns. Most missed days happen in volatile periods right after big drops — exactly when nervous investors sell. Setting a fixed monthly contribution (dollar/pound/rand-cost averaging) and ignoring short-term noise outperforms timing for almost every retail investor.</div></div><div class="faq-item"><div class="faq-q">What if my actual returns are negative for several years?</div><div class="faq-a">It&#x27;s normal — the S&amp;P 500 has had multiple 3-year stretches with negative real returns since 1900. The calculator&#x27;s projected balance assumes a smooth average, but real markets are lumpy. The defence is time horizon (a 25-year run smooths almost any sequence) and dollar-cost averaging (steady contributions buy more units when prices are low). If you&#x27;re 5 years from needing the money, derisk gradually.</div></div><div class="faq-item"><div class="faq-q">I have my projected portfolio value — what&#x27;s next?</div><div class="faq-a">Three actions: (1) confirm the contribution rate is automated, not aspirational; (2) check fees — a 1% annual fee versus 0.1% can shave 25% off a 30-year balance, so use low-cost index funds where possible; (3) decide your withdrawal plan now, not later — at the typical 4% safe-withdrawal rate, a $500,000 portfolio supports $20,000/year of withdrawals, a $1M portfolio supports $40,000.</div></div><div class="faq-item"><div class="faq-q">Investment growth vs simple savings — when does each fit?</div><div class="faq-a">Use investment growth for goals 5+ years out — historical equity returns of 7% real beat savings rates of 1–2% real by a wide margin once you have time to ride out volatility. Use savings (high-yield account, money-market, Cash ISA) for emergency funds and goals under 3 years — capital preservation matters more than yield when you&#x27;ll need the money soon. The 3–5 year zone is the grey area; a balanced fund often fits.</div></div></div>
   <div class="ad-slot">Advertisement</div>
+</div>
+<script>
+function calculate(){
+  var initial = parseFloat(document.getElementById('initial').value) || 0;
+  var annual  = parseFloat(document.getElementById('annual').value)  || 0;
+  var rate    = parseFloat(document.getElementById('rate').value)    || 0;
+  var years   = parseInt(document.getElementById('years').value, 10) || 0;
+
+  var r = rate / 100;
+  var bal = initial;
+  // End-of-year contribution timing for an annual contribution
+  var milestones = []; // value at year y
+  for(var y = 1; y <= years; y++){
+    bal = bal * (1 + r) + annual;
+    if(y % 5 === 0 || y === years){
+      milestones.push({ year: y, value: bal, invested: initial + annual * y });
+    }
+  }
+  if(years === 0){ bal = initial; }
+
+  var totalInvested = initial + annual * years;
+  var totalGain = bal - totalInvested;
+  if(totalGain < 0) totalGain = 0;
+  var multiple = totalInvested > 0 ? bal / totalInvested : 0;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-final').textContent    = fmt(bal);
+  document.getElementById('r-gain').textContent     = fmt(totalGain);
+  document.getElementById('r-invested').textContent = fmt(totalInvested);
+  document.getElementById('r-multiple').textContent = (Math.round(multiple * 10) / 10) + 'x';
+
+  var rows = milestones.map(function(m){
+    var gain = m.value - m.invested;
+    return '<tr><td>' + m.year + '</td><td class="td-right">' + fmt(m.value) + '</td><td class="td-right">' + fmt(m.invested) + '</td><td class="td-right">' + fmt(gain) + '</td></tr>';
+  }).join('');
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+<script>
+// Variant region lock — URL implies region (e.g. /<calc>/uk/), so override
+// the browser-detected default. Mirrors the sa-tax-calculator pattern.
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof setRegion === 'function') setRegion('UK');
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-17">17 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
 </div>
 
 

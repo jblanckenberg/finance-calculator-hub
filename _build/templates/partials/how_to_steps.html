@@ -1,0 +1,18 @@
+{# templates/partials/how_to_steps.html — visible HowTo steps rendered from
+   data.schemaHowTo. Pairs with the HowTo JSON-LD emitted in head so the
+   visible copy and structured data stay in sync. #}
+{% if how_to_steps %}
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    {% if how_to_total_time_display %}
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about {{ how_to_total_time_display }}.</p>
+    {% endif %}
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      {% for step in how_to_steps %}
+      <li id="step-{{ loop.index }}" class="how-to-step" style="margin-bottom:6px">{{ step }}</li>
+      {% endfor %}
+    </ol>
+  </section>
+</div>
+{% endif %}

@@ -61,7 +61,7 @@
   </div>
 
   <!-- Results -->
-  <div class="results" id="results">
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
     <div class="results-title">Your Retirement Projection</div>
     <div class="result-grid">
       <div class="result-item">
@@ -111,6 +111,7 @@
   </div>
 
   <!-- Ad slot mid -->
+  <!-- HOWTO_AFTER_CALC -->
   <div class="ad-slot">Advertisement</div>
 
   <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
@@ -125,29 +126,8 @@
   </section>
 
   <!-- FAQ -->
-  <div class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <div class="faq-q">What is the 401(k) contribution limit for 2026?</div>
-      <div class="faq-a">The IRS sets the 2026 employee elective deferral limit at $23,500. If you are 50 or older, you can contribute an additional $7,500 catch-up, for a total of $31,000. The combined employee + employer limit is $70,000 ($77,500 with catch-up).</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Should I always contribute enough to get the full employer match?</div>
-      <div class="faq-a">Almost always yes. An employer match is a guaranteed 50% to 100% return on the contribution dollars that qualify — no investment in the world reliably beats that. Contribute at least up to the match cap before allocating money elsewhere.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What's a realistic 401(k) growth rate?</div>
-      <div class="faq-a">The S&amp;P 500 has returned roughly 10% per year nominally and 7% real (after inflation) over the long run. 6 to 8 percent is the standard planning assumption. This calculator defaults to 7%.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is a 401(k) better than a Roth IRA?</div>
-      <div class="faq-a">They serve different roles. A 401(k) gives you the tax deduction now and a higher contribution limit; a Roth IRA gives you tax-free withdrawals later but caps at $7,000 a year. Most planners recommend: contribute to the 401(k) up to the match → max the Roth IRA → return to the 401(k).</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I use this calculator if I'm self-employed?</div>
-      <div class="faq-a">Solo 401(k) plans follow the same employee deferral limit ($23,500) but you can also contribute as the employer up to 25% of net self-employment income, capped at the $70,000 total. Set the employer match cap to match your planned employer-side contribution.</div>
-    </div>
-  </div>
+  <!-- KEYCONCEPTS_BEFORE_FAQ -->
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What is the 401(k) contribution limit for 2026?</div><div class="faq-a">The IRS sets the 2026 employee elective deferral limit at $23,500. If you are 50 or older, you can contribute an additional $7,500 catch-up, for a total of $31,000. The combined employee + employer limit is $70,000 ($77,500 with catch-up).</div></div><div class="faq-item"><div class="faq-q">Should I always contribute enough to get the full employer match?</div><div class="faq-a">Almost always yes. An employer match is a guaranteed 50% to 100% return on the contribution dollars that qualify — no investment in the world reliably beats that. Contribute at least up to the match cap before allocating money elsewhere.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s a realistic 401(k) growth rate?</div><div class="faq-a">The S&amp;P 500 has returned roughly 10% per year nominally and 7% real (after inflation) over the long run. 6 to 8 percent is the standard planning assumption. This calculator defaults to 7%.</div></div><div class="faq-item"><div class="faq-q">Is a 401(k) better than a Roth IRA?</div><div class="faq-a">They serve different roles. A 401(k) gives you the tax deduction now and a higher contribution limit; a Roth IRA gives you tax-free withdrawals later but caps at $7,000 a year. Most planners recommend: contribute to the 401(k) up to the match → max the Roth IRA → return to the 401(k).</div></div><div class="faq-item"><div class="faq-q">Can I use this calculator if I&#x27;m self-employed?</div><div class="faq-a">Solo 401(k) plans follow the same employee deferral limit ($23,500) but you can also contribute as the employer up to 25% of net self-employment income, capped at the $70,000 total. Set the employer match cap to match your planned employer-side contribution.</div></div><div class="faq-item"><div class="faq-q">USA-only or are there UK/SA equivalents I can use this calculator for?</div><div class="faq-a">This is a USA-specific tool — 401(k) rules and limits don&#x27;t apply elsewhere. Closest equivalents: UK uses workplace pensions with auto-enrolment (employer contributes 3% minimum, employee 5%); the £60,000 annual allowance includes both contributions and tax relief. South Africa uses employer pension/provident funds plus Retirement Annuities, deductible up to 27.5% of taxable income (R350k cap). Use our ISA Calculator (UK) or TFSA Calculator (SA) for region-specific tools.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common 401(k) mistake?</div><div class="faq-a">Leaving the employer match on the table. Studies show roughly 20% of eligible employees miss part of their available match — that&#x27;s a guaranteed 50–100% return forfeited. The second-most-common mistake is investing 401(k) funds in your own employer&#x27;s stock (concentration risk + correlation with your salary). Default index funds beat employer stock for almost every retiree.</div></div><div class="faq-item"><div class="faq-q">What if I switch jobs — do I lose the 401(k)?</div><div class="faq-a">No. You keep all your own contributions and earnings on them, immediately and unconditionally. Employer match is subject to a vesting schedule (commonly 3-year cliff or 6-year graded) — any non-vested employer money is forfeited if you leave early. Options at job change: leave the 401(k) at the old employer, roll into the new employer&#x27;s 401(k), or roll into an IRA. Never cash out — the 10% early-withdrawal penalty plus income tax can destroy 35–40% of the balance.</div></div><div class="faq-item"><div class="faq-q">I&#x27;ve maxed my 401(k) — where next?</div><div class="faq-a">Order of operations after 401(k) match: max the 401(k) to the $23,500 limit → fund a Roth IRA to $7,000 (subject to MAGI phase-out) → HSA if eligible → mega backdoor Roth if your plan allows after-tax contributions → taxable brokerage account. Use this calculator alongside our Roth IRA Calculator to see the long-run tax difference between traditional and Roth contributions.</div></div><div class="faq-item"><div class="faq-q">401(k) vs IRA vs taxable brokerage — when do I need each?</div><div class="faq-a">401(k) first for the employer match (free money). Roth IRA next for tax diversification — different tax treatment at retirement gives flexibility. Then more 401(k) up to $23,500 for the tax deduction in your peak earning years. Taxable brokerage last, for amounts above all the tax-advantaged limits or for goals before age 59½. Each vehicle solves a different problem; most retirees benefit from having all three at retirement.</div></div></div>
 
   <!-- Related Calculators -->
   <div class="related">

@@ -35,11 +35,12 @@
 
   <!-- Google AdSense: paste your code here after approval -->
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "description": "First-time buyer mortgage calculator. Compares UK Help to Buy, US FHA loans, and SA FLISP support so you know what monthly repayment fits.", "isPartOf": {"@id": "https://finncalc.com/mortgage/", "@type": "WebApplication"}, "name": "First-Time Buyer Mortgage Calculator (UK, US, SA)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "url": "https://finncalc.com/mortgage/first-time-buyer/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "dateModified": "2026-05-17", "description": "First-time buyer mortgage calculator. Compares UK Help to Buy, US FHA loans, and SA FLISP support so you know what monthly repayment fits.", "isPartOf": {"@id": "https://finncalc.com/mortgage/", "@type": "WebApplication"}, "name": "First-Time Buyer Mortgage Calculator (UK, US, SA)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "url": "https://finncalc.com/mortgage/first-time-buyer/"}</script>
 
 
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/mortgage/", "name": "\ud83c\udfe0 Mortgage Calculator", "position": 2}, {"@type": "ListItem", "item": "https://finncalc.com/mortgage/first-time-buyer/", "name": "First-Time Buyer", "position": 3}]}</script>
+
 
 
 
@@ -153,6 +154,14 @@
 </div>
 
 
+
+
+
+
+
+
+
+
 <div class="container">
   <div class="ad-slot">Advertisement</div>
   <p class="breadcrumb"><a href="/">Home</a> &rsaquo; Mortgage Calculator</p>
@@ -179,7 +188,7 @@
     </div>
     <button class="btn-calc" onclick="calculate()">Calculate Mortgage &rarr;</button>
   </div>
-  <div class="results" id="results">
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
     <div class="results-title">Your Mortgage Summary</div>
     <div class="result-grid">
       <div class="result-item"><div class="result-value positive" id="r-monthly">$0</div><div class="result-label">Monthly P&amp;I Payment</div></div>
@@ -200,6 +209,58 @@
       <button class="btn-action" onclick="saveToFile()">&#128190; Save</button>
     </div>
   </div>
+  
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 3 minutes.</p>
+    
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter the home price and your down payment</li>
+      
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Set the annual interest rate and the loan term in years</li>
+      
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Optionally add monthly property tax and home insurance to get a full PITI figure</li>
+      
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Click Calculate to see your monthly payment, total interest, and full amortisation schedule</li>
+      
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Adjust the down payment or term and recalculate to compare scenarios</li>
+      
+    </ol>
+  </section>
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="try-scenarios" aria-labelledby="try-scenarios-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#f4f6fb;border-radius:8px">
+    <h2 id="try-scenarios-heading" style="margin:0 0 6px;color:#1B3A5C;font-size:1.25rem">Try these scenarios</h2>
+    <p style="margin:0 0 12px;font-size:0.95em;color:#444">Tap a scenario to load it into the calculator above.</p>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      
+      <li>
+        <a class="try-scenario-link" href="?homePrice=400000&amp;downPayment=80000&amp;rate=7&amp;termYears=30#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">$400k home, 20% down, 30-yr at 7%</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?homePrice=300000&amp;downPayment=30000&amp;rate=6.5&amp;termYears=15#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">$300k home, 10% down, 15-yr at 6.5%</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?homePrice=250000&amp;downPayment=12500&amp;rate=7.25&amp;termYears=30#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">First-home: $250k, 5% down, 30-yr at 7.25%</a>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+
+
+
   <div class="ad-slot">Advertisement</div>
   <div class="related"><h2>Related Calculators</h2><div class="related-grid">
       <a href="/stamp-duty-calculator/" class="related-card">🏡 UK Stamp Duty</a>
@@ -222,13 +283,19 @@
     <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
   </section>
 
-  <div class="faq"><h2>Frequently Asked Questions</h2>
-    <div class="faq-item"><div class="faq-q">How is a mortgage payment calculated?</div><div class="faq-a">Your principal and interest payment uses the formula M = P &times; r(1+r)&sup;n / ((1+r)&sup;n &minus; 1), where P is the loan amount, r is the monthly interest rate (annual rate &divide; 12), and n is the total number of payments (years &times; 12). This gives a fixed payment that fully repays the loan over the term.</div></div>
-    <div class="faq-item"><div class="faq-q">How much deposit do I need?</div><div class="faq-a">In the USA, a 20% down payment avoids Private Mortgage Insurance (PMI). In the UK, most lenders require 5&ndash;10% with better rates at 25%+. In South Africa, banks typically require 10% though 100% bonds are sometimes available to qualifying first-time buyers. A larger deposit always reduces your monthly payment and total interest.</div></div>
-    <div class="faq-item"><div class="faq-q">Should I choose a 15 or 30 year mortgage?</div><div class="faq-a">A 15-year mortgage has higher monthly payments but you pay significantly less interest overall &mdash; often less than half. A 30-year mortgage offers lower monthly payments and cash flow flexibility. If you can comfortably afford the 15-year payment, you will build equity much faster and save substantially on interest.</div></div>
-    <div class="faq-item"><div class="faq-q">South Africa: What is transfer duty?</div><div class="faq-a">Transfer duty is a government tax on property transfers. Properties up to R1,100,000 are exempt. Above that, rates range from 3% to 13% on a sliding scale. Transfer duty is a once-off cost paid by the buyer on registration and is separate from your monthly bond repayment.</div></div>
-    <div class="faq-item"><div class="faq-q">UK: What is stamp duty?</div><div class="faq-a">Stamp Duty Land Tax (SDLT) is paid on property purchases in England and Northern Ireland. From April 2025, the nil-rate threshold returns to &pound;125,000 (2% on &pound;125k&ndash;&pound;250k, 5% on &pound;250k&ndash;&pound;925k). First-time buyers get relief up to &pound;425,000 until March 2025, then &pound;300,000. Scotland and Wales have their own equivalent taxes.</div></div>
-  </div>
+  
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>Principal vs. interest.</strong> Every mortgage payment is split between principal (reducing what you owe) and interest (the lender's fee). Early in a 30-year loan, most of each payment is interest; only after 15+ years does principal start dominating — this is the <em>amortisation curve</em>.</p><p><strong>LTV (loan-to-value).</strong> Your loan divided by the home's price. A 20% deposit gives an 80% LTV. In the US, an LTV above 80% triggers Private Mortgage Insurance (PMI); in the UK, lower LTV typically unlocks better rates (<a href="https://www.fca.org.uk/" rel="noopener">FCA</a> rules).</p><p><strong>Fixed vs. variable rate.</strong> A fixed rate locks your payment for the fix period (typically 2, 5, or 10 years in the UK; whole-term in the US). A variable rate moves with central-bank policy — cheaper when rates fall, painful when they rise.</p><p><strong>PITI and escrow.</strong> In the US, lenders often bundle property tax and homeowner's insurance into your monthly payment via an escrow account — Principal, Interest, Taxes, Insurance. The calculator's optional fields add these for a true monthly housing cost.</p><p><strong>Total interest paid.</strong> Over a 30-year, $400k loan at 7%, you may pay more in interest than the home cost. Shortening to 15 years roughly halves total interest at the cost of a higher monthly payment.</p>
+  </section>
+</div>
+
+
+
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How is a mortgage payment calculated?</div><div class="faq-a">Your principal and interest payment uses the formula M = P × r(1+r)⊃n / ((1+r)⊃n − 1), where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12), and n is the total number of payments (years × 12). This gives a fixed payment that fully repays the loan over the term.</div></div><div class="faq-item"><div class="faq-q">How much deposit do I need?</div><div class="faq-a">In the USA, a 20% down payment avoids Private Mortgage Insurance (PMI). In the UK, most lenders require 5–10% with better rates at 25%+. In South Africa, banks typically require 10% though 100% bonds are sometimes available to qualifying first-time buyers. A larger deposit always reduces your monthly payment and total interest.</div></div><div class="faq-item"><div class="faq-q">Should I choose a 15 or 30 year mortgage?</div><div class="faq-a">A 15-year mortgage has higher monthly payments but you pay significantly less interest overall — often less than half. A 30-year mortgage offers lower monthly payments and cash flow flexibility. If you can comfortably afford the 15-year payment, you will build equity much faster and save substantially on interest.</div></div><div class="faq-item"><div class="faq-q">South Africa: What is transfer duty?</div><div class="faq-a">Transfer duty is a government tax on property transfers. Properties up to R1,100,000 are exempt. Above that, rates range from 3% to 13% on a sliding scale. Transfer duty is a once-off cost paid by the buyer on registration and is separate from your monthly bond repayment.</div></div><div class="faq-item"><div class="faq-q">UK: What is stamp duty?</div><div class="faq-a">Stamp Duty Land Tax (SDLT) is paid on property purchases in England and Northern Ireland. From April 2025, the nil-rate threshold returns to £125,000 (2% on £125k–£250k, 5% on £250k–£925k). First-time buyers get relief up to £425,000 until March 2025, then £300,000. Scotland and Wales have their own equivalent taxes.</div></div><div class="faq-item"><div class="faq-q">USA vs UK vs South Africa: how do mortgage interest rates differ?</div><div class="faq-a">USA: 30-year fixed dominates (~6–7% in 2026), backed by Fannie Mae/Freddie Mac standardised products. UK: 2-, 5-, and 10-year fixes are the norm (~4–5%), then borrowers must remortgage or revert to a variable Standard Variable Rate. South Africa: most bonds are linked to prime (currently ~11%) with limited fixed-rate options. The same loan size carries very different lifetime interest in each market.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common mortgage mistake first-time buyers make?</div><div class="faq-a">Maxing out &#x27;how much can I borrow?&#x27; instead of &#x27;how much should I borrow?&#x27; Lenders often approve at 4–4.5× income but spending the full amount leaves no margin for rate rises, repairs, or income shocks. A safer rule: keep total housing costs (PITI + maintenance) under 28% of gross income, and don&#x27;t exhaust your savings on the deposit — keep 3–6 months of expenses in cash.</div></div><div class="faq-item"><div class="faq-q">What happens if my mortgage rate rises during a fixed term ending?</div><div class="faq-a">At the end of a UK fix, your rate rolls to the lender&#x27;s Standard Variable Rate (often 2–4% above your fixed rate) unless you remortgage. In the USA, the 30-year fixed never resets. ARM borrowers face the same risk at each reset point. Use the calculator with the new rate to see your new monthly payment — for many UK borrowers a fix-to-fix increase of 2 points raises monthly cost by £200–£400 on a typical £200,000 loan.</div></div><div class="faq-item"><div class="faq-q">I have my monthly payment — now what?</div><div class="faq-a">Compare it against your gross monthly income: housing costs above ~28% will squeeze other goals. Then stress-test: rerun the calculator with the rate 2 points higher to confirm you can still afford the loan if you remortgage at a worse rate. Finally, decide whether to overpay — even £100 a month extra on a 25-year £200k mortgage at 5% shaves about 3 years and £15,000 of interest.</div></div><div class="faq-item"><div class="faq-q">Mortgage vs renting — which builds wealth faster?</div><div class="faq-a">Depends on rate, term, deposit, and house-price growth. Renting + investing the deposit difference can beat buying if rents stay low and equity returns exceed both house-price growth and your mortgage rate. Buying tends to win when (a) you stay 7+ years, (b) house prices keep pace with inflation, and (c) the mortgage rate is below long-run equity returns. Use this calculator alongside an investment-growth calculator to compare scenarios on your numbers.</div></div></div>
   <div class="ad-slot">Advertisement</div>
 </div>
 
@@ -237,6 +304,106 @@
   <div id="embed-cta-slot" data-slug="mortgage"></div>
 </div>
 <script src="/js/embed-cta.js" defer></script>
+<script>
+function calculate(){
+  var homePrice   = parseFloat(document.getElementById('homePrice').value)   || 0;
+  var downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+  var rate        = parseFloat(document.getElementById('rate').value)        || 0;
+  var termYears   = parseInt(document.getElementById('termYears').value, 10) || 0;
+  var propTax     = parseFloat(document.getElementById('propTax').value)     || 0;
+  var insurance   = parseFloat(document.getElementById('insurance').value)   || 0;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+  var region = (typeof currentRegion !== 'undefined') ? currentRegion : 'USA';
+
+  var loanAmount = Math.max(0, homePrice - downPayment);
+  var n = termYears * 12;
+  var r = (rate / 100) / 12;
+
+  var monthly;
+  if(loanAmount <= 0 || n <= 0){
+    monthly = 0;
+  } else if(r === 0){
+    monthly = loanAmount / n;
+  } else {
+    // M = P × r(1+r)^n / ((1+r)^n − 1)
+    var pow = Math.pow(1 + r, n);
+    monthly = loanAmount * (r * pow) / (pow - 1);
+  }
+  var totalMonthly = monthly + propTax + insurance;
+  var totalInterest = (monthly * n) - loanAmount;
+  if(totalInterest < 0) totalInterest = 0;
+  var totalCost = loanAmount + totalInterest;
+
+  document.getElementById('r-monthly').textContent       = fmt(monthly);
+  document.getElementById('r-total-monthly').textContent = fmt(totalMonthly);
+  document.getElementById('r-interest').textContent      = fmt(totalInterest);
+  document.getElementById('r-total-cost').textContent    = fmt(totalCost);
+
+  // Summary table
+  var summary = [
+    ['Home price',          fmt(homePrice)],
+    ['Down payment',        fmt(downPayment) + ' (' + (homePrice > 0 ? Math.round(downPayment / homePrice * 100) : 0) + '%)'],
+    ['Loan amount',         fmt(loanAmount)],
+    ['Interest rate',       (Math.round(rate * 100) / 100) + '% APR'],
+    ['Loan term',           termYears + ' years (' + n + ' months)'],
+    ['Monthly P&I',         fmt(monthly)],
+    ['Monthly property tax',fmt(propTax)],
+    ['Monthly insurance',   fmt(insurance)],
+    ['Total monthly',       fmt(totalMonthly)],
+    ['Total interest paid', fmt(totalInterest)],
+    ['Total cost of loan',  fmt(totalCost)]
+  ];
+  document.getElementById('breakdown-body').innerHTML = summary.map(function(s){
+    return '<tr><td>' + s[0] + '</td><td class="td-right">' + s[1] + '</td></tr>';
+  }).join('');
+
+  // Region-aware footnote with typical 2026 rates so users can sanity-check
+  // their assumptions against the published benchmark for their country.
+  var notes = {
+    USA: 'USA reference: 30-year fixed averages ~7.0–7.5% in 2026 (Freddie Mac PMMS). Property tax + homeowners insurance vary widely by state.',
+    UK:  'UK reference: 5-year fixed averages ~4.5–5.0% in 2026 (Bank of England). UK mortgages roll to Standard Variable Rate at the end of the fix unless remortgaged.',
+    SA:  'SA reference: prime rate ~11.25% in 2026 (SARB). Most SA bonds are linked to prime; transfer duty applies above R1.1m at registration.'
+  };
+  var noteEl = document.getElementById('region-note');
+  if(noteEl) noteEl.textContent = notes[region] || notes.USA;
+
+  // First 24 months of amortisation
+  if(loanAmount > 0 && n > 0 && monthly > 0){
+    var bal = loanAmount;
+    var rows = '';
+    var rowsToShow = Math.min(24, n);
+    for(var m = 1; m <= rowsToShow; m++){
+      var iThis = bal * r;
+      var principal = monthly - iThis;
+      if(principal > bal){ principal = bal; }
+      bal -= principal;
+      rows += '<tr><td>' + m + '</td><td class="td-right">' + fmt(monthly) + '</td><td class="td-right">' + fmt(principal) + '</td><td class="td-right">' + fmt(iThis) + '</td><td class="td-right">' + fmt(Math.max(0, bal)) + '</td></tr>';
+    }
+    document.getElementById('amort-body').innerHTML = rows;
+  } else {
+    document.getElementById('amort-body').innerHTML = '';
+  }
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-17">17 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
 
 
 

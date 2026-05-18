@@ -56,7 +56,7 @@
   </div>
 
   <!-- Results -->
-  <div class="results" id="results">
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
     <div class="results-title">Your Results</div>
     <div class="result-grid">
       <div class="result-item">
@@ -100,6 +100,7 @@
   </div>
 
   <!-- Ad slot mid -->
+  <!-- HOWTO_AFTER_CALC -->
   <div class="ad-slot">Advertisement</div>
 
   <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
@@ -113,29 +114,8 @@
   </section>
 
   <!-- FAQ -->
-  <div class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <div class="faq-q">What is FIRE (Financial Independence Retire Early)?</div>
-      <div class="faq-a">FIRE is a movement built around aggressive saving (typically 50%+ of income) and low-cost index investing to reach financial independence decades before traditional retirement age. The "retire early" part is optional — many FIRE achievers continue working but on their own terms.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What is the 4% rule?</div>
-      <div class="faq-a">The 4% rule comes from the 1998 Trinity Study and the earlier Bengen (1994) paper. It found that a portfolio of 50–75% stocks and 25–50% bonds could safely sustain 4% annual withdrawals (inflation-adjusted) over a 30-year retirement with very low failure risk. For longer retirements common in FIRE, many planners use 3.0–3.5% as more conservative.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Lean FIRE vs Fat FIRE — what's the difference?</div>
-      <div class="faq-a">Lean FIRE means low spending in retirement (typically 0.5–0.7× a normal middle-class lifestyle). Fat FIRE means generous spending (2.0× or more — think $200,000+ a year). Regular FIRE sits in between. The cheaper you live, the smaller your FI number — Lean FIRE on $30,000 a year is $750,000; Fat FIRE on $120,000 a year is $3 million.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What is Coast FIRE?</div>
-      <div class="faq-a">Coast FIRE means you have enough invested today that, with no further contributions, compound growth alone will get you to a regular FI number by traditional retirement age (e.g. 65). Reach Coast FIRE and you can downshift — work less, change careers, take a sabbatical — knowing the math will catch you.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is the 4% rule still safe in 2026?</div>
-      <div class="faq-a">It's debated. Bond yields and equity valuations both affect future safe withdrawal rates. Many FIRE practitioners use a "guardrails" approach (Guyton-Klinger) or a lower starting rate (3.25–3.5%) for retirements lasting 40+ years. This calculator lets you set the SWR yourself.</div>
-    </div>
-  </div>
+  <!-- KEYCONCEPTS_BEFORE_FAQ -->
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What is FIRE (Financial Independence Retire Early)?</div><div class="faq-a">FIRE is a movement built around aggressive saving (typically 50%+ of income) and low-cost index investing to reach financial independence decades before traditional retirement age. The &#x27;retire early&#x27; part is optional — many FIRE achievers continue working but on their own terms.</div></div><div class="faq-item"><div class="faq-q">What is the 4% rule?</div><div class="faq-a">The 4% rule comes from the 1998 Trinity Study and the earlier Bengen (1994) paper. It found that a portfolio of 50–75% stocks and 25–50% bonds could safely sustain 4% annual withdrawals (inflation-adjusted) over a 30-year retirement with very low failure risk. For longer retirements common in FIRE, many planners use 3.0–3.5% as more conservative.</div></div><div class="faq-item"><div class="faq-q">Lean FIRE vs Fat FIRE — what&#x27;s the difference?</div><div class="faq-a">Lean FIRE means low spending in retirement (typically 0.5–0.7× a normal middle-class lifestyle). Fat FIRE means generous spending (2.0× or more — think $200,000+ a year). Regular FIRE sits in between. The cheaper you live, the smaller your FI number — Lean FIRE on $30,000 a year is $750,000; Fat FIRE on $120,000 a year is $3 million.</div></div><div class="faq-item"><div class="faq-q">What is Coast FIRE?</div><div class="faq-a">Coast FIRE means you have enough invested today that, with no further contributions, compound growth alone will get you to a regular FI number by traditional retirement age (e.g. 65). Reach Coast FIRE and you can downshift — work less, change careers, take a sabbatical — knowing the math will catch you.</div></div><div class="faq-item"><div class="faq-q">Is the 4% rule still safe in 2026?</div><div class="faq-a">It&#x27;s debated. Bond yields and equity valuations both affect future safe withdrawal rates. Many FIRE practitioners use a &#x27;guardrails&#x27; approach (Guyton-Klinger) or a lower starting rate (3.25–3.5%) for retirements lasting 40+ years. This calculator lets you set the SWR yourself.</div></div><div class="faq-item"><div class="faq-q">USA vs UK vs South Africa: where is FIRE easiest?</div><div class="faq-a">USA has the largest FIRE community thanks to high-income tech jobs, Roth IRA + 401(k) tax shelters, and low-cost index investing. UK works well with full ISA usage (£20k/yr tax-free) + workplace pension (pension access at 55–57). South Africa is hardest — higher inflation (5%+), Reserve Bank-imposed offshore investment caps (45% of TFSAs), and only R36k/yr of TFSA room mean South African FIRE typically requires a higher savings rate and broader use of taxable accounts.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common FIRE mistake?</div><div class="faq-a">Targeting Lean FIRE because it sounds achievable, without accounting for lifestyle inflation, healthcare, or wanting kids later. A 30-year-old planning to retire on $30k/year often discovers at 40 that they want more — and recovering five lost years of higher savings rate is brutal. Most FIRE veterans now recommend planning for Regular FIRE with the optional ability to scale down rather than aiming for Lean from day one.</div></div><div class="faq-item"><div class="faq-q">What if equity returns are lower than 5% real over my horizon?</div><div class="faq-a">Sequence-of-returns risk hits hardest in the first 5 years of withdrawal — bad returns then can permanently impair the portfolio. Defences: hold 1–3 years of expenses in cash/bonds at FI so you don&#x27;t sell equities during a drawdown; use a variable withdrawal rule (Guyton-Klinger guardrails) that adjusts spending in down years; or aim for a lower SWR (3.25–3.5%) for a wider safety margin. Re-run the calculator with a 4% real return to stress-test your plan.</div></div><div class="faq-item"><div class="faq-q">I&#x27;ve hit my FI number — what&#x27;s the actual next step?</div><div class="faq-a">Don&#x27;t quit on Friday. Most successful FIRE practitioners recommend a 6–12 month &#x27;soft retire&#x27; transition: reduce hours, take a sabbatical, or test the spending in pre-retirement mode. Confirm health-care coverage (USA: ACA marketplace or COBRA), confirm withdrawal accounts and the tax mechanics, and run a Monte Carlo sim of your plan. The math says you can retire — psychology and logistics decide when you actually do.</div></div><div class="faq-item"><div class="faq-q">FIRE vs traditional retirement — what changes?</div><div class="faq-a">Time horizon. A traditional 30-year retirement (65 to 95) has well-established 4% safe-withdrawal data. A 50-year FIRE retirement (40 to 90) has far less historical data and requires lower SWR (3–3.5%) for the same failure probability. Other differences: no Social Security/State Pension/SASSA until later, no employer health insurance, and a longer compounding period for any side income — which is why many FIRE retirees end up Coast-FI&#x27;ing or Barista-FI&#x27;ing with part-time work.</div></div></div>
 
   <!-- Related Calculators -->
   <div class="related">

@@ -61,7 +61,7 @@
   </div>
 
   <!-- Results -->
-  <div class="results" id="results">
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
     <div class="results-title">Your Results</div>
     <div class="result-grid">
       <div class="result-item">
@@ -111,6 +111,7 @@
   </div>
 
   <!-- Ad slot mid -->
+  <!-- HOWTO_AFTER_CALC -->
   <div class="ad-slot">Advertisement</div>
 
   <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
@@ -125,29 +126,8 @@
   </section>
 
   <!-- FAQ -->
-  <div class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <div class="faq-q">What is the TFSA contribution limit for 2026?</div>
-      <div class="faq-a">R36,000 per year and R500,000 in your lifetime, set by Section 12T of the Income Tax Act and unchanged since 1 March 2020. At the maximum R36,000 a year, you'll hit the lifetime cap in 13 years and 11 months.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What happens if I contribute more than R36,000?</div>
-      <div class="faq-a">Excess contributions are taxed at 40%. SARS Section 12T(7) imposes the penalty on any amount above either the annual or lifetime cap. The penalty applies even if you withdraw the excess in the same tax year — withdrawals do not restore your allowance.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I withdraw from my TFSA?</div>
-      <div class="faq-a">Yes, anytime, with no tax. But any withdrawal is permanent for cap purposes — the contribution slot is used up. If you contributed R36,000 and withdrew R30,000, your remaining annual room is R0 (not R30,000), and the withdrawal still counts against your lifetime R500,000.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">TFSA vs Retirement Annuity (RA) — which first?</div>
-      <div class="faq-a">Both are valuable. RAs give an upfront tax deduction (up to 27.5% of taxable income) but are locked until 55+ and partly taxable on payout. TFSAs have no deduction but everything is tax-free forever. Most planners recommend: contribute to RA up to your tax-deduction sweet spot → max the TFSA → return to RA. The TFSA shines for medium-term goals (10–20 years) and as a tax-free emergency fund.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What investments can I hold in a TFSA?</div>
-      <div class="faq-a">Cash, unit trusts, ETFs, REITs, government bonds, and approved fixed-deposit products. Direct-share TFSAs (e.g. EasyEquities) and fund-based TFSAs (e.g. Allan Gray, Ninety One) are both common. The R36k cap is the same regardless of the underlying investment.</div>
-    </div>
-  </div>
+  <!-- KEYCONCEPTS_BEFORE_FAQ -->
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What is the TFSA contribution limit for 2026?</div><div class="faq-a">R36,000 per year and R500,000 in your lifetime, set by Section 12T of the Income Tax Act and unchanged since 1 March 2020. At the maximum R36,000 a year, you&#x27;ll hit the lifetime cap in 13 years and 11 months.</div></div><div class="faq-item"><div class="faq-q">What happens if I contribute more than R36,000?</div><div class="faq-a">Excess contributions are taxed at 40%. SARS Section 12T(7) imposes the penalty on any amount above either the annual or lifetime cap. The penalty applies even if you withdraw the excess in the same tax year — withdrawals do not restore your allowance.</div></div><div class="faq-item"><div class="faq-q">Can I withdraw from my TFSA?</div><div class="faq-a">Yes, anytime, with no tax. But any withdrawal is permanent for cap purposes — the contribution slot is used up. If you contributed R36,000 and withdrew R30,000, your remaining annual room is R0 (not R30,000), and the withdrawal still counts against your lifetime R500,000.</div></div><div class="faq-item"><div class="faq-q">TFSA vs Retirement Annuity (RA) — which first?</div><div class="faq-a">Both are valuable. RAs give an upfront tax deduction (up to 27.5% of taxable income) but are locked until 55+ and partly taxable on payout. TFSAs have no deduction but everything is tax-free forever. Most planners recommend: contribute to RA up to your tax-deduction sweet spot → max the TFSA → return to RA. The TFSA shines for medium-term goals (10–20 years) and as a tax-free emergency fund.</div></div><div class="faq-item"><div class="faq-q">What investments can I hold in a TFSA?</div><div class="faq-a">Cash, unit trusts, ETFs, REITs, government bonds, and approved fixed-deposit products. Direct-share TFSAs (e.g. EasyEquities) and fund-based TFSAs (e.g. Allan Gray, Ninety One) are both common. The R36k cap is the same regardless of the underlying investment.</div></div><div class="faq-item"><div class="faq-q">SA-only — what&#x27;s the closest UK/USA equivalent to a TFSA?</div><div class="faq-a">UK: Stocks &amp; Shares ISA (£20,000/yr, ~R460k at 2026 rates — much more generous than the R36k TFSA limit) with no lifetime cap. USA: Roth IRA ($7,000/yr, ~R130k — closer to TFSA in size) with income phase-out; no lifetime cap but a 59½ qualified-withdrawal age. The TFSA&#x27;s R500,000 lifetime cap is the harshest restriction of the three — once hit, your only options for further tax-free growth are inside the existing account.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common TFSA mistake?</div><div class="faq-a">Withdrawing then trying to &#x27;replace&#x27; the contribution. Unlike a flexible UK ISA, SA TFSA withdrawals are permanent for cap purposes — contributed R36k, withdrew R10k, then contributing R10k more in the same year is treated as a R10k excess and taxed at 40%. The second-most-common mistake is leaving the TFSA in cash earning 6% when an equity unit trust would compound at 10–12% — the tax shelter only matters if returns are substantial.</div></div><div class="faq-item"><div class="faq-q">What if I&#x27;m close to the R500,000 lifetime cap?</div><div class="faq-a">Once you hit the cap, no further contributions are allowed for life — even if you withdraw and re-contribute. The account continues to grow tax-free indefinitely (the cap is on contributions, not balance), so it&#x27;s actually optimal to leave funded TFSAs untouched and let them compound for decades. Hitting the cap by age 35 with maximum contributions gives 30+ years of tax-free compounding — potentially R4m+ at retirement at 7% real.</div></div><div class="faq-item"><div class="faq-q">I&#x27;ve maxed my TFSA this year — what&#x27;s next?</div><div class="faq-a">Order: TFSA → employer pension/provident fund (capture any employer match) → top up to the 27.5%/R350k RA cap → discretionary investments. For under-65s with less than R23,800/yr of taxable interest, a unit trust outside the TFSA is also tax-efficient because of the annual interest exemption. Don&#x27;t put cash-equivalent investments in a TFSA — waste the wrapper on higher-growth equity instead.</div></div><div class="faq-item"><div class="faq-q">TFSA vs RA — which builds more wealth?</div><div class="faq-a">RA wins on the way in (deductible — saves up to 45% in tax in the year of contribution), TFSA wins on the way out (all withdrawals tax-free vs RA&#x27;s mix of tax-free lump sum + taxable annuity). For high-marginal-rate earners, RA usually edges out over a 30-year horizon. For low-marginal-rate earners, TFSA edges out. Most planners recommend both — RA for the deduction, TFSA for the tax-free withdrawal flexibility.</div></div></div>
 
   <!-- Related Calculators -->
   <div class="related">

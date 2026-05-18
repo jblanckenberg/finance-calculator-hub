@@ -114,7 +114,8 @@
   "operatingSystem": "All",
   "url": "https://finncalc.com/budget/",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-  "publisher": {"@type": "Organization", "name": "FinCalcHub", "url": "https://finncalc.com"}
+  "publisher": {"@type": "Organization", "name": "FinCalcHub", "url": "https://finncalc.com"},
+  "dateModified": "2026-05-17"
 }
 </script>
 <script type="application/ld+json">
@@ -253,7 +254,7 @@
     <div class="cat-row"><span class="cat-label">Extra Debt Repayment</span><input type="number" id="debtextra" value="0" min="0" oninput="calculate()" inputmode="decimal"><span class="cat-pct" id="p-debtextra">0%</span></div>
     <button class="btn-calc" onclick="calculate()">Analyse My Budget &rarr;</button>
   </div>
-  <div class="results" id="results">
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
     <div class="results-title">Your Budget Analysis</div>
     <div class="result-grid">
       <div class="result-item"><div class="result-value positive" id="r-income">$0</div><div class="result-label">Total Monthly Income</div></div>

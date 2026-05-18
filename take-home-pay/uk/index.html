@@ -35,11 +35,12 @@
 
   <!-- Google AdSense: paste your code here after approval -->
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "description": "Free UK take-home pay calculator. Real salary after PAYE income tax, Class 1 NI, and personal allowance. HMRC 2026/27 brackets \u2014 instant result.", "isPartOf": {"@id": "https://finncalc.com/take-home-pay/", "@type": "WebApplication"}, "name": "UK Take-Home Pay Calculator (PAYE + NI 2026/27)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "url": "https://finncalc.com/take-home-pay/uk/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "dateModified": "2026-05-17", "description": "Free UK take-home pay calculator. Real salary after PAYE income tax, Class 1 NI, and personal allowance. HMRC 2026/27 brackets \u2014 instant result.", "isPartOf": {"@id": "https://finncalc.com/take-home-pay/", "@type": "WebApplication"}, "name": "UK Take-Home Pay Calculator (PAYE + NI 2026/27)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "url": "https://finncalc.com/take-home-pay/uk/"}</script>
 
 
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/take-home-pay/", "name": "\ud83d\udcb0 Take-Home Pay Calculator", "position": 2}, {"@type": "ListItem", "item": "https://finncalc.com/take-home-pay/uk/", "name": "UK", "position": 3}]}</script>
+
 
 
 
@@ -152,6 +153,14 @@
 </div>
 
 
+
+
+
+
+
+
+
+
 <div class="container">
   <div class="ad-slot">Advertisement</div>
   <p class="breadcrumb"><a href="/">Home</a> &rsaquo; Take-Home Pay Calculator</p>
@@ -198,20 +207,28 @@
             <option value="0" data-state="TX">Texas (0%)</option>
             <option value="0" data-state="WA">Washington (0%)</option>
             <option value="0" data-state="WY">Wyoming (0%)</option>
-            <option value="0.02" data-state="AZ">Arizona (2.5% flat)</option>
-            <option value="0.05" data-state="CO">Colorado (4.4% flat)</option>
-            <option value="0.0475" data-state="GA">Georgia (5.75%)</option>
-            <option value="0.055" data-state="IL">Illinois (4.95% flat)</option>
-            <option value="0.032" data-state="IN">Indiana (3.15% flat)</option>
-            <option value="0.06" data-state="MA">Massachusetts (5% flat)</option>
-            <option value="0.0425" data-state="MD">Maryland (4.75%)</option>
-            <option value="0.0495" data-state="MI">Michigan (4.25% flat)</option>
-            <option value="0.0985" data-state="CA">California (up to 9.3%)</option>
-            <option value="0.0685" data-state="NY">New York (up to 6.85%)</option>
-            <option value="0.05" data-state="NC">North Carolina (4.5% flat)</option>
+            <!-- Flat-rate states: value matches the published flat rate exactly.
+                 Graduated-rate states (CA, NY, GA, MD, NC, OH, VA): label and value
+                 use a representative effective rate for a mid-band earner (~7% for
+                 CA top earners, ~6% for NY, etc.). Top marginal rates noted in label.
+                 Reviewed against state revenue dept. 2026 publications. -->
+            <option value="0.025" data-state="AZ">Arizona (2.5% flat)</option>
+            <option value="0.044" data-state="CO">Colorado (4.4% flat)</option>
+            <option value="0.0575" data-state="GA">Georgia (5.75%)</option>
+            <option value="0.0495" data-state="IL">Illinois (4.95% flat)</option>
+            <option value="0.0315" data-state="IN">Indiana (3.15% flat)</option>
+            <option value="0.05" data-state="MA">Massachusetts (5% flat)</option>
+            <option value="0.0475" data-state="MD">Maryland (4.75%)</option>
+            <option value="0.0425" data-state="MI">Michigan (4.25% flat)</option>
+            <!-- CA top marginal is 13.3% (incl. 1% mental-health surcharge);
+                 we use 0.07 as a representative effective rate for a mid-band earner. -->
+            <option value="0.07" data-state="CA">California (effective ~7%, top 13.3%)</option>
+            <!-- NY top marginal is 10.9%; 0.06 is a representative effective rate. -->
+            <option value="0.06" data-state="NY">New York (effective ~6%, top 10.9%)</option>
+            <option value="0.045" data-state="NC">North Carolina (4.5% flat)</option>
             <option value="0.0399" data-state="OH">Ohio (up to 3.99%)</option>
-            <option value="0.0495" data-state="PA">Pennsylvania (3.07% flat)</option>
-            <option value="0.06" data-state="VA">Virginia (5.75%)</option>
+            <option value="0.0307" data-state="PA">Pennsylvania (3.07% flat)</option>
+            <option value="0.0575" data-state="VA">Virginia (5.75%)</option>
           </select>
         </div>
       </div>
@@ -253,7 +270,7 @@
     </div>
     <button class="btn-calc" onclick="calculate()">Calculate Take-Home Pay &rarr;</button>
   </div>
-  <div class="results" id="results">
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
     <div class="results-title">Your Take-Home Pay</div>
     <div class="result-grid">
       <div class="result-item"><div class="result-value positive" id="r-takehome">$0</div><div class="result-label">Annual Take-Home Pay</div></div>
@@ -272,6 +289,60 @@
       <button class="btn-action" onclick="saveToFile()">&#128190; Save</button>
     </div>
   </div>
+  
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Pick your region — USA, UK, or South Africa — to load the right tax tables</li>
+      
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Enter your gross annual salary and choose your pay frequency</li>
+      
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">USA: pick your filing status and state, then add 401(k) % and pre-tax deductions</li>
+      
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">UK: enter your pension contribution % and choose any student loan plan</li>
+      
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">South Africa: select your age band, medical aid members, and any monthly RA contribution</li>
+      
+      <li id="step-6" class="how-to-step" style="margin-bottom:6px">Review your monthly and annual take-home pay plus the full tax breakdown</li>
+      
+    </ol>
+  </section>
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="try-scenarios" aria-labelledby="try-scenarios-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#f4f6fb;border-radius:8px">
+    <h2 id="try-scenarios-heading" style="margin:0 0 6px;color:#1B3A5C;font-size:1.25rem">Try these scenarios</h2>
+    <p style="margin:0 0 12px;font-size:0.95em;color:#444">Tap a scenario to load it into the calculator above.</p>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      
+      <li>
+        <a class="try-scenario-link" href="?salary=75000&amp;payFreq=annual&amp;filingStatus=single&amp;stateSelect=TX&amp;contrib401k=0#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">$75,000 USA salary, single filer</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?salary=40000&amp;payFreq=annual&amp;ukPension=5#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">£40,000 UK salary, 5% pension</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?salary=120000&amp;payFreq=annual&amp;filingStatus=married&amp;stateSelect=CA&amp;contrib401k=10#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">$120,000 USA, married, 10% 401(k)</a>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+
+
+
   <div class="ad-slot">Advertisement</div>
   <div class="related"><h2>Related Calculators</h2><div class="related-grid">
       <a href="/budget/" class="related-card">📋 Budget Planner</a>
@@ -292,13 +363,19 @@
     <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
   </section>
 
-  <div class="faq"><h2>Frequently Asked Questions</h2>
-    <div class="faq-item"><div class="faq-q">How is take-home pay calculated in the USA?</div><div class="faq-a">US take-home pay is your gross salary minus federal income tax (tax year 2026 brackets: 10%&ndash;37%), FICA Social Security (6.2% up to $184,500), Medicare (1.45% + 0.9% over $200k), state income tax, and any pre-tax deductions like 401(k) contributions. Your standard deduction ($16,100 single / $32,200 married for 2026) reduces your taxable income before federal tax is applied.</div></div>
-    <div class="faq-item"><div class="faq-q">What is National Insurance in the UK?</div><div class="faq-a">National Insurance (NI) is a UK payroll contribution used to fund state benefits. For 2026/27, employees pay 8% on earnings between &pound;12,570 and &pound;50,270, then 2% above that. Your NI contributions also count toward your State Pension entitlement. NI is calculated separately from income tax.</div></div>
-    <div class="faq-item"><div class="faq-q">South Africa: what is UIF?</div><div class="faq-a">UIF (Unemployment Insurance Fund) is a mandatory South African payroll deduction. Employees contribute 1% of gross salary, capped at a monthly salary of R17,712 (so max R177.12/month). Employers also contribute 1%. UIF provides short-term relief for workers who become unemployed, ill, or take maternity leave.</div></div>
-    <div class="faq-item"><div class="faq-q">What is the UK Personal Allowance taper?</div><div class="faq-a">In the UK, the personal allowance (&pound;12,570, frozen through 2026/27 and 2027/28) is reduced by &pound;1 for every &pound;2 of income over &pound;100,000. This means it is completely eliminated at income of &pound;125,140, creating an effective 60% marginal tax rate between &pound;100,000 and &pound;125,140. This calculator applies the taper automatically.</div></div>
-    <div class="faq-item"><div class="faq-q">How do I reduce my tax bill in South Africa?</div><div class="faq-a">The most effective strategies are: (1) Contribute to a Retirement Annuity (RA) &mdash; contributions are tax-deductible up to 27.5% of taxable income, capped at R350,000/yr. (2) Contribute to a pension or provident fund via your employer. (3) Claim medical aid tax credits (R376/month for the first two members, R254/month for additional members, for 2026/27). This calculator applies all standard credits automatically.</div></div>
-  </div>
+  
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>Gross vs. net.</strong> Your gross salary is the headline figure on your contract; your net (take-home) is what lands in your bank account after income tax, social-security contributions, and any pre-tax deductions like pension or health insurance.</p><p><strong>Marginal vs. effective rate.</strong> Your marginal rate is the tax on your next dollar earned; your effective rate is your total tax divided by total income. Most people quote marginal but plan with effective. Progressive systems (<a href="https://www.irs.gov/" rel="noopener">IRS</a>, <a href="https://www.gov.uk/income-tax-rates" rel="noopener">HMRC</a>) tax higher slices of income at higher rates, so the average is always below the top marginal bracket.</p><p><strong>Pre-tax vs. post-tax contributions.</strong> US 401(k) and UK pension salary-sacrifice contributions come off gross — they reduce taxable income and increase take-home relative to the equivalent post-tax saving. Roth contributions are post-tax but grow tax-free.</p><p><strong>State and regional layers.</strong> The US adds state income tax (zero in TX, FL, WA; up to 13% in CA). The UK has separate Scottish bands. The calculator applies the right layer based on your selection.</p><p><strong>FICA / National Insurance.</strong> Social-security contributions are flat or near-flat rate up to a cap — 7.65% FICA in the US (until the SS wage base) and 8% Class 1 NI in the UK above the primary threshold.</p>
+  </section>
+</div>
+
+
+
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How is take-home pay calculated in the USA?</div><div class="faq-a">US take-home pay is your gross salary minus federal income tax (tax year 2026 brackets: 10%–37%), FICA Social Security (6.2% up to $184,500), Medicare (1.45% + 0.9% over $200k), state income tax, and any pre-tax deductions like 401(k) contributions. Your standard deduction ($16,100 single / $32,200 married for 2026) reduces your taxable income before federal tax is applied.</div></div><div class="faq-item"><div class="faq-q">What is National Insurance in the UK?</div><div class="faq-a">National Insurance (NI) is a UK payroll contribution used to fund state benefits. For 2026/27, employees pay 8% on earnings between £12,570 and £50,270, then 2% above that. Your NI contributions also count toward your State Pension entitlement. NI is calculated separately from income tax.</div></div><div class="faq-item"><div class="faq-q">South Africa: what is UIF?</div><div class="faq-a">UIF (Unemployment Insurance Fund) is a mandatory South African payroll deduction. Employees contribute 1% of gross salary, capped at a monthly salary of R17,712 (so max R177.12/month). Employers also contribute 1%. UIF provides short-term relief for workers who become unemployed, ill, or take maternity leave.</div></div><div class="faq-item"><div class="faq-q">What is the UK Personal Allowance taper?</div><div class="faq-a">In the UK, the personal allowance (£12,570, frozen through 2026/27 and 2027/28) is reduced by £1 for every £2 of income over £100,000. This means it is completely eliminated at income of £125,140, creating an effective 60% marginal tax rate between £100,000 and £125,140. This calculator applies the taper automatically.</div></div><div class="faq-item"><div class="faq-q">How do I reduce my tax bill in South Africa?</div><div class="faq-a">The most effective strategies are: (1) Contribute to a Retirement Annuity (RA) — contributions are tax-deductible up to 27.5% of taxable income, capped at R350,000/yr. (2) Contribute to a pension or provident fund via your employer. (3) Claim medical aid tax credits (R376/month for the first two members, R254/month for additional members, for 2026/27). This calculator applies all standard credits automatically.</div></div><div class="faq-item"><div class="faq-q">USA vs UK vs South Africa: which has the highest top marginal tax rate?</div><div class="faq-a">Top federal marginal rates as of 2026: USA 37% (kicks in above ~$626,350 single), UK 45% (above £125,140 — note the 60% effective rate between £100k and £125,140 from personal allowance taper), South Africa 45% (above R1,878,600). USA totals can exceed 50% once state tax is added (e.g. California adds 13.3%). UK and SA include national-insurance-style contributions on top.</div></div><div class="faq-item"><div class="faq-q">What&#x27;s the most common take-home pay mistake?</div><div class="faq-a">Forgetting employer-side pre-tax contributions. 401(k) salary deferrals, UK pension salary-sacrifice, and SA RA contributions all reduce taxable income — but only if you actually enter them. People also routinely ignore the UK personal allowance taper (£100k+) and SA medical aid credits, both of which can move take-home by hundreds of pounds or rand per month.</div></div><div class="faq-item"><div class="faq-q">What if I have multiple income sources or side income?</div><div class="faq-a">This calculator models a single salary source. For multiple employments, the second job often has all income taxed at your marginal rate because the personal allowance/standard deduction is used up by the first job — use the combined gross figure to estimate. Self-employment income is taxed separately (Schedule C in USA, Self-Assessment in UK, IRP6 provisional tax in SA) and typically needs a quarterly estimated-tax calculation, not this monthly take-home view.</div></div><div class="faq-item"><div class="faq-q">My take-home looks low — what can I actually change?</div><div class="faq-a">Five legal levers: (1) increase tax-advantaged retirement contributions (401(k), pension, RA) to lower taxable income; (2) claim every available credit — medical aid (SA), child credits (USA), marriage allowance (UK); (3) check your tax code (UK) or W-4 (USA) is correct — wrong codes cost thousands; (4) for high earners near £100k UK, sacrifice salary into pension to reclaim the personal allowance; (5) if self-employed, time deductible expenses into the higher-income year.</div></div><div class="faq-item"><div class="faq-q">Take-home pay vs gross pay — which figure should I budget against?</div><div class="faq-a">Always net (take-home) pay. Budgeting from gross is the single most common cause of overspending — a £50,000 UK salary lands at about £39,200 net, an $80,000 US salary at roughly $58,000–$62,000 depending on state, and an R600,000 SA salary at about R430,000 after PAYE + UIF. The gap between gross and net is real money you never see in your account.</div></div></div>
   <div class="ad-slot">Advertisement</div>
 </div>
 
@@ -307,6 +384,235 @@
   <div id="embed-cta-slot" data-slug="take-home-pay"></div>
 </div>
 <script src="/js/embed-cta.js" defer></script>
+<script>
+// Take-Home Pay — multi-region (USA / UK / SA), tax year 2026 / 2026-27 / 2026-27.
+// Brackets and thresholds sourced from IRS Notice 25-67, HMRC published rates,
+// and SARS budget review. Marked-as-of date is shown in the methodology block.
+
+function _bracketTax(taxable, bands){
+  // bands = [{ upTo: amount-or-Infinity, rate: 0.xx }, ...] — applied progressively.
+  var tax = 0, last = 0;
+  for(var i = 0; i < bands.length; i++){
+    var top = bands[i].upTo;
+    var chunk = Math.max(0, Math.min(taxable, top) - last);
+    tax += chunk * bands[i].rate;
+    last = top;
+    if(taxable <= top) break;
+  }
+  return tax;
+}
+
+function calculate(){
+  var salary  = parseFloat(document.getElementById('salary').value) || 0;
+  var payFreq = parseInt(document.getElementById('payFreq').value, 10) || 12;
+  var region  = (typeof currentRegion !== 'undefined') ? currentRegion : 'USA';
+  var fmt     = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  var lines = []; // [{label, annual}]
+  var fedTax = 0, stateTax = 0, ssTax = 0, medicareTax = 0;
+  var niTax = 0, ukIncomeTax = 0, ukPensionAnnual = 0, ukStudentTax = 0;
+  var saPaye = 0, saUif = 0, saRaAnnual = 0;
+  var pretax401k = 0, pretaxOther = 0;
+  var totalDeductions = 0, takeHome = 0;
+
+  if(region === 'USA'){
+    var filing      = document.getElementById('filingStatus').value;
+    var stateRate   = parseFloat(document.getElementById('stateSelect').value) || 0;
+    var contrib401k = (parseFloat(document.getElementById('contrib401k').value) || 0) / 100;
+    pretaxOther     = parseFloat(document.getElementById('pretaxOther').value) || 0;
+    pretax401k      = salary * contrib401k;
+
+    // 2026 federal brackets (IRS Rev. Proc. 25-32 / Notice 25-67)
+    var brackets = {
+      single: [
+        { upTo: 11925,    rate: 0.10 },
+        { upTo: 48475,    rate: 0.12 },
+        { upTo: 103350,   rate: 0.22 },
+        { upTo: 197300,   rate: 0.24 },
+        { upTo: 250525,   rate: 0.32 },
+        { upTo: 626350,   rate: 0.35 },
+        { upTo: Infinity, rate: 0.37 }
+      ],
+      married: [
+        { upTo: 23850,    rate: 0.10 },
+        { upTo: 96950,    rate: 0.12 },
+        { upTo: 206700,   rate: 0.22 },
+        { upTo: 394600,   rate: 0.24 },
+        { upTo: 501050,   rate: 0.32 },
+        { upTo: 751600,   rate: 0.35 },
+        { upTo: Infinity, rate: 0.37 }
+      ],
+      hoh: [
+        { upTo: 17000,    rate: 0.10 },
+        { upTo: 64850,    rate: 0.12 },
+        { upTo: 103350,   rate: 0.22 },
+        { upTo: 197300,   rate: 0.24 },
+        { upTo: 250500,   rate: 0.32 },
+        { upTo: 626350,   rate: 0.35 },
+        { upTo: Infinity, rate: 0.37 }
+      ]
+    };
+    var stdDed = { single: 16100, married: 32200, hoh: 24150 };
+    var taxable = Math.max(0, salary - pretax401k - pretaxOther - (stdDed[filing] || stdDed.single));
+    fedTax = _bracketTax(taxable, brackets[filing] || brackets.single);
+
+    // FICA — Social Security 6.2% to $184,500 wage base (2026 SSA),
+    // Medicare 1.45% all wages + 0.9% above $200k.
+    ssTax = Math.min(salary, 184500) * 0.062;
+    medicareTax = salary * 0.0145 + Math.max(0, salary - 200000) * 0.009;
+
+    // State income tax — applied to salary minus pre-tax 401(k) (rough proxy).
+    stateTax = Math.max(0, salary - pretax401k) * stateRate;
+
+    totalDeductions = fedTax + stateTax + ssTax + medicareTax + pretax401k + pretaxOther;
+    takeHome        = salary - totalDeductions;
+
+    lines.push({ label: 'Federal income tax',  v: fedTax });
+    lines.push({ label: 'State income tax',    v: stateTax });
+    lines.push({ label: 'Social Security (6.2%)', v: ssTax });
+    lines.push({ label: 'Medicare (1.45% + 0.9% addl)', v: medicareTax });
+    if(pretax401k > 0)  lines.push({ label: '401(k) contribution',     v: pretax401k });
+    if(pretaxOther > 0) lines.push({ label: 'Other pre-tax deductions', v: pretaxOther });
+
+  } else if(region === 'UK'){
+    var pensionPct = (parseFloat(document.getElementById('ukPension').value) || 0) / 100;
+    var loanPlan   = parseInt(document.getElementById('ukStudentLoan').value, 10) || 0;
+    ukPensionAnnual = salary * pensionPct;
+    var afterPension = salary - ukPensionAnnual;
+
+    // UK 2026/27: personal allowance £12,570 (frozen). Tapered £1-for-£2 above
+    // £100,000, fully gone at £125,140. Bands: 20% to £50,270, 40% to £125,140,
+    // 45% above. We apply taper on the gross-of-pension income.
+    var personalAllowance = 12570;
+    if(salary > 100000){
+      personalAllowance = Math.max(0, 12570 - (salary - 100000) / 2);
+    }
+    var taxable = Math.max(0, afterPension - personalAllowance);
+    // Bands are measured from £0 of taxable above PA; HMRC publishes them as:
+    // 20% on first £37,700, 40% on next £87,440 (to £125,140-PA = £112,570),
+    // 45% above. We re-express as upTo cumulative figures.
+    var ukBands = [
+      { upTo: 37700,    rate: 0.20 },  // basic-rate band width
+      { upTo: 112570,   rate: 0.40 },  // higher-rate band width
+      { upTo: Infinity, rate: 0.45 }
+    ];
+    ukIncomeTax = _bracketTax(taxable, ukBands);
+
+    // National Insurance 2026/27: 8% on £12,570–£50,270, 2% above.
+    var niBands = [
+      { upTo: 12570,    rate: 0.00 },
+      { upTo: 50270,    rate: 0.08 },
+      { upTo: Infinity, rate: 0.02 }
+    ];
+    niTax = _bracketTax(salary, niBands);
+
+    // Student loan repayments (employee-side, post-tax for the user view).
+    var slPlans = {
+      0: { threshold: Infinity, rate: 0 },
+      1: { threshold: 24990,    rate: 0.09 },
+      2: { threshold: 27295,    rate: 0.09 },
+      4: { threshold: 31395,    rate: 0.09 }
+    };
+    var sl = slPlans[loanPlan] || slPlans[0];
+    ukStudentTax = Math.max(0, salary - sl.threshold) * sl.rate;
+
+    totalDeductions = ukIncomeTax + niTax + ukStudentTax + ukPensionAnnual;
+    takeHome        = salary - totalDeductions;
+
+    lines.push({ label: 'Income tax (PAYE)',           v: ukIncomeTax });
+    lines.push({ label: 'National Insurance (Class 1)', v: niTax });
+    if(ukStudentTax > 0) lines.push({ label: 'Student loan repayment', v: ukStudentTax });
+    if(ukPensionAnnual > 0) lines.push({ label: 'Pension contribution', v: ukPensionAnnual });
+
+  } else if(region === 'SA'){
+    var saAge = parseInt(document.getElementById('saAge').value, 10) || 1;
+    var saMed = parseInt(document.getElementById('saMedical').value, 10) || 0;
+    var saRaMonthly = parseFloat(document.getElementById('saRA').value) || 0;
+    saRaAnnual = saRaMonthly * 12;
+
+    // RA deduction capped at 27.5% of remuneration or R350k.
+    var raDed = Math.min(saRaAnnual, salary * 0.275, 350000);
+    var taxable = Math.max(0, salary - raDed);
+
+    // SARS 2026/27 brackets (from sa-tax-calculator page)
+    var saBands = [
+      { upTo: 245100,   rate: 0.18 },
+      { upTo: 370500,   rate: 0.26 },
+      { upTo: 512800,   rate: 0.31 },
+      { upTo: 673000,   rate: 0.36 },
+      { upTo: 857900,   rate: 0.39 },
+      { upTo: 1878600,  rate: 0.41 },
+      { upTo: Infinity, rate: 0.45 }
+    ];
+    var grossTax = _bracketTax(taxable, saBands);
+
+    // Rebates: primary 18,450, secondary +10,140 (65+), tertiary +3,386 (75+) — SARS 2026/27
+    var rebate = 18450;
+    if(saAge >= 2) rebate += 10140;
+    if(saAge >= 3) rebate += 3386;
+
+    // Medical scheme fees tax credit (annualised). 2026/27: R376 main, R376 1st dep, R254 each extra.
+    var medCredit = 0;
+    if(saMed >= 1) medCredit += 376 * 12;
+    if(saMed >= 2) medCredit += 376 * 12;
+    if(saMed > 2)  medCredit += 254 * 12 * (saMed - 2);
+
+    saPaye = Math.max(0, grossTax - rebate - medCredit);
+
+    // UIF: 1% capped at R177.12/month
+    saUif = Math.min(salary * 0.01, 177.12 * 12);
+
+    totalDeductions = saPaye + saUif + saRaAnnual;
+    takeHome        = salary - totalDeductions;
+
+    lines.push({ label: 'PAYE (income tax)',  v: saPaye });
+    lines.push({ label: 'UIF (1%, capped)',   v: saUif });
+    if(medCredit > 0) lines.push({ label: 'Medical aid credit (applied)', v: -medCredit });
+    if(saRaAnnual > 0) lines.push({ label: 'RA contribution', v: saRaAnnual });
+  }
+
+  var effective = salary > 0 ? (totalDeductions / salary) * 100 : 0;
+  var perPeriod = payFreq > 0 ? takeHome / payFreq : 0;
+
+  document.getElementById('r-takehome').textContent         = fmt(takeHome);
+  document.getElementById('r-perperiod').textContent        = fmt(perPeriod);
+  document.getElementById('r-effective').textContent        = (Math.round(effective * 10) / 10) + '%';
+  document.getElementById('r-total-deductions').textContent = fmt(totalDeductions);
+
+  var rows = lines.map(function(l){
+    return '<tr><td>' + l.label + '</td><td class="td-right">' + fmt(l.v) + '</td><td class="td-right">' + fmt(payFreq > 0 ? l.v / payFreq : 0) + '</td></tr>';
+  }).join('');
+  rows += '<tr><td><strong>Take-home</strong></td><td class="td-right"><strong>' + fmt(takeHome) + '</strong></td><td class="td-right"><strong>' + fmt(perPeriod) + '</strong></td></tr>';
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+<script>
+// Variant region lock — URL implies region (e.g. /<calc>/uk/), so override
+// the browser-detected default. Mirrors the sa-tax-calculator pattern.
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof setRegion === 'function') setRegion('UK');
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-17">17 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
 
 
 
