@@ -12,6 +12,9 @@ zi6GQwzV
 zifB24pq
 site/
 
+# Local keyword-research artefacts (not for deploy)
+seo_keyword_research/
+
 # OS / IDE
 .DS_Store
 Thumbs.db
