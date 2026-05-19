@@ -86,6 +86,17 @@
 
   <h2>1. Sources</h2>
   <p>Every quantitative claim on FinCalcHub — tax band, contribution cap, historical return, average house price — links back to a primary source. We prefer the underlying authority over secondary aggregators.</p>
+
+  <h3>Source hierarchy</h3>
+  <p>Not all sources are equal. The hierarchy we use, in order of preference:</p>
+  <ul>
+    <li><strong>Primary government data.</strong> HMRC, SARS, the IRS, GOV.UK, the Bank of England, the South African Reserve Bank, the Federal Reserve, the Bureau of Labor Statistics, the Office for National Statistics, Statistics South Africa, the Social Security Administration. If the number exists in a tax table, contribution-limit notice, statistical release, or regulator's official guidance, that's where the article cites it from.</li>
+    <li><strong>Regulator-published guidance.</strong> Where a regulator has issued an explanatory document (HMRC's manuals, SARS's interpretation notes, IRS publications), we use it for the rules — not for the underlying figures, which still come from the primary tables.</li>
+    <li><strong>Peer-reviewed academic work.</strong> For longer-horizon claims — equity-risk premium, sequence-of-returns risk, retirement-withdrawal sustainability — we cite the published academic source rather than the popular write-up of it.</li>
+    <li><strong>Industry-published datasets.</strong> S&amp;P, MSCI, FTSE Russell, Morningstar for index and fund-level data; Robert Shiller's published series for long-run US equity returns; Aswath Damodaran's annually-updated datasets for risk premia and historical returns; the Halifax and Nationwide indices for UK house prices; Lightstone and FNB for SA property data.</li>
+    <li><strong>Everything else.</strong> The FT, Investopedia, MoneySavingExpert, the Sunday Times Money pages and equivalents may be quoted for context, framing, or commentary — but never as the only source for a quantitative claim. If a figure only exists in a secondary source, we either chase the original or don't publish the figure.</li>
+  </ul>
+
   <h3>Primary sources we use</h3>
   <ul>
     <li><strong>UK:</strong> HMRC (income tax, NI, ISA limits, pension allowances), the Bank of England (interest rates, inflation), the Office for National Statistics (ONS) (wage and price data), GOV.UK (state pension, stamp duty).</li>
@@ -101,36 +112,55 @@
     <li>UK mortgage repayments use the standard amortising annuity formula with monthly compounding — the same formula UK lenders publish.</li>
     <li>SA PAYE uses the SARS-published tax tables and primary, secondary, and tertiary rebates as applicable to the user's age.</li>
     <li>US 401(k) contributions are calculated against the IRS-published annual limit for the current year.</li>
+    <li>UK National Insurance is computed band by band (primary threshold, upper earnings limit) rather than as a flat-rate approximation.</li>
+    <li>Compound-interest projections use the formula <em>FV = PV (1 + r/n)<sup>n·t</sup></em> with the user-selected compounding frequency, rather than annualising for visual neatness.</li>
   </ul>
-  <p>If a calculator's underlying assumption is meaningful (compounding frequency, real-vs-nominal returns, ages eligible for rebates), it's surfaced as an explicit input or stated in the page text — not hidden.</p>
+  <p>If a calculator's underlying assumption is meaningful (compounding frequency, real-vs-nominal returns, ages eligible for rebates, what counts as "pensionable pay" in the UK), it's surfaced as an explicit input or stated in the page text — not hidden. Default values are sane and explained: when a US retirement calculator pre-fills "7% expected return", the page text explains where that figure comes from and links to the underlying historical data so you can pick a different value if you disagree.</p>
 
   <h2>3. Author and review</h2>
-  <p>All content is written and reviewed by James Blanckenberg (see <a href="/about/">About</a>). For specialist topics — retirement-fund administration, cross-border tax — we cross-check with publicly available guidance from the relevant regulator before publication, and we'll note where we have personal experience with a system versus where we don't.</p>
-  <p>FinCalcHub is not a regulated financial-advice service. Articles and calculators are informational. For decisions tailored to your situation, please consult a qualified adviser in your jurisdiction.</p>
+  <p>All content is written and reviewed by James Blanckenberg (see <a href="/about/">About</a> and the <a href="/authors/james-blanckenberg/">author profile</a>). For specialist topics — retirement-fund administration, cross-border tax, the mechanics of a SIPP wrapping a USD-denominated ETF — we cross-check with publicly available guidance from the relevant regulator before publication, and we'll note where we have personal experience with a system versus where we don't.</p>
+  <p>FinCalcHub is not a regulated financial-advice service. The site is not authorised by the Financial Conduct Authority (UK), registered with the Financial Sector Conduct Authority (South Africa), or registered as an investment adviser with the SEC or any state authority (USA). Articles and calculators are informational. For decisions tailored to your situation, please consult a qualified adviser in your jurisdiction.</p>
+
+  <h3>Authorship and the reviewer concept</h3>
+  <p>Currently FinCalcHub is a single-author publication. The author for every article and calculator is James Blanckenberg, named on the page and in the schema-level <code>author</code> property. As the site grows, the plan is to add a credentialed reviewer — most likely a chartered tax adviser (CTA) or chartered financial planner (CFP) — to second-check the tax-heavy and retirement-heavy pages before they go live. When that happens, the reviewer's name and credentials will appear on the author page, in the article byline ("written by … reviewed by …"), and in the <code>reviewedBy</code> schema property for every article they sign off. Until then, every page carries the name of the single author who wrote and verified it.</p>
 
   <h2>4. Update cadence</h2>
+  <p>The site's content has two clocks running. The first is the annual deep review, where every calculator and every guide gets opened, re-read, and checked against the current published rules. The second is the ad-hoc rate-change update, where a single page or section is pushed out as soon as a regulator publishes new figures.</p>
   <ul>
+    <li><strong>Annual deep review.</strong> Once a year — usually April for UK content (post-tax-year-end), February/March for SA content (after the National Budget), and January for US content (after the IRS publishes the new limits) — every page in the affected jurisdiction is re-verified line by line. The review covers the formula, the cited figures, the example numbers in the body text, and the schema.</li>
     <li><strong>Tax year changes:</strong> tax tables, NI thresholds, contribution caps, and rebates are reviewed and updated each time HMRC, SARS, or the IRS publishes new figures — typically within two weeks of the official release.</li>
     <li><strong>Quarterly:</strong> top-traffic pages are revisited every quarter — statistics refreshed, dates updated, and the body expanded where new information warrants it.</li>
     <li><strong>Ad-hoc:</strong> when a reader reports an error or the rules materially change (e.g. UK National Insurance reform, US SECURE Act updates, SA Two-Pot system rollout), corrections go live the same week.</li>
   </ul>
-  <p>Every page that has been updated carries a visible date stamp. Schema-level <code>dateModified</code> reflects the same date.</p>
+  <p>Every page that has been updated carries a visible date stamp. Schema-level <code>dateModified</code> reflects the same date. If the date on a page is more than twelve months old by the time you read it, please assume a deep review is overdue and email us — we'll prioritise the page for the next review pass.</p>
 
   <h2>5. Corrections</h2>
-  <p>If you find a calculation error, a stale figure, or an explanation that could be clearer, email <a href="mailto:jamesblanckenberg@gmail.com">jamesblanckenberg@gmail.com</a>. We aim to:</p>
+  <p>If you find a calculation error, a stale figure, or an explanation that could be clearer, email <a href="mailto:jamesblanckenberg@gmail.com">jamesblanckenberg@gmail.com</a>. The full corrections process, step by step:</p>
   <ul>
-    <li>Acknowledge any error within 24 hours of receiving the message.</li>
-    <li>Publish a correction within 48 hours for factual errors, longer for substantive rewrites.</li>
-    <li>Where the correction materially changes an answer a reader might have acted on, note it visibly on the page rather than silently editing.</li>
+    <li><strong>Acknowledgement.</strong> Every correction email gets a personal reply within 24 hours confirming we've received it and whether we agree the page needs changing.</li>
+    <li><strong>Verification.</strong> If the correction is a factual point (e.g. "the 2024/25 UK NI primary threshold is £242 per week, not £254"), we verify against the primary source before changing anything. If the reader's source disagrees with the regulator, we go with the regulator and explain why in the reply.</li>
+    <li><strong>Publication.</strong> Factual corrections normally go live within 48 hours of confirmation. Substantive rewrites — where a whole worked example needs redoing because an assumption changed — take longer and the reader is told that up front.</li>
+    <li><strong>Visible note.</strong> Where the correction materially changes an answer a reader might have acted on, the change is noted visibly on the page (a "Correction: 18 May 2026 — previous version stated X; the correct figure is Y" line at the foot of the article) rather than silently edited.</li>
+    <li><strong>Schema update.</strong> The <code>dateModified</code> in the article schema is bumped to match the date of the correction so search engines see the page has been updated.</li>
   </ul>
 
   <h2>6. Editorial independence</h2>
   <p>FinCalcHub is funded by display advertising (Google AdSense). Advertisers have no input on what we write or how we rank options. We don't run sponsored "best of" lists. If we ever publish content where there is a commercial relationship behind it, it'll be clearly disclosed on the page and on the <a href="/disclosure/">advertising &amp; affiliate disclosure</a> page.</p>
 
+  <h3>Conflicts of interest</h3>
+  <p>There are none to disclose. The site does not currently take affiliate fees from any product issuer, does not run sponsored content, and does not accept paid placements. The author does not hold any equity in fintech companies, does not consult for any financial-product issuer, and is not paid to write about any specific bank, broker, or platform. The author's personal financial holdings are limited to standard retail products (an ISA, a workplace pension, a small RA in South Africa) — none of which are referenced specifically in calculators or articles.</p>
+  <p>If any of the above changes — for example, if the author takes a consulting brief from a financial-product issuer or accepts equity in a fintech business — it will be disclosed on the <a href="/disclosure/">disclosure page</a> within seven days of the relationship beginning, and any article touching the affected topic will carry a visible disclosure at the top of the page.</p>
+
   <h2>7. AI use</h2>
   <p>We don't publish AI-generated content as our own. Writing assistants are sometimes used for drafting, copy-editing, and proofreading, but every published article is reviewed, edited, and (where the topic demands) personally re-verified against the primary source before going live.</p>
+  <p>Specifically, what AI is and isn't used for on FinCalcHub:</p>
+  <ul>
+    <li><strong>What AI is used for:</strong> first-draft prose for guides; structural editing of an existing draft; checking grammar and reading level; suggesting headings; brainstorming "what would a reader also want to know" angles for a topic.</li>
+    <li><strong>What AI is not used for:</strong> the calculation logic in any calculator (every formula is written and tested by hand); the tax tables, contribution limits, or rate figures (every figure is taken from the primary source and verified against it); primary research; original analysis; cross-checking a regulator's guidance (humans do that); writing the byline.</li>
+  </ul>
+  <p>Where an article quotes a number, the number came from the primary source, not from a model's training data. Where an article explains a rule, the explanation has been checked against the regulator's published guidance. AI-assisted does not mean AI-authored, and on FinCalcHub it never means AI-verified either.</p>
 
-  <p class="updated">Editorial policy last reviewed: 12 May 2026.</p>
+  <p class="updated">Editorial policy last reviewed: 19 May 2026.</p>
 </div>
 
 <footer>
