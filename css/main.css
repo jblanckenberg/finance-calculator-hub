@@ -306,3 +306,10 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 24px 28px;
 .newsletter input { padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(255,255,255,.2); margin-right: 8px; min-width: 240px; }
 .newsletter button { padding: 8px 16px; border-radius: 4px; background: #ffb612; color: #1B3A5C; border: 0; font-weight: 600; cursor: pointer; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* Article figures — Pexels hero + inline images on /blog/<slug>/ */
+.article-figure { margin: 24px 0; }
+.article-figure img { width: 100%; height: auto; border-radius: 8px; display: block; }
+.article-figure figcaption { font-size: 12px; color: #6b7280; text-align: center; margin-top: 8px; }
+.article-figure figcaption a { color: #6b7280; text-decoration: underline; }
+.article-figure figcaption a:hover { color: #1B3A5C; }
