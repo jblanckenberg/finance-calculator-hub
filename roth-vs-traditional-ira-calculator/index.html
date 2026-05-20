@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roth vs Traditional IRA Calculator — 2026 | FinCalcHub</title>
+  <meta name="description" content="Free Roth vs Traditional IRA calculator. Compare ending after-tax wealth at any contribution, return, and tax-rate assumption — with the tax-refund-invested adjustment.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/roth-vs-traditional-ira-calculator/">
+  <meta property="og:title" content="Roth vs Traditional IRA Calculator — 2026 | FinCalcHub">
+  <meta property="og:description" content="Free Roth vs Traditional IRA calculator. Compare ending after-tax wealth at any contribution, return, and tax-rate assumption — with the tax-refund-invested adjustment.">
+  <meta property="og:url" content="https://finncalc.com/roth-vs-traditional-ira-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Roth vs Traditional IRA Calculator — 2026 | FinCalcHub">
+  <meta name="twitter:description" content="Free Roth vs Traditional IRA calculator. Compare ending after-tax wealth at any contribution, return, and tax-rate assumption — with the tax-refund-invested adjustment.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","applicationCategory":"FinanceApplication","dateModified":"2026-05-20","description":"Free Roth vs Traditional IRA calculator with tax-refund-invested adjustment.","name":"Roth vs Traditional IRA Calculator","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web Browser","url":"https://finncalc.com/roth-vs-traditional-ira-calculator/"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I choose a Roth or Traditional IRA?","acceptedAnswer":{"@type":"Answer","text":"Choose Roth if you expect your tax rate in retirement to be higher than today (early career, expect promotions, expect higher future tax rates). Choose Traditional if you expect your retirement tax rate to be lower (peak earnings now, modest retirement spending). If rates stay equal, the two are mathematically identical."}},{"@type":"Question","name":"What is the 2026 IRA contribution limit?","acceptedAnswer":{"@type":"Answer","text":"$7,000 for under age 50, $8,000 for age 50+ (including a $1,000 catch-up). These limits apply to combined Roth and Traditional contributions in the same year — you can't put $7,000 in each. Income phase-outs apply for Roth above ~$150,000 single / $236,000 married."}},{"@type":"Question","name":"Why is Roth and Traditional identical at equal tax rates?","acceptedAnswer":{"@type":"Answer","text":"Algebra. Traditional: X grows to X(1+r)^n, then taxed at retirement = X(1+r)^n(1-t_ret). Roth: contribution costs X(1-t_now) out-of-pocket, grows tax-free to X(1-t_now)(1+r)^n. If t_now = t_ret, both formulas produce the identical number. The choice only matters when rates differ — the calculator&apos;s job is to show by how much."}},{"@type":"Question","name":"What is the tax-refund-invested adjustment?","acceptedAnswer":{"@type":"Answer","text":"A Traditional contribution gives an immediate tax deduction worth X × t_now in current-year tax savings. If that refund is invested at the same return rate, it compounds to X × t_now × (1+r)^n. Adding that to the after-tax Traditional withdrawal produces the true total Traditional outcome — and that&apos;s the figure that equals Roth when tax rates stay flat. Most casual calculators omit this and unfairly favour Roth."}},{"@type":"Question","name":"What if I expect tax rates to rise in retirement?","acceptedAnswer":{"@type":"Answer","text":"Lean Roth. Future tax-rate uncertainty is the single strongest argument for Roth diversification — your retirement income is taxed regardless of what Congress does to the brackets between now and then. Most planners suggest holding at least 30-40% of retirement assets in Roth, even when current-year math favours Traditional."}},{"@type":"Question","name":"Can I contribute to both Roth and Traditional?","acceptedAnswer":{"@type":"Answer","text":"Yes, but the $7,000 (2026, under 50) limit applies to combined contributions across both accounts. Splitting 50/50 is a common diversification strategy — gives flexibility on tax planning in retirement when you can withdraw from whichever bucket helps minimize that year&apos;s liability."}},{"@type":"Question","name":"What about Roth IRA income limits?","acceptedAnswer":{"@type":"Answer","text":"For 2026 (estimated): Roth phase-out starts at $153,000 single and ends at $168,000; for married filing jointly $242,000-$252,000. Above these you cannot contribute directly to Roth — but the backdoor Roth conversion is legal and widely used. Traditional IRA deduction has its own phase-outs that interact with whether you or your spouse have a workplace retirement plan."}}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://finncalc.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://finncalc.com/roth-vs-traditional-ira-calculator/","name":"Roth vs Traditional IRA Calculator","position":2}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","name":"James Blanckenberg"},"description":"Step-by-step guide to using the Roth vs Traditional IRA Calculator.","name":"How to use the Roth vs Traditional IRA Calculator","step":[{"@type":"HowToStep","name":"Enter your annual contribution","position":1,"text":"Up to $7,000 in 2026 ($8,000 if 50+) — applied to whichever account you choose.","url":"https://finncalc.com/roth-vs-traditional-ira-calculator/#step-1"},{"@type":"HowToStep","name":"Set years to retirement and expected return","position":2,"text":"Default 30 years and 7% real return for a moderate baseline.","url":"https://finncalc.com/roth-vs-traditional-ira-calculator/#step-2"},{"@type":"HowToStep","name":"Set current and retirement tax rates","position":3,"text":"Your marginal bracket today and what you expect in retirement — the only variables that matter for the decision.","url":"https://finncalc.com/roth-vs-traditional-ira-calculator/#step-3"},{"@type":"HowToStep","name":"Read the side-by-side ending values","position":4,"text":"The calculator highlights the winner and shows the dollar gap — including the tax-refund-invested adjustment.","url":"https://finncalc.com/roth-vs-traditional-ira-calculator/#step-4"}],"totalTime":"PT2M"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","jobTitle":"Founder & Editor, FinCalcHub","name":"James Blanckenberg","sameAs":["https://www.linkedin.com/in/james-blanckenberg-154a1312/"],"url":"https://finncalc.com/authors/james-blanckenberg/"}, "dateModified":"2026-05-20","datePublished":"2026-05-20","description":"Free Roth vs Traditional IRA calculator with tax-refund-invested adjustment.","headline":"Roth vs Traditional IRA Calculator","inLanguage":"en","mainEntityOfPage":{"@id":"https://finncalc.com/roth-vs-traditional-ira-calculator/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://finncalc.com/og-image.png"},"name":"FinCalcHub","url":"https://finncalc.com/"},"url":"https://finncalc.com/roth-vs-traditional-ira-calculator/"}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5FSP8WRB3C');
+  </script>
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+  </script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <script>
+  (function(){
+    var loaded=false;
+    function loadAds(){
+      if(loaded) return; loaded=true;
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+      s.crossOrigin='anonymous';
+      document.head.appendChild(s);
+    }
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+      },{rootMargin:'200px'});
+      document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+      });
+    } else {
+      window.addEventListener('load',loadAds);
+    }
+  })();
+  </script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK" disabled style="opacity:0.5;cursor:not-allowed" title="Roth/Traditional IRA is US-only — UK equivalents are ISAs"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> UK (use ISA)</button>
+    <button class="region-btn" id="btn-SA" disabled style="opacity:0.5;cursor:not-allowed" title="Roth/Traditional IRA is US-only — SA equivalent is TFSA + RA"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> SA (use TFSA/RA)</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="4461919959" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="/">Home</a> › Roth vs Traditional IRA Calculator</p>
+  <h1>Roth vs Traditional IRA Calculator</h1>
+  <p class="subtitle">Compare ending after-tax wealth from a Roth IRA and a Traditional IRA at any contribution, return, and tax-rate assumption — including the tax-refund-invested adjustment most casual calculators forget.</p>
+
+  <div class="quick-answer">
+    <h2>Roth or Traditional — which is better?</h2>
+    <p>If your tax rate stays the same from now until retirement, the two are <strong>mathematically identical</strong>. Roth wins when retirement rate &gt; current rate (early-career, expect promotions, expect higher future tax rates). Traditional wins when current rate &gt; retirement rate (peak earnings, modest retirement spending). The calculator shows the dollar gap for your specific assumptions.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Contribution Plan</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="contribution">Annual Contribution ($)</label>
+        <input type="number" id="contribution" value="7000" min="0" max="8000" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="years">Years to Retirement</label>
+        <input type="number" id="years" value="30" min="1" max="50" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="returnRate">Expected Annual Return (%)</label>
+      <input type="range" id="returnRate" value="7" min="4" max="10" step="0.1" oninput="calculate()">
+      <output id="return-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">7.0%</output>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="taxNow">Current Marginal Tax Rate (%)</label>
+        <input type="range" id="taxNow" value="22" min="10" max="37" step="1" oninput="calculate()">
+        <output id="taxnow-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">22%</output>
+      </div>
+      <div class="form-group">
+        <label for="taxRet">Retirement Marginal Tax Rate (%)</label>
+        <input type="range" id="taxRet" value="12" min="10" max="37" step="1" oninput="calculate()">
+        <output id="taxret-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">12%</output>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">Ending After-Tax Wealth</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-winner">—</div><div class="result-label">Winner</div></div>
+      <div class="result-item"><div class="result-value" id="r-roth">$0</div><div class="result-label">Roth Final</div></div>
+      <div class="result-item"><div class="result-value" id="r-trad">$0</div><div class="result-label">Traditional Final (adjusted)</div></div>
+      <div class="result-item"><div class="result-value" id="r-gap">$0</div><div class="result-label">Dollar Gap</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Side-by-Side Comparison</div>
+    <table class="breakdown-table">
+      <thead><tr><th>Account</th><th class="td-right">Annual Contribution</th><th class="td-right">Ending Pre-Tax</th><th class="td-right">Tax at Withdrawal</th><th class="td-right">Plus Refund Compounded</th><th class="td-right">Ending After-Tax</th></tr></thead>
+      <tbody id="breakdown-body"></tbody>
+    </table>
+    <p id="recommendation" style="margin:16px 0 0;padding:12px;background:#e6f7ff;border-left:4px solid #1890ff;font-size:0.9em"></p>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+      <button class="btn-action" onclick="saveToFile && saveToFile()">💾 Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="7963163804" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" style="margin-bottom:6px">Enter the annual contribution — max $7,000 in 2026 ($8,000 if 50+).</li>
+      <li id="step-2" style="margin-bottom:6px">Set years to retirement and expected real return. 30 years and 7% are the standard baseline.</li>
+      <li id="step-3" style="margin-bottom:6px">Set your current and retirement marginal tax brackets. These are the only two variables that matter for the decision.</li>
+      <li id="step-4" style="margin-bottom:6px">Read the winner and the dollar gap. The Traditional figure includes the tax-refund-invested adjustment for an apples-to-apples comparison.</li>
+    </ol>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>Where Roth and Traditional differ.</strong> Traditional IRA contributions reduce current-year taxable income; withdrawals in retirement are taxed as ordinary income. Roth IRA contributions use post-tax dollars; withdrawals (after age 59½ and 5-year rule) are tax-free. The fundamental trade-off is "when do you pay the tax".</p>
+    <p><strong>The equivalence theorem.</strong> If your marginal tax rate is identical now and at retirement, the two account types produce the same after-tax wealth. Algebra: <code>Traditional = X(1+r)^n(1-t_ret)</code>; <code>Roth = X(1-t_now)(1+r)^n</code>. When <code>t_now = t_ret</code>, these are equal. The two choices only matter when you expect rates to change.</p>
+    <p><strong>The tax-refund-invested trap.</strong> Most casual Roth vs Traditional comparisons show Traditional&apos;s ending balance taxed at withdrawal but forget that Traditional gave you a tax refund up front. Putting $7,000 in Traditional at a 22% marginal rate generates a $1,540 refund this April. If you invest that refund at the same return, after 30 years it grows to about $11,720. Add that to the after-tax Traditional withdrawal for a true comparison — that&apos;s the figure shown here.</p>
+    <p><strong>Roth advantages beyond the math.</strong> Three things the equivalence theorem can&apos;t capture: (1) Roth withdrawals are tax-free, which means they don&apos;t count toward provisional-income calculations for Social Security taxation, IRMAA Medicare surcharges, or ACA subsidy phase-outs. (2) Roth has no Required Minimum Distributions, so the account can compound past age 73. (3) Roth balances inherit tax-free to heirs (subject to 10-year rule). These matter when you&apos;re running a 40-year retirement plan.</p>
+    <p><strong>2026 limits.</strong> $7,000 contribution under 50; $8,000 with the $1,000 catch-up at 50+. Income phase-out (estimated): Roth direct contributions phase out at $153,000-$168,000 single and $242,000-$252,000 married. Above these, the backdoor Roth conversion is the standard workaround. Confirm exact limits against IRS Rev. Proc. annual release.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="worked-example" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Worked example — 30-year-old, $7,000/year, expecting tax rate to drop in retirement</h2>
+    <p>A 30-year-old in the 22% marginal bracket plans to contribute $7,000 per year to an IRA for 35 years. They expect retirement to land in the 12% bracket (Social Security plus modest withdrawals from this single account). Assumed real return: 7%.</p>
+    <p>Roth path. Out-of-pocket each year is $7,000 (already-taxed dollars). After 35 years at 7%: $7,000 × ((1.07^35 − 1) / 0.07) = $7,000 × 138.24 = $967,700. All tax-free at withdrawal. <strong>Roth ending after-tax: $967,700.</strong></p>
+    <p>Traditional path (with tax-refund-invested adjustment). Same $7,000 going to the account each year. Annual tax refund = $7,000 × 22% = $1,540, also invested at 7% in a taxable account. After 35 years: pre-tax IRA = $967,700. Tax at 12% retirement bracket = $116,124, leaving $851,576. Compounded refund = $1,540 × 138.24 = $212,890 (ignoring annual cap-gains tax for simplicity). Total = $851,576 + $212,890 = <strong>$1,064,466.</strong></p>
+    <p>Traditional wins by $96,766 — about 10% more wealth. The 10 percentage-point spread between today&apos;s 22% bracket and retirement&apos;s 12% bracket is the entire driver. Flip the assumption — retirement at 24% (perhaps because tax rates rise) — and Roth wins by roughly the same magnitude.</p>
+    <p>Same numbers, equal rates. Both at 22%: Roth = $967,700; Traditional after-tax + invested refund = $7,000 × (1−0.22) × 138.24 + $1,540 × 138.24 = $754,805 + $212,890 = $967,695. Identical to the dollar (the $5 gap is rounding). This is the equivalence theorem in numerical form.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="common-mistakes" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Common mistakes</h2>
+    <ul style="margin:0 0 0 22px">
+      <li style="margin-bottom:8px"><strong>Forgetting the tax refund.</strong> Comparing $7,000-in-Roth to $7,000-in-Traditional without accounting for the Traditional refund unfairly favours Roth. The refund is real money that compounds if invested. This calculator includes the adjustment by default.</li>
+      <li style="margin-bottom:8px"><strong>Assuming today&apos;s tax rates persist.</strong> The Tax Cuts and Jobs Act expires at end of 2025; brackets in 2026+ revert higher unless Congress acts. Many retirement planners assume future rates 2-5 percentage points above today as a baseline. This pushes the math toward Roth.</li>
+      <li style="margin-bottom:8px"><strong>Ignoring Roth&apos;s non-tax benefits.</strong> No RMDs, no provisional-income counting for Social Security taxation, no IRMAA Medicare surcharges from Roth withdrawals. These can add 5-15% to effective Roth value at higher income levels.</li>
+      <li style="margin-bottom:8px"><strong>Mixing IRA limits with 401(k) limits.</strong> The $7,000 IRA limit is separate from the $23,000 401(k) limit (2026). Max both for maximum tax-advantaged saving. Use the <a href="/catch-up-contribution-calculator/">Catch-Up Contribution Calculator</a> if you&apos;re over 50.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="related">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/catch-up-contribution-calculator/" class="related-card">📈 Catch-Up Contribution</a>
+    <a href="/401k-calculator/" class="related-card">💼 401(k) Calculator</a>
+    <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    <a href="/safe-withdrawal-rate-calculator/" class="related-card">💸 Safe Withdrawal Rate</a>
+    <a href="/fire-number-calculator/" class="related-card">🔥 FIRE Number</a>
+    <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="1620134192" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">Should I choose a Roth or Traditional IRA?</div><div class="faq-a">Roth if retirement rate &gt; current rate; Traditional if current &gt; retirement. If equal, they&apos;re mathematically identical.</div></div>
+    <div class="faq-item"><div class="faq-q">What is the 2026 IRA contribution limit?</div><div class="faq-a">$7,000 under 50, $8,000 with catch-up at 50+. Combined across Roth and Traditional.</div></div>
+    <div class="faq-item"><div class="faq-q">Why is Roth and Traditional identical at equal tax rates?</div><div class="faq-a">Algebra: X(1+r)^n(1-t_ret) = X(1-t_now)(1+r)^n when t_now = t_ret. The choice only matters when rates differ.</div></div>
+    <div class="faq-item"><div class="faq-q">What is the tax-refund-invested adjustment?</div><div class="faq-a">Traditional gives a tax deduction worth X × t_now in current-year savings. Invested at the same return, it compounds to X × t_now × (1+r)^n. Add that to the after-tax withdrawal for the true comparison.</div></div>
+    <div class="faq-item"><div class="faq-q">What if I expect tax rates to rise in retirement?</div><div class="faq-a">Lean Roth. Future tax-rate uncertainty is the strongest single argument for Roth, even when current-year math favours Traditional.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I contribute to both Roth and Traditional?</div><div class="faq-a">Yes, but the $7,000 combined limit applies. Splitting 50/50 gives flexibility in retirement tax planning.</div></div>
+    <div class="faq-item"><div class="faq-q">What about Roth IRA income limits?</div><div class="faq-a">Roth phase-out around $153k-$168k single / $242k-$252k MFJ in 2026. Above, use backdoor Roth conversion.</div></div>
+  </div>
+</div>
+
+<script>
+function calculate(){
+  var contribution = parseFloat(document.getElementById('contribution').value) || 0;
+  var years = parseFloat(document.getElementById('years').value) || 30;
+  var ret = parseFloat(document.getElementById('returnRate').value) || 7;
+  var taxNow = parseFloat(document.getElementById('taxNow').value) || 22;
+  var taxRet = parseFloat(document.getElementById('taxRet').value) || 12;
+
+  document.getElementById('return-display').textContent = ret.toFixed(1) + '%';
+  document.getElementById('taxnow-display').textContent = Math.round(taxNow) + '%';
+  document.getElementById('taxret-display').textContent = Math.round(taxRet) + '%';
+
+  var r = ret / 100;
+  var tN = taxNow / 100;
+  var tR = taxRet / 100;
+
+  // Annuity factor — FV of $1 contributed annually for n years
+  var annuityFactor = ((Math.pow(1 + r, years) - 1) / r);
+  var endingPreTax = contribution * annuityFactor;
+
+  // Roth: post-tax contributions, tax-free withdrawals
+  var rothFinal = endingPreTax;
+  // Traditional: pre-tax contributions, taxed at withdrawal
+  var tradAfterTax = endingPreTax * (1 - tR);
+  // Plus the compounded refund from the upfront deduction
+  var annualRefund = contribution * tN;
+  var compoundedRefund = annualRefund * annuityFactor;
+  var tradTotal = tradAfterTax + compoundedRefund;
+
+  var winner = rothFinal > tradTotal ? 'Roth' : (tradTotal > rothFinal ? 'Traditional' : 'Tied');
+  var gap = Math.abs(rothFinal - tradTotal);
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-winner').textContent = winner;
+  document.getElementById('r-roth').textContent = fmt(rothFinal);
+  document.getElementById('r-trad').textContent = fmt(tradTotal);
+  document.getElementById('r-gap').textContent = fmt(gap);
+
+  var rows = [
+    {label: 'Roth IRA',         contrib: fmt(contribution), pre: fmt(endingPreTax), tax: '$0 (tax-free)', refund: 'n/a',                    afterTax: fmt(rothFinal)},
+    {label: 'Traditional IRA',  contrib: fmt(contribution), pre: fmt(endingPreTax), tax: fmt(endingPreTax * tR), refund: fmt(compoundedRefund), afterTax: fmt(tradTotal)}
+  ];
+  document.getElementById('breakdown-body').innerHTML = rows.map(function(rw){
+    return '<tr><td>' + rw.label + '</td><td class="td-right">' + rw.contrib + '</td><td class="td-right">' + rw.pre + '</td><td class="td-right">' + rw.tax + '</td><td class="td-right">' + rw.refund + '</td><td class="td-right">' + rw.afterTax + '</td></tr>';
+  }).join('');
+
+  var rec;
+  if (Math.abs(rothFinal - tradTotal) < 100) {
+    rec = '<strong>Effectively tied.</strong> At equal-or-very-close tax rates, Roth and Traditional are mathematically identical. Pick based on flexibility — Roth has no RMDs and tax-free heir inheritance; Traditional may give cash-flow flexibility if you expect a lower-tax retirement year (Roth conversions etc.).';
+  } else if (winner === 'Roth') {
+    rec = '<strong>Roth wins by ' + fmt(gap) + '.</strong> Your retirement marginal rate (' + Math.round(taxRet) + '%) exceeds your current marginal rate (' + Math.round(taxNow) + '%) — paying tax now is cheaper than paying later. Future tax-rate uncertainty also favours Roth.';
+  } else {
+    rec = '<strong>Traditional wins by ' + fmt(gap) + '.</strong> Your current marginal rate (' + Math.round(taxNow) + '%) exceeds your retirement rate (' + Math.round(taxRet) + '%) — taking the deduction now and paying less tax later is the better math. But consider 30-40% Roth allocation anyway as insurance against future tax-rate rises.';
+  }
+  document.getElementById('recommendation').innerHTML = rec;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid #e5e7eb;font-size:13px;color:#666;line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:#1B3A5C;text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-20">20 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:#1B3A5C;text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+<div class="container ad-footer-desktop">
+  <div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="5980987973" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+    <div id="newsletter-slot"></div>
+    <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+      <strong>Run a business?</strong>
+      Try our sister site
+      <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+      — free profit margin, pricing, and cash flow calculators.
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>
