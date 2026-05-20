@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dividend Reinvestment Calculator — DRIP Compounding | FinCalcHub</title>
+  <meta name="description" content="Free dividend reinvestment (DRIP) calculator. See how much extra wealth automatic dividend reinvestment generates compared to taking dividends as cash.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/dividend-reinvestment-calculator/">
+  <meta property="og:title" content="Dividend Reinvestment Calculator — DRIP Compounding | FinCalcHub">
+  <meta property="og:description" content="Free dividend reinvestment (DRIP) calculator. See how much extra wealth automatic dividend reinvestment generates compared to taking dividends as cash.">
+  <meta property="og:url" content="https://finncalc.com/dividend-reinvestment-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dividend Reinvestment Calculator — DRIP Compounding | FinCalcHub">
+  <meta name="twitter:description" content="Free dividend reinvestment (DRIP) calculator. See how much extra wealth automatic dividend reinvestment generates compared to taking dividends as cash.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","applicationCategory":"FinanceApplication","dateModified":"2026-05-20","description":"Free dividend reinvestment (DRIP) calculator comparing reinvest vs cash-payout outcomes.","name":"Dividend Reinvestment Calculator","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web Browser","url":"https://finncalc.com/dividend-reinvestment-calculator/"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a DRIP?","acceptedAnswer":{"@type":"Answer","text":"A DRIP (Dividend Reinvestment Plan) automatically uses each dividend payment to buy more shares of the same stock or fund, rather than paying the cash to your account. Over decades the difference is enormous because the new shares themselves earn dividends, creating a compounding cycle."}},{"@type":"Question","name":"How much extra wealth does DRIP generate?","acceptedAnswer":{"@type":"Answer","text":"On a $10,000 investment at 8% price return and 2.5% dividend yield over 30 years, DRIP generates roughly 30-40% more ending wealth than taking dividends as cash. The exact figure depends on dividend yield (higher yield = bigger DRIP advantage) and time horizon (longer = exponentially bigger gap)."}},{"@type":"Question","name":"Are reinvested dividends still taxable?","acceptedAnswer":{"@type":"Answer","text":"Yes in a taxable brokerage account. The IRS treats reinvested dividends as if you received cash and immediately bought shares — you owe tax on them either way. In a tax-advantaged account (IRA, 401k, Roth, ISA, TFSA) reinvested dividends compound tax-free. This is the single biggest argument for holding dividend stocks in tax-advantaged accounts."}},{"@type":"Question","name":"What's the difference between price return and total return?","acceptedAnswer":{"@type":"Answer","text":"Price return is just the change in share price. Total return includes both price appreciation AND dividends received. For the S&P 500 since 1926, price return has averaged about 7%/year but total return (with reinvested dividends) is closer to 10%. Roughly 30% of long-run stock-market returns come from dividends — ignoring them dramatically understates expected wealth."}},{"@type":"Question","name":"Should I always reinvest dividends?","acceptedAnswer":{"@type":"Answer","text":"Almost always yes during the accumulation phase, especially in tax-advantaged accounts. The exceptions: retirees actively living off the dividend income, or anyone wanting to rebalance manually away from a concentrated position. For most long-term wealth-building, DRIP should be on by default."}},{"@type":"Question","name":"Can I set up DRIP for any stock?","acceptedAnswer":{"@type":"Answer","text":"Most major brokerages (Vanguard, Fidelity, Schwab, Interactive Brokers, etc.) let you toggle DRIP on a per-holding basis for free. ETFs and individual stocks both qualify. Some companies also offer direct DRIPs through their transfer agent that allow fractional-share purchases at no commission — Coca-Cola, Johnson & Johnson, and several utilities have these. UK and SA brokerages have similar features though branding varies."}},{"@type":"Question","name":"Does DRIP work with mutual funds?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most mutual funds support reinvesting both dividends and capital-gains distributions automatically. This is one reason index funds compound so well over decades — by default they reinvest everything internally so your share price appreciates rather than paying you cash periodically."}}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://finncalc.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://finncalc.com/dividend-reinvestment-calculator/","name":"Dividend Reinvestment Calculator","position":2}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","name":"James Blanckenberg"},"description":"Step-by-step guide to using the Dividend Reinvestment Calculator.","name":"How to use the Dividend Reinvestment Calculator","step":[{"@type":"HowToStep","name":"Enter your starting investment","position":1,"text":"Initial dollar (or local currency) amount invested in dividend-paying stocks or funds.","url":"https://finncalc.com/dividend-reinvestment-calculator/#step-1"},{"@type":"HowToStep","name":"Set dividend yield and price return","position":2,"text":"Annual dividend yield (typically 2-4% for index funds, higher for utilities and REITs) and expected price appreciation.","url":"https://finncalc.com/dividend-reinvestment-calculator/#step-2"},{"@type":"HowToStep","name":"Pick your time horizon","position":3,"text":"Longer horizons make the DRIP advantage compound exponentially.","url":"https://finncalc.com/dividend-reinvestment-calculator/#step-3"}],"totalTime":"PT1M"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","jobTitle":"Founder & Editor, FinCalcHub","name":"James Blanckenberg","sameAs":["https://www.linkedin.com/in/james-blanckenberg-154a1312/"],"url":"https://finncalc.com/authors/james-blanckenberg/"}, "dateModified":"2026-05-20","datePublished":"2026-05-20","description":"Free dividend reinvestment (DRIP) calculator.","headline":"Dividend Reinvestment Calculator","inLanguage":"en","mainEntityOfPage":{"@id":"https://finncalc.com/dividend-reinvestment-calculator/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://finncalc.com/og-image.png"},"name":"FinCalcHub","url":"https://finncalc.com/"},"url":"https://finncalc.com/dividend-reinvestment-calculator/"}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5FSP8WRB3C');
+  </script>
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+  </script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <script>
+  (function(){
+    var loaded=false;
+    function loadAds(){
+      if(loaded) return; loaded=true;
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+      s.crossOrigin='anonymous';
+      document.head.appendChild(s);
+    }
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+      },{rootMargin:'200px'});
+      document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+      });
+    } else {
+      window.addEventListener('load',loadAds);
+    }
+  })();
+  </script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="4461919959" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="/">Home</a> › Dividend Reinvestment Calculator</p>
+  <h1>Dividend Reinvestment Calculator</h1>
+  <p class="subtitle">Compare ending wealth from reinvesting dividends automatically (DRIP) against taking them as cash — over any horizon at any dividend yield and price-return assumption.</p>
+
+  <div class="quick-answer">
+    <h2>How much extra do reinvested dividends generate?</h2>
+    <p>On a $10,000 investment at 8% price return + 2.5% dividend yield over 30 years, <strong>DRIP generates about $173,000 versus $122,000 with dividends taken as cash</strong> — roughly 42% more ending wealth. The gap widens exponentially with longer horizons and higher dividend yields. Roughly a third of long-run S&amp;P 500 returns come from reinvested dividends.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Investment</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="starting">Starting Investment <span class="hint" id="s1">($)</span></label>
+        <input type="number" id="starting" value="10000" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="years">Years</label>
+        <input type="number" id="years" value="30" min="1" max="60" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="dividendYield">Annual Dividend Yield (%)</label>
+      <input type="range" id="dividendYield" value="2.5" min="1" max="5" step="0.1" oninput="calculate()">
+      <output id="yield-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">2.5%</output>
+    </div>
+    <div class="form-group">
+      <label for="priceReturn">Annual Price Return (%)</label>
+      <input type="range" id="priceReturn" value="8" min="5" max="12" step="0.1" oninput="calculate()">
+      <output id="return-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">8.0%</output>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">DRIP vs Cash-Out</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-drip">$0</div><div class="result-label">Ending — With DRIP</div></div>
+      <div class="result-item"><div class="result-value" id="r-cash">$0</div><div class="result-label">Ending — Dividends as Cash</div></div>
+      <div class="result-item"><div class="result-value" id="r-bonus">$0</div><div class="result-label">DRIP Advantage</div></div>
+      <div class="result-item"><div class="result-value" id="r-totaldivs">$0</div><div class="result-label">Total Dividends Accumulated</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Year-by-Year Snapshot (every 5 years)</div>
+    <table class="breakdown-table">
+      <thead><tr><th>Year</th><th class="td-right">With DRIP</th><th class="td-right">Without DRIP (shares only)</th><th class="td-right">Cumulative Cash Dividends</th></tr></thead>
+      <tbody id="breakdown-body"></tbody>
+    </table>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+      <button class="btn-action" onclick="saveToFile && saveToFile()">💾 Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="7963163804" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 1 minute.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" style="margin-bottom:6px">Enter the dollar amount you're putting (or have put) into dividend-paying stocks or funds.</li>
+      <li id="step-2" style="margin-bottom:6px">Set the dividend yield. S&amp;P 500 averages ~1.5-2%; broad value ETFs ~2-3%; REITs and utilities 3-5%.</li>
+      <li id="step-3" style="margin-bottom:6px">Set the expected price return (capital appreciation only, separate from dividends).</li>
+      <li id="step-4" style="margin-bottom:6px">Pick a time horizon and read both ending balances side-by-side.</li>
+    </ol>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>Total return = price return + dividend yield.</strong> Most investors quote stock-market returns using just price return (the S&amp;P 500 chart number). But the true wealth-creating figure is total return, which adds the dividends. Reinvesting those dividends — the DRIP — is what turns a 7% price-return into a 10% wealth-compounding rate.</p>
+    <p><strong>The compounding asymmetry.</strong> Dividends paid out as cash sit idle (or fund spending). Dividends reinvested immediately buy more shares, which themselves pay more dividends next quarter, which buy more shares, etc. Over 30 years this compound-of-compounds is roughly 30-50% more wealth than the cash-out path at typical dividend yields.</p>
+    <p><strong>Tax matters.</strong> In a taxable brokerage account, reinvested dividends are still taxable as you receive them (qualified dividends at 0%/15%/20% in the US, ordinary income rates in the UK and SA). Drag from tax is real — typically 0.5-1% per year for high-income investors. Holding dividend stocks in tax-advantaged accounts (IRA, 401k, Roth, ISA, TFSA, RA) eliminates this drag entirely.</p>
+    <p><strong>Why most index funds win this game.</strong> A total-market ETF like VTI reinvests dividends inside the fund structure and reflects them in the share price. You get the DRIP effect automatically without needing to opt in. This is one reason index funds outperform &quot;collect the dividends for income&quot; portfolios over 20+ year horizons.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="worked-example" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Worked example — $25,000 in a dividend-paying ETF for 25 years</h2>
+    <p>A 35-year-old invests $25,000 in a broad US dividend ETF. Expected dividend yield: 3% (typical for value-tilted dividend funds). Expected price return: 6% (somewhat lower than total-market growth funds — the dividend-yield boost makes up the difference). Time horizon: 25 years until age 60.</p>
+    <p>Without DRIP — dividends taken as cash. Year-one cash dividend = $25,000 × 3% = $750. Share price grows at 6% to $26,500 by end of year. Each subsequent year the price compounds at 6% while the dividend rises ~6% with the share price. After 25 years: share value = $25,000 × 1.06^25 = $107,297. Cumulative cash dividends collected = roughly $35,000. Total wealth: $142,297 (if dividends spent) or with cash dividends parked separately at 0% return: $142,297.</p>
+    <p>With DRIP. Total return = price return + dividend yield = 9%. After 25 years: $25,000 × 1.09^25 = $215,510. <strong>DRIP advantage: $73,213, or 51% more ending wealth.</strong></p>
+    <p>What drives the gap? Each year the DRIP path buys roughly 0.03 × (current share count) new shares, which themselves earn dividends next year. The compounding cycle accelerates exponentially. The gap is barely visible in year 5 (~$2,500), modest by year 10 (~$11,000), substantial by year 20 (~$40,000), and dominant by year 30 (~$90,000+).</p>
+    <p>Tax note: in a taxable US account at the 15% qualified-dividend rate, you'd owe ~$5,250 cumulative tax on the DRIP path over 25 years (estimated, depends on whether dividends remain qualified and the holding-period rules). Inside a Roth IRA, that tax disappears entirely — pushing the DRIP advantage to ~$78,500 net.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="common-mistakes" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Common mistakes</h2>
+    <ul style="margin:0 0 0 22px">
+      <li style="margin-bottom:8px"><strong>Forgetting DRIP exists.</strong> Most brokerages have it off by default. You have to opt in per holding. A new 401(k) participant who doesn't enable DRIP can lose 20-30% of expected wealth across a 30-year career.</li>
+      <li style="margin-bottom:8px"><strong>Mistaking dividend yield for total return.</strong> A 4% dividend yield isn't a 4% return — it's the dividend portion only. Total return needs price appreciation on top. Plus, &quot;high-yield&quot; stocks above 6-8% often signal trouble; the high yield is dividing into a falling share price.</li>
+      <li style="margin-bottom:8px"><strong>Holding dividend stocks in taxable accounts.</strong> If you must hold them outside tax-advantaged wrappers, hold the lower-yield ones in taxable and high-yield in tax-advantaged. The tax drag on high yielders compounds against you in taxable.</li>
+      <li style="margin-bottom:8px"><strong>Calling DRIP a strategy.</strong> It's an account setting, not a strategy. The strategy is the underlying portfolio. DRIP just makes the math more efficient.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="related">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+    <a href="/investment-growth/" class="related-card">💹 Investment Growth</a>
+    <a href="/savings-vs-investing-calculator/" class="related-card">⚖️ Savings vs Investing</a>
+    <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
+    <a href="/rule-of-72-calculator/" class="related-card">⏱️ Rule of 72</a>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="1620134192" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">What is a DRIP?</div><div class="faq-a">A Dividend Reinvestment Plan automatically reinvests each dividend payment into more shares of the same security, rather than paying out cash.</div></div>
+    <div class="faq-item"><div class="faq-q">How much extra wealth does DRIP generate?</div><div class="faq-a">On a $10,000 starting investment with 8% price return and 2.5% dividend yield over 30 years, DRIP produces ~42% more ending wealth than taking dividends as cash.</div></div>
+    <div class="faq-item"><div class="faq-q">Are reinvested dividends still taxable?</div><div class="faq-a">Yes in a taxable account — the IRS treats reinvested dividends as received cash. In a tax-advantaged account (IRA, 401k, Roth, ISA, TFSA) they compound tax-free.</div></div>
+    <div class="faq-item"><div class="faq-q">What's the difference between price return and total return?</div><div class="faq-a">Price return is the share-price change. Total return adds dividends received. S&amp;P 500 long-run total return is ~3 percentage points above price return.</div></div>
+    <div class="faq-item"><div class="faq-q">Should I always reinvest dividends?</div><div class="faq-a">Usually yes during accumulation, especially in tax-advantaged accounts. Exceptions: retirees living off the income, or wanting to rebalance manually.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I set up DRIP for any stock?</div><div class="faq-a">Most major brokerages allow per-holding DRIP toggling at no cost. Some companies offer direct DRIPs through transfer agents with fractional-share buying.</div></div>
+    <div class="faq-item"><div class="faq-q">Does DRIP work with mutual funds?</div><div class="faq-a">Yes — most mutual funds reinvest dividends and capital-gains distributions automatically. Index funds compound effectively this way by default.</div></div>
+  </div>
+</div>
+
+<script>
+function calculate(){
+  var starting = parseFloat(document.getElementById('starting').value) || 0;
+  var years = parseFloat(document.getElementById('years').value) || 30;
+  var divYield = parseFloat(document.getElementById('dividendYield').value) || 2.5;
+  var priceReturn = parseFloat(document.getElementById('priceReturn').value) || 8;
+
+  document.getElementById('yield-display').textContent = divYield.toFixed(1) + '%';
+  document.getElementById('return-display').textContent = priceReturn.toFixed(1) + '%';
+
+  var price = priceReturn / 100;
+  var divs = divYield / 100;
+  // With DRIP: total return compounds at price + dividend
+  var dripFinal = starting * Math.pow(1 + price + divs, years);
+  // Without DRIP: shares grow at price-only; dividends accumulate as cash (no growth)
+  var sharesOnly = starting * Math.pow(1 + price, years);
+  // Annual cash dividend each year grows with share price; cumulative = starting × divs × ((1+p)^years - 1) / p
+  var cumulativeDivs = price > 0 ? starting * divs * ((Math.pow(1 + price, years) - 1) / price) : starting * divs * years;
+  var cashFinal = sharesOnly + cumulativeDivs;
+  var bonus = dripFinal - cashFinal;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-drip').textContent = fmt(dripFinal);
+  document.getElementById('r-cash').textContent = fmt(cashFinal);
+  document.getElementById('r-bonus').textContent = fmt(bonus);
+  document.getElementById('r-totaldivs').textContent = fmt(cumulativeDivs);
+
+  // Year-by-year snapshot every 5 years
+  var rows = '';
+  for (var y = 5; y <= years; y += 5) {
+    if (y > years) break;
+    var withDrip = starting * Math.pow(1 + price + divs, y);
+    var sharesY = starting * Math.pow(1 + price, y);
+    var cumDivsY = price > 0 ? starting * divs * ((Math.pow(1 + price, y) - 1) / price) : starting * divs * y;
+    rows += '<tr><td>Year ' + y + '</td><td class="td-right">' + fmt(withDrip) + '</td><td class="td-right">' + fmt(sharesY) + '</td><td class="td-right">' + fmt(cumDivsY) + '</td></tr>';
+  }
+  if (!rows) rows = '<tr><td colspan="4">Set years &gt;= 5 to see snapshots</td></tr>';
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid #e5e7eb;font-size:13px;color:#666;line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:#1B3A5C;text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-20">20 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:#1B3A5C;text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+<div class="container ad-footer-desktop">
+  <div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="5980987973" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+    <div id="newsletter-slot"></div>
+    <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+      <strong>Run a business?</strong>
+      Try our sister site
+      <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+      — free profit margin, pricing, and cash flow calculators.
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>
