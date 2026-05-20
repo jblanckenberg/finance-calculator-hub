@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Savings Calculator — 529 vs Roth IRA | FinCalcHub</title>
+  <meta name="description" content="Free college savings calculator. Compare a 529 plan against a Roth IRA for college funding — including state-tax deductions and the flexibility trade-off.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/college-savings-calculator/">
+  <meta property="og:title" content="College Savings Calculator — 529 vs Roth IRA | FinCalcHub">
+  <meta property="og:description" content="Free college savings calculator. Compare a 529 plan against a Roth IRA for college funding — including state-tax deductions and the flexibility trade-off.">
+  <meta property="og:url" content="https://finncalc.com/college-savings-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="College Savings Calculator — 529 vs Roth IRA | FinCalcHub">
+  <meta name="twitter:description" content="Free college savings calculator. Compare a 529 plan against a Roth IRA for college funding — including state-tax deductions and the flexibility trade-off.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","applicationCategory":"FinanceApplication","dateModified":"2026-05-20","description":"Free 529 vs Roth IRA college savings calculator.","name":"College Savings Calculator","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web Browser","url":"https://finncalc.com/college-savings-calculator/"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"529 plan or Roth IRA for college?","acceptedAnswer":{"@type":"Answer","text":"529 wins on pure college math — tax-free growth, tax-free qualified withdrawals, potential state-tax deduction. Roth IRA wins on flexibility — if your child doesn't go to college, the money is still yours for retirement. Most planners suggest a hybrid: 529 for the high-confidence college spend, Roth IRA for the buffer that might serve double duty."}},{"@type":"Question","name":"What is the 2026 contribution limit for a 529?","acceptedAnswer":{"@type":"Answer","text":"There's no annual federal limit, but contributions count against the $19,000 (2026 est.) annual gift-tax exclusion per donor per beneficiary. A 5-year forward gift election (Form 709) lets you frontload $95,000 in one year. Total lifetime limits per beneficiary range $235,000-$575,000 by state."}},{"@type":"Question","name":"Can I move money between 529 and Roth IRA?","acceptedAnswer":{"@type":"Answer","text":"As of 2024, SECURE 2.0 allows rolling unused 529 funds to a Roth IRA in the beneficiary's name (up to $35,000 lifetime, subject to annual Roth contribution limits and 15-year account age). This dramatically reduces the 'what if my kid doesn't go to college' risk that historically favored Roth IRAs for college."}},{"@type":"Question","name":"What is the state-tax deduction for 529s?","acceptedAnswer":{"@type":"Answer","text":"Most states with income tax offer a deduction on 529 contributions to the in-state plan. Amounts range from $1,000 (Connecticut, single filer) to $20,000+ (Illinois MFJ). At a 5% state tax rate, a $5,000 deduction saves $250/year — over an 18-year horizon, the compounded value of those state-tax savings can add 5-10% to the 529 advantage."}},{"@type":"Question","name":"What if my child doesn't go to college?","acceptedAnswer":{"@type":"Answer","text":"Three options for unused 529 funds. First, change the beneficiary to another family member (sibling, cousin, even yourself if you go back to school). Second, roll up to $35,000 lifetime to a Roth IRA per the SECURE 2.0 provision. Third, take it as a non-qualified withdrawal — earnings are taxed as ordinary income plus a 10% federal penalty. The first two options eliminate the historical 'wasted contribution' risk."}},{"@type":"Question","name":"Does a 529 affect financial aid?","acceptedAnswer":{"@type":"Answer","text":"Yes, but modestly. A 529 owned by a parent counts as a parent asset on the FAFSA — about 5.6% of the balance is added to the Expected Family Contribution (EFC). Grandparent-owned 529s used to be worse (50% of withdrawals counted as student income), but the 2024-25 FAFSA changes removed this penalty. Roth IRAs don't count as assets on the FAFSA at all, though withdrawals do count as income."}},{"@type":"Question","name":"How much do I need to save for college?","acceptedAnswer":{"@type":"Answer","text":"Wildly variable. Public in-state university in the US: $25,000-$35,000/year all-in. Public out-of-state or mid-tier private: $50,000-$65,000/year. Top-tier private: $80,000-$95,000/year. At 18-year horizons with college inflation running 4-5%, today's $35,000 in-state becomes ~$75,000/year. The calculator above shows your projected savings — compare it to your target school's expected cost."}}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://finncalc.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://finncalc.com/college-savings-calculator/","name":"College Savings Calculator","position":2}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","name":"James Blanckenberg"},"description":"Step-by-step guide to using the College Savings Calculator.","name":"How to use the College Savings Calculator","step":[{"@type":"HowToStep","name":"Enter your child's current age","position":1,"text":"The years-until-college figure auto-derives as (18 − age) but you can override.","url":"https://finncalc.com/college-savings-calculator/#step-1"},{"@type":"HowToStep","name":"Set your annual contribution","position":2,"text":"What you can realistically put away each year. For Roth IRA, this is part of your $7,000 (2026) annual limit.","url":"https://finncalc.com/college-savings-calculator/#step-2"},{"@type":"HowToStep","name":"Add state tax deduction (if applicable)","position":3,"text":"Your state's 529 deduction value (in dollars per year). Zero if no state tax or no 529 deduction.","url":"https://finncalc.com/college-savings-calculator/#step-3"}],"totalTime":"PT1M"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","jobTitle":"Founder & Editor, FinCalcHub","name":"James Blanckenberg","sameAs":["https://www.linkedin.com/in/james-blanckenberg-154a1312/"],"url":"https://finncalc.com/authors/james-blanckenberg/"}, "dateModified":"2026-05-20","datePublished":"2026-05-20","description":"Free 529 vs Roth IRA college savings calculator.","headline":"College Savings Calculator","inLanguage":"en","mainEntityOfPage":{"@id":"https://finncalc.com/college-savings-calculator/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://finncalc.com/og-image.png"},"name":"FinCalcHub","url":"https://finncalc.com/"},"url":"https://finncalc.com/college-savings-calculator/"}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5FSP8WRB3C');
+  </script>
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+  </script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <script>
+  (function(){
+    var loaded=false;
+    function loadAds(){
+      if(loaded) return; loaded=true;
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+      s.crossOrigin='anonymous';
+      document.head.appendChild(s);
+    }
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+      },{rootMargin:'200px'});
+      document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+      });
+    } else {
+      window.addEventListener('load',loadAds);
+    }
+  })();
+  </script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK" disabled style="opacity:0.5;cursor:not-allowed" title="US 529/Roth IRA only — UK equivalents are JISA + Lifetime ISA"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> UK (use JISA)</button>
+    <button class="region-btn" id="btn-SA" disabled style="opacity:0.5;cursor:not-allowed" title="US 529/Roth IRA only — SA equivalent is TFSA"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> SA (use TFSA)</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="4461919959" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="/">Home</a> › College Savings Calculator</p>
+  <h1>College Savings Calculator</h1>
+  <p class="subtitle">Compare a 529 plan against a Roth IRA for college funding — with state-tax-deduction value, flexibility trade-off, and projected ending balance for any starting age and contribution level.</p>
+
+  <div class="quick-answer">
+    <h2>529 or Roth IRA for college?</h2>
+    <p><strong>529 wins on pure college math</strong> — tax-free growth plus tax-free qualified withdrawals plus a state-tax deduction (in most states). <strong>Roth IRA wins on flexibility</strong> — if your child doesn&apos;t go, the money is still yours for retirement. Since 2024, the SECURE 2.0 Act allows rolling $35,000 of unused 529 funds to the beneficiary&apos;s Roth IRA, closing most of the historical flexibility gap.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Plan</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="childAge">Child&apos;s Current Age</label>
+        <input type="number" id="childAge" value="5" min="0" max="17" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="annualContribution">Annual Contribution ($)</label>
+        <input type="number" id="annualContribution" value="5000" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="expectedReturn">Expected Annual Return (%)</label>
+      <input type="range" id="expectedReturn" value="6" min="3" max="10" step="0.1" oninput="calculate()">
+      <output id="return-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">6.0%</output>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="stateDeduction">State Tax Deduction ($/year, 0 if none)</label>
+        <input type="number" id="stateDeduction" value="5000" min="0" step="500" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="stateTaxRate">State Marginal Tax Rate (%)</label>
+        <input type="number" id="stateTaxRate" value="5" min="0" max="14" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">College Savings Comparison</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-529">$0</div><div class="result-label">529 Ending Balance</div></div>
+      <div class="result-item"><div class="result-value" id="r-roth">$0</div><div class="result-label">Roth IRA Ending Balance</div></div>
+      <div class="result-item"><div class="result-value" id="r-statesavings">$0</div><div class="result-label">State Tax Saved (Compounded)</div></div>
+      <div class="result-item"><div class="result-value" id="r-years">0 yrs</div><div class="result-label">Years Until College</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Side-by-Side</div>
+    <table class="breakdown-table">
+      <thead><tr><th>Account</th><th class="td-right">Total Contributed</th><th class="td-right">Ending Balance</th><th>Tax Treatment at Withdrawal</th><th>Flexibility</th></tr></thead>
+      <tbody id="breakdown-body"></tbody>
+    </table>
+    <p id="recommendation" style="margin:16px 0 0;padding:12px;background:#e6f7ff;border-left:4px solid #1890ff;font-size:0.9em"></p>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+      <button class="btn-action" onclick="saveToFile && saveToFile()">💾 Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="7963163804" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 1 minute.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" style="margin-bottom:6px">Enter the child&apos;s current age. Years until college = 18 − age.</li>
+      <li id="step-2" style="margin-bottom:6px">Add the annual amount you can contribute. For Roth IRA this counts toward your $7,000 annual personal limit.</li>
+      <li id="step-3" style="margin-bottom:6px">Set the state-tax deduction. Zero if you live in a no-state-tax state (TX, FL, NV, WA, etc.) or your state doesn&apos;t offer a 529 deduction.</li>
+      <li id="step-4" style="margin-bottom:6px">Read the ending balances and recommendation.</li>
+    </ol>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>529 plans.</strong> State-sponsored education-savings accounts. Contributions are after-tax federally, but most states offer an income-tax deduction for contributions to the in-state plan. Growth is tax-deferred; qualified withdrawals (tuition, room and board, books, K-12 tuition up to $10k/year) are tax-free. Non-qualified withdrawals: earnings taxed as income plus 10% federal penalty.</p>
+    <p><strong>Roth IRA.</strong> Personal retirement account. Contributions are post-tax; growth is tax-free; qualified withdrawals (after age 59½ and 5-year rule) are tax-free. Contributions can be withdrawn anytime tax-free. Earnings withdrawn for education before 59½ avoid the 10% early-withdrawal penalty but are still taxed as ordinary income.</p>
+    <p><strong>The 2024 SECURE 2.0 game-changer.</strong> Starting in 2024, you can roll unused 529 funds (up to $35,000 lifetime per beneficiary) into the beneficiary&apos;s Roth IRA. Conditions: 529 must be open 15+ years; rollover counts against annual Roth contribution limit; rollover must be of earned-income amount the beneficiary already has. This dramatically reduces &quot;wasted 529 contribution&quot; risk.</p>
+    <p><strong>Financial-aid impact.</strong> Parent-owned 529 counts as parent asset (5.6% added to EFC on FAFSA). Roth IRA does NOT count as asset on FAFSA. But Roth IRA withdrawals count as student income on the next year&apos;s FAFSA — 50% of withdrawal hits EFC. The 2024-25 FAFSA simplification removed the worst grandparent-529 penalty. Net: parent-owned 529 is the cleanest aid-impact option.</p>
+    <p><strong>College cost inflation.</strong> US college costs have risen 4-6%/year for two decades — well above general inflation. A $35,000/year in-state university today projects to ~$75,000/year for an 18-year horizon. The calculator&apos;s expected return needs to outpace this — 6% nominal is the typical default for an age-based 529 portfolio that gets more conservative as college approaches.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="worked-example" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Worked example — 5-year-old, $5,000/year, Illinois 5% state tax</h2>
+    <p>A 5-year-old has 13 years until college. The family contributes $5,000/year to either option. Expected return: 6% (typical age-based 529 portfolio). Illinois offers a $20,000 MFJ deduction at a 4.95% state tax rate; assume the family captures $5,000 of the deduction each year.</p>
+    <p>529 ending balance. $5,000/year × annuity factor at 6% over 13 years = $5,000 × 18.882 = $94,410. All available tax-free for qualified college expenses.</p>
+    <p>Roth IRA ending balance. Same $5,000/year, same 6% return = $94,410. Available tax-free at 59½ for retirement. Contributions ($5,000 × 13 = $65,000) available anytime for college; earnings ($29,410) taxable if withdrawn for college before 59½ (no 10% penalty due to education exception).</p>
+    <p>State tax savings. $5,000 × 4.95% = $247.50/year saved on Illinois income tax. Invested at 6% over 13 years = $247.50 × 18.882 = $4,673. Tilt to 529 of about $4,700.</p>
+    <p>Net comparison. 529 produces $94,410 fully usable for college plus $4,673 of compounded state-tax savings = $99,083 of college-funding power. Roth produces $94,410 of which $65,000 (the contributions) is tax-free for college and $29,410 earnings would be taxed as ordinary income — net effective Roth college-funding power is roughly $87,500. <strong>529 wins by ~$11,500 (13% more).</strong> The state deduction adds 50% to this advantage.</p>
+    <p>What if state has no income tax (TX/FL/NV/etc.)? Drop the deduction and the 529 still wins on the tax-free-earnings advantage — but only by ~$7,000 instead of $11,500. The flexibility argument for Roth becomes correspondingly stronger.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="common-mistakes" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Common mistakes</h2>
+    <ul style="margin:0 0 0 22px">
+      <li style="margin-bottom:8px"><strong>Ignoring the state deduction.</strong> Most casual 529-vs-Roth comparisons skip the deduction. In high-tax states (NY 6.85%, IL 4.95%, MA 5%) it&apos;s often the deciding factor — adding 5-15% to 529 effective value.</li>
+      <li style="margin-bottom:8px"><strong>Funding only one.</strong> The right answer is often both. Max state-deductible 529 contributions for the tax break, then continue with a Roth IRA for flexibility and retirement-backup function.</li>
+      <li style="margin-bottom:8px"><strong>Overfunding the 529.</strong> Better to under-fund than over-fund. SECURE 2.0&apos;s $35,000 lifetime Roth rollover helps, but $35k is well below typical 18-year balances. Excess unused 529 funds face 10% federal penalty plus income tax on earnings if withdrawn for non-education.</li>
+      <li style="margin-bottom:8px"><strong>Forgetting the FAFSA timing trap.</strong> Roth IRA withdrawals for college count as student income on next year&apos;s FAFSA — 50% of withdrawal reduces aid eligibility. If using Roth for college, draw in the last year so the next-year FAFSA doesn&apos;t penalize you (or skip aid entirely if income disqualifies you).</li>
+    </ul>
+  </section>
+</div>
+
+<div class="related">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/roth-vs-traditional-ira-calculator/" class="related-card">🏦 Roth vs Traditional IRA</a>
+    <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+    <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+    <a href="/investment-growth/" class="related-card">💹 Investment Growth</a>
+    <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
+    <a href="/savings-vs-investing-calculator/" class="related-card">⚖️ Savings vs Investing</a>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="1620134192" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">529 plan or Roth IRA for college?</div><div class="faq-a">529 wins on pure college math; Roth wins on flexibility. SECURE 2.0&apos;s $35k 529-to-Roth rollover closes much of the historical flexibility gap.</div></div>
+    <div class="faq-item"><div class="faq-q">What is the 2026 contribution limit for a 529?</div><div class="faq-a">No annual federal limit, but contributions count against the $19,000 (2026 est.) annual gift-tax exclusion. 5-year forward-gift election lets you frontload $95k.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I move money between 529 and Roth IRA?</div><div class="faq-a">Yes — SECURE 2.0 (2024) allows rolling up to $35,000 lifetime from a 529 to the beneficiary&apos;s Roth IRA.</div></div>
+    <div class="faq-item"><div class="faq-q">What is the state-tax deduction for 529s?</div><div class="faq-a">Most income-tax states offer a deduction for in-state 529 contributions, ranging from $1,000 to $20,000+. At 5% state rate, $5,000 deduction saves $250/year.</div></div>
+    <div class="faq-item"><div class="faq-q">What if my child doesn&apos;t go to college?</div><div class="faq-a">Change beneficiary, roll up to $35k to Roth IRA per SECURE 2.0, or take non-qualified withdrawal (earnings taxed + 10% federal penalty).</div></div>
+    <div class="faq-item"><div class="faq-q">Does a 529 affect financial aid?</div><div class="faq-a">Parent-owned 529 counts as parent asset (5.6% added to EFC). Roth IRA doesn&apos;t count as asset on FAFSA.</div></div>
+    <div class="faq-item"><div class="faq-q">How much do I need to save for college?</div><div class="faq-a">Public in-state ~$25-35k/yr today, ~$75k/yr by 18 years out at 4-5% college inflation. Top private $80-95k/yr today.</div></div>
+  </div>
+</div>
+
+<script>
+function calculate(){
+  var childAge = parseFloat(document.getElementById('childAge').value) || 0;
+  var contribution = parseFloat(document.getElementById('annualContribution').value) || 0;
+  var ret = parseFloat(document.getElementById('expectedReturn').value) || 6;
+  var stateDeduction = parseFloat(document.getElementById('stateDeduction').value) || 0;
+  var stateTaxRate = parseFloat(document.getElementById('stateTaxRate').value) || 0;
+
+  document.getElementById('return-display').textContent = ret.toFixed(1) + '%';
+
+  var years = Math.max(0, 18 - childAge);
+  var r = ret / 100;
+  var annuityFactor = r > 0 ? ((Math.pow(1 + r, years) - 1) / r) : years;
+  var ending = contribution * annuityFactor;
+
+  // State tax savings — annual savings invested at same return
+  var annualStateSavings = Math.min(stateDeduction, contribution) * (stateTaxRate / 100);
+  var compoundedStateSavings = annualStateSavings * annuityFactor;
+
+  var totalContrib = contribution * years;
+
+  // 529 effective value = ending + compounded state savings (since deduction is real money saved each year)
+  var effective529 = ending + compoundedStateSavings;
+  // Roth effective for college: contributions tax-free, earnings taxed at ordinary income (assume 22% federal + state rate)
+  var rothEarnings = ending - totalContrib;
+  var assumedFed = 0.22;
+  var effectiveRoth = totalContrib + rothEarnings * (1 - (assumedFed + stateTaxRate / 100));
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-529').textContent = fmt(ending);
+  document.getElementById('r-roth').textContent = fmt(ending);
+  document.getElementById('r-statesavings').textContent = fmt(compoundedStateSavings);
+  document.getElementById('r-years').textContent = years + ' yrs';
+
+  var rows = [
+    { label: '529 Plan',     contrib: fmt(totalContrib), ending: fmt(ending), tax: 'Tax-free for qualified expenses', flex: 'Can change beneficiary; $35k → Roth via SECURE 2.0' },
+    { label: 'Roth IRA',     contrib: fmt(totalContrib), ending: fmt(ending), tax: 'Contributions free; earnings taxable for college before 59½', flex: 'Full retirement-backup if child skips college' }
+  ];
+  document.getElementById('breakdown-body').innerHTML = rows.map(function(rw){
+    return '<tr><td>' + rw.label + '</td><td class="td-right">' + rw.contrib + '</td><td class="td-right">' + rw.ending + '</td><td>' + rw.tax + '</td><td>' + rw.flex + '</td></tr>';
+  }).join('');
+
+  var rec;
+  var advantage529 = effective529 - effectiveRoth;
+  if (compoundedStateSavings > 1000) {
+    rec = '<strong>529 wins by approximately ' + fmt(advantage529) + '.</strong> Your state-tax deduction adds ' + fmt(compoundedStateSavings) + ' of compounded value over the horizon — the largest single factor in the 529 vs Roth choice. Maximize the state-deductible portion in the 529 first, then consider Roth for any spillover and as flexibility insurance.';
+  } else if (advantage529 > 0) {
+    rec = '<strong>529 has a slight edge of about ' + fmt(advantage529) + '.</strong> Tax-free earnings on qualified withdrawals beat Roth IRA&apos;s partial taxability for pre-59½ education withdrawals. SECURE 2.0&apos;s $35k 529-to-Roth rollover covers most flexibility concerns.';
+  } else {
+    rec = '<strong>Effectively tied.</strong> With no state deduction, the two are close. Pick 529 if you&apos;re confident college will happen; pick Roth if you want maximum flexibility. Most planners suggest fund both — 529 for the high-confidence portion, Roth for the buffer.';
+  }
+  document.getElementById('recommendation').innerHTML = rec;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid #e5e7eb;font-size:13px;color:#666;line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:#1B3A5C;text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-20">20 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:#1B3A5C;text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+<div class="container ad-footer-desktop">
+  <div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="5980987973" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+    <div id="newsletter-slot"></div>
+    <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+      <strong>Run a business?</strong>
+      Try our sister site
+      <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+      — free profit margin, pricing, and cash flow calculators.
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>

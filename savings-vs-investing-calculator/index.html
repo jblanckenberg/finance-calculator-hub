@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings vs Investing Calculator — HYSA vs Index Fund | FinCalcHub</title>
+  <meta name="description" content="Free savings vs investing calculator. Compare a high-yield savings account against an index fund over any horizon — with inflation built in.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/savings-vs-investing-calculator/">
+  <meta property="og:title" content="Savings vs Investing Calculator — HYSA vs Index Fund | FinCalcHub">
+  <meta property="og:description" content="Free savings vs investing calculator. Compare a high-yield savings account against an index fund over any horizon — with inflation built in.">
+  <meta property="og:url" content="https://finncalc.com/savings-vs-investing-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Savings vs Investing Calculator — HYSA vs Index Fund | FinCalcHub">
+  <meta name="twitter:description" content="Free savings vs investing calculator. Compare a high-yield savings account against an index fund over any horizon — with inflation built in.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","applicationCategory":"FinanceApplication","dateModified":"2026-05-20","description":"Free savings vs investing calculator — HYSA vs index fund with inflation.","name":"Savings vs Investing Calculator","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web Browser","url":"https://finncalc.com/savings-vs-investing-calculator/"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I save in a high-yield savings account or invest in an index fund?","acceptedAnswer":{"@type":"Answer","text":"Depends on the horizon. Under 2-3 years: HYSA — markets can drop 20-40% in any given year and there's no time to recover. 3-10 years: mixed approach is sensible. Over 10 years: investing wins decisively — the historical equity-market premium is 4-5 percentage points above cash, and that gap compounds enormously."}},{"@type":"Question","name":"Does inflation matter for this comparison?","acceptedAnswer":{"@type":"Answer","text":"Critically. A 4.5% HYSA only just keeps pace with 2.5% inflation in real terms — net 2% real return. A 7% index fund delivers about 4.5% real. Over 30 years that 2.5-percentage-point real-return spread compounds into roughly 2× the real wealth from the index fund."}},{"@type":"Question","name":"How much extra wealth does investing produce over saving?","acceptedAnswer":{"@type":"Answer","text":"On $500/month over 30 years with 4.5% HYSA vs 7% index fund: HYSA ends at ~$381,000 nominal; index fund at ~$612,000. After inflation (2.5%), real values are $182,000 and $293,000 respectively. Investing produces ~60% more real wealth over a typical career."}},{"@type":"Question","name":"What about risk?","acceptedAnswer":{"@type":"Answer","text":"Real. Index funds can drop 30-40% in any given year and take 1-5 years to recover. HYSAs don't drop nominally but lose to inflation in years where inflation exceeds the rate (2022-2023 saw HYSAs at 2% versus inflation at 7% — a 5% real loss). Cash is risk-free nominally but very risky in real terms over long horizons."}},{"@type":"Question","name":"What HYSA rate is realistic right now?","acceptedAnswer":{"@type":"Answer","text":"As of mid-2026, top US HYSAs pay 4-5% (Ally, Marcus, Wealthfront, etc.); UK easy-access savings 4-4.5% (Cash ISA gives this tax-free up to £85k protected); SA money-market funds 7-9% (though SA inflation is higher too). HYSA rates track central-bank policy rates closely — they'll fall when rate-cutting cycles begin."}},{"@type":"Question","name":"How do I decide my split?","acceptedAnswer":{"@type":"Answer","text":"Rough rule of thumb. Emergency fund (3-6 months expenses) in HYSA. Short-term savings goals (1-3 years out — deposit, wedding, car) in HYSA. Medium-term goals (3-10 years — kid's college in a few years) split 50/50. Long-term (retirement, far-out goals) heavily into index funds. The calculator above lets you stress-test each bucket with realistic returns."}},{"@type":"Question","name":"What if there's a market crash right as I retire?","acceptedAnswer":{"@type":"Answer","text":"Sequence-of-returns risk. The standard mitigation is to hold 2-3 years of expenses in cash (your HYSA) within 5 years of retirement, so you don't need to sell stocks during a downturn. This is when the savings-vs-investing question shifts: you're not picking one, you're sizing both."}}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://finncalc.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://finncalc.com/savings-vs-investing-calculator/","name":"Savings vs Investing Calculator","position":2}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","name":"James Blanckenberg"},"description":"Step-by-step guide to using the Savings vs Investing Calculator.","name":"How to use the Savings vs Investing Calculator","step":[{"@type":"HowToStep","name":"Enter your monthly contribution","position":1,"text":"The amount you'd put away each month into either bucket.","url":"https://finncalc.com/savings-vs-investing-calculator/#step-1"},{"@type":"HowToStep","name":"Set years and the two rates","position":2,"text":"HYSA rate (typically 4-5% mid-2026), investing return (5-10% conservative-to-optimistic).","url":"https://finncalc.com/savings-vs-investing-calculator/#step-2"},{"@type":"HowToStep","name":"Set inflation","position":3,"text":"2-3% is a reasonable mid-case for the next decade.","url":"https://finncalc.com/savings-vs-investing-calculator/#step-3"}],"totalTime":"PT1M"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","jobTitle":"Founder & Editor, FinCalcHub","name":"James Blanckenberg","sameAs":["https://www.linkedin.com/in/james-blanckenberg-154a1312/"],"url":"https://finncalc.com/authors/james-blanckenberg/"}, "dateModified":"2026-05-20","datePublished":"2026-05-20","description":"Free savings vs investing calculator with inflation.","headline":"Savings vs Investing Calculator","inLanguage":"en","mainEntityOfPage":{"@id":"https://finncalc.com/savings-vs-investing-calculator/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://finncalc.com/og-image.png"},"name":"FinCalcHub","url":"https://finncalc.com/"},"url":"https://finncalc.com/savings-vs-investing-calculator/"}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5FSP8WRB3C');
+  </script>
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+  </script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <script>
+  (function(){
+    var loaded=false;
+    function loadAds(){
+      if(loaded) return; loaded=true;
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+      s.crossOrigin='anonymous';
+      document.head.appendChild(s);
+    }
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+      },{rootMargin:'200px'});
+      document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+      });
+    } else {
+      window.addEventListener('load',loadAds);
+    }
+  })();
+  </script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="4461919959" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="/">Home</a> › Savings vs Investing Calculator</p>
+  <h1>Savings vs Investing Calculator</h1>
+  <p class="subtitle">Compare a high-yield savings account against an index fund over any horizon, with inflation built in — so you see real (purchasing-power-adjusted) ending wealth on both paths.</p>
+
+  <div class="quick-answer">
+    <h2>High-yield savings or index fund?</h2>
+    <p><strong>Under 3 years</strong>, HYSA — markets can drop 30%+ in a year and there&apos;s no time to recover. <strong>Over 10 years</strong>, index funds win by 50-100% in real terms — the equity premium of ~4 percentage points above cash compounds enormously. <strong>3-10 years</strong> is the messy middle where a mixed approach makes sense. Calculator below shows your specific spread.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Plan</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="monthly">Monthly Contribution <span class="hint" id="s1">($)</span></label>
+        <input type="number" id="monthly" value="500" min="0" step="50" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="years">Years</label>
+        <input type="number" id="years" value="20" min="1" max="50" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="savingsRate">HYSA Rate (%)</label>
+      <input type="range" id="savingsRate" value="4.5" min="0" max="6" step="0.1" oninput="calculate()">
+      <output id="hysa-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">4.5%</output>
+    </div>
+    <div class="form-group">
+      <label for="investingReturn">Index Fund Return (%)</label>
+      <input type="range" id="investingReturn" value="7" min="5" max="10" step="0.1" oninput="calculate()">
+      <output id="invest-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">7.0%</output>
+    </div>
+    <div class="form-group">
+      <label for="inflation">Inflation (%)</label>
+      <input type="range" id="inflation" value="2.5" min="1" max="5" step="0.1" oninput="calculate()">
+      <output id="inflation-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">2.5%</output>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">Ending Wealth</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-invest-real">$0</div><div class="result-label">Index Fund — Real (today&apos;s $)</div></div>
+      <div class="result-item"><div class="result-value" id="r-hysa-real">$0</div><div class="result-label">HYSA — Real (today&apos;s $)</div></div>
+      <div class="result-item"><div class="result-value" id="r-gap-real">$0</div><div class="result-label">Real-Dollar Gap</div></div>
+      <div class="result-item"><div class="result-value" id="r-contributed">$0</div><div class="result-label">Total Contributed</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Nominal vs Real Comparison</div>
+    <table class="breakdown-table">
+      <thead><tr><th>Path</th><th class="td-right">Total Contributed</th><th class="td-right">Ending Nominal</th><th class="td-right">Ending Real (today&apos;s $)</th><th class="td-right">Real Annual Return</th></tr></thead>
+      <tbody id="breakdown-body"></tbody>
+    </table>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+      <button class="btn-action" onclick="saveToFile && saveToFile()">💾 Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="7963163804" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 1 minute.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" style="margin-bottom:6px">Enter the monthly amount you'd put into either bucket (the same total for both, for fair comparison).</li>
+      <li id="step-2" style="margin-bottom:6px">Pick your time horizon. Under 3 years tilts toward HYSA; over 10 years tilts toward investing.</li>
+      <li id="step-3" style="margin-bottom:6px">Set realistic rates: HYSA 4-5% currently, index fund 5-10% range. Inflation 2-3% is a typical baseline.</li>
+    </ol>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>Equity risk premium.</strong> Over the long run, stocks have returned about 4-5 percentage points more than cash (and about 3-4 above bonds). This premium compensates investors for accepting volatility. The calculator shows that premium compounded.</p>
+    <p><strong>Real vs nominal.</strong> Nominal returns are what your statement shows. Real returns subtract inflation — they measure actual purchasing power. A 5% HYSA at 3% inflation is a 2% real return; a 7% index fund at 3% is 4% real. The gap in real terms is what matters for long-term wealth.</p>
+    <p><strong>Volatility tolerance.</strong> An index fund can drop 30-40% in any 12-month period. Over 30 years it has never lost money in inflation-adjusted terms (US data 1926-present). The question isn&apos;t &quot;will it recover&quot; — it&apos;s &quot;will you sell at the bottom&quot;. Most retail investors who&apos;ve lost money in stocks did so by panicking out, not by being in.</p>
+    <p><strong>Tax treatment.</strong> HYSA interest is taxed as ordinary income (US: marginal rate up to 37%; UK: above the £1,000 Personal Savings Allowance for basic-rate taxpayers; SA: above the R23,800/R34,500 annual interest exemption). Index funds in tax-advantaged accounts (IRA, 401k, Roth, ISA, TFSA, RA) compound tax-free. In taxable accounts, qualified dividends and long-term cap gains in the US are taxed at preferential rates (0/15/20%). The tax drag on HYSAs is larger than on index funds — adding to the real-return advantage of investing.</p>
+    <p><strong>What this calculator doesn&apos;t model.</strong> Tax on HYSA interest (assumed not deducted). Bear-market drawdowns mid-horizon (assumes smooth annual return). Behavioural risk (panic selling during downturns). For more sophisticated drawdown modelling, use the <a href="/retirement-drawdown-calculator/">Retirement Drawdown Calculator</a>.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="worked-example" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Worked example — $500/month for 30 years</h2>
+    <p>A 35-year-old contributes $500/month to either an HYSA or a broad US index fund for 30 years. Total contributed: $500 × 12 × 30 = $180,000. Expected HYSA rate: 4.5%. Expected index fund nominal return: 7%. Inflation: 2.5%.</p>
+    <p>HYSA path. $500/month × annuity factor at 4.5% over 30 years = $381,015 nominal. Adjusted for 30 years of 2.5% inflation (divide by 1.025^30 = 2.098): $181,608 in today&apos;s purchasing power. Real return: about 2%.</p>
+    <p>Index fund path. $500/month × annuity factor at 7% over 30 years = $612,099 nominal. Adjusted for inflation: $291,756 in today&apos;s purchasing power. Real return: about 4.5%.</p>
+    <p>Real wealth difference: $110,148. Same contributions, same dollars saved each month, but the equity premium turned a $180k commitment into either $181k of real purchasing power (HYSA, barely above contributions) or $292k (index fund, +62% above contributions). Over 30 years, the equity premium pays for itself many times over.</p>
+    <p>Now shorten the horizon to 3 years. HYSA: ~$19,300 nominal, ~$17,940 real. Index fund: ~$20,030 nominal, ~$18,617 real. Difference: $677. The equity premium barely compounds over 3 years AND the risk of a 30% drawdown in any given year is real. For short horizons, the answer flips.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="common-mistakes" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Common mistakes</h2>
+    <ul style="margin:0 0 0 22px">
+      <li style="margin-bottom:8px"><strong>Investing the emergency fund.</strong> Cash you need within 12 months has no business being in stocks. A 30% drawdown the same week you lose your job is exactly the scenario the cash bucket exists to prevent.</li>
+      <li style="margin-bottom:8px"><strong>Holding long-term cash in HYSA.</strong> Beyond 10 years, the equity premium compounds against you. Even &quot;safe&quot; 4.5% HYSA barely beats 2.5% inflation; index funds at 7% nominal materially grow purchasing power.</li>
+      <li style="margin-bottom:8px"><strong>Comparing nominal returns.</strong> A 9% index fund at 5% inflation isn&apos;t much better than a 4% HYSA at 1% inflation — both produce roughly 3-4% real returns. The right comparison is always real (after-inflation), and the calculator handles this automatically.</li>
+      <li style="margin-bottom:8px"><strong>Forgetting tax on HYSA interest.</strong> Top US tax bracket pays 37% federal on HYSA interest plus state tax. A 5% headline HYSA is 3% after-tax. Many casual comparisons ignore this and overstate HYSA real returns.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="related">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+    <a href="/investment-growth/" class="related-card">💹 Investment Growth</a>
+    <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
+    <a href="/dividend-reinvestment-calculator/" class="related-card">🔁 Dividend Reinvestment</a>
+    <a href="/emergency-fund/" class="related-card">🛡️ Emergency Fund</a>
+    <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="1620134192" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">Should I save in HYSA or invest in an index fund?</div><div class="faq-a">Depends on horizon. Under 3 years: HYSA. Over 10: investing wins decisively. 3-10: mixed approach.</div></div>
+    <div class="faq-item"><div class="faq-q">Does inflation matter for this comparison?</div><div class="faq-a">Critically. A 4.5% HYSA at 2.5% inflation is only 2% real; a 7% index fund at 2.5% is 4.5% real. The gap doubles in real terms.</div></div>
+    <div class="faq-item"><div class="faq-q">How much extra wealth does investing produce?</div><div class="faq-a">$500/month for 30 years: HYSA ends at ~$381k nominal ($182k real); index fund at ~$612k nominal ($292k real). ~60% more real wealth from investing.</div></div>
+    <div class="faq-item"><div class="faq-q">What about risk?</div><div class="faq-a">Index funds can drop 30-40% in a year. HYSAs don&apos;t drop nominally but lose to inflation in years where inflation exceeds the rate.</div></div>
+    <div class="faq-item"><div class="faq-q">What HYSA rate is realistic right now?</div><div class="faq-a">Mid-2026: US 4-5%, UK 4-4.5% (tax-free in Cash ISA), SA money market 7-9% (SA inflation higher too).</div></div>
+    <div class="faq-item"><div class="faq-q">How do I decide my split?</div><div class="faq-a">Emergency fund + 1-3yr goals in HYSA. 3-10yr split 50/50. 10+ years heavily invested.</div></div>
+    <div class="faq-item"><div class="faq-q">What if there&apos;s a market crash at retirement?</div><div class="faq-a">Sequence risk. Hold 2-3 years of expenses in cash within 5 years of retirement to avoid forced selling during downturns.</div></div>
+  </div>
+</div>
+
+<script>
+function calculate(){
+  var monthly = parseFloat(document.getElementById('monthly').value) || 0;
+  var years = parseFloat(document.getElementById('years').value) || 20;
+  var hysaRate = parseFloat(document.getElementById('savingsRate').value) || 4.5;
+  var investRate = parseFloat(document.getElementById('investingReturn').value) || 7;
+  var inflation = parseFloat(document.getElementById('inflation').value) || 2.5;
+
+  document.getElementById('hysa-display').textContent = hysaRate.toFixed(1) + '%';
+  document.getElementById('invest-display').textContent = investRate.toFixed(1) + '%';
+  document.getElementById('inflation-display').textContent = inflation.toFixed(1) + '%';
+
+  function fvMonthlyAnnuity(monthlyContrib, annualRatePct, yrs){
+    if (annualRatePct === 0) return monthlyContrib * 12 * yrs;
+    var r = annualRatePct / 100;
+    var annual = monthlyContrib * 12;
+    return annual * ((Math.pow(1 + r, yrs) - 1) / r);
+  }
+
+  var hysaNominal = fvMonthlyAnnuity(monthly, hysaRate, years);
+  var investNominal = fvMonthlyAnnuity(monthly, investRate, years);
+  var deflator = Math.pow(1 + inflation / 100, years);
+  var hysaReal = hysaNominal / deflator;
+  var investReal = investNominal / deflator;
+  var gapReal = investReal - hysaReal;
+  var contributed = monthly * 12 * years;
+
+  var hysaRealReturn = ((1 + hysaRate / 100) / (1 + inflation / 100) - 1) * 100;
+  var investRealReturn = ((1 + investRate / 100) / (1 + inflation / 100) - 1) * 100;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-invest-real').textContent = fmt(investReal);
+  document.getElementById('r-hysa-real').textContent = fmt(hysaReal);
+  document.getElementById('r-gap-real').textContent = fmt(gapReal);
+  document.getElementById('r-contributed').textContent = fmt(contributed);
+
+  var rows = [
+    { label: 'High-Yield Savings (' + hysaRate.toFixed(1) + '%)', contrib: fmt(contributed), nominal: fmt(hysaNominal), real: fmt(hysaReal), realRet: hysaRealReturn.toFixed(2) + '%' },
+    { label: 'Index Fund (' + investRate.toFixed(1) + '%)',     contrib: fmt(contributed), nominal: fmt(investNominal), real: fmt(investReal), realRet: investRealReturn.toFixed(2) + '%' }
+  ];
+  document.getElementById('breakdown-body').innerHTML = rows.map(function(r){
+    return '<tr><td>' + r.label + '</td><td class="td-right">' + r.contrib + '</td><td class="td-right">' + r.nominal + '</td><td class="td-right">' + r.real + '</td><td class="td-right">' + r.realRet + '</td></tr>';
+  }).join('');
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid #e5e7eb;font-size:13px;color:#666;line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:#1B3A5C;text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-20">20 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:#1B3A5C;text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+<div class="container ad-footer-desktop">
+  <div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="5980987973" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+    <div id="newsletter-slot"></div>
+    <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+      <strong>Run a business?</strong>
+      Try our sister site
+      <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+      — free profit margin, pricing, and cash flow calculators.
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>
