@@ -1,0 +1,782 @@
+{
+  "401k-contribution-paycheck": {
+    "hero": {
+      "query": "401k retirement savings",
+      "src": "/blog/401k-contribution-paycheck/hero.jpg",
+      "alt": "A desk setup with a notebook labeled '401k', a pen, cash, and a calculator representing financial planning.",
+      "name": "Towfiqu barbhuiya",
+      "url": "https://www.pexels.com/@towfiqu-barbhuiya-3440682",
+      "bytes": 73038
+    },
+    "mid": {
+      "query": "paycheck deduction stub",
+      "src": "/blog/401k-contribution-paycheck/mid.jpg",
+      "alt": "Conceptual image of tax deductions with alphabet blocks and percent symbol on black surface.",
+      "name": "Nataliya Vaitkevich",
+      "url": "https://www.pexels.com/@n-voitkevich",
+      "bytes": 108829
+    },
+    "bottom": {
+      "query": "retirement calculator desk",
+      "src": "/blog/401k-contribution-paycheck/bottom.jpg",
+      "alt": "Hand using calculator for architectural calculations on blueprints.",
+      "name": "RDNE Stock project",
+      "url": "https://www.pexels.com/@rdne",
+      "bytes": 51426
+    }
+  },
+  "4-percent-rule-retirement": {
+    "hero": {
+      "query": "retirement planning couple",
+      "src": "/blog/4-percent-rule-retirement/hero.jpg",
+      "alt": "Senior couple working together on documents with laptop and phone at home.",
+      "name": "Kampus Production",
+      "url": "https://www.pexels.com/@kampus",
+      "bytes": 50820
+    },
+    "mid": {
+      "query": "elderly couple beach",
+      "src": "/blog/4-percent-rule-retirement/mid.jpg",
+      "alt": "Two seniors sitting by the sea, enjoying a sunny day on the rocky shore.",
+      "name": "Feyza  Tuğba",
+      "url": "https://www.pexels.com/@feyza-tugba-25430275",
+      "bytes": 158583
+    },
+    "bottom": {
+      "query": "retirement savings jar",
+      "src": "/blog/4-percent-rule-retirement/bottom.jpg",
+      "alt": "Close-up shot of rolled US dollar bills inside a glass jar on a white surface.",
+      "name": "www.kaboompics.com",
+      "url": "https://www.pexels.com/@karola-g",
+      "bytes": 21313
+    }
+  },
+  "50-30-20-budget-rule": {
+    "hero": {
+      "query": "budget planning notebook",
+      "src": "/blog/50-30-20-budget-rule/hero.jpg",
+      "alt": "Person writing in a notebook on a wooden table with cash, coins, and a phone nearby.",
+      "name": "www.kaboompics.com",
+      "url": "https://www.pexels.com/@karola-g",
+      "bytes": 64706
+    },
+    "mid": {
+      "query": "money envelope cash",
+      "src": "/blog/50-30-20-budget-rule/mid.jpg",
+      "alt": "A red envelope containing U.S. dollar bills, symbolizing wealth and gifting.",
+      "name": "www.kaboompics.com",
+      "url": "https://www.pexels.com/@karola-g",
+      "bytes": 32867
+    },
+    "bottom": {
+      "query": "household finances desk",
+      "src": "/blog/50-30-20-budget-rule/bottom.jpg",
+      "alt": "Woman sorting finances with a calculator, cash, and receipts at a desk.",
+      "name": "www.kaboompics.com",
+      "url": "https://www.pexels.com/@karola-g",
+      "bytes": 55890
+    }
+  },
+  "average-net-worth-by-age": {
+    "hero": {
+      "query": "net worth growth chart",
+      "src": "/blog/average-net-worth-by-age/hero.jpg",
+      "alt": "Office meeting with sticky notes on a glass wall showing discussions and brainstorming.",
+      "name": "AI25.Studio  AI GENERATIVE",
+      "url": "https://www.pexels.com/@ai25studio",
+      "bytes": 53639
+    },
+    "mid": {
+      "query": "savings investment growth",
+      "src": "/blog/average-net-worth-by-age/mid.jpg",
+      "alt": "A jar filled with coins and a plant symbolizes growth in savings and investment.",
+      "name": "Towfiqu barbhuiya",
+      "url": "https://www.pexels.com/@towfiqu-barbhuiya-3440682",
+      "bytes": 39523
+    },
+    "bottom": {
+      "query": "financial advisor desk",
+      "src": "/blog/average-net-worth-by-age/bottom.jpg",
+      "alt": "A mortgage broker and client discussing loan options in a modern office setting.",
+      "name": "RDNE Stock project",
+      "url": "https://www.pexels.com/@rdne",
+      "bytes": 55125
+    }
+  },
+  "build-wealth-in-your-30s": {
+    "hero": {
+      "query": "young professional office",
+      "src": "/blog/build-wealth-in-your-30s/hero.jpg",
+      "alt": "Young man in an office using smartphone while working at a computer desk.",
+      "name": "Vitaly Gariev",
+      "url": "https://www.pexels.com/@silverkblack",
+      "bytes": 44578
+    },
+    "mid": {
+      "query": "investment growth chart",
+      "src": "/blog/build-wealth-in-your-30s/mid.jpg",
+      "alt": "A smartphone showing an investment app with green growth indicators, surrounded by credit cards, US dollars, and a passport.",
+      "name": "DΛVΞ GΛRCIΛ",
+      "url": "https://www.pexels.com/@davegarcia",
+      "bytes": 54732
+    },
+    "bottom": {
+      "query": "financial planning meeting",
+      "src": "/blog/build-wealth-in-your-30s/bottom.jpg",
+      "alt": "Overhead view of professionals discussing financial graphs and using calculators in an office setting.",
+      "name": "Vlada Karpovich",
+      "url": "https://www.pexels.com/@vlada-karpovich",
+      "bytes": 51418
+    }
+  },
+  "compound-interest-explained": {
+    "hero": {
+      "query": "money plant growth",
+      "src": "/blog/compound-interest-explained/hero.jpg",
+      "alt": "Hands carefully pruning a vibrant Pilea plant in a clay pot indoors.",
+      "name": "www.kaboompics.com",
+      "url": "https://www.pexels.com/@karola-g",
+      "bytes": 48962
+    },
+    "mid": {
+      "query": "savings jar coins",
+      "src": "/blog/compound-interest-explained/mid.jpg",
+      "alt": "A close-up image of a person's hand holding a jar full of coins labeled 'Savings'.",
+      "name": "Towfiqu barbhuiya",
+      "url": "https://www.pexels.com/@towfiqu-barbhuiya-3440682",
+      "bytes": 36594
+    },
+    "bottom": {
+      "query": "growth chart finance",
+      "src": "/blog/compound-interest-explained/bottom.jpg",
+      "alt": "Close-up of a digital market analysis display showing Bitcoin and cryptocurrency price trends.",
+      "name": "Alesia  Kozik",
+      "url": "https://www.pexels.com/@alesiakozik",
+      "bytes": 30283
+    }
+  },
+  "debt-avalanche-vs-snowball": {
+    "hero": {
+      "query": "credit card debt",
+      "src": "/blog/debt-avalanche-vs-snowball/hero.jpg",
+      "alt": "Close-up image of various credit cards including Visa, Mastercard, and American Express.",
+      "name": "DΛVΞ GΛRCIΛ",
+      "url": "https://www.pexels.com/@davegarcia",
+      "bytes": 124086
+    },
+    "mid": {
+      "query": "debt freedom celebration",
+      "src": "/blog/debt-avalanche-vs-snowball/mid.jpg",
+      "alt": "Blurred adult man demonstrating United States paper bill for personal financial operations hiding face on background of USA national flag",
+      "name": "www.kaboompics.com",
+      "url": "https://www.pexels.com/@karola-g",
+      "bytes": 55673
+    },
+    "bottom": {
+      "query": "financial paperwork pen",
+      "src": "/blog/debt-avalanche-vs-snowball/bottom.jpg",
+      "alt": "Close-up of financial documents with pens highlighting important data points.",
+      "name": "RDNE Stock project",
+      "url": "https://www.pexels.com/@rdne",
+      "bytes": 26444
+    }
+  },
+  "how-inflation-affects-savings": {
+    "hero": {
+      "query": "inflation rising prices",
+      "src": "/blog/how-inflation-affects-savings/hero.jpg",
+      "alt": "Wooden letter tiles spell 'rising inflation' symbolizing economic concerns.",
+      "name": "Markus Winkler",
+      "url": "https://www.pexels.com/@markus-winkler-1430818",
+      "bytes": 123687
+    },
+    "mid": {
+      "query": "shrinking dollar money",
+      "src": "/blog/how-inflation-affects-savings/mid.jpg",
+      "alt": "A close-up image of hands holding a one dollar bill, symbolizing finance and economy.",
+      "name": "cottonbro studio",
+      "url": "https://www.pexels.com/@cottonbro",
+      "bytes": 26978
+    },
+    "bottom": {
+      "query": "grocery shopping prices",
+      "src": "/blog/how-inflation-affects-savings/bottom.jpg",
+      "alt": "A woman wearing a mask shops for groceries in a supermarket, checking products with her phone.",
+      "name": "Helena Lopes",
+      "url": "https://www.pexels.com/@helenalopes",
+      "bytes": 71451
+    }
+  },
+  "how-much-emergency-fund": {
+    "hero": {
+      "query": "piggy bank savings",
+      "src": "/blog/how-much-emergency-fund/hero.jpg",
+      "alt": "Close-up of a person's hand placing coins into a transparent piggy bank to save money.",
+      "name": "Joslyn Pickens",
+      "url": "https://www.pexels.com/@joslyn-pickens-2185980",
+      "bytes": 33211
+    },
+    "mid": {
+      "query": "emergency fund jar",
+      "src": "/blog/how-much-emergency-fund/mid.jpg",
+      "alt": "A close-up of a hand placing rolled dollars into a glass jar, symbolizing savings.",
+      "name": "www.kaboompics.com",
+      "url": "https://www.pexels.com/@karola-g",
+      "bytes": 36262
+    },
+    "bottom": {
+      "query": "rainy day umbrella money",
+      "src": "/blog/how-much-emergency-fund/bottom.jpg",
+      "alt": "A person walks with a black umbrella on a rainy day in Cheltenham, England.",
+      "name": "Ian",
+      "url": "https://www.pexels.com/@ian-1905462846",
+      "bytes": 36622
+    }
+  },
+  "how-much-house-can-i-afford": {
+    "hero": {
+      "query": "house keys handover",
+      "src": "/blog/how-much-house-can-i-afford/hero.jpg",
+      "alt": "Close-up of a hand handing over a key with a house keychain, symbolizing real estate transaction.",
+      "name": "RDNE Stock project",
+      "url": "https://www.pexels.com/@rdne",
+      "bytes": 47931
+    },
+    "mid": {
+      "query": "real estate buying",
+      "src": "/blog/how-much-house-can-i-afford/mid.jpg",
+      "alt": "Close-up of a brick house with a 'Sold' sign in the window, showcasing real estate sales.",
+      "name": "Alena Darmel",
+      "url": "https://www.pexels.com/@a-darmel",
+      "bytes": 106663
+    },
+    "bottom": {
+      "query": "home mortgage paperwork",
+      "src": "/blog/how-much-house-can-i-afford/bottom.jpg",
+      "alt": "Mortgage broker and client discussing loan application with documents on table.",
+      "name": "RDNE Stock project",
+      "url": "https://www.pexels.com/@rdne",
+      "bytes": 42466
+    }
+  },
+  "how-much-is-stamp-duty-uk": {
+    "hero": {
+      "query": "UK terrace houses",
+      "src": "/blog/how-much-is-stamp-duty-uk/hero.jpg",
+      "alt": "Victorian terraced houses in Bristol, England, set against a lush green park with clear skies.",
+      "name": "Boys in Bristol Photography",
+      "url": "https://www.pexels.com/@lebele",
+      "bytes": 117191
+    },
+    "mid": {
+      "query": "house keys paperwork",
+      "src": "/blog/how-much-is-stamp-duty-uk/mid.jpg",
+      "alt": "Miniature wooden house with keys and contract symbolizing real estate transactions.",
+      "name": "Atlantic Ambience",
+      "url": "https://www.pexels.com/@freestockpro",
+      "bytes": 44655
+    },
+    "bottom": {
+      "query": "real estate UK",
+      "src": "/blog/how-much-is-stamp-duty-uk/bottom.jpg",
+      "alt": "Classic red brick terraced houses in a residential district of London, UK.",
+      "name": "Lina Kivaka",
+      "url": "https://www.pexels.com/@lina",
+      "bytes": 90061
+    }
+  },
+  "how-much-tax-on-r500000-south-africa": {
+    "hero": {
+      "query": "south africa city skyline",
+      "src": "/blog/how-much-tax-on-r500000-south-africa/hero.jpg",
+      "alt": "A stunning aerial view of Cape Town city lights at night against Table Mountain.",
+      "name": "K",
+      "url": "https://www.pexels.com/@kelly",
+      "bytes": 131431
+    },
+    "mid": {
+      "query": "tax forms calculator",
+      "src": "/blog/how-much-tax-on-r500000-south-africa/mid.jpg",
+      "alt": "Top view of financial papers with a calculator, pencils, and a note saying 'Need help?' indicating tax or accounting assistance.",
+      "name": "Nataliya Vaitkevich",
+      "url": "https://www.pexels.com/@n-voitkevich",
+      "bytes": 65153
+    },
+    "bottom": {
+      "query": "south africa office",
+      "src": "/blog/how-much-tax-on-r500000-south-africa/bottom.jpg",
+      "alt": "A bustling street scene in Sandton, Gauteng, featuring modern skyscrapers and vibrant urban life.",
+      "name": "Ministar Samuel",
+      "url": "https://www.pexels.com/@ministar",
+      "bytes": 151940
+    }
+  },
+  "how-much-to-retire-at-55": {
+    "hero": {
+      "query": "early retirement beach",
+      "src": "/blog/how-much-to-retire-at-55/hero.jpg",
+      "alt": "Senior couple relaxing on Miami Beach, enjoying the ocean view and summer sunshine.",
+      "name": "Abhishek  Navlakha",
+      "url": "https://www.pexels.com/@navlakha",
+      "bytes": 80173
+    },
+    "mid": {
+      "query": "retired couple smiling",
+      "src": "/blog/how-much-to-retire-at-55/mid.jpg",
+      "alt": "Elderly couple smiling and embracing in lush outdoor setting, capturing love and friendship.",
+      "name": "Matheus Bertelli",
+      "url": "https://www.pexels.com/@bertellifotografia",
+      "bytes": 44122
+    },
+    "bottom": {
+      "query": "retirement portfolio planning",
+      "src": "/blog/how-much-to-retire-at-55/bottom.jpg",
+      "alt": "Close-up of a golden piggy bank on financial documents, symbolizing savings and investment.",
+      "name": "Atlantic Ambience",
+      "url": "https://www.pexels.com/@freestockpro",
+      "bytes": 25715
+    }
+  },
+  "how-much-to-save-each-month": {
+    "hero": {
+      "query": "monthly savings jar",
+      "src": "/blog/how-much-to-save-each-month/hero.jpg",
+      "alt": "A close-up image of a person's hand holding a jar full of coins labeled 'Savings'.",
+      "name": "Towfiqu barbhuiya",
+      "url": "https://www.pexels.com/@towfiqu-barbhuiya-3440682",
+      "bytes": 36594
+    },
+    "mid": {
+      "query": "budget calculator desk",
+      "src": "/blog/how-much-to-save-each-month/mid.jpg",
+      "alt": "Hand using calculator for architectural calculations on blueprints.",
+      "name": "RDNE Stock project",
+      "url": "https://www.pexels.com/@rdne",
+      "bytes": 51426
+    },
+    "bottom": {
+      "query": "piggy bank money",
+      "src": "/blog/how-much-to-save-each-month/bottom.jpg",
+      "alt": "Close-up image of a shiny pink piggy bank surrounded by US hundred dollar bills, symbolizing savings and finance.",
+      "name": "adrian vieriu",
+      "url": "https://www.pexels.com/@printexstar",
+      "bytes": 49337
+    }
+  },
+  "how-much-to-save-for-retirement-at-35": {
+    "hero": {
+      "query": "retirement planning chart",
+      "src": "/blog/how-much-to-save-for-retirement-at-35/hero.jpg",
+      "alt": "Top-down view of a desk with charts, a laptop, and notebooks, ideal for data analysis themes.",
+      "name": "Lukas Blazek",
+      "url": "https://www.pexels.com/@goumbik",
+      "bytes": 54383
+    },
+    "mid": {
+      "query": "investment growth desk",
+      "src": "/blog/how-much-to-save-for-retirement-at-35/mid.jpg",
+      "alt": "A close-up of bitcoin coins on a laptop with eyeglasses and a sticky note reading 'invest?'",
+      "name": "Leeloo The First",
+      "url": "https://www.pexels.com/@leeloothefirst",
+      "bytes": 42529
+    },
+    "bottom": {
+      "query": "financial advisor meeting",
+      "src": "/blog/how-much-to-save-for-retirement-at-35/bottom.jpg",
+      "alt": "Business professional consults elderly clients in an office setting. Collaborative discussion, paperwork visible.",
+      "name": "Kampus Production",
+      "url": "https://www.pexels.com/@kampus",
+      "bytes": 55237
+    }
+  },
+  "how-to-create-a-monthly-budget": {
+    "hero": {
+      "query": "budget spreadsheet laptop",
+      "src": "/blog/how-to-create-a-monthly-budget/hero.jpg",
+      "alt": "Close-up of hands counting cash on desk with calculator, charts, and laptop, illustrating financial management.",
+      "name": "Tima Miroshnichenko",
+      "url": "https://www.pexels.com/@tima-miroshnichenko",
+      "bytes": 66368
+    },
+    "mid": {
+      "query": "monthly planner notebook",
+      "src": "/blog/how-to-create-a-monthly-budget/mid.jpg",
+      "alt": "Flat lay of a creative workspace with a planner, analog camera, and laptop for inspiration.",
+      "name": "PNW Production",
+      "url": "https://www.pexels.com/@pnw-prod",
+      "bytes": 52979
+    },
+    "bottom": {
+      "query": "household finance desk",
+      "src": "/blog/how-to-create-a-monthly-budget/bottom.jpg",
+      "alt": "A woman overwhelmed with finances, surrounded by bills, calculator, and cash at home.",
+      "name": "www.kaboompics.com",
+      "url": "https://www.pexels.com/@karola-g",
+      "bytes": 55059
+    }
+  },
+  "investment-growth-calculator-guide": {
+    "hero": {
+      "query": "stock market chart",
+      "src": "/blog/investment-growth-calculator-guide/hero.jpg",
+      "alt": "Close-up of a financial graph on a screen showing stock market trading data and trends.",
+      "name": "AlphaTradeZone",
+      "url": "https://www.pexels.com/@alphatradezone",
+      "bytes": 55698
+    },
+    "mid": {
+      "query": "investment portfolio desk",
+      "src": "/blog/investment-growth-calculator-guide/mid.jpg",
+      "alt": "High-tech trading setup with charts on tablet and computer screens, representing data analysis and financial trends.",
+      "name": "Jakub Zerdzicki",
+      "url": "https://www.pexels.com/@jakubzerdzicki",
+      "bytes": 44971
+    },
+    "bottom": {
+      "query": "financial advisor laptop",
+      "src": "/blog/investment-growth-calculator-guide/bottom.jpg",
+      "alt": "Business professional analyzing cryptocurrency trends on a laptop with graphs and charts.",
+      "name": "www.kaboompics.com",
+      "url": "https://www.pexels.com/@karola-g",
+      "bytes": 59976
+    }
+  },
+  "net-worth-at-40": {
+    "hero": {
+      "query": "professional office success",
+      "src": "/blog/net-worth-at-40/hero.jpg",
+      "alt": "Group of diverse professionals celebrating achievement in office setting with enthusiasm.",
+      "name": "Yan Krukau",
+      "url": "https://www.pexels.com/@yankrukov",
+      "bytes": 70773
+    },
+    "mid": {
+      "query": "balance sheet calculator",
+      "src": "/blog/net-worth-at-40/mid.jpg",
+      "alt": "Close-up of financial documents with calculator and pen, ideal for business management themes.",
+      "name": "Pixabay",
+      "url": "https://www.pexels.com/@pixabay",
+      "bytes": 53451
+    },
+    "bottom": {
+      "query": "financial growth chart",
+      "src": "/blog/net-worth-at-40/bottom.jpg",
+      "alt": "Close-up of a financial report showing sales data with dramatic depth of field.",
+      "name": "RDNE Stock project",
+      "url": "https://www.pexels.com/@rdne",
+      "bytes": 43842
+    }
+  },
+  "pay-off-credit-card-debt": {
+    "hero": {
+      "query": "credit card scissors",
+      "src": "/blog/pay-off-credit-card-debt/hero.jpg",
+      "alt": "Flat lay of a creative workspace with scissors and cut out letters spelling 'hello' on a textured surface.",
+      "name": "alleksana",
+      "url": "https://www.pexels.com/@alleksana",
+      "bytes": 50579
+    },
+    "mid": {
+      "query": "debt freedom celebration",
+      "src": "/blog/pay-off-credit-card-debt/mid.jpg",
+      "alt": "Blurred adult man demonstrating United States paper bill for personal financial operations hiding face on background of USA national flag",
+      "name": "www.kaboompics.com",
+      "url": "https://www.pexels.com/@karola-g",
+      "bytes": 55673
+    },
+    "bottom": {
+      "query": "financial paperwork pen",
+      "src": "/blog/pay-off-credit-card-debt/bottom.jpg",
+      "alt": "Close-up of financial documents with pens highlighting important data points.",
+      "name": "RDNE Stock project",
+      "url": "https://www.pexels.com/@rdne",
+      "bytes": 26444
+    }
+  },
+  "pay-off-loan-early": {
+    "hero": {
+      "query": "loan paperwork pen",
+      "src": "/blog/pay-off-loan-early/hero.jpg",
+      "alt": "Side view of faceless formal man giving pen and paper to focused female with clenched hands at table on meeting",
+      "name": "Andrea Piacquadio",
+      "url": "https://www.pexels.com/@olly",
+      "bytes": 27661
+    },
+    "mid": {
+      "query": "mortgage payoff celebration",
+      "src": "/blog/pay-off-loan-early/mid.jpg",
+      "alt": "A couple holding a wooden sign spelling 'HOME' to celebrate their new residence.",
+      "name": "Kindel Media",
+      "url": "https://www.pexels.com/@kindelmedia",
+      "bytes": 86379
+    },
+    "bottom": {
+      "query": "house keys handover",
+      "src": "/blog/pay-off-loan-early/bottom.jpg",
+      "alt": "Close-up of a hand handing over a key with a house keychain, symbolizing real estate transaction.",
+      "name": "RDNE Stock project",
+      "url": "https://www.pexels.com/@rdne",
+      "bytes": 47931
+    }
+  },
+  "rent-vs-buy": {
+    "hero": {
+      "query": "apartment rental keys",
+      "src": "/blog/rent-vs-buy/hero.jpg",
+      "alt": "Close-up of keys in hand representing property ownership with blurred financial documents in the background.",
+      "name": "Jakub Zerdzicki",
+      "url": "https://www.pexels.com/@jakubzerdzicki",
+      "bytes": 44177
+    },
+    "mid": {
+      "query": "house buying real estate",
+      "src": "/blog/rent-vs-buy/mid.jpg",
+      "alt": "Businessman holds small house model outdoors, symbolizing real estate investment.",
+      "name": "Kindel Media",
+      "url": "https://www.pexels.com/@kindelmedia",
+      "bytes": 56681
+    },
+    "bottom": {
+      "query": "moving boxes home",
+      "src": "/blog/rent-vs-buy/bottom.jpg",
+      "alt": "A couple exploring their new home while unpacking boxes and looking at a photo album.",
+      "name": "cottonbro studio",
+      "url": "https://www.pexels.com/@cottonbro",
+      "bytes": 52730
+    }
+  },
+  "retirement-planning-south-africa": {
+    "hero": {
+      "query": "south africa coastline",
+      "src": "/blog/retirement-planning-south-africa/hero.jpg",
+      "alt": "Picturesque coastline with ocean waves and coastal houses under a clear blue sky.",
+      "name": "Magda Ehlers",
+      "url": "https://www.pexels.com/@magda-ehlers-pexels",
+      "bytes": 72422
+    },
+    "mid": {
+      "query": "elderly south african couple",
+      "src": "/blog/retirement-planning-south-africa/mid.jpg",
+      "alt": "Joyous traditional wedding ceremony in Jane Furse with blessings for the newlywed couple.",
+      "name": "Steward Masweneng",
+      "url": "https://www.pexels.com/@stewphotography",
+      "bytes": 98203
+    },
+    "bottom": {
+      "query": "retirement savings desk",
+      "src": "/blog/retirement-planning-south-africa/bottom.jpg",
+      "alt": "Zloty banknotes and financial paperwork scattered on a desk, representing budgeting and finance.",
+      "name": "Jakub Zerdzicki",
+      "url": "https://www.pexels.com/@jakubzerdzicki",
+      "bytes": 46221
+    }
+  },
+  "salary-after-tax": {
+    "hero": {
+      "query": "payslip paperwork desk",
+      "src": "/blog/salary-after-tax/hero.jpg",
+      "alt": "Flat lay of a workspace with laptop, documents, and cardboard boxes for e-commerce operations.",
+      "name": "Kampus Production",
+      "url": "https://www.pexels.com/@kampus",
+      "bytes": 62242
+    },
+    "mid": {
+      "query": "office worker laptop",
+      "src": "/blog/salary-after-tax/mid.jpg",
+      "alt": "Close-up of office workers engaged in a tech project at a modern workplace.",
+      "name": "cottonbro studio",
+      "url": "https://www.pexels.com/@cottonbro",
+      "bytes": 47433
+    },
+    "bottom": {
+      "query": "salary calculation desk",
+      "src": "/blog/salary-after-tax/bottom.jpg",
+      "alt": "Overhead view of a busy workspace with cash, financial documents, and a laptop.",
+      "name": "Tima Miroshnichenko",
+      "url": "https://www.pexels.com/@tima-miroshnichenko",
+      "bytes": 74859
+    }
+  },
+  "save-for-house-deposit": {
+    "hero": {
+      "query": "piggy bank house",
+      "src": "/blog/save-for-house-deposit/hero.jpg",
+      "alt": "Close-up of a person's hand placing coins into a transparent piggy bank to save money.",
+      "name": "Joslyn Pickens",
+      "url": "https://www.pexels.com/@joslyn-pickens-2185980",
+      "bytes": 33211
+    },
+    "mid": {
+      "query": "saving for home jar",
+      "src": "/blog/save-for-house-deposit/mid.jpg",
+      "alt": "Wooden figure with jar of coins and blank card for financial planning or savings concept.",
+      "name": "Picas Joe",
+      "url": "https://www.pexels.com/@picasjoe",
+      "bytes": 44846
+    },
+    "bottom": {
+      "query": "real estate keys handover",
+      "src": "/blog/save-for-house-deposit/bottom.jpg",
+      "alt": "Smiling couple receiving keys, celebrating new home purchase indoors.",
+      "name": "Kampus Production",
+      "url": "https://www.pexels.com/@kampus",
+      "bytes": 36424
+    }
+  },
+  "south-africa-tax-guide-2024": {
+    "hero": {
+      "query": "south africa city",
+      "src": "/blog/south-africa-tax-guide-2024/hero.jpg",
+      "alt": "A stunning aerial view of Cape Town city lights at night against Table Mountain.",
+      "name": "K",
+      "url": "https://www.pexels.com/@kelly",
+      "bytes": 131431
+    },
+    "mid": {
+      "query": "tax calculator forms",
+      "src": "/blog/south-africa-tax-guide-2024/mid.jpg",
+      "alt": "Mobile calculator app on tax documents, highlighting financial calculations and tax preparation.",
+      "name": "Polina Tankilevitch",
+      "url": "https://www.pexels.com/@polina-tankilevitch",
+      "bytes": 94074
+    },
+    "bottom": {
+      "query": "south africa office worker",
+      "src": "/blog/south-africa-tax-guide-2024/bottom.jpg",
+      "alt": "A female factory worker using a computer in an industrial environment.",
+      "name": "EqualStock IN",
+      "url": "https://www.pexels.com/@equalstock",
+      "bytes": 91588
+    }
+  },
+  "uk-national-insurance-explained": {
+    "hero": {
+      "query": "UK payslip paperwork",
+      "src": "/blog/uk-national-insurance-explained/hero.jpg",
+      "alt": "Top view of a professional reviewing financial documents at a wooden workspace.",
+      "name": "Tima Miroshnichenko",
+      "url": "https://www.pexels.com/@tima-miroshnichenko",
+      "bytes": 57443
+    },
+    "mid": {
+      "query": "UK government documents",
+      "src": "/blog/uk-national-insurance-explained/mid.jpg",
+      "alt": "A UK Government envelope with coronavirus update on a wooden floor.",
+      "name": "Emily Wilkinson",
+      "url": "https://www.pexels.com/@ewilko",
+      "bytes": 83953
+    },
+    "bottom": {
+      "query": "UK office worker desk",
+      "src": "/blog/uk-national-insurance-explained/bottom.jpg",
+      "alt": "A focused young man typing on a computer in a contemporary office environment.",
+      "name": "ThisIsEngineering",
+      "url": "https://www.pexels.com/@thisisengineering",
+      "bytes": 61057
+    }
+  },
+  "uk-personal-allowance-2024-25": {
+    "hero": {
+      "query": "UK currency pounds",
+      "src": "/blog/uk-personal-allowance-2024-25/hero.jpg",
+      "alt": "A detailed view of British £5 and £10 pound sterling notes with coins, featuring warm bokeh effects.",
+      "name": "Clément Proust",
+      "url": "https://www.pexels.com/@clement-proust-363898785",
+      "bytes": 89031
+    },
+    "mid": {
+      "query": "UK tax forms calculator",
+      "src": "/blog/uk-personal-allowance-2024-25/mid.jpg",
+      "alt": "Mobile calculator app on tax documents, highlighting financial calculations and tax preparation.",
+      "name": "Polina Tankilevitch",
+      "url": "https://www.pexels.com/@polina-tankilevitch",
+      "bytes": 94074
+    },
+    "bottom": {
+      "query": "UK office worker laptop",
+      "src": "/blog/uk-personal-allowance-2024-25/bottom.jpg",
+      "alt": "Close-up of office workers engaged in a tech project at a modern workplace.",
+      "name": "cottonbro studio",
+      "url": "https://www.pexels.com/@cottonbro",
+      "bytes": 47433
+    }
+  },
+  "uk-state-pension-guide": {
+    "hero": {
+      "query": "UK elderly couple",
+      "src": "/blog/uk-state-pension-guide/hero.jpg",
+      "alt": "Two senior men travel by train in London, England, gazing out the window at the lush countryside.",
+      "name": "Kyle Miller",
+      "url": "https://www.pexels.com/@kyle-miller-973685099",
+      "bytes": 49368
+    },
+    "mid": {
+      "query": "retirement pension UK",
+      "src": "/blog/uk-state-pension-guide/mid.jpg",
+      "alt": "Senior couple relaxing on a seaside bench, enjoying a sunny summer day overlooking the ocean.",
+      "name": "Costa Karabelas",
+      "url": "https://www.pexels.com/@costa",
+      "bytes": 91641
+    },
+    "bottom": {
+      "query": "elderly woman tea",
+      "src": "/blog/uk-state-pension-guide/bottom.jpg",
+      "alt": "Senior woman with white hair savoring tea in a colorful dress on a cozy couch, adding a touch of elegance.",
+      "name": "Yaroslav Shuraev",
+      "url": "https://www.pexels.com/@yaroslav-shuraev",
+      "bytes": 52029
+    }
+  },
+  "what-is-401k-employer-match": {
+    "hero": {
+      "query": "office workers meeting",
+      "src": "/blog/what-is-401k-employer-match/hero.jpg",
+      "alt": "Engaged office team in business discussion around a laptop, fostering collaboration.",
+      "name": "RDNE Stock project",
+      "url": "https://www.pexels.com/@rdne",
+      "bytes": 60034
+    },
+    "mid": {
+      "query": "retirement benefits paperwork",
+      "src": "/blog/what-is-401k-employer-match/mid.jpg",
+      "alt": "A joyful senior couple smiling while reviewing documents together at a desk with a laptop.",
+      "name": "Kampus Production",
+      "url": "https://www.pexels.com/@kampus",
+      "bytes": 34791
+    },
+    "bottom": {
+      "query": "401k savings investment",
+      "src": "/blog/what-is-401k-employer-match/bottom.jpg",
+      "alt": "A desk setup with a notebook labeled '401k', a pen, cash, and a calculator representing financial planning.",
+      "name": "Towfiqu barbhuiya",
+      "url": "https://www.pexels.com/@towfiqu-barbhuiya-3440682",
+      "bytes": 73038
+    }
+  },
+  "what-is-paye-south-africa": {
+    "hero": {
+      "query": "south africa office worker",
+      "src": "/blog/what-is-paye-south-africa/hero.jpg",
+      "alt": "A female factory worker using a computer in an industrial environment.",
+      "name": "EqualStock IN",
+      "url": "https://www.pexels.com/@equalstock",
+      "bytes": 91588
+    },
+    "mid": {
+      "query": "payslip paperwork desk",
+      "src": "/blog/what-is-paye-south-africa/mid.jpg",
+      "alt": "Flat lay of a workspace with laptop, documents, and cardboard boxes for e-commerce operations.",
+      "name": "Kampus Production",
+      "url": "https://www.pexels.com/@kampus",
+      "bytes": 62242
+    },
+    "bottom": {
+      "query": "south africa city",
+      "src": "/blog/what-is-paye-south-africa/bottom.jpg",
+      "alt": "A stunning aerial view of Cape Town city lights at night against Table Mountain.",
+      "name": "K",
+      "url": "https://www.pexels.com/@kelly",
+      "bytes": 131431
+    }
+  }
+}
