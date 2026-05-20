@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Security Break-Even Calculator — 62 vs 67 vs 70 | FinCalcHub</title>
+  <meta name="description" content="Free Social Security break-even calculator. Compare claiming at 62, 67, or 70 against your life expectancy and find the optimal claim age.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/social-security-break-even-calculator/">
+  <meta property="og:title" content="Social Security Break-Even Calculator — 62 vs 67 vs 70 | FinCalcHub">
+  <meta property="og:description" content="Free Social Security break-even calculator. Compare claiming at 62, 67, or 70 against your life expectancy and find the optimal claim age.">
+  <meta property="og:url" content="https://finncalc.com/social-security-break-even-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Social Security Break-Even Calculator — 62 vs 67 vs 70 | FinCalcHub">
+  <meta name="twitter:description" content="Free Social Security break-even calculator. Compare claiming at 62, 67, or 70 against your life expectancy and find the optimal claim age.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","applicationCategory":"FinanceApplication","dateModified":"2026-05-20","description":"Free Social Security break-even calculator for US retirees.","name":"Social Security Break-Even Calculator","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web Browser","url":"https://finncalc.com/social-security-break-even-calculator/"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Social Security break-even age?","acceptedAnswer":{"@type":"Answer","text":"Break-even age is when the cumulative benefits from claiming later equal those of claiming earlier. Claiming at 67 vs 62 breaks even at roughly age 78-79; claiming at 70 vs 67 breaks even at roughly age 82-83. If you live past the break-even age, the later claim wins; if you don't, the earlier claim wins."}},{"@type":"Question","name":"Should I claim Social Security at 62 or 67?","acceptedAnswer":{"@type":"Answer","text":"Claim at 62 if life expectancy is under 78, you need the income immediately, or you have a spouse who'll claim spousal benefits. Wait to 67 if life expectancy is 78-83 and you can afford to defer. Wait to 70 if life expectancy is over 83 and you don't need the income. Roughly half of US claims happen at or before 62 — usually for liquidity reasons, not optimality."}},{"@type":"Question","name":"What is the multiplier at each claim age?","acceptedAnswer":{"@type":"Answer","text":"For Americans born 1960 or later, Full Retirement Age (FRA) is 67 and benefits equal 100%. Claiming at 62 gives 70% of FRA (30% reduction). Claiming at 70 gives 124% of FRA (24% delayed retirement credit at 8% per year deferred past FRA). Claiming any other age is interpolated — age 65 is roughly 86.7%, age 68 is 108%, age 69 is 116%."}},{"@type":"Question","name":"What if I expect to live a long time?","acceptedAnswer":{"@type":"Answer","text":"Defer to 70. Claiming at 70 gives you 77% more monthly income than claiming at 62 (124% vs 70%). If you live to 90, the cumulative payout difference between claiming at 62 versus 70 is typically $200,000-400,000 in favor of waiting. Family history of longevity (parents or grandparents living past 85) materially shifts the optimal claim age later."}},{"@type":"Question","name":"Does claiming later affect spousal benefits?","acceptedAnswer":{"@type":"Answer","text":"Yes. A surviving spouse can claim up to 100% of the higher earner's benefit — which is higher if the higher earner deferred. For married couples where one spouse expects to outlive the other by 10+ years, the longer-lived spouse benefits enormously from the other deferring. This is one of the strongest cases for waiting to 70."}},{"@type":"Question","name":"What about taxes on Social Security?","acceptedAnswer":{"@type":"Answer","text":"Up to 85% of Social Security can be taxable as federal income, depending on combined income. The calculator shows pre-tax cumulative benefits — net of tax, the break-even ages can shift slightly later. State taxation varies — most states exempt SS entirely, but ten still tax some portion. Combine with the take-home pay calculator for net comparison."}},{"@type":"Question","name":"Should I claim Social Security at 62 to invest the difference?","acceptedAnswer":{"@type":"Answer","text":"Almost never works in practice. The 8%/year delayed retirement credit between 67 and 70 is a guaranteed risk-free return that no public investment can match. To beat it consistently, you'd need to earn 8%+ real returns with zero downside — which doesn't exist. The math only works in 'invest the difference' theory if you're highly disciplined AND get above-average returns AND don't draw down the invested funds — three big ifs."}}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://finncalc.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://finncalc.com/social-security-break-even-calculator/","name":"Social Security Break-Even Calculator","position":2}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","name":"James Blanckenberg"},"description":"Step-by-step guide to using the Social Security Break-Even Calculator.","name":"How to use the Social Security Break-Even Calculator","step":[{"@type":"HowToStep","name":"Enter your monthly benefit at FRA","position":1,"text":"Find your Full Retirement Age (FRA = 67 for born 1960+) benefit on your SSA statement — that's the 100% baseline.","url":"https://finncalc.com/social-security-break-even-calculator/#step-1"},{"@type":"HowToStep","name":"Enter your current age","position":2,"text":"Used to calculate years until each claim option.","url":"https://finncalc.com/social-security-break-even-calculator/#step-2"},{"@type":"HowToStep","name":"Set your life expectancy","position":3,"text":"Slide your expected lifespan from 70 to 95. Default 85.","url":"https://finncalc.com/social-security-break-even-calculator/#step-3"},{"@type":"HowToStep","name":"Read the break-even and recommendation","position":4,"text":"The calculator shows cumulative benefits at 62 / 67 / 70 and the optimal claim age for your life expectancy.","url":"https://finncalc.com/social-security-break-even-calculator/#step-4"}],"totalTime":"PT2M"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","jobTitle":"Founder & Editor, FinCalcHub","name":"James Blanckenberg","sameAs":["https://www.linkedin.com/in/james-blanckenberg-154a1312/"],"url":"https://finncalc.com/authors/james-blanckenberg/"}, "dateModified":"2026-05-20","datePublished":"2026-05-20","description":"Free Social Security break-even calculator for US retirees.","headline":"Social Security Break-Even Calculator","inLanguage":"en","mainEntityOfPage":{"@id":"https://finncalc.com/social-security-break-even-calculator/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://finncalc.com/og-image.png"},"name":"FinCalcHub","url":"https://finncalc.com/"},"url":"https://finncalc.com/social-security-break-even-calculator/"}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5FSP8WRB3C');
+  </script>
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+  </script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <script>
+  (function(){
+    var loaded=false;
+    function loadAds(){
+      if(loaded) return; loaded=true;
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+      s.crossOrigin='anonymous';
+      document.head.appendChild(s);
+    }
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+      },{rootMargin:'200px'});
+      document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+      });
+    } else {
+      window.addEventListener('load',loadAds);
+    }
+  })();
+  </script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK" disabled style="opacity:0.5;cursor:not-allowed" title="US Social Security only — not applicable in UK"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> UK (N/A)</button>
+    <button class="region-btn" id="btn-SA" disabled style="opacity:0.5;cursor:not-allowed" title="US Social Security only — not applicable in SA"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> SA (N/A)</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="4461919959" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="/">Home</a> › Social Security Break-Even Calculator</p>
+  <h1>Social Security Break-Even Calculator</h1>
+  <p class="subtitle">Compare claiming Social Security at 62, 67 (Full Retirement Age), or 70 — and see which claim age maximises lifetime benefits for your expected lifespan.</p>
+
+  <div class="quick-answer">
+    <h2>When should you claim Social Security?</h2>
+    <p>If you expect to live past <strong>82-83</strong>, deferring to age 70 maximises lifetime benefits. Past <strong>78-79</strong>, claiming at FRA (67) beats claiming at 62. Below 78, the early claim wins on cumulative payout — though spousal benefits and immediate cash needs often justify earlier claims regardless. Family longevity history is the single biggest input.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Benefit Information</div>
+    <div class="form-group">
+      <label for="benefit">Monthly Benefit at FRA (age 67) — from your SSA statement</label>
+      <input type="number" id="benefit" value="2500" min="0" oninput="calculate()" inputmode="decimal">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" value="60" min="40" max="75" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="lifeExpectancy">Expected Life Expectancy</label>
+        <input type="range" id="lifeExpectancy" value="85" min="70" max="95" step="1" oninput="calculate()">
+        <output id="life-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">85 yrs</output>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">Lifetime Benefits Comparison</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value" id="r-best-age">67</div><div class="result-label">Optimal Claim Age</div></div>
+      <div class="result-item"><div class="result-value" id="r-be-62-67">79</div><div class="result-label">Break-Even: 62 vs 67</div></div>
+      <div class="result-item"><div class="result-value" id="r-be-67-70">83</div><div class="result-label">Break-Even: 67 vs 70</div></div>
+      <div class="result-item"><div class="result-value positive" id="r-best-total">$0</div><div class="result-label">Best Lifetime Total</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Side-by-Side Comparison</div>
+    <table class="breakdown-table">
+      <thead><tr><th>Claim Age</th><th class="td-right">Monthly Benefit</th><th class="td-right">Annual</th><th class="td-right">Cumulative to Life Expectancy</th><th>Notes</th></tr></thead>
+      <tbody id="breakdown-body"></tbody>
+    </table>
+    <p id="recommendation" style="margin:16px 0 0;padding:12px;background:#e6f7ff;border-left:4px solid #1890ff;font-size:0.9em"></p>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+      <button class="btn-action" onclick="saveToFile && saveToFile()">💾 Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="7963163804" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" style="margin-bottom:6px">Pull your latest SSA statement at ssa.gov/myaccount. Find the "Estimated Monthly Benefit at Full Retirement Age" — that&apos;s the 100% baseline.</li>
+      <li id="step-2" style="margin-bottom:6px">Enter your current age (used to calculate years until each option).</li>
+      <li id="step-3" style="margin-bottom:6px">Slide life expectancy. Default 85 matches current US average for those reaching 65. Adjust higher for strong family longevity history.</li>
+      <li id="step-4" style="margin-bottom:6px">Read the break-even ages and the optimal claim age for your input.</li>
+    </ol>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>FRA depends on birth year.</strong> Full Retirement Age is 66 for those born 1943-1954, 66+2 months per year for 1955-1959, and 67 for born 1960 and later. This calculator assumes FRA = 67, which is correct for anyone reaching FRA in 2027 or later. For older retirees the multipliers and break-even ages shift slightly.</p>
+    <p><strong>Claim-age multipliers.</strong> Starting from FRA = 100%, each month claimed early reduces the benefit by 5/9 of 1% for the first 36 months, then 5/12 of 1% for additional months. The result: age 62 = 70%, age 63 = 75%, age 64 = 80%, age 65 = 86.67%, age 66 = 93.33%. Past FRA, delayed retirement credits add 8% per year (2/3 of 1% per month): age 68 = 108%, age 69 = 116%, age 70 = 124%. After 70 there is no further benefit increase.</p>
+    <p><strong>Break-even math.</strong> Set cumulative_early = cumulative_late: monthly_early × 12 × (D - claim_early) = monthly_late × 12 × (D - claim_late). Solve for D (death age). At 70% vs 100% multipliers, breakeven is age 78.67. At 100% vs 124%, it&apos;s 82.5. Living past breakeven means the later claim wins; dying before means the earlier claim wins.</p>
+    <p><strong>The 8% deferred-credit return.</strong> Each year of deferral between FRA and 70 raises lifetime monthly benefit by 8% — a guaranteed, government-backed return that no public investment can replicate. For anyone with reasonable life expectancy and the ability to defer, this is one of the highest-quality returns available in finance.</p>
+    <p><strong>This is US-only.</strong> The UK State Pension and South African Government Pension Fund have completely different structures. No SA equivalent of the claim-age trade-off exists. The UK State Pension can be deferred for a 5.8%/year increase, but the comparable calculation is simpler.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="worked-example" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Worked example — $2,500/month FRA benefit, life expectancy 85</h2>
+    <p>A 60-year-old looks at the SSA statement and sees a $2,500/month benefit at FRA (age 67). Family history is strong — both parents lived to 90 — so realistic life expectancy is around 88. Income from a 401k and small pension can cover spending in early retirement, so deferring SS is feasible.</p>
+    <p>Three options. Claim at 62: 70% × $2,500 = $1,750/month, $21,000/year. Cumulative from 62 to 88 = 26 years × $21,000 = $546,000. Claim at 67: 100% × $2,500 = $2,500/month, $30,000/year. Cumulative 67 to 88 = 21 years × $30,000 = $630,000. Claim at 70: 124% × $2,500 = $3,100/month, $37,200/year. Cumulative 70 to 88 = 18 years × $37,200 = $669,600.</p>
+    <p>The 70-claim wins by $39,600 over the 67-claim and $123,600 over the 62-claim. For someone with this life expectancy, deferral to 70 is unambiguously the right answer financially. The downside: they need to fund 8 years (62-70) from other sources — typically about $250,000-300,000 of bridge spending, which the 401k usually covers.</p>
+    <p>Flip life expectancy down to 78. Claim at 62: 16 years × $21,000 = $336,000. Claim at 67: 11 years × $30,000 = $330,000. Claim at 70: 8 years × $37,200 = $297,600. At this lifespan, 62 wins narrowly. The math reverses cleanly around the break-even ages: living past 79 favours waiting to 67; living past 83 favours waiting to 70.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="common-mistakes" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Common mistakes</h2>
+    <ul style="margin:0 0 0 22px">
+      <li style="margin-bottom:8px"><strong>Underestimating life expectancy.</strong> A 65-year-old US male has a current life expectancy of about 83; female 86. Both are higher for non-smokers, college-educated, or those with healthy parents. Defaulting to "I&apos;ll live to 80" undershoots — and the math gets the answer wrong as a result.</li>
+      <li style="margin-bottom:8px"><strong>Ignoring spousal benefits.</strong> A surviving spouse can claim up to 100% of the higher earner&apos;s benefit, including any delayed retirement credits. For couples where one spouse expects to outlive the other, the longer-lived spouse benefits from the higher earner deferring. This often justifies waiting to 70 even when the higher earner&apos;s personal break-even doesn&apos;t.</li>
+      <li style="margin-bottom:8px"><strong>Claiming at 62 to "invest the difference".</strong> Almost never works. The 8%/year delayed-credit return between 67 and 70 is a guaranteed risk-free return. To beat it, you&apos;d need 8%+ real returns with no drawdowns — which doesn&apos;t exist. The math only works in theory if you&apos;re extraordinarily disciplined AND get above-market returns AND don&apos;t draw from the invested pot.</li>
+      <li style="margin-bottom:8px"><strong>Forgetting taxes.</strong> Up to 85% of SS benefits are taxable as federal income depending on combined income. State taxation varies. The break-even ages shift slightly later (by 6-12 months) once tax is factored in.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="related">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    <a href="/retirement-drawdown-calculator/" class="related-card">📉 Retirement Drawdown</a>
+    <a href="/safe-withdrawal-rate-calculator/" class="related-card">💸 Safe Withdrawal Rate</a>
+    <a href="/take-home-pay/" class="related-card">💰 Take-Home Pay</a>
+    <a href="/fire-number-calculator/" class="related-card">🔥 FIRE Number</a>
+    <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="1620134192" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">What is Social Security break-even age?</div><div class="faq-a">The age at which cumulative benefits from claiming later equal those of claiming earlier. 67 vs 62 breaks even ~78-79; 70 vs 67 breaks even ~82-83.</div></div>
+    <div class="faq-item"><div class="faq-q">Should I claim Social Security at 62 or 67?</div><div class="faq-a">62 if life expectancy is under 78 or you need the income; 67 if you&apos;re 78-83 and can afford to wait. Spousal considerations often shift the optimal claim age later.</div></div>
+    <div class="faq-item"><div class="faq-q">What is the multiplier at each claim age?</div><div class="faq-a">For born 1960+ with FRA = 67: age 62 = 70%, FRA = 100%, age 70 = 124%. Each year of deferral past FRA adds 8% via delayed retirement credits.</div></div>
+    <div class="faq-item"><div class="faq-q">What if I expect to live a long time?</div><div class="faq-a">Defer to 70. Living to 90 typically generates $200-400k more cumulative benefits versus claiming at 62.</div></div>
+    <div class="faq-item"><div class="faq-q">Does claiming later affect spousal benefits?</div><div class="faq-a">Yes — significantly. A surviving spouse inherits up to 100% of the higher earner&apos;s benefit including delayed credits. For couples with longevity gap, defer.</div></div>
+    <div class="faq-item"><div class="faq-q">What about taxes on Social Security?</div><div class="faq-a">Up to 85% of SS is federally taxable. State taxation varies. Break-even ages shift slightly later when tax is factored in.</div></div>
+    <div class="faq-item"><div class="faq-q">Should I claim at 62 to invest the difference?</div><div class="faq-a">Almost never works. The 8%/year delayed-credit return between 67 and 70 is guaranteed and risk-free — no public investment matches it.</div></div>
+  </div>
+</div>
+
+<script>
+function calculate(){
+  var benefit = parseFloat(document.getElementById('benefit').value) || 0;
+  var currentAge = parseFloat(document.getElementById('currentAge').value) || 60;
+  var life = parseFloat(document.getElementById('lifeExpectancy').value) || 85;
+
+  document.getElementById('life-display').textContent = life + ' yrs';
+
+  // FRA assumed 67. Multipliers per SSA: 62=70%, 67=100%, 70=124%.
+  var claims = [
+    { age: 62, mult: 0.70, label: 'Early — age 62' },
+    { age: 67, mult: 1.00, label: 'Full Retirement Age — 67' },
+    { age: 70, mult: 1.24, label: 'Deferred — age 70' }
+  ];
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  // Compute cumulative for each
+  var scenarios = claims.map(function(c){
+    var monthly = benefit * c.mult;
+    var annual = monthly * 12;
+    var years = Math.max(0, life - c.age);
+    var cumulative = annual * years;
+    return { age: c.age, mult: c.mult, label: c.label, monthly: monthly, annual: annual, years: years, cumulative: cumulative };
+  });
+
+  // Find best (highest cumulative)
+  var best = scenarios.reduce(function(a, b){ return b.cumulative > a.cumulative ? b : a; });
+
+  document.getElementById('r-best-age').textContent = best.age;
+  document.getElementById('r-best-total').textContent = fmt(best.cumulative);
+
+  // Break-even ages (precomputed from SSA multipliers):
+  // 62 vs 67: 0.70 × (d-62) = 1.00 × (d-67) → d = (1×67 - 0.70×62)/(1-0.70) ≈ 78.7
+  // 67 vs 70: 1.00 × (d-67) = 1.24 × (d-70) → d = (1.24×70 - 1×67)/(1.24-1) ≈ 82.5
+  document.getElementById('r-be-62-67').textContent = '78-79';
+  document.getElementById('r-be-67-70').textContent = '82-83';
+
+  var rows = scenarios.map(function(s){
+    var notes = s.age === best.age ? '<strong>Best for your life expectancy</strong>' : '';
+    return '<tr><td>' + s.label + '</td><td class="td-right">' + fmt(s.monthly) + '</td><td class="td-right">' + fmt(s.annual) + '</td><td class="td-right">' + fmt(s.cumulative) + '</td><td>' + notes + '</td></tr>';
+  }).join('');
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  // Recommendation
+  var rec;
+  if (life < 78) {
+    rec = '<strong>Claim early at 62.</strong> Your life expectancy is below the 78-79 break-even, so cumulative benefits are highest by claiming as early as possible. Spousal benefits and immediate income needs may strengthen this further.';
+  } else if (life < 83) {
+    rec = '<strong>Claim at Full Retirement Age (67).</strong> Your life expectancy is above 78-79 but below 82-83 — the sweet spot for FRA claiming. The 70-claim doesn&apos;t pay off enough at your expected lifespan.';
+  } else {
+    rec = '<strong>Defer to 70.</strong> Your life expectancy is above 82-83, so the 8%/year delayed retirement credits between FRA and 70 maximise lifetime benefits. Plan a bridge from other income (401k, pension, savings) to cover the 67-70 gap.';
+  }
+  rec += ' This calculator is pre-tax and doesn&apos;t model spousal benefits, which can shift the recommendation later for married couples with a longevity gap.';
+  document.getElementById('recommendation').innerHTML = rec;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid #e5e7eb;font-size:13px;color:#666;line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:#1B3A5C;text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-20">20 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:#1B3A5C;text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+<div class="container ad-footer-desktop">
+  <div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="5980987973" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+    <div id="newsletter-slot"></div>
+    <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+      <strong>Run a business?</strong>
+      Try our sister site
+      <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+      — free profit margin, pricing, and cash flow calculators.
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>
