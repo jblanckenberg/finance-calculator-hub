@@ -499,7 +499,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://finncalc.com/fire-number-calculator/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://finncalc.com/hsa-calculator/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finncalc.com/retirement-drawdown-calculator/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -511,7 +523,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://finncalc.com/safe-withdrawal-rate-calculator/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://finncalc.com/savings-vs-investing-calculator/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finncalc.com/social-security-break-even-calculator/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

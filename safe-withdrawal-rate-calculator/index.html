@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Withdrawal Rate Calculator — 4% Rule | FinCalcHub</title>
+  <meta name="description" content="Free safe withdrawal rate calculator. See how much you can spend annually from a retirement portfolio at 3%, 3.5%, or 4% under the Trinity Study rule.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/safe-withdrawal-rate-calculator/">
+  <meta property="og:title" content="Safe Withdrawal Rate Calculator — 4% Rule | FinCalcHub">
+  <meta property="og:description" content="Free safe withdrawal rate calculator. See how much you can spend annually from a retirement portfolio at 3%, 3.5%, or 4% under the Trinity Study rule.">
+  <meta property="og:url" content="https://finncalc.com/safe-withdrawal-rate-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Safe Withdrawal Rate Calculator — 4% Rule | FinCalcHub">
+  <meta name="twitter:description" content="Free safe withdrawal rate calculator. See how much you can spend annually from a retirement portfolio at 3%, 3.5%, or 4% under the Trinity Study rule.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","applicationCategory":"FinanceApplication","dateModified":"2026-05-20","description":"Free safe withdrawal rate calculator. Convert a retirement portfolio into a sustainable annual spending number.","name":"Safe Withdrawal Rate Calculator","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web Browser","url":"https://finncalc.com/safe-withdrawal-rate-calculator/"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the safe withdrawal rate?","acceptedAnswer":{"@type":"Answer","text":"The safe withdrawal rate is the percentage of a retirement portfolio you can spend each year with very low risk of running out over a 30-year retirement. The original Trinity Study (1998) found a 4% initial-year withdrawal — adjusted upward each year for inflation — had a 95%+ success rate across historical US data. More cautious researchers now suggest 3.25-3.5% for early retirees who need money to last 40+ years."}},{"@type":"Question","name":"Is the 4% rule still safe in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 4% rule is conservative for traditional 30-year retirements starting in normal market conditions. For early retirement (40+ year horizons) or starts during elevated valuations like 2026, most updated analyses suggest dropping to 3.25-3.75%. The rule still works as a starting framework — it just needs adjustment for your specific situation and a willingness to flex withdrawals down 10-15% in bad market years."}},{"@type":"Question","name":"How is the safe withdrawal rate calculated?","acceptedAnswer":{"@type":"Answer","text":"It comes from historical back-tests of a 60/40 stock-bond portfolio with annual inflation-adjusted withdrawals. The Trinity Study tested every 30-year rolling period since 1926 and found 4% sustained the portfolio in 95% of cases. Bengen's original 1994 paper used 50/50 and found similar numbers. The calculator above applies the rule to your specific portfolio value."}},{"@type":"Question","name":"What if I plan to retire for longer than 30 years?","acceptedAnswer":{"@type":"Answer","text":"For 40-year retirements, the success rate of 4% drops to about 85%. For 50 years (early FIRE retirees), it drops below 80%. Use 3.5% for 40-year horizons and 3.25% for 50+ years to recover the 95% confidence threshold. The calculator's three-row comparison (4% / 3.5% / 3%) shows the trade-off."}},{"@type":"Question","name":"Does the safe withdrawal rate apply in the UK or South Africa?","acceptedAnswer":{"@type":"Answer","text":"The original research is US-based, but a 2018 Morningstar UK study found similar results for UK retirees using FTSE All-Share and UK gilts (suggested 3.75-4.0%). South African data is thinner — the JSE has higher volatility and the bond market is dollar-correlated, so most local advisers recommend a more cautious 3.0-3.5% with a 60/40 split of JSE Top 40 and ALBI bonds. Currency only matters for the absolute spending number; the percentage logic transfers."}},{"@type":"Question","name":"What is sequence-of-returns risk?","acceptedAnswer":{"@type":"Answer","text":"It's the risk that early-retirement returns are poor — even if average returns over the full retirement are fine. Withdrawing from a falling portfolio locks in losses you can't earn back, and dramatically increases failure risk. The Trinity Study handles this in aggregate via historical back-testing, but the 5% of failures clustered around starts that began with the 1929 crash, 1937 recession, and 1966 stagflation."}},{"@type":"Question","name":"How do I make my withdrawals last longer?","acceptedAnswer":{"@type":"Answer","text":"Three levers. First, flex withdrawals down 10-20% in bad market years (the guardrails or Guyton-Klinger method). Second, hold 2-3 years of expenses in cash to avoid selling stocks during a downturn. Third, defer Social Security or pension claims to 70 — this acts as deferred-income insurance and lets you draw harder from the portfolio while you wait. Combined, these can push the safe rate from 4% to closer to 5%."}}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://finncalc.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://finncalc.com/safe-withdrawal-rate-calculator/","name":"Safe Withdrawal Rate Calculator","position":2}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","name":"James Blanckenberg"},"description":"Step-by-step guide to using the Safe Withdrawal Rate Calculator.","name":"How to use the Safe Withdrawal Rate Calculator","step":[{"@type":"HowToStep","name":"Enter your total retirement portfolio","position":1,"text":"Type the total value of your retirement accounts (401k, IRA, brokerage, ISA, RA).","url":"https://finncalc.com/safe-withdrawal-rate-calculator/#step-1"},{"@type":"HowToStep","name":"Set your withdrawal rate","position":2,"text":"Use the slider to pick a rate between 2% and 6%. Default is 4%.","url":"https://finncalc.com/safe-withdrawal-rate-calculator/#step-2"},{"@type":"HowToStep","name":"Compare against alternative rates","position":3,"text":"The calculator shows the 4%, 3.5%, and 3% withdrawal levels side-by-side for sensitivity testing.","url":"https://finncalc.com/safe-withdrawal-rate-calculator/#step-3"}],"totalTime":"PT1M"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","jobTitle":"Founder & Editor, FinCalcHub","name":"James Blanckenberg","sameAs":["https://www.linkedin.com/in/james-blanckenberg-154a1312/"],"url":"https://finncalc.com/authors/james-blanckenberg/"}, "dateModified":"2026-05-20","datePublished":"2026-05-20","description":"Free safe withdrawal rate calculator. Convert a retirement portfolio into a sustainable annual spending number.","headline":"Safe Withdrawal Rate Calculator","inLanguage":"en","mainEntityOfPage":{"@id":"https://finncalc.com/safe-withdrawal-rate-calculator/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://finncalc.com/og-image.png"},"name":"FinCalcHub","url":"https://finncalc.com/"},"url":"https://finncalc.com/safe-withdrawal-rate-calculator/"}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5FSP8WRB3C');
+  </script>
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+  </script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <script>
+  (function(){
+    var loaded=false;
+    function loadAds(){
+      if(loaded) return; loaded=true;
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+      s.crossOrigin='anonymous';
+      document.head.appendChild(s);
+    }
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+      },{rootMargin:'200px'});
+      document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+      });
+    } else {
+      window.addEventListener('load',loadAds);
+    }
+  })();
+  </script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="4461919959" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="/">Home</a> › Safe Withdrawal Rate Calculator</p>
+  <h1>Safe Withdrawal Rate Calculator</h1>
+  <p class="subtitle">Find the sustainable annual spending number for a retirement portfolio under the Trinity Study 4% rule — and stress-test it against more conservative 3.5% and 3% withdrawal levels.</p>
+
+  <div class="quick-answer">
+    <h2>How much can you safely withdraw from a retirement portfolio?</h2>
+    <p>The conventional answer is <strong>4% of the portfolio in year one</strong>, then adjust that dollar amount up for inflation every year. A $1,000,000 portfolio supports $40,000 in year-one spending — about $3,333 a month. For retirements longer than 30 years or starting in elevated-valuation markets, drop to 3.25-3.5% for the same confidence level.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Portfolio</div>
+    <div class="form-group">
+      <label for="portfolio">Total Retirement Portfolio <span class="hint" id="s1">($)</span></label>
+      <input type="number" id="portfolio" value="1000000" min="0" oninput="calculate()" inputmode="decimal">
+    </div>
+    <div class="form-group">
+      <label for="rate">Withdrawal Rate (%) — slide to compare</label>
+      <input type="range" id="rate" value="4" min="2" max="6" step="0.1" oninput="calculate()">
+      <output id="rate-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">4.0%</output>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">Sustainable Withdrawal</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-annual">$0</div><div class="result-label">Year 1 Annual</div></div>
+      <div class="result-item"><div class="result-value" id="r-monthly">$0</div><div class="result-label">Year 1 Monthly</div></div>
+      <div class="result-item"><div class="result-value" id="r-floor">0 yrs</div><div class="result-label">Years at 0% Real Return (Floor)</div></div>
+      <div class="result-item"><div class="result-value" id="r-confidence">95%+</div><div class="result-label">Historical 30-yr Success</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Three-Rate Comparison</div>
+    <table class="breakdown-table">
+      <thead><tr><th>Rate</th><th class="td-right">Annual</th><th class="td-right">Monthly</th><th>Use Case</th></tr></thead>
+      <tbody id="breakdown-body"></tbody>
+    </table>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+      <button class="btn-action" onclick="saveToFile && saveToFile()">💾 Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="7963163804" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 1 minute.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" style="margin-bottom:6px">Add up all your retirement-purpose accounts (401k, IRA, brokerage, ISA, Retirement Annuity, etc.) and enter the total.</li>
+      <li id="step-2" style="margin-bottom:6px">Slide the withdrawal rate to your preferred level. 4% is the Trinity Study baseline; 3.5% for early/long retirement; 3% for the most cautious.</li>
+      <li id="step-3" style="margin-bottom:6px">Compare the side-by-side 4% / 3.5% / 3% table to see how much each level changes year-one income.</li>
+    </ol>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>Where the 4% rule comes from.</strong> William Bengen (1994) and the Trinity Study (1998) back-tested 30-year withdrawals from a 50-60% stock portfolio against every starting year from 1926 onwards. They found that a 4% initial withdrawal — adjusted for inflation each subsequent year — sustained the portfolio across 95%+ of those historical periods. The 4% figure became shorthand for the entire framework.</p>
+    <p><strong>What &quot;safe&quot; actually means.</strong> Safe means the portfolio didn&apos;t hit zero before year 30. It does not mean the portfolio stays flat. In the median case the original $1 million is still worth $2-3 million inflation-adjusted at the end of 30 years. The 5% failure cases came from retirements starting near major market peaks like 1929, 1937, and 1966.</p>
+    <p><strong>The 30-year assumption.</strong> Most academic work uses 30 years because that&apos;s the average retirement length for a 65-year-old. Early FIRE retirees, anyone retiring at 50 or 55, and high life-expectancy populations should stress-test against 40-50 year horizons — at which point 4% drops to 80-85% success and a more conservative 3.25-3.5% rate restores 95% confidence.</p>
+    <p><strong>Region note.</strong> The maths is currency-neutral but the success-rate evidence is mostly US-equity-market. UK and SA portfolios have different volatility profiles. Use the figures as a starting point and adjust downward if your portfolio is concentrated in a single emerging market or a tighter sector. For deep retirement planning, this calculator pairs naturally with the <a href="/retirement-drawdown-calculator/">Retirement Drawdown Calculator</a> for year-by-year balance projections.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="worked-example" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Worked example — $1M portfolio, traditional 30-year retirement</h2>
+    <p>A 65-year-old retires with $1,000,000 split 60/40 between a US total-stock-market ETF and an aggregate bond fund. Applying the 4% rule, year-one spending is $1,000,000 × 4% = $40,000 — about $3,333 a month before tax. If inflation runs 3% in year one, year-two spending rises to $41,200 (still 4% of the original portfolio in real terms).</p>
+    <p>Stress-test at 3.5%: year-one spending falls to $35,000, monthly $2,917. The headline cut is $5,000 a year, but the success rate for a 40-year retirement rises from roughly 85% (at 4%) to 95%. The trade is straightforward — give up 12.5% of annual spending to buy a decade more confidence.</p>
+    <p>Stress-test at 3%: year-one spending falls to $30,000, monthly $2,500. This is the rate Wade Pfau and other researchers recommend for retirements over 40 years starting in elevated-valuation markets. It is also the rate most FIRE blogs converge on once they look honestly at their 50-year horizons.</p>
+    <p>At zero real return — a deliberately pessimistic stress case where the portfolio earns just enough to cover inflation — $1M divided by $40k of annual spending lasts 25 years. The 4% rule&apos;s 95% historical success is largely because real returns averaged 4-5% on top of inflation, not because the maths balances at zero. If you believe future returns will be materially lower than the last century, drop the rate to compensate.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="common-mistakes" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Common mistakes</h2>
+    <ul style="margin:0 0 0 22px">
+      <li style="margin-bottom:8px"><strong>Applying 4% to a 50-year horizon.</strong> The rule was calibrated to 30 years. For very early retirees, the safe rate drops to 3.25% or even 3% for the same confidence level. Half of FIRE blog math published in the 2010s ignored this.</li>
+      <li style="margin-bottom:8px"><strong>Withdrawing a flat percentage every year.</strong> The Trinity rule is: 4% in year one, then that dollar amount adjusted for inflation. Withdrawing 4% of whatever the portfolio is worth each year is a different (and more volatile) rule.</li>
+      <li style="margin-bottom:8px"><strong>Not flexing in bad market years.</strong> The biggest improvement over the static 4% rule is &quot;guardrails&quot; — cut spending by 10-15% when the portfolio drops more than 20%, raise it back when recovery confirms. This single behavioural change adds 0.5-1 percentage point to the safe rate.</li>
+      <li style="margin-bottom:8px"><strong>Forgetting taxes.</strong> A $40,000 traditional-IRA withdrawal nets you less than $40,000 because it&apos;s taxed as ordinary income. For accurate planning, model the after-tax cash with the <a href="/take-home-pay/">Take-Home Pay Calculator</a>.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="related">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    <a href="/retirement-drawdown-calculator/" class="related-card">📉 Retirement Drawdown</a>
+    <a href="/fire-number-calculator/" class="related-card">🔥 FIRE Number</a>
+    <a href="/fire-calculator/" class="related-card">🚀 FIRE Calculator</a>
+    <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+    <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="1620134192" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">What is the safe withdrawal rate?</div><div class="faq-a">The percentage of a retirement portfolio you can spend in year one, adjusted for inflation thereafter, with very low risk of running out over 30 years. The Trinity Study (1998) settled on 4% from US historical data.</div></div>
+    <div class="faq-item"><div class="faq-q">Is the 4% rule still safe in 2026?</div><div class="faq-a">For traditional 30-year retirements, yes — though Pfau and Kitces both suggest dropping to 3.25-3.75% in elevated-valuation markets. For 40-year retirements, 3.5% is the new 4%.</div></div>
+    <div class="faq-item"><div class="faq-q">How is the safe withdrawal rate calculated?</div><div class="faq-a">From back-tests of 60/40 stock-bond portfolios against every 30-year rolling period since 1926. The rate that survived 95% of those historical sequences is the safe rate.</div></div>
+    <div class="faq-item"><div class="faq-q">What if I retire for longer than 30 years?</div><div class="faq-a">Drop to 3.5% for 40-year horizons and 3.25% for 50+ years to maintain 95% confidence. Each percentage point cut in rate adds about 10 years of expected portfolio life.</div></div>
+    <div class="faq-item"><div class="faq-q">Does the safe withdrawal rate apply in the UK or South Africa?</div><div class="faq-a">UK research (Morningstar 2018) found similar 3.75-4.0% rates. SA data is thinner and most local advisers recommend 3.0-3.5% given JSE volatility. The percentage framework transfers; the absolute number is in your currency.</div></div>
+    <div class="faq-item"><div class="faq-q">What is sequence-of-returns risk?</div><div class="faq-a">The risk that poor returns in early retirement drain the portfolio so fast that later good returns can&apos;t recover it. Most 4% rule failures cluster around retirements starting near market peaks (1929, 1966, 2000).</div></div>
+    <div class="faq-item"><div class="faq-q">How do I make my withdrawals last longer?</div><div class="faq-a">Flex spending down in bad market years (guardrails), hold 2-3 years cash, and defer Social Security to 70. Combined these can push the safe rate from 4% to closer to 5%.</div></div>
+  </div>
+</div>
+
+<script>
+function calculate(){
+  var portfolio = parseFloat(document.getElementById('portfolio').value) || 0;
+  var rate = parseFloat(document.getElementById('rate').value) || 4;
+
+  document.getElementById('rate-display').textContent = rate.toFixed(1) + '%';
+
+  var annual = portfolio * rate / 100;
+  var monthly = annual / 12;
+  // Floor case: portfolio earns 0% real (just keeps pace with inflation).
+  // Years to depletion = portfolio / annual_spend.
+  var floorYears = annual > 0 ? Math.floor(portfolio / annual) : 0;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-annual').textContent = fmt(annual);
+  document.getElementById('r-monthly').textContent = fmt(monthly);
+  document.getElementById('r-floor').textContent = floorYears + ' yrs';
+
+  // Historical confidence — rough Trinity Study mapping
+  var confidence;
+  if (rate <= 3) confidence = '99%';
+  else if (rate <= 3.5) confidence = '97%';
+  else if (rate <= 4) confidence = '95%';
+  else if (rate <= 4.5) confidence = '85%';
+  else if (rate <= 5) confidence = '75%';
+  else confidence = '<70%';
+  document.getElementById('r-confidence').textContent = confidence;
+
+  var scenarios = [
+    { label: '4.0% (Trinity baseline, 30-yr)', rate: 4.0, note: 'Standard 30-year retirement' },
+    { label: '3.5% (40-yr horizon)',           rate: 3.5, note: 'Early retirement or long horizon' },
+    { label: '3.0% (50-yr / cautious)',        rate: 3.0, note: 'FIRE or elevated valuations' }
+  ];
+  var rows = scenarios.map(function(s){
+    var a = portfolio * s.rate / 100;
+    var m = a / 12;
+    return '<tr><td>' + s.label + '</td><td class="td-right">' + fmt(a) + '</td><td class="td-right">' + fmt(m) + '</td><td>' + s.note + '</td></tr>';
+  }).join('');
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid #e5e7eb;font-size:13px;color:#666;line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:#1B3A5C;text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-20">20 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:#1B3A5C;text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+<div class="container ad-footer-desktop">
+  <div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="5980987973" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+    <div id="newsletter-slot"></div>
+    <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+      <strong>Run a business?</strong>
+      Try our sister site
+      <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+      — free profit margin, pricing, and cash flow calculators.
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIRE Number Calculator — Your Freedom Target | FinCalcHub</title>
+  <meta name="description" content="Free FIRE number calculator. Find your Lean, regular, and Fat FIRE targets, plus how many years until you reach financial independence at your savings rate.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/fire-number-calculator/">
+  <meta property="og:title" content="FIRE Number Calculator — Your Freedom Target | FinCalcHub">
+  <meta property="og:description" content="Free FIRE number calculator. Find your Lean, regular, and Fat FIRE targets, plus how many years until you reach financial independence at your savings rate.">
+  <meta property="og:url" content="https://finncalc.com/fire-number-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FIRE Number Calculator — Your Freedom Target | FinCalcHub">
+  <meta name="twitter:description" content="Free FIRE number calculator. Find your Lean, regular, and Fat FIRE targets, plus how many years until you reach financial independence at your savings rate.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","applicationCategory":"FinanceApplication","dateModified":"2026-05-20","description":"Free FIRE number calculator with Lean / regular / Fat targets and years-to-FIRE projection.","name":"FIRE Number Calculator","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web Browser","url":"https://finncalc.com/fire-number-calculator/"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a FIRE number?","acceptedAnswer":{"@type":"Answer","text":"A FIRE (Financial Independence, Retire Early) number is the portfolio size you need to support your spending indefinitely from investment returns alone. The standard formula is annual spending divided by your safe withdrawal rate — typically 25× annual spending (4% rule) or 33× (3% for very long retirements)."}},{"@type":"Question","name":"What's the difference between Lean FIRE, regular FIRE, and Fat FIRE?","acceptedAnswer":{"@type":"Answer","text":"Lean FIRE assumes a frugal lifestyle and a 5% safe withdrawal rate, so target = 20× spending. Regular FIRE uses the 4% rule, so target = 25× spending — the canonical FIRE number. Fat FIRE assumes a comfortable upper-middle-class lifestyle and a cautious 3% rate, so target = 33× spending. Coast FIRE is different — it's the portfolio size that grows to a regular FIRE number by traditional retirement without further contributions."}},{"@type":"Question","name":"How do I calculate my FIRE number?","acceptedAnswer":{"@type":"Answer","text":"Multiply your annual spending by 25 for the standard 4% rule. So $40,000 in annual spending requires $1 million invested. The calculator above also computes Lean (×20) and Fat (×33) variants and projects how many years until you hit each."}},{"@type":"Question","name":"Is 25× annual spending really enough?","acceptedAnswer":{"@type":"Answer","text":"For a traditional 30-year retirement starting at normal market valuations, the Trinity Study found 25× sustained the portfolio in 95%+ of historical cases. For early retirees expecting 40-50 year horizons or starting in elevated-valuation markets like 2026, most advisers recommend 28-33× to maintain the same confidence level."}},{"@type":"Question","name":"How long does FIRE take to achieve?","acceptedAnswer":{"@type":"Answer","text":"At a 20% savings rate of after-tax income, FIRE typically takes 35-40 years. At 30% savings, 25-28 years. At 50% savings, 15-17 years. At 70% savings (extreme Lean FIRE), 8-10 years. The math compounds quickly because higher savings reduces both the time to accumulate AND the spending number you're targeting."}},{"@type":"Question","name":"Does the FIRE number include taxes?","acceptedAnswer":{"@type":"Answer","text":"It should — but most casual FIRE math omits this. If you'll draw from a traditional 401k or IRA, your withdrawals are taxed as income; a $40k withdrawal might net only $32-35k. Either gross up your spending by your effective tax rate, or fund a portion of FIRE through tax-free accounts (Roth, ISA, TFSA) and taxable brokerage to reduce the gap."}},{"@type":"Question","name":"What about healthcare and Medicare?","acceptedAnswer":{"@type":"Answer","text":"In the US this is the single biggest gap in most FIRE plans. Before Medicare eligibility at 65, an early retiree typically pays $800-1,500/month per person for ACA coverage. UK and SA retirees with public healthcare carry far less of this burden. Bake your specific healthcare cost into the annual-spending input before calculating."}}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://finncalc.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://finncalc.com/fire-number-calculator/","name":"FIRE Number Calculator","position":2}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","name":"James Blanckenberg"},"description":"Step-by-step guide to using the FIRE Number Calculator.","name":"How to use the FIRE Number Calculator","step":[{"@type":"HowToStep","name":"Enter your monthly spending","position":1,"text":"Type your monthly target spending in retirement, including healthcare and discretionary.","url":"https://finncalc.com/fire-number-calculator/#step-1"},{"@type":"HowToStep","name":"Choose a safe withdrawal rate","position":2,"text":"Slide the rate between 3% and 5%. Default is 4% (regular FIRE).","url":"https://finncalc.com/fire-number-calculator/#step-2"},{"@type":"HowToStep","name":"Add your current savings and monthly contribution","position":3,"text":"The calculator projects years until you hit each FIRE tier.","url":"https://finncalc.com/fire-number-calculator/#step-3"}],"totalTime":"PT1M"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","jobTitle":"Founder & Editor, FinCalcHub","name":"James Blanckenberg","sameAs":["https://www.linkedin.com/in/james-blanckenberg-154a1312/"],"url":"https://finncalc.com/authors/james-blanckenberg/"}, "dateModified":"2026-05-20","datePublished":"2026-05-20","description":"Free FIRE number calculator with Lean / regular / Fat targets and years-to-FIRE projection.","headline":"FIRE Number Calculator","inLanguage":"en","mainEntityOfPage":{"@id":"https://finncalc.com/fire-number-calculator/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://finncalc.com/og-image.png"},"name":"FinCalcHub","url":"https://finncalc.com/"},"url":"https://finncalc.com/fire-number-calculator/"}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5FSP8WRB3C');
+  </script>
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+  </script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <script>
+  (function(){
+    var loaded=false;
+    function loadAds(){
+      if(loaded) return; loaded=true;
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+      s.crossOrigin='anonymous';
+      document.head.appendChild(s);
+    }
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+      },{rootMargin:'200px'});
+      document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+      });
+    } else {
+      window.addEventListener('load',loadAds);
+    }
+  })();
+  </script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="4461919959" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="/">Home</a> › FIRE Number Calculator</p>
+  <h1>FIRE Number Calculator</h1>
+  <p class="subtitle">Calculate the Financial Independence Retire Early target portfolio for your spending — and project how long it takes to reach it.</p>
+
+  <div class="quick-answer">
+    <h2>How do you calculate your FIRE number?</h2>
+    <p>Multiply your annual spending by <strong>25 (4% rule)</strong> for the standard FIRE target. $40,000 a year in spending → $1,000,000 FIRE number. Lean FIRE uses 5% (×20 = $800k); Fat FIRE uses a cautious 3% (×33 = $1.32M). The calculator below shows all three plus a years-to-FIRE projection from your current savings and contribution rate.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Spending and Savings</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="monthlySpend">Monthly Target Spending <span class="hint" id="s1">($)</span></label>
+        <input type="number" id="monthlySpend" value="4000" min="0" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="rate">Safe Withdrawal Rate (%)</label>
+        <input type="range" id="rate" value="4" min="3" max="5" step="0.1" oninput="calculate()">
+        <output id="rate-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">4.0%</output>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentSavings">Current Investments <span class="hint" id="s2">($)</span></label>
+        <input type="number" id="currentSavings" value="50000" min="0" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="monthlyContrib">Monthly Contribution <span class="hint" id="s3">($)</span></label>
+        <input type="number" id="monthlyContrib" value="1500" min="0" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="returnRate">Expected Annual Real Return (%)</label>
+      <input type="number" id="returnRate" value="7" min="1" max="15" step="0.1" oninput="calculate()" inputmode="decimal">
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">Your FIRE Target</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-fire">$0</div><div class="result-label">FIRE Number (at your rate)</div></div>
+      <div class="result-item"><div class="result-value" id="r-years">0 yrs</div><div class="result-label">Years to FIRE</div></div>
+      <div class="result-item"><div class="result-value" id="r-annual">$0</div><div class="result-label">Annual Spending</div></div>
+      <div class="result-item"><div class="result-value" id="r-coastfire">$0</div><div class="result-label">Coast FIRE (to 65)</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">FIRE Tiers</div>
+    <table class="breakdown-table">
+      <thead><tr><th>Tier</th><th class="td-right">Target</th><th class="td-right">Years to Reach</th><th>Description</th></tr></thead>
+      <tbody id="breakdown-body"></tbody>
+    </table>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+      <button class="btn-action" onclick="saveToFile && saveToFile()">💾 Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="7963163804" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 1 minute.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" style="margin-bottom:6px">Enter your monthly target spending in early retirement (include healthcare, especially if US pre-65).</li>
+      <li id="step-2" style="margin-bottom:6px">Pick your safe withdrawal rate — 4% standard, 5% Lean, 3% Fat.</li>
+      <li id="step-3" style="margin-bottom:6px">Add your current investments and monthly contribution to see years-to-FIRE for each tier.</li>
+    </ol>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>The 25× shortcut.</strong> The FIRE number is the inverse of your withdrawal rate. At 4%, you need 25× annual spending (because 1/0.04 = 25). Drop to 3% and you need 33×. This is the canonical financial-independence equation — the same maths the Trinity Study used to derive the 4% rule.</p>
+    <p><strong>Three tiers.</strong> Lean FIRE assumes you can live happily on a smaller budget — typically a paid-off home, minimal travel, no kids in expensive private school. Regular FIRE matches a middle-class lifestyle. Fat FIRE buys margin: $80-150k+ a year in spending, generous travel budget, ability to support family. Each adds 25-50% to the savings target.</p>
+    <p><strong>Coast FIRE.</strong> A separate concept: the portfolio that, even with zero additional contributions, will compound to your full FIRE number by traditional retirement age (typically 65). At 7% real returns over 25 years, money doubles roughly three times — so Coast FIRE is your FIRE number divided by 8. Hitting Coast FIRE means you can stop saving and still retire on schedule.</p>
+    <p><strong>Region.</strong> The framework is universal but the absolute number depends on local cost-of-living and healthcare. US early retirees pre-Medicare carry a $10-18k/person/year healthcare load that UK and SA retirees don&apos;t — bake this into the spending input.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="worked-example" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Worked example — 35-year-old targeting FIRE by 50</h2>
+    <p>A 35-year-old software engineer plans to spend $4,000 a month ($48,000 a year) in early retirement. Standard FIRE target = $48,000 × 25 = $1,200,000. Currently invested: $80,000. Monthly contribution: $2,000 across 401k, Roth IRA, and taxable brokerage. Expected real return: 7%.</p>
+    <p>Years to FIRE: with $80k starting and $2,000/month contributions, the calculator returns about 17 years — putting them at FIRE at 52. The Lean version ($960,000) lands at year 14 (age 49). The Fat version ($1,584,000) requires another 4 years to year 21 (age 56).</p>
+    <p>Coast FIRE is the interesting middle path. If they stop saving altogether at the moment the portfolio reaches $1.2M ÷ 2^((65-50)/10.3) ≈ $360,000 (roughly year 7-8), the existing portfolio will compound to the full $1.2M by age 65 without any further contributions. From that point onwards they could keep working only to cover current expenses — no further savings needed for retirement.</p>
+    <p>Adjusting one variable. If real returns disappoint at 5% instead of 7%, the timeline stretches from 17 to about 22 years. If they manage to bump savings to $2,500/month, it shortens from 17 to 14. The return assumption matters less than the savings rate over realistic 15-25 year horizons — savings rate is the lever you actually control.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="common-mistakes" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Common mistakes</h2>
+    <ul style="margin:0 0 0 22px">
+      <li style="margin-bottom:8px"><strong>Underestimating healthcare.</strong> US ACA premiums for a 50-year-old couple run $1,200-1,800 a month before subsidies. UK and SA private healthcare is materially cheaper but still 5-10% of typical retirement spending. Ignoring this can leave a 6-figure gap in the FIRE target.</li>
+      <li style="margin-bottom:8px"><strong>Using nominal returns.</strong> The 4% rule and the 25× multiplier assume real (after-inflation) returns. If you input a 10% nominal return assumption, you&apos;re effectively planning to retire with 70% of the purchasing power you actually need. Use 5-7% real for US equities, 3-5% real for bonds.</li>
+      <li style="margin-bottom:8px"><strong>Treating 25× as a finish line.</strong> The portfolio that hits 25× annual spending is the START of retirement, not a finished thing. Sequence-of-returns risk means the first 5-10 years matter disproportionately — see the <a href="/retirement-drawdown-calculator/">Retirement Drawdown Calculator</a> for year-by-year projection.</li>
+      <li style="margin-bottom:8px"><strong>Forgetting tax drag during accumulation.</strong> Money in a taxable brokerage account pays drag on dividends and capital gains each year. The 7% real return assumption is closer to 6% after-tax for top earners. Max tax-advantaged accounts (401k, Roth, ISA, TFSA) before going taxable.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="related">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/fire-calculator/" class="related-card">🚀 FIRE Calculator</a>
+    <a href="/safe-withdrawal-rate-calculator/" class="related-card">💸 Safe Withdrawal Rate</a>
+    <a href="/retirement-drawdown-calculator/" class="related-card">📉 Retirement Drawdown</a>
+    <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+    <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="1620134192" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">What is a FIRE number?</div><div class="faq-a">The portfolio size that supports your spending indefinitely from investment returns alone. Standard formula: annual spending ÷ safe withdrawal rate. At 4%, that&apos;s 25× annual spending.</div></div>
+    <div class="faq-item"><div class="faq-q">What&apos;s the difference between Lean, regular, and Fat FIRE?</div><div class="faq-a">Lean FIRE assumes 5% withdrawal (20× spending), regular uses 4% (25×), Fat uses 3% (33×). Lean trades comfort for an earlier exit; Fat buys safety margin.</div></div>
+    <div class="faq-item"><div class="faq-q">How do I calculate my FIRE number?</div><div class="faq-a">Multiply annual spending by 25 for the standard 4% rule. $40,000 → $1,000,000. The calculator above shows the three tiers and projects time to reach each.</div></div>
+    <div class="faq-item"><div class="faq-q">Is 25× annual spending really enough?</div><div class="faq-a">For 30-year retirement at normal valuations, yes (95% historical success). For 40-50 year horizons or elevated-valuation starts, use 28-33× for the same confidence.</div></div>
+    <div class="faq-item"><div class="faq-q">How long does FIRE take?</div><div class="faq-a">Roughly: 20% savings rate = 35-40 years, 30% = 25-28, 50% = 15-17, 70% = 8-10. Savings rate is the lever you actually control.</div></div>
+    <div class="faq-item"><div class="faq-q">Does the FIRE number include taxes?</div><div class="faq-a">It should but most casual FIRE math omits this. Either gross up spending by your effective tax rate, or shift weight to Roth/ISA/TFSA so withdrawals come out tax-free.</div></div>
+    <div class="faq-item"><div class="faq-q">What about healthcare and Medicare?</div><div class="faq-a">In the US this is the biggest gap. Pre-Medicare ACA coverage is $800-1,500/month per person. UK and SA carry far less of this burden. Bake your specific cost into the spending input.</div></div>
+  </div>
+</div>
+
+<script>
+function calculate(){
+  var monthlySpend = parseFloat(document.getElementById('monthlySpend').value) || 0;
+  var rate = parseFloat(document.getElementById('rate').value) || 4;
+  var current = parseFloat(document.getElementById('currentSavings').value) || 0;
+  var monthlyContrib = parseFloat(document.getElementById('monthlyContrib').value) || 0;
+  var ret = parseFloat(document.getElementById('returnRate').value) || 7;
+
+  document.getElementById('rate-display').textContent = rate.toFixed(1) + '%';
+
+  var annual = monthlySpend * 12;
+  var fireNumber = rate > 0 ? annual / (rate / 100) : 0;
+  // Coast FIRE: PV today that compounds to fireNumber by traditional retirement
+  // (assume 25 years remaining, real return = ret). FV = PV*(1+r)^n → PV = FV/(1+r)^n.
+  var yearsToTradRetire = 25;
+  var coastFire = ret > 0 ? fireNumber / Math.pow(1 + ret / 100, yearsToTradRetire) : 0;
+
+  // Years to FIRE — solve future-value equation iteratively
+  // FV = current*(1+r)^n + monthlyContrib*12 * ((1+r)^n - 1) / r
+  function yearsToHit(target){
+    if (target <= current) return 0;
+    if (monthlyContrib <= 0 && current <= 0) return 999;
+    var r = ret / 100;
+    var annualContrib = monthlyContrib * 12;
+    for (var n = 1; n <= 60; n++){
+      var fv = current * Math.pow(1 + r, n) + annualContrib * (Math.pow(1 + r, n) - 1) / (r || 0.0001);
+      if (fv >= target) return n;
+    }
+    return 60;
+  }
+
+  var years = yearsToHit(fireNumber);
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-fire').textContent = fmt(fireNumber);
+  document.getElementById('r-years').textContent = years >= 60 ? '60+ yrs' : (years + ' yrs');
+  document.getElementById('r-annual').textContent = fmt(annual);
+  document.getElementById('r-coastfire').textContent = fmt(coastFire);
+
+  var tiers = [
+    { label: 'Lean FIRE (5% rate)',     rate: 5, note: 'Frugal lifestyle, paid-off home' },
+    { label: 'Regular FIRE (4% rate)',  rate: 4, note: 'Middle-class spending' },
+    { label: 'Fat FIRE (3% rate)',      rate: 3, note: 'Comfortable upper-middle-class' }
+  ];
+  var rows = tiers.map(function(t){
+    var target = annual / (t.rate / 100);
+    var y = yearsToHit(target);
+    var yStr = y >= 60 ? '60+ yrs' : (y + ' yrs');
+    return '<tr><td>' + t.label + '</td><td class="td-right">' + fmt(target) + '</td><td class="td-right">' + yStr + '</td><td>' + t.note + '</td></tr>';
+  }).join('');
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid #e5e7eb;font-size:13px;color:#666;line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:#1B3A5C;text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-20">20 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:#1B3A5C;text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+<div class="container ad-footer-desktop">
+  <div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="5980987973" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+    <div id="newsletter-slot"></div>
+    <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+      <strong>Run a business?</strong>
+      Try our sister site
+      <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+      — free profit margin, pricing, and cash flow calculators.
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>

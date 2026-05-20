@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Drawdown Calculator — How Long Will It Last | FinCalcHub</title>
+  <meta name="description" content="Free retirement drawdown calculator. Project how long a portfolio lasts with annual withdrawals, expected return, and inflation. Year-by-year balance table.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/retirement-drawdown-calculator/">
+  <meta property="og:title" content="Retirement Drawdown Calculator — How Long Will It Last | FinCalcHub">
+  <meta property="og:description" content="Free retirement drawdown calculator. Project how long a portfolio lasts with annual withdrawals, expected return, and inflation. Year-by-year balance table.">
+  <meta property="og:url" content="https://finncalc.com/retirement-drawdown-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Retirement Drawdown Calculator — How Long Will It Last | FinCalcHub">
+  <meta name="twitter:description" content="Free retirement drawdown calculator. Project how long a portfolio lasts with annual withdrawals, expected return, and inflation. Year-by-year balance table.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","applicationCategory":"FinanceApplication","dateModified":"2026-05-20","description":"Free retirement drawdown calculator. Project years to portfolio depletion under inflation-adjusted withdrawals.","name":"Retirement Drawdown Calculator","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web Browser","url":"https://finncalc.com/retirement-drawdown-calculator/"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long will my retirement savings last?","acceptedAnswer":{"@type":"Answer","text":"It depends on three numbers: starting portfolio, annual withdrawal (growing with inflation), and the real return on the portfolio. A $1,000,000 portfolio at $40,000/year with 5% returns and 2.5% inflation lasts about 35 years under straight-line assumptions. Sequence-of-returns risk can shave 5-10 years off this in adverse cases."}},{"@type":"Question","name":"What is sequence-of-returns risk?","acceptedAnswer":{"@type":"Answer","text":"It's the risk that bad early-retirement returns combined with ongoing withdrawals drain a portfolio faster than recovery can rebuild it. Two retirees with identical 30-year average returns can have wildly different outcomes if one starts in a bear market. The straight-line projection in this calculator hides this risk — real-world depletion ranges typically swing ±25% around the central case."}},{"@type":"Question","name":"How does inflation affect drawdown?","acceptedAnswer":{"@type":"Answer","text":"Inflation makes each year's withdrawal larger in nominal dollars to preserve purchasing power. A $40,000 first-year withdrawal becomes $41,000 in year two at 2.5% inflation, $42,025 in year three, etc. After 30 years it's $84,000 in nominal dollars — but still $40,000 in today's purchasing power. The calculator handles the compounding automatically."}},{"@type":"Question","name":"Should I use nominal or real returns?","acceptedAnswer":{"@type":"Answer","text":"Either works, but be consistent. If you use nominal returns (e.g. 7%), inflation-adjust the withdrawals (this calculator's default approach). If you use real returns (e.g. 4.5%), keep withdrawals flat in today's dollars. Mixing them — nominal returns with flat withdrawals — overstates how long the money lasts by 30-50%."}},{"@type":"Question","name":"What's the 4% rule's relationship to drawdown?","acceptedAnswer":{"@type":"Answer","text":"The 4% rule is the inverse: it asks what withdrawal rate sustains a portfolio for 30 years with high confidence. This calculator asks the forward question: given a specific withdrawal, how many years does the portfolio last? Use both — set initial withdrawal at the 4% rule, then stress-test depletion against worse return assumptions."}},{"@type":"Question","name":"What happens if I retire during a market crash?","acceptedAnswer":{"@type":"Answer","text":"Severely. Retiring in 1929, 1937, 1966, or 2000 all produced retirement-failure scenarios at the standard 4% rate. The first 5-10 years' returns matter more than the average return over the whole retirement. Holding 2-3 years of cash to avoid forced selling during crashes is the most effective single-mitigation against this risk."}},{"@type":"Question","name":"Can I make my portfolio last longer?","acceptedAnswer":{"@type":"Answer","text":"Three high-impact levers. First, flex withdrawals down 10-15% in bad market years (Guyton-Klinger guardrails). Second, defer Social Security or pension claims to 70 — let those acts as deferred-income insurance. Third, hold a 60/40 or 70/30 stock-bond mix rather than 100% stocks — the bond cushion reduces forced selling during downturns. Combined these can add 5-10 years to portfolio life."}}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://finncalc.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://finncalc.com/retirement-drawdown-calculator/","name":"Retirement Drawdown Calculator","position":2}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","name":"James Blanckenberg"},"description":"Step-by-step guide to using the Retirement Drawdown Calculator.","name":"How to use the Retirement Drawdown Calculator","step":[{"@type":"HowToStep","name":"Enter your starting portfolio","position":1,"text":"Total value of investments at retirement start.","url":"https://finncalc.com/retirement-drawdown-calculator/#step-1"},{"@type":"HowToStep","name":"Enter year-one annual withdrawal","position":2,"text":"How much you'll draw in your first year of retirement.","url":"https://finncalc.com/retirement-drawdown-calculator/#step-2"},{"@type":"HowToStep","name":"Set expected return and inflation","position":3,"text":"Use 5-7% nominal return and 2-3% inflation for moderate assumptions.","url":"https://finncalc.com/retirement-drawdown-calculator/#step-3"},{"@type":"HowToStep","name":"Read the year-by-year balance table","position":4,"text":"See exactly when the portfolio depletes and how the balance trends in real (inflation-adjusted) terms.","url":"https://finncalc.com/retirement-drawdown-calculator/#step-4"}],"totalTime":"PT2M"}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","jobTitle":"Founder & Editor, FinCalcHub","name":"James Blanckenberg","sameAs":["https://www.linkedin.com/in/james-blanckenberg-154a1312/"],"url":"https://finncalc.com/authors/james-blanckenberg/"}, "dateModified":"2026-05-20","datePublished":"2026-05-20","description":"Free retirement drawdown calculator. Project years to portfolio depletion under inflation-adjusted withdrawals.","headline":"Retirement Drawdown Calculator","inLanguage":"en","mainEntityOfPage":{"@id":"https://finncalc.com/retirement-drawdown-calculator/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://finncalc.com/og-image.png"},"name":"FinCalcHub","url":"https://finncalc.com/"},"url":"https://finncalc.com/retirement-drawdown-calculator/"}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5FSP8WRB3C');
+  </script>
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+  </script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <script>
+  (function(){
+    var loaded=false;
+    function loadAds(){
+      if(loaded) return; loaded=true;
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+      s.crossOrigin='anonymous';
+      document.head.appendChild(s);
+    }
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+      },{rootMargin:'200px'});
+      document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+      });
+    } else {
+      window.addEventListener('load',loadAds);
+    }
+  })();
+  </script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="4461919959" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="/">Home</a> › Retirement Drawdown Calculator</p>
+  <h1>Retirement Drawdown Calculator</h1>
+  <p class="subtitle">Project how many years a retirement portfolio lasts under inflation-adjusted annual withdrawals — with a year-by-year balance table and a sequence-of-returns sensitivity warning.</p>
+
+  <div class="quick-answer">
+    <h2>How long will $1 million last in retirement?</h2>
+    <p>At a <strong>$40,000/year withdrawal with 5% returns and 2.5% inflation</strong>, $1M lasts about <strong>35 years</strong> under straight-line assumptions. Drop returns to 3% and the same withdrawal depletes in about 26 years. Sequence-of-returns risk — bad returns in the first 5-10 years — can shave another 5-10 years off the central case. Use the year-by-year table below to see your specific scenario.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Retirement Plan</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="portfolio">Starting Portfolio <span class="hint" id="s1">($)</span></label>
+        <input type="number" id="portfolio" value="1000000" min="0" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="withdrawal">Year-One Annual Withdrawal <span class="hint" id="s2">($)</span></label>
+        <input type="number" id="withdrawal" value="40000" min="0" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="returnRate">Expected Annual Return (%)</label>
+        <input type="range" id="returnRate" value="5" min="3" max="8" step="0.1" oninput="calculate()">
+        <output id="return-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">5.0%</output>
+      </div>
+      <div class="form-group">
+        <label for="inflation">Annual Inflation (%)</label>
+        <input type="range" id="inflation" value="2.5" min="0" max="6" step="0.1" oninput="calculate()">
+        <output id="inflation-display" style="display:block;text-align:right;font-weight:600;color:#1B3A5C">2.5%</output>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate →</button>
+  </div>
+
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">Drawdown Projection</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-years">0 yrs</div><div class="result-label">Years to Depletion (nominal)</div></div>
+      <div class="result-item"><div class="result-value" id="r-realreturn">0%</div><div class="result-label">Real Return After Inflation</div></div>
+      <div class="result-item"><div class="result-value" id="r-finalwithdraw">$0</div><div class="result-label">Final-Year Withdrawal</div></div>
+      <div class="result-item"><div class="result-value" id="r-totalwithdrawn">$0</div><div class="result-label">Total Withdrawn (lifetime)</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Year-by-Year Balance (5-year snapshots)</div>
+    <table class="breakdown-table">
+      <thead><tr><th>Year</th><th class="td-right">Withdrawal (nominal)</th><th class="td-right">End Balance (nominal)</th><th class="td-right">End Balance (real, in today&apos;s $)</th></tr></thead>
+      <tbody id="breakdown-body"></tbody>
+    </table>
+    <p style="margin:16px 0 0;padding:12px;background:#fef3cd;border-left:4px solid #f59e0b;font-size:0.9em">
+      <strong>⚠️ Sequence-of-returns warning.</strong> This is a straight-line projection. Real-world depletion years typically swing ±25% around the central case depending on early-retirement returns. A 5-year bear market starting in year 1 can shave 5-10 years off the projected depletion, while strong early returns can extend it just as much. Use the figure as a midpoint, not a guarantee.
+    </p>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ Print</button>
+      <button class="btn-action" onclick="saveToFile && saveToFile()">💾 Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="7963163804" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" style="margin-bottom:6px">Enter the value of your retirement portfolio at the start of drawdown.</li>
+      <li id="step-2" style="margin-bottom:6px">Enter your year-one annual withdrawal. This will increase with inflation each subsequent year to preserve purchasing power.</li>
+      <li id="step-3" style="margin-bottom:6px">Set expected nominal return and inflation. Default 5% / 2.5% gives a real return of about 2.4%.</li>
+      <li id="step-4" style="margin-bottom:6px">Read the depletion year and the year-by-year balance table to see when funds run out.</li>
+    </ol>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>Real vs nominal.</strong> This calculator models nominal returns (the headline rate before inflation) and inflation-adjusts the withdrawal each year. The end balance is shown in both nominal terms (what the brokerage statement will read) and real terms (today&apos;s purchasing power, deflated back). For sanity-checking, the real return = nominal return − inflation.</p>
+    <p><strong>Sequence-of-returns risk.</strong> The single most important concept in retirement drawdown. Two portfolios with identical 30-year average returns can deplete in wildly different years if their year-by-year sequence differs. Bad returns in the first 5-10 years are far more damaging than the same bad returns 20 years in, because withdrawals lock in losses you can&apos;t recover from. Straight-line projections (like this one) hide this risk.</p>
+    <p><strong>Inflation-adjusted withdrawals.</strong> Withdrawing a flat $40,000 every year is not the same as withdrawing $40,000 of purchasing power every year. After 20 years of 2.5% inflation, $40,000 only buys about $24,500 of today&apos;s goods. To preserve lifestyle, withdrawals must grow with inflation — this is the Trinity Study convention and what this calculator uses.</p>
+    <p><strong>The 4% rule connection.</strong> If your year-one withdrawal is 4% or less of starting portfolio and your real return averages 4-5%, the portfolio mathematically can last 30-50 years. The historical 95% success rate of 4% comes from this maths — the projected depletion year is usually beyond 30. Increase the withdrawal rate (or decrease real return) and depletion accelerates rapidly.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="worked-example" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Worked example — $1M portfolio, $40k withdrawal, moderate assumptions</h2>
+    <p>A 65-year-old retires with $1,000,000 in a 60/40 portfolio. They plan to withdraw $40,000 in year one, increasing with inflation each subsequent year. Expected nominal return is 5%; inflation runs 2.5%. Real return = 5% − 2.5% = 2.5%.</p>
+    <p>Year-one math: balance × 1.05 = $1,050,000 after returns, minus the $40,000 withdrawal = $1,010,000 end-of-year. Year-two: $1,010,000 × 1.05 = $1,060,500, minus $41,000 (4% inflation-grown) = $1,019,500. The early-year mechanics show why moderate returns above inflation can sustain a long retirement — the portfolio actually grows for the first decade or so.</p>
+    <p>Continuing the projection: the portfolio peaks around year 10-12 at roughly $1.05M nominal, then begins a slow decline as inflation-grown withdrawals catch up with returns. Depletion happens around year 35 — the portfolio finally hits zero just as our retiree turns 100. In real terms (today&apos;s purchasing power), the balance peaks around year 5 at $1.05M and declines steadily afterwards.</p>
+    <p>Sensitivity. If real returns disappoint at just 1.5% instead of 2.5%, the same $40k withdrawal depletes the portfolio at year 28, not 35. If the retiree faces a 20% market drop in year 2 followed by a recovery, the central-case 35-year depletion typically falls to 27-29 years even if long-run average returns are intact — this is sequence-of-returns risk in numerical form. The safest mitigations: hold 2-3 years of cash, defer Social Security to 70, and flex spending down 10-15% in bad market years.</p>
+  </section>
+</div>
+
+<div class="container" style="padding-top:0">
+  <section class="common-mistakes" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 style="color:#1B3A5C;font-size:1.1rem;margin:0 0 10px">Common mistakes</h2>
+    <ul style="margin:0 0 0 22px">
+      <li style="margin-bottom:8px"><strong>Treating the depletion year as a guarantee.</strong> Real-world variability swings depletion ±25% around the central case. The number is a midpoint, not a finish line. Build planning around the conservative end (75% of projected years).</li>
+      <li style="margin-bottom:8px"><strong>Ignoring sequence risk.</strong> The straight-line projection assumes returns arrive evenly. They don&apos;t. The biggest gap between this calculator and Monte Carlo is the first 5-10 years of returns. Hold cash equal to 2-3 years of withdrawals to absorb that risk.</li>
+      <li style="margin-bottom:8px"><strong>Using nominal returns with flat withdrawals.</strong> If you don&apos;t inflation-adjust withdrawals, depletion looks 30-50% longer than reality. Either use real returns with flat withdrawals, or nominal returns with growing withdrawals — never mix.</li>
+      <li style="margin-bottom:8px"><strong>Forgetting taxes.</strong> A $40,000 withdrawal from a traditional IRA nets you less. To match real spending of $40k after tax, gross up by your effective rate. Use the <a href="/take-home-pay/">Take-Home Pay Calculator</a> for the tax math.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="related">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/safe-withdrawal-rate-calculator/" class="related-card">💸 Safe Withdrawal Rate</a>
+    <a href="/fire-number-calculator/" class="related-card">🔥 FIRE Number</a>
+    <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    <a href="/inflation-impact/" class="related-card">📊 Inflation Impact</a>
+    <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+    <a href="/investment-growth/" class="related-card">💹 Investment Growth</a>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="1620134192" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">How long will my retirement savings last?</div><div class="faq-a">Depends on starting balance, inflation-grown withdrawal, and real return. $1M at $40k/yr with 5% returns and 2.5% inflation lasts about 35 years on straight-line. Sequence risk can swing this ±25%.</div></div>
+    <div class="faq-item"><div class="faq-q">What is sequence-of-returns risk?</div><div class="faq-a">The risk that bad returns early in retirement drain the portfolio faster than later good returns can rebuild it. Identical 30-year averages can produce vastly different outcomes depending on the order.</div></div>
+    <div class="faq-item"><div class="faq-q">How does inflation affect drawdown?</div><div class="faq-a">Withdrawals must grow with inflation to preserve purchasing power. $40k today is $84k after 30 years of 2.5% inflation — but still buys the same things.</div></div>
+    <div class="faq-item"><div class="faq-q">Should I use nominal or real returns?</div><div class="faq-a">Either, but be consistent. Nominal returns with inflation-adjusted withdrawals (this calculator&apos;s default), or real returns with flat withdrawals.</div></div>
+    <div class="faq-item"><div class="faq-q">What&apos;s the 4% rule&apos;s relationship to drawdown?</div><div class="faq-a">The 4% rule is the reverse question — what initial rate sustains 30 years with high confidence. Drawdown asks how many years a specific withdrawal lasts given specific returns.</div></div>
+    <div class="faq-item"><div class="faq-q">What happens if I retire during a market crash?</div><div class="faq-a">Severely. Holding 2-3 years of cash to avoid forced selling during a crash is the single biggest mitigation against sequence-of-returns risk.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I make my portfolio last longer?</div><div class="faq-a">Flex spending down in bad market years, defer Social Security to 70, hold 60/40 stock-bond. Combined, these can add 5-10 years to portfolio life.</div></div>
+  </div>
+</div>
+
+<script>
+function calculate(){
+  var portfolio = parseFloat(document.getElementById('portfolio').value) || 0;
+  var withdrawal = parseFloat(document.getElementById('withdrawal').value) || 0;
+  var ret = parseFloat(document.getElementById('returnRate').value) || 5;
+  var inflation = parseFloat(document.getElementById('inflation').value) || 2.5;
+
+  document.getElementById('return-display').textContent = ret.toFixed(1) + '%';
+  document.getElementById('inflation-display').textContent = inflation.toFixed(1) + '%';
+
+  var r = ret / 100;
+  var i = inflation / 100;
+  var realReturn = ((1 + r) / (1 + i) - 1) * 100;
+
+  // Year-by-year sim
+  var balance = portfolio;
+  var year = 0;
+  var totalWithdrawn = 0;
+  var lastWithdrawal = 0;
+  var snapshots = [];
+  var maxYears = 80;
+
+  while (balance > 0 && year < maxYears) {
+    year++;
+    var wYear = withdrawal * Math.pow(1 + i, year - 1);
+    balance = balance * (1 + r) - wYear;
+    totalWithdrawn += wYear;
+    lastWithdrawal = wYear;
+    var realBalance = balance / Math.pow(1 + i, year);
+    if (year % 5 === 0 || balance <= 0) {
+      snapshots.push({ year: year, wYear: wYear, balance: Math.max(0, balance), realBalance: Math.max(0, realBalance) });
+    }
+    if (balance <= 0) break;
+  }
+
+  var depletionYears = balance > 0 && year >= maxYears ? (maxYears + '+') : year;
+
+  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
+
+  document.getElementById('r-years').textContent = depletionYears + ' yrs';
+  document.getElementById('r-realreturn').textContent = realReturn.toFixed(1) + '%';
+  document.getElementById('r-finalwithdraw').textContent = fmt(lastWithdrawal);
+  document.getElementById('r-totalwithdrawn').textContent = fmt(totalWithdrawn);
+
+  var rows = snapshots.map(function(s){
+    return '<tr><td>Year ' + s.year + '</td><td class="td-right">' + fmt(s.wYear) + '</td><td class="td-right">' + fmt(s.balance) + '</td><td class="td-right">' + fmt(s.realBalance) + '</td></tr>';
+  }).join('');
+  if (!rows) rows = '<tr><td colspan="4">Portfolio doesn&apos;t deplete within ' + maxYears + ' years — withdrawals are well below returns.</td></tr>';
+  document.getElementById('breakdown-body').innerHTML = rows;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid #e5e7eb;font-size:13px;color:#666;line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:#1B3A5C;text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-20">20 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:#1B3A5C;text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+<div class="container ad-footer-desktop">
+  <div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-5092336325075679" data-ad-slot="5980987973" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+    <div id="newsletter-slot"></div>
+    <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+      <strong>Run a business?</strong>
+      Try our sister site
+      <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+      — free profit margin, pricing, and cash flow calculators.
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/region.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>
