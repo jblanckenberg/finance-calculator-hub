@@ -48,6 +48,19 @@ def _load_variants() -> list[dict]:
     return out
 
 
+def _load_extra_titles() -> list[dict]:
+    """extra_titles.json is a flat {rendered_path: title} map.
+
+    Wrap each entry as a {slug, title} dict so the parametrised test
+    can use the same shape as calculators/variants."""
+    raw = json.loads((DATA / "extra_titles.json").read_text(encoding="utf-8"))
+    out: list[dict] = []
+    if isinstance(raw, dict):
+        for path, title in raw.items():
+            out.append({"slug": path, "title": title})
+    return out
+
+
 @pytest.mark.parametrize(
     "entry",
     _load_calculators(),
@@ -69,4 +82,16 @@ def test_variant_title_length(entry):
     title = entry["title"]
     assert LIMIT_MIN <= len(title) <= LIMIT_MAX, (
         f"Variant title length {len(title)} out of band: {title!r}"
+    )
+
+
+@pytest.mark.parametrize(
+    "entry",
+    _load_extra_titles(),
+    ids=lambda e: e.get("slug", "?"),
+)
+def test_extra_title_length(entry):
+    title = entry["title"]
+    assert LIMIT_MIN <= len(title) <= LIMIT_MAX, (
+        f"Extra title length {len(title)} out of band: {title!r}"
     )

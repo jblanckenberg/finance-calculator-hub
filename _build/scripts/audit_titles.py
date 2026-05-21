@@ -1,4 +1,5 @@
-"""Print every title in calculators.json + variants.json with length > 60."""
+"""Print every title in calculators.json + variants.json + extra_titles.json
+with length > 60."""
 import json
 import sys
 from pathlib import Path
@@ -64,12 +65,21 @@ def audit(entries, source: str) -> list[tuple[str, int, str]]:
     return offenders
 
 
+def _iter_extra_titles(raw):
+    """extra_titles.json is a flat {rendered_path: title} map."""
+    if isinstance(raw, dict):
+        for path, title in raw.items():
+            yield {"slug": path, "title": title}
+
+
 def main() -> int:
     calcs_raw = json.loads((DATA / "calculators.json").read_text(encoding="utf-8"))
     variants_raw = json.loads((DATA / "variants.json").read_text(encoding="utf-8"))
+    extra_raw = json.loads((DATA / "extra_titles.json").read_text(encoding="utf-8"))
     bad_c = audit(list(_iter_calculators(calcs_raw)), "calculators.json")
     bad_v = audit(list(_iter_variants(variants_raw)), "variants.json")
-    total = len(bad_c) + len(bad_v)
+    bad_e = audit(list(_iter_extra_titles(extra_raw)), "extra_titles.json")
+    total = len(bad_c) + len(bad_v) + len(bad_e)
     print(f"\nTotal offenders: {total}")
     return 1 if total else 0
 

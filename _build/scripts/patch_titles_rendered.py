@@ -11,7 +11,7 @@ rendered output directly. Same pattern as
 Source-of-truth precedence per rendered file:
 1. calculators.json title (for `<slug>/index.html`)
 2. variants.json title (for `<calc-slug>/<variant-slug>/index.html`)
-3. EXTRA_TITLES hardcoded map below (blog posts, glossary, tax hub,
+3. extra_titles.json (blog posts, glossary, tax hub,
    personal-finance-calculators landing, etc. — pages without a
    data-file record)
 """
@@ -25,75 +25,14 @@ REPO = Path(__file__).resolve().parents[2]
 DATA = REPO / "_build" / "data"
 EXCLUDE_DIRS = {"node_modules", ".git", "_build", ".venv", ".pytest_cache", ".idea"}
 
-# Hardcoded titles for rendered pages that DON'T live in calculators.json /
-# variants.json. Keys are repo-relative paths to an index.html. Values are
-# the desired NEW <title> string (<=60 chars), unescaped (the patcher will
-# html-escape ampersands etc. when writing into HTML).
-EXTRA_TITLES: dict[str, str] = {
-    # Top-level landing + hub pages
-    "index.html": "Free Financial Calculators — USA, UK, South Africa",
-    "personal-finance-calculators/index.html": "Personal Finance Calculators — USA, UK & SA",
-    "mortgage-calculators/index.html": "Mortgage & Loan Calculators — USA, UK, SA",
-    "tax/index.html": "Tax & Take-Home Pay Calculators — USA, UK, SA",
-    "glossary/index.html": "Personal Finance Glossary — USA, UK, SA Terms",
-    "take-home-pay-comparison/index.html": "Take-Home Pay Comparison: USA vs UK vs SA",
 
-    # Additional calculator pages NOT in calculators.json
-    "catch-up-contribution-calculator/index.html":
-        "Catch-Up Contribution Calculator — 2026 401(k) & IRA",
-    "dividend-reinvestment-calculator/index.html":
-        "Dividend Reinvestment Calculator — DRIP Compounding",
-    "retirement-drawdown-calculator/index.html":
-        "Retirement Drawdown Calculator — How Long It Lasts",
-    "savings-vs-investing-calculator/index.html":
-        "Savings vs Investing Calculator — HYSA vs Index Fund",
-    "social-security-break-even-calculator/index.html":
-        "Social Security Break-Even — 62 vs 67 vs 70",
-
-    # Author page
-    "authors/james-blanckenberg/index.html":
-        "James Blanckenberg — Founder & Editor, FinCalcHub",
-
-    # Editorial / policy
-    "editorial-policy/index.html":
-        "Editorial Policy — Our Research & Review Process",
-
-    # Comparison pages
-    "compare/30-year-vs-15-year-mortgage/index.html":
-        "30-Year vs 15-Year Mortgage: Which Saves More?",
-    "compare/compound-interest-vs-simple-interest/index.html":
-        "Compound vs Simple Interest: Which Grows Faster?",
-
-    # Blog index + posts
-    "blog/index.html":
-        "Personal Finance Blog — Tips, Guides & Calculators",
-    "blog/4-percent-rule-retirement/index.html":
-        "4% Rule for Retirement — Does It Still Work?",
-    "blog/401k-contribution-paycheck/index.html":
-        "401(k) Contribution Per Paycheck — How to Decide",
-    "blog/average-net-worth-by-age/index.html":
-        "Average Net Worth by Age (USA, UK & SA)",
-    "blog/build-wealth-in-your-30s/index.html":
-        "How to Build Wealth in Your 30s — 7 Moves",
-    "blog/compound-interest-explained/index.html":
-        "Compound Interest Explained — How It Builds Wealth",
-    "blog/debt-avalanche-vs-snowball/index.html":
-        "Debt Avalanche vs Snowball — Which Pays Off Faster?",
-    "blog/how-much-to-save-each-month/index.html":
-        "How Much Should You Save Each Month? By Age",
-    "blog/how-to-create-a-monthly-budget/index.html":
-        "How to Create a Monthly Budget That Works",
-    "blog/pay-off-credit-card-debt/index.html":
-        "Pay Off Credit Card Debt Fast — Step-by-Step",
-    "blog/salary-after-tax/index.html":
-        "Salary After Tax — Take-Home Pay UK, US, SA",
-    "blog/uk-state-pension-guide/index.html":
-        "UK State Pension — How Much Will You Get?",
-    "blog/what-is-401k-employer-match/index.html":
-        "What Is 401(k) Employer Match? — Free Money Guide",
-    "blog/what-is-paye-south-africa/index.html":
-        "What Is PAYE? South Africa Tax Explained Simply",
-}
+def _load_extra_titles() -> dict[str, str]:
+    """Return the {rendered_path: title} map for pages NOT in
+    calculators.json / variants.json (blog posts, glossary, landing
+    pages, comparison pages, etc.). Lives in _build/data/extra_titles.json
+    so the auditor + tests cover it on equal footing with the other
+    JSON-backed title sources."""
+    return json.loads((DATA / "extra_titles.json").read_text(encoding="utf-8"))
 
 
 def _load_json_titles() -> dict[str, str]:
@@ -122,8 +61,9 @@ def _load_json_titles() -> dict[str, str]:
 
 
 def _build_map() -> dict[str, str]:
-    """JSON map wins; EXTRA_TITLES fills in gaps without overriding."""
-    m = dict(EXTRA_TITLES)
+    """calculators/variants JSON wins; extra_titles.json fills in gaps
+    without overriding."""
+    m = _load_extra_titles()
     m.update(_load_json_titles())
     return m
 
@@ -152,6 +92,14 @@ def _patch_one(text: str, new_title: str) -> tuple[str, int]:
     # Inner <title> text is HTML-escaped (so `&` becomes `&amp;`).
     # og:title / twitter:title content="..." is also HTML-escaped because
     # we're inside an attribute.
+    #
+    # NOTE on raw-vs-display length: the auditor (audit_titles.py) and
+    # tests (test_title_length.py) measure JSON title length, which is
+    # the post-decode DISPLAY length Google uses for mobile truncation
+    # (~60 chars). HTML-entity escaping below may push the RAW HTML
+    # title past 60 chars (e.g. `&` → `&amp;` adds 4). That is intentional
+    # and not a regression — Google decodes entities before measuring.
+    # The JSON files remain the source of truth for length compliance.
     escaped = escape(new_title, quote=True)
     count = 0
 
