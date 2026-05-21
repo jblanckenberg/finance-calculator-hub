@@ -24,6 +24,14 @@ LONG_TAIL_PAGES = {
         "schema_types": ["WebApplication", "BreadcrumbList", "Person", "FAQPage", "HowTo"],
         "min_word_count": 1500,
     },
+    "isa-calculator/stocks-and-shares/index.html": {
+        "h1": "Stocks &amp; Shares ISA Calculator",
+        "title_contains": "Stocks &amp; Shares ISA",
+        "hreflang": "en-GB",
+        "area_served": "United Kingdom",
+        "schema_types": ["WebApplication", "BreadcrumbList", "Person", "FAQPage", "HowTo"],
+        "min_word_count": 1500,
+    },
 }
 
 JSON_LD = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.IGNORECASE | re.DOTALL)
