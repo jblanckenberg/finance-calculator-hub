@@ -6,6 +6,13 @@
   <meta name="description" content="{{ page_description }}">
   <meta name="robots" content="{{ robots | default('index, follow') }}">
   <link rel="canonical" href="{{ canonical_url }}">
+{# Geo hreflang signals — populated by generate.py for locale-targeted pages
+   (UK/US/ZA variant calculators, country-themed blog posts, single-locale
+   calculators). Optional context var; non-geo pages render no extra tags.
+   Mirror of the rendered patcher in
+   _build/scripts/inject_geo_targeting_rendered.py. See SEO Recovery §4.5. #}
+{% if hreflang_links %}{% for link in hreflang_links %}  <link rel="alternate" hreflang="{{ link.lang }}" href="{{ link.href }}">
+{% endfor %}{% endif %}
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
   <meta property="og:title" content="{{ page_title }}">
