@@ -1,0 +1,19 @@
+{# 6 contextually-related calculators, rendered above the footer ad slot on
+   calculator + variant pages. Populated by generate.py from
+   calculators.json[<slug>].related; variants inherit their parent calc's
+   relations. Forward-compat: the actual sitewide propagation is performed by
+   _build/scripts/inject_related_calculators_rendered.py, which writes the
+   equivalent HTML directly to every rendered page (see SEO Recovery Plan C2).
+#}
+{% if related_calculators %}
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      {% for rel in related_calculators %}
+      <li><a href="{{ rel.url }}">{{ rel.name }}</a> — {{ rel.subtitle }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
