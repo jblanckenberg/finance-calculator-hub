@@ -1,0 +1,25 @@
+{
+  "name": "FinCalcHub",
+  "short_name": "FinCalc",
+  "icons": [
+    {
+      "src": "/finncalc_256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/finncalc_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/finncalc_1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1B3A5C",
+  "background_color": "#ffffff",
+  "display": "browser",
+  "start_url": "/"
+}
