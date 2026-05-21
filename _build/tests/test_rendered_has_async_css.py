@@ -25,6 +25,8 @@ NOSCRIPT_BLOCK = re.compile(r"<noscript>.*?</noscript>", re.IGNORECASE | re.DOTA
 @pytest.mark.parametrize("page", _rendered_pages(), ids=lambda p: p.relative_to(REPO).as_posix())
 def test_page_has_preload_main_css(page):
     text = page.read_text(encoding="utf-8")
+    if "/css/main.css" not in text:
+        pytest.skip(f"{page.relative_to(REPO)} doesn't load main.css — out of scope")
     assert 'rel="preload" as="style"' in text and "/css/main.css" in text, (
         f"{page.relative_to(REPO)} missing preload of /css/main.css"
     )
@@ -33,6 +35,8 @@ def test_page_has_preload_main_css(page):
 @pytest.mark.parametrize("page", _rendered_pages(), ids=lambda p: p.relative_to(REPO).as_posix())
 def test_page_has_noscript_fallback(page):
     text = page.read_text(encoding="utf-8")
+    if "/css/main.css" not in text:
+        pytest.skip(f"{page.relative_to(REPO)} doesn't load main.css — out of scope")
     assert "<noscript>" in text, f"{page.relative_to(REPO)} missing noscript fallback"
 
 

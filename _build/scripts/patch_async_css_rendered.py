@@ -106,6 +106,14 @@ def _has_canonical_block(text: str) -> bool:
 
 
 def patch(text: str) -> tuple[str, bool]:
+    # Scope guard: only operate on pages that already reference
+    # /css/main.css. Pages with self-contained inline <style> blocks
+    # (e.g. some blog posts) must stay untouched — injecting a preload
+    # there would add an HTTP connection + download for a stylesheet
+    # they don't actually use.
+    had_main_css = bool(re.search(r'href="/css/main\.css"', text, re.IGNORECASE))
+    if not had_main_css:
+        return text, False
     if _has_canonical_block(text):
         return text, False
     stripped = _strip_existing(text)
