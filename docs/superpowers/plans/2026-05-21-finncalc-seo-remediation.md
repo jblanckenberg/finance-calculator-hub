@@ -10,6 +10,8 @@
 
 **Out-of-scope reminders:** This plan does not write new content, does not change calculator math, does not redesign the site. It is mechanical compliance fixes — no creative changes.
 
+**EXECUTION POLICY ADDED 2026-05-21 (post Task 1):** Templates have drifted from the deployed rendered HTML (running `python _build/generate.py` rolls `dateModified` backwards and changes header nav). **Do not run `python _build/generate.py` during this remediation.** For every task that touches a sitewide template (`_base.html`, `head_meta.html`, etc.) the engineer must (a) edit the template AND (b) write a hand-edit script that applies the same change in-place to all rendered `index.html` files in the repo (excluding `node_modules/`, `.git/`, `_build/`, `.venv/`, `.pytest_cache/`, `.idea/`). The Task 1 follow-up commit `4f50b1a` (`_build/scripts/strip_duplicate_h1_rendered.py`) is the reference pattern.
+
 ---
 
 ## File Map
