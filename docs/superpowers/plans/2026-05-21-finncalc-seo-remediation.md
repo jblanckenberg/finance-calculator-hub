@@ -1214,12 +1214,84 @@ git push --tags
 
 ## Acceptance Checklist (post-merge)
 
-A separate operator session should walk this checklist on the deployed site:
+A separate operator session should walk this checklist on the deployed site.
 
-- [ ] `curl -s https://finncalc.com/emergency-fund/ | grep -c '<h1'` returns `1`
-- [ ] `curl -s https://finncalc.com/ | grep -c 'rel="icon"'` returns `≥1`
-- [ ] `curl -s https://finncalc.com/student-loan-calculator/ | grep -oP '<title>[^<]+' | awk '{print length}'` returns `≤67`
+**Windows PowerShell 5.1** (operator's native shell — preferred):
+
+```powershell
+# H1 count on a calculator page
+$h = Invoke-WebRequest -UseBasicParsing https://finncalc.com/emergency-fund/
+([regex]::Matches($h.Content, '<h1\b')).Count   # expect 1
+
+# Favicon present sitewide
+$h = Invoke-WebRequest -UseBasicParsing https://finncalc.com/
+$h.Content -match 'rel="icon"'                  # expect True
+
+# Title length on a former offender
+$h = Invoke-WebRequest -UseBasicParsing https://finncalc.com/student-loan-calculator/
+$m = [regex]::Match($h.Content, '<title>([^<]+)</title>')
+$m.Groups[1].Value.Length                       # expect <= 60
+```
+
+**POSIX equivalents** (run via Git Bash / WSL / Linux box if preferred):
+
+```bash
+curl -s https://finncalc.com/emergency-fund/ | grep -c '<h1'                                          # expect 1
+curl -s https://finncalc.com/ | grep -c 'rel="icon"'                                                  # expect >=1
+curl -s https://finncalc.com/student-loan-calculator/ | grep -oP '<title>[^<]+' | awk '{print length}' # expect <=67 (60 + 7 for <title>)
+```
+
+- [ ] H1-count check passes on `/emergency-fund/`
+- [ ] Favicon-present check passes on `/`
+- [ ] Title-length check passes on `/student-loan-calculator/`
 - [ ] PageSpeed Insights Performance score on `/take-home-pay/` ≥ 75 (was unmeasured / likely 50s due to 3.2s dom_complete)
 - [ ] All 5 dashboard tasks in `2026-05-21-finncalc-seo-remediation-log.md` Phase A checked off
 - [ ] DataForSEO Backlinks subscription Active → `/seo-audit https://finncalc.com/` Authority pillar returns non-zero score
 - [ ] 60-day re-audit (scheduled in operator's calendar) composite score ≥75
+
+---
+
+## Plan Revisions — Audit 2026-05-21 (post Task 2)
+
+A re-read of this plan against the original PDF (`finncalc.com-seo-report-21-05-26.pdf`) and the actual repo state at HEAD = `7fb7977` confirmed 10/10 issue coverage with no gaps. Six clarifications + hygiene additions follow.
+
+### E1 — Commit Task 2 v2 simplification before Task 3 starts
+
+The working tree at the time of this revision contains an intentional rollback of two Task 2 sub-decisions: `apple-touch-icon` and `<link rel="manifest">` were removed; `_build/scripts/write_manifest.py` and `site.webmanifest` were deleted; the 4 PNG icon sizes (256/512/1024) remain untracked as future-PWA candidates. The favicon block is now just `.ico` + `.svg`. **This must land as its own commit before Task 3 begins** so future task diffs stay focused. Reference commit pattern: same shape as `4f50b1a` (post-Task-1 hand-edit follow-up).
+
+### E2 — EXECUTION POLICY universalization
+
+The policy block at the top of this plan currently calls out **sitewide template** tasks as needing rendered hand-edit scripts. That is necessary but not sufficient. Tasks 3, 7, and 8 modify data (`calculators.json` / `variants.json`) or per-slug body files (`_build/bodies/*.html`) — none of which propagate to rendered HTML without `_build/generate.py`, which the policy forbids. **Each of those tasks must produce a `..._rendered.py` patcher alongside its source-side edit.** Reference patterns:
+
+- Task 3: `_build/scripts/patch_titles_rendered.py` — load `{slug: new_title}` map; for each rendered `<slug>/index.html`, replace `<title>...</title>` and the matching `og:title` / `twitter:title` meta contents.
+- Task 7: `_build/scripts/patch_image_alts_rendered.py` — load `{(slug, img_src): alt_text}` map; for each rendered HTML, find each matching `<img src="...">` without `alt` and inject the mapped alt.
+- Task 8: `_build/scripts/patch_widget_defer_rendered.py` — for the 6 named slow pages, find inline `<script>` blocks above the size threshold, extract to `js/calc/<slug>.js`, replace in rendered HTML with `<script src="..." defer>`.
+
+### E3 — Task 8 widget target directory
+
+Task 8 references `js/widgets/<slug>.js` as the extraction target. The repo already has `js/calc/` with 7 entries (`401k-calculator.js`, `debt-snowball-calculator.js`, `fire-calculator.js`, `isa-calculator.js`, `roth-ira-calculator.js`, `student-loan-calculator.js`, `tfsa-calculator.js`). Use `js/calc/<slug>.js` instead — do not create a parallel `js/widgets/` directory. Of the 6 audit-flagged slow pages, `take-home-pay`, `debt-snowball-calculator`, and the 4 blog posts may need new entries here (Task 8 Step 1 inventory will confirm).
+
+### E4 — Task 9 Phase A — add IndexNow as parallel channel
+
+`scripts/indexnow_ping.py` already exists in the repo with a verified BWT-bound IndexNow key (`cd975860879e4460864ab673b9055f7e`, hosted at `https://finncalc.com/cd975860879e4460864ab673b9055f7e.txt`). Add to Phase A of the operator log:
+
+> - [ ] Run `python scripts/indexnow_ping.py --all` once the site deploys to ping Bing/Yandex/Seznam/Naver via IndexNow. Faster than waiting for crawl queue. Does not replace GSC submission (Google does not honour IndexNow).
+
+### E5 — Windows-native acceptance commands
+
+See the Acceptance Checklist block immediately above this section — it now ships PowerShell 5.1 commands alongside the POSIX originals. The operator's machine runs PS 5.1 per Digital_Media_Manager SOUL.md.
+
+### E6 — Document Task 2 v2 decision in the plan body
+
+Task 2 as originally written added 4 icon entries (`.ico`, `.svg`, `apple-touch-icon`, `manifest`) plus a `site.webmanifest` file plus a `write_manifest.py` helper. Post-implementation the operator dropped `apple-touch-icon` + `manifest` + the helper + the manifest file. Reasons inferred (record at execution time of E1 commit): (a) 256/512/1024 PNG icons are not yet production-grade and don't render correctly across browsers; (b) finncalc is not a PWA — manifest declarations only add crawler/parser overhead without delivering installability benefit; (c) the SVG favicon already covers modern browsers and `.ico` covers legacy. **Final state of head_meta favicon block** is 2 lines (`.ico` + `.svg`), period. If a future iteration revives apple-touch + PWA, the 4 PNG assets remain in working tree as starting material.
+
+---
+
+## Build-phase prerequisites (read before starting Task 3)
+
+After E1 lands and this revision section is committed, the build-phase engineer should:
+
+1. Confirm `git status --short` is empty in `Finance_Calculator_Hub/`.
+2. Read this Revisions section once to absorb E2-E4 conventions.
+3. Resume at Task 3, following the per-task TDD pattern (failing test → script → re-run test → commit).
+4. After each task, add an entry to `docs/superpowers/plans/2026-05-21-finncalc-seo-remediation-log.md` Phase 0 with the commit SHA + test count delta.
