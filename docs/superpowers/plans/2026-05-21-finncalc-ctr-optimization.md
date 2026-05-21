@@ -1,7 +1,13 @@
 # FinCalc CTR Optimization — Implementation Plan
 
+> **⚠️ STATUS: DEFERRED to Phase 5 (Month 3+).**
+> Per the SEO Ranking Recovery Plan ingested 2026-05-21 from `C:\FIN_CALC_SITE\SEO_Ranking_Recovery_Plan.docx`:
+> finncalc.com sits at avg position 81 (page 9). Position 80 gets ~0% CTR even with a perfect title. **CTR optimisation is premature until rankings move to page 1-2.** See the active master plan at `2026-05-21-seo-ranking-recovery.md`.
+>
+> This plan stays committed as the runbook for Phase 5 — execute only after Phase 1-4 lift rankings into striking distance (positions 11-30).
+
 > Spec: `docs/superpowers/specs/2026-05-21-finncalc-ctr-optimization-design.md`
-> Branch: `ctr-optimization-2026-05-21` (off `seo-remediation-2026-05-21` HEAD `0354b29`)
+> Branch: `seo-ranking-recovery-2026-05-21` (off `seo-remediation-2026-05-21` HEAD `0354b29`)
 > Predecessor: `2026-05-21-finncalc-seo-remediation.md` (structural fixes shipped + deployed)
 
 **Goal:** lift CTR on 30 top high-impression-low-CTR queries to at least halfway between current and position-baseline. Industry benchmark: 30-80% CTR uplift on rewritten queries.
