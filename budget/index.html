@@ -10,7 +10,10 @@
   <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
-<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/css/print.css" media="print">
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+<link rel="stylesheet" href="/css/print.css" media="print">
 <style>
 .budget-bar-wrap{margin:18px 0 8px;background:rgba(255,255,255,.1);border-radius:8px;overflow:hidden;height:22px;display:flex;}
 .budget-bar-needs{background:#1E88E5;height:100%;transition:width .4s;}

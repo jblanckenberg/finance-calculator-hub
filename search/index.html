@@ -12,7 +12,6 @@
   <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
-  <link rel="stylesheet" href="/css/main.css">
   <script>
     (function(){
       var params = new URLSearchParams(window.location.search);
@@ -57,6 +56,9 @@
 
   <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
   <script src="/js/newsletter.js" defer></script>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
 </head>
 <body>
 <header>

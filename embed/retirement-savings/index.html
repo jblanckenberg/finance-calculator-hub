@@ -12,7 +12,6 @@
   <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
-  <link rel="stylesheet" href="/css/main.css">
   <style>
     body { padding: 0; }
     .container { padding: 12px 16px; max-width: 100%; }
@@ -20,6 +19,9 @@
     .embed-credit a { color: #1E88E5; text-decoration: none; }
   </style>
   <script defer data-domain="embed.finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
 </head>
 <body>
 
