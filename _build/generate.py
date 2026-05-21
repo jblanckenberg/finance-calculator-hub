@@ -89,9 +89,22 @@ def render_intro_html(intro: str) -> str:
     return "\n".join(out_parts)
 
 def build_web_application_ld(
-    *, slug: str, name: str, description: str, parent_slug: str | None
+    *, slug: str, name: str, description: str, parent_slug: str | None, author: dict | None = None
 ) -> dict:
-    """Emits the SoftwareApplication / WebApplication JSON-LD object."""
+    """Emits the SoftwareApplication / WebApplication JSON-LD object.
+
+    When `author` is supplied, also attaches `author` + `reviewedBy` Person
+    references pointing to the author's canonical @id. YMYL E-E-A-T signal
+    per SEO Recovery Plan §3.4.
+    """
+    def _author_ref() -> dict | None:
+        if not author:
+            return None
+        ref: dict = {"@type": "Person", "name": author["name"]}
+        if author.get("id"):
+            ref["@id"] = author["id"]
+        return ref
+
     if parent_slug is None:
         url = f"{SITE_URL}/{slug}/"
         ld: dict = {
@@ -105,10 +118,14 @@ def build_web_application_ld(
             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
             "dateModified": SCHEMA_DATE_MODIFIED,
         }
+        ref = _author_ref()
+        if ref:
+            ld["author"] = ref
+            ld["reviewedBy"] = dict(ref)
         return ld
     parent_url = f"{SITE_URL}/{parent_slug}/"
     url = f"{parent_url}{slug}/"
-    return {
+    ld = {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": name,
@@ -120,6 +137,11 @@ def build_web_application_ld(
         "isPartOf": {"@type": "WebApplication", "@id": parent_url},
         "dateModified": SCHEMA_DATE_MODIFIED,
     }
+    ref = _author_ref()
+    if ref:
+        ld["author"] = ref
+        ld["reviewedBy"] = dict(ref)
+    return ld
 
 def build_breadcrumb_ld(*, items: list[tuple[str, str]]) -> dict:
     return {
@@ -248,6 +270,10 @@ def build_article_ld(
     }
     if author:
         article["author"] = build_person_ld(author)
+        # YMYL E-E-A-T: reviewedBy is a distinct signal from author per
+        # Google's content quality docs. Same Person until we add a dedicated
+        # reviewer profile.
+        article["reviewedBy"] = build_person_ld(author)
     return article
 
 
@@ -313,7 +339,11 @@ class Renderer:
         ctx["robots"] = "index, follow"
         ctx["web_application_ld"] = build_web_application_ld(
             slug=slug, name=data["name"], description=data["description"], parent_slug=None,
+            author=self._author,
         )
+        # Standalone Person node — referenced via @id from WebApplication /
+        # HowTo / Article author + reviewedBy properties.
+        ctx["person_ld"] = build_person_ld(self._author) | {"@context": "https://schema.org"} if self._author else None
         ctx["breadcrumb_ld"] = build_breadcrumb_ld(items=[
             ("Home", f"{SITE_URL}/"), (data["name"], canonical),
         ])
@@ -366,7 +396,9 @@ class Renderer:
             name=variant_data["title"].replace(" | FinCalcHub", ""),
             description=variant_data["description"],
             parent_slug=parent_slug,
+            author=self._author,
         )
+        ctx["person_ld"] = build_person_ld(self._author) | {"@context": "https://schema.org"} if self._author else None
         ctx["breadcrumb_ld"] = build_breadcrumb_ld(items=[
             ("Home", f"{SITE_URL}/"),
             (parent_data["name"], f"{SITE_URL}/{parent_slug}/"),
