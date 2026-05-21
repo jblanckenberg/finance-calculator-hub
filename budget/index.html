@@ -341,7 +341,7 @@
         — free profit margin, pricing, and cash flow calculators.
       </div>
 <div class="footer-bottom"><p>&copy; 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
-<script src="/js/region.js"></script><script src="/js/main.js"></script>
+<script src="/js/region.js" defer></script><script src="/js/main.js" defer></script>
 <script>
 var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:'$',UK:'\u00a3',SA:'R'}[r]||'$';['s1','s2'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent='('+s+')';});if(document.getElementById('results').classList.contains('show'))calculate();};
 function v(id){return +document.getElementById(id).value||0;}

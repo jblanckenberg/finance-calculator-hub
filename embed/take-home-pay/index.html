@@ -99,8 +99,8 @@
   <a href="https://finncalc.com/take-home-pay/?utm_source=embed&amp;utm_medium=widget&amp;utm_campaign=take-home-pay" target="_blank" rel="noopener">FinCalcHub</a>.
 </p>
 
-<script src="/js/region.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
 <script>
 var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:'$',UK:'£',SA:'R'}[r]||'$';var el=document.getElementById('sal-sym');if(el)el.textContent='('+s+')';if(document.getElementById('results').classList.contains('show'))calculate();};
 

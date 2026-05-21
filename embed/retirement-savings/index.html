@@ -68,8 +68,8 @@
   <a href="https://finncalc.com/retirement-savings/?utm_source=embed&amp;utm_medium=widget&amp;utm_campaign=retirement-savings" target="_blank" rel="noopener">FinCalcHub</a>.
 </p>
 
-<script src="/js/region.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
 <script>
 var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:'$',UK:'£',SA:'R'}[r]||'$';['sym1','sym2','sym3'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent='('+s+')';});if(document.getElementById('results').classList.contains('show'))calculate();};
 function calculate(){
