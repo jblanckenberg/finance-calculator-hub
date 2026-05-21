@@ -16,7 +16,10 @@ def _render_compound_interest():
 
 def test_render_includes_compound_interest_title():
     out = _render_compound_interest()
-    assert "Compound Interest Calculator (Daily, Monthly, Yearly) | FinCalcHub" in out
+    # Title trimmed to <=60 chars for Google mobile (audit MEDIUM 2026-05-21);
+    # the " | FinCalcHub" suffix was dropped because the title already
+    # contains "Calculator".
+    assert "Compound Interest Calculator (Daily, Monthly, Yearly)" in out
 
 def test_render_includes_canonical_url():
     out = _render_compound_interest()

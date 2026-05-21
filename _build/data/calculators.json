@@ -2,7 +2,7 @@
   "compound-interest": {
     "slug": "compound-interest",
     "name": "Compound Interest Calculator",
-    "title": "Compound Interest Calculator (Daily, Monthly, Yearly) | FinCalcHub",
+    "title": "Compound Interest Calculator (Daily, Monthly, Yearly)",
     "description": "Free compound interest calculator. See how money grows with daily, monthly, or yearly compounding. Add monthly contributions. USA, UK & South Africa.",
     "h1": "Compound Interest Calculator",
     "subtitle": "See how your money grows over time with the power of compounding. Add monthly contributions to maximise your results.",
@@ -82,7 +82,7 @@
   "mortgage": {
     "slug": "mortgage",
     "name": "🏠 Mortgage Calculator",
-    "title": "Mortgage Calculator UK / US — Repayment + Affordability | FinCalcHub",
+    "title": "Mortgage Calculator UK / US — Repayment + Affordability",
     "description": "Free mortgage calculator for the UK and US. Get your monthly payment, total interest, and full amortisation. Includes affordability and SA bonds.",
     "h1": "🏠 Mortgage Calculator",
     "subtitle": "Calculate your monthly repayment, total interest, and full amortisation schedule for any home loan.",
@@ -162,7 +162,7 @@
   "take-home-pay": {
     "slug": "take-home-pay",
     "name": "💰 Take-Home Pay Calculator",
-    "title": "Take-Home Pay Calculator 2026 — UK, US, South Africa | FinCalcHub",
+    "title": "Take-Home Pay Calculator 2026 — UK, US, South Africa",
     "description": "Free take-home pay calculator 2026. See your real salary after income tax, NI, FICA, or UIF in the UK, USA, or South Africa. Instant — no signup.",
     "h1": "💰 Take-Home Pay Calculator",
     "subtitle": "See your exact salary after all taxes and deductions — updated for 2026/27 tax rules in the USA, UK, and South Africa.",
@@ -240,7 +240,7 @@
   "retirement-savings": {
     "slug": "retirement-savings",
     "name": "🏖 Retirement Savings Calculator",
-    "title": "Retirement Savings Calculator — How Much You Need | FinCalcHub",
+    "title": "Retirement Savings Calculator — How Much You Need",
     "description": "Free retirement savings calculator. See exactly how much you need to retire and whether your savings rate is on track. USA, UK & South Africa.",
     "h1": "🏖 Retirement Savings Calculator",
     "subtitle": "Find out if you're on track to retire comfortably - and exactly how much you need to save each month.",
@@ -394,7 +394,7 @@
   "savings-goal": {
     "slug": "savings-goal",
     "name": "🎯 Savings Goal Calculator",
-    "title": "Savings Goal Calculator — Reach Your Target Faster | FinCalcHub",
+    "title": "Savings Goal Calculator — Reach Your Target Faster",
     "description": "Free savings goal calculator. Set any target — see how long it takes to save at your current rate, or how much more per month to get there faster.",
     "h1": "🎯 Savings Goal Calculator",
     "subtitle": "Enter your target amount and monthly savings to find out exactly when you'll reach your goal.",
@@ -850,7 +850,7 @@
   "sa-tax-calculator": {
     "slug": "sa-tax-calculator",
     "name": "South Africa Tax Calculator (PAYE + UIF)",
-    "title": "South Africa Tax Calculator 2026/27 (PAYE + UIF) | FinCalcHub",
+    "title": "South Africa Tax Calculator 2026/27 (PAYE + UIF)",
     "description": "Free South Africa income tax calculator. SARS 2026/27 brackets, PAYE, UIF, medical-aid credits, retirement-annuity deduction. Monthly & annual.",
     "h1": "South Africa Tax Calculator (PAYE + UIF)",
     "subtitle": "Work out your South African income tax for the 2026/27 tax year. Includes PAYE, UIF, medical scheme tax credits, retirement-annuity deductions, and SARS rebates for age 65+.",
@@ -926,7 +926,7 @@
   "401k-calculator": {
     "slug": "401k-calculator",
     "name": "401(k) Calculator",
-    "title": "401(k) Calculator: Project Your Retirement Balance | FinCalcHub",
+    "title": "401(k) Calculator: Project Your Retirement Balance",
     "description": "Free 401(k) calculator. Project your retirement balance with employer match, salary growth, and 2026 IRS limits ($23,500 / $31,000 catch-up). USA-focused.",
     "h1": "💼 401(k) Retirement Calculator",
     "subtitle": "See how your 401(k) grows with employer match, salary increases, and decades of compounding. USA — 2026 IRS limits applied.",
@@ -1049,7 +1049,7 @@
   "roth-ira-calculator": {
     "slug": "roth-ira-calculator",
     "name": "💰 Roth IRA Calculator",
-    "title": "Roth IRA Calculator 2026: Tax-Free Retirement Growth | FinCalcHub",
+    "title": "Roth IRA Calculator 2026: Tax-Free Retirement Growth",
     "description": "Free Roth IRA calculator. Project tax-free growth with 2026 limits ($7,000 / $8,000 catch-up) and built-in MAGI phase-out for single, MFJ, and MFS filers.",
     "h1": "💰 Roth IRA Calculator",
     "subtitle": "See your tax-free retirement balance with 2026 IRS contribution limits and MAGI phase-out applied automatically. USA.",
@@ -1172,7 +1172,7 @@
   "student-loan-calculator": {
     "slug": "student-loan-calculator",
     "name": "🎓 Student Loan Calculator",
-    "title": "Student Loan Repayment Calculator: UK Plans 1/2/4/5/9 + USA Federal | FinCalcHub",
+    "title": "Student Loan Calculator: UK Plans 1/2/4/5/9 + USA Federal",
     "description": "Free UK + USA student loan repayment calculator. UK Plan 2/4/5/9 thresholds, USA Federal Direct, PSLF 120-payment cap. Shows write-off and total interest.",
     "h1": "🎓 Student Loan Repayment Calculator",
     "subtitle": "UK Plan 1/2/4/5/9 income-contingent repayment, plus USA Federal Direct (Standard, Graduated, Extended, PSLF). Built from gov.uk and studentaid.gov rules.",
@@ -1304,7 +1304,7 @@
   "debt-snowball-calculator": {
     "slug": "debt-snowball-calculator",
     "name": "❄️ Debt Snowball Calculator",
-    "title": "Debt Snowball Calculator (vs Avalanche): Get Out of Debt Faster | FinCalcHub",
+    "title": "Debt Snowball Calculator (vs Avalanche) — Get Out Faster",
     "description": "Free debt snowball calculator. Compare snowball (smallest balance first) vs avalanche (highest APR first). Add unlimited debts and see your debt-free date.",
     "h1": "❄️ Debt Snowball Calculator",
     "subtitle": "Pay off multiple debts using the snowball or avalanche method. See your debt-free date, total interest, and which strategy saves more.",
@@ -1420,7 +1420,7 @@
   "fire-calculator": {
     "slug": "fire-calculator",
     "name": "🔥 FIRE Calculator",
-    "title": "FIRE Calculator: Financial Independence + Retire Early | FinCalcHub",
+    "title": "FIRE Calculator: Financial Independence + Retire Early",
     "description": "Free FIRE (Financial Independence Retire Early) calculator. Lean / Regular / Fat / Coast tiers. Customisable safe withdrawal rate. Closed-form math, no waiting.",
     "h1": "🔥 FIRE Calculator",
     "subtitle": "Lean, Regular, Fat, and Coast FIRE in one calculator. Set your spending, savings rate, and SWR — see exactly when you reach financial independence.",
@@ -1546,7 +1546,7 @@
   "isa-calculator": {
     "slug": "isa-calculator",
     "name": "🇬🇧 ISA Calculator",
-    "title": "ISA Calculator UK 2026/27: Stocks & Shares, Cash, and Lifetime ISA | FinCalcHub",
+    "title": "ISA Calculator UK 2026/27: Stocks & Shares, Cash, Lifetime",
     "description": "Free UK ISA calculator. Stocks & Shares, Cash, and Lifetime ISA (LISA) options. £20,000 annual allowance, £4,000 LISA cap, 25% government bonus modelled.",
     "h1": "🇬🇧 ISA Calculator (UK)",
     "subtitle": "Project your tax-free ISA growth — Stocks & Shares, Cash, or Lifetime ISA. £20,000 annual limit and 25% LISA government bonus applied automatically.",
@@ -1673,7 +1673,7 @@
   "tfsa-calculator": {
     "slug": "tfsa-calculator",
     "name": "🇿🇦 TFSA Calculator",
-    "title": "TFSA Calculator South Africa 2026: Tax-Free Savings Growth | FinCalcHub",
+    "title": "TFSA Calculator South Africa 2026: Tax-Free Savings Growth",
     "description": "Free South African TFSA calculator. R36,000 annual / R500,000 lifetime limits enforced. See your tax-free balance and when you'll hit the cap.",
     "h1": "🇿🇦 TFSA Calculator (South Africa)",
     "subtitle": "Project your tax-free TFSA growth with the R36,000 annual cap and R500,000 lifetime cap enforced. SARS s12T rules applied.",
