@@ -1,5 +1,5 @@
-"""Inject favicon / icon / apple-touch / manifest links into the <head> of every
-rendered index.html. Idempotent: re-running on a clean tree is a no-op.
+"""Inject favicon / icon links into the <head> of every rendered index.html.
+Idempotent: re-running on a clean tree is a no-op.
 
 Insertion point: after the existing <link rel="canonical" ...> line. If a
 canonical link is absent (shouldn't happen — every page in this repo has one),
@@ -15,13 +15,26 @@ EXCLUDE_DIRS = {"node_modules", ".git", "_build", ".venv", ".pytest_cache", ".id
 ICON_BLOCK = (
     '  <link rel="icon" href="/favicon.ico" sizes="any">\n'
     '  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">\n'
-    '  <link rel="apple-touch-icon" href="/finncalc_256.png">\n'
-    '  <link rel="manifest" href="/site.webmanifest">\n'
 )
 
 CANONICAL = re.compile(r'(<link\s+rel="canonical"[^>]*>\s*\n)', re.IGNORECASE)
 HEAD_CLOSE = re.compile(r"(\s*</head>)", re.IGNORECASE)
 HAS_FAVICON = re.compile(r'rel="icon"[^>]*href="/favicon\.ico"', re.IGNORECASE)
+
+STALE_LINES = [
+    re.compile(r'  <link rel="apple-touch-icon" href="/finncalc_256\.png">\n', re.IGNORECASE),
+    re.compile(r'  <link rel="manifest" href="/site\.webmanifest">\n', re.IGNORECASE),
+]
+
+
+def cleanup_stale_lines(text: str) -> tuple[str, bool]:
+    changed = False
+    for pat in STALE_LINES:
+        new_text, n = pat.subn("", text)
+        if n:
+            text = new_text
+            changed = True
+    return text, changed
 
 
 def inject(text: str) -> tuple[str, bool]:
@@ -48,12 +61,13 @@ def main() -> int:
     changed = []
     for page in iter_rendered_pages():
         text = page.read_text(encoding="utf-8")
-        new_text, did_change = inject(text)
-        if did_change:
-            page.write_text(new_text, encoding="utf-8")
+        text, c1 = cleanup_stale_lines(text)
+        text, c2 = inject(text)
+        if c1 or c2:
+            page.write_text(text, encoding="utf-8")
             changed.append(page.relative_to(REPO))
     if changed:
-        print(f"Injected favicon block into {len(changed)} rendered pages:")
+        print(f"Updated favicon block in {len(changed)} rendered pages:")
         for rel in changed[:10]:
             print(f"  - {rel.as_posix()}")
         if len(changed) > 10:

@@ -19,6 +19,4 @@ def _rendered_pages() -> list[Path]:
 @pytest.mark.parametrize("page", _rendered_pages(), ids=lambda p: p.relative_to(REPO).as_posix())
 def test_rendered_page_has_icon_link(page):
     text = page.read_text(encoding="utf-8")
-    # head must contain at least an icon ref and a manifest link
     assert "/favicon.ico" in text, f"{page.relative_to(REPO)} missing /favicon.ico link"
-    assert "/site.webmanifest" in text, f"{page.relative_to(REPO)} missing /site.webmanifest link"
