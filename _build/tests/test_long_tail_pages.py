@@ -40,6 +40,14 @@ LONG_TAIL_PAGES = {
         "schema_types": ["WebApplication", "BreadcrumbList", "Person", "FAQPage", "HowTo"],
         "min_word_count": 1500,
     },
+    "inflation-impact/rpi/index.html": {
+        "h1": "UK RPI Inflation Calculator",
+        "title_contains": "RPI",
+        "hreflang": "en-GB",
+        "area_served": "United Kingdom",
+        "schema_types": ["WebApplication", "BreadcrumbList", "Person", "FAQPage", "HowTo"],
+        "min_word_count": 1500,
+    },
 }
 
 JSON_LD = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.IGNORECASE | re.DOTALL)
