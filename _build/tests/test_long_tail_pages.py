@@ -80,6 +80,14 @@ LONG_TAIL_PAGES = {
         "schema_types": ["WebApplication", "BreadcrumbList", "Person", "FAQPage", "HowTo"],
         "min_word_count": 1500,
     },
+    "compound-interest/irs/index.html": {
+        "h1": "Compound Interest Calculator",
+        "title_contains": "IRS",
+        "hreflang": "en-US",
+        "area_served": "United States",
+        "schema_types": ["WebApplication", "BreadcrumbList", "Person", "FAQPage", "HowTo"],
+        "min_word_count": 1500,
+    },
 }
 
 JSON_LD = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.IGNORECASE | re.DOTALL)

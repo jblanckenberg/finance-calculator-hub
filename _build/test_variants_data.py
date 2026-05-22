@@ -9,10 +9,10 @@ CALCS = Path(__file__).resolve().parent / "data" / "calculators.json"
 def _load():
     return json.loads(DATA.read_text(encoding="utf-8"))
 
-def test_total_variant_count_is_23():
+def test_total_variant_count_is_24():
     data = _load()
     flat = [v for cm in data.values() for v in cm.values()]
-    assert len(flat) == 23
+    assert len(flat) == 24
 
 def test_every_parent_calc_exists():
     data = _load()
