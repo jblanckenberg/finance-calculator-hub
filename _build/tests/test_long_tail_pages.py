@@ -56,6 +56,14 @@ LONG_TAIL_PAGES = {
         "schema_types": ["WebApplication", "BreadcrumbList", "Person", "FAQPage", "HowTo"],
         "min_word_count": 1500,
     },
+    "mortgage/bad-credit/index.html": {
+        "h1": "Bad-Credit Mortgage Calculator",
+        "title_contains": "Bad Credit",
+        "hreflang": "en-GB",
+        "area_served": "United Kingdom",
+        "schema_types": ["WebApplication", "BreadcrumbList", "Person", "FAQPage", "HowTo"],
+        "min_word_count": 1500,
+    },
 }
 
 JSON_LD = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.IGNORECASE | re.DOTALL)
