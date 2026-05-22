@@ -32,6 +32,14 @@ LONG_TAIL_PAGES = {
         "schema_types": ["WebApplication", "BreadcrumbList", "Person", "FAQPage", "HowTo"],
         "min_word_count": 1500,
     },
+    "mortgage/5-year-fixed/index.html": {
+        "h1": "5-Year Fixed Mortgage Calculator",
+        "title_contains": "5-Year Fixed",
+        "hreflang": "en-GB",
+        "area_served": "United Kingdom",
+        "schema_types": ["WebApplication", "BreadcrumbList", "Person", "FAQPage", "HowTo"],
+        "min_word_count": 1500,
+    },
 }
 
 JSON_LD = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.IGNORECASE | re.DOTALL)
