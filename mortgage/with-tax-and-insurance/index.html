@@ -1,0 +1,578 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Mortgage Calculator with Tax &amp; Insurance (True Cost)</title>
+  <meta name="description" content="Free UK mortgage calculator including Stamp Duty, council tax, and buildings insurance. See your true monthly cost — not just P&amp;I. 2026/27 SDLT rates.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/mortgage/with-tax-and-insurance/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en-GB" href="https://finncalc.com/mortgage/with-tax-and-insurance/">
+  <link rel="alternate" hreflang="x-default" href="https://finncalc.com/mortgage/">
+  <meta property="og:title" content="UK Mortgage Calculator with Tax &amp; Insurance (True Cost)">
+  <meta property="og:description" content="Free UK mortgage calculator including Stamp Duty, council tax, and buildings insurance. See your true monthly cost — not just P&amp;I. 2026/27 SDLT rates.">
+  <meta property="og:url" content="https://finncalc.com/mortgage/with-tax-and-insurance/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UK Mortgage Calculator with Tax &amp; Insurance (True Cost)">
+  <meta name="twitter:description" content="Free UK mortgage calculator including Stamp Duty, council tax, and buildings insurance. See your true monthly cost — not just P&amp;I. 2026/27 SDLT rates.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "areaServed": {"@type": "Country", "name": "United Kingdom"}, "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-21", "description": "Free UK mortgage calculator including Stamp Duty, council tax, and buildings insurance. See your true monthly cost — not just P&I. 2026/27 SDLT rates.", "isPartOf": {"@id": "https://finncalc.com/mortgage/", "@type": "WebApplication"}, "name": "UK Mortgage Calculator with Tax & Insurance (True Cost)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/mortgage/with-tax-and-insurance/"}</script>
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/mortgage/", "name": "🏠 Mortgage Calculator", "position": 2}, {"@type": "ListItem", "item": "https://finncalc.com/mortgage/with-tax-and-insurance/", "name": "With Tax & Insurance (UK)", "position": 3}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder & Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does a UK mortgage calculator include Stamp Duty?", "acceptedAnswer": {"@type": "Answer", "text": "Most don't — they show only the principal and interest (P&I) repayment. This calculator does include SDLT because the tax is a real component of the cash you need at completion, and amortised over a typical holding period it adds £100-£400 per month to the true cost of owning the property. SDLT is auto-computed from the property price using the post-1 April 2025 bands (nil up to £125k, 2% to £250k, 5% to £925k, 10% to £1.5m, 12% above), with first-time-buyer relief and the additional-property surcharge applied via the form toggles."}}, {"@type": "Question", "name": "Is buildings insurance compulsory for a UK mortgage?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every UK lender requires buildings insurance in force before they will release the mortgage funds at completion. The cover must be on a reinstatement basis (the cost to rebuild the property) for the lender's full security interest. Contents insurance is separate and optional — it protects what's inside the property, not the structure itself. Typical buildings premiums run £150-£400/year for a standard property; flood-risk postcodes and listed buildings can be materially higher."}}, {"@type": "Question", "name": "How is council tax calculated, and can I add it to my mortgage payment?", "acceptedAnswer": {"@type": "Answer", "text": "Council tax is calculated by the Valuation Office Agency (VOA), which assigns each property to one of eight bands (A through H) based on the property's market value as at 1 April 1991 in England. Your local authority then publishes a band-D rate each year, with a multiplier for the other bands. You cannot add council tax to your mortgage payment — it's paid separately to the local authority, usually across 10 monthly instalments April to January, with 12-month payment available on request. The calculator divides annual council tax by 12 to give you the monthly figure to budget against."}}, {"@type": "Question", "name": "What's the difference between buildings insurance reinstatement value and market value?", "acceptedAnswer": {"@type": "Answer", "text": "Reinstatement value is the cost to rebuild the property from scratch on the same plot — bricks, labour, professional fees, demolition, and clearance. Market value is what the property would sell for, which includes the land. The land itself cannot burn down, flood, or collapse, so insurers cover reinstatement only. Reinstatement is typically 50-80% of market value for a typical UK property; the gap is largest in London where land prices dominate. Under-insuring on reinstatement value is the most common cause of disputed claims. The ABI publishes a free rebuild cost calculator at abi.org.uk."}}, {"@type": "Question", "name": "How does first-time-buyer SDLT relief change my monthly cost?", "acceptedAnswer": {"@type": "Answer", "text": "First-time buyer relief in England and Northern Ireland (reverted to its long-term shape on 1 April 2025) charges nil SDLT on the portion of the price up to £300,000 and 5% on the portion £300,001-£500,000. No FTB relief is available on purchases above £500,000 — standard rates apply to the full price. On a £350,000 FTB purchase, standard SDLT is £7,500 (£2,500 on the £125-£250k band plus £5,000 on the £250-£350k slice) but FTB relief charges only £2,500 (5% on the £50k slice above the £300k threshold) — a £5,000 saving; on a £500,000 FTB purchase, relief saves £6,250. Tick the FTB box in the calculator and SDLT updates automatically. Scotland (LBTT) and Wales (LTT) have their own first-time-buyer schemes with different thresholds."}}, {"@type": "Question", "name": "What about leasehold service charges and ground rent?", "acceptedAnswer": {"@type": "Answer", "text": "Leasehold service charges and ground rent are not included in this calculator because they vary so dramatically by property they would distort cross-comparison. If you are buying a leasehold flat, expect ground rent of £200-£500/year (often more on older leases) and service charges of £1,000-£5,000/year for typical blocks, with new-build prime developments running into five figures annually. New leasehold houses sold after 30 June 2022 cannot levy ground rent under the Leasehold Reform (Ground Rent) Act 2022, but existing leases are unaffected. Budget separately and ask the seller's solicitor for at least three years of historic service charge accounts before you exchange contracts."}}, {"@type": "Question", "name": "How accurate is the 1% maintenance reserve assumption?", "acceptedAnswer": {"@type": "Answer", "text": "The 1% rule of thumb is what the RICS uses for typical UK housing stock — a sensible default for properties built in the last 50 years in standard construction (cavity brick or modern timber-frame). Pre-1900 properties, listed buildings, and homes with non-standard construction (cob, single-skin brick, prefab reinforced concrete) routinely run at 2-3% of property value per year over a 20-year window because of more frequent roof, window, and structural work. The calculator uses 1% by default; if you are buying anything older or non-standard, override the maintenance input upward. The reserve is what you should set aside in a separate easy-access savings account — not what you'll spend every year, but a smoothed average across decades."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to calculate true monthly UK mortgage cost", "totalTime": "PT3M", "step": [{"@type": "HowToStep", "text": "Enter the property price in pounds"}, {"@type": "HowToStep", "text": "Enter your deposit amount or percentage"}, {"@type": "HowToStep", "text": "Set the mortgage term in years and the interest rate"}, {"@type": "HowToStep", "text": "Tick first-time buyer if applicable to get SDLT relief"}, {"@type": "HowToStep", "text": "Select your council tax band (A-H) for the property's local authority"}, {"@type": "HowToStep", "text": "Enter the annual buildings insurance premium"}, {"@type": "HowToStep", "text": "Read off your true monthly cost — P&I plus council tax, insurance, and maintenance reserve"}]}</script>
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+
+<main id="content">
+<!-- Ad slot top (leaderboard above H1) -->
+<div class="container">
+<div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="4461919959"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> &rsaquo; <a href="https://finncalc.com/mortgage/">🏠 Mortgage Calculator</a> &rsaquo; With Tax &amp; Insurance (UK)</p>
+  <h1>UK Mortgage Calculator with Tax &amp; Insurance</h1>
+  <p class="subtitle">See your true monthly UK homeownership cost: principal and interest plus Stamp Duty, council tax, buildings insurance, and a maintenance reserve.</p>
+
+
+<section class="variant-intro" style="margin:16px 0;max-width:760px">
+<p>The headline mortgage repayment that most UK calculators surface is only part of what a homeowner actually pays each month. The full picture — what brokers and lenders call the <em>true monthly cost</em> — adds Stamp Duty Land Tax (amortised over the holding period or paid upfront), council tax, buildings insurance, and a maintenance reserve on top of principal and interest. This calculator models all four so the figure you compare against your monthly take-home pay is the figure you will genuinely live with, not the headline number lenders use to sell the loan.</p>
+
+<h2>What 'true monthly cost' means in UK property</h2>
+<p>UK mortgage advice has historically focused on the lender's affordability test, which centres on the principal-and-interest (P&amp;I) payment under stress. That test answers a single question — can the borrower service the loan if rates rise — but it doesn't answer the question every household actually cares about, which is: what will I write a cheque for each month once I own this property?</p>
+<p>The gap between the two is structural. A typical UK first-time buyer purchasing a £350,000 home with a 10% deposit on a 25-year 4.5% mortgage pays roughly £1,750/month in P&amp;I. That same household will also pay council tax (£120-£300/month depending on band and local authority), buildings insurance (£15-£40/month), and should set aside a maintenance reserve of around 1% of property value per year (£290/month on £350k). Add it up and the true monthly cost is closer to £2,200-£2,400 — 25-40% above the headline P&amp;I figure. That gap is the difference between a borrower who feels comfortable in year three and one who is stretched.</p>
+<p>The calculator treats SDLT slightly differently: because Stamp Duty is paid upfront at completion, it's not strictly a monthly cost. But because most buyers add SDLT to their cash-needed-at-completion (alongside deposit, legal fees, and survey), the calculator amortises it over the holding period so you can see the true all-in cost per month of homeownership over the term you intend to hold.</p>
+
+<h2>SDLT (Stamp Duty Land Tax) in 2026</h2>
+<p>Stamp Duty Land Tax applies to property purchases in England and Northern Ireland. Scotland uses Land and Buildings Transaction Tax (LBTT); Wales uses Land Transaction Tax (LTT). The post-1 April 2025 SDLT bands for owner-occupier purchases (not first-time buyer, not additional property) are:</p>
+<ul>
+<li>0% on the portion up to £125,000</li>
+<li>2% on the portion £125,001-£250,000</li>
+<li>5% on the portion £250,001-£925,000</li>
+<li>10% on the portion £925,001-£1,500,000</li>
+<li>12% on the portion above £1,500,000</li>
+</ul>
+<p>First-time buyer relief in England and Northern Ireland reverted on 1 April 2025 from the temporary £425k/£625k thresholds back to its long-term shape:</p>
+<ul>
+<li>0% on the portion up to £300,000</li>
+<li>5% on the portion £300,001-£500,000</li>
+<li>No FTB relief is available on purchases above £500,000 — standard rates apply to the full price</li>
+</ul>
+<p>Additional-property purchases (second homes, buy-to-let) carry a 5 percentage point surcharge on every band, applied to the full purchase price. The surcharge was raised from 3% to 5% on 31 October 2024.</p>
+<p>The calculator auto-computes SDLT from the property price plus the first-time-buyer and additional-property toggles, so you don't need to look up bands manually. HMRC's Stamp Duty Land Tax guidance on gov.uk is the authoritative source for current rates and corner cases (linked transactions, mixed-use property, multiple-dwellings relief).</p>
+
+<h2>Council tax</h2>
+<p>Council tax is set by your local authority and depends on the property's valuation band, which is determined by the Valuation Office Agency based on the property's market value as at 1 April 1991 in England (1 April 2003 in Wales). There are eight bands A through H, with the band determining a multiplier applied to the local authority's band-D rate.</p>
+<p>Typical 2026/27 annual council tax across England by band:</p>
+<ul>
+<li>Band A (lowest): £1,400 average</li>
+<li>Band B: £1,650</li>
+<li>Band C: £1,850</li>
+<li>Band D (the reference band): £2,100</li>
+<li>Band E: £2,550</li>
+<li>Band F: £3,000</li>
+<li>Band G: £3,500</li>
+<li>Band H (highest): £4,200 average</li>
+</ul>
+<p>These are averages. Westminster (one of the lowest) charges roughly half the national average at each band; Rutland and parts of the North East charge well above average. The Valuation Office Agency's online lookup at gov.uk gives the band for any address; the local authority website gives the cash amount for the current year.</p>
+<p>Most local authorities default to billing across 10 months (April through January) with February and March free, but every authority is required to offer a 12-month payment option on request. The calculator divides annual council tax by 12 to get a monthly equivalent — which is what you should budget against, regardless of how the bill is structured.</p>
+
+<h2>Buildings insurance</h2>
+<p>Buildings insurance is required by virtually every UK lender as a condition of the mortgage offer. Without it, the lender's security against the loan is exposed to the risk of fire, flood, subsidence, and storm damage. Buildings cover is distinct from contents cover — contents is optional and protects what's inside; buildings is compulsory for mortgaged property and protects the physical structure.</p>
+<p>Typical 2026 premiums:</p>
+<ul>
+<li>Standard 3-bed semi outside flood risk areas: £150-£250/year</li>
+<li>Larger detached property or higher-value home: £250-£400/year</li>
+<li>Flood-risk postcodes or older listed buildings: £400-£800+/year</li>
+</ul>
+<p>A persistent source of confusion is the distinction between reinstatement value and market value. Insurers cover reinstatement — the cost to rebuild the property from scratch on the same plot — which is almost always lower than market value because market value includes the land. A £600,000 London terraced house might have a reinstatement value of £350,000 because the land itself isn't insurable. Under-insuring on reinstatement value is the most common cause of disputed claims; over-insuring on market value is the most common cause of overpaying premiums. The Association of British Insurers publishes a free rebuild cost calculator; the RICS Building Cost Information Service is the trade reference.</p>
+<p>The calculator takes annual buildings insurance as a direct input and divides by 12. If you've been quoted a premium in your most recent renewal letter, use that figure rather than a national average for accuracy.</p>
+
+<h2>Total monthly cost — two worked examples</h2>
+<h3>Example 1: First-time buyer, £350,000 home, 10% deposit, 25-year mortgage at 4.5%</h3>
+<ul>
+<li>Loan: £315,000 at 4.5% over 25 years → P&amp;I ~£1,752/month</li>
+<li>SDLT: £2,500 (FTB relief — 5% on the £50k slice above the £300k threshold; amortised over 25 years adds ~£8/month)</li>
+<li>Council tax: band C, £1,850/year → £154/month</li>
+<li>Buildings insurance: £200/year → £17/month</li>
+<li>Maintenance reserve: 1% of £350k → £292/month</li>
+<li><strong>True monthly cost: ~£2,223</strong></li>
+</ul>
+<p>Vs. headline P&amp;I figure of £1,752 — the true cost is 27% higher than what the lender's affordability test centres on. (The £1,752 figure assumes a generic 4.5% rate; for a true-to-product 5-year fixed view with the early-repayment-charge schedule and end-of-fix balance baked in, see our <a href="/mortgage/5-year-fixed/">5-year fixed mortgage calculator</a>.)</p>
+
+<h3>Example 2: Mover, £750,000 home, 20% deposit, 25-year mortgage at 4.5%</h3>
+<ul>
+<li>Loan: £600,000 at 4.5% over 25 years → P&amp;I ~£3,334/month</li>
+<li>SDLT: £27,500 upfront (2% on £125k-£250k = £2,500, plus 5% on £250k-£750k = £25,000). Amortised over a 10-year holding period that's £229/month</li>
+<li>Council tax: band F, £3,000/year → £250/month</li>
+<li>Buildings insurance: £350/year → £29/month</li>
+<li>Maintenance reserve: 1% of £750k → £625/month</li>
+<li><strong>True monthly cost: ~£4,467 (including SDLT amortised) or £4,238 excluding amortised SDLT</strong></li>
+</ul>
+<p>The SDLT alone amortises to £229/month over a 10-year hold — material enough that it should be in the affordability conversation, not treated as a one-off cash hit at completion.</p>
+
+<h2>What the calculator does NOT include</h2>
+<p>Four categories of cost are deliberately excluded so the figure stays comparable across properties:</p>
+<ul>
+<li><strong>Leasehold ground rent and service charges</strong>: on flats and some new-build estates, ground rent runs £200-£500/year and service charges £1,000-£5,000/year. These vary so dramatically by property they would distort any cross-comparison. Budget separately if you're buying leasehold.</li>
+<li><strong>Utility bills</strong>: gas, electricity, water, broadband, TV licence — roughly £200-£350/month for a typical household — apply equally to renters and owners.</li>
+<li><strong>Mortgage protection / income protection insurance</strong>: typically £20-£50/month, optional but advised. Add separately if you intend to take cover.</li>
+<li><strong>Conveyancing, survey, mortgage arrangement fees</strong>: one-off completion costs typically £2,000-£4,000 in addition to the deposit and SDLT. Add to your cash-at-completion calculation, not your monthly cost.</li>
+</ul>
+<p>The 1% maintenance reserve is the rule of thumb the RICS uses for typical UK housing stock, and the calculator applies it by default. Older properties, listed buildings, and homes with non-standard construction (timber-frame, cob, single-skin brick) routinely run at 2-3% of value per year over a 20-year window. If you're buying anything pre-1900 or with a non-standard construction certificate, override the default upward.</p>
+<p>For underlying rules and current rates, HMRC's SDLT guidance on gov.uk, the Valuation Office Agency's council tax band lookup, your local authority's current band-rate publication, and the FCA's Mortgage Conduct of Business handbook are the authoritative references.</p>
+</section>
+
+
+</div>
+
+
+<div class="container">
+  <div class="quick-answer">
+    <h2>How is true monthly UK homeownership cost calculated?</h2>
+    <p>Take the monthly P&amp;I from the standard mortgage formula <strong>M = P × r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup>−1)</strong>, then add monthly council tax (annual band rate ÷ 12), monthly buildings insurance (annual premium ÷ 12), and a monthly maintenance reserve (1% of property value ÷ 12). SDLT is a one-off cost paid at completion; for a long-hold view, amortise it over your expected holding period.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Property &amp; Mortgage Details</div>
+    <div class="form-row">
+      <div class="form-group"><label for="homePrice">Property Price (£)</label><input type="number" id="homePrice" value="350000" min="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="downPayment">Deposit (£)</label><input type="number" id="downPayment" value="35000" min="0" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="rate">Annual Interest Rate (% APR)</label><input type="number" id="rate" value="4.5" min="0.1" max="30" step="0.05" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="termYears">Mortgage Term (years)</label><input type="number" id="termYears" value="25" min="1" max="40" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="councilBand">Council Tax Band</label>
+        <select id="councilBand" onchange="calculate()">
+          <option value="1400">Band A — ~£1,400/yr</option>
+          <option value="1650">Band B — ~£1,650/yr</option>
+          <option value="1850" selected>Band C — ~£1,850/yr</option>
+          <option value="2100">Band D — ~£2,100/yr</option>
+          <option value="2550">Band E — ~£2,550/yr</option>
+          <option value="3000">Band F — ~£3,000/yr</option>
+          <option value="3500">Band G — ~£3,500/yr</option>
+          <option value="4200">Band H — ~£4,200/yr</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="insurance">Buildings Insurance (£/year)</label><input type="number" id="insurance" value="200" min="0" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label><input type="checkbox" id="firstTimeBuyer" onchange="calculate()"> First-time buyer (England/NI SDLT relief)</label>
+      </div>
+      <div class="form-group">
+        <label><input type="checkbox" id="additionalProperty" onchange="calculate()"> Additional property / buy-to-let (+5% SDLT surcharge)</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="maintenancePct">Maintenance reserve (% property value per year)</label><input type="number" id="maintenancePct" value="1" min="0" max="5" step="0.1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="holdYears">Expected holding period (years, for SDLT amortisation)</label><input type="number" id="holdYears" value="10" min="1" max="40" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate True Monthly Cost &rarr;</button>
+  </div>
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">Your True Monthly Cost</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-true-monthly">£0</div><div class="result-label">True Monthly Cost (all-in)</div></div>
+      <div class="result-item"><div class="result-value" id="r-pi">£0</div><div class="result-label">P&amp;I (mortgage only)</div></div>
+      <div class="result-item"><div class="result-value" id="r-sdlt">£0</div><div class="result-label">Stamp Duty (upfront)</div></div>
+      <div class="result-item"><div class="result-value" id="r-monthly-extras">£0</div><div class="result-label">Tax + Insurance + Maintenance</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Monthly Cost Breakdown</div>
+    <table class="breakdown-table"><thead><tr><th>Item</th><th class="td-right">Monthly</th></tr></thead><tbody id="breakdown-body"></tbody></table>
+    <div id="region-note" style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.6"></div>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">&#128424; Print</button>
+      <button class="btn-action" onclick="saveToFile()">&#128190; Save</button>
+    </div>
+  </div>
+
+
+<div class="container" style="padding-top:0">
+<div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="7963163804"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 3 minutes.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter the property price in pounds</li>
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Enter your deposit amount or percentage</li>
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Set the mortgage term in years and the interest rate</li>
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Tick first-time buyer if applicable to get SDLT relief</li>
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Select your council tax band (A-H) for the property's local authority</li>
+      <li id="step-6" class="how-to-step" style="margin-bottom:6px">Enter the annual buildings insurance premium</li>
+      <li id="step-7" class="how-to-step" style="margin-bottom:6px">Read off your true monthly cost — P&amp;I plus council tax, insurance, and maintenance reserve</li>
+    </ol>
+  </section>
+</div>
+
+
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/mortgage/uk/" class="related-card">🏠 UK Mortgage Calculator</a>
+      <a href="/mortgage/first-time-buyer/" class="related-card">🏘️ First-Time Buyer Mortgage</a>
+      <a href="/stamp-duty-calculator/" class="related-card">🏡 UK Stamp Duty</a>
+      <a href="/take-home-pay/uk/" class="related-card">💰 UK Take-Home Pay</a>
+      <a href="/isa-calculator/" class="related-card">💷 ISA Calculator</a>
+      <a href="/savings-goal/house-deposit/" class="related-card">🎯 House Deposit Goal</a>
+    </div></div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator implements the standard mortgage amortisation formula <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">M = P × [r(1+r)^n] / [(1+r)^n − 1]</code> for the principal-and-interest component, then layers council tax, buildings insurance, and a maintenance reserve to arrive at the true monthly cost of UK homeownership. SDLT is computed from the post-1 April 2025 bands using the property price, first-time-buyer relief flag, and additional-property surcharge flag.</p>
+    <ul style="margin:12px 0">
+      <li><strong>SDLT:</strong> <a href="https://www.gov.uk/stamp-duty-land-tax" rel="noopener">HMRC SDLT guidance on gov.uk</a> — current bands, first-time-buyer relief, additional-property surcharge.</li>
+      <li><strong>Council tax bands:</strong> <a href="https://www.gov.uk/council-tax-bands" rel="noopener">Valuation Office Agency band lookup</a> on gov.uk; local authority website for current year band-D rate.</li>
+      <li><strong>Buildings insurance:</strong> <a href="https://www.abi.org.uk/" rel="noopener">Association of British Insurers</a> — rebuild cost calculator and consumer guidance.</li>
+      <li><strong>UK mortgage rules:</strong> <a href="https://www.fca.org.uk/" rel="noopener">FCA</a> Mortgage Conduct of Business handbook.</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>P&amp;I vs true monthly cost.</strong> Principal and interest is what the lender uses for affordability; true monthly cost is what you actually pay. The gap (council tax + insurance + maintenance + amortised SDLT) is typically 25-40% of the headline figure.</p>
+    <p><strong>SDLT bands are progressive.</strong> Unlike a flat-rate transfer tax, SDLT applies different percentages to different slices of the price. A £400,000 purchase pays 0% on the first £125k, 2% on the next £125k, and 5% on the final £150k — total £10,000, not 5% of £400k.</p>
+    <p><strong>Council tax bands are valuation-based, not transactional.</strong> The band is set at the property's 1991 value (1 April 1991 for England, 1 April 2003 for Wales), not what you pay for it. A property that has appreciated faster than average will be in a lower band than its current price suggests.</p>
+    <p><strong>Reinstatement value ≠ market value.</strong> Buildings insurance covers the cost to rebuild, which excludes the land. Reinstatement is typically 50-80% of market value; insuring at market value means overpaying premiums for cover the insurer will never pay out.</p>
+    <p><strong>Amortised SDLT.</strong> Treating SDLT as a monthly cost (spread over your expected holding period) is unconventional but useful for comparing the true long-run cost of homeownership. A £25,000 SDLT bill amortised over 10 years is £208/month — material enough to be in the affordability conversation, not just the cash-at-completion conversation.</p>
+  </section>
+</div>
+
+
+<div class="container" style="padding-top:0">
+<div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="1620134192"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2>
+    <details class="faq-item"><summary class="faq-q">Does a UK mortgage calculator include Stamp Duty?</summary><div class="faq-a">Most don't — they show only the principal and interest (P&amp;I) repayment. This calculator does include SDLT because the tax is a real component of the cash you need at completion, and amortised over a typical holding period it adds £100-£400 per month to the true cost of owning the property. SDLT is auto-computed from the property price using the post-1 April 2025 bands (nil up to £125k, 2% to £250k, 5% to £925k, 10% to £1.5m, 12% above), with first-time-buyer relief and the additional-property surcharge applied via the form toggles.</div></details>
+    <details class="faq-item"><summary class="faq-q">Is buildings insurance compulsory for a UK mortgage?</summary><div class="faq-a">Yes. Every UK lender requires buildings insurance in force before they will release the mortgage funds at completion. The cover must be on a reinstatement basis (the cost to rebuild the property) for the lender's full security interest. Contents insurance is separate and optional — it protects what's inside the property, not the structure itself. Typical buildings premiums run £150-£400/year for a standard property; flood-risk postcodes and listed buildings can be materially higher.</div></details>
+    <details class="faq-item"><summary class="faq-q">How is council tax calculated, and can I add it to my mortgage payment?</summary><div class="faq-a">Council tax is calculated by the Valuation Office Agency (VOA), which assigns each property to one of eight bands (A through H) based on the property's market value as at 1 April 1991 in England. Your local authority then publishes a band-D rate each year, with a multiplier for the other bands. You cannot add council tax to your mortgage payment — it's paid separately to the local authority, usually across 10 monthly instalments April to January, with 12-month payment available on request. The calculator divides annual council tax by 12 to give you the monthly figure to budget against.</div></details>
+    <details class="faq-item"><summary class="faq-q">What's the difference between buildings insurance reinstatement value and market value?</summary><div class="faq-a">Reinstatement value is the cost to rebuild the property from scratch on the same plot — bricks, labour, professional fees, demolition, and clearance. Market value is what the property would sell for, which includes the land. The land itself cannot burn down, flood, or collapse, so insurers cover reinstatement only. Reinstatement is typically 50-80% of market value for a typical UK property; the gap is largest in London where land prices dominate. Under-insuring on reinstatement value is the most common cause of disputed claims. The ABI publishes a free rebuild cost calculator at abi.org.uk.</div></details>
+    <details class="faq-item"><summary class="faq-q">How does first-time-buyer SDLT relief change my monthly cost?</summary><div class="faq-a">First-time buyer relief in England and Northern Ireland (reverted to its long-term shape on 1 April 2025) charges nil SDLT on the portion of the price up to £300,000 and 5% on the portion £300,001-£500,000. No FTB relief is available on purchases above £500,000 — standard rates apply to the full price. On a £350,000 FTB purchase, standard SDLT is £7,500 (£2,500 on the £125-£250k band plus £5,000 on the £250-£350k slice) but FTB relief charges only £2,500 (5% on the £50k slice above the £300k threshold) — a £5,000 saving; on a £500,000 FTB purchase, relief saves £6,250. Tick the FTB box in the calculator and SDLT updates automatically. Scotland (LBTT) and Wales (LTT) have their own first-time-buyer schemes with different thresholds.</div></details>
+    <details class="faq-item"><summary class="faq-q">What about leasehold service charges and ground rent?</summary><div class="faq-a">Leasehold service charges and ground rent are not included in this calculator because they vary so dramatically by property they would distort cross-comparison. If you are buying a leasehold flat, expect ground rent of £200-£500/year (often more on older leases) and service charges of £1,000-£5,000/year for typical blocks, with new-build prime developments running into five figures annually. New leasehold houses sold after 30 June 2022 cannot levy ground rent under the Leasehold Reform (Ground Rent) Act 2022, but existing leases are unaffected. Budget separately and ask the seller's solicitor for at least three years of historic service charge accounts before you exchange contracts.</div></details>
+    <details class="faq-item"><summary class="faq-q">How accurate is the 1% maintenance reserve assumption?</summary><div class="faq-a">The 1% rule of thumb is what the RICS uses for typical UK housing stock — a sensible default for properties built in the last 50 years in standard construction (cavity brick or modern timber-frame). Pre-1900 properties, listed buildings, and homes with non-standard construction (cob, single-skin brick, prefab reinforced concrete) routinely run at 2-3% of property value per year over a 20-year window because of more frequent roof, window, and structural work. The calculator uses 1% by default; if you are buying anything older or non-standard, override the maintenance input upward. The reserve is what you should set aside in a separate easy-access savings account — not what you'll spend every year, but a smoothed average across decades.</div></details>
+  </div>
+</div>
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="mortgage-with-tax-and-insurance"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+<script>
+function calculate(){
+  var homePrice   = parseFloat(document.getElementById('homePrice').value)   || 0;
+  var downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+  var rate        = parseFloat(document.getElementById('rate').value)        || 0;
+  var termYears   = parseInt(document.getElementById('termYears').value, 10) || 0;
+  var councilAnnual = parseFloat(document.getElementById('councilBand').value) || 0;
+  var insurance   = parseFloat(document.getElementById('insurance').value)   || 0;
+  var maintPct    = parseFloat(document.getElementById('maintenancePct').value) || 0;
+  var holdYears   = parseInt(document.getElementById('holdYears').value, 10) || 1;
+  var isFTB       = document.getElementById('firstTimeBuyer').checked;
+  var isAddl      = document.getElementById('additionalProperty').checked;
+
+  var fmt = function(v){ return '£' + Math.round(v).toLocaleString('en-GB'); };
+
+  // 1. P&I monthly
+  var loanAmount = Math.max(0, homePrice - downPayment);
+  var n = termYears * 12;
+  var r = (rate / 100) / 12;
+  var monthlyPI;
+  if(loanAmount <= 0 || n <= 0){
+    monthlyPI = 0;
+  } else if(r === 0){
+    monthlyPI = loanAmount / n;
+  } else {
+    var pow = Math.pow(1 + r, n);
+    monthlyPI = loanAmount * (r * pow) / (pow - 1);
+  }
+
+  // 2. SDLT (post-1 April 2025 bands)
+  var sdlt = computeSDLT(homePrice, isFTB, isAddl);
+
+  // 3. Monthly extras
+  var monthlyCouncil = councilAnnual / 12;
+  var monthlyInsurance = insurance / 12;
+  var monthlyMaint = (maintPct / 100) * homePrice / 12;
+  var monthlySDLTAmort = sdlt / (Math.max(1, holdYears) * 12);
+
+  var totalMonthly = monthlyPI + monthlyCouncil + monthlyInsurance + monthlyMaint + monthlySDLTAmort;
+  var monthlyExtras = monthlyCouncil + monthlyInsurance + monthlyMaint;
+
+  document.getElementById('r-true-monthly').textContent  = fmt(totalMonthly);
+  document.getElementById('r-pi').textContent            = fmt(monthlyPI);
+  document.getElementById('r-sdlt').textContent          = fmt(sdlt);
+  document.getElementById('r-monthly-extras').textContent = fmt(monthlyExtras);
+
+  // Breakdown
+  var rows = [
+    ['Principal &amp; Interest (P&amp;I)',  fmt(monthlyPI)],
+    ['Council tax (monthly equivalent)',    fmt(monthlyCouncil)],
+    ['Buildings insurance (monthly)',       fmt(monthlyInsurance)],
+    ['Maintenance reserve (' + maintPct + '%/yr)', fmt(monthlyMaint)],
+    ['SDLT amortised over ' + holdYears + ' yrs', fmt(monthlySDLTAmort)],
+    ['<strong>Total true monthly cost</strong>', '<strong>' + fmt(totalMonthly) + '</strong>'],
+    ['SDLT (one-off, paid at completion)',  fmt(sdlt)]
+  ];
+  document.getElementById('breakdown-body').innerHTML = rows.map(function(s){
+    return '<tr><td>' + s[0] + '</td><td class="td-right">' + s[1] + '</td></tr>';
+  }).join('');
+
+  var note = 'UK reference: SDLT bands use the post-1 April 2025 schedule (nil to £125k, 2% to £250k, 5% to £925k, 10% to £1.5m, 12% above). First-time-buyer relief: nil to £300k, 5% £300-500k, no relief above £500k. Additional-property surcharge: +5% on every band.';
+  if(isAddl){ note += ' Surcharge applied.'; }
+  if(isFTB && homePrice <= 500000){ note += ' FTB relief applied.'; }
+  if(isFTB && homePrice > 500000){ note += ' FTB relief NOT available — purchase exceeds £500k cap.'; }
+  var noteEl = document.getElementById('region-note');
+  if(noteEl) noteEl.textContent = note;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+
+function computeSDLT(price, isFTB, isAddl){
+  if(price <= 0) return 0;
+  var sdlt = 0;
+  if(isFTB && price <= 500000){
+    // FTB relief: nil to 300k, 5% 300-500k
+    if(price > 300000){
+      sdlt = (price - 300000) * 0.05;
+    }
+  } else {
+    // Standard bands: 0% to 125k, 2% 125-250k, 5% 250-925k, 10% 925k-1.5m, 12% above
+    var bands = [
+      [125000, 0.00],
+      [250000, 0.02],
+      [925000, 0.05],
+      [1500000, 0.10],
+      [Infinity, 0.12]
+    ];
+    var prev = 0;
+    for(var i = 0; i < bands.length; i++){
+      var upper = bands[i][0];
+      var pct = bands[i][1];
+      if(price <= prev) break;
+      var slice = Math.min(price, upper) - prev;
+      sdlt += slice * pct;
+      prev = upper;
+      if(price <= upper) break;
+    }
+  }
+  if(isAddl){
+    // 5% surcharge on the full price
+    sdlt += price * 0.05;
+  }
+  return sdlt;
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-21">21 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/take-home-pay/">💰 Take-Home Pay Calculator</a> — See your exact salary after all taxes and deductions — updated for 2026/27 tax rules in the USA, UK, and South Africa.</li>
+      <li><a href="/net-worth/">🏦 Net Worth Calculator</a> — Calculate your total net worth by entering your assets and liabilities below.</li>
+      <li><a href="/loan-payoff/">📉 Loan Payoff Calculator</a> — See exactly when your loan is paid off, how much interest you&#x27;ll pay, and how extra payments slash your debt.</li>
+      <li><a href="/savings-goal/">🎯 Savings Goal Calculator</a> — Enter your target amount and monthly savings to find out exactly when you&#x27;ll reach your goal.</li>
+      <li><a href="/emergency-fund/">🛡️ Emergency Fund Calculator</a> — Find out exactly how much you need in your emergency fund — and how long it will take to get there.</li>
+      <li><a href="/inflation-impact/">📊 Inflation Impact Calculator</a> — See how inflation erodes the value of money over time — and what it means for your savings.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+<div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="5980987973"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>

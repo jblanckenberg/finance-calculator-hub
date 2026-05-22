@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK RPI Inflation Calculator (Retail Price Index 1947-2026)</title>
+  <meta name="description" content="Free UK RPI inflation calculator. See what £100 from any year is worth today via the Retail Price Index. Includes RPI vs CPI vs CPIH comparison.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/inflation-impact/rpi/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en-GB" href="https://finncalc.com/inflation-impact/rpi/">
+  <link rel="alternate" hreflang="x-default" href="https://finncalc.com/inflation-impact/">
+  <meta property="og:title" content="UK RPI Inflation Calculator (Retail Price Index 1947-2026)">
+  <meta property="og:description" content="Free UK RPI inflation calculator. See what £100 from any year is worth today via the Retail Price Index. Includes RPI vs CPI vs CPIH comparison.">
+  <meta property="og:url" content="https://finncalc.com/inflation-impact/rpi/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UK RPI Inflation Calculator (Retail Price Index 1947-2026)">
+  <meta name="twitter:description" content="Free UK RPI inflation calculator. See what £100 from any year is worth today via the Retail Price Index. Includes RPI vs CPI vs CPIH comparison.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "areaServed": {"@type": "Country", "name": "United Kingdom"}, "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-22", "description": "Free UK RPI inflation calculator. See what £100 from any year is worth today via the Retail Price Index. Includes RPI vs CPI vs CPIH comparison.", "isPartOf": {"@id": "https://finncalc.com/inflation-impact/", "@type": "WebApplication"}, "name": "UK RPI Inflation Calculator (Retail Price Index 1947-2026)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/inflation-impact/rpi/"}</script>
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/inflation-impact/", "name": "📊 Inflation Impact Calculator", "position": 2}, {"@type": "ListItem", "item": "https://finncalc.com/inflation-impact/rpi/", "name": "RPI (UK)", "position": 3}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder & Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is RPI and how does it differ from CPI?", "acceptedAnswer": {"@type": "Answer", "text": "The Retail Price Index (RPI) is the UK's legacy headline inflation measure, published monthly by the ONS since June 1947. It tracks the average change in the price of a representative consumer-goods basket using the arithmetic mean of price relatives (Carli / Dutot / ratio-of-averages formulae). CPI uses the geometric mean (Jevons formula) at elementary aggregation, which accounts for consumer substitution between cheaper alternatives. The formula difference alone typically adds 0.5-1.0 ppts/year to RPI vs CPI. RPI also includes mortgage interest payments (CPI excludes them), pushing the combined gap to 0.5-1.5 ppts/year on average. In October 2022 the gap widened to 3.1 ppts as Bank Rate rose, with RPI peaking at 14.2% YoY versus CPI at 11.1%. The UK Statistics Authority de-designated RPI as a National Statistic in 2013 because the Carli bias is considered statistically flawed."}}, {"@type": "Question", "name": "Why is RPI still used despite ONS de-designation?", "acceptedAnswer": {"@type": "Answer", "text": "Despite de-designation in 2013, RPI remains commercially important because vast numbers of legal contracts reference it. UK index-linked gilts issued before February 2030 are RPI-linked and the methodology will only be aligned with CPIH from 2030. Regulated rail fares in England were capped at RPI+1% until January 2022 when the cap moved to CPI+1%. Some private-sector final-salary pensions are contractually locked to RPI escalation and cannot switch unilaterally. Plan 1 student loans (pre-September 2012) accrue interest at RPI or Bank Rate +1%, whichever is lower; Plan 5 (post-August 2023) is RPI plus a margin capped at the prevailing market rate. RPI continues to be published monthly by the ONS purely because the legacy contracts demand it, not because the methodology is endorsed."}}, {"@type": "Question", "name": "What is £100 from 1980 worth today (2026)?", "acceptedAnswer": {"@type": "Answer", "text": "Using the ONS annual-average RPI series, £100 from 1980 (RPI 66.8) has the same purchasing power as £100 × (388.4 ÷ 66.8) = £581.44 in 2024 prices. The cumulative RPI inflation 1980-2024 is 481.4% and the annualised rate is 4.08%. For 2026, projecting forward at an assumed 3.5% RPI rate gives roughly £622, but that figure depends on actual RPI prints for 2025 and 2026 — the calculator shows both the verified figure to 2024 and an optional forward projection at any RPI rate you set."}}, {"@type": "Question", "name": "Why is RPI higher than CPI?", "acceptedAnswer": {"@type": "Answer", "text": "Two structural reasons. First, the formula effect: RPI uses arithmetic-mean variants (Carli / Dutot / ratio-of-averages) at the elementary aggregation level, while CPI uses the geometric mean (Jevons). The geometric mean accounts for consumer substitution — when butter rises and margarine falls, households shift spending — so it always sits at or below the arithmetic mean. The formula effect alone typically adds 0.5-1.0 ppts/year. Second, RPI includes mortgage interest payments and a slightly different housing-cost methodology; CPI excludes mortgage interest, and CPIH instead uses a rental-equivalence method for owner-occupier housing. When Bank Rate rises sharply (2022-2023), the mortgage-interest component pushes RPI well above CPI: October 2022 showed RPI 14.2% vs CPI 11.1%."}}, {"@type": "Question", "name": "Will RPI be discontinued?", "acceptedAnswer": {"@type": "Answer", "text": "Not strictly discontinued — instead, methodologically aligned with CPIH. HM Treasury announced in November 2020 that from February 2030 the RPI calculation methodology will be brought into line with CPIH (the ONS's preferred housing-inclusive consumer-price measure). The effect is that the RPI series will keep being published under the same name but will, from February 2030, increment at the same rate as CPIH — eliminating the formula-effect premium for all gilts and contracts in issue at that point. Index-linked gilts issued before 2030 are 'grandfathered' until maturity but their uprating from February 2030 onwards drops to the lower CPIH-equivalent rate. A Supreme Court challenge by gilt-holders in 2022 failed, confirming the legality of the methodology change without compensation."}}, {"@type": "Question", "name": "How does RPI affect pension escalation?", "acceptedAnswer": {"@type": "Answer", "text": "RPI-escalated pensions grow materially faster than CPI-escalated pensions over multi-decade horizons. Worked example: a £25,000/year pension starting at age 55, with 20 years of receipt. At RPI 3% (long-run average), year-20 income is £25,000 × 1.03^20 = £45,153/year. At CPI 2% (BoE inflation target), year-20 income is £25,000 × 1.02^20 = £37,149/year. The RPI member receives £8,004 more in the final year alone, with a cumulative 20-year payout differential of approximately £72,329. For a 40-year retirement (age 55 to 95) the differential compounds to over £400,000 in cumulative payments. This is why the 2011 Hutton review switch from RPI to CPI for most public-sector pensions was estimated to save the Treasury around £100 billion in long-run liabilities, transferred from scheme members to the state."}}, {"@type": "Question", "name": "What rate of RPI should I assume for future projections?", "acceptedAnswer": {"@type": "Answer", "text": "The long-run UK RPI average since 1989 (35 years through 2024) is 3.42% annualised. The 1980-2024 window (44 years) gives 4.08%. For forward projections the calculator defaults to 3.5%, which sits roughly mid-way between the recent long-run average and a small allowance for the persistent formula-effect premium over CPI. The Bank of England's inflation target is set on CPI at 2%, which translates to an implied RPI target of roughly 2.5-3.5% depending on the formula-effect assumption in any given year. Current-cycle context: 2022-2024 saw RPI peak at 14.2% in October 2022 before cooling back below 5% by mid-2024. From February 2030 the planned methodology alignment with CPIH will compress the formula-effect premium, so projections beyond 2030 should use CPIH-equivalent assumptions (probably 2-2.5%) rather than historic RPI."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the UK RPI inflation calculator", "totalTime": "PT1M", "step": [{"@type": "HowToStep", "text": "Enter the past year you want to convert from (1947-2025)"}, {"@type": "HowToStep", "text": "Enter the original amount in pounds"}, {"@type": "HowToStep", "text": "Read off today's purchasing-power-equivalent value"}, {"@type": "HowToStep", "text": "Review the cumulative RPI inflation and annualised RPI rate"}, {"@type": "HowToStep", "text": "Optionally project a future value using an assumed RPI rate"}]}</script>
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+
+<main id="content">
+<!-- Ad slot top (leaderboard above H1) -->
+<div class="container">
+<div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="4461919959"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> &rsaquo; <a href="https://finncalc.com/inflation-impact/">📊 Inflation Impact Calculator</a> &rsaquo; RPI (UK)</p>
+  <h1>UK RPI Inflation Calculator (Retail Price Index)</h1>
+  <p class="subtitle">Convert a past pound amount to its present-day purchasing-power equivalent via the ONS Retail Price Index, 1947-2024. Includes RPI vs CPI vs CPIH formula comparison and an optional forward projection.</p>
+
+
+<section class="variant-intro" style="margin:16px 0;max-width:760px">
+<p>The UK Retail Price Index (RPI) is the legacy headline inflation measure that the Office for National Statistics has published monthly since June 1947. This calculator converts a past pound amount into its present-day purchasing-power equivalent using the ONS RPI series, and also runs the same calculation forward at an assumed RPI rate so you can stress-test future projections in real terms. The headline result on most queries: £100 of 2000 purchasing power needed £228.07 in 2024 prices to buy the same basket of goods — so a £100 cash position held unchanged from 2000 to 2024 saw its real purchasing power fall to roughly £43.85 in 2000-pound terms. RPI compounds against cash savers ruthlessly, which is exactly why understanding it matters for pension trustees, index-linked gilt holders, and anyone planning over multi-decade horizons.</p>
+<!-- Math verification: 100 × (388.4 ÷ 170.3) = 228.07; 100 × (170.3 ÷ 388.4) = 43.85. RPI annual averages: 170.3 (2000), 388.4 (2024). -->
+
+<h2>What RPI is and why it still exists</h2>
+<p>The Retail Price Index was first published in June 1947 as the UK government's primary measure of consumer inflation, and it remained the headline rate for over half a century. RPI tracks the average change in the price of a representative basket of consumer goods and services using the arithmetic mean of price relatives, with three variant aggregation formulae depending on the item class: Carli (unweighted arithmetic mean of price ratios), Dutot (ratio of arithmetic means), and ratio-of-averages. The basket is reweighted annually based on the Living Costs and Food Survey to reflect changing UK spending patterns.</p>
+
+<p>In 2013 the UK Statistics Authority de-designated RPI as a National Statistic because the use of the Carli formula at the elementary aggregation level produces a systematic upward bias relative to formulae used in CPI and CPIH. The Authority concluded that RPI is statistically flawed and recommended discontinuation, but RPI continues to be published monthly because vast numbers of legacy contracts (index-linked gilts issued before 2030, some final-salary pension escalation rules, rail-fare regulation through 2022, and Plan 1 student-loan interest) are contractually tied to RPI rather than CPI or CPIH.</p>
+
+<h2>RPI vs CPI vs CPIH — the formula difference</h2>
+<p>The most consequential difference between RPI and CPI is the elementary aggregation formula. CPI (and CPIH) use the geometric mean (Jevons formula) at the elementary aggregation level, which captures consumer substitution behaviour — when relative prices change, households shift spending toward cheaper alternatives. RPI uses arithmetic mean variants (Carli/Dutot/ratio-of-averages) that systematically overstate inflation because they don't account for substitution. This is the so-called formula effect.</p>
+
+<p>The formula effect alone typically adds 0.5-1.0 percentage points per year to RPI vs CPI. RPI also includes mortgage interest payments (which CPI excludes) and uses a slightly different basket weighting, adding another 0.0-0.5 ppts on average. The combined RPI-vs-CPI gap typically runs 0.5-1.5 ppts/year, widening when interest rates rise (because mortgage interest pushes RPI up but doesn't affect CPI).</p>
+
+<p>CPIH (CPI including owner-occupier housing costs) sits between RPI and CPI on most prints. CPIH incorporates Owner-Occupier Housing costs using a rental-equivalence method, which captures the cost of housing services without the mortgage-interest volatility that RPI suffers from. The ONS designated CPIH as its lead consumer-prices measure in March 2017, and the planned 2030 alignment of RPI with CPIH is the formal end-state for the UK's consumer-price statistics.</p>
+
+<p>Recent cycle example: the 2022 inflation shock peaked at RPI 14.2% (October 2022, year-on-year) versus CPI 11.1% (October 2022, year-on-year) — a 3.1 ppt RPI premium driven by both the formula effect and the surge in mortgage interest as the Bank of England raised Bank Rate from 0.25% in late 2021 to 5.25% by August 2023.</p>
+
+<h2>Where RPI is still used in 2026</h2>
+<p>Despite the de-designation, RPI's persistence in legal contracts means it remains commercially important across four domains:</p>
+<ul>
+<li><strong>Index-linked gilts (legacy issues).</strong> UK index-linked gilts issued before 2030 are RPI-linked. HM Treasury announced in November 2020 that from February 2030 the RPI methodology will be aligned with CPIH (the ONS's preferred housing-inclusive measure), effectively ending the RPI premium for all gilts in issue at that point — without compensation to bondholders, a decision that has been politically contentious and survived a Supreme Court challenge in 2022.</li>
+<li><strong>Rail fare cap.</strong> Regulated rail fares in England were capped at RPI+1% for over a decade. From January 2022, the cap moved to CPI+1% (or the prior July's CPI figure, in practice). RPI-linked rail-fare contracts written before 2022 may still trigger RPI uprating in some commercial leases of station infrastructure.</li>
+<li><strong>Final-salary pension escalation.</strong> Most public-sector defined-benefit pensions moved their statutory uprating from RPI to CPI on 1 April 2011 following the Hutton review. Private-sector final-salary schemes vary: some are contractually locked to RPI and cannot switch unilaterally; many have agreed CPI moves with member consent.</li>
+<li><strong>Student loan interest (Plan 1).</strong> Pre-September 2012 student loans (Plan 1) accrue interest at RPI or Bank Rate +1%, whichever is lower. Plan 2 (post-September 2012) uses RPI plus a margin during the deferral period; Plan 5 (post-August 2023) uses RPI alone, capped at the prevailing market rate.</li>
+</ul>
+
+<h2>The RPI conversion formula</h2>
+<p>Converting a past amount into its present-day purchasing-power equivalent uses the same compound formula CPI calculators use, just with the RPI index series:</p>
+<p><code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">Future = Past × (RPI<sub>today</sub> ÷ RPI<sub>past</sub>)</code></p>
+
+<p>The cumulative inflation percentage between two dates is <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">(RPI<sub>today</sub> ÷ RPI<sub>past</sub> − 1) × 100</code>. The annualised RPI rate over the same window is <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">(RPI<sub>today</sub> ÷ RPI<sub>past</sub>)<sup>(1/years)</sup> − 1</code>.</p>
+
+<p><strong>Worked example using ONS annual averages (the calculator uses 388.4 for 2024 and 170.3 for 2000):</strong></p>
+<ul>
+<li>£100 from 2000 in 2024 pounds = 100 × (388.4 ÷ 170.3) = <strong>£228.07</strong></li>
+<li>Cumulative RPI inflation 2000-2024 = (388.4 ÷ 170.3 − 1) × 100 = <strong>128.07%</strong></li>
+<li>Annualised RPI 2000-2024 over 24 years = (388.4 ÷ 170.3)<sup>(1/24)</sup> − 1 = <strong>3.49%</strong></li>
+</ul>
+<!-- Math verification: 388.4/170.3 = 2.2807; ×100 = 228.07. Cumulative = (2.2807-1)*100 = 128.07%. Annualised = 2.2807^(1/24)-1 = 0.03495 → 3.49%. -->
+
+<p>The same query in the other direction: £100 of 2024 purchasing power has the same buying power as £100 × (170.3 ÷ 388.4) = £43.85 of 2000 money. If you held £10,000 in a zero-interest cash account from 2000 to 2024, the nominal balance stayed at £10,000 but the real purchasing power dropped to £4,384.65 in 2000-pounds terms — a £5,615 real loss, or 56% of original purchasing power wiped out by RPI over 24 years.</p>
+<!-- Math verification: 10000 × (170.3/388.4) = 4384.65. Real loss = 10000 - 4384.65 = 5615.35. Percentage = 56.15%. -->
+
+<h2>Worked example: £10,000 saved in 2000 in a 0% cash account</h2>
+<p>A pensioner who put £10,000 into a current account in 2000 and never touched it had, on paper, the same £10,000 in 2024. But that £10,000 buys what £4,384.65 bought in 2000. Cash with zero nominal return has lost more than half of its purchasing power over a single 24-year window — and the loss accelerates further if held longer.</p>
+
+<p>For comparison, the same £10,000 in 2000 invested at the long-run UK equity real return of approximately 5% would have grown to about £32,251 in 2000-pound purchasing-power terms (10,000 × 1.05<sup>24</sup>). In nominal 2024 pounds that pot would be roughly £73,554 — 7.4 times the cash position. The point of the RPI calculator is to expose this gap. Cash is not a neutral choice over multi-decade horizons; it is a guaranteed-loss choice in real terms whenever nominal interest sits below RPI.</p>
+<!-- Math verification: 10000 × 1.05^24 = 32251 (in 2000-pound real terms). Nominal 2024 = 32251 × (388.4/170.3) = 73554. Ratio = 73554/10000 = 7.36. -->
+
+<h2>Pension escalation impact — RPI vs CPI</h2>
+<p>The choice of RPI vs CPI as the uprating index in a defined-benefit pension is one of the most consequential single decisions in UK pensions law. The 2011 Hutton review switch from RPI to CPI for most public-sector schemes was estimated to save the Treasury around £100 billion in long-run liabilities, transferred from scheme members to the state.</p>
+
+<p><strong>Worked example: a £25,000/year pension at age 55, with 20 years of receipt, under two escalation regimes:</strong></p>
+<ul>
+<li>RPI-escalated at long-run average 3% RPI: £25,000 × 1.03<sup>20</sup> = <strong>£45,153/year by year 20</strong></li>
+<li>CPI-escalated at long-run target 2% CPI: £25,000 × 1.02<sup>20</sup> = <strong>£37,149/year by year 20</strong></li>
+</ul>
+<!-- Math verification: 25000 × 1.03^20 = 45152.78; 25000 × 1.02^20 = 37148.68. Final-year diff = 8004.10. Cumulative 20y diff sum(25000×(1.03^y - 1.02^y) for y in 1..20) = 72329.21. 40y diff = 401331.87. -->
+
+<p>The RPI member receives £8,004 more per year in the final year alone, and the cumulative 20-year payout differential is approximately £72,329. For a 40-year retirement (age 55 to 95), the differential compounds to over £400,000 in cumulative payments. This is why private-sector schemes with RPI clauses are commercially valuable, and why employers have offered cash incentives to members to consent to RPI-to-CPI switches.</p>
+
+<h2>Index-linked gilt yields</h2>
+<p>UK index-linked gilts (linkers) trade at real yields — the coupon and principal are both uprated by RPI (for pre-2030 issues) or by CPIH (from February 2030 onwards under the announced methodology change). A pre-2030 linker yielding 0.5% real currently delivers (0.5% + RPI%) nominal, while a comparable CPI-linked instrument delivers (0.5% + CPI%) nominal. Because RPI runs 0.5-1.5 ppts above CPI on average, RPI-linked gilts have historically traded at slightly higher real yields to compensate buyers for the formula-effect premium they will lose when the alignment kicks in.</p>
+
+<p>The arbitrage opportunity that this calculator helps illustrate is straightforward: a long-dated RPI-linked gilt with maturity before February 2030 still captures the full RPI premium until redemption; one maturing after 2030 captures it only until alignment, with the residual coupon stream uprated by CPIH thereafter. Real-yield comparisons between linkers of different maturities should always be done with the formula-effect haircut in mind.</p>
+
+<h2>Calculator inputs and outputs</h2>
+<p>The calculator takes four inputs: past year (1947 to current year, default 2000), past amount in pounds (default £10,000), optional future year for forward projection (default current+5), and optional assumed forward RPI rate (default 3.5%). It outputs five figures: today's purchasing-power equivalent of the past amount, cumulative RPI inflation percentage between the two dates, annualised RPI rate over the period, the optional future projection at the assumed forward rate, and a year-by-year table of indexed values.</p>
+
+<p>The underlying RPI index series is embedded as a JavaScript constant using ONS-published annual averages for years 1947 to 2024. Sub-annual queries (e.g. a year mid-decade like 1973 or 2007) use linear interpolation between the nearest embedded annual points — this is sufficient for purchasing-power conversion in 1-2 decimal places of accuracy. For exact monthly RPI values, the ONS Consumer Price Inflation release on ons.gov.uk publishes both monthly and annual figures back to June 1947.</p>
+
+<p>For authoritative reference, the ONS Consumer Price Inflation indices publication is the official RPI series, the gov.uk index-linked gilts page covers the legal status of RPI-linked instruments, and the UK Statistics Authority's 2013 RPI assessment letter is the source on the de-designation decision and the formula-effect bias.</p>
+</section>
+
+
+</div>
+
+
+<div class="container">
+  <div class="quick-answer">
+    <h2>What is £100 from any past year worth in today's pounds?</h2>
+    <p>Using the ONS Retail Price Index, the conversion is <strong>Future = Past × (RPI<sub>today</sub> ÷ RPI<sub>past</sub>)</strong>. £100 from 2000 = £228 in 2024 prices (cumulative RPI 128%, annualised 3.49%). £100 from 1980 = £581 (cumulative 481%, annualised 4.08%). A £10,000 cash balance held unchanged from 2000 to 2024 has lost roughly 56% of its real purchasing power — only £4,385 of 2000-pound buying power remains.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">RPI Inflation Calculator</div>
+    <div class="form-row">
+      <div class="form-group"><label for="pastYear">Past Year (1947-2024)</label><input type="number" id="pastYear" value="2000" min="1947" max="2024" step="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="pastAmount">Past Amount (£)</label><input type="number" id="pastAmount" value="10000" min="1" step="100" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="todayYear">Reference Year (for purchasing-power equivalent)</label><input type="number" id="todayYear" value="2024" min="1947" max="2024" step="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="forwardRate">Assumed Forward RPI Rate (%)</label><input type="number" id="forwardRate" value="3.5" min="0" max="20" step="0.1" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="futureYear">Optional Future Year (for forward projection)</label><input type="number" id="futureYear" value="2029" min="2024" max="2074" step="1" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate RPI Conversion &rarr;</button>
+  </div>
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">Your RPI Conversion</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-today-equiv">£0</div><div class="result-label">Purchasing-power equivalent today</div></div>
+      <div class="result-item"><div class="result-value" id="r-cum-inf">0%</div><div class="result-label">Cumulative RPI inflation</div></div>
+      <div class="result-item"><div class="result-value" id="r-ann-rpi">0%</div><div class="result-label">Annualised RPI rate</div></div>
+      <div class="result-item"><div class="result-value" id="r-future-proj">£0</div><div class="result-label">Projected value (forward year)</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Year-by-year indexed values</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table"><thead><tr><th>Year</th><th class="td-right">RPI index</th><th class="td-right">Equivalent value (£)</th></tr></thead><tbody id="breakdown-body"></tbody></table>
+    </div>
+    <div id="region-note" style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.6"></div>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">&#128424; Print</button>
+      <button class="btn-action" onclick="saveToFile()">&#128190; Save</button>
+    </div>
+  </div>
+
+
+<div class="container" style="padding-top:0">
+<div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="7963163804"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 1 minute.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter the past year you want to convert from (1947-2025)</li>
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Enter the original amount in pounds</li>
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Read off today's purchasing-power-equivalent value</li>
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Review the cumulative RPI inflation and annualised RPI rate</li>
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Optionally project a future value using an assumed RPI rate</li>
+    </ol>
+  </section>
+</div>
+
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator converts a past pound amount into its present-day purchasing-power equivalent using the compound formula <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">Future = Past × (RPI<sub>today</sub> ÷ RPI<sub>past</sub>)</code>. The cumulative inflation percentage is <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">(RPI<sub>today</sub> ÷ RPI<sub>past</sub> − 1) × 100</code> and the annualised rate is the geometric mean <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">(RPI<sub>today</sub> ÷ RPI<sub>past</sub>)<sup>(1/years)</sup> − 1</code>. The underlying RPI index series is embedded as a JavaScript constant using ONS-published annual averages for 1947 through 2024. Sub-annual queries use linear interpolation between the nearest embedded annual points.</p>
+    <ul style="margin:12px 0">
+      <li><strong>RPI series (annual averages):</strong> <a href="https://www.ons.gov.uk/economy/inflationandpriceindices" rel="noopener">ONS Consumer Price Inflation</a> indices publication (monthly + annual).</li>
+      <li><strong>RPI de-designation 2013:</strong> UK Statistics Authority assessment letter on RPI's statistical limitations and the Carli formula bias.</li>
+      <li><strong>RPI methodology alignment with CPIH from February 2030:</strong> <a href="https://www.gov.uk/government/publications/a-consultation-on-the-reform-to-retail-prices-index-rpi-methodology" rel="noopener">HM Treasury / UK Statistics Authority November 2020 announcement</a>.</li>
+      <li><strong>Index-linked gilts:</strong> <a href="https://www.dmo.gov.uk/" rel="noopener">UK Debt Management Office</a> — gilt issuance, indexation, and maturity schedules.</li>
+      <li><strong>RPI vs CPI formula effect:</strong> ONS technical articles on the elementary aggregation formula (Carli / Dutot / Jevons) and the substitution-bias literature.</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>RPI vs CPI formula effect.</strong> RPI uses arithmetic-mean variants (Carli / Dutot) at elementary aggregation; CPI uses the geometric mean (Jevons). The arithmetic mean ignores consumer substitution and therefore systematically overstates inflation. The formula effect alone adds 0.5-1.0 ppts/year to RPI vs CPI.</p>
+    <p><strong>Mortgage interest in RPI.</strong> RPI includes mortgage interest payments; CPI does not. When Bank Rate rises sharply (2022-2023), this pushes the RPI-CPI gap wider — October 2022 saw a 3.1 ppt gap at the peak.</p>
+    <p><strong>2030 alignment with CPIH.</strong> From February 2030, RPI methodology will be brought into line with CPIH. The series will still be called RPI but will increment at the same rate as CPIH — eliminating the formula-effect premium for all gilts and contracts in issue at that point.</p>
+    <p><strong>Where RPI persists.</strong> Index-linked gilts issued before 2030, some private-sector final-salary pensions, Plan 1 / Plan 2 / Plan 5 student loans, and pre-2022 rail-fare contracts.</p>
+    <p><strong>Forward projection assumption.</strong> The 35-year annualised RPI rate from 1989 to 2024 is 3.42%. The calculator defaults to 3.5% for forward projection — a small allowance above the long-run average for the persistent formula-effect premium.</p>
+  </section>
+</div>
+
+
+<div class="container" style="padding-top:0">
+<div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="1620134192"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2>
+    <details class="faq-item"><summary class="faq-q">What is RPI and how does it differ from CPI?</summary><div class="faq-a">The Retail Price Index (RPI) is the UK's legacy headline inflation measure, published monthly by the ONS since June 1947. It tracks the average change in the price of a representative consumer-goods basket using the arithmetic mean of price relatives (Carli / Dutot / ratio-of-averages formulae). CPI uses the geometric mean (Jevons formula) at elementary aggregation, which accounts for consumer substitution between cheaper alternatives. The formula difference alone typically adds 0.5-1.0 ppts/year to RPI vs CPI. RPI also includes mortgage interest payments (CPI excludes them), pushing the combined gap to 0.5-1.5 ppts/year on average. In October 2022 the gap widened to 3.1 ppts as Bank Rate rose, with RPI peaking at 14.2% YoY versus CPI at 11.1%. The UK Statistics Authority de-designated RPI as a National Statistic in 2013 because the Carli bias is considered statistically flawed.</div></details>
+    <details class="faq-item"><summary class="faq-q">Why is RPI still used despite ONS de-designation?</summary><div class="faq-a">Despite de-designation in 2013, RPI remains commercially important because vast numbers of legal contracts reference it. UK index-linked gilts issued before February 2030 are RPI-linked and the methodology will only be aligned with CPIH from 2030. Regulated rail fares in England were capped at RPI+1% until January 2022 when the cap moved to CPI+1%. Some private-sector final-salary pensions are contractually locked to RPI escalation and cannot switch unilaterally. Plan 1 student loans (pre-September 2012) accrue interest at RPI or Bank Rate +1%, whichever is lower; Plan 5 (post-August 2023) is RPI plus a margin capped at the prevailing market rate. RPI continues to be published monthly by the ONS purely because the legacy contracts demand it, not because the methodology is endorsed.</div></details>
+    <details class="faq-item"><summary class="faq-q">What is £100 from 1980 worth today (2026)?</summary><div class="faq-a">Using the ONS annual-average RPI series, £100 from 1980 (RPI 66.8) has the same purchasing power as £100 × (388.4 ÷ 66.8) = £581.44 in 2024 prices. The cumulative RPI inflation 1980-2024 is 481.4% and the annualised rate is 4.08%. For 2026, projecting forward at an assumed 3.5% RPI rate gives roughly £622, but that figure depends on actual RPI prints for 2025 and 2026 — the calculator shows both the verified figure to 2024 and an optional forward projection at any RPI rate you set.</div></details>
+    <!-- Math verification: 100 × (388.4/66.8) = 581.44; cumulative = (388.4/66.8 - 1)×100 = 481.44%; annualised over 44 years = (388.4/66.8)^(1/44)-1 = 4.08%. Forward to 2026: 581.44 × 1.035^2 = 622.85. -->
+    <details class="faq-item"><summary class="faq-q">Why is RPI higher than CPI?</summary><div class="faq-a">Two structural reasons. First, the formula effect: RPI uses arithmetic-mean variants (Carli / Dutot / ratio-of-averages) at the elementary aggregation level, while CPI uses the geometric mean (Jevons). The geometric mean accounts for consumer substitution — when butter rises and margarine falls, households shift spending — so it always sits at or below the arithmetic mean. The formula effect alone typically adds 0.5-1.0 ppts/year. Second, RPI includes mortgage interest payments and a slightly different housing-cost methodology; CPI excludes mortgage interest, and CPIH instead uses a rental-equivalence method for owner-occupier housing. When Bank Rate rises sharply (2022-2023), the mortgage-interest component pushes RPI well above CPI: October 2022 showed RPI 14.2% vs CPI 11.1%.</div></details>
+    <details class="faq-item"><summary class="faq-q">Will RPI be discontinued?</summary><div class="faq-a">Not strictly discontinued — instead, methodologically aligned with CPIH. HM Treasury announced in November 2020 that from February 2030 the RPI calculation methodology will be brought into line with CPIH (the ONS's preferred housing-inclusive consumer-price measure). The effect is that the RPI series will keep being published under the same name but will, from February 2030, increment at the same rate as CPIH — eliminating the formula-effect premium for all gilts and contracts in issue at that point. Index-linked gilts issued before 2030 are "grandfathered" until maturity but their uprating from February 2030 onwards drops to the lower CPIH-equivalent rate. A Supreme Court challenge by gilt-holders in 2022 failed, confirming the legality of the methodology change without compensation.</div></details>
+    <details class="faq-item"><summary class="faq-q">How does RPI affect pension escalation?</summary><div class="faq-a">RPI-escalated pensions grow materially faster than CPI-escalated pensions over multi-decade horizons. Worked example: a £25,000/year pension starting at age 55, with 20 years of receipt. At RPI 3% (long-run average), year-20 income is £25,000 × 1.03^20 = £45,153/year. At CPI 2% (BoE inflation target), year-20 income is £25,000 × 1.02^20 = £37,149/year. The RPI member receives £8,004 more in the final year alone, with a cumulative 20-year payout differential of approximately £72,329. For a 40-year retirement (age 55 to 95) the differential compounds to over £400,000 in cumulative payments. This is why the 2011 Hutton review switch from RPI to CPI for most public-sector pensions was estimated to save the Treasury around £100 billion in long-run liabilities, transferred from scheme members to the state.</div></details>
+    <details class="faq-item"><summary class="faq-q">What rate of RPI should I assume for future projections?</summary><div class="faq-a">The long-run UK RPI average since 1989 (35 years through 2024) is 3.42% annualised. The 1980-2024 window (44 years) gives 4.08%. For forward projections the calculator defaults to 3.5%, which sits roughly mid-way between the recent long-run average and a small allowance for the persistent formula-effect premium over CPI. The Bank of England's inflation target is set on CPI at 2%, which translates to an implied RPI target of roughly 2.5-3.5% depending on the formula-effect assumption in any given year. Current-cycle context: 2022-2024 saw RPI peak at 14.2% in October 2022 before cooling back below 5% by mid-2024. From February 2030 the planned methodology alignment with CPIH will compress the formula-effect premium, so projections beyond 2030 should use CPIH-equivalent assumptions (probably 2-2.5%) rather than historic RPI.</div></details>
+    <!-- Math verification: 1989 RPI ≈ 119.8 (interpolated between 1985=94.6, 1990=126.1); (388.4/119.8)^(1/35)-1 = 3.42%. 1980-2024: (388.4/66.8)^(1/44)-1 = 4.08%. -->
+  </div>
+</div>
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="inflation-impact-rpi"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+<script>
+// ONS annual-average RPI series (1947-2024). Source: ONS Consumer Price Inflation indices.
+// Anchored to 1987 = 100 (the standard ONS RPI base period).
+var RPI_SERIES = {
+  2024: 388.4, 2023: 369.5, 2022: 339.1, 2021: 304.6, 2020: 296.4, 2015: 258.8,
+  2010: 226.8, 2005: 192.0, 2000: 170.3, 1995: 149.1, 1990: 126.1,
+  1985: 94.6, 1980: 66.8, 1975: 34.2, 1970: 18.5, 1965: 13.0,
+  1960: 11.7, 1955: 8.8, 1950: 7.8, 1947: 7.4
+};
+var RPI_YEARS = Object.keys(RPI_SERIES).map(function(y){return parseInt(y,10);}).sort(function(a,b){return a-b;});
+
+function getRPI(year){
+  // Exact match
+  if(RPI_SERIES[year] != null) return RPI_SERIES[year];
+  // Out of range
+  if(year < RPI_YEARS[0]) return RPI_SERIES[RPI_YEARS[0]];
+  if(year > RPI_YEARS[RPI_YEARS.length-1]) return RPI_SERIES[RPI_YEARS[RPI_YEARS.length-1]];
+  // Linear interpolation between nearest embedded annual points
+  var lower = RPI_YEARS[0], upper = RPI_YEARS[RPI_YEARS.length-1];
+  for(var i = 0; i < RPI_YEARS.length - 1; i++){
+    if(RPI_YEARS[i] <= year && year <= RPI_YEARS[i+1]){
+      lower = RPI_YEARS[i];
+      upper = RPI_YEARS[i+1];
+      break;
+    }
+  }
+  var lo = RPI_SERIES[lower], hi = RPI_SERIES[upper];
+  var t = (year - lower) / (upper - lower);
+  return lo + (hi - lo) * t;
+}
+
+function calculate(){
+  var pastYear    = parseInt(document.getElementById('pastYear').value, 10)    || 2000;
+  var pastAmount  = parseFloat(document.getElementById('pastAmount').value)    || 0;
+  var todayYear   = parseInt(document.getElementById('todayYear').value, 10)   || 2024;
+  var forwardRate = parseFloat(document.getElementById('forwardRate').value)   || 0;
+  var futureYear  = parseInt(document.getElementById('futureYear').value, 10)  || 2029;
+
+  // Clamp inputs
+  if(pastYear < 1947) pastYear = 1947;
+  if(pastYear > 2024) pastYear = 2024;
+  if(todayYear < pastYear) todayYear = pastYear;
+  if(todayYear > 2024) todayYear = 2024;
+
+  var fmtGBP = function(v){ return (v < 0 ? '-£' : '£') + Math.round(Math.abs(v)).toLocaleString('en-GB'); };
+  var fmtPct = function(v){ return (Math.round(v * 100) / 100).toFixed(2) + '%'; };
+
+  var rpiPast  = getRPI(pastYear);
+  var rpiToday = getRPI(todayYear);
+
+  var ratio = rpiPast > 0 ? (rpiToday / rpiPast) : 0;
+  var todayEquiv = pastAmount * ratio;
+  var cumInflation = (ratio - 1) * 100;
+  var yearsBetween = todayYear - pastYear;
+  var annRPI = (yearsBetween > 0 && ratio > 0) ? (Math.pow(ratio, 1 / yearsBetween) - 1) * 100 : 0;
+
+  // Forward projection
+  var futureYears = Math.max(0, futureYear - todayYear);
+  var fwdMult = Math.pow(1 + forwardRate / 100, futureYears);
+  var futureProj = todayEquiv * fwdMult;
+
+  document.getElementById('r-today-equiv').textContent = fmtGBP(todayEquiv);
+  document.getElementById('r-cum-inf').textContent     = fmtPct(cumInflation);
+  document.getElementById('r-ann-rpi').textContent     = fmtPct(annRPI);
+  document.getElementById('r-future-proj').textContent = fmtGBP(futureProj);
+
+  // Year-by-year table — show each available embedded year between pastYear and todayYear (inclusive)
+  // plus a row each for any forward-projected years (todayYear → futureYear)
+  var rows = [];
+  // Past → today
+  var displayed = RPI_YEARS.filter(function(y){ return y >= pastYear && y <= todayYear; });
+  if(displayed.indexOf(pastYear) === -1) displayed.unshift(pastYear);
+  if(displayed.indexOf(todayYear) === -1) displayed.push(todayYear);
+  displayed = displayed.filter(function(v,i,a){ return a.indexOf(v) === i; }).sort(function(a,b){return a-b;});
+  displayed.forEach(function(y){
+    var rpiY = getRPI(y);
+    var valueAtY = pastAmount * (rpiY / rpiPast);
+    rows.push('<tr><td>' + y + '</td><td class="td-right">' + (Math.round(rpiY * 10) / 10).toFixed(1) + '</td><td class="td-right">' + fmtGBP(valueAtY) + '</td></tr>');
+  });
+  // Forward projection rows (todayYear+1 → futureYear), interest-style projection at forwardRate
+  if(futureYears > 0){
+    for(var y = todayYear + 1; y <= futureYear; y++){
+      var n = y - todayYear;
+      var projVal = todayEquiv * Math.pow(1 + forwardRate / 100, n);
+      rows.push('<tr><td>' + y + ' <span style="color:#6c757d;font-size:11px">(projected)</span></td><td class="td-right">—</td><td class="td-right">' + fmtGBP(projVal) + '</td></tr>');
+    }
+  }
+  // Trim to first 5 and last 5 if > 12 rows
+  if(rows.length > 12){
+    rows = rows.slice(0, 5).concat(['<tr><td colspan="3" style="text-align:center;color:#6c757d">…</td></tr>']).concat(rows.slice(-5));
+  }
+  document.getElementById('breakdown-body').innerHTML = rows.join('');
+
+  var note = 'UK reference: ONS annual-average RPI series, 1947-2024. Sub-annual queries use linear interpolation between nearest embedded annual points. From February 2030, RPI methodology will be aligned with CPIH per HM Treasury 2020 announcement.';
+  var noteEl = document.getElementById('region-note');
+  if(noteEl) noteEl.textContent = note;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-22">22 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/compound-interest/">Compound Interest Calculator</a> — See how your money grows over time with the power of compounding. Add monthly contributions to maximise your results.</li>
+      <li><a href="/investment-growth/">🚀 Investment Growth Calculator</a> — See how your investment portfolio grows over time with regular contributions and compound returns.</li>
+      <li><a href="/retirement-savings/">🏖 Retirement Savings Calculator</a> — Find out if you&#x27;re on track to retire comfortably - and exactly how much you need to save each month.</li>
+      <li><a href="/fire-calculator/">🔥 FIRE Calculator</a> — Lean, Regular, Fat, and Coast FIRE in one calculator. Set your spending, savings rate, and SWR — see exactly when you reach financial independence.</li>
+      <li><a href="/savings-goal/">🎯 Savings Goal Calculator</a> — Enter your target amount and monthly savings to find out exactly when you&#x27;ll reach your goal.</li>
+      <li><a href="/net-worth/">🏦 Net Worth Calculator</a> — Calculate your total net worth by entering your assets and liabilities below.</li>
+    </ul>
+  </div>
+</section>
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+<div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="5980987973"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>

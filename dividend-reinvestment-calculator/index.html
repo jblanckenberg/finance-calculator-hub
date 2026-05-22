@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="theme-color" content="#1B3A5C">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dividend Reinvestment Calculator — DRIP Compounding | FinCalcHub</title>
+  <title>Dividend Reinvestment Calculator — DRIP Compounding</title>
   <meta name="description" content="Free dividend reinvestment (DRIP) calculator. See how much extra wealth automatic dividend reinvestment generates compared to taking dividends as cash.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://finncalc.com/dividend-reinvestment-calculator/">
-  <meta property="og:title" content="Dividend Reinvestment Calculator — DRIP Compounding | FinCalcHub">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <meta property="og:title" content="Dividend Reinvestment Calculator — DRIP Compounding">
   <meta property="og:description" content="Free dividend reinvestment (DRIP) calculator. See how much extra wealth automatic dividend reinvestment generates compared to taking dividends as cash.">
   <meta property="og:url" content="https://finncalc.com/dividend-reinvestment-calculator/">
   <meta property="og:type" content="website">
@@ -19,15 +21,17 @@
   <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Dividend Reinvestment Calculator — DRIP Compounding | FinCalcHub">
+  <meta name="twitter:title" content="Dividend Reinvestment Calculator — DRIP Compounding">
   <meta name="twitter:description" content="Free dividend reinvestment (DRIP) calculator. See how much extra wealth automatic dividend reinvestment generates compared to taking dividends as cash.">
   <meta name="twitter:image" content="https://finncalc.com/og-image.png">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
   <link rel="stylesheet" href="/css/print.css" media="print">
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","applicationCategory":"FinanceApplication","dateModified":"2026-05-20","description":"Free dividend reinvestment (DRIP) calculator comparing reinvest vs cash-payout outcomes.","name":"Dividend Reinvestment Calculator","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web Browser","url":"https://finncalc.com/dividend-reinvestment-calculator/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-20", "description": "Free dividend reinvestment (DRIP) calculator comparing reinvest vs cash-payout outcomes.", "name": "Dividend Reinvestment Calculator", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/dividend-reinvestment-calculator/"}</script>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a DRIP?","acceptedAnswer":{"@type":"Answer","text":"A DRIP (Dividend Reinvestment Plan) automatically uses each dividend payment to buy more shares of the same stock or fund, rather than paying the cash to your account. Over decades the difference is enormous because the new shares themselves earn dividends, creating a compounding cycle."}},{"@type":"Question","name":"How much extra wealth does DRIP generate?","acceptedAnswer":{"@type":"Answer","text":"On a $10,000 investment at 8% price return and 2.5% dividend yield over 30 years, DRIP generates roughly 30-40% more ending wealth than taking dividends as cash. The exact figure depends on dividend yield (higher yield = bigger DRIP advantage) and time horizon (longer = exponentially bigger gap)."}},{"@type":"Question","name":"Are reinvested dividends still taxable?","acceptedAnswer":{"@type":"Answer","text":"Yes in a taxable brokerage account. The IRS treats reinvested dividends as if you received cash and immediately bought shares — you owe tax on them either way. In a tax-advantaged account (IRA, 401k, Roth, ISA, TFSA) reinvested dividends compound tax-free. This is the single biggest argument for holding dividend stocks in tax-advantaged accounts."}},{"@type":"Question","name":"What's the difference between price return and total return?","acceptedAnswer":{"@type":"Answer","text":"Price return is just the change in share price. Total return includes both price appreciation AND dividends received. For the S&P 500 since 1926, price return has averaged about 7%/year but total return (with reinvested dividends) is closer to 10%. Roughly 30% of long-run stock-market returns come from dividends — ignoring them dramatically understates expected wealth."}},{"@type":"Question","name":"Should I always reinvest dividends?","acceptedAnswer":{"@type":"Answer","text":"Almost always yes during the accumulation phase, especially in tax-advantaged accounts. The exceptions: retirees actively living off the dividend income, or anyone wanting to rebalance manually away from a concentrated position. For most long-term wealth-building, DRIP should be on by default."}},{"@type":"Question","name":"Can I set up DRIP for any stock?","acceptedAnswer":{"@type":"Answer","text":"Most major brokerages (Vanguard, Fidelity, Schwab, Interactive Brokers, etc.) let you toggle DRIP on a per-holding basis for free. ETFs and individual stocks both qualify. Some companies also offer direct DRIPs through their transfer agent that allow fractional-share purchases at no commission — Coca-Cola, Johnson & Johnson, and several utilities have these. UK and SA brokerages have similar features though branding varies."}},{"@type":"Question","name":"Does DRIP work with mutual funds?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most mutual funds support reinvesting both dividends and capital-gains distributions automatically. This is one reason index funds compound so well over decades — by default they reinvest everything internally so your share price appreciates rather than paying you cash periodically."}}]}</script>
 
@@ -35,7 +39,8 @@
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","name":"James Blanckenberg"},"description":"Step-by-step guide to using the Dividend Reinvestment Calculator.","name":"How to use the Dividend Reinvestment Calculator","step":[{"@type":"HowToStep","name":"Enter your starting investment","position":1,"text":"Initial dollar (or local currency) amount invested in dividend-paying stocks or funds.","url":"https://finncalc.com/dividend-reinvestment-calculator/#step-1"},{"@type":"HowToStep","name":"Set dividend yield and price return","position":2,"text":"Annual dividend yield (typically 2-4% for index funds, higher for utilities and REITs) and expected price appreciation.","url":"https://finncalc.com/dividend-reinvestment-calculator/#step-2"},{"@type":"HowToStep","name":"Pick your time horizon","position":3,"text":"Longer horizons make the DRIP advantage compound exponentially.","url":"https://finncalc.com/dividend-reinvestment-calculator/#step-3"}],"totalTime":"PT1M"}</script>
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","author":{"@id":"https://finncalc.com/authors/james-blanckenberg/#person","@type":"Person","jobTitle":"Founder & Editor, FinCalcHub","name":"James Blanckenberg","sameAs":["https://www.linkedin.com/in/james-blanckenberg-154a1312/"],"url":"https://finncalc.com/authors/james-blanckenberg/"}, "dateModified":"2026-05-20","datePublished":"2026-05-20","description":"Free dividend reinvestment (DRIP) calculator.","headline":"Dividend Reinvestment Calculator","inLanguage":"en","mainEntityOfPage":{"@id":"https://finncalc.com/dividend-reinvestment-calculator/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://finncalc.com/og-image.png"},"name":"FinCalcHub","url":"https://finncalc.com/"},"url":"https://finncalc.com/dividend-reinvestment-calculator/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder & Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "dateModified": "2026-05-20", "datePublished": "2026-05-20", "description": "Free dividend reinvestment (DRIP) calculator.", "headline": "Dividend Reinvestment Calculator", "inLanguage": "en", "mainEntityOfPage": {"@id": "https://finncalc.com/dividend-reinvestment-calculator/", "@type": "WebPage"}, "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://finncalc.com/og-image.png"}, "name": "FinCalcHub", "url": "https://finncalc.com/"}, "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/dividend-reinvestment-calculator/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder & Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
   <script>
@@ -337,8 +342,8 @@ document.addEventListener('DOMContentLoaded', function(){
   </div>
 </footer>
 
-<script src="/js/region.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
 
 </body>
 </html>

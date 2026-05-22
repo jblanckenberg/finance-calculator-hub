@@ -313,3 +313,14 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 24px 28px;
 .article-figure figcaption { font-size: 12px; color: #6b7280; text-align: center; margin-top: 8px; }
 .article-figure figcaption a { color: #6b7280; text-decoration: underline; }
 .article-figure figcaption a:hover { color: #1B3A5C; }
+
+/* Performance: defer paint for below-the-fold sections. The browser skips
+   layout/style/paint work for these until they enter the viewport. Paired
+   with contain-intrinsic-size so the browser reserves the canonical
+   section height up-front — scrollbar position stays stable and there is
+   no visible layout change when the section eventually paints. */
+.key-concepts,
+.try-scenarios {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}

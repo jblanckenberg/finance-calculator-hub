@@ -6,6 +6,15 @@
   <meta name="description" content="{{ page_description }}">
   <meta name="robots" content="{{ robots | default('index, follow') }}">
   <link rel="canonical" href="{{ canonical_url }}">
+{# Geo hreflang signals — populated by generate.py for locale-targeted pages
+   (UK/US/ZA variant calculators, country-themed blog posts, single-locale
+   calculators). Optional context var; non-geo pages render no extra tags.
+   Mirror of the rendered patcher in
+   _build/scripts/inject_geo_targeting_rendered.py. See SEO Recovery §4.5. #}
+{% if hreflang_links %}{% for link in hreflang_links %}  <link rel="alternate" hreflang="{{ link.lang }}" href="{{ link.href }}">
+{% endfor %}{% endif %}
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
   <meta property="og:title" content="{{ page_title }}">
   <meta property="og:description" content="{{ page_description }}">
   <meta property="og:url" content="{{ canonical_url }}">
@@ -24,5 +33,7 @@
   <meta name="twitter:image" content="https://finncalc.com/og-image.png">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
   <link rel="stylesheet" href="/css/print.css" media="print">

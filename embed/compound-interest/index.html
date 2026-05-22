@@ -8,9 +8,10 @@
   <meta name="description" content="Embedded compound interest calculator widget by FinCalcHub.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://finncalc.com/compound-interest/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
-  <link rel="stylesheet" href="/css/main.css">
   <style>
     /* Embed-only overrides: the chrome-less page has no sticky header so
        reset the body padding the main stylesheet bakes in for the header. */
@@ -25,6 +26,9 @@
     .embed-credit a { color: #1E88E5; text-decoration: none; }
   </style>
   <script defer data-domain="embed.finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
 </head>
 <body>
 
@@ -102,8 +106,8 @@
   <a href="https://finncalc.com/compound-interest/?utm_source=embed&amp;utm_medium=widget&amp;utm_campaign=compound-interest" target="_blank" rel="noopener">FinCalcHub</a>.
 </p>
 
-<script src="/js/region.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
 <script>
   var origSetRegion = setRegion;
   setRegion = function(region) {

@@ -13,6 +13,7 @@
 <body>
 {% include "partials/header.html" %}
 
+<main id="content">
 <!-- Ad slot top (leaderboard above H1) -->
 <div class="container">
   {% set slot_name = 'top' %}
@@ -40,6 +41,8 @@
 </div>
 {% endif %}
 
+{% include "partials/related_calculators.html" %}
+
 <!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
 <div class="container ad-footer-desktop">
   {% set slot_name = 'footer' %}
@@ -49,11 +52,12 @@
   .ad-footer-desktop { display: none; }
   @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
 </style>
+</main>
 
 {% include "partials/footer.html" %}
 
-<script src="/js/region.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
 {% block body_scripts %}{% endblock %}
 </body>
 </html>

@@ -6,9 +6,14 @@
 <title>Free Monthly Budget Calculator (50/30/20 Rule) | FinCalcHub</title>
 <meta name="description" content="Free monthly budget calculator using the 50/30/20 rule. Plan needs, wants, and savings — see your surplus or shortfall instantly. USA, UK, SA.">
 <meta name="robots" content="index, follow"><link rel="canonical" href="https://finncalc.com/budget/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
-<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/css/print.css" media="print">
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+<link rel="stylesheet" href="/css/print.css" media="print">
 <style>
 .budget-bar-wrap{margin:18px 0 8px;background:rgba(255,255,255,.1);border-radius:8px;overflow:hidden;height:22px;display:flex;}
 .budget-bar-needs{background:#1E88E5;height:100%;transition:width .4s;}
@@ -104,20 +109,7 @@
   }
 })();
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "50/30/20 Budget Planner",
-  "description": "Split your income into needs, wants, and savings using the 50/30/20 rule",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "All",
-  "url": "https://finncalc.com/budget/",
-  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-  "publisher": {"@type": "Organization", "name": "FinCalcHub", "url": "https://finncalc.com"},
-  "dateModified": "2026-05-19"
-}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-19", "description": "Split your income into needs, wants, and savings using the 50/30/20 rule", "name": "50/30/20 Budget Planner", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "All", "publisher": {"@type": "Organization", "name": "FinCalcHub", "url": "https://finncalc.com"}, "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/budget/"}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -202,6 +194,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".subtitle"]}}
 </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder & Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
   <script src="/js/cookie-consent.js" defer></script>
   <script src="/js/analytics-events.js" defer></script>
 
@@ -336,7 +329,7 @@
         — free profit margin, pricing, and cash flow calculators.
       </div>
 <div class="footer-bottom"><p>&copy; 2024 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
-<script src="/js/region.js"></script><script src="/js/main.js"></script>
+<script src="/js/region.js" defer></script><script src="/js/main.js" defer></script>
 <script>
 var origSet=setRegion;setRegion=function(r){origSet(r);var s={USA:'$',UK:'\u00a3',SA:'R'}[r]||'$';['s1','s2'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent='('+s+')';});if(document.getElementById('results').classList.contains('show'))calculate();};
 function v(id){return +document.getElementById(id).value||0;}

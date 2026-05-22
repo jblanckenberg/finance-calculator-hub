@@ -54,6 +54,54 @@ PUBLISHER_LD = {
 
 OPERATOR_STUB_PREFIX = "[OPERATOR_TO_FILL:"
 
+
+# Locale → Schema.org Country mapping. Used by the geo signal helpers below
+# and mirrored by _build/scripts/inject_geo_targeting_rendered.py. Geo
+# targeting per SEO Recovery Plan §4.5.
+_COUNTRY_NAME = {
+    "en-GB": "United Kingdom",
+    "en-US": "United States",
+    "en-ZA": "South Africa",
+}
+
+
+def country_area_served(locale: str | None) -> dict | None:
+    """Return a Schema.org `Country` dict for the given hreflang locale, or
+    None if the locale is unknown / unset."""
+    if not locale:
+        return None
+    name = _COUNTRY_NAME.get(locale)
+    if not name:
+        return None
+    return {"@type": "Country", "name": name}
+
+
+def hreflang_links_for_variant_cluster(
+    *, parent_slug: str, variants_for_parent: dict
+) -> list[dict]:
+    """Build the hreflang_links list for any page in a variant cluster (parent
+    or any of its geo siblings). Emits en-GB / en-US / en-ZA where the
+    variant exists, plus x-default → parent.
+
+    `variants_for_parent` is the entry from variants.json for this parent
+    (mapping variant_slug -> variant_data dict)."""
+    links: list[dict] = []
+    by_locale: dict[str, str] = {}
+    for v in variants_for_parent.values():
+        locale = v.get("hreflangCountry")
+        if not locale:
+            continue
+        by_locale[locale] = v["slug"]
+    for locale_key in ("en-GB", "en-US", "en-ZA"):
+        if locale_key in by_locale:
+            links.append({
+                "lang": locale_key,
+                "href": f"{SITE_URL}/{parent_slug}/{by_locale[locale_key]}/",
+            })
+    if links:
+        links.append({"lang": "x-default", "href": f"{SITE_URL}/{parent_slug}/"})
+    return links
+
 _BOLD_RE = _re.compile(r"\*\*([^*]+)\*\*")
 
 
@@ -89,9 +137,27 @@ def render_intro_html(intro: str) -> str:
     return "\n".join(out_parts)
 
 def build_web_application_ld(
-    *, slug: str, name: str, description: str, parent_slug: str | None
+    *, slug: str, name: str, description: str, parent_slug: str | None,
+    author: dict | None = None, area_served: dict | None = None,
 ) -> dict:
-    """Emits the SoftwareApplication / WebApplication JSON-LD object."""
+    """Emits the SoftwareApplication / WebApplication JSON-LD object.
+
+    When `author` is supplied, also attaches `author` + `reviewedBy` Person
+    references pointing to the author's canonical @id. YMYL E-E-A-T signal
+    per SEO Recovery Plan §3.4.
+
+    When `area_served` is supplied (a Schema.org Country dict), attaches it
+    as the `areaServed` property. Geo signal per SEO Recovery Plan §4.5 —
+    tells Google the calculator is targeted at a specific country.
+    """
+    def _author_ref() -> dict | None:
+        if not author:
+            return None
+        ref: dict = {"@type": "Person", "name": author["name"]}
+        if author.get("id"):
+            ref["@id"] = author["id"]
+        return ref
+
     if parent_slug is None:
         url = f"{SITE_URL}/{slug}/"
         ld: dict = {
@@ -105,10 +171,16 @@ def build_web_application_ld(
             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
             "dateModified": SCHEMA_DATE_MODIFIED,
         }
+        ref = _author_ref()
+        if ref:
+            ld["author"] = ref
+            ld["reviewedBy"] = dict(ref)
+        if area_served:
+            ld["areaServed"] = dict(area_served)
         return ld
     parent_url = f"{SITE_URL}/{parent_slug}/"
     url = f"{parent_url}{slug}/"
-    return {
+    ld = {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": name,
@@ -120,6 +192,13 @@ def build_web_application_ld(
         "isPartOf": {"@type": "WebApplication", "@id": parent_url},
         "dateModified": SCHEMA_DATE_MODIFIED,
     }
+    ref = _author_ref()
+    if ref:
+        ld["author"] = ref
+        ld["reviewedBy"] = dict(ref)
+    if area_served:
+        ld["areaServed"] = dict(area_served)
+    return ld
 
 def build_breadcrumb_ld(*, items: list[tuple[str, str]]) -> dict:
     return {
@@ -228,9 +307,14 @@ def humanise_iso_duration(value: str | None) -> str | None:
 
 
 def build_article_ld(
-    *, slug: str, name: str, description: str, canonical_url: str, author: dict | None
+    *, slug: str, name: str, description: str, canonical_url: str, author: dict | None,
+    area_served: dict | None = None,
 ) -> dict:
-    """Article JSON-LD wrapping the page's educational prose body."""
+    """Article JSON-LD wrapping the page's educational prose body.
+
+    `area_served` (optional Schema.org Country dict) anchors country-themed
+    blog posts to their target locale. SEO Recovery Plan §4.5.
+    """
     article: dict = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -248,6 +332,12 @@ def build_article_ld(
     }
     if author:
         article["author"] = build_person_ld(author)
+        # YMYL E-E-A-T: reviewedBy is a distinct signal from author per
+        # Google's content quality docs. Same Person until we add a dedicated
+        # reviewer profile.
+        article["reviewedBy"] = build_person_ld(author)
+    if area_served:
+        article["areaServed"] = dict(area_served)
     return article
 
 
@@ -300,7 +390,11 @@ class Renderer:
             "last_reviewed_display": LAST_REVIEWED_DISPLAY,
         }
 
-    def render_calculator(self, *, slug: str, data: dict, body_html: str) -> str:
+    def render_calculator(
+        self, *, slug: str, data: dict, body_html: str,
+        hreflang_links: list[dict] | None = None,
+        area_served: dict | None = None,
+    ) -> str:
         canonical = f"{SITE_URL}/{slug}/"
         ctx = self._common_ctx(
             page_title=data["title"],
@@ -311,9 +405,14 @@ class Renderer:
             breadcrumb_items=[("Home", f"{SITE_URL}/"), (data["name"], canonical)],
         )
         ctx["robots"] = "index, follow"
+        ctx["hreflang_links"] = hreflang_links or []
         ctx["web_application_ld"] = build_web_application_ld(
             slug=slug, name=data["name"], description=data["description"], parent_slug=None,
+            author=self._author, area_served=area_served,
         )
+        # Standalone Person node — referenced via @id from WebApplication /
+        # HowTo / Article author + reviewedBy properties.
+        ctx["person_ld"] = build_person_ld(self._author) | {"@context": "https://schema.org"} if self._author else None
         ctx["breadcrumb_ld"] = build_breadcrumb_ld(items=[
             ("Home", f"{SITE_URL}/"), (data["name"], canonical),
         ])
@@ -330,6 +429,7 @@ class Renderer:
             description=data["description"],
             canonical_url=canonical,
             author=self._author,
+            area_served=area_served,
         )
         # Visible-blueprint sections rendered from data (HowTo steps, Try
         # scenarios, Key concepts). All three are optional so legacy calcs
@@ -343,11 +443,18 @@ class Renderer:
         tpl = self.env.get_template("calculator.html")
         return tpl.render(**ctx)
 
-    def render_variant(self, *, parent_slug: str, parent_data: dict, variant_data: dict, body_html: str) -> str:
+    def render_variant(
+        self, *, parent_slug: str, parent_data: dict, variant_data: dict, body_html: str,
+        hreflang_links: list[dict] | None = None,
+    ) -> str:
         canonical = f"{SITE_URL}/{parent_slug}/{variant_data['slug']}/"
         h1 = f"{parent_data['h1']}{variant_data['h1Suffix']}"
         intro = variant_data["intro"]
         stub = is_operator_stub(intro)
+        # Geo signal: derive areaServed from the variant's hreflangCountry
+        # (None for non-geo variants like with-monthly-contributions or
+        # first-time-buyer — they get no Country property).
+        area_served = country_area_served(variant_data.get("hreflangCountry"))
         ctx = self._common_ctx(
             page_title=variant_data["title"],
             page_description=variant_data["description"],
@@ -361,12 +468,16 @@ class Renderer:
             ],
         )
         ctx["robots"] = "noindex, follow" if stub else "index, follow"
+        ctx["hreflang_links"] = hreflang_links or []
         ctx["web_application_ld"] = build_web_application_ld(
             slug=variant_data["slug"],
             name=variant_data["title"].replace(" | FinCalcHub", ""),
             description=variant_data["description"],
             parent_slug=parent_slug,
+            author=self._author,
+            area_served=area_served,
         )
+        ctx["person_ld"] = build_person_ld(self._author) | {"@context": "https://schema.org"} if self._author else None
         ctx["breadcrumb_ld"] = build_breadcrumb_ld(items=[
             ("Home", f"{SITE_URL}/"),
             (parent_data["name"], f"{SITE_URL}/{parent_slug}/"),
@@ -417,7 +528,19 @@ def write_all(*, apply: bool, root: Path | None = None) -> int:
             print(f"[skip] no body file for {slug}")
             continue
         body_html = body_path.read_text(encoding="utf-8")
-        out = renderer.render_calculator(slug=slug, data=data, body_html=body_html)
+        # Parent pages of any variant cluster carry the full hreflang map so
+        # they act as the x-default anchor.
+        parent_hreflangs = (
+            hreflang_links_for_variant_cluster(
+                parent_slug=slug, variants_for_parent=variants[slug]
+            )
+            if slug in variants
+            else []
+        )
+        out = renderer.render_calculator(
+            slug=slug, data=data, body_html=body_html,
+            hreflang_links=parent_hreflangs,
+        )
         target = root / slug / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
         if apply:
@@ -436,12 +559,16 @@ def write_all(*, apply: bool, root: Path | None = None) -> int:
             print(f"[skip] no parent body for {parent_slug}")
             continue
         body_html = body_path.read_text(encoding="utf-8")
+        cluster_hreflangs = hreflang_links_for_variant_cluster(
+            parent_slug=parent_slug, variants_for_parent=variant_map
+        )
         for variant_slug, variant_data in variant_map.items():
             out = renderer.render_variant(
                 parent_slug=parent_slug,
                 parent_data=parent_data,
                 variant_data=variant_data,
                 body_html=body_html,
+                hreflang_links=cluster_hreflangs,
             )
             target = root / parent_slug / variant_slug / "index.html"
             target.parent.mkdir(parents=True, exist_ok=True)

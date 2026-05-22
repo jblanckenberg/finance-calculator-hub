@@ -15,3 +15,10 @@
 {% if article_ld %}
 <script type="application/ld+json">{{ article_ld | tojson }}</script>
 {% endif %}
+{# Standalone canonical Person node — emitted so search engines have an
+   author profile to reference via @id from any other block on the page.
+   Source of truth: _build/data/author.json (see build_person_ld in
+   _build/generate.py). E-E-A-T signal per SEO Recovery Plan §3.4. #}
+{% if person_ld %}
+<script type="application/ld+json">{{ person_ld | tojson }}</script>
+{% endif %}

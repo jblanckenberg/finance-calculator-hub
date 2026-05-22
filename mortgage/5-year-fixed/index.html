@@ -1,0 +1,572 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5-Year Fixed Mortgage Calculator UK (2026 Rates + ERCs)</title>
+  <meta name="description" content="Free UK 5-year fixed mortgage calculator. See monthly P&amp;I, total interest over 5y, early repayment charge schedule, and what happens at end of fixed period.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/mortgage/5-year-fixed/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en-GB" href="https://finncalc.com/mortgage/5-year-fixed/">
+  <link rel="alternate" hreflang="x-default" href="https://finncalc.com/mortgage/">
+  <meta property="og:title" content="5-Year Fixed Mortgage Calculator UK (2026 Rates + ERCs)">
+  <meta property="og:description" content="Free UK 5-year fixed mortgage calculator. See monthly P&amp;I, total interest over 5y, early repayment charge schedule, and what happens at end of fixed period.">
+  <meta property="og:url" content="https://finncalc.com/mortgage/5-year-fixed/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="5-Year Fixed Mortgage Calculator UK (2026 Rates + ERCs)">
+  <meta name="twitter:description" content="Free UK 5-year fixed mortgage calculator. See monthly P&amp;I, total interest over 5y, early repayment charge schedule, and what happens at end of fixed period.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "areaServed": {"@type": "Country", "name": "United Kingdom"}, "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-22", "description": "Free UK 5-year fixed mortgage calculator. See monthly P&I, total interest over 5y, early repayment charge schedule, and what happens at end of fixed period.", "isPartOf": {"@id": "https://finncalc.com/mortgage/", "@type": "WebApplication"}, "name": "5-Year Fixed Mortgage Calculator UK (2026 Rates + ERCs)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/mortgage/5-year-fixed/"}</script>
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/mortgage/", "name": "🏠 Mortgage Calculator", "position": 2}, {"@type": "ListItem", "item": "https://finncalc.com/mortgage/5-year-fixed/", "name": "5-Year Fixed (UK)", "position": 3}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder & Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the average 5-year fixed mortgage rate in the UK in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Five-year fixed rates in 2026 sit in the 4-5% range for prime borrowers, with the exact figure driven by LTV band: roughly 3.9-4.3% at 60% LTV, 4.1-4.5% at 75% LTV, 4.3-4.8% at 85% LTV, 4.5-5.0% at 90% LTV, and 4.9-5.5% at 95% LTV under the Mortgage Guarantee Scheme. Pricing is set against the 5-year SONIA swap rate plus the lender's funding margin, not directly against Bank Rate. The Bank of England's Monetary Policy Report and the Money and Credit statistical release are the authoritative public references for the underlying curve."}}, {"@type": "Question", "name": "How does the early repayment charge work on a 5-year fixed?", "acceptedAnswer": {"@type": "Answer", "text": "The typical UK 5-year fixed ERC schedule slides through 5% / 4% / 3% / 2% / 1% across years 1-5 of the fix. The percentage is applied to either the original loan amount or the outstanding balance at redemption (varies by lender — check the Key Facts Illustration). For a £200,000 loan, that's £10,000 / £8,000 / £6,000 / £4,000 / £2,000. For a £300,000 loan, £15,000 / £12,000 / £9,000 / £6,000 / £3,000. For a £500,000 loan, £25,000 / £20,000 / £15,000 / £10,000 / £5,000. Most lenders separately allow penalty-free overpayments of up to 10% of the original loan amount per year — £30,000/year on a £300,000 loan — alongside the ERC. Overpayments above the 10% threshold are charged at the headline ERC percentage on the excess."}}, {"@type": "Question", "name": "Is a 5-year fixed cheaper than a 2-year fixed in total cost?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the rate path over the next 5 years. Worked example on £300,000 over 25 years, comparing 5-year fixed at 4.5% against 2-year fixed at 4.25% (with refinance at year 2): 5-year fixed total 5-year cost is £100,050. If rates fall and the 2-year borrower refinances at 3.5%, total 5-year cost drops to £93,356 (a £6,700 saving by accepting reset risk and being right). If rates rise and the 2-year borrower refinances at 5.5%, total 5-year cost rises to £104,810 (£4,760 more than the 5-year fixed). The decision is rarely about £5-7k of total cost — it's about whether you can absorb a payment jump in year 3 if the rate cycle goes against you."}}, {"@type": "Question", "name": "What happens at the end of a 5-year fixed?", "acceptedAnswer": {"@type": "Answer", "text": "Three things can happen at the end of fix. Most common (around 80-90% of borrowers): refinance to a new product, either via product transfer with the existing lender or remortgage to a new lender — typically into a better rate tier because LTV has dropped through amortisation and house-price growth. Worst outcome: drop to the lender's Standard Variable Rate (SVR), which sits 2-3 percentage points above the product rate that just ended and is never optimal. Third path: sell the property and repay the loan with no ERC. Start the refinance conversation 3-6 months before the end of fix to avoid SVR fallback. For the £300,000 / 4.5% / 25-year example, the remaining balance at the end of year 5 is £263,574 — which on a £400,000 property is 65.9% LTV (or 56.8% LTV at 3%/year house-price growth)."}}, {"@type": "Question", "name": "Can I overpay on a 5-year fixed mortgage?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — most UK lenders allow penalty-free overpayments of up to 10% of the original loan amount per year alongside the headline ERC. For a £200,000 loan the allowance is £20,000/year; for £300,000 it's £30,000/year; for £500,000 it's £50,000/year. Overpayments above the 10% threshold are charged at the headline ERC percentage on the excess. The 10% allowance resets at the lender's product anniversary, not the calendar year. A persistent overpayment strategy (£500-£1,000/month above the contractual payment) compounds materially over the 5-year fix because the extra principal payments reduce the interest charged on every subsequent month. Always confirm the lender's specific overpayment terms in the Key Facts Illustration before committing."}}, {"@type": "Question", "name": "5-year fixed vs tracker — which is better right now (2026)?", "acceptedAnswer": {"@type": "Answer", "text": "If you value payment certainty and the Bank of England's central rate-path projection points to broadly stable or modestly higher rates, the 5-year fixed wins — total 5-year cost on £300,000 at 4.5% is £100,050 with no payment volatility. If you expect Bank Rate to fall materially (200bps+) over the next 5 years, a tracker at Bank Rate + 0.99% lets you participate in the cuts without an ERC; on the central scenario with Bank Rate averaging 4.25%, the tracker total 5-year cost is £107,758. The tracker also wins for borrowers planning to move home or repay early because most trackers carry no ERC. The 5-year fix is the default for affordability-stretched first-time buyers and movers; tracker is the default for higher-deposit borrowers with strong income certainty and a view that rates are heading down."}}, {"@type": "Question", "name": "Can I move home during a 5-year fixed without paying the ERC?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, via 'porting' the mortgage to the new property. Around 80% of UK lenders allow porting, which transfers the existing loan agreement (rate, balance, remaining term) to the new property without triggering the ERC. Porting is subject to a fresh affordability check on the new property's price and any additional borrowing you need on top. The product rate stays locked at the existing rate for the remainder of the fix; any additional borrowing typically prices off the lender's current new-business rates. Two practical constraints: the new property must meet the lender's lending criteria (some lenders restrict porting on new-builds, ex-local-authority flats, or non-standard construction), and the timing windows for completion of sale and purchase usually need to align within a 90-day porting window."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to calculate your 5-year fixed UK mortgage cost", "totalTime": "PT3M", "step": [{"@type": "HowToStep", "text": "Enter your loan amount in pounds"}, {"@type": "HowToStep", "text": "Set the 5-year fixed interest rate from your lender"}, {"@type": "HowToStep", "text": "Enter the full mortgage term (commonly 25 or 30 years)"}, {"@type": "HowToStep", "text": "Select your loan-to-value (LTV) band to see rate context"}, {"@type": "HowToStep", "text": "Read off monthly P&I, total 5-year interest paid, and remaining balance at end of fixed period"}, {"@type": "HowToStep", "text": "Review the early repayment charge schedule year-by-year"}, {"@type": "HowToStep", "text": "Compare 5y fixed against 2y fixed and tracker total-cost scenarios"}]}</script>
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+
+<main id="content">
+<!-- Ad slot top (leaderboard above H1) -->
+<div class="container">
+<div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="4461919959"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> &rsaquo; <a href="https://finncalc.com/mortgage/">🏠 Mortgage Calculator</a> &rsaquo; 5-Year Fixed (UK)</p>
+  <h1>5-Year Fixed Mortgage Calculator UK</h1>
+  <p class="subtitle">Model a UK 5-year fixed-rate mortgage: monthly principal &amp; interest, total interest over the 5-year fix, remaining balance at the end of year 5, and the year-by-year early repayment charge schedule.</p>
+
+
+<section class="variant-intro" style="margin:16px 0;max-width:760px">
+<p>A 5-year fixed-rate mortgage is the most popular product on the UK owner-occupier market. The Bank of England's 2024-25 Mortgage Lenders and Administrators Return shows around 55-60% of new residential lending taken on 5-year fixes, against roughly 25-30% on 2-year fixes and the residual on trackers, 10-year fixes, and lifetime products. The maths is straightforward — same amortisation formula as any UK mortgage — but the decision around it has the most consequential trade-offs in personal finance: payment certainty against early-repayment-charge exposure, and a 5-year insulation from Bank Rate moves at the cost of being locked out of refinancing into a lower rate if the cycle turns.</p>
+
+<p>This calculator runs the full 5-year fixed maths against any £ loan amount, rate, term, and LTV, and surfaces the four numbers that actually matter: monthly principal-and-interest, total interest paid over the fix, remaining balance at year 5, and the year-by-year early repayment charge schedule. It also compares the 5-year fixed cost against a 2-year fixed (with a reset in year 3) and against a Bank Rate tracker, across two scenarios — rates falling and rates rising — so you can see which product wins on total cost in each path.</p>
+
+<h2>Why UK borrowers fix for 5 years</h2>
+<p>The 5-year fix is a payment-certainty product first, an interest-rate-management product second. The argument for fixing for 5 years is that you know what your largest household expense will be for the next 60 months — not just the next 24. For a borrower whose first mortgage is at the top end of their affordability envelope, that certainty is worth more than the headline rate saving on a shorter fix. For a borrower with significant income variability (commission-based, freelance, equity-comp-heavy), a 5-year fix removes the reset-risk shock that would otherwise land in years 3, 5, 7, and so on.</p>
+
+<p>The 2026 rate environment shapes the trade-off. The Bank of England's Monetary Policy Committee held Bank Rate at 5.25% through most of 2024, began cutting in August 2024, and Bank Rate now sits in the 4-4.5% range with the Monetary Policy Report's central projection pointing to a slow glide-path lower through 2027-28. That backdrop drives mortgage pricing in two ways: the absolute level of 5-year fixed rates (typically 4-5% across LTV bands for prime borrowers in 2026) and the shape of the SONIA swap curve from which lenders price the product.</p>
+
+<p>Five-year mortgage rates are not a simple function of Bank Rate. They price off the 5-year SONIA swap rate — the market's expectation of average overnight rates over the next 5 years — plus the lender's funding margin, credit spread, capital buffer, and origination cost. When the SONIA curve inverts (markets expecting cuts ahead), 5-year fixes can price BELOW Bank Rate, which is the regime UK borrowers have moved into intermittently through 2025-26. The Bank of England's Inflation Report and the Money Markets Committee statistics on SONIA are the authoritative public references for the underlying curve.</p>
+
+<h2>The 5-year fixed maths</h2>
+<p>The standard UK amortisation formula is <strong>M = P × [r(1+r)<sup>n</sup>] ÷ [(1+r)<sup>n</sup> − 1]</strong> where M is the monthly principal-and-interest payment, P is the loan principal, r is the monthly interest rate (annual rate / 12), and n is the total number of monthly payments over the full term.</p>
+
+<p><strong>Worked example: £300,000 loan at 4.5% APR over a 25-year term:</strong></p>
+<ul>
+<li>Monthly rate r = 0.045 / 12 = 0.00375</li>
+<li>Total payments n = 25 × 12 = 300</li>
+<li>(1+r)<sup>n</sup> = 1.00375<sup>300</sup> = 3.06542</li>
+<li>Monthly P&amp;I M = 300,000 × (0.00375 × 3.06542) / (3.06542 − 1) = <strong>£1,667.50/month</strong></li>
+</ul>
+<!-- Math verification: P=300000, r=0.045/12=0.00375, n=300; (1+r)^n=3.065424; M=300000*(0.00375*3.065424)/(3.065424-1)=£1667.50 -->
+
+<p>Over the 5-year fix, the borrower makes 60 of those payments. Total cash paid in the fix = £1,667.50 × 60 = <strong>£100,050</strong>. Of that, the principal-repaid portion follows from the amortisation schedule and totals <strong>£36,426</strong>; the interest-paid portion is the difference, <strong>£63,624</strong>. The interest fraction in the first 5 years (63.6%) is higher than the back-end of the loan because amortisation is front-loaded on interest — a 5-year fix repays only about 12% of the original principal even though it represents 20% of the term.</p>
+<!-- Math verification: total 60 pmts = 1667.50*60 = £100,050; balance after 60 months = 300000*1.00375^60 - 1667.50*(1.00375^60-1)/0.00375 = £263,573.71; principal paid = 300000-263574 = £36,426; interest = 100050-36426 = £63,624 -->
+
+<p>The remaining balance at the end of year 5 — the figure that determines refinance pricing and end-of-fix LTV — is computed as <strong>balance<sub>60</sub> = P × (1+r)<sup>60</sup> − M × ((1+r)<sup>60</sup> − 1) / r</strong>. Plugging in the numbers: balance<sub>60</sub> = <strong>£263,574</strong>. On a property purchased for £400,000 (£100,000 deposit, 75% starting LTV), that balance translates to 65.9% LTV at the end of year 5 assuming flat house prices, or 56.8% at 3%/year house-price growth — a tier improvement either way, which typically unlocks better refinance pricing at year-5 renewal.</p>
+<!-- Math verification: end-of-Y5 LTV on £400k flat = 263574/400000 = 65.89%; with 3% growth: house value year 5 = 400000*1.03^5 = £463,710, LTV = 263574/463710 = 56.84% -->
+
+<h2>Early Repayment Charges (ERCs)</h2>
+<p>Every UK 5-year fixed comes with an early repayment charge schedule. The lender charges a fee — expressed as a percentage of the amount being repaid early — if the borrower redeems the mortgage before the end of the fix. ERC exists to protect the lender's funding economics: when you take a 5-year fixed, the lender has typically funded it via 5-year SONIA swaps, and if you redeem early they pay a swap-unwind cost that the ERC offsets.</p>
+
+<p>The typical UK 5-year fixed ERC schedule is a sliding scale of 5% / 4% / 3% / 2% / 1% across years 1-5, applied to the outstanding balance at the time of redemption. For the worked example (£300,000 loan, 4.5% fix), the cash ERC by year of full early redemption is:</p>
+<ul>
+<li>Year 1: 5% × £300,000 = <strong>£15,000</strong></li>
+<li>Year 2: 4% × £300,000 = <strong>£12,000</strong> (or £11,734 if applied to outstanding balance £293,354)</li>
+<li>Year 3: 3% × £300,000 = <strong>£9,000</strong> (or £8,592 if applied to outstanding balance £286,403)</li>
+<li>Year 4: 2% × £300,000 = <strong>£6,000</strong> (or £5,583 if applied to outstanding balance £279,132)</li>
+<li>Year 5: 1% × £300,000 = <strong>£3,000</strong> (or £2,715 if applied to outstanding balance £271,528)</li>
+</ul>
+<!-- Math verification: outstanding balances at start of years 2-5 from amortisation schedule on £300k @ 4.5%/25y: Y2=293354, Y3=286403, Y4=279132, Y5=271528. 4%×293354=£11,734; 3%×286403=£8,592; 2%×279132=£5,583; 1%×271528=£2,715. -->
+
+<p>The ERC headline percentage and the basis (original loan amount vs outstanding balance) varies by lender — always read the Key Facts Illustration (KFI) the broker or lender provides. Some lenders apply the ERC pro-rata across the year (a redemption at month 18 carries 4.5% rather than the year-2 5%); others apply the higher tier until the year ends.</p>
+
+<p>Most UK lenders allow penalty-free overpayments of up to 10% of the original loan amount per year alongside the ERC — for a £300,000 loan, that's £30,000/year of additional principal repayment that doesn't trigger the ERC. For a £500,000 loan it's £50,000/year; for £200,000 it's £20,000/year. Overpayments above the threshold are charged at the headline ERC percentage on the excess. The 10% allowance resets at the lender's product anniversary, not the calendar year.</p>
+
+<h2>End of fixed period — what happens next</h2>
+<p>At the end of the 5-year fix, three things can happen:</p>
+<ol>
+<li><strong>Refinance to a new product (most common)</strong> — the borrower applies for a new fixed or tracker product with the existing lender (a 'product transfer') or remortgages to a new lender. The product transfer route is faster and rarely requires a fresh affordability assessment for like-for-like borrowing; the remortgage route involves a fresh underwriting cycle but can deliver better pricing. The end-of-fix LTV — typically lower than the start-of-fix LTV thanks to amortisation and house-price growth — usually unlocks a better rate tier. Approximately 80-90% of UK 5-year fixed borrowers refinance at end of fix.</li>
+<li><strong>Drop to the lender's Standard Variable Rate (SVR)</strong> — if the borrower does nothing at the end of the fix, the loan automatically reverts to the lender's SVR. Lender SVRs sit typically 2-3 percentage points above the product rate that just ended, making this the most expensive outcome on the lender's book. SVR fallback is never optimal for the borrower; it exists as a default for borrowers who do not arrange refinancing on time. The strong advice from any UK broker is to start the refinance conversation 3-6 months before the end of fix.</li>
+<li><strong>Sell the property and repay the loan</strong> — at the end of the fix, ERC no longer applies, so the loan can be redeemed in full without penalty. This is the ideal exit if you are planning to move home in years 5-6.</li>
+</ol>
+<p>A fourth path — <strong>porting the mortgage to a new property</strong> — lets you move home during the fix without triggering ERC, by transferring the existing loan agreement to a new property at the same product terms. Around 80% of UK lenders offer porting, subject to a fresh affordability check on the new property's price and any additional borrowing. The product rate stays locked at the existing rate for the remainder of the fix.</p>
+
+<h2>5-year fixed vs 2-year fixed vs tracker</h2>
+<p>The 5-year fixed product is one of three main UK options for a 25-year owner-occupier mortgage. The choice between them depends on rate-cycle view, payment-certainty preference, and likelihood of moving home within the fix.</p>
+
+<p><strong>2-year fixed</strong> — typically priced 25-50 basis points below 5-year fixed because lenders take less duration risk. The borrower benefits if rates fall in year 3 (refinance to a lower rate); loses if rates rise (refinance to a higher rate). Reset risk in year 3 is the main argument against 2-year fixes for affordability-stretched borrowers.</p>
+
+<p><strong>5-year fixed</strong> — payment certainty for 60 months, no reset risk in years 3-4, but exposure to ERC if moving and lockout from refinancing into lower rates if the cycle turns down materially.</p>
+
+<p><strong>Tracker</strong> — priced as Bank Rate + a margin (e.g. Bank Rate + 0.99%). Monthly payment moves with Bank Rate, typically within a month of each MPC meeting. Most trackers have no ERC, giving the borrower full flexibility to refinance or repay early. The trade-off is no payment certainty.</p>
+
+<p><strong>5-year total-cost comparison on £300,000 loan / 25-year term</strong>, three scenarios:</p>
+<ul>
+<li><strong>5-year fixed at 4.5% (the base case):</strong> monthly £1,667.50, total 5-year cost <strong>£100,050</strong>, end-of-fix balance £263,574.</li>
+<li><strong>2-year fixed at 4.25%, then refinance:</strong> monthly £1,625.21 for 24 months, then refinance the remaining balance (£285,930) over 23 years (276 months) at the new rate.
+  <ul>
+  <li><em>Scenario A — rates fall, refinance at 3.5%:</em> refi monthly £1,509.74; 5-year total cost = £39,005 + £54,351 = <strong>£93,356</strong>. Borrower saves ~£6,700 over the 5-year fixed by accepting reset risk and being right about the rate cycle.</li>
+  <li><em>Scenario B — rates rise, refinance at 5.5%:</em> refi monthly £1,827.92; 5-year total cost = £39,005 + £65,805 = <strong>£104,810</strong>. Borrower pays ~£4,760 more than the 5-year fixed by accepting reset risk and being wrong about the cycle.</li>
+  </ul>
+</li>
+<li><strong>Tracker at Bank Rate + 0.99% (assume Bank Rate averages 4.25% over the 5 years, so tracker = 5.24%):</strong> monthly £1,795.97, total 5-year cost <strong>£107,758</strong>. The tracker is the most expensive of the three on this central-Bank-Rate scenario, but has zero ERC exposure and zero reset risk because each monthly payment is calculated fresh.</li>
+</ul>
+<!-- Math verification: 2y@4.25%/25y monthly M = 300000*(0.003542*pow)/(pow-1) where pow=(1+0.003542)^300=2.892 → £1,625.21; 24-mo balance = 300000*1.003542^24 - 1625.21*(1.003542^24-1)/0.003542 = £285,929.91. Refi A @3.5%/23y: r=0.002917, n=276, pow=2.235, M=285930*(0.002917*2.235)/(2.235-1)=£1,509.74; 36 more pmts = £54,351; total = 39,005+54,351 = £93,356. Refi B @5.5%/23y: pow=3.501, M=285930*(0.004583*3.501)/(3.501-1)=£1,827.92; 36 pmts = £65,805; total £104,810. Tracker @5.24%/25y: r=0.004367, pow=(1.004367)^300=3.690, M=300000*(0.004367*3.690)/(3.690-1)=£1,795.97; 60 pmts = £107,758. -->
+
+<p>The insight: the 5-year fixed costs more than a successful 2-year fixed roll and less than an unsuccessful one. The decision is not really about £6-7k of 5-year cost differential — it's about whether you can absorb a 12-15% monthly payment jump in year 3 if the cycle goes against you.</p>
+
+<h2>Affordability — the FCA stress test</h2>
+<p>UK mortgage lenders are required by the FCA's Mortgage Conduct of Business (MCOB) handbook to assess affordability under both the product rate and a stress rate — typically the product rate + 1-3 percentage points, reflecting the reversion rate the borrower would face if they failed to refinance at the end of the fix. The Bank of England's previous prescriptive 'SVR + 3%' floor was withdrawn in August 2022, replaced with the FCA's principles-based stress test that lenders apply at their own discretion (most still apply +1% to +3% above product rate).</p>
+
+<p>For a £300,000 loan at the 4.5% 5-year fix, lenders typically stress at 5.5-7.5%. Stressed monthly payments at each level:</p>
+<ul>
+<li>At 5.5% stress: <strong>£1,842.26/month</strong> (£175 more than product rate)</li>
+<li>At 6.5% stress: <strong>£2,025.62/month</strong> (£358 more)</li>
+<li>At 7.5% stress: <strong>£2,216.97/month</strong> (£549 more)</li>
+</ul>
+<!-- Math verification: stress @5.5% on 300k/25y → 1842.26; @6.5% → 2025.62; @7.5% → 2216.97. All from M=P*r*(1+r)^n/((1+r)^n-1) with annual rates and n=300. -->
+
+<p>The lender then applies an income-multiple cap to determine borrowing limits — typically 4-4.5x annual gross income, occasionally up to 5.5x for high earners or via specialist 'enhanced' affordability calculations. To borrow £300,000 at the 4.5x cap, the borrower needs gross household income of roughly <strong>£66,667</strong>; at a 4.0x cap, <strong>£75,000</strong>.</p>
+<!-- Math verification: 300000/4.5 = £66,667 (rounded); 300000/4.0 = £75,000 -->
+
+<p>The 5-year fix carries a small structural advantage on affordability assessment: under the FCA's MCOB framework, lenders are permitted to use a more favourable stress assumption on loans with an initial fixed period of 5 years or longer, because the borrower's payment is locked for the longer window. In practice this can translate to a 5-10% larger maximum loan against the same income on a 5-year fix vs a 2-year fix, which is why the 5-year product often appears as the recommended option in broker-assisted purchases at the top of the affordability envelope.</p>
+
+<h2>2026 market context — typical 5-year fixed pricing by LTV</h2>
+<p>2026 5-year fixed rates by LTV band, prime borrowers (illustrative — actual rates vary by lender, credit score, property type, and product features):</p>
+<ul>
+<li><strong>60% LTV (40%+ deposit):</strong> typically 3.9-4.3% for the best buys</li>
+<li><strong>75% LTV (25% deposit):</strong> typically 4.1-4.5%</li>
+<li><strong>85% LTV (15% deposit):</strong> typically 4.3-4.8%</li>
+<li><strong>90% LTV (10% deposit):</strong> typically 4.5-5.0%</li>
+<li><strong>95% LTV (5% deposit, Mortgage Guarantee Scheme):</strong> typically 4.9-5.5%</li>
+</ul>
+<p>The LTV step-down between tiers is typically 15-25 basis points per tier, with the largest step at the 75%/85% boundary (which corresponds to the lender's reduced loss-given-default at moderate LTV). A borrower who can stretch the deposit from 10% to 15% — or pay off £15-20k of the loan in the final months before refinance to step down an LTV band — typically saves 20-40bps on the new rate, which compounds to £4-8k of interest over a 5-year fix on a £300k loan.</p>
+
+<p>For the underlying market data, the Bank of England's Money and Credit statistical release publishes monthly weighted-average effective interest rates on new lending by fixation period, and the BoE/FCA Mortgage Lenders and Administrators Return covers the structural composition of the market by product type, LTV, and term. The FCA's MCOB handbook is the authoritative regulator reference for UK mortgage affordability rules.</p>
+</section>
+
+
+</div>
+
+
+<div class="container">
+  <div class="quick-answer">
+    <h2>How is a UK 5-year fixed mortgage calculated?</h2>
+    <p>Monthly principal &amp; interest follows the standard amortisation formula <strong>M = P × r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup>−1)</strong>, where P is the loan, r is the monthly rate (annual ÷ 12), and n is the total months in the full term. For a £300,000 loan at 4.5% over 25 years that's £1,667.50/month. Across the 5-year fix, you pay £100,050 total — £36,426 of principal and £63,624 of interest — leaving £263,574 outstanding at year 5. The typical UK 5-year fixed early repayment charge schedule is 5% / 4% / 3% / 2% / 1% across years 1-5 of the fix.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">5-Year Fixed Mortgage Details</div>
+    <div class="form-row">
+      <div class="form-group"><label for="loanAmount">Loan Amount (£)</label><input type="number" id="loanAmount" value="300000" min="1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="rate">5-Year Fixed Rate (% APR)</label><input type="number" id="rate" value="4.5" min="0.1" max="30" step="0.05" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="termYears">Full Mortgage Term (years)</label><input type="number" id="termYears" value="25" min="1" max="40" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="ltv">LTV Band</label>
+        <select id="ltv" onchange="calculate()">
+          <option value="60">60% LTV (3.9-4.3%)</option>
+          <option value="75" selected>75% LTV (4.1-4.5%)</option>
+          <option value="85">85% LTV (4.3-4.8%)</option>
+          <option value="90">90% LTV (4.5-5.0%)</option>
+          <option value="95">95% LTV (4.9-5.5%)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="compareRate2y">2-Year Fixed Comparison Rate (% APR)</label><input type="number" id="compareRate2y" value="4.25" min="0.1" max="30" step="0.05" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="refiRate">Year-3 Refi Rate (if went 2y) (% APR)</label><input type="number" id="refiRate" value="4.5" min="0.1" max="30" step="0.05" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="trackerRate">Tracker Equivalent Rate (% APR)</label><input type="number" id="trackerRate" value="5.24" min="0.1" max="30" step="0.05" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate 5-Year Fixed Cost &rarr;</button>
+  </div>
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">Your 5-Year Fixed Mortgage</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-monthly-pi">£0</div><div class="result-label">Monthly P&amp;I</div></div>
+      <div class="result-item"><div class="result-value" id="r-total-5y">£0</div><div class="result-label">Total interest paid over 5 years</div></div>
+      <div class="result-item"><div class="result-value" id="r-balance-5y">£0</div><div class="result-label">Remaining balance at year 5</div></div>
+      <div class="result-item"><div class="result-value" id="r-total-cost-5y">£0</div><div class="result-label">Total 5y cash paid</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Early Repayment Charge Schedule (5/4/3/2/1%)</div>
+    <table class="breakdown-table"><thead><tr><th>Year</th><th class="td-right">Outstanding balance</th><th class="td-right">ERC %</th><th class="td-right">ERC (£)</th></tr></thead><tbody id="erc-body"></tbody></table>
+    <hr class="results-divider">
+    <div class="breakdown-title">5y Fixed vs 2y Fixed vs Tracker (5-year total cost)</div>
+    <table class="breakdown-table"><thead><tr><th>Product</th><th class="td-right">Monthly</th><th class="td-right">5-year total cost</th></tr></thead><tbody id="compare-body"></tbody></table>
+    <div id="region-note" style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.6"></div>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">&#128424; Print</button>
+      <button class="btn-action" onclick="saveToFile()">&#128190; Save</button>
+    </div>
+  </div>
+
+
+<div class="container" style="padding-top:0">
+<div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="7963163804"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 3 minutes.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter your loan amount in pounds</li>
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Set the 5-year fixed interest rate from your lender</li>
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Enter the full mortgage term (commonly 25 or 30 years)</li>
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Select your loan-to-value (LTV) band to see rate context</li>
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Read off monthly P&amp;I, total 5-year interest paid, and remaining balance at end of fixed period</li>
+      <li id="step-6" class="how-to-step" style="margin-bottom:6px">Review the early repayment charge schedule year-by-year</li>
+      <li id="step-7" class="how-to-step" style="margin-bottom:6px">Compare 5y fixed against 2y fixed and tracker total-cost scenarios</li>
+    </ol>
+  </section>
+</div>
+
+
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid">
+      <a href="/mortgage/uk/" class="related-card">🏠 UK Mortgage Calculator</a>
+      <a href="/mortgage/with-tax-and-insurance/" class="related-card">🏡 Mortgage with Tax &amp; Insurance</a>
+      <a href="/mortgage/first-time-buyer/" class="related-card">🏘️ First-Time Buyer Mortgage</a>
+      <a href="/take-home-pay/uk/" class="related-card">💰 UK Take-Home Pay</a>
+      <a href="/loan-payoff/" class="related-card">📉 Loan Payoff</a>
+      <a href="/inflation-impact/uk/" class="related-card">📊 UK Inflation Impact</a>
+    </div></div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator implements the standard mortgage amortisation formula <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">M = P × [r(1+r)^n] / [(1+r)^n − 1]</code> for the monthly principal-and-interest payment, then derives the remaining balance at month 60 (end of 5-year fix) from <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">B<sub>60</sub> = P × (1+r)<sup>60</sup> − M × ((1+r)<sup>60</sup> − 1) / r</code>. The ERC schedule applies the typical UK lender pattern of 5% / 4% / 3% / 2% / 1% across years 1-5 of the fix, computed against the outstanding balance at the start of each year. The 5y-vs-2y comparison amortises the 2y product against the same total term, refinances the remaining balance at the user-supplied year-3 refi rate, and sums 60 months of total cash paid for an apples-to-apples 5-year cost comparison.</p>
+    <ul style="margin:12px 0">
+      <li><strong>UK mortgage rules:</strong> <a href="https://www.fca.org.uk/" rel="noopener">FCA</a> Mortgage Conduct of Business handbook — affordability, stress test, ERC disclosure.</li>
+      <li><strong>5-year SONIA swap pricing:</strong> <a href="https://www.bankofengland.co.uk/markets/sonia-benchmark" rel="noopener">Bank of England SONIA benchmark</a> and Money Markets Committee statistics.</li>
+      <li><strong>Bank Rate cycle context:</strong> <a href="https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate" rel="noopener">Bank of England Bank Rate</a> page and Monetary Policy Report.</li>
+      <li><strong>New lending composition + average rates:</strong> <a href="https://www.bankofengland.co.uk/statistics/money-and-credit" rel="noopener">Bank of England Money and Credit</a> monthly statistical release; BoE/FCA Mortgage Lenders and Administrators Return.</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>5-year SONIA swap.</strong> 5-year fixed mortgage rates price off the 5-year SONIA swap — the market's expectation of average overnight rates over the next 5 years — plus the lender's margin. They do NOT track Bank Rate one-for-one. When the SONIA curve is inverted (markets pricing rate cuts), 5-year fixes can sit below Bank Rate.</p>
+    <p><strong>Early Repayment Charge (ERC).</strong> A penalty for redeeming the mortgage before the end of the fix. UK lenders typically charge 5% / 4% / 3% / 2% / 1% across years 1-5. Most allow up to 10% of the original loan amount per year in penalty-free overpayments. Always check the Key Facts Illustration.</p>
+    <p><strong>SVR (Standard Variable Rate).</strong> The lender's default rate after a fixed or tracker period ends. Typically 2-3 percentage points above the just-ended product rate. Refinance before end of fix to avoid SVR fallback.</p>
+    <p><strong>Porting.</strong> Transferring an existing mortgage to a new property at the same product terms (rate, balance, remaining fix period). Avoids ERC when moving home. ~80% of UK lenders allow porting, subject to a fresh affordability check on the new property.</p>
+    <p><strong>Product transfer vs remortgage.</strong> Product transfer = new deal with the existing lender (faster, lighter affordability check, sometimes lower rate). Remortgage = new lender (heavier process, but you can shop the market).</p>
+  </section>
+</div>
+
+
+<div class="container" style="padding-top:0">
+<div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="1620134192"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2>
+    <details class="faq-item"><summary class="faq-q">What is the average 5-year fixed mortgage rate in the UK in 2026?</summary><div class="faq-a">Five-year fixed rates in 2026 sit in the 4-5% range for prime borrowers, with the exact figure driven by LTV band: roughly 3.9-4.3% at 60% LTV, 4.1-4.5% at 75% LTV, 4.3-4.8% at 85% LTV, 4.5-5.0% at 90% LTV, and 4.9-5.5% at 95% LTV under the Mortgage Guarantee Scheme. Pricing is set against the 5-year SONIA swap rate plus the lender's funding margin, not directly against Bank Rate. The Bank of England's Monetary Policy Report and the Money and Credit statistical release are the authoritative public references for the underlying curve.</div></details>
+    <details class="faq-item"><summary class="faq-q">How does the early repayment charge work on a 5-year fixed?</summary><div class="faq-a">The typical UK 5-year fixed ERC schedule slides through 5% / 4% / 3% / 2% / 1% across years 1-5 of the fix. The percentage is applied to either the original loan amount or the outstanding balance at redemption (varies by lender — check the Key Facts Illustration). For a £200,000 loan, that's £10,000 / £8,000 / £6,000 / £4,000 / £2,000. For a £300,000 loan, £15,000 / £12,000 / £9,000 / £6,000 / £3,000. For a £500,000 loan, £25,000 / £20,000 / £15,000 / £10,000 / £5,000. Most lenders separately allow penalty-free overpayments of up to 10% of the original loan amount per year — £30,000/year on a £300,000 loan — alongside the ERC. Overpayments above the 10% threshold are charged at the headline ERC percentage on the excess.</div></details>
+    <details class="faq-item"><summary class="faq-q">Is a 5-year fixed cheaper than a 2-year fixed in total cost?</summary><div class="faq-a">It depends on the rate path over the next 5 years. Worked example on £300,000 over 25 years, comparing 5-year fixed at 4.5% against 2-year fixed at 4.25% (with refinance at year 2): 5-year fixed total 5-year cost is £100,050. If rates fall and the 2-year borrower refinances at 3.5%, total 5-year cost drops to £93,356 (a £6,700 saving by accepting reset risk and being right). If rates rise and the 2-year borrower refinances at 5.5%, total 5-year cost rises to £104,810 (£4,760 more than the 5-year fixed). The decision is rarely about £5-7k of total cost — it's about whether you can absorb a payment jump in year 3 if the rate cycle goes against you.</div></details>
+    <details class="faq-item"><summary class="faq-q">What happens at the end of a 5-year fixed?</summary><div class="faq-a">Three things can happen at the end of fix. Most common (around 80-90% of borrowers): refinance to a new product, either via product transfer with the existing lender or remortgage to a new lender — typically into a better rate tier because LTV has dropped through amortisation and house-price growth. Worst outcome: drop to the lender's Standard Variable Rate (SVR), which sits 2-3 percentage points above the product rate that just ended and is never optimal. Third path: sell the property and repay the loan with no ERC. Start the refinance conversation 3-6 months before the end of fix to avoid SVR fallback. For the £300,000 / 4.5% / 25-year example, the remaining balance at the end of year 5 is £263,574 — which on a £400,000 property is 65.9% LTV (or 56.8% LTV at 3%/year house-price growth).</div></details>
+    <details class="faq-item"><summary class="faq-q">Can I overpay on a 5-year fixed mortgage?</summary><div class="faq-a">Yes — most UK lenders allow penalty-free overpayments of up to 10% of the original loan amount per year alongside the headline ERC. For a £200,000 loan the allowance is £20,000/year; for £300,000 it's £30,000/year; for £500,000 it's £50,000/year. Overpayments above the 10% threshold are charged at the headline ERC percentage on the excess. The 10% allowance resets at the lender's product anniversary, not the calendar year. A persistent overpayment strategy (£500-£1,000/month above the contractual payment) compounds materially over the 5-year fix because the extra principal payments reduce the interest charged on every subsequent month. Always confirm the lender's specific overpayment terms in the Key Facts Illustration before committing.</div></details>
+    <details class="faq-item"><summary class="faq-q">5-year fixed vs tracker — which is better right now (2026)?</summary><div class="faq-a">If you value payment certainty and the Bank of England's central rate-path projection points to broadly stable or modestly higher rates, the 5-year fixed wins — total 5-year cost on £300,000 at 4.5% is £100,050 with no payment volatility. If you expect Bank Rate to fall materially (200bps+) over the next 5 years, a tracker at Bank Rate + 0.99% lets you participate in the cuts without an ERC; on the central scenario with Bank Rate averaging 4.25%, the tracker total 5-year cost is £107,758. The tracker also wins for borrowers planning to move home or repay early because most trackers carry no ERC. The 5-year fix is the default for affordability-stretched first-time buyers and movers; tracker is the default for higher-deposit borrowers with strong income certainty and a view that rates are heading down.</div></details>
+    <details class="faq-item"><summary class="faq-q">Can I move home during a 5-year fixed without paying the ERC?</summary><div class="faq-a">Yes, via 'porting' the mortgage to the new property. Around 80% of UK lenders allow porting, which transfers the existing loan agreement (rate, balance, remaining term) to the new property without triggering the ERC. Porting is subject to a fresh affordability check on the new property's price and any additional borrowing you need on top. The product rate stays locked at the existing rate for the remainder of the fix; any additional borrowing typically prices off the lender's current new-business rates. Two practical constraints: the new property must meet the lender's lending criteria (some lenders restrict porting on new-builds, ex-local-authority flats, or non-standard construction), and the timing windows for completion of sale and purchase usually need to align within a 90-day porting window.</div></details>
+  </div>
+</div>
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="mortgage-5-year-fixed"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+<script>
+function calculate(){
+  var loanAmount  = parseFloat(document.getElementById('loanAmount').value)  || 0;
+  var rate        = parseFloat(document.getElementById('rate').value)        || 0;
+  var termYears   = parseInt(document.getElementById('termYears').value, 10) || 0;
+  var compRate2y  = parseFloat(document.getElementById('compareRate2y').value) || 0;
+  var refiRate    = parseFloat(document.getElementById('refiRate').value)    || 0;
+  var trackerRate = parseFloat(document.getElementById('trackerRate').value) || 0;
+
+  var fmt = function(v){ return '£' + Math.round(v).toLocaleString('en-GB'); };
+
+  // === 5-year fixed maths ===
+  var n_total = termYears * 12;
+  var r5 = (rate / 100) / 12;
+  var monthlyPI = computeMonthly(loanAmount, r5, n_total);
+
+  // Balance after 60 months
+  var balance5y = computeBalance(loanAmount, monthlyPI, r5, 60);
+  var totalPaid5y = monthlyPI * 60;
+  var principalRepaid5y = loanAmount - balance5y;
+  var totalInterest5y = totalPaid5y - principalRepaid5y;
+
+  document.getElementById('r-monthly-pi').textContent     = fmt(monthlyPI);
+  document.getElementById('r-total-5y').textContent       = fmt(totalInterest5y);
+  document.getElementById('r-balance-5y').textContent     = fmt(balance5y);
+  document.getElementById('r-total-cost-5y').textContent  = fmt(totalPaid5y);
+
+  // === ERC schedule (5/4/3/2/1% on outstanding balance at start of each year) ===
+  var ercPcts = [5, 4, 3, 2, 1];
+  var ercRows = [];
+  for(var y = 1; y <= 5; y++){
+    var monthsElapsed = (y - 1) * 12;
+    var balStart = monthsElapsed === 0 ? loanAmount : computeBalance(loanAmount, monthlyPI, r5, monthsElapsed);
+    var ercAmount = balStart * (ercPcts[y-1] / 100);
+    ercRows.push('<tr><td>Year ' + y + '</td><td class="td-right">' + fmt(balStart) + '</td><td class="td-right">' + ercPcts[y-1] + '%</td><td class="td-right">' + fmt(ercAmount) + '</td></tr>');
+  }
+  document.getElementById('erc-body').innerHTML = ercRows.join('');
+
+  // === Comparison: 5y vs 2y vs tracker ===
+  // 5y fixed
+  var rows = [];
+  rows.push(['5y fixed @ ' + rate.toFixed(2) + '%', fmt(monthlyPI), fmt(totalPaid5y)]);
+
+  // 2y fixed: pay 24 months at compRate2y, then refi remaining balance over (termYears*12 - 24) months at refiRate
+  var r2 = (compRate2y / 100) / 12;
+  var monthly2y = computeMonthly(loanAmount, r2, n_total);
+  var bal_after_2y = computeBalance(loanAmount, monthly2y, r2, 24);
+  var remaining_months = n_total - 24;
+  var r_refi = (refiRate / 100) / 12;
+  var monthly_refi = computeMonthly(bal_after_2y, r_refi, remaining_months);
+  var total_2y_path = monthly2y * 24 + monthly_refi * 36;
+  rows.push(['2y fixed @ ' + compRate2y.toFixed(2) + '% then refi @ ' + refiRate.toFixed(2) + '%',
+            fmt(monthly2y) + ' / ' + fmt(monthly_refi), fmt(total_2y_path)]);
+
+  // Tracker
+  var r_tr = (trackerRate / 100) / 12;
+  var monthly_tr = computeMonthly(loanAmount, r_tr, n_total);
+  var total_tr = monthly_tr * 60;
+  rows.push(['Tracker @ ' + trackerRate.toFixed(2) + '%', fmt(monthly_tr), fmt(total_tr)]);
+
+  document.getElementById('compare-body').innerHTML = rows.map(function(r){
+    return '<tr><td>' + r[0] + '</td><td class="td-right">' + r[1] + '</td><td class="td-right">' + r[2] + '</td></tr>';
+  }).join('');
+
+  // Region note
+  var note = 'UK reference: 5-year fixed pricing tracks the 5-year SONIA swap rate plus a lender funding margin. Typical 2026 ERC schedule: 5/4/3/2/1% across years 1-5. Most lenders allow 10%/year penalty-free overpayments alongside the ERC.';
+  var noteEl = document.getElementById('region-note');
+  if(noteEl) noteEl.textContent = note;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+
+function computeMonthly(P, r, n){
+  if(P <= 0 || n <= 0) return 0;
+  if(r === 0) return P / n;
+  var pow = Math.pow(1 + r, n);
+  return P * (r * pow) / (pow - 1);
+}
+
+function computeBalance(P, M, r, k){
+  if(P <= 0 || k <= 0) return P;
+  if(r === 0) return Math.max(0, P - M * k);
+  var pow = Math.pow(1 + r, k);
+  return Math.max(0, P * pow - M * (pow - 1) / r);
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-22">22 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/take-home-pay/">💰 Take-Home Pay Calculator</a> — See your exact salary after all taxes and deductions — updated for 2026/27 tax rules in the USA, UK, and South Africa.</li>
+      <li><a href="/net-worth/">🏦 Net Worth Calculator</a> — Calculate your total net worth by entering your assets and liabilities below.</li>
+      <li><a href="/loan-payoff/">📉 Loan Payoff Calculator</a> — See exactly when your loan is paid off, how much interest you&#x27;ll pay, and how extra payments slash your debt.</li>
+      <li><a href="/savings-goal/">🎯 Savings Goal Calculator</a> — Enter your target amount and monthly savings to find out exactly when you&#x27;ll reach your goal.</li>
+      <li><a href="/emergency-fund/">🛡️ Emergency Fund Calculator</a> — Find out exactly how much you need in your emergency fund — and how long it will take to get there.</li>
+      <li><a href="/inflation-impact/">📊 Inflation Impact Calculator</a> — See how inflation erodes the value of money over time — and what it means for your savings.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+<div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="5980987973"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>

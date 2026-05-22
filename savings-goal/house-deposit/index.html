@@ -11,6 +11,8 @@
   <meta name="description" content="House deposit savings goal calculator. Set your target, see your timeline, and compare Help to Save, LISA, FHSA, and high-yield account options.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://finncalc.com/savings-goal/house-deposit/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
   <meta property="og:title" content="House Deposit Savings Goal Calculator | FinCalcHub">
   <meta property="og:description" content="House deposit savings goal calculator. Set your target, see your timeline, and compare Help to Save, LISA, FHSA, and high-yield account options.">
   <meta property="og:url" content="https://finncalc.com/savings-goal/house-deposit/">
@@ -29,17 +31,20 @@
   <meta name="twitter:image" content="https://finncalc.com/og-image.png">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
   <link rel="stylesheet" href="/css/print.css" media="print">
 
 
   <!-- Google AdSense: paste your code here after approval -->
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "dateModified": "2026-05-19", "description": "House deposit savings goal calculator. Set your target, see your timeline, and compare Help to Save, LISA, FHSA, and high-yield account options.", "isPartOf": {"@id": "https://finncalc.com/savings-goal/", "@type": "WebApplication"}, "name": "House Deposit Savings Goal Calculator", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "url": "https://finncalc.com/savings-goal/house-deposit/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-19", "description": "House deposit savings goal calculator. Set your target, see your timeline, and compare Help to Save, LISA, FHSA, and high-yield account options.", "isPartOf": {"@id": "https://finncalc.com/savings-goal/", "@type": "WebApplication"}, "name": "House Deposit Savings Goal Calculator", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/savings-goal/house-deposit/"}</script>
 
 
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/savings-goal/", "name": "\ud83c\udfaf Savings Goal Calculator", "position": 2}, {"@type": "ListItem", "item": "https://finncalc.com/savings-goal/house-deposit/", "name": "House Deposit", "position": 3}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder & Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
 
 
 
@@ -114,6 +119,8 @@
 </div>
 
 
+
+<main id="content">
 <!-- Ad slot top (leaderboard above H1) -->
 <div class="container">
   
@@ -191,7 +198,6 @@
 
 <div class="container">
   <p class="breadcrumb"><a href="/">Home</a> › Savings Goal Calculator</p>
-  <h1>🎯 Savings Goal Calculator</h1>
   <p class="subtitle">Enter your target amount and monthly savings to find out exactly when you'll reach your goal.</p>
 <div class="quick-answer">
   <h2>How long will it take to save?</h2>
@@ -227,85 +233,7 @@
       <button class="btn-action" onclick="saveToFile()">💾 Save</button>
     </div>
   </div>
-<script>
-function calculate(){
-  var target  = parseFloat(document.getElementById('target').value)  || 0;
-  var current = parseFloat(document.getElementById('current').value) || 0;
-  var monthly = parseFloat(document.getElementById('monthly').value) || 0;
-  var rate    = parseFloat(document.getElementById('rate').value)    || 0;
-
-  var fmt = (typeof formatMoney === 'function') ? formatMoney : function(v){ return '$' + Math.round(v).toLocaleString('en-US'); };
-
-  var monthlyEl   = document.getElementById('r-months');
-  var dateEl      = document.getElementById('r-date');
-  var contribEl   = document.getElementById('r-contrib');
-  var interestEl  = document.getElementById('r-interest');
-  var breakdownEl = document.getElementById('breakdown-body');
-
-  if(target <= 0 || monthly <= 0){
-    monthlyEl.textContent = '—';
-    dateEl.textContent = '—';
-    contribEl.textContent = fmt(0);
-    interestEl.textContent = fmt(0);
-    breakdownEl.innerHTML = '';
-    return;
-  }
-
-  // Iterative monthly accumulation — accurate even when starting balance already
-  // exceeds the target (returns 0 months) or the rate is 0 (linear pay-down).
-  var balance = current;
-  var months  = 0;
-  var maxMonths = 12 * 100; // 100-year safety cap
-  var r = (rate / 100) / 12;
-  var firstHits = { '25': null, '50': null, '75': null, '100': null };
-
-  if(balance >= target){
-    months = 0;
-    firstHits['100'] = 0;
-  } else {
-    while(balance < target && months < maxMonths){
-      balance = balance * (1 + r) + monthly;
-      months++;
-      var pct = (balance / target) * 100;
-      ['25', '50', '75', '100'].forEach(function(k){
-        if(firstHits[k] === null && pct >= +k) firstHits[k] = months;
-      });
-    }
-  }
-
-  var totalContrib = monthly * months;
-  var interest = balance - current - totalContrib;
-  if(interest < 0) interest = 0;
-
-  monthlyEl.textContent  = months + (months === 1 ? ' month' : ' months');
-  contribEl.textContent  = fmt(totalContrib);
-  interestEl.textContent = fmt(interest);
-
-  // Target date: today + N months
-  var d = new Date();
-  d.setMonth(d.getMonth() + months);
-  var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  dateEl.textContent = monthNames[d.getMonth()] + ' ' + d.getFullYear();
-
-  // Milestones
-  var rows = '';
-  ['25', '50', '75', '100'].forEach(function(k){
-    if(firstHits[k] !== null){
-      var bal = (target * (+k)) / 100;
-      var md = new Date();
-      md.setMonth(md.getMonth() + firstHits[k]);
-      rows += '<tr><td>' + k + '% of goal</td><td class="td-right">' + fmt(bal) + '</td><td class="td-right">' + monthNames[md.getMonth()] + ' ' + md.getFullYear() + '</td></tr>';
-    }
-  });
-  breakdownEl.innerHTML = rows;
-
-  var results = document.getElementById('results');
-  if(results) results.classList.add('show');
-}
-document.addEventListener('DOMContentLoaded', function(){
-  if(typeof calculate === 'function') calculate();
-});
-</script>
+<script src="/js/calc/savings-goal.js" defer></script>
   
 
 <div class="container" style="padding-top:0">
@@ -434,6 +362,20 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 
 
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/emergency-fund/">🛡️ Emergency Fund Calculator</a> — Find out exactly how much you need in your emergency fund — and how long it will take to get there.</li>
+      <li><a href="/compound-interest/">Compound Interest Calculator</a> — See how your money grows over time with the power of compounding. Add monthly contributions to maximise your results.</li>
+      <li><a href="/investment-growth/">🚀 Investment Growth Calculator</a> — See how your investment portfolio grows over time with regular contributions and compound returns.</li>
+      <li><a href="/mortgage/">🏠 Mortgage Calculator</a> — Calculate your monthly repayment, total interest, and full amortisation schedule for any home loan.</li>
+      <li><a href="/inflation-impact/">📊 Inflation Impact Calculator</a> — See how inflation erodes the value of money over time — and what it means for your savings.</li>
+      <li><a href="/isa-calculator/">🇬🇧 ISA Calculator</a> — Project your tax-free ISA growth — Stocks &amp; Shares, Cash, or Lifetime ISA. £20,000 annual limit and 25% LISA government bonus applied automatically.</li>
+    </ul>
+  </div>
+</section>
+
 <!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
 <div class="container ad-footer-desktop">
   
@@ -460,6 +402,8 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 
 
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -481,8 +425,8 @@ document.addEventListener('DOMContentLoaded', function(){
 </footer>
 
 
-<script src="/js/region.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
 
 </body>
 </html>
