@@ -1,0 +1,534 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash ISA Calculator UK (2026/27 Rates + Real Returns)</title>
+  <meta name="description" content="Free UK Cash ISA growth calculator. Project tax-free interest at current 4-5% rates, factor in CPI inflation drag, and compare to Stocks &amp; Shares ISA.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/isa-calculator/cash-isa-growth/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en-GB" href="https://finncalc.com/isa-calculator/cash-isa-growth/">
+  <link rel="alternate" hreflang="x-default" href="https://finncalc.com/isa-calculator/">
+  <meta property="og:title" content="Cash ISA Calculator UK (2026/27 Rates + Real Returns)">
+  <meta property="og:description" content="Free UK Cash ISA growth calculator. Project tax-free interest at current 4-5% rates, factor in CPI inflation drag, and compare to Stocks &amp; Shares ISA.">
+  <meta property="og:url" content="https://finncalc.com/isa-calculator/cash-isa-growth/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cash ISA Calculator UK (2026/27 Rates + Real Returns)">
+  <meta name="twitter:description" content="Free UK Cash ISA growth calculator. Project tax-free interest at current 4-5% rates, factor in CPI inflation drag, and compare to Stocks &amp; Shares ISA.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "areaServed": {"@type": "Country", "name": "United Kingdom"}, "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-22", "description": "Free UK Cash ISA growth calculator. Project tax-free interest at current 4-5% rates, factor in CPI inflation drag, and compare to Stocks & Shares ISA.", "isPartOf": {"@id": "https://finncalc.com/isa-calculator/", "@type": "WebApplication"}, "name": "Cash ISA Calculator UK (2026/27 Rates + Real Returns)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/isa-calculator/cash-isa-growth/"}</script>
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/isa-calculator/", "name": "🇬🇧 ISA Calculator", "position": 2}, {"@type": "ListItem", "item": "https://finncalc.com/isa-calculator/cash-isa-growth/", "name": "Cash ISA Growth (UK)", "position": 3}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder & Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The 2026/27 Cash ISA allowance is £20,000. That £20,000 is the combined cap across all ISA types — Cash, Stocks & Shares, Innovative Finance and Lifetime ISA. The Lifetime ISA component is sub-capped at £4,000 within that £20,000. Unused allowance does not roll over; on 6 April each year a fresh £20,000 becomes available and any unused portion from the previous tax year is gone."}, "name": "What is the 2026/27 Cash ISA allowance?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "£20,000 deposited as a lump sum in a Cash ISA paying 4.8% annual interest, compounded annually for 10 years, grows to £31,962.65 — calculated as 20,000 × 1.048^10. With monthly compounding the figure is slightly higher at £32,290.56 because each month's interest itself earns interest the following month. The whole balance is tax-free. Adjusted for 2.5% CPI inflation over the same 10 years, the real value in today's purchasing power is £24,969 — still positive in real terms, but a long way below typical equity returns."}, "name": "How much will £20,000 in a Cash ISA earn at 4.8% over 10 years?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Over 30 years on a maximum £1,666.67/month contribution, a Stocks & Shares ISA at 5% real return generates approximately £1,387,000 in today's pounds; a Cash ISA at 1% real return generates approximately £699,000 — roughly half the Stocks & Shares terminal balance. The gap widens further on 40-year horizons. For short horizons (under 5 years) the position reverses — Cash ISA wins because equity drawdown risk in any 3-5 year window can derail a hard-dated goal. The decision is fundamentally a time-horizon question, not a risk-appetite question."}, "name": "Cash ISA vs Stocks & Shares ISA — which is better over 30 years?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes — since the April 2024 ISA reforms, multiple Cash ISAs of the same type are permitted in the same tax year, with different providers and different products if you choose. The £20,000 combined allowance across all ISA types still applies — opening five Cash ISAs with five different providers does not give you £100,000 of allowance, it gives you £20,000 split however you choose. Partial transfers from prior-year subscriptions are also now allowed."}, "name": "Can I have multiple Cash ISAs in the same tax year?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Withdrawing money from a non-flexible Cash ISA permanently removes that amount from the ISA wrapper — you cannot put it back without it counting as a fresh subscription against the current year's £20,000 allowance. \"Flexible\" Cash ISAs (an opt-in product feature some providers offer) sidestep this: money withdrawn from a flexible Cash ISA in a given tax year can be replaced in the same tax year without using fresh allowance. Always check whether your specific Cash ISA is flexible before withdrawing. If you want to move money between providers without losing the wrapper, use an ISA transfer (the new provider pulls the balance) — not withdrawal-and-redeposit."}, "name": "What happens if I withdraw money from a Cash ISA?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cash ISAs are protected by the Financial Services Compensation Scheme (FSCS) at the same £85,000 per banking licence per individual that applies to standard UK deposit accounts. The protection is per banking licence, not per brand — if you hold deposits with two brands that share a banking licence (for example, several high-street banks operate multiple brands on a single licence), the £85,000 cap applies across the combined balance, not per brand. The FSCS website maintains a current banking-licence lookup tool to check coverage."}, "name": "Are Cash ISAs FSCS protected?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your rate forecast. If you expect the Bank of England to cut Bank Rate further, locking in today's 4.7-5.2% 1-year fixed rate is mathematically preferable to staying in easy-access where the rate floats down with Bank Rate. If you expect rates to hold or rise, easy-access wins because you keep the flexibility to chase higher rates as they appear. Worked break-even: £10,000 in a 5.10% 1-year fixed yields £510 of interest in year one; the same £10,000 in a 5.20%-headline easy-access (with 1.00% bonus for 6 months, 4.20% thereafter) yields roughly £470 in year one — the fixed-rate wins by £40 even before factoring in the cost of chasing the next bonus. The current 2026 SONIA swap curve is pricing in further BoE cuts, which is why fixed-rates often look better-value than the headline-rate gap suggests."}, "name": "Should I lock in a fixed-rate Cash ISA in 2026?"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to project your Cash ISA growth", "totalTime": "PT2M", "step": [{"@type": "HowToStep", "text": "Enter your starting Cash ISA balance in pounds (or 0 if starting fresh)"}, {"@type": "HowToStep", "text": "Set your monthly contribution (capped at £1,666.67 to use the full £20,000 annual allowance)"}, {"@type": "HowToStep", "text": "Enter the annual interest rate from your Cash ISA provider (typically 4-5% in 2026)"}, {"@type": "HowToStep", "text": "Set the time horizon in years (1-30 typical)"}, {"@type": "HowToStep", "text": "Enter your assumed inflation rate (2-3% is a sensible UK default) to see the real-return view in today's pounds"}, {"@type": "HowToStep", "text": "Compare against the Stocks & Shares ISA projection on the sibling calculator to see the safety-versus-growth trade-off"}]}</script>
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/retirement/">Retirement</a>
+    <a href="/mortgage-calculators/">Mortgage</a>
+    <a href="/tax/">Tax</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+
+<main id="content">
+<!-- Ad slot top (leaderboard above H1) -->
+<div class="container">
+<div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="4461919959"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> &rsaquo; <a href="https://finncalc.com/isa-calculator/">🇬🇧 ISA Calculator</a> &rsaquo; Cash ISA Growth (UK)</p>
+  <h1>Cash ISA Growth Calculator (UK &mdash; 2026/27 Rates)</h1>
+  <p class="subtitle">Project your tax-free Cash ISA over 1-30 years at current 2026 best-buy rates. £20,000 annual allowance, CPI inflation toggle for the real-return view.</p>
+
+
+<section class="variant-intro" style="margin:16px 0;max-width:760px">
+<p>A UK Cash ISA is the safer cousin to the Stocks &amp; Shares ISA. The 2026/27 allowance is £20,000, shared across all ISA types, and every penny of interest earned inside the wrapper is tax-free &mdash; no income tax, no Personal Savings Allowance erosion, no HMRC self-assessment line. The trade-off is that Cash ISA returns rarely beat inflation by much. This calculator projects nominal and real growth side-by-side so you can see what your savings will actually be worth in today's purchasing power, and lets you compare directly against the equity-driven Stocks &amp; Shares ISA over horizons of 1-30 years.</p>
+
+<h2>What a Cash ISA is &mdash; the 2026/27 mechanics</h2>
+<p>A Cash ISA is essentially a tax-free savings account. You deposit cash, the bank or building society pays interest, and that interest is exempt from UK income tax. Unlike a regular savings account, there is no Personal Savings Allowance to worry about (the £1,000 PSA for basic-rate taxpayers and £500 for higher-rate taxpayers does not apply because the interest is generated inside the ISA wrapper). For an additional-rate taxpayer with no PSA at all, a Cash ISA is materially more valuable per pound of interest than any taxable equivalent.</p>
+<p>The 2026/27 mechanics are:</p>
+<ul>
+<li>£20,000 annual contribution allowance, shared across Cash, Stocks &amp; Shares, Innovative Finance and Lifetime ISAs (the LISA is sub-capped at £4,000 within that £20,000)</li>
+<li>Tax-free interest with no annual reporting requirement</li>
+<li>No withdrawal penalty &mdash; money can come out any time, though the impact on the ISA wrapper depends on whether the product is a "flexible" Cash ISA or not</li>
+<li>FSCS deposit protection at £85,000 per banking licence per person, mirroring the protection on standard savings accounts</li>
+<li>Multiple Cash ISAs of the same type permitted in the same tax year from 6 April 2024 (one of the headline reforms in the Spring Budget 2024 changes)</li>
+<li>Partial transfers from prior-year subscriptions allowed since the April 2024 reforms, so you no longer have to move an entire historic balance to access better rates with a different provider</li>
+</ul>
+<p>The £20,000 allowance is use-it-or-lose-it. It resets at 00:00 on 6 April each year and any unused portion from the prior tax year is gone. Multiple Cash ISAs of the same type are now permitted, but the £20,000 cap is shared across all of them &mdash; opening five Cash ISAs with five different providers does not give you £100,000 of allowance, it gives you £20,000 split however you choose across the five.</p>
+
+<h2>The 2026 Cash ISA rate landscape</h2>
+<p>UK Cash ISA rates in 2026 sit close to where they have been since the Bank of England began cutting Bank Rate from its 5.25% peak in August 2024. Bank Rate at the time of writing sits around 4-4.5%, and the MPC's projections in the May 2026 Monetary Policy Report point to a slow glide-path lower through 2027-28. That backdrop drives a fairly tight band of best-buy Cash ISA rates:</p>
+<ul>
+<li><strong>Easy-access Cash ISAs:</strong> typically 4.5-5.0% for top-of-market providers (often including a 6-12-month bonus rate that drops afterwards)</li>
+<li><strong>1-year fixed-rate Cash ISAs:</strong> typically 4.7-5.2%, paying the premium for the locked-in commitment</li>
+<li><strong>2-year fixed-rate Cash ISAs:</strong> typically 4.6-5.1%</li>
+<li><strong>5-year fixed-rate Cash ISAs:</strong> typically 4.3-4.8%, with the inverted-curve discount reflecting market expectations of lower base rates ahead</li>
+</ul>
+<p>The 5-year fixed-rate sitting below the 1-year fixed-rate is unusual in historical context &mdash; most of the time, longer fixes pay a duration premium. The current inversion reflects the SONIA swap curve pricing in further Bank Rate cuts; markets are willing to pay you less per year over five years because they expect the average overnight rate across that period to be lower than today's rate. For underlying market context, the Bank of England's Monthly Money and Credit release tracks weighted-average effective rates on new household deposits, and the FCA's annual Savings Market Review tracks the spread between best-buy and average rates.</p>
+<p>A persistent feature of the Cash ISA market is the "loyalty tax" &mdash; last year's best-buy fixed-rate easily becomes this year's worst-buy easy-access if you don't refinance at maturity. Best practice is to set a calendar reminder for the day the fix matures and shop the market afresh.</p>
+
+<h2>Cash ISA growth maths &mdash; the formulas the calculator uses</h2>
+<p>For a lump-sum deposit growing at a flat annual rate with annual compounding, the standard compound interest formula is:</p>
+<p><code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">A = P &times; (1 + r)<sup>n</sup></code></p>
+<p>Where P is the starting principal, r is the annual interest rate as a decimal, and n is the number of years. For monthly compounding (which most UK Cash ISAs use under the hood), the formula adjusts to A = P &times; (1 + r/12)<sup>12n</sup>.</p>
+<p>Worked example: £20,000 lump sum deposited in a Cash ISA at 4.8% annual interest, held for 10 years with annual compounding, comes to <strong>£20,000 &times; 1.048<sup>10</sup> = £31,962.65</strong>. With monthly compounding the result is slightly higher at £32,290.56 because each month's interest itself earns interest. Most calculators (this one included) default to annual compounding for clarity; switch to monthly mentally if your provider's terms specify it.</p>
+<!-- Math verification: 20000 * 1.048^10 = 31962.6532; 20000 * (1+0.048/12)^120 = 32290.56 -->
+
+<p>For regular monthly contributions on top of a starting balance, the calculator uses the future-value-of-an-annuity formula:</p>
+<p><code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">FV = P &times; (1 + r/n)<sup>nt</sup> + PMT &times; [((1 + r/n)<sup>nt</sup> &minus; 1) &divide; (r/n)]</code></p>
+<p>Where P is the starting balance, PMT is the monthly contribution, r is the annual rate, n is the number of compounding periods per year (12 for monthly), and t is time in years. For example, £10,000 starting balance plus £200/month for 10 years at 4.8% gives a nominal terminal balance of approximately <strong>£46,872</strong>, of which £34,000 is total contributions and £12,872 is tax-free interest.</p>
+<!-- Math verification: P=10000, PMT=200, r=0.048/12, n=120; FV = 10000*(1+0.048/12)^120 + 200*((1+0.048/12)^120 - 1)/(0.048/12) = £46,871.67. Total contribs = 10000 + 200*120 = £34,000. Interest = £12,871.67. -->
+
+<h2>Real returns &mdash; the inflation problem Cash ISAs cannot escape</h2>
+<p>The single most important number this calculator surfaces is the gap between nominal and real returns. A Cash ISA can comfortably beat the after-tax return on a regular savings account, but it struggles to beat inflation by much. The real return formula is:</p>
+<p><code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">Real rate = (1 + nominal) &divide; (1 + inflation) &minus; 1</code></p>
+<p>At a 4.8% nominal Cash ISA rate and 2.5% CPI inflation, the real rate is (1.048 &divide; 1.025) &minus; 1 = <strong>2.24%</strong> &mdash; meaningfully positive, but a long way below typical equity returns. At 3% inflation it drops to 1.75%; at 4% inflation (where the UK sat for much of 2022-23) it falls to 0.77%. During 2022-23 when CPI peaked at 11.1%, Cash ISA real returns were sharply negative &mdash; savers lost roughly 6-7% of real purchasing power in a single year even on best-buy rates.</p>
+<!-- Math verification: real at 2.5% = (1.048/1.025)-1 = 0.022439; real at 3% = (1.048/1.03)-1 = 0.017476; real at 4% = (1.048/1.04)-1 = 0.007692. -->
+
+<p>The 20-year worked example makes the drag concrete:</p>
+<ul>
+<li>£20,000 lump sum at 4.8% nominal over 20 years grows to <strong>£51,080.56</strong> in nominal pounds</li>
+<li>Discounted by 2.5% inflation over the same 20-year window, the real value in 2026 purchasing power is <strong>£31,172.98</strong></li>
+<li>The £19,907.58 gap between nominal and real is the inflation tax &mdash; money you nominally own but cannot spend at 2026 prices</li>
+</ul>
+<!-- Math verification: 20000 * 1.048^20 = £51,080.56; 51080.56 / 1.025^20 = £31,172.98; gap = £19,907.58. -->
+
+<p>For 30-year horizons the gap widens further. Cash ISA real returns at 1% (a reasonable long-run assumption combining 4% nominal and 3% inflation) generate roughly <strong>£699,000</strong> over 30 years on a maximum £1,666.67/month contribution. The equivalent Stocks &amp; Shares ISA at 5% real returns generates roughly <strong>£1,387,000</strong> over the same period &mdash; roughly twice the Cash ISA terminal balance. Over 40-year horizons that 4-5 percentage point real-return gap compounds to a 3-4x difference in terminal wealth. For longer-term inflation context, the <a href="/inflation-impact/uk/">UK inflation impact calculator</a> runs the same real-vs-nominal arithmetic against ONS CPI and RPI data going back to the 1940s.</p>
+<!-- Math verification: PMT=1666.67, r=0.01/12, n=360; Cash 1% real = £699,381.76 → £699k. PMT=1666.67, r=0.05/12, n=360; S&S 5% real = £1,387,100.50 → £1.387M. Ratio = 1.98x. -->
+
+<h2>Cash ISA vs Stocks &amp; Shares ISA &mdash; when each makes sense</h2>
+<p>The decision between Cash and Stocks &amp; Shares ISAs is fundamentally a time-horizon question, not a risk-appetite question. Equity markets carry enough drawdown risk to be inappropriate for short horizons; cash carries enough inflation drag to be inappropriate for long horizons. Within each bucket the choice is essentially mechanical:</p>
+<ul>
+<li><strong>Horizon under 5 years (emergency fund, near-term house deposit, known expense):</strong> Cash ISA wins. FSCS-protected, no capital loss risk, 4-5% nominal rate in the current cycle. The inflation drag matters less because the absolute time horizon is short.</li>
+<li><strong>Horizon 5-10 years (mid-term goals, planned career break funding):</strong> Grey zone. Either a multi-asset fund inside a Stocks &amp; Shares ISA, a Cash ISA accepting the real-return drag for capital safety, or a mixed allocation of both depending on goal flexibility.</li>
+<li><strong>Horizon over 10 years (retirement saving outside pension, long-term wealth-building):</strong> Stocks &amp; Shares ISA wins. Over a 30-year window the equity-vs-cash terminal-wealth gap is roughly 2x; over 40 years it is 3-4x. The deeper-dive sibling calculator at <a href="/isa-calculator/stocks-and-shares/">/isa-calculator/stocks-and-shares/</a> handles the equity projection with the same £20,000 allowance enforced.</li>
+</ul>
+<p>The one place where Cash ISA wins beyond 5 years is the house-deposit scenario where the target completion date is fixed and known. A 7-year house-deposit plan benefits from Cash ISA certainty even though the inflation drag is meaningful, because a 30% equity drawdown in year 6 &mdash; possible if not likely &mdash; would derail the completion date entirely. Sequence-of-returns risk during accumulation matters far less than people think, but for a hard-dated goal it matters absolutely.</p>
+
+<h2>Rate-shopping vs convenience &mdash; fixed-rate versus easy-access</h2>
+<p>The Cash ISA market has three structural quirks that reward attention to detail:</p>
+<p>First, <strong>bonus-rate teasers</strong>. Easy-access Cash ISAs frequently quote a headline rate that includes a 6-12 month bonus dropping off afterwards. A 5.20% Cash ISA may consist of a 4.20% underlying rate plus a 1.00% twelve-month bonus. After month 13 you are sitting in a 4.20% account, which by then is usually below the best-buy elsewhere. Always check the underlying rate, not just the headline rate, and treat any product with a non-trivial bonus as a 12-month commitment to refinance.</p>
+<p>Second, <strong>fixed-rate vs easy-access trade-offs</strong>. A 1-year fixed at 5.10% beats an easy-access at 4.50% by 60 basis points of nominal return &mdash; £60 on £10,000 over the year. But the fix locks you out of taking the money for 12 months, and the bonus on the easy-access often expires in the same window. Worked break-even: £10,000 in a 5.10% 1-year fixed yields <strong>£510</strong> of interest in year one. The same £10,000 in a 5.20%-headline easy-access (with 1.00% bonus for 6 months, 4.20% thereafter) yields approximately £260 over the first 6 months and £210 over the next 6, totalling <strong>roughly £470</strong> &mdash; the fixed-rate wins by about £40 even before factoring in re-bonus chasing costs.</p>
+<!-- Math verification: fixed 5.10% on £10k for 1y = £510. Easy-access average effective rate over yr1 if 5.20% for 6mo then 4.20% for 6mo = (5.20+4.20)/2 = 4.70% → £470 simple interest. Fixed-rate edge = £40. -->
+
+<p>Third, <strong>transfer rules</strong>. Once money is in a Cash ISA, moving it to a higher-rate Cash ISA must be done by an ISA transfer (the new provider pulls the balance from the old provider) and not by withdrawal-and-redeposit. Withdrawing money from a non-flexible Cash ISA and re-depositing it counts as a fresh subscription against the current year's £20,000 allowance &mdash; potentially burning a chunk of allowance to no benefit. Always use the receiving provider's ISA transfer form; the transfer typically completes in 15 working days for Cash ISAs.</p>
+<p>Flexible Cash ISAs (a feature some but not all providers offer) sidestep this. Money withdrawn from a flexible Cash ISA can be replaced in the same tax year without using fresh allowance. The flexibility is voluntary on the provider's side &mdash; check the product T&amp;Cs before opening if it matters.</p>
+
+<h2>The April 2024 reforms recap</h2>
+<p>Three changes to UK ISA rules took effect on 6 April 2024 under the Spring Budget 2024 measures:</p>
+<ul>
+<li><strong>Multiple ISAs of the same type allowed.</strong> Before April 2024, you could only open and subscribe to one Cash ISA per tax year. From April 2024 onwards, you can open and subscribe to multiple Cash ISAs (different providers, different products) within the same tax year, subject to the combined £20,000 allowance cap.</li>
+<li><strong>Partial transfers from prior-year subscriptions allowed.</strong> Previously, current-year Cash ISA subscriptions had to be transferred in full; only prior-year subscriptions could be split. Now both can be partially transferred, giving savers more flexibility to chase best-buy rates without committing the entire balance.</li>
+<li><strong>£20,000 allowance unchanged.</strong> The headline allowance figure was retained, not increased. The reforms were structural rather than expansionary.</li>
+</ul>
+<p>A proposed fourth change &mdash; a separate British ISA (or "GB ISA") adding £5,000 of allowance for UK-listed equities only &mdash; was announced in March 2024 but was scrapped by the incoming Chancellor in October 2024 before implementation. The £20,000 combined allowance is the only number that matters for 2026/27 planning.</p>
+
+<h2>Calculator inputs and outputs</h2>
+<p>The calculator takes five inputs: starting Cash ISA balance, monthly contribution (capped at £1,666.67 to enforce the £20,000 annual allowance), annual interest rate, time horizon in years, and an inflation rate for the real-return view. It outputs four figures: final nominal balance, total contributions, interest earned, and the real balance expressed in today's pounds (using the assumed inflation rate). Switching the inflation rate from 2.5% to 3% or 0% lets you stress-test against different CPI paths without changing your provider rate.</p>
+<p>For underlying rules, HMRC's ISA Manager Reference Manual on gov.uk is the authoritative reference for current allowances and product mechanics. The FSCS website confirms current depositor protection limits (£85,000 per banking licence per individual). The Bank of England's Money and Credit statistical release tracks weighted-average rates on new household deposits, which is the most authoritative public source for the underlying rate environment.</p>
+</section>
+
+
+</div>
+
+
+<div class="container">
+  <div class="quick-answer">
+    <h2>How much will my Cash ISA grow?</h2>
+    <p>At a best-buy easy-access rate of 4.8%, a £20,000 Cash ISA lump sum grows to roughly £31,963 over 10 years tax-free. Factoring in 2.5% CPI inflation, the real purchasing power is only about £24,969 in today's pounds. Over 30 years on the £1,666.67/month maximum contribution, a Cash ISA at 1% real return generates roughly half the terminal balance of a Stocks &amp; Shares ISA at 5% real.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Details</div>
+    <div class="form-row">
+      <div class="form-group"><label for="curBalance">Starting Cash ISA Balance (£)</label><input type="number" id="curBalance" value="10000" min="0" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="monthlyContrib">Monthly Contribution (£)</label><input type="number" id="monthlyContrib" value="200" min="0" max="1666.67" step="10" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="annualRate">Annual Interest Rate (%)</label><input type="number" id="annualRate" value="4.8" min="0" max="15" step="0.1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="years">Years to Grow</label><input type="number" id="years" value="10" min="1" max="40" oninput="calculate()" inputmode="decimal"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="inflationRate">Assumed Inflation Rate (% CPI)</label><input type="number" id="inflationRate" value="2.5" min="0" max="15" step="0.1" oninput="calculate()" inputmode="decimal"></div>
+      <div class="form-group"><label for="maxAllowance">Allowance Utilisation</label>
+        <select id="maxAllowance" onchange="applyAllowance()">
+          <option value="custom" selected>Custom (use my monthly input)</option>
+          <option value="max">Max £20k/yr (£1,666.67/mo)</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">Calculate Cash ISA Projection &rarr;</button>
+  </div>
+  <div class="results" id="results" role="region" aria-live="polite" aria-atomic="true" aria-label="Calculator result">
+    <div class="results-title">Your Cash ISA Projection</div>
+    <div class="result-grid">
+      <div class="result-item"><div class="result-value positive" id="r-final-balance">£0</div><div class="result-label">Final Nominal Balance</div></div>
+      <div class="result-item"><div class="result-value" id="r-total-contrib">£0</div><div class="result-label">Total Contributions</div></div>
+      <div class="result-item"><div class="result-value" id="r-interest">£0</div><div class="result-label">Tax-Free Interest Earned</div></div>
+      <div class="result-item"><div class="result-value" id="r-real-balance">£0</div><div class="result-label">Real Balance (today's £)</div></div>
+    </div>
+    <hr class="results-divider">
+    <div class="breakdown-title">Year-by-year balance</div>
+    <div style="overflow-x:auto">
+      <table class="breakdown-table"><thead><tr><th>Year</th><th class="td-right">Contribution</th><th class="td-right">Year-End Balance</th></tr></thead><tbody id="breakdown-body"></tbody></table>
+    </div>
+    <div id="region-note" style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.6"></div>
+    <div class="action-bar">
+      <button class="btn-action" onclick="window.print()">&#128424; Print</button>
+      <button class="btn-action" onclick="saveToFile()">&#128190; Save</button>
+    </div>
+  </div>
+
+
+<div class="container" style="padding-top:0">
+<div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="7963163804"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter your starting Cash ISA balance in pounds (or 0 if starting fresh)</li>
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Set your monthly contribution (capped at £1,666.67 to use the full £20,000 annual allowance)</li>
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Enter the annual interest rate from your Cash ISA provider (typically 4-5% in 2026)</li>
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Set the time horizon in years (1-30 typical)</li>
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Enter your assumed inflation rate (2-3% is a sensible UK default) to see the real-return view in today's pounds</li>
+      <li id="step-6" class="how-to-step" style="margin-bottom:6px">Compare against the Stocks &amp; Shares ISA projection on the sibling calculator to see the safety-versus-growth trade-off</li>
+    </ol>
+  </section>
+</div>
+
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator implements the standard compound-interest formula <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">A = P &times; (1 + r/n)<sup>nt</sup></code> for the starting balance and the future-value-of-an-annuity formula <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">FV = P &times; (1 + r/n)<sup>nt</sup> + PMT &times; [((1 + r/n)<sup>nt</sup> &minus; 1) &divide; (r/n)]</code> for monthly contributions, with monthly compounding (n = 12). The real-balance figure applies the Fisher equation real-rate transform <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">Real rate = (1 + nominal) &divide; (1 + inflation) &minus; 1</code> using the CPI input you supply, so the terminal value is expressed in today's purchasing power.</p>
+    <ul style="margin:12px 0">
+      <li><strong>ISA rules &amp; allowances:</strong> <a href="https://www.gov.uk/individual-savings-accounts" rel="noopener">GOV.UK &mdash; Individual Savings Accounts</a>; <a href="https://www.gov.uk/hmrc-internal-manuals/individual-savings-accounts" rel="noopener">HMRC ISA Manager Reference Manual</a></li>
+      <li><strong>Deposit protection:</strong> <a href="https://www.fscs.org.uk/" rel="noopener">FSCS</a> &mdash; £85,000 per banking licence per individual</li>
+      <li><strong>Cash ISA rate market context:</strong> Bank of England Money and Credit statistical release (monthly weighted-average rates on new household deposits); FCA Savings Market Review</li>
+      <li><strong>Bank Rate &amp; cycle context:</strong> Bank of England Monetary Policy Report, MPC voting record</li>
+      <li><strong>Inflation reference:</strong> ONS Consumer Price Inflation release (CPI and CPIH)</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>£20,000 annual allowance.</strong> Shared across all ISA types &mdash; Cash, Stocks &amp; Shares, Innovative Finance, Lifetime ISA. Use-it-or-lose-it each tax year (6 April &mdash; 5 April).</p>
+    <p><strong>Tax-free interest.</strong> No income tax, no Personal Savings Allowance erosion, no HMRC self-assessment line. Especially valuable for additional-rate taxpayers who have no PSA at all.</p>
+    <p><strong>FSCS protection.</strong> £85,000 per banking licence per individual &mdash; same as standard deposit accounts. Check the FSCS website if you hold more than £85,000 across multiple brands that share a licence.</p>
+    <p><strong>Real vs nominal returns.</strong> A 4.8% Cash ISA at 2.5% inflation delivers a 2.24% real return. Always sanity-check long-horizon Cash ISA projections against the real figure, because the inflation drag compounds.</p>
+    <p><strong>Horizon dictates Cash vs Stocks.</strong> Under 5 years: Cash ISA. Over 10 years: Stocks &amp; Shares ISA. 5-10 years: grey zone, mixed allocation or multi-asset fund.</p>
+  </section>
+</div>
+
+
+<div class="container" style="padding-top:0">
+<div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="1620134192"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2>
+    <details class="faq-item"><summary class="faq-q">What is the 2026/27 Cash ISA allowance?</summary><div class="faq-a">The 2026/27 Cash ISA allowance is £20,000. That £20,000 is the combined cap across all ISA types &mdash; Cash, Stocks &amp; Shares, Innovative Finance and Lifetime ISA. The Lifetime ISA component is sub-capped at £4,000 within that £20,000. Unused allowance does not roll over; on 6 April each year a fresh £20,000 becomes available and any unused portion from the previous tax year is gone.</div></details>
+    <details class="faq-item"><summary class="faq-q">How much will £20,000 in a Cash ISA earn at 4.8% over 10 years?</summary><div class="faq-a">£20,000 deposited as a lump sum in a Cash ISA paying 4.8% annual interest, compounded annually for 10 years, grows to £31,962.65 &mdash; calculated as 20,000 &times; 1.048<sup>10</sup>. With monthly compounding the figure is slightly higher at £32,290.56 because each month's interest itself earns interest the following month. The whole balance is tax-free. Adjusted for 2.5% CPI inflation over the same 10 years, the real value in today's purchasing power is £24,969 &mdash; still positive in real terms, but a long way below typical equity returns.</div></details>
+    <details class="faq-item"><summary class="faq-q">Cash ISA vs Stocks &amp; Shares ISA &mdash; which is better over 30 years?</summary><div class="faq-a">Over 30 years on a maximum £1,666.67/month contribution, a Stocks &amp; Shares ISA at 5% real return generates approximately £1,387,000 in today's pounds; a Cash ISA at 1% real return generates approximately £699,000 &mdash; roughly half the Stocks &amp; Shares terminal balance. The gap widens further on 40-year horizons. For short horizons (under 5 years) the position reverses &mdash; Cash ISA wins because equity drawdown risk in any 3-5 year window can derail a hard-dated goal. The decision is fundamentally a time-horizon question, not a risk-appetite question.</div></details>
+    <details class="faq-item"><summary class="faq-q">Can I have multiple Cash ISAs in the same tax year?</summary><div class="faq-a">Yes &mdash; since the April 2024 ISA reforms, multiple Cash ISAs of the same type are permitted in the same tax year, with different providers and different products if you choose. The £20,000 combined allowance across all ISA types still applies &mdash; opening five Cash ISAs with five different providers does not give you £100,000 of allowance, it gives you £20,000 split however you choose. Partial transfers from prior-year subscriptions are also now allowed.</div></details>
+    <details class="faq-item"><summary class="faq-q">What happens if I withdraw money from a Cash ISA?</summary><div class="faq-a">Withdrawing money from a non-flexible Cash ISA permanently removes that amount from the ISA wrapper &mdash; you cannot put it back without it counting as a fresh subscription against the current year's £20,000 allowance. "Flexible" Cash ISAs (an opt-in product feature some providers offer) sidestep this: money withdrawn from a flexible Cash ISA in a given tax year can be replaced in the same tax year without using fresh allowance. Always check whether your specific Cash ISA is flexible before withdrawing. If you want to move money between providers without losing the wrapper, use an ISA transfer (the new provider pulls the balance) &mdash; not withdrawal-and-redeposit.</div></details>
+    <details class="faq-item"><summary class="faq-q">Are Cash ISAs FSCS protected?</summary><div class="faq-a">Yes. Cash ISAs are protected by the Financial Services Compensation Scheme (FSCS) at the same £85,000 per banking licence per individual that applies to standard UK deposit accounts. The protection is per banking licence, not per brand &mdash; if you hold deposits with two brands that share a banking licence (for example, several high-street banks operate multiple brands on a single licence), the £85,000 cap applies across the combined balance, not per brand. The FSCS website maintains a current banking-licence lookup tool to check coverage.</div></details>
+    <details class="faq-item"><summary class="faq-q">Should I lock in a fixed-rate Cash ISA in 2026?</summary><div class="faq-a">It depends on your rate forecast. If you expect the Bank of England to cut Bank Rate further, locking in today's 4.7-5.2% 1-year fixed rate is mathematically preferable to staying in easy-access where the rate floats down with Bank Rate. If you expect rates to hold or rise, easy-access wins because you keep the flexibility to chase higher rates as they appear. Worked break-even: £10,000 in a 5.10% 1-year fixed yields £510 of interest in year one; the same £10,000 in a 5.20%-headline easy-access (with 1.00% bonus for 6 months, 4.20% thereafter) yields roughly £470 in year one &mdash; the fixed-rate wins by about £40 even before factoring in the cost of chasing the next bonus. The current 2026 SONIA swap curve is pricing in further BoE cuts, which is why fixed-rates often look better-value than the headline-rate gap suggests.</div></details>
+  </div>
+</div>
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="isa-calculator-cash-isa-growth"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+<script>
+function applyAllowance(){
+  var sel = document.getElementById('maxAllowance').value;
+  if(sel === 'max'){
+    document.getElementById('monthlyContrib').value = 1666.67;
+  }
+  calculate();
+}
+function calculate(){
+  var P            = parseFloat(document.getElementById('curBalance').value)    || 0;
+  var PMT          = parseFloat(document.getElementById('monthlyContrib').value) || 0;
+  var annualRate   = parseFloat(document.getElementById('annualRate').value)    || 0;
+  var years        = parseInt(document.getElementById('years').value, 10)       || 0;
+  var inflation    = parseFloat(document.getElementById('inflationRate').value) || 0;
+
+  // Cap monthly contribution at the £20k annual allowance
+  if(PMT > 1666.67){ PMT = 1666.67; document.getElementById('monthlyContrib').value = 1666.67; }
+
+  var fmt = function(v){ return (v < 0 ? '-£' : '£') + Math.round(Math.abs(v)).toLocaleString('en-GB'); };
+
+  var n = years * 12;
+  var r = (annualRate / 100) / 12;
+
+  // FV = P*(1+r)^n + PMT * ((1+r)^n - 1)/r
+  var finalBalance;
+  if(n <= 0){
+    finalBalance = P;
+  } else if(r === 0){
+    finalBalance = P + PMT * n;
+  } else {
+    var pow = Math.pow(1 + r, n);
+    finalBalance = P * pow + PMT * ((pow - 1) / r);
+  }
+
+  var totalContrib = P + PMT * n;
+  var interest = finalBalance - totalContrib;
+
+  // Real balance = nominal / (1+inflation)^years
+  var realBalance;
+  if(years <= 0 || inflation === 0){
+    realBalance = finalBalance;
+  } else {
+    realBalance = finalBalance / Math.pow(1 + inflation/100, years);
+  }
+
+  document.getElementById('r-final-balance').textContent = fmt(finalBalance);
+  document.getElementById('r-total-contrib').textContent = fmt(totalContrib);
+  document.getElementById('r-interest').textContent      = fmt(interest);
+  document.getElementById('r-real-balance').textContent  = fmt(realBalance);
+
+  // Year-by-year breakdown
+  var rows = [];
+  var balance = P;
+  var annualContrib = PMT * 12;
+  for(var y = 1; y <= years; y++){
+    // monthly compounding within the year
+    for(var m = 0; m < 12; m++){
+      if(r === 0){
+        balance = balance + PMT;
+      } else {
+        balance = balance * (1 + r) + PMT;
+      }
+    }
+    rows.push([y, fmt(annualContrib), fmt(balance)]);
+  }
+  // Trim to first 5 and last 5 if > 12 rows
+  var displayRows = rows;
+  if(rows.length > 12){
+    displayRows = rows.slice(0, 5).concat([['…','…','…']]).concat(rows.slice(-5));
+  }
+  document.getElementById('breakdown-body').innerHTML = displayRows.map(function(s){
+    return '<tr><td>' + s[0] + '</td><td class="td-right">' + s[1] + '</td><td class="td-right">' + s[2] + '</td></tr>';
+  }).join('');
+
+  var note = 'UK reference: £20,000 annual Cash ISA allowance (2026/27, shared across all ISA types). Monthly contributions capped at £1,666.67 to enforce the cap. FSCS protection £85,000 per banking licence. ';
+  if(inflation > 0){
+    note += 'Real balance discounts the nominal terminal value by ' + inflation + '% CPI annually to express it in today\'s pounds.';
+  } else {
+    note += 'Inflation rate set to 0% — real balance equals nominal balance.';
+  }
+  var noteEl = document.getElementById('region-note');
+  if(noteEl) noteEl.textContent = note;
+
+  var results = document.getElementById('results');
+  if(results) results.classList.add('show');
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof calculate === 'function') calculate();
+});
+</script>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-22">22 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/tfsa-calculator/">🇿🇦 TFSA Calculator</a> — Project your tax-free TFSA growth with the R36,000 annual cap and R500,000 lifetime cap enforced. SARS s12T rules applied.</li>
+      <li><a href="/investment-growth/">🚀 Investment Growth Calculator</a> — See how your investment portfolio grows over time with regular contributions and compound returns.</li>
+      <li><a href="/compound-interest/">Compound Interest Calculator</a> — See how your money grows over time with the power of compounding. Add monthly contributions to maximise your results.</li>
+      <li><a href="/retirement-savings/">🏖 Retirement Savings Calculator</a> — Find out if you&#x27;re on track to retire comfortably - and exactly how much you need to save each month.</li>
+      <li><a href="/savings-goal/">🎯 Savings Goal Calculator</a> — Enter your target amount and monthly savings to find out exactly when you&#x27;ll reach your goal.</li>
+      <li><a href="/inflation-impact/">📊 Inflation Impact Calculator</a> — See how inflation erodes the value of money over time — and what it means for your savings.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+<div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="5980987973"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>
