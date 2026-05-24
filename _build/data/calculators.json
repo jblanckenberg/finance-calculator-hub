@@ -1887,6 +1887,120 @@
     ],
     "keyConcepts": "<p><strong>How overpayment saves money.</strong> Every £1 overpaid goes straight against capital and reduces every future month's interest. The compound effect is enormous: £200/month on a £200k 25yr at 5% saves around £33,000 in interest AND shortens the term by 5+ years. The interest saving alone is a guaranteed risk-free 5% return on the overpayment.</p><p><strong>The 10% ERC-free rule.</strong> Most UK fixed-rate mortgages allow overpayments up to 10% of the OUTSTANDING balance per year (not original balance) without an Early Repayment Charge. For £200k that's £20k/year. Tracker, discount, and SVR mortgages typically have no cap. Always check your offer document — penalty for breaching the cap is 1–5% of the excess.</p><p><strong>Overpay vs invest decision.</strong> Treat the mortgage rate as the hurdle rate for your alternative investment. Mortgage at 5% means you need an after-tax expected return above 5% to make investing the better choice. Stocks & Shares ISA historically returns 6–7% real (after inflation), which BEATS most mortgage rates — but with risk. Cash ISA at 4–5% LOSES to a 5% mortgage rate. Pay-off-the-mortgage is the conservative play; invest is the higher-expected-return play.</p><p><strong>The cash-flow trap.</strong> Overpaying ties up money. If you lose your job or face a big expense, you can't reclaim the overpayment without remortgaging (which takes 4–8 weeks and costs £500+). Most planners recommend building a 3–6-month emergency fund in an ISA or savings account BEFORE making meaningful overpayments. Overpayments aren't liquid.</p><p><strong>Shorten term vs reduce payment.</strong> Default UK lender behaviour: keep monthly payment the same, shorten the term (saves more interest). Alternative: recalculate a smaller monthly payment over the original term (better cash flow but saves less). Most lenders need you to call to switch from shortening to reducing. For most borrowers, shortening is mathematically better.</p>"
   },
+  "texas-paycheck-calculator": {
+    "slug": "texas-paycheck-calculator",
+    "name": "🤠 Texas Paycheck Calculator",
+    "title": "Texas Paycheck Calculator: Net After Federal + FICA",
+    "description": "Free Texas paycheck calculator. Federal income tax + FICA only — Texas has NO state income tax. 2026 IRS brackets, 401(k) and HSA pre-tax modelled.",
+    "h1": "🤠 Texas Paycheck Calculator",
+    "subtitle": "Texas has no state income tax — your paycheck only gets hit by federal tax and FICA. See exactly what lands in your account each pay period.",
+    "metaDescription": "Free Texas paycheck calculator. Federal income tax + FICA only — Texas has NO state income tax. 2026 IRS brackets, 401(k) and HSA pre-tax modelled.",
+    "regions": ["USA"],
+    "primaryKeyword": "texas paycheck calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "Texas Paycheck Calculator",
+      "description": "Calculate take-home pay for Texas residents — federal income tax + FICA only, no state income tax.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to calculate a Texas paycheck",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your annual gross salary",
+        "Pick filing status (single or married filing jointly)",
+        "Set your 401(k) contribution % (reduces federal tax only)",
+        "Set your annual HSA contribution (reduces federal AND FICA)",
+        "Pick your pay period to see per-paycheck take-home"
+      ]
+    },
+    "faq": [
+      { "q": "Why does Texas have no state income tax?", "a": "Texas funds state government primarily through sales tax (6.25% state + up to 2% local), property tax (6th highest in the US, averaging 1.6–1.8% of assessed value), and severance taxes on oil and gas extraction. The Texas constitution prohibits a personal income tax — implementing one would require a constitutional amendment ratified by two-thirds of the Legislature plus a majority of voters." },
+      { "q": "What's the total tax burden in Texas?", "a": "For someone earning $80,000: federal income tax ~$9,200, FICA ~$6,100, state $0 — total ~$15,300 (19% effective rate). Compared to California at the same gross ($19,700 total, 24.6% effective), Texas saves you ~$4,400/year. Property tax can claw that back: a $400k home at 1.7% property tax = $6,800/year, eating most of the income-tax savings for middle-income homeowners." },
+      { "q": "Does Texas have a payroll tax?", "a": "Yes — Texas employers pay a state unemployment insurance (SUI) tax that ranges from 0.31% to 6.31% on the first $9,000 of each employee's wages. This is paid by the EMPLOYER, not the employee, so it doesn't appear on your paycheck. From the employee's perspective, Texas paychecks have no state withholding beyond federal + FICA." },
+      { "q": "Should I max out 401(k) or HSA first in Texas?", "a": "HSA usually wins on a dollar-for-dollar basis — it's TRIPLE tax-advantaged (pre-tax in, tax-free growth, tax-free out for qualified medical). HSA reduces both federal AND FICA (saving 29.65% combined). 401(k) only reduces federal (FICA still owed). 2026 HSA limits: $4,300 single / $8,550 family + $1,000 catch-up at 55+." },
+      { "q": "What about Texas franchise tax?", "a": "The Texas Franchise Tax applies to BUSINESSES, not individuals. Businesses with total revenue under $2.47 million (2026 threshold) owe no franchise tax. Above that, the rate is 0.375% for retail/wholesale and 0.75% for most other businesses. The franchise tax doesn't apply to W-2 wages — that's what makes Texas so attractive for high-income earners." },
+      { "q": "How does Texas compare to other no-income-tax states?", "a": "Texas, Florida, Nevada, Washington, South Dakota, Tennessee, New Hampshire, Wyoming, Alaska all have no broad state income tax. Florida has lower property tax than Texas; Washington has 7% capital gains tax above $250k; New Hampshire has a 4% tax on interest+dividends (phased out by 2027); Alaska sometimes pays residents a Permanent Fund dividend. For W-2 income only, Texas, Florida, and Nevada are typically the cheapest combined state burden." },
+      { "q": "Do I still need to file a Texas state tax return?", "a": "No. Texas doesn't have a state income tax, so there's no state return for personal income. You only file federal (Form 1040). Texas residents who work in another state may owe taxes to that other state and need to file there." },
+      { "q": "Self-employed in Texas — what changes?", "a": "As a sole proprietor or independent contractor, you owe Self-Employment (SE) tax in place of FICA — 15.3% (12.4% Social Security + 2.9% Medicare, plus 0.9% additional Medicare above threshold). Half of SE tax is deductible against federal income. No state income tax still applies, so federal + SE is your full burden on self-employment income." }
+    ],
+    "sources": [
+      { "url": "https://www.irs.gov/forms-pubs/about-publication-17", "label": "IRS Publication 17 — 2026 federal brackets" },
+      { "url": "https://www.ssa.gov/oact/cola/cbb.html", "label": "SSA — Contribution + Benefit Base (FICA wage base)" },
+      { "url": "https://comptroller.texas.gov/taxes/", "label": "Texas Comptroller — Taxes Overview" }
+    ],
+    "related": [
+      "california-paycheck-calculator",
+      "take-home-pay",
+      "401k-calculator",
+      "401k-withdrawal-calculator",
+      "roth-ira-calculator",
+      "retirement-savings"
+    ],
+    "scenarios": [
+      { "label": "$80k single, no 401k", "query": "grossAnnual=80000&filingStatus=single&contribution401kPct=0&contributionHsaAnnual=0&payPeriodsPerYear=12" },
+      { "label": "$150k married, 10% 401k", "query": "grossAnnual=150000&filingStatus=married&contribution401kPct=10&contributionHsaAnnual=4000&payPeriodsPerYear=24" },
+      { "label": "$60k bi-weekly", "query": "grossAnnual=60000&filingStatus=single&contribution401kPct=5&contributionHsaAnnual=0&payPeriodsPerYear=26" }
+    ],
+    "keyConcepts": "<p><strong>The Texas advantage.</strong> No state income tax means your paycheck is reduced only by federal tax (10–37% progressive) and FICA (7.65% on most wages). For middle-income earners ($50k–$150k), this typically nets ~$3,500–$8,000 more per year vs equivalent salary in California or New York. The offset: Texas has the 6th highest property-tax burden in the US, so homeowners see part of the income-tax savings clawed back through property tax bills.</p><p><strong>FICA matters more than people realize.</strong> Even in no-state-tax Texas, FICA (Social Security 6.2% to $176,100 + Medicare 1.45%) is a guaranteed ~7.65% off every paycheck. High earners pay an additional 0.9% Medicare above $200k single / $250k MFJ. FICA hits gross wages — pre-tax 401(k) doesn't reduce it (but HSA does, which is why HSA is the underrated triple-tax-advantaged account).</p><p><strong>2026 federal brackets (single).</strong> 10% to $11,925; 12% to $48,475; 22% to $103,350; 24% to $197,300; 32% to $250,525; 35% to $626,350; 37% above. MFJ brackets are roughly 2x single. Standard deduction $15,000 single, $30,000 MFJ. Marginal vs effective rate distinction matters — your top dollar pays your marginal rate, your average dollar pays the effective rate.</p><p><strong>401(k) vs HSA precedence in TX.</strong> HSA first (triple-tax-advantaged), then capture full employer 401(k) match (free money, typically 100% return), then Roth IRA up to $7,000, then traditional 401(k) up to $23,000. This sequence maximises tax efficiency for Texans who don't get to use 401(k) for state-tax shelter (because there's no state tax).</p><p><strong>The retirement-savings paradox.</strong> Texans often save LESS for retirement than Californians because the take-home pay looks comfortable. But Californians are forced to save via 401(k) to escape their high state tax — they retire with $1.5M while comparable-income Texans retire with $500k. The state-tax savings should be the ROCKET FUEL for retirement contributions, not the excuse not to make them.</p>"
+  },
+  "california-paycheck-calculator": {
+    "slug": "california-paycheck-calculator",
+    "name": "🌴 California Paycheck Calculator",
+    "title": "California Paycheck Calculator: Federal + State + SDI",
+    "description": "Free California paycheck calculator. 2026 federal + CA state brackets (1–12.3%) + SDI 1.1%. The highest combined state burden in the US.",
+    "h1": "🌴 California Paycheck Calculator",
+    "subtitle": "Federal + FICA + California progressive brackets + State Disability Insurance. CA stacks more taxes on every paycheck than any other US state.",
+    "metaDescription": "Free California paycheck calculator. 2026 federal + CA state brackets (1–12.3%) + SDI 1.1%. The highest combined state burden in the US.",
+    "regions": ["USA"],
+    "primaryKeyword": "california paycheck calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "California Paycheck Calculator",
+      "description": "Calculate take-home pay for California residents — federal + FICA + CA progressive brackets + State Disability Insurance.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to calculate a California paycheck",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your annual gross salary",
+        "Pick filing status (single or married filing jointly)",
+        "Set your 401(k) contribution % (reduces federal AND CA state tax)",
+        "Set your annual HSA contribution (reduces federal+FICA; CA still taxes)",
+        "Pick your pay period to see per-paycheck take-home"
+      ]
+    },
+    "faq": [
+      { "q": "Why is California take-home so much lower than Texas?", "a": "California stacks four taxes on every paycheck: federal income tax (same as Texas), FICA (same), CA state income tax (1–12.3% progressive), and CA SDI (1.1% on wages up to $153k). For an $80,000 earner, California takes ~$4,400 more than Texas — a ~5.5% lifestyle difference. At $200,000, California takes ~$11,000 more (~5.5%). The CA premium is roughly constant as a percentage across middle-to-upper incomes." },
+      { "q": "What are California's 2026 income tax brackets?", "a": "2026 California single-filer brackets: 1% to $10,756; 2% to $25,499; 4% to $40,245; 6% to $55,866; 8% to $70,606; 9.3% to $360,659; 10.3% to $432,787; 11.3% to $721,314; 12.3% above. An additional 1% Mental Health Services Tax applies above $1,000,000 — bringing the top effective rate to 13.3%. MFJ brackets are roughly 2x single." },
+      { "q": "What is California SDI?", "a": "California State Disability Insurance is a mandatory employee-paid payroll tax funding short-term disability + paid family leave. 2024 rate: 1.1% on wages up to $153,164 (updated annually). Max 2024 SDI withholding ~$1,685. Funds Disability Insurance (DI) for non-work-related illness/injury and Paid Family Leave (PFL) for bonding with a new child. Pays ~60–70% of wages for up to 52 weeks." },
+      { "q": "Does California tax HSA contributions?", "a": "Yes. California is one of only 2 states (alongside New Jersey) that does NOT conform to federal HSA treatment. Your HSA contribution reduces federal taxable income + FICA wages, but CA state tax treats it as regular income. This calculator handles the distinction: HSA reduces federal+FICA but NOT the CA state taxable income line." },
+      { "q": "Can I avoid California state tax by working remotely?", "a": "Generally no. California taxes residents on their worldwide income regardless of where the income is earned. Even after moving out of California, the Franchise Tax Board may continue to claim partial residency for several months if you maintain a home, family, or business connections in CA. The reliable way to escape CA tax is to fully relocate residency: sell or rent out CA home, move family, register cars/voter elsewhere." },
+      { "q": "Does California recognise the federal standard deduction?", "a": "No — California has its own standard deduction, materially smaller than federal. 2026 CA standard deduction ~$5,540 single / $11,080 married. Federal is $15,000 / $30,000. The smaller CA std deduction is why CA state tax kicks in at low income even though rates start at 1%. Many CA residents itemise for state (mortgage interest, property tax, charitable) while taking the federal standard deduction." },
+      { "q": "What's the top all-in California tax rate?", "a": "For W-2 income above $1,000,000: 37% federal + 13.3% CA (12.3% + 1% MHS) + 3.8% Net Investment Income Tax on cap gains = up to 54.1% combined marginal rate for high-earners. Wages only (no investment income): 37% + 13.3% = 50.3%. Self-employed adds 2.9% Medicare + 0.9% additional Medicare = 53.2% combined wage-equivalent rate. Among the highest in the developed world." },
+      { "q": "Should I max 401(k) more aggressively in California?", "a": "Yes. CA's high marginal rates make 401(k) pre-tax exceptionally valuable. A $23,000 401(k) max at 9.3% CA + 22% federal = $7,200 tax savings (vs $5,060 in TX). Traditional 401(k) often beats Roth for high-CA-tax residents who expect to retire to a no-state-tax state. The cross-state tax arbitrage is a major reason CA tech workers retire to NV, TX, or FL and convert traditional to Roth post-move." }
+    ],
+    "sources": [
+      { "url": "https://www.irs.gov/forms-pubs/about-publication-17", "label": "IRS Publication 17 — 2026 federal brackets" },
+      { "url": "https://www.ftb.ca.gov/forms/index.html", "label": "California Franchise Tax Board — Forms & Brackets" },
+      { "url": "https://edd.ca.gov/en/disability/", "label": "EDD — State Disability Insurance" }
+    ],
+    "related": [
+      "texas-paycheck-calculator",
+      "take-home-pay",
+      "401k-calculator",
+      "401k-withdrawal-calculator",
+      "roth-ira-calculator",
+      "fire-calculator"
+    ],
+    "scenarios": [
+      { "label": "$80k single", "query": "grossAnnual=80000&filingStatus=single&contribution401kPct=0&contributionHsaAnnual=0&payPeriodsPerYear=12" },
+      { "label": "$200k married, 15% 401k", "query": "grossAnnual=200000&filingStatus=married&contribution401kPct=15&contributionHsaAnnual=4000&payPeriodsPerYear=24" },
+      { "label": "$500k high-earner", "query": "grossAnnual=500000&filingStatus=single&contribution401kPct=10&contributionHsaAnnual=4300&payPeriodsPerYear=12" }
+    ],
+    "keyConcepts": "<p><strong>The California tax stack.</strong> Four taxes hit every paycheck: federal income tax (10–37%), FICA (7.65% + 0.9% additional above $200k), CA state income tax (1–12.3% progressive, 13.3% above $1M with mental-health surcharge), and CA SDI (1.1% on wages up to $153k). At $200k single, the all-in effective rate lands around 32–36% — the highest in the US for that income band.</p><p><strong>The CA Roth question.</strong> California's high marginal rates make traditional 401(k) more valuable than Roth for most residents, because the tax shelter is on dollars taxed at the CA peak rate. If you plan to retire to a no-state-tax state (NV, TX, FL), traditional is even more attractive — you deduct at CA rate and withdraw at the lower no-state-tax rate. If you plan to stay in CA forever, Roth may win because today's bracket is similar to retirement bracket. Most planners default to traditional first for high CA earners.</p><p><strong>HSA doesn't shelter CA tax.</strong> California (and New Jersey) are the only 2 states that don't conform to federal HSA treatment. Your HSA reduces federal income tax + FICA, but California still taxes it as income. For a $4,300 max HSA contribution at 9.3% CA bracket = $400 of additional CA tax owed (vs $0 in 49 other states). HSA is still worth using in CA — the federal+FICA savings (~30%) far exceed the CA state tax (~9%) — but the math is less compelling than in other states.</p><p><strong>The SDI exemption.</strong> CA SDI funds short-term disability + paid family leave. Workers who decline state coverage (e.g. union members with equivalent private coverage) are SDI-exempt. Most W-2 employees pay it automatically. The cap at $153k means CA SDI is regressive — full 1.1% bite below the cap, $0 marginal above. High earners benefit from the cap.</p><p><strong>The CA-to-TX arbitrage.</strong> A common high-earner playbook: spend working years in CA earning $250k+ at CA tax rates, maxing out traditional 401(k) (saving 9.3%+ on the contribution). At retirement, move to TX or NV (zero state tax), then Roth-convert the traditional 401(k) over 5–10 years at zero CA tax. Total tax shelter: ~9% × $23k/year × 30 years = ~$62k saved. Requires genuine residency change — the FTB scrutinizes high-net-worth migrations.</p>"
+  },
   "isa-calculator": {
     "slug": "isa-calculator",
     "name": "🇬🇧 ISA Calculator",

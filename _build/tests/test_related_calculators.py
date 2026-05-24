@@ -52,8 +52,9 @@ def test_calculator_pages_exist():
     assert not missing, f"Missing rendered pages for: {missing}"
     # Bump as new top-level calc pages ship.
     # 2026-05-24: +coast-fire (20), +401k-withdrawal (21), +401k-tax (22),
-    # +mortgage-repayment (23), +mortgage-overpayment (24).
-    assert len(CALC_PAGES) == 24, f"Expected 24 calculator pages, found {len(CALC_PAGES)}"
+    # +mortgage-repayment (23), +mortgage-overpayment (24),
+    # +texas-paycheck (25), +california-paycheck (26).
+    assert len(CALC_PAGES) == 26, f"Expected 26 calculator pages, found {len(CALC_PAGES)}"
 
 
 def test_variant_pages_exist():

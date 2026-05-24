@@ -1,0 +1,164 @@
+<!-- California Paycheck Calculator -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#fff8e1;border-left:4px solid #f5b800;margin-bottom:16px">
+    <strong>🌴 California Paycheck Calculator</strong> — Federal + FICA + California state brackets (1–12.3%) + State Disability Insurance (SDI 1.1% on wages up to $153k). The highest combined state burden in the US.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="grossAnnual">Annual Gross Salary <span class="hint">($)</span></label>
+        <input type="number" id="grossAnnual" value="80000" min="0" placeholder="80000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="filingStatus">Filing Status</label>
+        <select id="filingStatus" onchange="calculate()">
+          <option value="single">Single</option>
+          <option value="married">Married Filing Jointly</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="contribution401kPct">401(k) Contribution (%) <span class="hint">reduces federal AND state tax</span></label>
+        <input type="number" id="contribution401kPct" value="0" min="0" max="100" step="0.5" placeholder="0" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="contributionHsaAnnual">HSA Annual Contribution <span class="hint">($, reduces federal+FICA; CA still taxes it)</span></label>
+        <input type="number" id="contributionHsaAnnual" value="0" min="0" max="10000" placeholder="0" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="payPeriodsPerYear">Pay Period</label>
+      <select id="payPeriodsPerYear" onchange="calculate()">
+        <option value="52">Weekly (52)</option>
+        <option value="26">Bi-weekly (26)</option>
+        <option value="24">Semi-monthly (24)</option>
+        <option value="12" selected>Monthly (12)</option>
+        <option value="1">Annual</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">California Paycheck Breakdown</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Net Pay (per period)</div>
+        <div class="result-value" id="r-netPeriod">—</div>
+        <div class="result-hint" id="r-periodHint">Take-home in your paycheck</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Net Annual</div>
+        <div class="result-value" id="r-netAnnual">—</div>
+        <div class="result-hint">After all federal + state + FICA</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Effective Tax Rate</div>
+        <div class="result-value" id="r-effective">—</div>
+        <div class="result-hint">All tax ÷ gross</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">CA State Income Tax</div>
+        <div class="result-value" id="r-state">—</div>
+        <div class="result-hint">1%–12.3% progressive</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">CA SDI (State Disability)</div>
+        <div class="result-value" id="r-sdi">—</div>
+        <div class="result-hint">1.1% on wages up to $153,164</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Federal Income Tax</div>
+        <div class="result-value" id="r-federal">—</div>
+        <div class="result-hint">10–37% progressive brackets</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">FICA (SS + Medicare)</div>
+        <div class="result-value" id="r-fica">—</div>
+        <div class="result-hint" id="r-ficaHint">6.2% SS + 1.45% Medicare</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Pre-tax 401(k)</div>
+        <div class="result-value" id="r-401k">—</div>
+        <div class="result-hint">Reduces federal + CA state</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>2026 IRS federal brackets and standard deduction; 2026 California Franchise Tax Board state brackets (1%–12.3% with a 1% mental-health-services surcharge above $1M making the top effective rate 13.3% — not modelled in v1). California State Disability Insurance: 1.1% on wages up to $153,164 (2024 cap; CA updates annually). California conforms to federal pre-tax 401(k) treatment but does NOT exempt HSA contributions from state tax — HSAs reduce federal+FICA but California still taxes them as state income (one of only 2 states that doesn't conform to federal HSA treatment, alongside New Jersey).</p>
+    <ul style="margin:12px 0">
+      <li><strong>2026 IRS brackets:</strong> <a href="https://www.irs.gov/forms-pubs/about-publication-17" rel="noopener">IRS Publication 17</a></li>
+      <li><strong>CA state brackets:</strong> <a href="https://www.ftb.ca.gov/forms/index.html" rel="noopener">California Franchise Tax Board — Forms &amp; Brackets</a></li>
+      <li><strong>CA SDI:</strong> <a href="https://edd.ca.gov/en/disability/" rel="noopener">EDD — State Disability Insurance</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">Why is California take-home so much lower than Texas?</div><div class="faq-a">California stacks four taxes on every paycheck: federal income tax (same as Texas), FICA (same), CA state income tax (1–12.3% progressive), and CA SDI (1.1% on wages up to $153k). For an $80,000 earner, California takes ~$4,400 more than Texas — a ~5.5% lifestyle difference. At $200,000, California takes ~$11,000 more (~5.5%). The CA premium is roughly constant as a percentage across middle-to-upper incomes.</div></div><div class="faq-item"><div class="faq-q">What are California's 2026 income tax brackets?</div><div class="faq-a">2026 California single-filer brackets: 1% to $10,756; 2% to $25,499; 4% to $40,245; 6% to $55,866; 8% to $70,606; 9.3% to $360,659; 10.3% to $432,787; 11.3% to $721,314; 12.3% above. An additional 1% Mental Health Services Tax applies on income above $1,000,000 — bringing the top effective rate to 13.3%. Married-filing-jointly brackets are roughly 2x single. California has the most progressive state-tax bracket structure in the US.</div></div><div class="faq-item"><div class="faq-q">What is California SDI?</div><div class="faq-a">California State Disability Insurance is a mandatory employee-paid payroll tax that funds short-term disability + paid family leave benefits. The 2024 rate was 1.1% on wages up to $153,164 (the cap is updated annually by EDD). Maximum 2024 SDI withholding was ~$1,685. SDI funds Disability Insurance (DI) for non-work-related illness/injury and Paid Family Leave (PFL) for bonding with a new child or caring for a sick family member. The fund pays around 60–70% of wages for up to 52 weeks.</div></div><div class="faq-item"><div class="faq-q">Does California tax HSA contributions?</div><div class="faq-a">Yes. California is one of only 2 states (alongside New Jersey) that does NOT conform to federal HSA treatment. Your HSA contribution reduces federal taxable income + FICA wages, but California state tax treats it as regular income — you'll owe CA state tax on the contribution amount. This calculator handles the distinction automatically: HSA reduces federal+FICA but NOT the CA state taxable income line.</div></div><div class="faq-item"><div class="faq-q">Can I avoid California state tax by working remotely?</div><div class="faq-a">Generally no. California taxes residents on their worldwide income regardless of where the income is earned. Even after moving out of California, the Franchise Tax Board may continue to claim partial residency for several months if you maintain a home, family, or business connections in CA — this is known as the 'safe harbor' rule and has been the source of many tax disputes. The reliable way to escape CA state tax is to fully relocate residency to another state, which requires severing physical and economic ties (sell or rent out CA home, move family, register cars/voter elsewhere, etc.).</div></div><div class="faq-item"><div class="faq-q">Does California recognise the federal standard deduction?</div><div class="faq-a">No — California has its own standard deduction, which is materially smaller. 2026 CA standard deduction is approximately $5,540 single / $11,080 married. The federal standard deduction is $15,000 single / $30,000 married. The smaller CA std deduction is why CA state tax kicks in starting at low-income levels even though the rates start at 1%. Many CA residents itemise deductions for state (mortgage interest, property tax, charitable) while taking the federal standard deduction.</div></div><div class="faq-item"><div class="faq-q">What's the top all-in California tax rate?</div><div class="faq-a">For W-2 income above $1,000,000: 37% federal + 13.3% CA (12.3% + 1% MHS) + 3.8% Net Investment Income Tax (NIIT) on capital gains = up to 54.1% combined marginal rate for high-earners. For wages only (no investment income): 37% + 13.3% = 50.3%. CA SDI caps out at $153k income so doesn't apply to the top bracket. Self-employed high earners add 2.9% Medicare + 0.9% additional Medicare = 53.2% combined wage-equivalent rate. Among the highest in the developed world.</div></div><div class="faq-item"><div class="faq-q">How does CA paycheck compare to other high-tax states?</div><div class="faq-a">CA top rate 13.3% (highest); Hawaii 11%; New York 10.9% (NYC adds 3.876% local = 14.776% combined); New Jersey 10.75%; Oregon 9.9%; Minnesota 9.85%. CA SDI (1.1%) makes CA's TOTAL employee payroll burden higher than NY's despite NY's higher state income tax rate at certain income levels. For W-2 income below $300k, CA + SDI is generally heavier than any other state.</div></div><div class="faq-item"><div class="faq-q">Should I max 401(k) more aggressively in California?</div><div class="faq-a">Yes — California's high marginal rates make 401(k) pre-tax contributions exceptionally valuable. A $23,000 401(k) max at a 9.3% CA bracket + 22% federal = $7,200 tax savings (vs $5,060 for the same contribution at TX rates). Roth contributions lose this state-tax shelter, so traditional 401(k) often beats Roth for high-CA-tax residents who expect to retire to a no-state-tax state. The cross-state tax arbitrage is a major reason many CA tech workers retire to NV, TX, or FL — and convert their traditional accounts to Roth post-move.</div></div></div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/texas-paycheck-calculator/" class="related-card">🤠 Texas Paycheck</a>
+      <a href="/take-home-pay/" class="related-card">💵 USA Take-Home Pay</a>
+      <a href="/401k-calculator/" class="related-card">💼 401(k) Contribution</a>
+      <a href="/401k-withdrawal-calculator/" class="related-card">📊 401(k) Withdrawal</a>
+      <a href="/roth-ira-calculator/" class="related-card">🏦 Roth IRA</a>
+      <a href="/fire-calculator/" class="related-card">🔥 FIRE Calculator</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="california-paycheck-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/state-paycheck.js" defer></script>
+<script>
+function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+function calculate() {
+  if (!window.FCH_STATE_PAYCHECK) return;
+  var p = {
+    grossAnnual: +document.getElementById('grossAnnual').value,
+    filingStatus: document.getElementById('filingStatus').value,
+    contribution401kPct: +document.getElementById('contribution401kPct').value || 0,
+    contributionHsaAnnual: +document.getElementById('contributionHsaAnnual').value || 0,
+    payPeriodsPerYear: +document.getElementById('payPeriodsPerYear').value,
+    state: 'CA',
+  };
+  var R = window.FCH_STATE_PAYCHECK.calc(p);
+  var errEl = document.getElementById('error-message');
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    ['r-netPeriod', 'r-netAnnual', 'r-effective', 'r-state', 'r-sdi', 'r-federal', 'r-fica', 'r-401k'].forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-netPeriod').textContent = fmt(R.netPerPeriod);
+  var periodLabel = { 52: 'weekly', 26: 'bi-weekly', 24: 'semi-monthly', 12: 'monthly', 1: 'annual' }[p.payPeriodsPerYear];
+  document.getElementById('r-periodHint').textContent = 'Take-home per ' + periodLabel + ' paycheck';
+  document.getElementById('r-netAnnual').textContent = fmt(R.netAnnual);
+  document.getElementById('r-effective').textContent = R.effectiveTaxRatePct.toFixed(1) + '%';
+  document.getElementById('r-state').textContent = fmt(R.stateTax);
+  document.getElementById('r-sdi').textContent = fmt(R.stateDisability);
+  document.getElementById('r-federal').textContent = fmt(R.federalIncomeTax);
+  document.getElementById('r-fica').textContent = fmt(R.totalFica);
+  document.getElementById('r-ficaHint').textContent = 'SS ' + fmt(R.socialSecurity) + ' + Medicare ' + fmt(R.medicare) + (R.additionalMedicare > 0 ? ' + addl ' + fmt(R.additionalMedicare) : '');
+  document.getElementById('r-401k').textContent = fmt(R.preTax401k);
+}
+document.addEventListener('DOMContentLoaded', function () { if (typeof calculate === 'function') calculate(); });
+</script>
