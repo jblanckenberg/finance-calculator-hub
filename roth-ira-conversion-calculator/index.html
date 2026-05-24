@@ -1,0 +1,578 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roth IRA Conversion Calculator: Convert Now or Later?</title>
+  <meta name="description" content="Free Roth IRA conversion calculator. Compare Traditional IRA vs Roth IRA after-tax growth, conversion tax bill, break-even retirement rate, and net advantage.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/roth-ira-conversion-calculator/">
+
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <meta property="og:title" content="Roth IRA Conversion Calculator: Convert Now or Later?">
+  <meta property="og:description" content="Free Roth IRA conversion calculator. Compare Traditional IRA vs Roth IRA after-tax growth, conversion tax bill, break-even retirement rate, and net advantage.">
+  <meta property="og:url" content="https://finncalc.com/roth-ira-conversion-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Roth IRA Conversion Calculator: Convert Now or Later?">
+  <meta name="twitter:description" content="Free Roth IRA conversion calculator. Compare Traditional IRA vs Roth IRA after-tax growth, conversion tax bill, break-even retirement rate, and net advantage.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-17", "description": "Free Roth IRA conversion calculator. Compare Traditional IRA vs Roth IRA after-tax growth, conversion tax bill, break-even retirement rate, and net advantage.", "name": "\ud83d\udd04 Roth IRA Conversion Calculator", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/roth-ira-conversion-calculator/"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A Roth conversion is the act of moving money from a Traditional IRA (or a Traditional 401(k) you\u0027ve rolled into an IRA) into a Roth IRA. You pay ordinary federal income tax on the entire converted amount in the year you do the conversion, and from then on the money grows tax-free and comes out tax-free at retirement. There are no income limits on conversions (unlike direct Roth contributions) and no annual conversion cap \u2014 you can convert $10,000 or $1,000,000 in a single year. The decision boils down to one question: do you expect your marginal tax rate to be higher or lower in retirement than it is today?"}, "name": "What IS a Roth IRA conversion?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Three classic green-light scenarios. (1) Your current marginal rate is unusually low \u2014 a gap year between jobs, an early-retirement year before Social Security kicks in, or a sabbatical. (2) You expect tax rates to rise generally (the 2017 TCJA brackets sunset back to pre-2018 levels at the end of 2025 unless renewed). (3) You have outside cash to pay the conversion tax, the time horizon is long (15+ years), and your retirement marginal rate is similar to or higher than today\u0027s. The longer the horizon, the more powerful the tax-free compounding becomes, especially if the conversion tax is paid from outside funds."}, "name": "When does a conversion make financial sense?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Five red flags. (1) You expect a meaningfully lower marginal rate in retirement \u2014 converting at 32% to withdraw at 12% is just paying extra tax. (2) You\u0027d have to pay the conversion tax out of the IRA itself \u2014 that drains the compounding base and roughly cancels the Roth advantage unless rates rise. (3) The conversion pushes you into IRMAA (Medicare premium surcharges) or over the ACA premium-credit cliff. (4) You\u0027re close to retirement and the 5-year-rule clock won\u0027t finish before you need the money. (5) You have a large Traditional balance with nondeductible contributions mixed in \u2014 the pro-rata rule will make a partial conversion painful and you\u0027ll need to model it case-by-case."}, "name": "When should I NOT convert?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Each Roth conversion starts its own 5-year clock; you must wait 5 calendar years from January 1 of the conversion year before you can withdraw that converted principal without a 10% early-withdrawal penalty (assuming you\u0027re under 59\u00bd). Earnings have their own separate 5-year-and-age-59\u00bd rule. This calculator assumes you wait at least 5 years and do not touch the money before retirement age \u2014 if you plan to use conversion-ladder withdrawals before 59\u00bd (common in FIRE), be deliberate about timing each year\u0027s conversion so the ladder rungs are reachable in order."}, "name": "What\u0027s the 5-year rule and does this calc account for it?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "From outside money \u2014 almost always. Paying from outside lets the entire conversion amount enter the Roth and compound tax-free, which is where the real Roth advantage lives. Paying from inside the IRA shrinks the Roth balance up front and roughly cancels the conversion benefit when current and retirement marginal rates are equal (try the toggle in this calculator on the same scenario to see the math). The only time paying from inside is acceptable is when you have no outside cash, a long horizon, and you\u0027re confident your retirement rate will be materially higher than today\u0027s. If you\u0027re under 59\u00bd and pay the tax from inside, the IRA dollars you peel off to pay the tax are themselves treated as an early distribution subject to the 10% penalty \u2014 another reason to use outside funds."}, "name": "Should I pay the conversion tax from the IRA or from outside money?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The pro-rata rule (also called the cream-in-the-coffee rule) says the IRS treats all your Traditional IRA balances (deductible + nondeductible across every Traditional IRA you own) as one big pool when you do a conversion. If 80% of that pool was pre-tax money, then 80% of any conversion is taxable \u2014 regardless of which account it physically came from. This wrecks the backdoor Roth strategy for people who already hold large pre-tax Traditional balances. Workarounds: roll the pre-tax Traditional IRA balance into your current 401(k) (which is excluded from the pro-rata calc), do the backdoor in a clean year, or accept the pro-rata tax hit. This calculator assumes pro-rata does not apply \u2014 if it does for you, model the post-pro-rata taxable portion as the conversion amount."}, "name": "What about the pro-rata rule?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 not since 2018. The Tax Cuts and Jobs Act of 2017 eliminated the ability to recharacterize a Roth conversion. Once you convert, it\u0027s permanent. Pre-TCJA you could undo a conversion if the market crashed before October 15 of the following year (the do-over); that escape hatch is gone. The practical consequence: only convert what you\u0027re absolutely sure you want to convert, and consider spreading large conversions across multiple tax years to stay in lower brackets and to give yourself optionality each year."}, "name": "Can I undo (recharacterize) a Roth conversion?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "No. Direct Roth IRA contributions have a modified-AGI phase-out ($161,000 single / $240,000 married-filing-jointly for 2026), but conversions have no income limit and no annual cap. This is why the backdoor Roth works: high earners contribute to a Traditional IRA (which has no income limit on contributions, just on the deduction) and then immediately convert it. The conversion creates a taxable event, but for nondeductible contributions converted in the same year the taxable amount is roughly zero (the cost basis equals the conversion amount). The pro-rata rule is the one big but here \u2014 see the FAQ above."}, "name": "Are there income limits on conversions?"}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/roth-ira-conversion-calculator/", "name": "\ud83d\udd04 Roth IRA Conversion Calculator", "position": 2}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "description": "Step-by-step guide to using the \ud83d\udd04 Roth IRA Conversion Calculator.", "name": "How to evaluate a Roth IRA conversion", "step": [{"@type": "HowToStep", "name": "Enter the dollar amount you\u0027re considering converting", "position": 1, "text": "Enter the dollar amount you\u0027re considering converting from Traditional IRA / 401(k) to Roth IRA", "url": "https://finncalc.com/roth-ira-conversion-calculator/#step-1"}, {"@type": "HowToStep", "name": "Set your current age, planned retirement age", "position": 2, "text": "Set your current age, planned retirement age, and an expected annual return", "url": "https://finncalc.com/roth-ira-conversion-calculator/#step-2"}, {"@type": "HowToStep", "name": "Enter your current marginal federal tax rate", "position": 3, "text": "Enter your current marginal federal tax rate and your best guess for your retirement marginal rate", "url": "https://finncalc.com/roth-ira-conversion-calculator/#step-3"}, {"@type": "HowToStep", "name": "Choose whether the conversion tax is paid", "position": 4, "text": "Choose whether the conversion tax is paid from outside funds (preferred) or from the converted amount", "url": "https://finncalc.com/roth-ira-conversion-calculator/#step-4"}, {"@type": "HowToStep", "name": "Read off the recommendation (Convert / Don\u0027t", "position": 5, "text": "Read off the recommendation (Convert / Don\u0027t convert / Roughly equal), net advantage, and break-even retirement rate", "url": "https://finncalc.com/roth-ira-conversion-calculator/#step-5"}], "totalTime": "PT2M"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "dateModified": "2026-05-17", "datePublished": "2025-08-01", "description": "Free Roth IRA conversion calculator. Compare Traditional IRA vs Roth IRA after-tax growth, conversion tax bill, break-even retirement rate, and net advantage.", "headline": "\ud83d\udd04 Roth IRA Conversion Calculator", "inLanguage": "en", "mainEntityOfPage": {"@id": "https://finncalc.com/roth-ira-conversion-calculator/", "@type": "WebPage"}, "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://finncalc.com/og-image.png"}, "name": "FinCalcHub", "url": "https://finncalc.com/"}, "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "url": "https://finncalc.com/roth-ira-conversion-calculator/"}</script>
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/compound-interest/">Compound Interest</a>
+    <a href="/retirement-savings/">Retirement</a>
+    <a href="/take-home-pay/">Take-Home Pay</a>
+    <a href="/mortgage/">Mortgage</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+<main id="content">
+<!-- Ad slot top (leaderboard above H1) -->
+<div class="container">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="4461919959"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> › 🔄 Roth IRA Conversion Calculator</p>
+  <h1>🔄 Roth IRA Conversion Calculator</h1>
+  <p class="subtitle">Should you convert pre-tax IRA / 401(k) money to a Roth today? Model the conversion tax, tax-free Roth growth, and the Traditional after-tax alternative side-by-side — with a plain-English recommendation and the break-even retirement tax rate.</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Roth IRA Conversion Calculator (USA) -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#e8f5e9;border-left:4px solid #2e7d32;margin-bottom:16px">
+    <strong>🔄 Roth IRA Conversion Calculator</strong> — model the dollars-and-cents trade-off of converting Traditional IRA / 401(k) money to a Roth IRA today versus leaving it tax-deferred. Outputs the conversion tax bill, what actually lands in the Roth, both balances at retirement, and a plain-English recommendation (Convert / Don&rsquo;t convert / Roughly equal) plus the break-even retirement tax rate.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Scenario</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="conversionAmount">Amount to Convert ($)</label>
+        <input type="number" id="conversionAmount" value="50000" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="expectedReturnPct">Expected Annual Return % <span class="hint">long-run S&amp;P 500 ≈ 7% real</span></label>
+        <input type="number" id="expectedReturnPct" value="7" min="-5" max="15" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" value="35" min="18" max="100" oninput="calculate()" inputmode="numeric">
+      </div>
+      <div class="form-group">
+        <label for="retirementAge">Retirement Age</label>
+        <input type="number" id="retirementAge" value="65" min="19" max="100" oninput="calculate()" inputmode="numeric">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentMarginalRatePct">Current Marginal Tax Rate % <span class="hint">your top federal bracket today</span></label>
+        <input type="number" id="currentMarginalRatePct" value="22" min="0" max="50" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="retirementMarginalRatePct">Retirement Marginal Tax Rate % <span class="hint">your best guess</span></label>
+        <input type="number" id="retirementMarginalRatePct" value="22" min="0" max="50" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="taxPaidFromConversion">Pay Conversion Tax From&hellip;</label>
+      <select id="taxPaidFromConversion" onchange="calculate()">
+        <option value="outside" selected>Outside funds (preferred &mdash; full amount enters Roth)</option>
+        <option value="conversion">The converted amount (less tax-efficient)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Conversion vs Stay-Put Projection</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">Recommendation</div>
+      <div id="r-recommendation" style="font-size:2.2em;font-weight:700;color:#1B3A5C;margin-top:4px">&mdash;</div>
+      <div id="r-net-advantage-line" style="font-size:1em;color:#444;margin-top:6px">&nbsp;</div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Net Advantage</div>
+        <div class="result-value" id="r-net-advantage">&mdash;</div>
+        <div class="result-hint">Roth minus Traditional after-tax</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Conversion Tax Bill</div>
+        <div class="result-value" id="r-conversion-tax">&mdash;</div>
+        <div class="result-hint">Owed in the year you convert</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Amount That Enters Roth</div>
+        <div class="result-value" id="r-amount-in-roth">&mdash;</div>
+        <div class="result-hint">Lower if tax comes from conversion</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Roth Value at Retirement</div>
+        <div class="result-value" id="r-roth-value">&mdash;</div>
+        <div class="result-hint">Tax-free at withdrawal</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Traditional Value (After Tax)</div>
+        <div class="result-value" id="r-trad-value">&mdash;</div>
+        <div class="result-hint">After retirement-rate withdrawal tax</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Years to Retirement</div>
+        <div class="result-value" id="r-years">&mdash;</div>
+        <div class="result-hint">retirement age &minus; current age</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Break-Even Retirement Rate</div>
+        <div class="result-value" id="r-break-even">&mdash;</div>
+        <div class="result-hint">Rate at which conversion is neutral</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>Conversion tax = conversion amount &times; current marginal federal rate. If you pay that tax from <em>outside</em> funds, the full conversion amount enters the Roth and grows tax-free; if you pay it from the converted balance, only the net amount (conversion &minus; tax) enters the Roth. The Traditional IRA alternative keeps the same dollar amount tax-deferred, grows it at the same return rate, and is then taxed at your retirement marginal rate on withdrawal. The break-even retirement marginal rate is the rate at which Roth and Traditional after-tax balances are equal (it depends only on whether tax is paid from outside vs from the conversion).</p>
+    <p>This calculator intentionally does <strong>not</strong> model: state income tax, the Roth 5-year-rule penalty (we assume you wait at least 5 years before any Roth withdrawal), the pro-rata rule (we assume you don&rsquo;t hold nondeductible Traditional contributions), or the IRMAA / ACA cliff income-spike effects of a large conversion year. Returns are flat-compounded at the rate you set &mdash; no sequence-of-returns risk.</p>
+    <ul style="margin:12px 0">
+      <li><strong>Roth IRA statute:</strong> <a href="https://www.law.cornell.edu/uscode/text/26/408A" rel="noopener">Internal Revenue Code &sect;408A &mdash; Roth IRAs</a></li>
+      <li><strong>Contribution &amp; conversion rules:</strong> <a href="https://www.irs.gov/publications/p590a" rel="noopener">IRS Publication 590-A &mdash; Contributions to Individual Retirement Arrangements</a></li>
+      <li><strong>Distribution rules &amp; 5-year rule:</strong> <a href="https://www.irs.gov/publications/p590b" rel="noopener">IRS Publication 590-B &mdash; Distributions from IRAs</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What IS a Roth IRA conversion?</div>
+      <div class="faq-a">A Roth conversion is the act of moving money from a Traditional IRA (or a Traditional 401(k) you&rsquo;ve rolled into an IRA) into a Roth IRA. You pay ordinary federal income tax on the entire converted amount in the year you do the conversion, and from then on the money grows tax-free and comes out tax-free at retirement. There are no income limits on conversions (unlike direct Roth contributions) and no annual conversion cap &mdash; you can convert $10,000 or $1,000,000 in a single year. The decision boils down to one question: do you expect your marginal tax rate to be higher or lower in retirement than it is today?</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When does a conversion make financial sense?</div>
+      <div class="faq-a">Three classic green-light scenarios. (1) Your current marginal rate is unusually low &mdash; a gap year between jobs, an early-retirement year before Social Security kicks in, or a sabbatical. (2) You expect tax rates to rise generally (the 2017 TCJA brackets sunset back to pre-2018 levels at the end of 2025 unless renewed). (3) You have outside cash to pay the conversion tax, the time horizon is long (15+ years), and your retirement marginal rate is similar to or higher than today&rsquo;s. The longer the horizon, the more powerful the tax-free compounding becomes, especially if the conversion tax is paid from outside funds.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When should I NOT convert?</div>
+      <div class="faq-a">Five red flags. (1) You expect a meaningfully lower marginal rate in retirement &mdash; converting at 32% to withdraw at 12% is just paying extra tax. (2) You&rsquo;d have to pay the conversion tax out of the IRA itself &mdash; that drains the compounding base and roughly cancels the Roth advantage unless rates rise. (3) The conversion pushes you into IRMAA (Medicare premium surcharges) or over the ACA premium-credit cliff. (4) You&rsquo;re close to retirement and the 5-year-rule clock won&rsquo;t finish before you need the money. (5) You have a large Traditional balance with nondeductible contributions mixed in &mdash; the pro-rata rule will make a partial conversion painful and you&rsquo;ll need to model it case-by-case.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s the 5-year rule and does this calc account for it?</div>
+      <div class="faq-a">Each Roth conversion starts its own 5-year clock; you must wait 5 calendar years from January 1 of the conversion year before you can withdraw that converted principal without a 10% early-withdrawal penalty (assuming you&rsquo;re under 59&frac12;). Earnings have their own separate 5-year-and-age-59&frac12; rule. This calculator assumes you wait at least 5 years and do not touch the money before retirement age &mdash; if you plan to use conversion-ladder withdrawals before 59&frac12; (common in FIRE), be deliberate about timing each year&rsquo;s conversion so the ladder rungs are reachable in order.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Should I pay the conversion tax from the IRA or from outside money?</div>
+      <div class="faq-a">From outside money &mdash; almost always. Paying from outside lets the entire conversion amount enter the Roth and compound tax-free, which is where the real Roth advantage lives. Paying from inside the IRA shrinks the Roth balance up front and roughly cancels the conversion benefit when current and retirement marginal rates are equal (try the toggle in this calculator on the same scenario to see the math). The only time paying from inside is acceptable is when you have no outside cash, a long horizon, and you&rsquo;re confident your retirement rate will be materially higher than today&rsquo;s. If you&rsquo;re under 59&frac12; and pay the tax from inside, the IRA dollars you peel off to pay the tax are themselves treated as an early distribution subject to the 10% penalty &mdash; another reason to use outside funds.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What about the pro-rata rule?</div>
+      <div class="faq-a">The pro-rata rule (also called the &ldquo;cream-in-the-coffee&rdquo; rule) says the IRS treats all your Traditional IRA balances (deductible + nondeductible across every Traditional IRA you own) as one big pool when you do a conversion. If 80% of that pool was pre-tax money, then 80% of any conversion is taxable &mdash; regardless of which account it physically came from. This wrecks the &ldquo;backdoor Roth&rdquo; strategy for people who already hold large pre-tax Traditional balances. Workarounds: roll the pre-tax Traditional IRA balance into your current 401(k) (which is excluded from the pro-rata calc), do the backdoor in a clean year, or accept the pro-rata tax hit. This calculator assumes pro-rata does not apply &mdash; if it does for you, model the post-pro-rata taxable portion as the conversion amount.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I undo (recharacterize) a Roth conversion?</div>
+      <div class="faq-a">No &mdash; not since 2018. The Tax Cuts and Jobs Act of 2017 eliminated the ability to recharacterize a Roth conversion. Once you convert, it&rsquo;s permanent. Pre-TCJA you could undo a conversion if the market crashed before October 15 of the following year (the &ldquo;do-over&rdquo;); that escape hatch is gone. The practical consequence: only convert what you&rsquo;re absolutely sure you want to convert, and consider spreading large conversions across multiple tax years to stay in lower brackets and to give yourself optionality each year.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are there income limits on conversions?</div>
+      <div class="faq-a">No. Direct Roth IRA <em>contributions</em> have a modified-AGI phase-out ($161,000 single / $240,000 married-filing-jointly for 2026), but conversions have no income limit and no annual cap. This is why the &ldquo;backdoor Roth&rdquo; works: high earners contribute to a Traditional IRA (which has no income limit on contributions, just on the deduction) and then immediately convert it. The conversion creates a taxable event, but for nondeductible contributions converted in the same year the taxable amount is roughly zero (the cost basis equals the conversion amount). The pro-rata rule is the one big &ldquo;but&rdquo; here &mdash; see the FAQ above.</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/roth-ira-calculator/" class="related-card">🇺🇸 Roth IRA</a>
+      <a href="/401k-calculator/" class="related-card">📊 401(k)</a>
+      <a href="/401k-withdrawal-calculator/" class="related-card">💸 401(k) Withdrawal</a>
+      <a href="/401k-tax-calculator/" class="related-card">🧾 401(k) Tax</a>
+      <a href="/fire-calculator/" class="related-card">🔥 FIRE Number</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="roth-ira-conversion-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/roth-ira-conversion.js" defer></script>
+<script>
+function fmt$(n) {
+  if (n === null || n === undefined || isNaN(n)) return '$0';
+  var v = Math.round(n);
+  var sign = v < 0 ? '-' : '';
+  return sign + '$' + Math.abs(v).toLocaleString('en-US');
+}
+function calculate() {
+  if (!window.FCH_ROTH_CONVERSION) return;
+  var p = {
+    conversionAmount: +document.getElementById('conversionAmount').value || 0,
+    currentAge: +document.getElementById('currentAge').value || 0,
+    retirementAge: +document.getElementById('retirementAge').value || 0,
+    currentMarginalRatePct: +document.getElementById('currentMarginalRatePct').value || 0,
+    retirementMarginalRatePct: +document.getElementById('retirementMarginalRatePct').value || 0,
+    expectedReturnPct: +document.getElementById('expectedReturnPct').value || 0,
+    taxPaidFromConversion: document.getElementById('taxPaidFromConversion').value === 'conversion',
+  };
+  var R = window.FCH_ROTH_CONVERSION.calc(p);
+  var errEl = document.getElementById('error-message');
+  var resultIds = [
+    'r-net-advantage','r-conversion-tax','r-amount-in-roth','r-roth-value',
+    'r-trad-value','r-years','r-break-even'
+  ];
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    document.getElementById('r-recommendation').textContent = '—';
+    document.getElementById('r-net-advantage-line').textContent = ' ';
+    resultIds.forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-recommendation').textContent = R.recommendation;
+  var sign = R.netAdvantage >= 0 ? '+' : '';
+  document.getElementById('r-net-advantage-line').textContent =
+    'Net advantage: ' + sign + fmt$(R.netAdvantage) + ' (Roth − Traditional after-tax)';
+  document.getElementById('r-net-advantage').textContent = sign + fmt$(R.netAdvantage);
+  document.getElementById('r-conversion-tax').textContent = fmt$(R.conversionTax);
+  document.getElementById('r-amount-in-roth').textContent = fmt$(R.amountInRoth);
+  document.getElementById('r-roth-value').textContent = fmt$(R.rothValueAtRetirement);
+  document.getElementById('r-trad-value').textContent = fmt$(R.traditionalValueAfterTax);
+  document.getElementById('r-years').textContent = R.yearsToRetirement + ' yrs';
+  document.getElementById('r-break-even').textContent = R.breakEvenRetirementRatePct.toFixed(2) + '%';
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="7963163804"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter the dollar amount you&#39;re considering converting from Traditional IRA / 401(k) to Roth IRA</li>
+      
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Set your current age, planned retirement age, and an expected annual return</li>
+      
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Enter your current marginal federal tax rate and your best guess for your retirement marginal rate</li>
+      
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Choose whether the conversion tax is paid from outside funds (preferred) or from the converted amount</li>
+      
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Read off the recommendation (Convert / Don&#39;t convert / Roughly equal), net advantage, and break-even retirement rate</li>
+      
+    </ol>
+  </section>
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="try-scenarios" aria-labelledby="try-scenarios-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#f4f6fb;border-radius:8px">
+    <h2 id="try-scenarios-heading" style="margin:0 0 6px;color:#1B3A5C;font-size:1.25rem">Try these scenarios</h2>
+    <p style="margin:0 0 12px;font-size:0.95em;color:#444">Tap a scenario to load it into the calculator above.</p>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      
+      <li>
+        <a class="try-scenario-link" href="?conversionAmount=50000&amp;currentAge=35&amp;retirementAge=65&amp;currentMarginalRatePct=22&amp;retirementMarginalRatePct=22&amp;expectedReturnPct=7&amp;taxPaidFromConversion=outside#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Mid-career, flat-rate, tax from outside ($50k @ 22%/22%, 30yr, 7%)</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?conversionAmount=60000&amp;currentAge=40&amp;retirementAge=65&amp;currentMarginalRatePct=12&amp;retirementMarginalRatePct=24&amp;expectedReturnPct=7&amp;taxPaidFromConversion=outside#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Gap-year conversion ($60k @ 12% now, 24% retirement, 25yr)</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?conversionAmount=7000&amp;currentAge=40&amp;retirementAge=65&amp;currentMarginalRatePct=35&amp;retirementMarginalRatePct=24&amp;expectedReturnPct=7&amp;taxPaidFromConversion=outside#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Backdoor Roth ($7k high-earner, 35% now, outside funds, 25yr)</a>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>The Roth conversion math reduces to one question: will your marginal rate be higher or lower in retirement?</strong> If higher, converting today locks in today's lower rate and the Roth balance compounds tax-free — pure win. If lower, converting today pays a premium tax bill to dodge a cheaper future one — pure loss. If the rates are equal, the answer hinges entirely on whether you pay the conversion tax from outside funds (Roth wins by the amount the prepaid tax would have grown to in the Traditional) or from inside the conversion (mathematical wash — try the toggle in the calculator above on a 22%/22%/30yr scenario to see it). The headline US tax-policy backdrop matters here: the Tax Cuts and Jobs Act of 2017 set today's brackets unusually low and they sunset back to pre-2018 levels at the end of 2025 unless renewed. Many practitioners view 2024-2025 as a strategic conversion window for that reason.</p><p><strong>Pay the conversion tax from outside funds — almost always.</strong> The single biggest mistake people make on Roth conversions is paying the tax out of the IRA being converted. This drains the compounding base by the amount of the tax (22% of a $50k conversion = $11k that never enters the Roth) and roughly cancels the Roth advantage at flat tax rates. Worse, if you're under 59½, the IRA dollars used to pay the tax are themselves a taxable distribution subject to the 10% early-withdrawal penalty. The clean play is to have at least a year's worth of conversion taxes in a taxable brokerage or savings account before you start a conversion ladder, and to convert only as much each year as you can pay tax on from outside. Backdoor Roth contributions ($7k/yr for under-50s in 2026) are the rare exception where the conversion is immediate and the tax base is roughly zero anyway.</p><p><strong>The 5-year rule has two flavours and you must respect both.</strong> The first 5-year rule applies to each conversion separately: converted principal cannot be withdrawn without the 10% penalty until 5 calendar years from January 1 of the conversion year (so a conversion in November 2026 unlocks January 1, 2031). The second 5-year rule applies to earnings: Roth earnings can be withdrawn tax-free only after both 5 years from your first Roth contribution AND age 59½. These two clocks run independently. The practical effect for early retirees is the &ldquo;Roth conversion ladder&rdquo; — convert a year's worth of expenses every year starting 5 years before you need it, and you can fund early retirement out of seasoned Roth conversions before age 59½ without penalty.</p><p><strong>Backdoor Roth basics for high earners.</strong> Direct Roth IRA contributions phase out at modified-AGI of $161,000 single / $240,000 married-filing-jointly for 2026, which excludes most dual-income professionals. The backdoor route: make a nondeductible contribution to a Traditional IRA ($7,000 in 2026, $8,000 if 50+), then immediately convert it to a Roth IRA. Because the contribution wasn't deducted, the conversion has zero (or near-zero) taxable amount — you've essentially made a Roth contribution that the income limits would have blocked. The catch is the pro-rata rule: if you already hold pre-tax money in any Traditional IRA, the IRS treats all your Traditional IRA balances as one pool and pro-rates the taxable portion of any conversion against that pool. The fix is usually to roll your pre-tax Traditional IRA balances into a 401(k) (which is excluded from the pro-rata calc) before doing the backdoor, then keep the Traditional IRA empty except for fresh nondeductible contributions.</p><p><strong>Conversion ladders fund early retirement before 59½.</strong> The FIRE community's favourite Roth move is the &ldquo;Roth conversion ladder&rdquo;: starting five years before you plan to retire (or each year of early retirement), convert exactly one year's worth of spending from Traditional IRA / 401(k) to Roth IRA. Five years later, that converted principal becomes withdrawable penalty-free (per the per-conversion 5-year rule above). Run the ladder annually and you can fund a 30-year early retirement entirely from seasoned Roth conversions — taxed at unusually low brackets (you have no W-2 income in early retirement), with no 10% penalty, no Social Security clawback, no required minimum distributions. The calculator above models a single conversion in isolation; for a multi-year ladder, run it once per year with that year's tax-rate assumption.</p><p><strong>Three common mistakes that wreck a conversion.</strong> First, the IRMAA cliff: large conversions can push your modified-AGI into one of the higher Medicare Part B / D premium brackets, which adds $1,000-$5,000 of surcharge per spouse for two years. Second, the ACA premium-credit cliff: for early retirees on a Marketplace plan, a conversion that pushes household income over 400% of the federal poverty line eliminates premium tax credits entirely — often a $10,000-$20,000 effective tax bump on the conversion. Third, the pro-rata rule blindspot: people who built up pre-tax Traditional IRA balances over decades and then try to backdoor-Roth $7,000 a year discover the entire conversion is largely taxable, not nondeductible-contribution-tax-free. None of these are deal-breakers; they're just inputs the simple Convert-vs-Don't math doesn't catch. Always model the conversion year's full federal return — not just the marginal-rate decision — before pulling the trigger.</p>
+  </section>
+</div>
+
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="1620134192"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-17">17 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+
+
+
+
+
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/roth-ira-calculator/">💰 Roth IRA Calculator</a> — See your tax-free retirement balance with 2026 IRS contribution limits and MAGI phase-out applied automatically. USA.</li>
+      <li><a href="/401k-calculator/">401(k) Calculator</a> — See how your 401(k) grows with employer match, salary increases, and decades of compounding. USA — 2026 IRS limits applied.</li>
+      <li><a href="/401k-withdrawal-calculator/">💼 401(k) Withdrawal Calculator</a> — How much you actually keep after federal + state tax and the 10% early-withdrawal penalty. Models the Rule of 55, hardship, and disability exemptions.</li>
+      <li><a href="/401k-tax-calculator/">📊 401(k) Tax Calculator</a> — Exactly how much tax you&#x27;ll owe on a 401(k) withdrawal: federal bracket, state tax, and the 10% early-withdrawal penalty if you&#x27;re under 59½.</li>
+      <li><a href="/fire-calculator/">🔥 FIRE Calculator</a> — Lean, Regular, Fat, and Coast FIRE in one calculator. Set your spending, savings rate, and SWR — see exactly when you reach financial independence.</li>
+      <li><a href="/retirement-savings/">🏖 Retirement Savings Calculator</a> — Find out if you&#x27;re on track to retire comfortably - and exactly how much you need to save each month.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="5980987973"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+</main>
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>
