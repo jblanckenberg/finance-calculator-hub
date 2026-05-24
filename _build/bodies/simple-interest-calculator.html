@@ -1,0 +1,186 @@
+<!-- Simple Interest Calculator (multi-region: USA / UK / SA) -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#e8f5e9;border-left:4px solid #2e7d32;margin-bottom:16px">
+    <strong>📏 Simple Interest Calculator</strong> &mdash; the classic <code>I = P &times; r &times; t</code> formula. Calculate the interest on a savings deposit, short-term loan, auto loan, or bond using the simple (non-compounding) interest model. Compare it side-by-side to what the same principal would earn under monthly compounding &mdash; the headline lesson of compound interest in one figure.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Scenario</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="principal">Principal Amount</label>
+        <input type="number" id="principal" value="10000" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="ratePct">Annual Interest Rate % <span class="hint">e.g. 5 = 5%</span></label>
+        <input type="number" id="ratePct" value="5" min="0" max="100" step="0.01" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="years">Time Period (Years) <span class="hint">0.083 = 1 month</span></label>
+        <input type="number" id="years" value="10" min="0.083" max="100" step="0.083" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="frequency">Payout Frequency <span class="hint">display only &mdash; simple interest totals are identical</span></label>
+        <select id="frequency" onchange="calculate()">
+          <option value="annual" selected>Annual (1&times;/yr)</option>
+          <option value="quarterly">Quarterly (4&times;/yr)</option>
+          <option value="monthly">Monthly (12&times;/yr)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Interest Result</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">Interest Earned</div>
+      <div id="r-interest" style="font-size:2.4em;font-weight:700;color:#1B3A5C;margin-top:4px">&mdash;</div>
+      <div id="r-formula-line" style="font-size:1em;color:#444;margin-top:6px">&nbsp;</div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Total Amount</div>
+        <div class="result-value" id="r-total">&mdash;</div>
+        <div class="result-hint">Principal + interest</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Annual Interest</div>
+        <div class="result-value" id="r-annual">&mdash;</div>
+        <div class="result-hint">Interest &divide; years</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Monthly Interest</div>
+        <div class="result-value" id="r-monthly">&mdash;</div>
+        <div class="result-hint">Interest &divide; total months</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Effective APR</div>
+        <div class="result-value" id="r-apr">&mdash;</div>
+        <div class="result-hint">Same as input for simple</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Compound-Equivalent</div>
+        <div class="result-value" id="r-compound">&mdash;</div>
+        <div class="result-hint">Same P &amp; rate, monthly compounding</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Spread vs Compound</div>
+        <div class="result-value" id="r-spread">&mdash;</div>
+        <div class="result-hint">Compound &minus; simple</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>Simple interest formula: <code>I = P &times; r &times; t</code> where P is the principal, r is the annual interest rate (decimal), and t is the time in years. Interest does <em>not</em> compound &mdash; each year earns the same dollar amount, calculated only on the original principal. Total amount returned to the holder at maturity is <code>P + I = P &times; (1 + r &times; t)</code>. Annual interest is <code>I &divide; t</code>; monthly interest is <code>I &divide; (t &times; 12)</code>. Payout frequency does not change the totals; it only changes the per-period cheque size.</p>
+    <p>The compound-equivalent column shows what the same principal would earn under monthly compounding: <code>FV = P &times; (1 + r/12)<sup>12t</sup></code>, interest = FV &minus; P. The spread (compound &minus; simple) is the headline lesson of compounding: at 5% over 10 years, $10,000 earns $5,000 simple but ~$6,470 compound &mdash; a $1,470 gap on identical principal and rate. Stretch to 30 years and the gap widens to ~$2,000 on $1,000, with compound returning more than 2&times; the simple figure. This is why &ldquo;compound interest is the eighth wonder of the world&rdquo; (attributed, probably apocryphally, to Einstein).</p>
+    <ul style="margin:12px 0">
+      <li><strong>Truth-in-Lending Act (US auto/personal loan disclosure):</strong> <a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/" rel="noopener">CFPB Regulation Z &mdash; Truth in Lending</a></li>
+      <li><strong>UK consumer interest rules:</strong> <a href="https://www.gov.uk/government/publications/consumer-credit-regulations" rel="noopener">UK Government &mdash; Consumer Credit Regulations</a></li>
+      <li><strong>SA banking interest framework:</strong> <a href="https://www.resbank.co.za/en/home/what-we-do/financial-stability" rel="noopener">South African Reserve Bank &mdash; Financial Stability</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is simple interest?</div>
+      <div class="faq-a">Simple interest is interest calculated only on the original principal, never on the accumulated interest itself. The formula is <code>I = P &times; r &times; t</code>: principal times annual rate times time in years. A $1,000 deposit at 5% earns $50 of interest each year for as long as you hold it &mdash; year 10 earns the same $50 as year 1. Compare to compound interest, where year-1 interest gets added to the principal and year 2 earns interest on the new larger balance. Simple interest is the dominant model for auto loans, most personal loans, short-term consumer credit, and some bonds. Compound interest dominates savings accounts, credit-card balances, mortgages, and long-term investments.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Simple vs compound &mdash; when does each apply?</div>
+      <div class="faq-a">As a rule of thumb: borrowing tends to be simple-interest at the loan-product level (each payment retires principal + that period&rsquo;s interest on the remaining balance, never compounding), while lending and saving tend to be compound-interest. Auto loans, federal student loans, most personal loans, and many short-term business loans are explicitly simple-interest products &mdash; the contract says so. Savings accounts, money-market funds, CDs, credit-card balances, mortgages (amortising), and investment growth are all compound: balances grow on their own gains. The mental model: simple interest is &ldquo;pay-as-you-go&rdquo;, compound is &ldquo;snowball&rdquo;.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why is auto loan interest &ldquo;simple&rdquo;?</div>
+      <div class="faq-a">Auto loans (and most US personal/student loans since 2008) compute interest each day on the remaining principal, then apply your monthly payment first to the accrued interest and second to principal reduction. Because the unpaid interest is collected each month rather than added to the loan balance, it never compounds &mdash; hence &ldquo;simple&rdquo;. The practical implication: paying extra on an auto loan instantly reduces tomorrow&rsquo;s interest accrual, because tomorrow&rsquo;s interest is computed on the now-lower principal. (On a compound loan, the same extra payment also reduces future interest but the math is messier.) Always confirm in the contract: if it says &ldquo;interest calculated daily on outstanding principal&rdquo;, you have a simple-interest loan and prepayment pays off cleanly.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is bank savings interest simple or compound?</div>
+      <div class="faq-a">Compound, in essentially all modern bank accounts. US banks under Regulation DD must disclose the annual percentage yield (APY), which is the compound figure including reinvested interest within the year &mdash; the formula is <code>APY = (1 + r/n)<sup>n</sup> &minus; 1</code> where n is the compounding frequency. Most savings accounts compound daily; CDs typically monthly or quarterly. UK ISAs and SA fixed deposits compound similarly, though disclosure conventions differ (UK: AER; SA: NAR vs Effective rate). If a bank quotes you a &ldquo;5% rate&rdquo;, ask whether that&rsquo;s the nominal rate or APY/AER &mdash; with daily compounding the difference between a 5.00% nominal and 5.13% APY is real money on a six-figure balance.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I have negative simple interest?</div>
+      <div class="faq-a">Technically yes &mdash; some European sovereign bonds traded at negative nominal yields during the 2014-2022 ECB negative-rate period, meaning the holder paid the issuer for the privilege of lending. The same formula <code>I = P &times; r &times; t</code> applies with negative r; the &ldquo;interest&rdquo; is just a negative number. More common: real (inflation-adjusted) interest can be negative when nominal rates are below inflation, even if the nominal rate is positive. A 1% savings account during 5% inflation has a &minus;4% real return &mdash; you&rsquo;re losing purchasing power despite earning nominal interest. This calculator accepts rates from 0 to 100; for negative-rate exotica, model the negative side externally.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why does Einstein call compound interest the &ldquo;eighth wonder&rdquo;?</div>
+      <div class="faq-a">The quote &mdash; &ldquo;Compound interest is the eighth wonder of the world. He who understands it, earns it; he who doesn&rsquo;t, pays it&rdquo; &mdash; is almost certainly apocryphal (no contemporary record of Einstein saying it), but the mathematical point survives the misattribution. The Rule of 72 is the quickest way to feel it: 72 &divide; annual rate &asymp; doubling time. At 7% your money doubles every ~10 years; at 12% every ~6 years. Simple interest at 7% takes 14.3 years to double ($100 &times; 0.07 &times; 14.3 = $100); compound interest doubles in 10 years and re-doubles by year 20. Over 30 years compound returns 7.6&times; the principal vs 3.1&times; for simple at 7%. Borrowing under compound rates (credit cards at 22% APR compounding daily) is the same lesson in reverse &mdash; the eighth wonder works in both directions.</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">📊 Investment Growth</a>
+      <a href="/loan-payoff/" class="related-card">💳 Loan Payoff</a>
+      <a href="/credit-card-payoff/" class="related-card">💸 Credit Card Payoff</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+      <a href="/emergency-fund/" class="related-card">🛟 Emergency Fund</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="simple-interest-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/simple-interest.js" defer></script>
+<script>
+function fmt$(n) {
+  if (n === null || n === undefined || isNaN(n)) return '$0';
+  var v = Math.round(n);
+  var sign = v < 0 ? '-' : '';
+  return sign + '$' + Math.abs(v).toLocaleString('en-US');
+}
+function calculate() {
+  if (!window.FCH_SIMPLE_INTEREST) return;
+  var p = {
+    principal: +document.getElementById('principal').value || 0,
+    ratePct: +document.getElementById('ratePct').value || 0,
+    years: +document.getElementById('years').value || 0,
+    frequency: document.getElementById('frequency').value,
+  };
+  var R = window.FCH_SIMPLE_INTEREST.calc(p);
+  var errEl = document.getElementById('error-message');
+  var resultIds = [
+    'r-interest','r-total','r-annual','r-monthly','r-apr','r-compound','r-spread'
+  ];
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    resultIds.forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    document.getElementById('r-formula-line').textContent = ' ';
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-interest').textContent = fmt$(R.interest);
+  document.getElementById('r-formula-line').textContent =
+    'I = ' + fmt$(p.principal) + ' × ' + p.ratePct + '% × ' + p.years + ' yr = ' + fmt$(R.interest);
+  document.getElementById('r-total').textContent = fmt$(R.total);
+  document.getElementById('r-annual').textContent = fmt$(R.annualInterest);
+  document.getElementById('r-monthly').textContent = fmt$(R.monthlyInterest);
+  document.getElementById('r-apr').textContent = R.effectiveAprPct.toFixed(2) + '%';
+  document.getElementById('r-compound').textContent = fmt$(R.compoundInterestEquivalent);
+  var sign = R.spread >= 0 ? '+' : '';
+  document.getElementById('r-spread').textContent = sign + fmt$(R.spread);
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>

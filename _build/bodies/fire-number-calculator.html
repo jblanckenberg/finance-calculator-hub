@@ -1,0 +1,203 @@
+<!-- FIRE Number Calculator (multi-region: USA / UK / SA) -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#e8f5e9;border-left:4px solid #2e7d32;margin-bottom:16px">
+    <strong>🔥 FIRE Number Calculator</strong> — calculate the single dollar figure you need invested to retire on passive withdrawals. Built around the Trinity Study&rsquo;s 4% safe-withdrawal rule (the classic 25&times; rule), with inflation-adjustment to a future target, your years-to-FIRE at the current savings rate, the monthly contribution needed to hit the target, and the surplus or gap versus your current trajectory.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Scenario</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="annualExpenses">Annual Expenses in Retirement <span class="hint">your projected yearly spending</span></label>
+        <input type="number" id="annualExpenses" value="40000" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="withdrawalRatePct">Safe Withdrawal Rate % <span class="hint">4% = Trinity Study; 3-3.5% conservative</span></label>
+        <input type="number" id="withdrawalRatePct" value="4" min="2" max="8" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="inflationPct">Annual Inflation % <span class="hint">3% long-run average</span></label>
+        <input type="number" id="inflationPct" value="3" min="0" max="15" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="yearsToFire">Target Years to FIRE <span class="hint">1-60</span></label>
+        <input type="number" id="yearsToFire" value="20" min="1" max="60" oninput="calculate()" inputmode="numeric">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentSavings">Current Invested Savings</label>
+        <input type="number" id="currentSavings" value="50000" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="monthlyContribution">Current Monthly Contribution</label>
+        <input type="number" id="monthlyContribution" value="1000" min="0" step="50" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="expectedReturnPct">Expected Portfolio Return % <span class="hint">long-run S&amp;P 500 ≈ 7% real</span></label>
+      <input type="number" id="expectedReturnPct" value="7" min="0" max="15" step="0.1" oninput="calculate()" inputmode="decimal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your FIRE Target</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">FIRE Number (today&rsquo;s dollars)</div>
+      <div id="r-fire-number" style="font-size:2.4em;font-weight:700;color:#1B3A5C;margin-top:4px">&mdash;</div>
+      <div id="r-multiple-line" style="font-size:1em;color:#444;margin-top:6px">&nbsp;</div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Multiple of Expenses</div>
+        <div class="result-value" id="r-multiple">&mdash;</div>
+        <div class="result-hint">25&times; at 4% SWR; 33&times; at 3%</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Inflation-Adjusted Target</div>
+        <div class="result-value" id="r-fire-future">&mdash;</div>
+        <div class="result-hint">What the target is in future dollars</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Years at Current Rate</div>
+        <div class="result-value" id="r-years-at-rate">&mdash;</div>
+        <div class="result-hint">At current savings + return</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Monthly Contribution Needed</div>
+        <div class="result-value" id="r-monthly-needed">&mdash;</div>
+        <div class="result-hint">To hit target by year goal</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Projected at Target Year</div>
+        <div class="result-value" id="r-projected">&mdash;</div>
+        <div class="result-hint">Current path&rsquo;s FV at year goal</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Surplus or Gap</div>
+        <div class="result-value" id="r-surplus">&mdash;</div>
+        <div class="result-hint">+ ahead of plan; &minus; gap</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>FIRE Number = Annual Expenses &divide; Safe Withdrawal Rate. At a 4% SWR this collapses to the classic &ldquo;25&times; rule&rdquo; (Bengen 1994; Cooley, Hubbard, Walz 1998). The inflation-adjusted target multiplies the today-dollar FIRE number by (1 + inflation)<sup>years</sup> so you can see what the figure looks like in the future. Years-at-current-rate solves for the year at which your current savings + monthly contributions (compounded at the expected return) equal the inflation-drifted FIRE target &mdash; a numerical bisection because both sides of the equation grow with time. Monthly contribution needed is the closed-form solve for the monthly amount that hits the inflation-adjusted target at your chosen year, given your current savings.</p>
+    <p>This calculator intentionally does <strong>not</strong> model: sequence-of-returns risk in early retirement (a bear market in years 1-5 of withdrawal hits hardest because you&rsquo;re selling at lows), tax drag inside taxable accounts, healthcare in early retirement (especially pre-Medicare USA), or variable spending in retirement. Returns are flat-compounded at the rate you set. If you&rsquo;re planning a 50+ year FIRE retirement, many practitioners use 3.0-3.5% SWR instead of 4% to widen the safety margin &mdash; try the slider.</p>
+    <ul style="margin:12px 0">
+      <li><strong>The original 4% rule:</strong> <a href="https://www.financialplanningassociation.org/article/determining-withdrawal-rates-using-historical-data" rel="noopener">Bengen (1994) &mdash; Determining Withdrawal Rates Using Historical Data</a></li>
+      <li><strong>Trinity Study:</strong> <a href="https://www.aaii.com/files/pdf/6794_retirement-savings-choosing-a-withdrawal-rate-that-is-sustainable.pdf" rel="noopener">Cooley, Hubbard, Walz (1998) &mdash; Retirement Savings: Choosing a Withdrawal Rate That Is Sustainable</a></li>
+      <li><strong>Sequence-of-returns risk &amp; SWR research:</strong> <a href="https://www.bogleheads.org/wiki/Safe_withdrawal_rates" rel="noopener">Bogleheads Wiki &mdash; Safe Withdrawal Rates</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is the 4% rule (Trinity Study)?</div>
+      <div class="faq-a">The 4% rule comes from William Bengen&rsquo;s 1994 paper and was confirmed by the Trinity Study (Cooley, Hubbard, Walz 1998). Both showed that a portfolio of 50-75% stocks and 25-50% bonds could sustain inflation-adjusted withdrawals of 4% of the starting balance over a 30-year retirement with very low failure risk across every historical 30-year window since 1926. Multiply your annual expenses by 25 and you have your FIRE number. The rule&rsquo;s elegance hides three big assumptions: the 30-year horizon (FIRE retirements are often 40-60 years), the 1926-1995 US data window (favourable returns by global standards), and the constant-real-dollar withdrawal (no spending flexibility in down years). For longer FIRE horizons many planners use 3.0-3.5% instead.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">FIRE vs Lean FIRE vs Fat FIRE &mdash; what&rsquo;s the difference?</div>
+      <div class="faq-a">Lean FIRE means modest spending in retirement (typically US$30-50k a year, 0.5-0.7&times; a normal middle-class lifestyle). Fat FIRE means generous spending (US$120k+ a year, 2.0&times; or more). Regular FIRE sits in between. The cheaper you live, the smaller your FIRE number: Lean FIRE on $30,000 a year is $750,000; Regular FIRE on $80,000 a year is $2,000,000; Fat FIRE on $150,000 a year is $3,750,000 (all at 4% SWR). The trap is targeting Lean because it looks closer &mdash; lifestyle inflation, healthcare costs, or wanting kids later turn many Lean-FIRE plans into Regular-FIRE plans halfway through, with the lost compounding being brutal to recover.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Should I use 3% or 4% for my withdrawal rate?</div>
+      <div class="faq-a">It depends on your retirement length, asset allocation, and flexibility. The 4% rule was calibrated on 30-year retirements; FIRE retirements are often 40-60 years, where bond-heavy portfolios can hit failure rates of 5-10% at 4%. Wade Pfau and Michael Kitces both argue 3.5% is closer to the true safe rate for 40+ years; the Mr. Money Mustache / r/financialindependence communities still mostly default to 4% on the basis that flexibility (cutting spending in bad years) provides enough margin. Practical rule: if your portfolio is &gt; 75% stocks and you can flex your spending 10-15% in down years, 4% is reasonable. If you&rsquo;re bond-heavy or can&rsquo;t flex spending, drop to 3.25-3.5%. Run both in this calculator to see the dollar difference &mdash; it&rsquo;s usually $200-400k.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does inflation change my FIRE number?</div>
+      <div class="faq-a">It changes the dollar figure but not the strategy. Your FIRE number is denominated in today&rsquo;s purchasing power; inflation just means the same number of real dollars buys fewer goods in 20 years. If you need $40k a year today, you need $40k of equivalent purchasing power in 2046 &mdash; which at 3% inflation is about $72k of 2046 dollars. The same logic applies to the FIRE number itself: a $1M FIRE number today is roughly $1.81M in 2046 dollars at 3% inflation. The 4%-rule safe-withdrawal math assumes you increase withdrawals annually with CPI, so as long as you do that, the 25&times; rule is inflation-neutral &mdash; you don&rsquo;t need to inflate the target separately. The inflation-adjusted line in this calculator is for psychological calibration: don&rsquo;t panic when you see $1.8M as your &ldquo;future&rdquo; number; that&rsquo;s the same purchasing power as $1M today.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s Coast FIRE versus my FIRE number?</div>
+      <div class="faq-a">Coast FIRE is the lower bar: enough invested today that, with zero further contributions, compound growth alone gets you to your regular FIRE number by traditional retirement age (say 65). The math: Coast Number = FIRE Number &divide; (1 + return)<sup>(65 &minus; current age)</sup>. At 7% real returns, the Coast number for a 30-year-old targeting $1M at 65 is about $115,000. Hit that and you can downshift &mdash; work less, change careers, take a sabbatical &mdash; knowing the existing balance will compound to FIRE without your help. Use our <a href="/coast-fire-calculator/">Coast FIRE calculator</a> to find your specific Coast number. Both numbers serve different psychological purposes: the FIRE number is the exit door; the Coast number is the &ldquo;I can stop sprinting&rdquo; door.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When should I update my FIRE number?</div>
+      <div class="faq-a">Annually &mdash; not more, not less. Re-running the calc every month is anxiety-inducing and creates lifestyle-inflation drift (you&rsquo;ll catch yourself revising spending up). Once a year, ideally at tax-prep time, refresh four inputs: actual annual expenses (look at last year&rsquo;s spending, not last month&rsquo;s budget), updated return-and-inflation assumptions (CPI is published monthly; check your real-return assumption against current 10-year inflation breakevens), retirement-spending plan (the older you get, the more healthcare looms; add 10-20% to base spending for the post-65 budget), and SWR (drop from 4% toward 3.5% as your retirement horizon shortens, paradoxically, because shorter horizons mean less compounding-to-recover-from-a-down-year buffer). Major life events &mdash; marriage, kids, home purchase, divorce &mdash; warrant an off-cycle update too.</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/fire-calculator/" class="related-card">🔥 FIRE Projection</a>
+      <a href="/coast-fire-calculator/" class="related-card">🏖️ Coast FIRE</a>
+      <a href="/retirement-savings/" class="related-card">💼 Retirement Savings</a>
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">📊 Investment Growth</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="fire-number-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/fire-number.js" defer></script>
+<script>
+function fmt$(n) {
+  if (n === null || n === undefined || isNaN(n)) return '$0';
+  var v = Math.round(n);
+  var sign = v < 0 ? '-' : '';
+  return sign + '$' + Math.abs(v).toLocaleString('en-US');
+}
+function calculate() {
+  if (!window.FCH_FIRE_NUMBER) return;
+  var p = {
+    annualExpenses: +document.getElementById('annualExpenses').value || 0,
+    withdrawalRatePct: +document.getElementById('withdrawalRatePct').value || 0,
+    inflationPct: +document.getElementById('inflationPct').value || 0,
+    yearsToFire: +document.getElementById('yearsToFire').value || 0,
+    currentSavings: +document.getElementById('currentSavings').value || 0,
+    monthlyContribution: +document.getElementById('monthlyContribution').value || 0,
+    expectedReturnPct: +document.getElementById('expectedReturnPct').value || 0,
+  };
+  var R = window.FCH_FIRE_NUMBER.calc(p);
+  var errEl = document.getElementById('error-message');
+  var resultIds = [
+    'r-fire-number','r-multiple','r-fire-future','r-years-at-rate',
+    'r-monthly-needed','r-projected','r-surplus'
+  ];
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    resultIds.forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    document.getElementById('r-multiple-line').textContent = ' ';
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-fire-number').textContent = fmt$(R.fireNumber);
+  document.getElementById('r-multiple-line').textContent =
+    R.multipleOfExpenses.toFixed(2) + '× your annual expenses';
+  document.getElementById('r-multiple').textContent = R.multipleOfExpenses.toFixed(2) + '×';
+  document.getElementById('r-fire-future').textContent = fmt$(R.fireNumberInflationAdjusted);
+  document.getElementById('r-years-at-rate').textContent =
+    R.yearsAtCurrentRate === null ? '100+ yrs' : R.yearsAtCurrentRate.toFixed(1) + ' yrs';
+  document.getElementById('r-monthly-needed').textContent = fmt$(R.monthlyContribNeeded);
+  document.getElementById('r-projected').textContent = fmt$(R.currentProjectedAtTarget);
+  var sign = R.surplusOrGap >= 0 ? '+' : '';
+  document.getElementById('r-surplus').textContent = sign + fmt$(R.surplusOrGap);
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>
