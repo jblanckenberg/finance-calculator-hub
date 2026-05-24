@@ -2319,5 +2319,108 @@
       }
     ],
     "keyConcepts": "<p><strong>SARS 2026/27 brackets at a glance.</strong> 18% to R245,100; 26% to R370,500; 31% to R512,800; 36% to R673,000; 39% to R857,900; 41% to R1,878,600; 45% above. The 18% entry rate is high by international standards (UK starts at 20% but only after a £12,570 personal allowance; US starts at 10% with $15,000 standard deduction), which is why South African middle incomes face heavier marginal tax than equivalent US/UK earners.</p><p><strong>Rebates, not deductions.</strong> The primary rebate (R17,235) and the age-based secondary (+R9,444) / tertiary (+R3,145) rebates are subtracted directly from gross tax — they're not income deductions. This means everyone gets the same primary rebate value regardless of marginal rate, unlike an RA contribution where the value scales with your bracket. The under-65 break-even point (where PAYE = 0) is roughly R95,750 gross income for 2026/27.</p><p><strong>UIF is benefit-capped, not income-capped.</strong> The R177.12/month UIF cap exists because UIF benefits themselves are capped — you can only ever claim up to ~R17,712/month for 238 days if unemployed. The contribution cap matches the benefit ceiling. If you earn above R17,712/month you pay the same R177.12 as a R17,712 earner — UIF is regressive above that threshold.</p><p><strong>RA contributions are the highest-leverage tax move.</strong> Up to the lesser of 27.5% of remuneration or R350,000/year, RA contributions reduce taxable income at your full marginal rate. A 39% marginal-bracket earner contributing the max R350,000 saves R136,500 in tax — almost 40% of the contribution funded by SARS. This is why R350k is the magic number for high-income tax planning; pair it with a low-cost passive RA (Sygnia / 10X / Easy Equities) to compound for retirement.</p><p><strong>Medical credit beats medical deduction.</strong> Pre-2012 medical contributions were income deductions (worth more to high earners). SARS reformed to a flat tax credit (R376/R376/R254 per month) so that the value is identical regardless of marginal bracket. A R4,512/year primary-member credit is worth ~R4,512 to anyone — vs the old deduction which gave a 45% earner R2,030 and an 18% earner R812 on the same R4,512. Equitable, but it means high-earners no longer get a big PAYE break from medical aid.</p>"
+  },
+  "dividend-calculator": {
+    "slug": "dividend-calculator",
+    "name": "💰 Dividend Calculator",
+    "title": "Dividend Calculator: DRIP, Growth & Tax Wrappers",
+    "description": "Free dividend calculator with DRIP, dividend growth, and tax wrappers (Roth IRA, Traditional IRA, TFSA, ISA, taxable). Year-1 income, total dividends, ending value.",
+    "h1": "💰 Dividend Calculator",
+    "subtitle": "Project dividend income at any cadence, switch DRIP on or off, apply a dividend growth rate, and compare tax wrappers (Taxable, Roth IRA, Traditional IRA, TFSA, ISA).",
+    "metaDescription": "Free dividend calculator with DRIP, dividend growth, and tax wrappers. See year-1 income, total dividends, ending position, and effective yield.",
+    "regions": [
+      "USA",
+      "UK",
+      "SA"
+    ],
+    "primaryKeyword": "dividend calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "Dividend Calculator",
+      "description": "Project dividend income with DRIP, dividend growth, and tax wrappers (taxable, Roth IRA, Traditional IRA, TFSA, ISA).",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to calculate dividend income with DRIP and tax wrappers",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter shares owned and annual dividend per share",
+        "Pick the payment frequency (quarterly is the US default)",
+        "Choose whether to reinvest dividends (DRIP) and set an annual dividend growth rate",
+        "Pick your tax wrapper — Taxable, Roth IRA, Traditional IRA, TFSA, or ISA",
+        "Read off year-1 monthly income, total dividends over the horizon, total tax, and ending position value"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a dividend?",
+        "a": "A dividend is a slice of a company's after-tax profit paid out to shareholders, usually in cash and usually quarterly. If you own 100 shares of a stock that pays $4 a year in dividends, you collect $400 a year — $100 every three months in the US, where quarterly is standard. Companies that pay reliable, growing dividends are often called dividend stocks or, at the top end, dividend aristocrats (25+ years of consecutive raises). Not all companies pay dividends — many growth-stage businesses reinvest 100% of profit instead, so you're betting on share-price appreciation rather than cash income."
+      },
+      {
+        "q": "What is DRIP and is it worth it?",
+        "a": "DRIP (Dividend Reinvestment Plan) automatically uses your dividend payments to buy more shares of the same stock at each payment date — usually commission-free and with fractional shares. It's the cleanest form of dollar-cost averaging and turns dividends into compound interest: more shares → bigger next dividend → even more shares. Over 20-30 years the difference is dramatic. The trade-off: you lose the cash, so DRIP is only worth it if you don't need the income now. Most retirement-accumulation investors keep DRIP on; retirees usually switch it off and live on the cash."
+      },
+      {
+        "q": "Qualified vs ordinary dividend tax — what's the difference?",
+        "a": "In the US, qualified dividends (most US large-cap stocks held more than 60 days) are taxed at the long-term capital gains rate — 0%, 15%, or 20% depending on income band. Ordinary dividends (REITs, MLPs, short holding periods, some foreign stocks) are taxed at your marginal income rate — 10% to 37%. The qualified treatment is a major reason buy-and-hold dividend investors do well in taxable brokerage accounts: a 22%-marginal earner pays 15% on most dividends instead of 22%. Form 1099-DIV breaks the two categories out for you each year."
+      },
+      {
+        "q": "Do I pay tax on dividends in a Roth IRA, ISA, or TFSA?",
+        "a": "No — these are tax wrappers that shelter the income inside the account. A Roth IRA pays 0% tax on dividends and 0% on qualified withdrawals after age 59½. A UK Stocks & Shares ISA pays 0% tax on dividends with no withdrawal restriction. A South African TFSA pays 0% tax on dividends (and is exempt from the 20% SA dividend withholding). A Traditional IRA also pays 0% in-account, but dividends + growth are taxed as ordinary income when you withdraw in retirement — so it's tax-deferred, not tax-free. The wrapper hierarchy for dividend investors is generally: Roth / ISA / TFSA > Traditional IRA > Taxable brokerage."
+      },
+      {
+        "q": "Ex-dividend date — what does it mean for me?",
+        "a": "The ex-dividend date (ex-date) is the first trading day on which a new buyer is NOT entitled to the upcoming dividend. If you buy the stock the day before the ex-date you get the next dividend; buy on or after the ex-date and the seller keeps it. The share price typically drops by roughly the dividend amount on the ex-date to reflect the value that's about to leave the company. Net result: buying the dividend right before the ex-date is usually pointless — you get the cash but lose the same amount on the share price (and pay tax on the dividend in a taxable account). Long-term DRIP investors don't care about ex-dates."
+      },
+      {
+        "q": "Dividend yield vs dividend growth — which matters more?",
+        "a": "For income today, yield matters: a 4% yield on a $10,000 position pays $400 next year, a 2% yield pays $200. For income in 20 years, growth matters more: a stock starting at 2% yield and growing dividends 8% a year overtakes a 4%-yield-no-growth stock in roughly 9 years and crushes it by year 20. The Dividend Growth Investing (DGI) school favours growth over starting yield; the high-yield school (REITs, BDCs, utilities) favours starting yield. The sensible middle ground is a yield + growth ≥ 8% rule: 3% yield + 6% growth qualifies; so does 5% yield + 3% growth."
+      },
+      {
+        "q": "When are dividends paid?",
+        "a": "In the US, most blue-chip dividends are quarterly (4×/year), some are monthly (mostly REITs and a few specialty funds like Realty Income, $O), and a few are annual or semi-annual. In the UK, twice-a-year (an interim and a final dividend) is the norm. In South Africa, most JSE-listed companies pay twice yearly. Each dividend has four dates: declaration (board announces), ex-date (first day a new buyer doesn't get it), record date (registrar confirms shareholders), and pay date (cash hits your brokerage account). Pay-date is usually 2-6 weeks after declaration."
+      },
+      {
+        "q": "What's the dividend coverage ratio and why does it matter?",
+        "a": "Dividend coverage ratio = earnings per share ÷ dividend per share. A ratio above 2 means the company earns at least 2× the dividend it's paying out — comfortable. A ratio between 1 and 2 means the dividend is covered but tight. Below 1 means the company is paying out more than it earns, usually funded by debt or asset sales — a classic dividend-cut warning sign. Equivalent measure: payout ratio (dividend ÷ earnings) below 60% is the conservative target for most sectors; REITs are an exception (legally required to pay out 90% of taxable income, so a 90%+ payout ratio is normal there)."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.irs.gov/publications/p550",
+        "label": "IRS Publication 550 — Investment Income and Expenses (qualified vs ordinary dividends)"
+      },
+      {
+        "url": "https://www.gov.uk/tax-on-dividends",
+        "label": "HMRC — Tax on Dividends (UK basic / higher / additional bands)"
+      },
+      {
+        "url": "https://www.sars.gov.za/types-of-tax/dividends-tax/",
+        "label": "SARS — Dividends Tax (20% flat withholding)"
+      }
+    ],
+    "related": [
+      "compound-interest",
+      "investment-growth",
+      "roth-ira-calculator",
+      "tfsa-calculator",
+      "fire-calculator",
+      "retirement-savings"
+    ],
+    "scenarios": [
+      {
+        "label": "100 shares of $100 stock, 4% yield, DRIP on, 20yr",
+        "query": "shares=100&dividendPerShare=4&frequency=quarterly&years=20&drip=yes&dividendGrowthPct=5&expectedSharePrice=100&wrapper=taxable&taxRatePct=15"
+      },
+      {
+        "label": "Retiree taking cash: 5,000 shares of REIT, 6% yield, no DRIP",
+        "query": "shares=5000&dividendPerShare=3&frequency=monthly&years=15&drip=no&dividendGrowthPct=2&expectedSharePrice=50&wrapper=taxable&taxRatePct=22"
+      },
+      {
+        "label": "Roth IRA dividend growth: $20k position, 3% yield, 8% growth, 30yr DRIP",
+        "query": "shares=200&dividendPerShare=3&frequency=quarterly&years=30&drip=yes&dividendGrowthPct=8&expectedSharePrice=100&wrapper=roth_ira&taxRatePct=0"
+      }
+    ],
+    "keyConcepts": "<p><strong>DRIP is dividend compounding's best friend.</strong> Without reinvestment a 3% dividend yield gives you exactly 3% income per year — flat forever (absent growth). Turn DRIP on and that same 3% yield becomes a 3% compounding rate: after 24 years your share count has doubled at zero new capital, and at year 30 a starting $10,000 position holds about 2.43× the shares (assuming flat share price). Layer in 5% annual dividend growth on top of DRIP and the same $10,000 position throws off roughly $2,300 of income in year 30 — 7.7× the year-1 income on an unchanged starting capital base. The catch is opportunity cost: cash dividends spent today have higher present value than reinvested ones; DRIP only makes sense if you genuinely don't need the income for 10+ years.</p><p><strong>Dividend Growth Investing (DGI) beats yield-chasing for long horizons.</strong> A 2%-yield stock growing dividends 8% a year produces more income than a 5%-yield stock growing 0% within 14 years and crushes it by year 25. The reason is exponentials: dividend growth compounds on a base that also compounds (via DRIP), so a small growth advantage stacks fast. The DGI rule of thumb is yield + 5-year dividend growth ≥ 8%: 3% yield + 6% growth qualifies; so does 5% yield + 3% growth. Dividend aristocrats (25+ consecutive years of raises) and kings (50+) are the canonical DGI universe; the iShares Select Dividend ETF (DVY) and Vanguard Dividend Appreciation ETF (VIG) are passive proxies.</p><p><strong>Tax wrapper hierarchy: Roth / ISA / TFSA > Traditional IRA > Taxable.</strong> Roth IRAs (US), ISAs (UK), and TFSAs (SA) all charge zero in-account tax AND zero withdrawal tax, making them mathematically dominant for dividend strategies — every dollar of DPS turns into a dollar of compounding shares. Traditional IRAs / 401(k)s defer tax (0% in-account, but ordinary-income tax on withdrawal), which is still better than taxable in most cases because the larger compounding base outweighs the back-end tax for long horizons. Taxable brokerage accounts pay every payment — but US qualified dividends get the long-term-cap-gains rate (0/15/20%), so they're not the disaster ordinary-income REIT dividends are. Annual contribution caps for 2026: Roth IRA $7,000 (under 50), ISA £20,000, TFSA R36,000.</p><p><strong>Dividend safety: coverage ratio and payout ratio.</strong> A dividend is only safe if the company actually earns enough to pay it. Dividend coverage ratio (EPS / DPS) above 2× is comfortable; below 1× means the dividend is funded by debt or asset sales — a cut is usually 6-18 months away. Equivalent measure: payout ratio (DPS / EPS) below 60% is the conservative target for industrials, consumer staples, and tech; 60-80% is the danger zone; 80%+ is sustainable only in regulated utilities and REITs (REITs are required to pay out 90% of taxable income). Always check the trailing 5-year payout ratio trend — a steadily rising payout is the slow-motion version of a dividend cut.</p><p><strong>Dividend FIRE: $1m at 4% yield = $40k/yr.</strong> The classic Financial Independence dividend math is to live entirely on dividend income — usually targeting 3-4% yield-on-cost from a diversified DGI portfolio. To replace $40,000 of annual spending you need roughly $1,000,000 invested at 4% yield, or $1,300,000 at 3%. DGI advocates argue this is more robust than the 4% safe-withdrawal rule because you never sell shares (so market crashes don't force selling at a low), and a growing dividend keeps pace with inflation organically. Critics argue the math is identical at the portfolio level — a $40k dividend and a $40k withdrawal both reduce future compounding by the same amount. Either way, this calculator's DRIP-off output is the cleanest way to model the income side of a dividend-FIRE strategy.</p>"
   }
 }

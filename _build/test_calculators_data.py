@@ -23,6 +23,7 @@ EXPECTED_SLUGS = {
     "texas-paycheck-calculator",
     "california-paycheck-calculator",
     "paye-calculator",
+    "dividend-calculator",
 }
 
 def test_calculators_file_exists():
