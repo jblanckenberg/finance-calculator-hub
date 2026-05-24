@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traditional IRA Calculator: Contribution + Growth Tax</title>
+  <meta name="description" content="Free Traditional IRA calculator. Project balance at retirement, lifetime deduction tax saved, withdrawal tax, Roth IRA equivalent comparison. 2026 limits.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/traditional-ira-calculator/">
+
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <meta property="og:title" content="Traditional IRA Calculator: Contribution + Growth Tax">
+  <meta property="og:description" content="Free Traditional IRA calculator. Project balance at retirement, lifetime deduction tax saved, withdrawal tax, Roth IRA equivalent comparison. 2026 limits.">
+  <meta property="og:url" content="https://finncalc.com/traditional-ira-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Traditional IRA Calculator: Contribution + Growth Tax">
+  <meta name="twitter:description" content="Free Traditional IRA calculator. Project balance at retirement, lifetime deduction tax saved, withdrawal tax, Roth IRA equivalent comparison. 2026 limits.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-17", "description": "Free Traditional IRA calculator. Project balance at retirement, lifetime deduction tax saved, withdrawal tax, Roth IRA equivalent comparison. 2026 limits.", "name": "\ud83c\udfe6 Traditional IRA Calculator", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/traditional-ira-calculator/"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "For 2026 the Traditional IRA contribution limit is $7,000 if you\u0027re under age 50 and $8,000 if you\u0027re 50 or older (the catch-up contribution). The limit is the combined cap across all your Traditional and Roth IRAs \u2014 you can split it any way ($4,000 Trad + $3,000 Roth is fine) but the total cannot exceed $7,000 / $8,000. You must have earned income at least equal to your contribution (W-2 wages, self-employment income, or a spouse\u0027s earnings under spousal-IRA rules). Contributions for tax year 2026 can be made any time between January 1, 2026 and the federal tax-filing deadline (typically April 15, 2027), and you specify which tax year a contribution applies to when you make it."}, "name": "What\u0027s the 2026 Traditional IRA contribution limit?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The decision reduces to one question: is your marginal tax rate higher today or in retirement? If higher today (peak-earnings years, top brackets), Traditional wins \u2014 you deduct contributions at your current high rate and withdraw later at a lower one. If lower today (gap year, early career, retiree doing Roth conversions), Roth wins \u2014 you pay cheap tax now and withdraw entirely tax-free in retirement, including all growth. If your rates are roughly equal, the two are mathematically identical at flat rates. The calculator above runs all three scenarios and gives you a plain-English recommendation. Two practical wrinkles: (1) Roth offers more flexibility (no RMDs, withdraw contributions any time penalty-free) so people often pick Roth even when Traditional has a slight math edge; (2) future tax rates are uncertain \u2014 the 2017 TCJA brackets sunset back to higher pre-2018 levels at the end of 2025 unless renewed, which has tilted many advisers toward Roth for the 2024-2026 window."}, "name": "Traditional vs Roth IRA \u2014 which is better?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your modified adjusted gross income (MAGI) and whether you or your spouse is covered by a workplace retirement plan. If neither of you is covered by a 401(k)/403(b)/etc., your Traditional IRA contribution is fully deductible at any income level. If you are covered by a workplace plan, the deduction phases out between $77,000-$87,000 MAGI (single) or $123,000-$143,000 (married filing jointly) for 2026. If only your spouse is covered, your deduction phases out between $230,000-$240,000 (MFJ). Above the upper threshold the contribution is still allowed but it\u0027s fully nondeductible \u2014 meaning you put after-tax dollars into a pre-tax wrapper, which is almost always worse than just contributing directly to a Roth (or the backdoor Roth route if you\u0027re above the Roth income limit too). The IRS uses Form 8606 to track nondeductible contributions; without it you\u0027ll be double-taxed on withdrawals."}, "name": "Can I deduct my Traditional IRA contributions?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "For 2026 the deduction phases out as follows when you (or your spouse) are covered by an employer retirement plan. Single / head of household covered: full deduction below $77,000 MAGI, partial $77,000-$87,000, no deduction above $87,000. Married filing jointly, you covered: full below $123,000, partial $123,000-$143,000, none above $143,000. MFJ, only spouse covered: full below $230,000, partial $230,000-$240,000, none above $240,000. MFJ, neither covered: no income limit \u2014 fully deductible at any MAGI. Married filing separately: brutal \u2014 phase-out is just $0-$10,000 MAGI. The contribution itself is always allowed up to the $7,000 / $8,000 limit; only the income-tax deduction phases out. Nondeductible contributions still grow tax-deferred, but the math rarely justifies a nondeductible Traditional contribution \u2014 the backdoor Roth is usually superior."}, "name": "What\u0027s the income limit for deducting Traditional IRA contributions?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Required Minimum Distributions from a Traditional IRA start at age 73 for anyone turning 72 after December 31, 2022 (under SECURE 2.0). The first RMD must be taken by April 1 of the year after you turn 73, and every subsequent RMD by December 31. The amount is calculated each year as your prior-year-end balance divided by the IRS Uniform Lifetime Table divisor for your age \u2014 roughly 3.65% at age 73, rising to 4.55% at 80, 6.76% at 90. Missing an RMD triggers a 25% excise tax on the shortfall (down from 50% pre-SECURE 2.0, and reducible to 10% if corrected within 2 years). RMD age rises again to 75 starting in 2033 for anyone born in 1960 or later. Roth IRAs have no RMDs during the original owner\u0027s lifetime \u2014 one of the structural advantages that often tips ambitious savers toward Roth even when the marginal-rate math is a wash."}, "name": "When do RMDs (Required Minimum Distributions) start?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes, in several specific cases. The headline rule: withdrawals from a Traditional IRA before age 59\u00bd trigger ordinary income tax PLUS a 10% early-withdrawal penalty. The exceptions to the 10% penalty (income tax still applies): up to $10,000 lifetime for a first-time home purchase; qualified higher-education expenses for you, spouse, kids, or grandkids; medical expenses above 7.5% of AGI; health-insurance premiums during unemployment; total and permanent disability; substantially equal periodic payments (SEPP) under Rule 72(t); birth or adoption expenses up to $5,000; federal disaster recovery up to $22,000; terminal illness; domestic abuse up to $10,000 (SECURE 2.0). The SEPP / 72(t) route is the workhorse for early retirees \u2014 you commit to taking equal annual distributions for at least 5 years or until age 59\u00bd (whichever is later), and the 10% penalty is waived. Most people doing early retirement use a Roth conversion ladder instead, which sidesteps the penalty entirely."}, "name": "Can I withdraw early without penalty?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. The contribution limits are separate: the 2026 401(k) employee deferral limit is $23,500 (plus $7,500 catch-up at 50+, or the new SECURE 2.0 enhanced catch-up of $11,250 for ages 60-63), and the IRA limit is a separate $7,000 / $8,000. You can max both. The only friction is that being covered by a 401(k) (or any other workplace retirement plan) triggers the Traditional IRA deduction phase-out described above \u2014 so a high-earner who maxes their 401(k) and is over the deduction phase-out would either contribute to a nondeductible Traditional and immediately convert (the backdoor Roth) or just contribute directly to a Roth if under the Roth income limits ($161,000 single / $240,000 MFJ for 2026). The 401(k) employer match is generally the highest priority \u2014 capture that first before doing anything else \u2014 then fill the IRA, then back to the 401(k) up to the $23,500 cap."}, "name": "Can I have both a 401(k) and a Traditional IRA?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The pro-rata rule (sometimes called the cream-in-the-coffee rule) says the IRS treats all your Traditional IRA balances \u2014 deductible plus nondeductible, across every Traditional IRA you own \u2014 as a single pool when computing the taxable portion of any conversion. If 80% of that pool is pre-tax money, then 80% of any conversion is taxable, regardless of which account it physically came from. This destroys the simplicity of the backdoor Roth strategy (where high earners contribute $7,000 nondeductibly to a Traditional IRA and immediately convert to Roth) for anyone who already has a sizeable pre-tax Traditional IRA balance. The clean workaround: roll your pre-tax Traditional IRA balances into your 401(k) before the backdoor conversion \u2014 401(k) balances are excluded from the pro-rata calculation. Not every 401(k) plan accepts incoming rollovers, so check first. Once the Traditional IRA is clean (zero pre-tax balance), backdoor Roth contributions can be done cleanly each year. See the Roth IRA Conversion Calculator for the full conversion math."}, "name": "What\u0027s the pro-rata rule for backdoor Roth?"}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/traditional-ira-calculator/", "name": "\ud83c\udfe6 Traditional IRA Calculator", "position": 2}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "description": "Step-by-step guide to using the \ud83c\udfe6 Traditional IRA Calculator.", "name": "How to project your Traditional IRA", "step": [{"@type": "HowToStep", "name": "Enter your current age, planned retirement age", "position": 1, "text": "Enter your current age, planned retirement age, and current Traditional IRA balance", "url": "https://finncalc.com/traditional-ira-calculator/#step-1"}, {"@type": "HowToStep", "name": "Set your annual contribution (2026: $7,000 under", "position": 2, "text": "Set your annual contribution (2026: $7,000 under 50, $8,000 with the age-50 catch-up)", "url": "https://finncalc.com/traditional-ira-calculator/#step-2"}, {"@type": "HowToStep", "name": "Enter your expected annual return and the", "position": 3, "text": "Enter your expected annual return and the current marginal federal tax rate that applies to your contributions", "url": "https://finncalc.com/traditional-ira-calculator/#step-3"}, {"@type": "HowToStep", "name": "Enter your projected retirement marginal tax rate", "position": 4, "text": "Enter your projected retirement marginal tax rate (your best guess for the bracket you\u0027ll withdraw in)", "url": "https://finncalc.com/traditional-ira-calculator/#step-4"}, {"@type": "HowToStep", "name": "Flag whether you\u0027re covered by an employer", "position": 5, "text": "Flag whether you\u0027re covered by an employer 401(k) \u2014 used to surface the deduction phase-out hint", "url": "https://finncalc.com/traditional-ira-calculator/#step-5"}, {"@type": "HowToStep", "name": "Read off the balance at retirement, lifetime", "position": 6, "text": "Read off the balance at retirement, lifetime deduction tax saved, withdrawal tax, Roth equivalent, and the Traditional / Roth / Roughly equal recommendation", "url": "https://finncalc.com/traditional-ira-calculator/#step-6"}], "totalTime": "PT2M"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "dateModified": "2026-05-17", "datePublished": "2025-08-01", "description": "Free Traditional IRA calculator. Project balance at retirement, lifetime deduction tax saved, withdrawal tax, Roth IRA equivalent comparison. 2026 limits.", "headline": "\ud83c\udfe6 Traditional IRA Calculator", "inLanguage": "en", "mainEntityOfPage": {"@id": "https://finncalc.com/traditional-ira-calculator/", "@type": "WebPage"}, "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://finncalc.com/og-image.png"}, "name": "FinCalcHub", "url": "https://finncalc.com/"}, "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "url": "https://finncalc.com/traditional-ira-calculator/"}</script>
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/compound-interest/">Compound Interest</a>
+    <a href="/retirement-savings/">Retirement</a>
+    <a href="/take-home-pay/">Take-Home Pay</a>
+    <a href="/mortgage/">Mortgage</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+<main id="content">
+<!-- Ad slot top (leaderboard above H1) -->
+<div class="container">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="4461919959"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> › 🏦 Traditional IRA Calculator</p>
+  <h1>🏦 Traditional IRA Calculator</h1>
+  <p class="subtitle">Project your Traditional IRA balance at retirement, the lifetime tax deduction value of your contributions, and the withdrawal tax you&#39;ll owe in retirement — with a side-by-side Roth IRA comparison and a plain-English recommendation. 2026 IRA limits ($7,000 under 50, $8,000 catch-up) modelled.</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Traditional IRA Calculator -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#e8f5e9;border-left:4px solid #2e7d32;margin-bottom:16px">
+    <strong>🏦 Traditional IRA Calculator</strong> &mdash; project your Traditional IRA balance at retirement, the lifetime tax deduction value of your contributions, and the withdrawal tax you&rsquo;ll owe in retirement. Compare side-by-side with the Roth IRA equivalent and get a plain-English recommendation. 2026 contribution limits ($7,000 under 50, $8,000 catch-up 50+) and pre-tax compounding modelled.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Scenario</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentAge">Current Age <span class="hint">18-72 (RMDs start 73)</span></label>
+        <input type="number" id="currentAge" value="30" min="18" max="72" oninput="calculate()" inputmode="numeric">
+      </div>
+      <div class="form-group">
+        <label for="retirementAge">Retirement Age</label>
+        <input type="number" id="retirementAge" value="65" min="19" max="100" oninput="calculate()" inputmode="numeric">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="annualContribution">Annual Contribution ($) <span class="hint">2026: $7k under 50, $8k catch-up</span></label>
+        <input type="number" id="annualContribution" value="7000" min="0" max="8000" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="currentBalance">Current IRA Balance ($)</label>
+        <input type="number" id="currentBalance" value="0" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="expectedReturnPct">Expected Annual Return % <span class="hint">7% nominal default</span></label>
+        <input type="number" id="expectedReturnPct" value="7" min="-5" max="15" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="currentMarginalRatePct">Current Marginal Tax % <span class="hint">your bracket today</span></label>
+        <input type="number" id="currentMarginalRatePct" value="22" min="0" max="50" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="retirementMarginalRatePct">Retirement Marginal Tax % <span class="hint">your projected bracket then</span></label>
+        <input type="number" id="retirementMarginalRatePct" value="22" min="0" max="50" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="coveredByEmployerPlan">Covered by Employer 401(k)?</label>
+        <select id="coveredByEmployerPlan" onchange="calculate()">
+          <option value="no" selected>No &mdash; full deduction available</option>
+          <option value="yes">Yes &mdash; deduction phases out at higher MAGI</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Traditional IRA Projection</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+    <div id="employer-plan-hint" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px;font-size:0.92em">
+      <strong>Heads-up:</strong> if you&rsquo;re covered by an employer retirement plan, the Traditional IRA deduction phases out between $77,000-$87,000 MAGI (single) or $123,000-$143,000 (married filing jointly) for 2026. Above the upper threshold the contribution is still allowed but is fully nondeductible &mdash; consider the <a href="/roth-ira-calculator/">Roth IRA</a> or the <a href="/roth-ira-conversion-calculator/">backdoor Roth</a> route. Adjust your &ldquo;Current Marginal Tax %&rdquo; downward to reflect a partial deduction.
+    </div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">Balance at Retirement</div>
+      <div id="r-balance" style="font-size:2.2em;font-weight:700;color:#1B3A5C;margin-top:4px">&mdash;</div>
+      <div style="font-size:0.9em;color:#444;margin-top:6px">Pre-tax pot &mdash; you&rsquo;ll owe ordinary income tax on every dollar withdrawn</div>
+    </div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#fff;border-radius:8px;border-left:4px solid #2e7d32;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">Net After-Tax at Retirement</div>
+      <div id="r-net" style="font-size:1.9em;font-weight:700;color:#2e7d32;margin-top:4px">&mdash;</div>
+      <div style="font-size:0.9em;color:#444;margin-top:6px">Pre-tax balance &minus; withdrawal tax at your retirement bracket</div>
+    </div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #d97706;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">Recommendation</div>
+      <div id="r-recommendation" style="font-size:1.6em;font-weight:700;color:#d97706;margin-top:4px">&mdash;</div>
+      <div style="font-size:0.9em;color:#444;margin-top:6px">Traditional vs Roth, based on your current vs retirement marginal rates</div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Total Growth</div>
+        <div class="result-value" id="r-growth">&mdash;</div>
+        <div class="result-hint">Balance &minus; contributions &minus; seed</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Contributions</div>
+        <div class="result-value" id="r-contrib">&mdash;</div>
+        <div class="result-hint">Annual &times; years of accumulation</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Lifetime Deduction Tax Saved</div>
+        <div class="result-value" id="r-deduction">&mdash;</div>
+        <div class="result-hint">Contributions &times; current marginal rate</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Withdrawal Tax at Retirement</div>
+        <div class="result-value" id="r-withdrawtax">&mdash;</div>
+        <div class="result-hint">Balance &times; retirement marginal rate</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Roth IRA Equivalent</div>
+        <div class="result-value" id="r-roth">&mdash;</div>
+        <div class="result-hint">After-tax contributions, tax-free growth</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Years of Contributions</div>
+        <div class="result-value" id="r-years">&mdash;</div>
+        <div class="result-hint">Retirement age &minus; current age</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>Year-by-year compounding: the current balance grows at the expected return rate, and each year&rsquo;s contribution is added at year-end (ordinary annuity convention). The 2026 IRA contribution limit is $7,000 under age 50 and $8,000 with the age-50 catch-up. Traditional contributions are deducted from your current-year ordinary income, so the lifetime &ldquo;tax saved&rdquo; figure is total contributions &times; your current marginal federal rate (e.g. $7,000 &times; 22% = $1,540 a year).</p>
+    <p>Withdrawal tax in retirement is modelled as a single ordinary-income hit: balance &times; retirement marginal rate. In reality, Required Minimum Distributions (RMDs) starting at age 73 spread this tax across many years and across multiple brackets &mdash; if you have a large balance you&rsquo;ll likely span 12%-24% rather than a single rate. The simplified lump-sum figure is conservative for headline comparison purposes; for an RMD-aware schedule, consult a CFP&reg;.</p>
+    <p>The Roth IRA equivalent assumes the same dollar annual contribution committed pre-tax in either scenario. Roth contributions are taxed at the current marginal rate (so $7,000 of pre-tax salary becomes $7,000 &times; (1 &minus; current rate) inside the Roth), then grow tax-free, with no tax due on withdrawal. The math reduces to one question: is your <em>current</em> marginal rate higher or lower than your <em>retirement</em> marginal rate? Higher today → Traditional wins (deduct now, pay less later). Lower today → Roth wins (pay cheap tax now, withdraw tax-free later). Equal → mathematical wash.</p>
+    <p>This calculator intentionally does <strong>not</strong> model: state income tax, the 10% early-withdrawal penalty before 59&frac12;, the 5-year rule on conversions (see the <a href="/roth-ira-conversion-calculator/">Roth Conversion Calculator</a>), RMD-based annual taxation, full MAGI-based deduction phase-out math (the UI flags <code>coveredByEmployerPlan</code> as a hint &mdash; adjust your &ldquo;Current Marginal Tax %&rdquo; downward if your deduction is partial), the pro-rata rule for backdoor Roth contributions, or inflation-adjusted contribution-limit growth (the limit goes up by $500 increments every 1-3 years). For deduction phase-out math, IRMAA cliff modelling, or a multi-year backdoor strategy, consult a fee-only fiduciary.</p>
+    <ul style="margin:12px 0">
+      <li><strong>Contribution limits, deduction phase-out:</strong> <a href="https://www.irs.gov/publications/p590a" rel="noopener">IRS Publication 590-A &mdash; Contributions to Individual Retirement Arrangements</a></li>
+      <li><strong>RMDs, withdrawals, 5-year rules:</strong> <a href="https://www.irs.gov/publications/p590b" rel="noopener">IRS Publication 590-B &mdash; Distributions from IRAs</a></li>
+      <li><strong>Statutory authority:</strong> <a href="https://www.law.cornell.edu/uscode/text/26/408" rel="noopener">Internal Revenue Code &sect;408 &mdash; Individual Retirement Accounts</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s the 2026 Traditional IRA contribution limit?</div>
+      <div class="faq-a">For 2026 the Traditional IRA contribution limit is $7,000 if you&rsquo;re under age 50 and $8,000 if you&rsquo;re 50 or older (the &ldquo;catch-up&rdquo; contribution). The limit is the combined cap across all your Traditional and Roth IRAs &mdash; you can split it any way ($4,000 Trad + $3,000 Roth is fine) but the total cannot exceed $7,000 / $8,000. You must have earned income at least equal to your contribution (W-2 wages, self-employment income, or a spouse&rsquo;s earnings under spousal-IRA rules). Contributions for tax year 2026 can be made any time between January 1, 2026 and the federal tax-filing deadline (typically April 15, 2027), and you specify which tax year a contribution applies to when you make it.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Traditional vs Roth IRA &mdash; which is better?</div>
+      <div class="faq-a">The decision reduces to one question: is your marginal tax rate higher today or in retirement? If <strong>higher today</strong> (peak-earnings years, top brackets), Traditional wins &mdash; you deduct contributions at your current high rate and withdraw later at a lower one. If <strong>lower today</strong> (gap year, early career, retiree doing Roth conversions), Roth wins &mdash; you pay cheap tax now and withdraw entirely tax-free in retirement, including all growth. If your rates are <strong>roughly equal</strong>, the two are mathematically identical at flat rates. The calculator above runs all three scenarios and gives you a plain-English recommendation. Two practical wrinkles: (1) Roth offers more flexibility (no RMDs, withdraw contributions any time penalty-free) so people often pick Roth even when Traditional has a slight math edge; (2) future tax rates are uncertain &mdash; the 2017 TCJA brackets sunset back to higher pre-2018 levels at the end of 2025 unless renewed, which has tilted many advisers toward Roth for the 2024-2026 window.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I deduct my Traditional IRA contributions?</div>
+      <div class="faq-a">It depends on your modified adjusted gross income (MAGI) and whether you or your spouse is covered by a workplace retirement plan. If <strong>neither of you is covered</strong> by a 401(k)/403(b)/etc., your Traditional IRA contribution is fully deductible at any income level. If <strong>you are covered</strong> by a workplace plan, the deduction phases out between $77,000-$87,000 MAGI (single) or $123,000-$143,000 (married filing jointly) for 2026. If <strong>only your spouse is covered</strong>, your deduction phases out between $230,000-$240,000 (MFJ). Above the upper threshold the contribution is still allowed but it&rsquo;s fully <em>nondeductible</em> &mdash; meaning you put after-tax dollars into a pre-tax wrapper, which is almost always worse than just contributing directly to a Roth (or the backdoor Roth route if you&rsquo;re above the Roth income limit too). The IRS uses Form 8606 to track nondeductible contributions; without it you&rsquo;ll be double-taxed on withdrawals.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s the income limit for deducting Traditional IRA contributions?</div>
+      <div class="faq-a">For 2026 the deduction phases out as follows when you (or your spouse) are covered by an employer retirement plan. <strong>Single / head of household covered:</strong> full deduction below $77,000 MAGI, partial $77,000-$87,000, no deduction above $87,000. <strong>Married filing jointly, you covered:</strong> full below $123,000, partial $123,000-$143,000, none above $143,000. <strong>MFJ, only spouse covered:</strong> full below $230,000, partial $230,000-$240,000, none above $240,000. <strong>MFJ, neither covered:</strong> no income limit &mdash; fully deductible at any MAGI. <strong>Married filing separately:</strong> brutal &mdash; phase-out is just $0-$10,000 MAGI. The contribution itself is always allowed up to the $7,000 / $8,000 limit; only the income-tax deduction phases out. Nondeductible contributions still grow tax-deferred, but the math rarely justifies a nondeductible Traditional contribution &mdash; the backdoor Roth is usually superior.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When do RMDs (Required Minimum Distributions) start?</div>
+      <div class="faq-a">Required Minimum Distributions from a Traditional IRA start at <strong>age 73</strong> for anyone turning 72 after December 31, 2022 (under SECURE 2.0). The first RMD must be taken by April 1 of the year after you turn 73, and every subsequent RMD by December 31. The amount is calculated each year as your prior-year-end balance divided by the IRS Uniform Lifetime Table divisor for your age &mdash; roughly 3.65% at age 73, rising to 4.55% at 80, 6.76% at 90. Missing an RMD triggers a 25% excise tax on the shortfall (down from 50% pre-SECURE 2.0, and reducible to 10% if corrected within 2 years). RMD age rises again to 75 starting in 2033 for anyone born in 1960 or later. <strong>Roth IRAs have no RMDs during the original owner&rsquo;s lifetime</strong> &mdash; one of the structural advantages that often tips ambitious savers toward Roth even when the marginal-rate math is a wash.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I withdraw early without penalty?</div>
+      <div class="faq-a">Yes, in several specific cases. The headline rule: withdrawals from a Traditional IRA before age 59&frac12; trigger ordinary income tax PLUS a 10% early-withdrawal penalty. The exceptions to the 10% penalty (income tax still applies): up to $10,000 lifetime for a first-time home purchase; qualified higher-education expenses for you, spouse, kids, or grandkids; medical expenses above 7.5% of AGI; health-insurance premiums during unemployment; total and permanent disability; substantially equal periodic payments (SEPP) under Rule 72(t); birth or adoption expenses up to $5,000; federal disaster recovery up to $22,000; terminal illness; domestic abuse up to $10,000 (SECURE 2.0). The SEPP / 72(t) route is the workhorse for early retirees &mdash; you commit to taking equal annual distributions for at least 5 years or until age 59&frac12; (whichever is later), and the 10% penalty is waived. Most people doing early retirement use a <a href="/roth-ira-conversion-calculator/">Roth conversion ladder</a> instead, which sidesteps the penalty entirely.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I have both a 401(k) and a Traditional IRA?</div>
+      <div class="faq-a">Absolutely. The contribution limits are separate: the 2026 401(k) employee deferral limit is $23,500 (plus $7,500 catch-up at 50+, or the new SECURE 2.0 enhanced catch-up of $11,250 for ages 60-63), and the IRA limit is a separate $7,000 / $8,000. You can max both. The only friction is that being covered by a 401(k) (or any other workplace retirement plan) triggers the Traditional IRA deduction phase-out described above &mdash; so a high-earner who maxes their 401(k) and is over the deduction phase-out would either contribute to a nondeductible Traditional and immediately convert (the backdoor Roth) or just contribute directly to a Roth if under the Roth income limits ($161,000 single / $240,000 MFJ for 2026). The 401(k) employer match is generally the highest priority &mdash; capture that first before doing anything else &mdash; then fill the IRA, then back to the 401(k) up to the $23,500 cap.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s the pro-rata rule for backdoor Roth?</div>
+      <div class="faq-a">The pro-rata rule (sometimes called the &ldquo;cream-in-the-coffee&rdquo; rule) says the IRS treats all your Traditional IRA balances &mdash; deductible plus nondeductible, across every Traditional IRA you own &mdash; as a single pool when computing the taxable portion of any conversion. If 80% of that pool is pre-tax money, then 80% of any conversion is taxable, regardless of which account it physically came from. This destroys the simplicity of the backdoor Roth strategy (where high earners contribute $7,000 nondeductibly to a Traditional IRA and immediately convert to Roth) for anyone who already has a sizeable pre-tax Traditional IRA balance. The clean workaround: roll your pre-tax Traditional IRA balances into your 401(k) before the backdoor conversion &mdash; 401(k) balances are excluded from the pro-rata calculation. Not every 401(k) plan accepts incoming rollovers, so check first. Once the Traditional IRA is &ldquo;clean&rdquo; (zero pre-tax balance), backdoor Roth contributions can be done cleanly each year. See the <a href="/roth-ira-conversion-calculator/">Roth IRA Conversion Calculator</a> for the full conversion math.</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/roth-ira-calculator/" class="related-card">🌱 Roth IRA</a>
+      <a href="/roth-ira-conversion-calculator/" class="related-card">🔄 Roth Conversion</a>
+      <a href="/401k-calculator/" class="related-card">💼 401(k)</a>
+      <a href="/401k-tax-calculator/" class="related-card">🧾 401(k) Tax</a>
+      <a href="/fire-calculator/" class="related-card">🔥 FIRE Number</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="traditional-ira-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/traditional-ira.js" defer></script>
+<script>
+function fmtUSD(n) {
+  if (n === null || n === undefined || isNaN(n)) return '$0';
+  var v = Math.round(n);
+  var sign = v < 0 ? '-' : '';
+  return sign + '$' + Math.abs(v).toLocaleString('en-US');
+}
+function calculate() {
+  if (!window.FCH_TRADITIONAL_IRA) return;
+  var p = {
+    currentAge: +document.getElementById('currentAge').value || 0,
+    retirementAge: +document.getElementById('retirementAge').value || 0,
+    annualContribution: +document.getElementById('annualContribution').value || 0,
+    currentBalance: +document.getElementById('currentBalance').value || 0,
+    expectedReturnPct: +document.getElementById('expectedReturnPct').value || 0,
+    currentMarginalRatePct: +document.getElementById('currentMarginalRatePct').value || 0,
+    retirementMarginalRatePct: +document.getElementById('retirementMarginalRatePct').value || 0,
+    coveredByEmployerPlan: document.getElementById('coveredByEmployerPlan').value === 'yes',
+  };
+  var R = window.FCH_TRADITIONAL_IRA.calc(p);
+  var errEl = document.getElementById('error-message');
+  var hintEl = document.getElementById('employer-plan-hint');
+  var resultIds = ['r-balance','r-net','r-recommendation','r-growth','r-contrib','r-deduction','r-withdrawtax','r-roth','r-years'];
+  hintEl.style.display = p.coveredByEmployerPlan ? 'block' : 'none';
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    resultIds.forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-balance').textContent = fmtUSD(R.balanceAtRetirement);
+  document.getElementById('r-net').textContent = fmtUSD(R.netAfterTaxAtRetirement);
+  document.getElementById('r-recommendation').textContent = R.recommendation;
+  document.getElementById('r-growth').textContent = fmtUSD(R.totalGrowth);
+  document.getElementById('r-contrib').textContent = fmtUSD(R.totalContributions);
+  document.getElementById('r-deduction').textContent = fmtUSD(R.totalDeductionTaxSaved);
+  document.getElementById('r-withdrawtax').textContent = fmtUSD(R.withdrawalTaxAtRetirement);
+  document.getElementById('r-roth').textContent = fmtUSD(R.roth401kEquivalent);
+  document.getElementById('r-years').textContent = R.yearsOfContributions + ' yrs';
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="7963163804"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter your current age, planned retirement age, and current Traditional IRA balance</li>
+      
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Set your annual contribution (2026: $7,000 under 50, $8,000 with the age-50 catch-up)</li>
+      
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Enter your expected annual return and the current marginal federal tax rate that applies to your contributions</li>
+      
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Enter your projected retirement marginal tax rate (your best guess for the bracket you&#39;ll withdraw in)</li>
+      
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Flag whether you&#39;re covered by an employer 401(k) — used to surface the deduction phase-out hint</li>
+      
+      <li id="step-6" class="how-to-step" style="margin-bottom:6px">Read off the balance at retirement, lifetime deduction tax saved, withdrawal tax, Roth equivalent, and the Traditional / Roth / Roughly equal recommendation</li>
+      
+    </ol>
+  </section>
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="try-scenarios" aria-labelledby="try-scenarios-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#f4f6fb;border-radius:8px">
+    <h2 id="try-scenarios-heading" style="margin:0 0 6px;color:#1B3A5C;font-size:1.25rem">Try these scenarios</h2>
+    <p style="margin:0 0 12px;font-size:0.95em;color:#444">Tap a scenario to load it into the calculator above.</p>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      
+      <li>
+        <a class="try-scenario-link" href="?currentAge=30&amp;retirementAge=65&amp;annualContribution=7000&amp;currentBalance=0&amp;expectedReturnPct=7&amp;currentMarginalRatePct=22&amp;retirementMarginalRatePct=22#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Baseline 30yo, $7k/yr, retire 65, 7% return, 22% flat</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?currentAge=55&amp;retirementAge=65&amp;annualContribution=8000&amp;currentBalance=100000&amp;expectedReturnPct=7&amp;currentMarginalRatePct=24&amp;retirementMarginalRatePct=22#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Catch-up 55yo, $8k/yr, retire 65, 7%, 24%/22%</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?currentAge=35&amp;retirementAge=65&amp;annualContribution=7000&amp;currentBalance=0&amp;expectedReturnPct=7&amp;currentMarginalRatePct=32&amp;retirementMarginalRatePct=12#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">High earner Traditional-wins: 32% now / 12% retire, 30yr</a>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>The Traditional IRA is the original tax-deferred retirement account &mdash; deduct now, pay tax later.</strong> Every dollar you contribute to a Traditional IRA reduces your taxable income for that year (if you&rsquo;re eligible to deduct &mdash; see the deduction phase-out paragraph below), and every dollar of growth and contribution compounds tax-free until you withdraw it in retirement, at which point it&rsquo;s taxed as ordinary income at whatever your marginal rate is that year. The 2026 contribution limit is $7,000 (under age 50) or $8,000 (with the age-50 catch-up), making the maximum lifetime tax-deduction value for a high-bracket worker roughly $1,540-$2,560 per year (22%-32% of $7,000). The pot at retirement &mdash; assuming 35 years at 7% nominal returns and a flat $7,000 contribution &mdash; comes in around $968,000 of pre-tax value, which becomes $755,000 net of a 22% retirement tax. This calculator runs that math year-by-year and gives you the full breakdown.</p><p><strong>The Traditional vs Roth IRA decision reduces to one question: will your marginal tax rate be higher today or in retirement?</strong> If <em>higher today</em> &mdash; peak-earnings years in your 30s-50s, dual-income household in a top federal bracket &mdash; Traditional wins. You take the deduction at 32% or 35% now, then withdraw in retirement at 12%-22% when your earned income is gone. If <em>lower today</em> &mdash; early-career low salary, gap year between jobs, sabbatical, retiree doing Roth conversions &mdash; Roth wins. Pay 12% federal tax on a $7,000 contribution now, get tax-free growth and tax-free withdrawals forever after. If your rates are <em>roughly equal</em>, the two accounts are mathematically identical: $7,000 deducted at 22% leaves you with the same after-tax retirement income as $7,000 &times; (1 &minus; 22%) = $5,460 in a Roth growing at the same rate for the same horizon. The math is symmetric. The calculator above flags all three regimes with a plain-English recommendation, plus the dollar magnitude of the advantage.</p><p><strong>The deduction phase-out catches high earners with workplace retirement plans.</strong> If neither you nor your spouse is covered by an employer retirement plan (401(k), 403(b), pension, SEP-IRA, etc.), your Traditional IRA contribution is fully deductible at <em>any</em> MAGI &mdash; no income limit. If you <em>are</em> covered, the deduction phases out between $77,000-$87,000 MAGI for a single filer and $123,000-$143,000 for married filing jointly in 2026. Above the upper threshold the contribution is still allowed but it&rsquo;s fully nondeductible &mdash; you&rsquo;re putting after-tax dollars into a pre-tax wrapper, which is almost always strictly worse than just contributing directly to a Roth (or doing the backdoor Roth dance if you&rsquo;re also above the Roth income limit). The two most common high-earner mistakes are (1) making nondeductible contributions without filing Form 8606 to track basis, which means the IRS will tax you again on withdrawal, and (2) making nondeductible contributions and not immediately converting to Roth, leaving them to grow tax-deferred for years with worse tax treatment than a brokerage account.</p><p><strong>RMDs start at age 73 and force a tax bill whether you want one or not.</strong> Required Minimum Distributions from a Traditional IRA begin at age 73 under SECURE 2.0 (rising to 75 in 2033 for anyone born 1960 or later). The first RMD must be taken by April 1 of the year after you turn 73, every subsequent RMD by December 31. The amount is your prior-year-end balance divided by the IRS Uniform Lifetime Table divisor &mdash; roughly 3.65% at 73, rising to 4.55% at 80, 6.76% at 90. RMDs are forced taxable events and there&rsquo;s no escape: missing one triggers a 25% excise tax (down from 50% pre-SECURE 2.0). The strategic implication is that very large Traditional balances at retirement can push you into higher tax brackets via mandatory withdrawals, which is one of the strongest arguments for diversifying into Roth via conversions in your 60s and early 70s &mdash; the &ldquo;Roth conversion ladder&rdquo; that the FIRE community has popularised. <strong>Roth IRAs have no RMDs during the original owner&rsquo;s lifetime</strong>, which is one of their major structural advantages, especially for legacy planning.</p><p><strong>The backdoor Roth is a workaround for high earners blocked from direct Roth contributions.</strong> Direct Roth IRA contributions phase out at MAGI of $161,000 (single) or $240,000 (MFJ) for 2026, which excludes most dual-income professionals. The backdoor: contribute $7,000 nondeductibly to a Traditional IRA (no income limit on contributions, just on the deduction) and then immediately convert it to a Roth. Because the contribution wasn&rsquo;t deducted, the conversion has zero or near-zero taxable amount &mdash; you&rsquo;ve effectively made a Roth contribution the income limits would have blocked. The catch is the <em>pro-rata rule</em>: the IRS treats all your Traditional IRA balances as one pool when computing the taxable portion of any conversion. If you have $93,000 of pre-tax Traditional money plus $7,000 of fresh nondeductible contribution, 93% of any conversion is taxable. The fix: roll your pre-tax Traditional balances into your current 401(k) first (401(k) balances are excluded from the pro-rata calc), then keep the Traditional IRA empty except for fresh nondeductible contributions you immediately convert. Not every 401(k) accepts incoming rollovers, so check before relying on the strategy.</p><p><strong>Three common Traditional IRA mistakes and how to avoid them.</strong> First, contributing more than the limit &mdash; the 2026 cap is $7,000 / $8,000 across <em>all</em> your IRAs combined, not per account. Over-contributing triggers a 6% excise tax on the excess every year until removed. Second, doing nondeductible contributions and forgetting to file Form 8606 &mdash; without the form the IRS has no record of your basis and will tax the same dollars again on withdrawal. The Form 8606 history is critical for backdoor Roth practitioners and high earners who&rsquo;ve drifted in and out of the deduction phase-out. Third, raiding the Traditional IRA before 59&frac12; for non-qualified reasons &mdash; the 10% early-withdrawal penalty stacks on top of ordinary income tax, making the effective tax rate 32%-50%+ in most brackets. If you genuinely need pre-59&frac12; access, use the 72(t) Substantially Equal Periodic Payments route or build a <a href="/roth-ira-conversion-calculator/">Roth conversion ladder</a> in the years before you need the money. Both sidestep the penalty entirely.</p>
+  </section>
+</div>
+
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="1620134192"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-17">17 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+
+
+
+
+
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/roth-ira-calculator/">💰 Roth IRA Calculator</a> — See your tax-free retirement balance with 2026 IRS contribution limits and MAGI phase-out applied automatically. USA.</li>
+      <li><a href="/roth-ira-conversion-calculator/">🔄 Roth IRA Conversion Calculator</a> — Should you convert pre-tax IRA / 401(k) money to a Roth today? Model the conversion tax, tax-free Roth growth, and the Traditional after-tax alternative side-by-side — with a plain-English recommendation and the break-even retirement tax rate.</li>
+      <li><a href="/401k-calculator/">401(k) Calculator</a> — See how your 401(k) grows with employer match, salary increases, and decades of compounding. USA — 2026 IRS limits applied.</li>
+      <li><a href="/401k-tax-calculator/">📊 401(k) Tax Calculator</a> — Exactly how much tax you&#x27;ll owe on a 401(k) withdrawal: federal bracket, state tax, and the 10% early-withdrawal penalty if you&#x27;re under 59½.</li>
+      <li><a href="/fire-calculator/">🔥 FIRE Calculator</a> — Lean, Regular, Fat, and Coast FIRE in one calculator. Set your spending, savings rate, and SWR — see exactly when you reach financial independence.</li>
+      <li><a href="/retirement-savings/">🏖 Retirement Savings Calculator</a> — Find out if you&#x27;re on track to retire comfortably - and exactly how much you need to save each month.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="5980987973"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+</main>
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>
