@@ -58,7 +58,8 @@ def test_calculator_pages_exist():
     # +fire-number-calculator (30), +simple-interest-calculator (31).
     # +pension-calculator-uk (32) — Phase 4A 2026-05-24.
     # +traditional-ira-calculator (33) — Phase 4B 2026-05-24.
-    assert len(CALC_PAGES) == 33, f"Expected 33 calculator pages, found {len(CALC_PAGES)}"
+    # +hourly-to-salary-calculator (34) — Phase 4C 2026-05-24 (closes Phase 4).
+    assert len(CALC_PAGES) == 34, f"Expected 34 calculator pages, found {len(CALC_PAGES)}"
 
 
 def test_variant_pages_exist():
