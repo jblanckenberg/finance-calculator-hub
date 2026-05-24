@@ -1,0 +1,150 @@
+<!-- 401(k) Tax Calculator (tax-focused view of 401k withdrawal) -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#fff8e1;border-left:4px solid #f5b800;margin-bottom:16px">
+    <strong>📊 401(k) Tax Calculator</strong> — Exactly how much tax you'll owe on a 401(k) withdrawal: federal bracket, state tax, and the 10% early-withdrawal penalty if you're under 59½.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="withdrawalAmount">Withdrawal Amount <span class="hint">($)</span></label>
+        <input type="number" id="withdrawalAmount" value="50000" min="0" placeholder="50000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="age">Your Age</label>
+        <input type="number" id="age" value="45" min="18" max="100" placeholder="45" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="federalBracketPct">Federal Tax Bracket (%) <span class="hint">marginal rate at filing</span></label>
+        <input type="number" id="federalBracketPct" value="22" min="0" max="50" step="0.1" placeholder="22" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="stateTaxPct">State Tax (%) <span class="hint">0 for TX, FL, NV, etc.</span></label>
+        <input type="number" id="stateTaxPct" value="5" min="0" max="20" step="0.1" placeholder="5" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Penalty Exemption</label>
+      <select id="exemption" onchange="calculate()">
+        <option value="none">None — standard early-withdrawal rules apply</option>
+        <option value="ruleOf55">Rule of 55 — separated from employer at 55+</option>
+        <option value="hardship">Hardship / disability / SEPP</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Tax Breakdown</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Total Tax + Penalty</div>
+        <div class="result-value" id="r-totalTax">—</div>
+        <div class="result-hint">Federal + state + early-withdrawal</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Effective Tax Rate</div>
+        <div class="result-value" id="r-effective">—</div>
+        <div class="result-hint">Total tax ÷ gross withdrawal</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Federal Tax</div>
+        <div class="result-value" id="r-federal">—</div>
+        <div class="result-hint">Marginal-bracket × gross</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">State Tax</div>
+        <div class="result-value" id="r-state">—</div>
+        <div class="result-hint">State rate × gross</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Early-Withdrawal Penalty</div>
+        <div class="result-value" id="r-penalty">—</div>
+        <div class="result-hint" id="r-penaltyHint">10% if under 59½, no exemption</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Net to You</div>
+        <div class="result-value" id="r-net">—</div>
+        <div class="result-hint">After all taxes</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator focuses on the TAX SIDE of a 401(k) withdrawal: how much you owe (not how much you keep). It applies marginal federal + state + the 10% early-withdrawal penalty (IRC §72(t)) where applicable. For a net-amount-focused view of the same calculation, see the linked 401(k) Withdrawal Calculator.</p>
+    <ul style="margin:12px 0">
+      <li><strong>IRS rules:</strong> <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/topics-401k-and-profit-sharing-plan-contribution-limits" rel="noopener">IRS — 401(k) limits and rules</a></li>
+      <li><strong>Early withdrawal:</strong> <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-tax-on-early-distributions" rel="noopener">IRS — Topic 558 / §72(t)</a></li>
+      <li><strong>Federal brackets:</strong> <a href="https://www.irs.gov/forms-pubs/about-publication-17" rel="noopener">IRS Publication 17</a> (current year)</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How are 401(k) withdrawals taxed?</div><div class="faq-a">Traditional 401(k) withdrawals are taxed as ordinary income at your federal marginal bracket, plus any state income tax (0% in 8 states). If you're under age 59½ AND don't qualify for an exemption (Rule of 55, hardship, SEPP, disability), an additional 10% federal penalty applies. The combined effective rate frequently lands in the 35-50% range for working-age early withdrawals.</div></div><div class="faq-item"><div class="faq-q">Do I pay state tax on 401(k) withdrawals?</div><div class="faq-a">Yes, in most states. The 8 states with no state income tax (Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Wyoming) impose 0% state tax on the withdrawal. Washington has no broad income tax but charges 7% on capital gains above $250k. Some states like Illinois exempt retirement income for residents 65+. State rates vary from 0% to ~13% (California top bracket).</div></div><div class="faq-item"><div class="faq-q">Is the 10% penalty in addition to or instead of regular tax?</div><div class="faq-a">In addition to. The 10% early-withdrawal penalty is a SEPARATE federal tax that stacks on top of regular income tax. A $50,000 early withdrawal at 22% federal + 5% state + 10% penalty results in $18,500 total tax — $11,000 federal + $2,500 state + $5,000 penalty = 37% effective rate. Same math: gross 50k × 0.37 = 18.5k tax.</div></div><div class="faq-item"><div class="faq-q">What federal bracket should I use?</div><div class="faq-a">Use your MARGINAL rate at filing — i.e. the rate on your last dollar of income for the year, including the 401(k) withdrawal. 2026 federal brackets (single filer): 10% to $11,925; 12% to $48,475; 22% to $103,350; 24% to $197,300; 32% to $250,525; 35% to $626,350; 37% above. A $50k withdrawal added to $80k of other income lands the WHOLE $50k in the 22% bracket. Larger withdrawals may push you into a higher bracket — use the average if uncertain.</div></div><div class="faq-item"><div class="faq-q">Why is my effective rate higher than my federal bracket?</div><div class="faq-a">Three stacked taxes inflate the effective rate: federal marginal (e.g. 22%), state income tax (e.g. 5%), and the 10% early-withdrawal penalty (if applicable). 22% + 5% + 10% = 37% effective rate on early withdrawals. For at-retirement withdrawals (59½+), only federal + state apply — typically 22-27% combined.</div></div><div class="faq-item"><div class="faq-q">Does my plan administrator withhold tax automatically?</div><div class="faq-a">Yes, 20% federal mandatory withholding on direct distributions (not rollovers). State withholding varies by state and may be optional. The 10% early-withdrawal penalty is NOT auto-withheld — you owe it at filing time. Most planners recommend instructing the administrator to withhold at your full marginal rate (plus state) to avoid an underpayment penalty at filing.</div></div><div class="faq-item"><div class="faq-q">Can I reduce 401(k) withdrawal tax?</div><div class="faq-a">Several strategies. (1) Time the withdrawal for a low-income year (e.g. between jobs or after retiring). (2) Spread withdrawals across multiple tax years to stay in lower brackets. (3) Use Rule of 55 if eligible to skip the 10% penalty. (4) Roll into a Roth IRA via 'backdoor' conversion in low-income years (still owe income tax but future growth is tax-free). (5) Combine with deductions/credits — a $50k withdrawal feels different if you have $30k of itemised deductions plus charitable contributions.</div></div><div class="faq-item"><div class="faq-q">Roth 401(k) withdrawal tax — same rules?</div><div class="faq-a">No. Qualified Roth 401(k) distributions (account held 5+ years AND you're 59½+ or disabled) are completely tax-free and penalty-free. Non-qualified withdrawals: contributions come out tax-free, but earnings are taxable + subject to the 10% penalty. Calculate Roth withdrawals using the Roth IRA calculator — this calc is for TRADITIONAL 401(k) only.</div></div><div class="faq-item"><div class="faq-q">What about RMD tax?</div><div class="faq-a">Required Minimum Distributions (starting at age 73, or 75 if born 1960+) are taxed as ordinary income at your federal + state marginal rate. No 10% penalty since RMDs happen well after 59½. Failing to take the RMD triggers a 25% excise tax on the missed amount (reduced to 10% if corrected within 2 years). RMD strategy: take the minimum if you don't need the cash; take more if you'd otherwise be in a higher bracket later.</div></div></div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/401k-withdrawal-calculator/" class="related-card">💵 401(k) Net Withdrawal</a>
+      <a href="/401k-calculator/" class="related-card">💼 401(k) Contribution</a>
+      <a href="/take-home-pay/" class="related-card">📊 Take-Home Pay</a>
+      <a href="/roth-ira-calculator/" class="related-card">🏦 Roth IRA</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/fire-calculator/" class="related-card">🔥 FIRE Calculator</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="401k-tax-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/401k-withdrawal-calculator.js" defer></script>
+<script>
+function calculate() {
+  if (!window.FCH_401K_WITHDRAWAL) return;
+  var exemption = document.getElementById('exemption').value;
+  var p = {
+    withdrawalAmount: +document.getElementById('withdrawalAmount').value,
+    age: +document.getElementById('age').value,
+    federalBracketPct: +document.getElementById('federalBracketPct').value,
+    stateTaxPct: +document.getElementById('stateTaxPct').value,
+    ruleOf55Exempt: exemption === 'ruleOf55',
+    hardshipExempt: exemption === 'hardship',
+  };
+  var fmt = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  var R = window.FCH_401K_WITHDRAWAL.calc(p);
+  var errEl = document.getElementById('error-message');
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    ['r-totalTax', 'r-effective', 'r-federal', 'r-state', 'r-penalty', 'r-net'].forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-totalTax').textContent = fmt(R.totalTax);
+  document.getElementById('r-effective').textContent = R.effectiveTaxRatePct.toFixed(1) + '%';
+  document.getElementById('r-federal').textContent = fmt(R.federalTax);
+  document.getElementById('r-state').textContent = fmt(R.stateTax);
+  document.getElementById('r-penalty').textContent = fmt(R.earlyPenalty);
+  document.getElementById('r-penaltyHint').textContent = R.penaltyApplies
+    ? '10% penalty applies (age ' + p.age + ', no exemption)'
+    : (exemption !== 'none' ? 'Waived by ' + exemption + ' exemption' : 'No penalty (age 59½+)');
+  document.getElementById('r-net').textContent = fmt(R.net);
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>

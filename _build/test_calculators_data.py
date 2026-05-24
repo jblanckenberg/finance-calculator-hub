@@ -16,6 +16,8 @@ EXPECTED_SLUGS = {
     "tfsa-calculator",
     # 2026-05-24 Plan B keyword-gap fill
     "coast-fire-calculator",
+    "401k-withdrawal-calculator",
+    "401k-tax-calculator",
 }
 
 def test_calculators_file_exists():

@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>401(k) Withdrawal Calculator: Net After Tax + Penalty</title>
+  <meta name="description" content="Free 401(k) withdrawal calculator. See your net amount after federal tax, state tax, and the 10% early-withdrawal penalty. Rule of 55 + hardship exemptions modelled.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/401k-withdrawal-calculator/">
+
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <meta property="og:title" content="401(k) Withdrawal Calculator: Net After Tax + Penalty">
+  <meta property="og:description" content="Free 401(k) withdrawal calculator. See your net amount after federal tax, state tax, and the 10% early-withdrawal penalty. Rule of 55 + hardship exemptions modelled.">
+  <meta property="og:url" content="https://finncalc.com/401k-withdrawal-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="401(k) Withdrawal Calculator: Net After Tax + Penalty">
+  <meta name="twitter:description" content="Free 401(k) withdrawal calculator. See your net amount after federal tax, state tax, and the 10% early-withdrawal penalty. Rule of 55 + hardship exemptions modelled.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-17", "description": "Free 401(k) withdrawal calculator. See your net amount after federal tax, state tax, and the 10% early-withdrawal penalty. Rule of 55 + hardship exemptions modelled.", "name": "\ud83d\udcbc 401(k) Withdrawal Calculator", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/401k-withdrawal-calculator/"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Traditional 401(k) withdrawals are taxed as ordinary income at your federal marginal bracket, plus any state income tax. If you\u0027re under age 59\u00bd AND don\u0027t qualify for an exemption, an additional 10% federal penalty applies. For a $50,000 withdrawal at 22% federal + 5% state + 10% penalty, you\u0027d keep $31,500 net out of $50,000 gross \u2014 a 37% effective rate."}, "name": "How much tax do I pay on a 401(k) withdrawal?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The 10% penalty (IRC \u00a772(t)) applies to traditional 401(k) withdrawals before age 59\u00bd, on top of regular income tax. Exemptions include separation from employer at age 55+ (Rule of 55), permanent disability, qualified hardship, Substantially Equal Periodic Payments (SEPPs), and certain birth/adoption distributions up to $5,000. The exemption applies to the penalty only \u2014 regular income tax is still owed."}, "name": "When does the 10% early-withdrawal penalty apply?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The Rule of 55 lets you take penalty-free 401(k) withdrawals if you separate from your employer in the calendar year you turn 55 or later (50 for qualified public-safety employees). The exemption applies ONLY to the 401(k) of the employer you left \u2014 older 401(k)s rolled into an IRA lose the exemption, and your current employer\u0027s 401(k) doesn\u0027t qualify if you\u0027re still working there."}, "name": "What is the Rule of 55?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Six common ways: wait until 59\u00bd; Rule of 55 if you separate at 55+; qualified hardship withdrawal; Substantially Equal Periodic Payments (SEPP) \u2014 locks you in for 5+ years; medical expenses exceeding 7.5% of AGI; qualified birth/adoption distribution up to $5,000. Each has strict eligibility \u2014 verify with a tax pro before relying."}, "name": "Can I avoid the early-withdrawal penalty?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Your plan administrator typically withholds 20% federal mandatory on direct distributions. If your marginal rate is higher than 20% (which it usually is for any meaningful withdrawal), you\u0027ll owe additional tax at filing time. Many planners recommend instructing the administrator to withhold at your full marginal rate plus state to avoid an underpayment penalty."}, "name": "Should I withhold extra tax on the withdrawal?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Different rules. Qualified Roth 401(k) distributions (account held 5+ years AND you\u0027re 59\u00bd+ or disabled) are completely tax-free and penalty-free. Non-qualified Roth withdrawals: contributions come out tax-free, but earnings are taxable + subject to the 10% penalty. This calculator is calibrated for TRADITIONAL 401(k) only."}, "name": "What about Roth 401(k) withdrawals?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A 401(k) loan lets you borrow up to $50,000 or 50% of your vested balance (whichever is less) without triggering tax or penalty. You pay yourself back with interest over 5 years. Risk: if you leave the employer before repaying, the balance becomes a deemed distribution \u2014 taxed + penalty if under 59\u00bd. Loans avoid the immediate tax hit but create job-mobility risk."}, "name": "Should I take a 401(k) loan instead of a withdrawal?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Early withdrawals carry three stacked costs: federal income tax at your marginal bracket (22-32% typical for working-age earners), state income tax (0-13%), and the 10% early-withdrawal penalty. The combined effective rate frequently lands in the 35-50% range. That\u0027s why financial advisors uniformly recommend leaving 401(k)s alone until 59\u00bd unless you have no alternative."}, "name": "Why does this calculator show such a high effective tax rate?"}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/401k-withdrawal-calculator/", "name": "\ud83d\udcbc 401(k) Withdrawal Calculator", "position": 2}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "description": "Step-by-step guide to using the \ud83d\udcbc 401(k) Withdrawal Calculator.", "name": "How to use the 401(k) Withdrawal Calculator", "step": [{"@type": "HowToStep", "name": "Enter the withdrawal amount you\u0027re considering", "position": 1, "text": "Enter the withdrawal amount you\u0027re considering", "url": "https://finncalc.com/401k-withdrawal-calculator/#step-1"}, {"@type": "HowToStep", "name": "Enter your current age (drives the early-withdrawal", "position": 2, "text": "Enter your current age (drives the early-withdrawal penalty)", "url": "https://finncalc.com/401k-withdrawal-calculator/#step-2"}, {"@type": "HowToStep", "name": "Set your federal marginal tax bracket and", "position": 3, "text": "Set your federal marginal tax bracket and state tax rate", "url": "https://finncalc.com/401k-withdrawal-calculator/#step-3"}, {"@type": "HowToStep", "name": "Pick a penalty exemption if you qualify", "position": 4, "text": "Pick a penalty exemption if you qualify (Rule of 55, hardship, SEPP)", "url": "https://finncalc.com/401k-withdrawal-calculator/#step-4"}, {"@type": "HowToStep", "name": "Review your net amount, effective tax rate", "position": 5, "text": "Review your net amount, effective tax rate, and tax breakdown", "url": "https://finncalc.com/401k-withdrawal-calculator/#step-5"}], "totalTime": "PT2M"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "dateModified": "2026-05-17", "datePublished": "2025-08-01", "description": "Free 401(k) withdrawal calculator. See your net amount after federal tax, state tax, and the 10% early-withdrawal penalty. Rule of 55 + hardship exemptions modelled.", "headline": "\ud83d\udcbc 401(k) Withdrawal Calculator", "inLanguage": "en", "mainEntityOfPage": {"@id": "https://finncalc.com/401k-withdrawal-calculator/", "@type": "WebPage"}, "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://finncalc.com/og-image.png"}, "name": "FinCalcHub", "url": "https://finncalc.com/"}, "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "url": "https://finncalc.com/401k-withdrawal-calculator/"}</script>
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/compound-interest/">Compound Interest</a>
+    <a href="/retirement-savings/">Retirement</a>
+    <a href="/take-home-pay/">Take-Home Pay</a>
+    <a href="/mortgage/">Mortgage</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+<main id="content">
+<!-- Ad slot top (leaderboard above H1) -->
+<div class="container">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="4461919959"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> › 💼 401(k) Withdrawal Calculator</p>
+  <h1>💼 401(k) Withdrawal Calculator</h1>
+  <p class="subtitle">How much you actually keep after federal + state tax and the 10% early-withdrawal penalty. Models the Rule of 55, hardship, and disability exemptions.</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 401(k) Withdrawal Calculator (net-focused) -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#fff8e1;border-left:4px solid #f5b800;margin-bottom:16px">
+    <strong>💼 401(k) Withdrawal Calculator</strong> — See how much you actually keep after federal tax, state tax, and the 10% early-withdrawal penalty (when it applies).
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="withdrawalAmount">Withdrawal Amount <span class="hint">($)</span></label>
+        <input type="number" id="withdrawalAmount" value="50000" min="0" placeholder="50000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="age">Your Age</label>
+        <input type="number" id="age" value="65" min="18" max="100" placeholder="65" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="federalBracketPct">Federal Tax Bracket (%) <span class="hint">marginal rate</span></label>
+        <input type="number" id="federalBracketPct" value="22" min="0" max="50" step="0.1" placeholder="22" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="stateTaxPct">State Tax (%) <span class="hint">0 for TX, FL, NV, etc.</span></label>
+        <input type="number" id="stateTaxPct" value="5" min="0" max="20" step="0.1" placeholder="5" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentBalance">Current 401(k) Balance <span class="hint">($, optional)</span></label>
+        <input type="number" id="currentBalance" value="200000" min="0" placeholder="200000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>Penalty Exemption</label>
+        <select id="exemption" onchange="calculate()">
+          <option value="none">None — standard early-withdrawal rules apply</option>
+          <option value="ruleOf55">Rule of 55 — separated from employer at 55+</option>
+          <option value="hardship">Hardship / disability / SEPP</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Results</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Net Amount You Keep</div>
+        <div class="result-value" id="r-net">—</div>
+        <div class="result-hint">After all taxes + penalty</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Effective Tax Rate</div>
+        <div class="result-value" id="r-effective">—</div>
+        <div class="result-hint">Total tax ÷ gross withdrawal</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Federal Tax</div>
+        <div class="result-value" id="r-federal">—</div>
+        <div class="result-hint">Marginal-bracket × gross</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">State Tax</div>
+        <div class="result-value" id="r-state">—</div>
+        <div class="result-hint">State rate × gross</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Early-Withdrawal Penalty</div>
+        <div class="result-value" id="r-penalty">—</div>
+        <div class="result-hint" id="r-penaltyHint">10% if under 59½, no exemption</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Remaining Balance</div>
+        <div class="result-value" id="r-balance">—</div>
+        <div class="result-hint">After this withdrawal</div>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="7963163804"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter the withdrawal amount you&#39;re considering</li>
+      
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Enter your current age (drives the early-withdrawal penalty)</li>
+      
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Set your federal marginal tax bracket and state tax rate</li>
+      
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Pick a penalty exemption if you qualify (Rule of 55, hardship, SEPP)</li>
+      
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Review your net amount, effective tax rate, and tax breakdown</li>
+      
+    </ol>
+  </section>
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="try-scenarios" aria-labelledby="try-scenarios-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#f4f6fb;border-radius:8px">
+    <h2 id="try-scenarios-heading" style="margin:0 0 6px;color:#1B3A5C;font-size:1.25rem">Try these scenarios</h2>
+    <p style="margin:0 0 12px;font-size:0.95em;color:#444">Tap a scenario to load it into the calculator above.</p>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      
+      <li>
+        <a class="try-scenario-link" href="?withdrawalAmount=50000&amp;age=65&amp;federalBracketPct=22&amp;stateTaxPct=5&amp;currentBalance=200000&amp;exemption=none#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Retirement: 65yo $50k, 22% fed + 5% state</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?withdrawalAmount=50000&amp;age=45&amp;federalBracketPct=22&amp;stateTaxPct=5&amp;currentBalance=200000&amp;exemption=none#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Early: 45yo $50k with penalty</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?withdrawalAmount=50000&amp;age=57&amp;federalBracketPct=22&amp;stateTaxPct=5&amp;currentBalance=200000&amp;exemption=ruleOf55#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Rule of 55: 57yo separated at 55+</a>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+
+
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>This calculator applies marginal federal tax + state tax + the 10% early-withdrawal penalty (IRC §72(t)) where applicable. The penalty is waived for withdrawals after age 59½, for withdrawals after separation from employer at age 55+ (Rule of 55), for hardship withdrawals, disability, and Substantially Equal Periodic Payments (SEPPs). For users needing full federal bracket math (not just marginal), use the linked take-home pay calculator.</p>
+    <ul style="margin:12px 0">
+      <li><strong>IRS rules:</strong> <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/topics-401k-and-profit-sharing-plan-contribution-limits" rel="noopener">IRS — 401(k) limits and rules</a></li>
+      <li><strong>Early withdrawal penalty:</strong> <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-tax-on-early-distributions" rel="noopener">IRS — Topic 558 / §72(t)</a></li>
+      <li><strong>Rule of 55:</strong> <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-plans-frequently-asked-questions-about-rule-of-55" rel="noopener">IRS — Rule of 55 FAQs</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <!-- FAQ -->
+  
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>The 3 stacked costs.</strong> 401(k) withdrawals are hit by three taxes simultaneously: federal income tax at your marginal bracket, state income tax, and the 10% early-withdrawal penalty if you're under 59½. The combined rate frequently exceeds 35% — making early 401(k) withdrawals the most expensive cash source for most people.</p><p><strong>The 59½ cliff.</strong> The 10% penalty (IRC §72(t)) vanishes at age 59½. Even a six-month delay can save thousands. If you're 58 or 59 and considering a withdrawal, waiting until your 59½ birthday is often the highest-return decision you'll make all year.</p><p><strong>The Rule of 55 escape hatch.</strong> The single most powerful exemption: separate from employer at age 55+ and take penalty-free withdrawals from THAT employer's 401(k). Doesn't apply to IRAs or other employers' plans. Worth structuring a job change around if you're 54-55 considering early retirement.</p><p><strong>Mandatory 20% withholding ≠ your actual tax.</strong> The plan administrator withholds 20% federal on direct distributions by default. If your marginal rate is 22% + 5% state + 10% penalty = 37%, you'll owe an additional 17% at filing. Set higher withholding upfront or expect a tax bill.</p><p><strong>Lowest-cost cash alternatives.</strong> In order of cost: emergency fund > taxable brokerage > HELOC > 401(k) loan > Roth IRA contribution withdrawal > traditional IRA early withdrawal > 401(k) hardship withdrawal. The 401(k) loan is often overlooked — no tax hit if you stay employed, but you re-enter the workforce having committed your future income to repayment.</p>
+  </section>
+</div>
+
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="1620134192"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How much tax do I pay on a 401(k) withdrawal?</div><div class="faq-a">Withdrawals from a traditional 401(k) are taxed as ordinary income at your federal marginal bracket, plus any state income tax. If you're under age 59½ AND don't qualify for an exemption (Rule of 55, hardship, SEPP, disability), an additional 10% federal penalty applies. For a $50,000 withdrawal at 22% federal + 5% state + 10% penalty, you'd keep $31,500 net out of $50,000 gross — a 37% effective rate.</div></div><div class="faq-item"><div class="faq-q">When does the 10% early-withdrawal penalty apply?</div><div class="faq-a">The 10% penalty (IRC §72(t)) applies to traditional 401(k) withdrawals before age 59½, on top of regular income tax. Several exemptions waive the penalty: separation from employer at age 55 or later (Rule of 55), permanent disability, qualified hardship (medical expenses, primary residence, education, eviction), Substantially Equal Periodic Payments (SEPPs), and certain birth/adoption distributions up to $5,000. The exemption applies to the penalty only — regular income tax is still owed.</div></div><div class="faq-item"><div class="faq-q">What is the Rule of 55?</div><div class="faq-a">The Rule of 55 lets you take penalty-free 401(k) withdrawals if you separate from your employer in the calendar year you turn 55 or later (50 for qualified public-safety employees). The exemption applies ONLY to the 401(k) of the employer you left — older 401(k)s rolled into an IRA lose the exemption, and your current employer's 401(k) doesn't qualify if you're still working there. Income tax still applies to the withdrawals.</div></div><div class="faq-item"><div class="faq-q">Can I avoid the early-withdrawal penalty?</div><div class="faq-a">Six common ways: (1) Wait until age 59½; (2) Rule of 55 if you separate from employer at 55+; (3) qualified hardship withdrawal (limited categories); (4) Substantially Equal Periodic Payments under §72(t)(2)(A)(iv) — locks you into 5 years or until 59½ whichever is longer; (5) certain medical-expense withdrawals exceeding 7.5% of AGI; (6) qualified birth/adoption distribution up to $5,000. Each exemption has strict eligibility — verify with a tax pro before relying on them.</div></div><div class="faq-item"><div class="faq-q">Should I withhold extra tax on the withdrawal?</div><div class="faq-a">Your plan administrator typically withholds 20% federal mandatory on direct distributions. If your actual marginal rate is higher than 20% (which it usually is for any meaningful withdrawal), you'll owe additional tax at filing time. Many planners recommend instructing the administrator to withhold at your full marginal rate (plus any state) to avoid an underpayment penalty. The 10% early-withdrawal penalty is NOT auto-withheld — you pay it at filing time.</div></div><div class="faq-item"><div class="faq-q">What about Roth 401(k) withdrawals?</div><div class="faq-a">Different rules. Qualified Roth 401(k) distributions (account held 5+ years AND you're 59½+ or disabled) are completely tax-free and penalty-free. Non-qualified Roth withdrawals are partly taxable: contributions come out tax-free anytime, but earnings are subject to regular tax + the 10% early-withdrawal penalty. This calculator is calibrated for TRADITIONAL 401(k) withdrawals. For Roth-specific calculations, see the Roth IRA calculator.</div></div><div class="faq-item"><div class="faq-q">How do Required Minimum Distributions (RMDs) work?</div><div class="faq-a">Starting at age 73 (or 75 for those born 1960 or later under SECURE Act 2.0), you must take an RMD each year from traditional 401(k)s. The amount is calculated by dividing your year-end balance by an IRS life-expectancy factor. Failing to take the RMD triggers a 25% excise tax (reduced to 10% if corrected within 2 years). RMDs are themselves taxable as ordinary income but don't trigger the 10% early-withdrawal penalty since they happen well after 59½.</div></div><div class="faq-item"><div class="faq-q">Should I take a 401(k) loan instead of a withdrawal?</div><div class="faq-a">A 401(k) loan lets you borrow up to $50,000 or 50% of your vested balance (whichever is less) without triggering tax or the early-withdrawal penalty. You pay yourself back with interest (typically prime + 1-2%) over 5 years. The trade-off: if you leave the employer before repaying, the outstanding balance becomes a deemed distribution — taxed as ordinary income with the 10% penalty if you're under 59½. Loans avoid the immediate tax hit but create job-mobility risk.</div></div><div class="faq-item"><div class="faq-q">Why does this calculator show such a high effective tax rate?</div><div class="faq-a">Early withdrawals carry three stacked costs: federal income tax at your marginal bracket (often 22-32% for working-age earners), state income tax (0% in 8 states; up to 13% in California), and the 10% early-withdrawal penalty. The combined effective rate frequently lands in the 35-50% range. That's why financial advisors uniformly recommend leaving 401(k)s alone until 59½ unless you have no alternative.</div></div><div class="faq-item"><div class="faq-q">I need cash — what's the lowest-cost alternative to a 401(k) withdrawal?</div><div class="faq-a">In rough order of cost (lowest first): (1) emergency fund / taxable brokerage; (2) HELOC or home-equity loan if you have equity; (3) 401(k) loan (no tax cost if you stay employed); (4) Roth IRA contribution withdrawal (contributions come out tax-free); (5) Traditional IRA early withdrawal (same penalty rules as 401(k) but more exemption categories); (6) Last resort: 401(k) hardship or full withdrawal with the penalty.</div></div></div>
+
+  <!-- Related Calculators -->
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/401k-calculator/" class="related-card">💼 401(k) Contribution</a>
+      <a href="/401k-tax-calculator/" class="related-card">📊 401(k) Tax Breakdown</a>
+      <a href="/take-home-pay/" class="related-card">💵 Take-Home Pay</a>
+      <a href="/roth-ira-calculator/" class="related-card">🏦 Roth IRA</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/fire-calculator/" class="related-card">🔥 FIRE Calculator</a>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="401k-withdrawal-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/401k-withdrawal-calculator.js" defer></script>
+<script>
+function currencySymbol() { return '$'; }
+function calculate() {
+  if (!window.FCH_401K_WITHDRAWAL) return;
+  var exemption = document.getElementById('exemption').value;
+  var p = {
+    withdrawalAmount: +document.getElementById('withdrawalAmount').value,
+    age: +document.getElementById('age').value,
+    federalBracketPct: +document.getElementById('federalBracketPct').value,
+    stateTaxPct: +document.getElementById('stateTaxPct').value,
+    currentBalance: +document.getElementById('currentBalance').value || 0,
+    ruleOf55Exempt: exemption === 'ruleOf55',
+    hardshipExempt: exemption === 'hardship',
+  };
+  var sym = currencySymbol();
+  var fmt = function (n) { return sym + Math.round(n).toLocaleString('en-US'); };
+  var R = window.FCH_401K_WITHDRAWAL.calc(p);
+  var errEl = document.getElementById('error-message');
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    ['r-net', 'r-effective', 'r-federal', 'r-state', 'r-penalty', 'r-balance'].forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-net').textContent = fmt(R.net);
+  document.getElementById('r-effective').textContent = R.effectiveTaxRatePct.toFixed(1) + '%';
+  document.getElementById('r-federal').textContent = fmt(R.federalTax);
+  document.getElementById('r-state').textContent = fmt(R.stateTax);
+  document.getElementById('r-penalty').textContent = fmt(R.earlyPenalty);
+  document.getElementById('r-penaltyHint').textContent = R.penaltyApplies
+    ? '10% penalty applies (age ' + p.age + ', no exemption)'
+    : (exemption !== 'none' ? 'Waived by ' + exemption + ' exemption' : 'No penalty (age 59½+)');
+  document.getElementById('r-balance').textContent = R.remainingBalance !== null ? fmt(R.remainingBalance) : '—';
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-17">17 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+
+
+
+
+
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/401k-calculator/">401(k) Calculator</a> — See how your 401(k) grows with employer match, salary increases, and decades of compounding. USA — 2026 IRS limits applied.</li>
+      <li><a href="/roth-ira-calculator/">💰 Roth IRA Calculator</a> — See your tax-free retirement balance with 2026 IRS contribution limits and MAGI phase-out applied automatically. USA.</li>
+      <li><a href="/take-home-pay/">💰 Take-Home Pay Calculator</a> — See your exact salary after all taxes and deductions — updated for 2026/27 tax rules in the USA, UK, and South Africa.</li>
+      <li><a href="/retirement-savings/">🏖 Retirement Savings Calculator</a> — Find out if you&#x27;re on track to retire comfortably - and exactly how much you need to save each month.</li>
+      <li><a href="/fire-calculator/">🔥 FIRE Calculator</a> — Lean, Regular, Fat, and Coast FIRE in one calculator. Set your spending, savings rate, and SWR — see exactly when you reach financial independence.</li>
+      <li><a href="/coast-fire-calculator/">🌊 Coast FIRE Calculator</a> — The smallest nest egg that grows into FIRE on autopilot. Enter your FIRE number, current age, target retirement age, and expected real return — get your Coast FIRE number plus a year-by-year projection.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="5980987973"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+</main>
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>
