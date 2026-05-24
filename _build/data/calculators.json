@@ -82,9 +82,9 @@
       "investment-growth",
       "savings-goal",
       "retirement-savings",
-      "inflation-impact",
       "fire-calculator",
-      "isa-calculator"
+      "simple-interest-calculator",
+      "dividend-calculator"
     ]
   },
   "mortgage": {
@@ -171,8 +171,8 @@
       "net-worth",
       "loan-payoff",
       "savings-goal",
-      "emergency-fund",
-      "inflation-impact"
+      "mortgage-repayment-calculator",
+      "mortgage-overpayment-calculator"
     ]
   },
   "take-home-pay": {
@@ -255,10 +255,10 @@
     "related": [
       "sa-tax-calculator",
       "401k-calculator",
-      "isa-calculator",
       "retirement-savings",
       "mortgage",
-      "net-worth"
+      "texas-paycheck-calculator",
+      "california-paycheck-calculator"
     ]
   },
   "retirement-savings": {
@@ -343,8 +343,8 @@
       "roth-ira-calculator",
       "fire-calculator",
       "compound-interest",
-      "investment-growth",
-      "tfsa-calculator"
+      "coast-fire-calculator",
+      "fire-number-calculator"
     ]
   },
   "investment-growth": {
@@ -426,9 +426,9 @@
       "compound-interest",
       "retirement-savings",
       "fire-calculator",
-      "isa-calculator",
       "tfsa-calculator",
-      "inflation-impact"
+      "dividend-calculator",
+      "coast-fire-calculator"
     ]
   },
   "savings-goal": {
@@ -676,11 +676,11 @@
     "keyConcepts": "<p><strong>Assets minus liabilities.</strong> Net worth is the cleanest single measure of financial position: everything you own (cash, investments, property, vehicles) minus everything you owe (mortgage, car loan, credit cards). Track it quarterly — the trend matters more than any single number.</p><p><strong>Liquid vs. illiquid assets.</strong> Cash and investments can be sold quickly without a major price hit. Property and vehicles can't — and forced-sale values are typically 10-20% below market. Always know what fraction of your net worth you can convert to cash inside a month.</p><p><strong>Home equity is real but trapped.</strong> If your home is worth $400k and you owe $250k, your equity is $150k — but you can't spend it without selling, downsizing, or taking a HELOC / further-advance. Many net-worth statements over-weight home equity as a result.</p><p><strong>Retirement accounts at face value.</strong> A $200k 401(k) or pension pot isn't $200k in your pocket — withdrawing in pre-retirement triggers tax plus a 10% penalty in the US. Most planners count retirement balances at pre-tax face value but remember they're not freely spendable.</p><p><strong>Benchmarks.</strong> A common rule of thumb (Stanley &amp; Danko, <em>The Millionaire Next Door</em>): your expected net worth equals age &times; pre-tax income / 10. Double that figure puts you in the 'prodigious accumulator' category. Use as a directional gauge, not a target.</p>",
     "related": [
       "retirement-savings",
-      "mortgage",
-      "debt-snowball-calculator",
       "emergency-fund",
       "investment-growth",
-      "fire-calculator"
+      "fire-calculator",
+      "dividend-calculator",
+      "fire-number-calculator"
     ]
   },
   "loan-payoff": {
@@ -761,10 +761,10 @@
     "related": [
       "credit-card-payoff",
       "debt-snowball-calculator",
-      "student-loan-calculator",
       "mortgage",
       "net-worth",
-      "emergency-fund"
+      "mortgage-repayment-calculator",
+      "simple-interest-calculator"
     ]
   },
   "credit-card-payoff": {
@@ -847,8 +847,8 @@
       "loan-payoff",
       "student-loan-calculator",
       "emergency-fund",
-      "net-worth",
-      "take-home-pay"
+      "simple-interest-calculator",
+      "mortgage-overpayment-calculator"
     ]
   },
   "emergency-fund": {
@@ -1014,9 +1014,9 @@
       "take-home-pay",
       "tfsa-calculator",
       "retirement-savings",
-      "net-worth",
       "investment-growth",
-      "inflation-impact"
+      "paye-calculator",
+      "401k-tax-calculator"
     ]
   },
   "401k-calculator": {
@@ -1104,9 +1104,9 @@
       "roth-ira-calculator",
       "retirement-savings",
       "fire-calculator",
-      "take-home-pay",
       "investment-growth",
-      "compound-interest"
+      "401k-withdrawal-calculator",
+      "roth-ira-conversion-calculator"
     ],
     "scenarios": [
       {
@@ -1210,8 +1210,8 @@
       "retirement-savings",
       "fire-calculator",
       "investment-growth",
-      "isa-calculator",
-      "compound-interest"
+      "roth-ira-conversion-calculator",
+      "coast-fire-calculator"
     ],
     "scenarios": [
       {
@@ -1422,8 +1422,8 @@
       "loan-payoff",
       "student-loan-calculator",
       "emergency-fund",
-      "net-worth",
-      "take-home-pay"
+      "mortgage-overpayment-calculator",
+      "simple-interest-calculator"
     ],
     "scenarios": [
       {
@@ -1530,8 +1530,8 @@
       "investment-growth",
       "compound-interest",
       "401k-calculator",
-      "roth-ira-calculator",
-      "net-worth"
+      "coast-fire-calculator",
+      "fire-number-calculator"
     ],
     "scenarios": [
       {
@@ -2091,8 +2091,8 @@
       "investment-growth",
       "compound-interest",
       "retirement-savings",
-      "savings-goal",
-      "inflation-impact"
+      "dividend-calculator",
+      "simple-interest-calculator"
     ],
     "scenarios": [
       {
@@ -2195,9 +2195,9 @@
       "isa-calculator",
       "sa-tax-calculator",
       "retirement-savings",
-      "investment-growth",
-      "compound-interest",
-      "savings-goal"
+      "savings-goal",
+      "paye-calculator",
+      "dividend-calculator"
     ],
     "scenarios": [
       {
