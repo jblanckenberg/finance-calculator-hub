@@ -1,0 +1,234 @@
+<!-- UK Pension Calculator -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#e8f5e9;border-left:4px solid #2e7d32;margin-bottom:16px">
+    <strong>🇬🇧 UK Pension Calculator</strong> — project your combined UK retirement income from a workplace pension (auto-enrolment), a personal pension / SIPP, and the new State Pension. Model year-by-year salary growth, employer match, basic-rate tax relief, and a triple-locked State Pension under HMRC 2026/27 rules. Outputs your pot at retirement, state-pension top-up, and a combined annual income figure using the 4% safe-withdrawal rule.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Scenario</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" value="30" min="18" max="100" oninput="calculate()" inputmode="numeric">
+      </div>
+      <div class="form-group">
+        <label for="retirementAge">Retirement Age <span class="hint">UK state pension age 66-67</span></label>
+        <input type="number" id="retirementAge" value="67" min="19" max="100" oninput="calculate()" inputmode="numeric">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentSalary">Current Annual Salary (&pound;)</label>
+        <input type="number" id="currentSalary" value="35000" min="1" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="salaryGrowthPct">Annual Salary Growth % <span class="hint">UK avg ~2.5%</span></label>
+        <input type="number" id="salaryGrowthPct" value="2.5" min="-5" max="15" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentPensionPot">Current Pension Pot (&pound;)</label>
+        <input type="number" id="currentPensionPot" value="0" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="expectedReturnPct">Expected Annual Return % <span class="hint">5% real / 7% nominal</span></label>
+        <input type="number" id="expectedReturnPct" value="5" min="-5" max="15" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="employeePensionPct">Your Contribution % <span class="hint">auto-enrol min 5%</span></label>
+        <input type="number" id="employeePensionPct" value="5" min="0" max="30" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="employerPensionPct">Employer Contribution % <span class="hint">auto-enrol min 3%</span></label>
+        <input type="number" id="employerPensionPct" value="3" min="0" max="30" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="personalContributionAnnual">Additional Personal / SIPP Contribution (&pound;/yr) <span class="hint">held flat</span></label>
+      <input type="number" id="personalContributionAnnual" value="0" min="0" step="100" oninput="calculate()" inputmode="decimal">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="includeStatePension">Include State Pension?</label>
+        <select id="includeStatePension" onchange="calculate()">
+          <option value="yes" selected>Yes &mdash; add to retirement income</option>
+          <option value="no">No &mdash; pension pot only</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="claimStatePensionAge">State Pension Claim Age <span class="hint">SP age 66-67</span></label>
+        <input type="number" id="claimStatePensionAge" value="67" min="60" max="75" oninput="calculate()" inputmode="numeric">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Retirement Income Projection</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">Combined Annual Retirement Income</div>
+      <div id="r-combined" style="font-size:2.2em;font-weight:700;color:#1B3A5C;margin-top:4px">&mdash;</div>
+      <div style="font-size:0.9em;color:#444;margin-top:6px">4% safe-withdrawal of pension pot + inflated State Pension</div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Pension Pot at Retirement</div>
+        <div class="result-value" id="r-pot">&mdash;</div>
+        <div class="result-hint">Workplace + SIPP, compounded</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">State Pension (Inflated)</div>
+        <div class="result-value" id="r-state">&mdash;</div>
+        <div class="result-hint">Annual, triple-lock 2.5%/yr</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Years of Contributions</div>
+        <div class="result-value" id="r-years">&mdash;</div>
+        <div class="result-hint">retirement age &minus; current age</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Employer Match</div>
+        <div class="result-value" id="r-employer">&mdash;</div>
+        <div class="result-hint">&ldquo;Free money&rdquo; over career</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Tax Relief</div>
+        <div class="result-value" id="r-relief">&mdash;</div>
+        <div class="result-hint">20% basic-rate on your contributions</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Effective Savings Rate</div>
+        <div class="result-value" id="r-rate">&mdash;</div>
+        <div class="result-hint">Your contribution &divide; salary</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>Year-by-year projection: salary grows at the rate you set, each year&rsquo;s workplace contribution is (employee% + employer%) &times; that year&rsquo;s salary, plus the flat personal / SIPP figure. The pot grows at the expected return rate and contributions are added at year-end (ordinary annuity convention). Tax relief is calculated at 20% basic-rate on your employee + personal contributions &mdash; if you&rsquo;re a higher-rate (40%) or additional-rate (45%) taxpayer, you reclaim the extra 20%-25% via Self-Assessment and the figure shown here is the conservative floor.</p>
+    <p>State Pension uses the current full new State Pension figure (&pound;230/week default, configurable) inflated to retirement age at 2.5%/year &mdash; the triple-lock&rsquo;s conservative floor (the actual triple-lock pays the higher of CPI, average earnings growth, or 2.5%). Combined annual retirement income = 4% &times; pension pot + inflated State Pension. The 4% safe-withdrawal rate comes from the Trinity Study for a 30-year retirement; for very early retirement (FIRE before 60) consider 3.0-3.5% instead.</p>
+    <p>This calculator intentionally does <strong>not</strong> model: higher / additional-rate marginal relief above 20%, the Annual Allowance taper for incomes above &pound;260k (the &pound;60k &rarr; &pound;10k taper), 25% tax-free lump sum mechanics (the pot figure is pre-decumulation), salary-sacrifice NI savings, qualifying-years gating (we assume the full 35 years for the new State Pension), or deferral uplift (+5.8%/yr after State Pension age). For an Annual Allowance health-check or a 25%-lump-sum drawdown plan, consult a fee-only pensions adviser.</p>
+    <ul style="margin:12px 0">
+      <li><strong>State Pension:</strong> <a href="https://www.gov.uk/state-pension" rel="noopener">gov.uk &mdash; The State Pension</a></li>
+      <li><strong>Auto-enrolment minimums:</strong> <a href="https://www.thepensionsregulator.gov.uk/en/employers/duties-checker/contribution-levels" rel="noopener">The Pensions Regulator &mdash; Minimum contributions</a></li>
+      <li><strong>Tax relief &amp; Annual Allowance:</strong> <a href="https://www.gov.uk/tax-on-your-private-pension/annual-allowance" rel="noopener">HMRC &mdash; Tax on your private pension contributions</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s the UK State Pension and when can I claim it?</div>
+      <div class="faq-a">The new State Pension is a flat-rate weekly payment from HMRC at State Pension age. For 2024/25 the full new State Pension is &pound;221.20/week (&pound;11,502/yr), rising each year under the triple-lock (the higher of CPI, average earnings growth, or 2.5%). State Pension age is currently 66, rising to 67 between 2026 and 2028 for anyone born after April 1960, and likely 68 from 2044-2046. You need 35 qualifying years of National Insurance contributions for the full amount; less than 35 (down to a 10-year minimum) gets you a pro-rated payment. You can defer claiming &mdash; deferring 1 year boosts your payment by ~5.8%, which is a strong inflation-protected annuity to buy if you can afford to wait.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s auto-enrolment and what are the minimum contributions?</div>
+      <div class="faq-a">Auto-enrolment is the UK law that requires every employer to automatically enrol eligible workers (22+ earning &pound;10,000+) into a workplace pension. The statutory minimum total contribution is 8% of qualifying earnings &mdash; split as 5% from the employee and 3% from the employer. Qualifying earnings is the band between &pound;6,240 and &pound;50,270 (2024/25), so contributions are taken from earnings inside that band, not your full salary. You can opt out, but if you do you lose the employer match &mdash; which is roughly a 60% pay rise on that money once you factor in tax relief plus employer contribution. Most pension advisers consider opting out a costly mistake unless you have urgent debt.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Should I contribute more than the auto-enrolment minimum?</div>
+      <div class="faq-a">Almost certainly yes. The 8% combined minimum (5% you + 3% employer) is a starting floor, not a recommended target. Industry rule of thumb: contribute roughly half your starting age as a percentage of salary &mdash; a 30-year-old should aim for 15%, a 40-year-old for 20%. Many employers will match additional contributions up to a higher cap (e.g. 4-6% employer if you do 4-6%) &mdash; check your scheme rules and capture the full match before doing anything else. Salary sacrifice schemes also save you employee National Insurance (12% on most earnings, 2% above &pound;50,270) on top of the income tax relief, making them the most efficient way to boost contributions if your employer offers one.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does pension tax relief actually work?</div>
+      <div class="faq-a">Two methods, same end result for basic-rate taxpayers. <strong>Relief at source</strong> (used by most personal pensions and SIPPs): you contribute &pound;80 net, the provider claims &pound;20 from HMRC and adds it to your pension, you end up with &pound;100 gross in the pension. Higher and additional-rate taxpayers reclaim the extra 20% (40% bracket) or 25% (45% bracket) via Self-Assessment. <strong>Net pay arrangement</strong> (used by most workplace pensions): your contribution comes out of pre-tax salary, so you pay less income tax on the day &mdash; same end result, fewer steps. Either way, the &pound;100 gross figure is what hits your pension. For a 40%-rate taxpayer, &pound;80 of net pay becomes &pound;100 in the pension AND saves you &pound;20 of income tax via Self-Assessment &mdash; an effective cost of just &pound;60 for every &pound;100 added.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s a SIPP and how does it differ from a workplace pension?</div>
+      <div class="faq-a">A SIPP (Self-Invested Personal Pension) is a personal pension wrapper that lets you choose your own investments &mdash; index funds, individual shares, investment trusts, commercial property &mdash; rather than picking from a workplace scheme&rsquo;s default funds. SIPPs are popular because workplace default funds are often expensive (0.5%+ AMC) and conservative, while a SIPP at a low-cost broker (Vanguard, AJ Bell, Hargreaves Lansdown) can run at 0.15-0.45% all-in. The trade-off: no employer contribution into a SIPP (employer money lives in the workplace pension), so most people use both &mdash; workplace pension for the employer match, SIPP for additional contributions where they want full investment control. SIPPs get the same 20% basic-rate tax relief at source, plus higher/additional-rate reclaim via Self-Assessment.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">25% tax-free lump sum at retirement &mdash; how does that work?</div>
+      <div class="faq-a">From age 55 (rising to 57 from April 2028) you can take up to 25% of your pension pot as a tax-free lump sum &mdash; the &ldquo;pension commencement lump sum&rdquo; (PCLS) in HMRC jargon. The remaining 75% becomes a taxable income stream (drawdown, annuity, or further lump sums all taxed as income). There&rsquo;s a cap: the lump sum allowance is &pound;268,275 across all your pensions (25% of the abolished &pound;1.073m lifetime allowance). For a &pound;400k pot you take &pound;100k tax-free and start the income on the remaining &pound;300k. For a &pound;1.5m pot you&rsquo;re capped at &pound;268,275 tax-free and the rest is all taxable. Many retirees stagger the lump-sum withdrawal across the first few years of retirement (the &ldquo;Uncrystallised Funds Pension Lump Sum&rdquo; or UFPLS approach) to control their income-tax bracket.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s the Annual Allowance and the taper for high earners?</div>
+      <div class="faq-a">The Annual Allowance caps the total pension contributions you can make in a tax year and still get tax relief. The standard Annual Allowance is &pound;60,000 (2024/25), covering employee + employer + personal contributions across all schemes. For high earners the allowance tapers: if your &ldquo;adjusted income&rdquo; (broadly your income plus employer pension contributions) exceeds &pound;260,000, the allowance reduces by &pound;1 for every &pound;2 over the threshold, down to a floor of &pound;10,000 for adjusted income of &pound;360,000+. The taper is brutal and is the main reason ultra-high-earners often stop pension contributions and use ISAs / VCTs instead. You can also use &ldquo;carry forward&rdquo;: any unused Annual Allowance from the previous 3 tax years can be added to this year&rsquo;s contribution. This calculator does not model the taper &mdash; if you&rsquo;re in scope, model the post-taper figure as your effective contribution.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I claim State Pension if I haven&rsquo;t worked enough years?</div>
+      <div class="faq-a">You need a minimum of 10 qualifying years of National Insurance contributions to get any new State Pension, and 35 years for the full amount. Each qualifying year you have above 10 adds 1/35 of the full payment. Years you spent on parental leave, claiming Child Benefit for a child under 12, or claiming Carer&rsquo;s Allowance count automatically via NI credits. You can also fill gaps by paying voluntary Class 3 contributions (currently &pound;17.45/week, &pound;907/yr) &mdash; check your NI record on gov.uk first and prioritise buying back any partial years that would push you over a whole-year threshold. Voluntary contributions usually pay back within 3-4 years of claiming State Pension, making them one of the highest-return investments available to the over-45 cohort.</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/isa-calculator/" class="related-card">🇬🇧 ISA</a>
+      <a href="/fire-calculator/" class="related-card">🔥 FIRE Number</a>
+      <a href="/fire-number-calculator/" class="related-card">🎯 FIRE Target</a>
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">💹 Investment Growth</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="pension-calculator-uk"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/pension-uk.js" defer></script>
+<script>
+function fmtGBP(n) {
+  if (n === null || n === undefined || isNaN(n)) return '£0';
+  var v = Math.round(n);
+  var sign = v < 0 ? '-' : '';
+  return sign + '£' + Math.abs(v).toLocaleString('en-GB');
+}
+function calculate() {
+  if (!window.FCH_PENSION_UK) return;
+  var p = {
+    currentAge: +document.getElementById('currentAge').value || 0,
+    retirementAge: +document.getElementById('retirementAge').value || 0,
+    currentSalary: +document.getElementById('currentSalary').value || 0,
+    salaryGrowthPct: +document.getElementById('salaryGrowthPct').value || 0,
+    currentPensionPot: +document.getElementById('currentPensionPot').value || 0,
+    employeePensionPct: +document.getElementById('employeePensionPct').value || 0,
+    employerPensionPct: +document.getElementById('employerPensionPct').value || 0,
+    personalContributionAnnual: +document.getElementById('personalContributionAnnual').value || 0,
+    expectedReturnPct: +document.getElementById('expectedReturnPct').value || 0,
+    includeStatePension: document.getElementById('includeStatePension').value === 'yes',
+    claimStatePensionAge: +document.getElementById('claimStatePensionAge').value || 0,
+    currentStatePensionWeekly: 230,
+  };
+  var R = window.FCH_PENSION_UK.calc(p);
+  var errEl = document.getElementById('error-message');
+  var resultIds = ['r-combined','r-pot','r-state','r-years','r-employer','r-relief','r-rate'];
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    resultIds.forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-combined').textContent = fmtGBP(R.combinedAnnualIncome);
+  document.getElementById('r-pot').textContent = fmtGBP(R.pensionPotAtRetirement);
+  document.getElementById('r-state').textContent = fmtGBP(R.statePensionAnnualInflated);
+  document.getElementById('r-years').textContent = R.yearsOfContributions + ' yrs';
+  document.getElementById('r-employer').textContent = fmtGBP(R.totalEmployerContribution);
+  document.getElementById('r-relief').textContent = fmtGBP(R.totalTaxRelief);
+  document.getElementById('r-rate').textContent = R.effectiveSavingsRatePct.toFixed(1) + '%';
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>
