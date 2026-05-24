@@ -51,8 +51,9 @@ def test_calculator_pages_exist():
     missing = [slug for slug in CALCULATORS if not (REPO / slug / "index.html").exists()]
     assert not missing, f"Missing rendered pages for: {missing}"
     # Bump as new top-level calc pages ship.
-    # 2026-05-24: +coast-fire (20), +401k-withdrawal (21), +401k-tax (22).
-    assert len(CALC_PAGES) == 22, f"Expected 22 calculator pages, found {len(CALC_PAGES)}"
+    # 2026-05-24: +coast-fire (20), +401k-withdrawal (21), +401k-tax (22),
+    # +mortgage-repayment (23), +mortgage-overpayment (24).
+    assert len(CALC_PAGES) == 24, f"Expected 24 calculator pages, found {len(CALC_PAGES)}"
 
 
 def test_variant_pages_exist():

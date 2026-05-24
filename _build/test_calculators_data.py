@@ -18,6 +18,8 @@ EXPECTED_SLUGS = {
     "coast-fire-calculator",
     "401k-withdrawal-calculator",
     "401k-tax-calculator",
+    "mortgage-repayment-calculator",
+    "mortgage-overpayment-calculator",
 }
 
 def test_calculators_file_exists():
