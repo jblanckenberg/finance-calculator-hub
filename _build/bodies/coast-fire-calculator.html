@@ -1,0 +1,168 @@
+<!-- Coast FIRE Calculator -->
+<div class="container" style="padding-top:0">
+
+  <!-- Operator stub -->
+  <div class="card" style="background:#fff8e1;border-left:4px solid #f5b800;margin-bottom:16px">
+    <strong>🌊 Coast FIRE Calculator</strong> — The smallest nest egg you need today so compound growth alone reaches full FIRE by your target age. No further contributions required.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fireNumber">FIRE Number (target nest egg) <span class="hint">($)</span></label>
+        <input type="number" id="fireNumber" value="1500000" min="0" placeholder="1500000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" value="35" min="18" max="80" placeholder="35" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="coastAge">Coast Target Age <span class="hint">(when you want to be FI)</span></label>
+        <input type="number" id="coastAge" value="65" min="30" max="90" placeholder="65" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="realReturnPct">Expected Real Return (%, after inflation)</label>
+        <input type="number" id="realReturnPct" value="7" min="0" max="20" step="0.1" placeholder="7" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="currentPortfolio">Current Portfolio Value <span class="hint">($)</span></label>
+      <input type="number" id="currentPortfolio" value="0" min="0" placeholder="0" oninput="calculate()" inputmode="decimal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Results</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Coast FIRE Number</div>
+        <div class="result-value" id="r-coastNumber">—</div>
+        <div class="result-hint">Amount needed invested today</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Status</div>
+        <div class="result-value" id="r-status">—</div>
+        <div class="result-hint" id="r-statusHint">Coasting or accumulating</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Shortfall to Coast</div>
+        <div class="result-value" id="r-shortfall">—</div>
+        <div class="result-hint">Extra capital required today</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Multiple of Coast Number</div>
+        <div class="result-value" id="r-multiple">—</div>
+        <div class="result-hint">Your portfolio ÷ coast number</div>
+      </div>
+    </div>
+
+    <div class="breakdown" style="margin-top:16px">
+      <div class="card-title">Year-by-year projection at the coast rate</div>
+      <table class="breakdown-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Age</th>
+            <th class="td-right">Projected Value</th>
+          </tr>
+        </thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- HOWTO_AFTER_CALC -->
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>Coast FIRE uses the present-value formula: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">Coast Number = FIRE Number / (1 + r)<sup>years</sup></code>, where <strong>r</strong> is the expected real return (after inflation) and <strong>years</strong> is the time between your current age and your coast target age. The math relies on the same compound-growth principle as the broader FIRE calculation — only here we're solving for the present-value seed amount rather than the future-value target.</p>
+    <ul style="margin:12px 0">
+      <li><strong>Coast FIRE concept:</strong> <a href="https://walletburst.com/coast-fire-calculator/" rel="noopener">Walletburst — Coast FIRE explained</a> — practitioner-focused introduction.</li>
+      <li><strong>Real-return baseline:</strong> <a href="https://www.bogleheads.org/wiki/Historical_and_expected_returns" rel="noopener">Bogleheads Wiki — Historical &amp; Expected Returns</a> — 5–7% real return is the commonly-used range for long-horizon planning.</li>
+      <li><strong>4% rule context:</strong> <a href="https://www.aaii.com/files/pdf/6794_retirement-savings-choosing-a-withdrawal-rate-that-is-sustainable.pdf" rel="noopener">Trinity Study (Cooley, Hubbard, Walz)</a> — the safe-withdrawal research behind most FIRE numbers.</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <!-- FAQ -->
+  <!-- KEYCONCEPTS_BEFORE_FAQ -->
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">What is Coast FIRE?</div><div class="faq-a">Coast FIRE is the smallest amount you need invested today so that compound growth alone — with zero further contributions — reaches your full FIRE number by your target retirement age. Once you hit Coast FIRE you can stop saving and let the portfolio do the rest of the work for you. Income from work after that point becomes spending money, not future-self money.</div></div><div class="faq-item"><div class="faq-q">How is Coast FIRE different from Lean FIRE or regular FIRE?</div><div class="faq-a">Lean FIRE and regular FIRE describe the FUTURE balance you need to retire (e.g. $750k for a $30k Lean lifestyle, $1.5M for a $60k regular lifestyle). Coast FIRE is the smaller PRESENT balance that grows into one of those numbers without further contributions. You can be Coast FIRE today but still working toward regular FIRE — many people coast through their 40s and 50s on lower-pay, higher-meaning work.</div></div><div class="faq-item"><div class="faq-q">What real return rate should I use?</div><div class="faq-a">Most FIRE planners use 5–7% real return (i.e. after inflation). The S&amp;P 500 has historically returned about 7% real over very long horizons. The Trinity Study uses 4% as the conservative safe-withdrawal floor; 7% is more typical for long-horizon accumulation projections. Lower assumptions make Coast FIRE harder to reach (you need more invested today); higher assumptions make it easier but riskier.</div></div><div class="faq-item"><div class="faq-q">What is my "coast age"?</div><div class="faq-a">Your coast age is when you plan to fully retire — the age at which your portfolio needs to have reached its full FIRE number. Traditional retirement uses 65; early-retirement FIRE uses 50–60. Pushing your coast age later (e.g. 65 instead of 50) dramatically lowers the coast number, because the portfolio has more years to compound.</div></div><div class="faq-item"><div class="faq-q">Why does the calculator use real return instead of nominal return?</div><div class="faq-a">Coast FIRE is a real-dollar concept. Your future spending needs will grow with inflation (a $60k lifestyle today costs ~$108k in 30 years at 2% inflation). To compare your portfolio's purchasing power across time you must work in real (inflation-adjusted) terms. The 7% real return assumption already nets out an inflation rate of ~3%; the nominal return that produces it is ~10%.</div></div><div class="faq-item"><div class="faq-q">I'm coasting — can I really stop saving?</div><div class="faq-a">Mathematically, yes, if your assumptions hold and you have no major spending shocks. Practically: most coasters keep saving SOMETHING (maybe employer 401(k) match only) because the future is uncertain. Sequence-of-returns risk in the first 5–10 years is the main reason — a bad market run early can permanently dent the trajectory. A safer rule is "coast until you can afford to lose 30% of the portfolio and still hit FIRE."</div></div><div class="faq-item"><div class="faq-q">What's the difference between Coast FIRE and Barista FIRE?</div><div class="faq-a">Coast FIRE: enough invested today to reach FIRE later without further contributions, regardless of work income. Barista FIRE: working part-time at a job mainly for health benefits, with savings covering only current expenses (not future growth). Coast FIRE is about the portfolio's autopilot trajectory; Barista FIRE is about labour strategy in the meantime. Many people do both at the same time.</div></div><div class="faq-item"><div class="faq-q">USA vs UK vs South Africa: does Coast FIRE work everywhere?</div><div class="faq-a">The math is identical everywhere — compound growth is currency-agnostic. The execution differs by tax wrapper. USA: max out Roth IRA + 401(k) for tax-free or tax-deferred Coast growth. UK: ISA (£20k/year, fully tax-free) + workplace pension are the Coast vehicles. South Africa: TFSA (R36k/year, R500k lifetime) is the only fully-tax-free wrapper — most SA Coast plans involve broader use of taxable accounts and offshore allocations subject to Reserve Bank limits (45% of TFSAs).</div></div><div class="faq-item"><div class="faq-q">What if my real return turns out lower than 7%?</div><div class="faq-a">Re-run the calculator with a 5% (or 4%) real return to stress-test your Coast number. At 5% real, a $1.5M FIRE target at age 65 for a 35-year-old requires about $356k today (vs $197k at 7%) — nearly double. Most veteran Coasters set their Coast number at the more conservative rate and treat the higher-rate scenario as upside, not the plan.</div></div><div class="faq-item"><div class="faq-q">I just hit my Coast number — what's the actual next step?</div><div class="faq-a">First, sanity-check the assumptions you used (real return, coast age, FIRE number all reasonable for your context). Then make the lifestyle change Coast FIRE enables — switch to lower-pay/higher-meaning work, take a sabbatical, drop to part-time, or fully step back if your current spending is already covered. The portfolio doesn't need you anymore; you needed it. Many veterans recommend a 6-12 month transition rather than a hard stop, both to test the lifestyle change and to provide a buffer against an early-coasting bear market.</div></div></div>
+
+  <!-- Related Calculators -->
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/fire-calculator/" class="related-card">🔥 Full FIRE Calculator</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">🚀 Investment Growth</a>
+      <a href="/401k-calculator/" class="related-card">💼 401(k)</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- Embed CTA — copy-snippet for hosting the calculator on third-party sites -->
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="coast-fire-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/coast-fire-calculator.js" defer></script>
+<script>
+function currencySymbol() {
+  var r = (typeof currentRegion !== 'undefined') ? currentRegion : 'USA';
+  return r === 'UK' ? '£' : (r === 'SA' ? 'R' : '$');
+}
+function calculate() {
+  if (!window.FCH_COAST_FIRE) return;
+  var p = {
+    fireNumber: +document.getElementById('fireNumber').value,
+    currentAge: +document.getElementById('currentAge').value,
+    coastAge: +document.getElementById('coastAge').value,
+    realReturnPct: +document.getElementById('realReturnPct').value,
+    currentPortfolio: +document.getElementById('currentPortfolio').value,
+  };
+  var sym = currencySymbol();
+  var fmt = function (n) { return sym + Math.round(n).toLocaleString('en-US'); };
+  var R = window.FCH_COAST_FIRE.calc(p);
+  var errEl = document.getElementById('error-message');
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    document.getElementById('r-coastNumber').textContent = '—';
+    document.getElementById('r-status').textContent = '—';
+    document.getElementById('r-shortfall').textContent = '—';
+    document.getElementById('r-multiple').textContent = '—';
+    document.getElementById('breakdown-body').innerHTML = '';
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-coastNumber').textContent = fmt(R.coastFireNumber);
+  document.getElementById('r-status').textContent = R.status === 'coasting' ? '🎉 Coasting!' : 'Accumulating';
+  document.getElementById('r-statusHint').textContent = R.status === 'coasting'
+    ? (R.yearsToFireIfCoasting !== null
+        ? 'Portfolio reaches FIRE in ~' + R.yearsToFireIfCoasting + ' years on autopilot'
+        : 'Portfolio at or above coast threshold')
+    : 'Keep saving until you reach the coast number';
+  document.getElementById('r-shortfall').textContent = R.shortfallToCoast > 0 ? fmt(R.shortfallToCoast) : '$0';
+  document.getElementById('r-multiple').textContent = R.multipleOfCoast.toFixed(2) + 'x';
+  document.getElementById('breakdown-body').innerHTML = R.schedule.map(function (s) {
+    return '<tr><td>' + s.year + '</td><td>' + s.age + '</td><td class="td-right">' + fmt(s.value) + '</td></tr>';
+  }).join('');
+}
+document.addEventListener('DOMContentLoaded', function () {
+  ['USA', 'UK', 'SA'].forEach(function (r) {
+    var btn = document.getElementById('btn-' + r);
+    if (btn) btn.addEventListener('click', function () { setTimeout(calculate, 50); });
+  });
+  if (typeof calculate === 'function') calculate();
+});
+</script>

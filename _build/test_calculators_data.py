@@ -14,6 +14,8 @@ EXPECTED_SLUGS = {
     "401k-calculator", "roth-ira-calculator", "student-loan-calculator",
     "debt-snowball-calculator", "fire-calculator", "isa-calculator",
     "tfsa-calculator",
+    # 2026-05-24 Plan B keyword-gap fill
+    "coast-fire-calculator",
 }
 
 def test_calculators_file_exists():
