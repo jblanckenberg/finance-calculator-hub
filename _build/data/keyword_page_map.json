@@ -1,0 +1,326 @@
+{
+  "compound-interest": {
+    "primary": "find compound interest calculator",
+    "secondaries": [
+      "compound interest calculator",
+      "compound interest calculator",
+      "compound interest formula",
+      "compound interest",
+      "compound daily interest calculator"
+    ],
+    "cluster": "investment_growth",
+    "volume": 673000,
+    "difficulty": 50,
+    "geo": "us"
+  },
+  "mortgage": {
+    "primary": "calculator for mortgage",
+    "secondaries": [
+      "mortgage calculator home loan",
+      "mortgage calculator",
+      "pay mortgage calculator",
+      "mortgage pricing calculator",
+      "loan calculator mortgage payment"
+    ],
+    "cluster": "mortgage",
+    "volume": 550000,
+    "difficulty": 29,
+    "geo": "uk"
+  },
+  "take-home-pay": {
+    "primary": "take home pay calculator uk",
+    "secondaries": [
+      "take home pay calculator",
+      "paycheck calculator",
+      "salary calculator",
+      "salary calculator",
+      "online paycheck calculator"
+    ],
+    "cluster": "tax",
+    "volume": 60500,
+    "difficulty": 25,
+    "geo": "uk"
+  },
+  "retirement-savings": {
+    "primary": "estimated retirement savings calculator",
+    "secondaries": [
+      "retirement savings account calculator",
+      "retirement calculator",
+      "retirement",
+      "retirement plans",
+      "daveramsey retirement calculator"
+    ],
+    "cluster": "retirement_planning",
+    "volume": 18100,
+    "difficulty": 52,
+    "geo": "us"
+  },
+  "investment-growth": {
+    "primary": "",
+    "secondaries": [],
+    "cluster": "investment_growth"
+  },
+  "savings-goal": {
+    "primary": "",
+    "secondaries": [],
+    "cluster": "savings_budget"
+  },
+  "inflation-impact": {
+    "primary": "",
+    "secondaries": [],
+    "cluster": "investment_growth"
+  },
+  "net-worth": {
+    "primary": "net worth",
+    "secondaries": [
+      "net worth calculator",
+      "calculate net worth calculator",
+      "net worth percentile calculator",
+      "online net worth calculator",
+      "net worth calculator by age"
+    ],
+    "cluster": "savings_budget",
+    "volume": 49500,
+    "difficulty": 38,
+    "geo": "us"
+  },
+  "loan-payoff": {
+    "primary": "loan payoff calculator student",
+    "secondaries": [
+      "credit card loan payoff calculator",
+      "boat loan calculator",
+      "loan calculator student loans",
+      "debt payoff calculator credit card",
+      "payoff calculator for credit card"
+    ],
+    "cluster": "debt_loans",
+    "volume": 27100,
+    "difficulty": 46,
+    "geo": "us"
+  },
+  "credit-card-payoff": {
+    "primary": "credit card payment payoff calculator",
+    "secondaries": [
+      "credit card payment calculator payoff",
+      "credit card payoff calculator",
+      "credit card payoff calculator excel",
+      "how to payoff credit card debt calculator",
+      "multi credit card payoff calculator"
+    ],
+    "cluster": "debt_loans",
+    "volume": 33100,
+    "difficulty": 10,
+    "geo": "us"
+  },
+  "emergency-fund": {
+    "primary": "emergency fund calculator",
+    "secondaries": [
+      "emergency fund savings calculator",
+      "6 month emergency fund calculator",
+      "how to make a budget",
+      "net worth calculator age",
+      "net worth by age percentile calculator"
+    ],
+    "cluster": "savings_budget",
+    "volume": 6600,
+    "difficulty": 22,
+    "geo": "us"
+  },
+  "sa-tax-calculator": {
+    "primary": "tax calculator",
+    "secondaries": [
+      "tax practitioners board",
+      "income tax calculator",
+      "salary tax calculator",
+      "income tax calculator south africa",
+      "how to submit tax return"
+    ],
+    "cluster": "tax",
+    "volume": 74000,
+    "difficulty": 25,
+    "geo": "sa"
+  },
+  "401k-calculator": {
+    "primary": "401k calculator",
+    "secondaries": [
+      "401k withdrawals calculator",
+      "401k at retirement calculator",
+      "401k and retirement calculator",
+      "401k retirement calculator",
+      "taxes on 401k withdrawal calculator"
+    ],
+    "cluster": "retirement_accounts",
+    "volume": 165000,
+    "difficulty": 36,
+    "geo": "us"
+  },
+  "roth-ira-calculator": {
+    "primary": "roth ira calculator",
+    "secondaries": [
+      "roth ira growth calculator",
+      "convert ira to roth tax calculator",
+      "roth ira conversion tax calculator",
+      "roth ira conversion taxes calculator",
+      "roth ira calculator 2025"
+    ],
+    "cluster": "retirement_accounts",
+    "volume": 135000,
+    "difficulty": 33,
+    "geo": "us"
+  },
+  "student-loan-calculator": {
+    "primary": "student loan calculator",
+    "secondaries": [
+      "pay back student loan calculator",
+      "pay student loan calculator",
+      "payment student loan calculator",
+      "repay student loan calculator",
+      "loan repayment calculator student loans"
+    ],
+    "cluster": "debt_loans",
+    "volume": 40500,
+    "difficulty": 50,
+    "geo": "us"
+  },
+  "debt-snowball-calculator": {
+    "primary": "debt snowball calculator",
+    "secondaries": [
+      "debt snowball method calculator",
+      "debt free snowball calculator",
+      "debt snowball excel calculator",
+      "debt snowball payment calculator",
+      "debt snowball calculator spreadsheet"
+    ],
+    "cluster": "debt_loans",
+    "volume": 8100,
+    "difficulty": 3,
+    "geo": "us"
+  },
+  "fire-calculator": {
+    "primary": "fire calculator",
+    "secondaries": [
+      "fire retirement calculator",
+      "fire number calculator",
+      "engaging data fire calculator",
+      "barista fire calculator",
+      "fat fire calculator"
+    ],
+    "cluster": "retirement_planning",
+    "volume": 18100,
+    "difficulty": 12,
+    "geo": "us"
+  },
+  "coast-fire-calculator": {
+    "primary": "coast fire calculator",
+    "secondaries": [
+      "walletburst coast fire calculator",
+      "coast fire retirement calculator",
+      "coast fire number calculator",
+      "best coast fire calculator",
+      "coast fire calculator for couples"
+    ],
+    "cluster": "retirement_planning",
+    "volume": 27100,
+    "difficulty": 9,
+    "geo": "us"
+  },
+  "401k-withdrawal-calculator": {
+    "primary": "401k withdrawal calculator",
+    "secondaries": [
+      "401k match calculator",
+      "401k growth calculator",
+      "401k and roth calculator",
+      "401k loan calculator",
+      "traditional ira"
+    ],
+    "cluster": "retirement_accounts",
+    "volume": 9900,
+    "difficulty": 8,
+    "geo": "us"
+  },
+  "401k-tax-calculator": {
+    "primary": "401k tax withdrawal calculator",
+    "secondaries": [
+      "ira roth conversion calculator",
+      "convert roth ira calculator",
+      "investing in roth ira calculator",
+      "investment roth ira calculator",
+      "compound interest roth ira calculator"
+    ],
+    "cluster": "retirement_accounts",
+    "volume": 5400,
+    "difficulty": 3,
+    "geo": "us"
+  },
+  "mortgage-repayment-calculator": {
+    "primary": "mortgage loan repayment calculator",
+    "secondaries": [
+      "mortgage repayment calculator",
+      "uk mortgage loan calculator",
+      "mortgage uk calculator",
+      "uk mortgage payment calculator",
+      "mortgage calculator england"
+    ],
+    "cluster": "mortgage",
+    "volume": 90500,
+    "difficulty": 15,
+    "geo": "uk"
+  },
+  "mortgage-overpayment-calculator": {
+    "primary": "mortgage overpayment calculator",
+    "secondaries": [
+      "repaying mortgage calculator",
+      "mortgage amortization calculator",
+      "hsbc mortgage rates",
+      "mortgage",
+      "home loan calculator"
+    ],
+    "cluster": "mortgage",
+    "volume": 60500,
+    "difficulty": 9,
+    "geo": "uk"
+  },
+  "texas-paycheck-calculator": {
+    "primary": "texas paycheck calculator",
+    "secondaries": [
+      "nyc paycheck calculator",
+      "hourly to salary calculator",
+      "tax return calculator",
+      "tax calculator uk",
+      "uk tax calculator"
+    ],
+    "cluster": "tax",
+    "volume": 60500,
+    "difficulty": 13,
+    "geo": "us"
+  },
+  "california-paycheck-calculator": {
+    "primary": "california paycheck calculator",
+    "secondaries": [
+      "wage calculator",
+      "uif calculator"
+    ],
+    "cluster": "tax",
+    "volume": 49500,
+    "difficulty": 11,
+    "geo": "us"
+  },
+  "isa-calculator": {
+    "primary": "",
+    "secondaries": [],
+    "cluster": "retirement_accounts"
+  },
+  "tfsa-calculator": {
+    "primary": "",
+    "secondaries": [],
+    "cluster": "retirement_accounts"
+  },
+  "paye-calculator": {
+    "primary": "paye calculator",
+    "secondaries": [],
+    "cluster": "tax",
+    "volume": 14800,
+    "difficulty": 5,
+    "geo": "sa"
+  }
+}
