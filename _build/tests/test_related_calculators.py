@@ -53,8 +53,8 @@ def test_calculator_pages_exist():
     # Bump as new top-level calc pages ship.
     # 2026-05-24: +coast-fire (20), +401k-withdrawal (21), +401k-tax (22),
     # +mortgage-repayment (23), +mortgage-overpayment (24),
-    # +texas-paycheck (25), +california-paycheck (26).
-    assert len(CALC_PAGES) == 26, f"Expected 26 calculator pages, found {len(CALC_PAGES)}"
+    # +texas-paycheck (25), +california-paycheck (26), +paye-calculator (27).
+    assert len(CALC_PAGES) == 27, f"Expected 27 calculator pages, found {len(CALC_PAGES)}"
 
 
 def test_variant_pages_exist():
