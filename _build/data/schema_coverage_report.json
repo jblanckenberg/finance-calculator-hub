@@ -1,0 +1,572 @@
+{
+  "compound-interest": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "mortgage": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "take-home-pay": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "retirement-savings": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "investment-growth": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "savings-goal": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "inflation-impact": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "net-worth": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "loan-payoff": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "credit-card-payoff": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "emergency-fund": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "sa-tax-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "Country",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "401k-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "roth-ira-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "student-loan-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "debt-snowball-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "fire-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "coast-fire-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "401k-withdrawal-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "401k-tax-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "mortgage-repayment-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "mortgage-overpayment-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "texas-paycheck-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "california-paycheck-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "isa-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "Country",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "tfsa-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "Country",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  },
+  "paye-calculator": {
+    "types_present": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "Person",
+      "WebApplication"
+    ],
+    "types_missing": [],
+    "extra_types": [
+      "Answer",
+      "HowToStep",
+      "ImageObject",
+      "ListItem",
+      "Offer",
+      "Question",
+      "WebPage"
+    ]
+  }
+}
