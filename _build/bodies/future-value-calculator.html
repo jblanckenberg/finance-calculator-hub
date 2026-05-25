@@ -1,0 +1,238 @@
+<!-- Future Value Calculator -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#e8f5e9;border-left:4px solid #2e7d32;margin-bottom:16px">
+    <strong>&#128200; Future Value Calculator</strong> &mdash; work out what a lump sum, a stream of regular payments, or both together will be worth in the future. This is the time-value-of-money (TVM) workhorse: <code>FV = PV &times; (1 + r/n)<sup>nt</sup></code> for the lump sum, plus the annuity formula for the payment stream. It shows the formula with your own numbers substituted, splits your total into contributions vs interest earned, and converts your nominal rate to an effective annual rate.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Scenario</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="presentValue">Present Value / Lump Sum ($) <span class="hint">invested today; 0 for none</span></label>
+        <input type="number" id="presentValue" value="10000" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="payment">Recurring Payment ($) <span class="hint">per period; 0 for lump-sum only</span></label>
+        <input type="number" id="payment" value="0" min="0" step="50" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="annualRatePct">Annual Interest Rate (%) <span class="hint">nominal annual rate</span></label>
+        <input type="number" id="annualRatePct" value="7" min="-20" max="50" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="years">Years <span class="hint">0.5 to 100</span></label>
+        <input type="number" id="years" value="10" min="0.5" max="100" step="0.5" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="compoundingPerYear">Compounding Frequency <span class="hint">how often the lump sum compounds</span></label>
+        <select id="compoundingPerYear" onchange="calculate()">
+          <option value="1">Annually (1&times;/yr)</option>
+          <option value="4">Quarterly (4&times;/yr)</option>
+          <option value="12" selected>Monthly (12&times;/yr)</option>
+          <option value="365">Daily (365&times;/yr)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="contributionFrequency">Contribution Frequency <span class="hint">how often you pay in</span></label>
+        <select id="contributionFrequency" onchange="calculate()">
+          <option value="1">Annually (1&times;/yr)</option>
+          <option value="4">Quarterly (4&times;/yr)</option>
+          <option value="12" selected>Monthly (12&times;/yr)</option>
+          <option value="52">Weekly (52&times;/yr)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Payment Timing</label>
+        <div style="display:flex;gap:16px;padding-top:6px">
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px">
+            <input type="radio" name="paymentTiming" value="end" checked onchange="calculate()"> End of period <span class="hint">ordinary annuity</span>
+          </label>
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px">
+            <input type="radio" name="paymentTiming" value="begin" onchange="calculate()"> Beginning <span class="hint">annuity-due</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Future Value</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">Future Value (total)</div>
+      <div id="r-total" style="font-size:2.2em;font-weight:700;color:#1B3A5C;margin-top:4px">&mdash;</div>
+      <div style="font-size:0.9em;color:#444;margin-top:6px">Lump sum + payment stream, compounded to the end of the term</div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">FV of Lump Sum</div>
+        <div class="result-value" id="r-lump">&mdash;</div>
+        <div class="result-hint">Present value grown to the future</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">FV of Contributions</div>
+        <div class="result-value" id="r-annuity">&mdash;</div>
+        <div class="result-hint">The annuity (payment stream)</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Contributions</div>
+        <div class="result-value" id="r-contrib">&mdash;</div>
+        <div class="result-hint">Lump sum + every payment paid in</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Interest Earned</div>
+        <div class="result-value" id="r-interest">&mdash;</div>
+        <div class="result-hint">Future value &minus; contributions</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Effective Annual Rate</div>
+        <div class="result-value" id="r-ear">&mdash;</div>
+        <div class="result-hint">Nominal rate after compounding</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Nominal Annual Rate</div>
+        <div class="result-value" id="r-nominal">&mdash;</div>
+        <div class="result-hint">The rate you entered</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;padding:16px;background:#fff;border-radius:8px;border:1px dashed #1B3A5C">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d;margin-bottom:6px">The formula (lump sum)</div>
+      <div id="r-formula" style="font-family:Consolas,Menlo,monospace;font-size:1.05em;color:#1B3A5C;word-break:break-word">&mdash;</div>
+      <div style="font-size:0.85em;color:#6c757d;margin-top:8px">FV = present value &times; (1 + rate &divide; compounding periods) raised to (compounding periods &times; years). The payment stream uses the annuity formula on top of this.</div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>The future value of a single lump sum is <code>FV = PV &times; (1 + r/n)<sup>n&times;t</sup></code>, where <code>PV</code> is the present value invested today, <code>r</code> is the nominal annual rate, <code>n</code> is the number of compounding periods per year, and <code>t</code> is the number of years. Increasing <code>n</code> (compounding more often) raises the future value, but with sharply diminishing returns &mdash; the jump from annual to monthly is far larger than the jump from monthly to daily, and the gap from daily to continuous compounding is tiny.</p>
+    <p>The future value of a series of equal payments (an annuity) is <code>FV = PMT &times; [((1 + i)<sup>N</sup> &minus; 1) / i]</code>, where <code>i</code> is the periodic rate (<code>annualRate &divide; contributionFrequency</code>) and <code>N</code> is the total number of payments (<code>contributionFrequency &times; years</code>). This is the <em>ordinary annuity</em> formula, which assumes each payment arrives at the <em>end</em> of its period. If you contribute at the <em>start</em> of each period instead (an <em>annuity-due</em>), every payment earns one extra period of compounding, so the result is multiplied by <code>(1 + i)</code> &mdash; always slightly larger. When the rate is exactly 0%, the annuity formula would divide by zero, so the calculator falls back to <code>PMT &times; N</code> (you simply get back what you paid in).</p>
+    <p>The lump sum and the payment stream are modelled with their own compounding frequencies so each is internally correct even when the two differ (e.g. a deposit that compounds daily alongside monthly contributions). The <strong>effective annual rate (EAR)</strong> is derived from the nominal rate and the lump-sum compounding frequency as <code>((1 + r/n)<sup>n</sup> &minus; 1) &times; 100</code> &mdash; it is the rate that, compounded once a year, produces the same growth as your nominal rate compounded <code>n</code> times. A 7% nominal rate compounded monthly is a 7.229% effective rate; this is the number to compare across accounts that quote different compounding conventions.</p>
+    <p>This calculator is a gross time-value-of-money tool and intentionally does <strong>not</strong> model: taxes on growth or contributions, inflation (use the <a href="/inflation-impact/">Inflation Impact Calculator</a> to see future value in today&rsquo;s purchasing power), variable or non-constant returns, fees, or contributions that grow over time. For consumer-savings framing of the same compounding math, see the <a href="/compound-interest/">Compound Interest Calculator</a>; for a full investment-growth projection with a contribution schedule, see the <a href="/investment-growth/">Investment Growth Calculator</a>.</p>
+    <ul style="margin:12px 0">
+      <li><strong>Future value concept &amp; formula:</strong> <a href="https://www.investopedia.com/terms/f/futurevalue.asp" rel="noopener">Investopedia &mdash; Future Value (FV)</a></li>
+      <li><strong>Time value of money fundamentals:</strong> <a href="https://www.cfainstitute.org/insights/professional-learning" rel="noopener">CFA Institute &mdash; Quantitative Methods &amp; Time Value of Money</a></li>
+      <li><strong>Annuity future value:</strong> <a href="https://www.investopedia.com/terms/f/future-value-annuity.asp" rel="noopener">Investopedia &mdash; Future Value of an Annuity</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is future value?</div>
+      <div class="faq-a">Future value (FV) is what a sum of money today, or a series of payments, will be worth at a specified date in the future, assuming a given rate of return. It is the forward-looking half of the time value of money: a dollar today is worth more than a dollar tomorrow because today&rsquo;s dollar can be invested and earn a return. If you put $10,000 in an account earning 7% compounded monthly, its future value in 10 years is about $20,097 &mdash; the original $10,000 plus roughly $10,097 of compounded growth. Future value answers the planning question &ldquo;if I invest X today (and/or Y every month), how much will I have at the end?&rdquo; It is the engine behind retirement projections, education-fund targets, and any &ldquo;what will this be worth later&rdquo; calculation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s the future value formula?</div>
+      <div class="faq-a">For a single lump sum: <code>FV = PV &times; (1 + r/n)<sup>nt</sup></code>, where PV is the present value, r is the annual rate (as a decimal), n is the number of times interest compounds per year, and t is the number of years. So $5,000 at 6% compounded quarterly for 8 years is <code>5000 &times; (1 + 0.06/4)<sup>4&times;8</sup></code> = <code>5000 &times; 1.015<sup>32</sup></code> &asymp; $8,051. For a stream of equal payments, you add the annuity future value: <code>FV = PMT &times; [((1 + i)<sup>N</sup> &minus; 1) / i]</code>, with i the periodic rate and N the total number of payments. The calculator above shows the lump-sum formula with your own numbers substituted in the &ldquo;The formula&rdquo; box, and adds the annuity component automatically when you enter a recurring payment.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Future value vs present value &mdash; what&rsquo;s the difference?</div>
+      <div class="faq-a">They are two sides of the same coin. <strong>Future value</strong> moves money <em>forward</em> in time: how much will today&rsquo;s $10,000 be worth in 10 years? You multiply by the growth factor <code>(1 + r/n)<sup>nt</sup></code>. <strong>Present value</strong> moves money <em>backward</em> in time: how much do I need to invest today to have $20,000 in 10 years? You divide by the same growth factor (this is called discounting). FV compounds, PV discounts, and they invert each other &mdash; <code>PV = FV / (1 + r/n)<sup>nt</sup></code>. Use future value when you know what you can invest now and want to project the outcome; use present value when you know the target amount and want to back out today&rsquo;s required deposit, or when you want to value a future cash flow (like a bond payment or a pension) in today&rsquo;s money.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Ordinary annuity vs annuity-due &mdash; which should I use?</div>
+      <div class="faq-a">An <strong>ordinary annuity</strong> assumes each payment lands at the <em>end</em> of the period; an <strong>annuity-due</strong> assumes it lands at the <em>beginning</em>. The difference matters because money invested earlier compounds longer: an annuity-due is always worth slightly more, by exactly a factor of <code>(1 + i)</code> where i is the periodic rate. As a rule of thumb: rent, insurance premiums, and lease payments are annuities-due (you pay at the start of the month). Loan repayments, bond coupons, and most savings contributions made &ldquo;at month end&rdquo; are ordinary annuities. For a 401(k) or IRA where you contribute from each paycheck, end-of-period (ordinary) is the conventional and conservative choice. If you front-load contributions on the 1st, switch to beginning to capture the extra compounding &mdash; over decades it adds up.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does compounding frequency change future value?</div>
+      <div class="faq-a">More frequent compounding produces a higher future value, but with strongly diminishing returns. $10,000 at 7% for 10 years grows to about $19,672 compounded annually, $20,097 compounded monthly, and $20,136 compounded daily. The leap from annual to monthly adds about $425; the leap from monthly all the way to daily adds only about $39. The mathematical ceiling is <em>continuous</em> compounding (<code>FV = PV &times; e<sup>rt</sup></code>), which for this example is about $20,138 &mdash; essentially indistinguishable from daily. The practical takeaway: compounding frequency is real but small. Don&rsquo;t chase a &ldquo;daily compounding&rdquo; account at a lower headline rate over a &ldquo;monthly compounding&rdquo; account at a higher rate &mdash; compare the effective annual rate instead, which normalises for compounding.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s the difference between nominal and effective annual rate?</div>
+      <div class="faq-a">The <strong>nominal</strong> annual rate is the stated headline rate before accounting for compounding within the year &mdash; a &ldquo;7% APR compounded monthly&rdquo; has a nominal rate of 7%. The <strong>effective annual rate (EAR)</strong> is the rate that actually accrues once you account for that intra-year compounding: <code>((1 + r/n)<sup>n</sup> &minus; 1)</code>. For 7% nominal compounded monthly the EAR is 7.229%, because each month&rsquo;s interest itself earns interest for the rest of the year. The more frequent the compounding, the larger the gap between nominal and effective. EAR is the apples-to-apples number for comparing accounts that compound on different schedules &mdash; a 7% monthly account (7.229% EAR) beats a 7.1% annual account (7.1% EAR). In the UK this effective figure is broadly the AER on savings; on loans the analogous concept is the APR.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Future value vs compound interest &mdash; same thing?</div>
+      <div class="faq-a">They overlap but aren&rsquo;t identical. <strong>Compound interest</strong> is the <em>mechanism</em> &mdash; interest earning interest &mdash; and a compound interest calculator typically frames the question as a consumer savings problem (&ldquo;how much will my savings grow?&rdquo;). <strong>Future value</strong> is the broader finance concept: the FV formula is built <em>on</em> compound interest, but it&rsquo;s the general time-value-of-money tool used for lump sums, annuities, bond pricing, capital budgeting, and discounting. In practice, the future value of a lump sum and a compound interest calculation are the same arithmetic. The reason both exist is framing: our <a href="/compound-interest/">Compound Interest Calculator</a> is built for savers and uses everyday language, while this Future Value Calculator exposes the formula explicitly and adds the annuity (payment stream) and effective-rate machinery that finance students and TVM problems need.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I use FV for retirement planning?</div>
+      <div class="faq-a">Future value is the core of every retirement projection. Enter your current retirement-account balance as the present value (lump sum), your monthly contribution as the recurring payment, your expected long-run return (7% nominal is a common real-world assumption for a diversified portfolio), and the number of years until retirement. The calculator returns your projected pot, split into what you contributed versus what compounding earned &mdash; and over a 30-to-40-year horizon, the interest portion usually dwarfs the contributions, which is the whole point of starting early. Two caveats: this is a <em>gross, nominal</em> figure, so deflate it with the <a href="/inflation-impact/">Inflation Impact Calculator</a> to see its purchasing power in today&rsquo;s money, and for tax-aware retirement modelling use a dedicated tool like the <a href="/retirement-savings/">Retirement Savings Calculator</a>. Use FV for the &ldquo;will I have enough?&rdquo; question; use a withdrawal/drawdown calculator for the &ldquo;how long will it last?&rdquo; question.</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/compound-interest/" class="related-card">&#128181; Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">&#128200; Investment Growth</a>
+      <a href="/simple-interest-calculator/" class="related-card">&#10133; Simple Interest</a>
+      <a href="/dividend-calculator/" class="related-card">&#128176; Dividend</a>
+      <a href="/retirement-savings/" class="related-card">&#127796; Retirement Savings</a>
+      <a href="/savings-goal/" class="related-card">&#127919; Savings Goal</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="future-value-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/future-value.js" defer></script>
+<script>
+function fmtUSD(n) {
+  if (n === null || n === undefined || isNaN(n)) return '$0';
+  var v = Math.round(n);
+  var sign = v < 0 ? '-' : '';
+  return sign + '$' + Math.abs(v).toLocaleString('en-US');
+}
+function getPaymentTiming() {
+  var radios = document.getElementsByName('paymentTiming');
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) return radios[i].value;
+  }
+  return 'end';
+}
+function calculate() {
+  if (!window.FCH_FUTURE_VALUE) return;
+  var p = {
+    presentValue: +document.getElementById('presentValue').value || 0,
+    payment: +document.getElementById('payment').value || 0,
+    annualRatePct: +document.getElementById('annualRatePct').value || 0,
+    years: +document.getElementById('years').value || 0,
+    compoundingPerYear: +document.getElementById('compoundingPerYear').value || 12,
+    contributionFrequency: +document.getElementById('contributionFrequency').value || 12,
+    paymentTiming: getPaymentTiming(),
+  };
+  var R = window.FCH_FUTURE_VALUE.calc(p);
+  var errEl = document.getElementById('error-message');
+  var resultIds = ['r-total','r-lump','r-annuity','r-contrib','r-interest','r-ear','r-nominal','r-formula'];
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    resultIds.forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-total').textContent = fmtUSD(R.futureValueTotal);
+  document.getElementById('r-lump').textContent = fmtUSD(R.futureValueLumpSum);
+  document.getElementById('r-annuity').textContent = fmtUSD(R.futureValueAnnuity);
+  document.getElementById('r-contrib').textContent = fmtUSD(R.totalContributions);
+  document.getElementById('r-interest').textContent = fmtUSD(R.totalInterestEarned);
+  document.getElementById('r-ear').textContent = R.effectiveAnnualRatePct.toFixed(3) + '%';
+  document.getElementById('r-nominal').textContent = (+document.getElementById('annualRatePct').value || 0).toFixed(2) + '%';
+  document.getElementById('r-formula').textContent = R.formula;
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>

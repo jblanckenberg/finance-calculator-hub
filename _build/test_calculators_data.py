@@ -33,6 +33,8 @@ EXPECTED_SLUGS = {
     "traditional-ira-calculator",
     # 2026-05-24 Phase 4C: Hourly to Salary Calculator (49,500 vol, KD 37) — closes Phase 4
     "hourly-to-salary-calculator",
+    # 2026-05-25 Phase 5B: Future Value Calculator (40,500 vol, KD 38)
+    "future-value-calculator",
 }
 
 def test_calculators_file_exists():
