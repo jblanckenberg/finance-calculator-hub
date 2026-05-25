@@ -1549,6 +1549,117 @@
     ],
     "keyConcepts": "<p><strong>FIRE basics.</strong> Financial Independence, Retire Early. The core formula: save enough that 4% of your portfolio covers your annual spending. At a 4% Safe Withdrawal Rate, your FI number is annual spending &times; 25.</p><p><strong>The 4% rule's origin.</strong> William Bengen's 1994 study found a retiree withdrawing 4% of their starting balance, adjusted for inflation, had a very high success rate over 30-year retirements across all historical US periods. The follow-up Trinity Study (1998) confirmed this. For 50+ year FIRE retirements, many recommend 3.0-3.5% to be safer.</p><p><strong>Lean, regular, fat, coast.</strong> Lean FIRE = lower-budget life (US$30-50k spending); regular = middle (US$50-100k); fat = comfortable (US$100k+). Coast FIRE = enough invested that compounding alone gets you to regular FIRE by traditional retirement age — you only need to cover current expenses until then.</p><p><strong>Sequence-of-returns risk.</strong> A bear market in your first decade of retirement does disproportionate damage because you're selling assets at low prices to fund spending. FIRE retirees often hold 2-3 years of expenses in cash / short bonds to ride out drawdowns without selling equities.</p><p><strong>What FIRE leaves out.</strong> Healthcare (especially pre-Medicare in the US), one-off lumpy expenses (roof, car), and lifestyle inflation. Most FIRE planners add 10-20% to their base spending number to absorb these. The calculator's annual-spending input should reflect a realistic post-retirement number, not your tightest possible budget.</p>"
   },
+  "coast-fire-calculator": {
+    "slug": "coast-fire-calculator",
+    "name": "🌊 Coast FIRE Calculator",
+    "title": "Coast FIRE Calculator: When Can You Stop Saving?",
+    "description": "Free Coast FIRE calculator. Find the smallest amount you need invested today so compound growth alone reaches your FIRE number by your target retirement age.",
+    "h1": "🌊 Coast FIRE Calculator",
+    "subtitle": "The smallest nest egg that grows into FIRE on autopilot. Enter your FIRE number, current age, target retirement age, and expected real return — get your Coast FIRE number plus a year-by-year projection.",
+    "metaDescription": "Free Coast FIRE calculator. Find the smallest amount you need invested today so compound growth alone reaches your FIRE number by your target retirement age.",
+    "regions": [
+      "USA",
+      "UK",
+      "SA"
+    ],
+    "primaryKeyword": "coast fire calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "Coast FIRE Calculator",
+      "description": "Calculate the smallest amount needed invested today so compound growth alone reaches a FIRE number by a target retirement age.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to use the Coast FIRE Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your FIRE number — the total nest egg you want to reach",
+        "Enter your current age and your target coast age (when you want to be FI)",
+        "Set the expected real return rate (5–7% is the typical FIRE assumption)",
+        "Enter your current portfolio value",
+        "Review your Coast FIRE number, the shortfall (if any), and the year-by-year projection"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is Coast FIRE?",
+        "a": "Coast FIRE is the smallest amount you need invested today so that compound growth alone — with zero further contributions — reaches your full FIRE number by your target retirement age. Once you hit Coast FIRE you can stop saving and let the portfolio do the rest of the work. Income from work after that point becomes spending money, not future-self money."
+      },
+      {
+        "q": "How is Coast FIRE different from Lean FIRE or regular FIRE?",
+        "a": "Lean FIRE and regular FIRE describe the FUTURE balance you need to retire (e.g. $750k for a $30k Lean lifestyle, $1.5M for a $60k regular lifestyle). Coast FIRE is the smaller PRESENT balance that grows into one of those numbers without further contributions. You can be Coast FIRE today but still working toward regular FIRE — many people coast through their 40s and 50s on lower-pay, higher-meaning work."
+      },
+      {
+        "q": "What real return rate should I use?",
+        "a": "Most FIRE planners use 5–7% real return (after inflation). The S&P 500 has historically returned about 7% real over very long horizons. The Trinity Study uses 4% as the conservative safe-withdrawal floor; 7% is more typical for long-horizon accumulation. Lower assumptions make Coast FIRE harder to reach (you need more invested today); higher assumptions make it easier but riskier."
+      },
+      {
+        "q": "What is my 'coast age'?",
+        "a": "Your coast age is when you plan to fully retire — the age at which your portfolio needs to have reached its full FIRE number. Traditional retirement uses 65; early-retirement FIRE uses 50–60. Pushing your coast age later dramatically lowers the coast number, because the portfolio has more years to compound."
+      },
+      {
+        "q": "Why does the calculator use real return instead of nominal return?",
+        "a": "Coast FIRE is a real-dollar concept. Your future spending needs will grow with inflation (a $60k lifestyle today costs ~$108k in 30 years at 2% inflation). To compare your portfolio's purchasing power across time you must work in real (inflation-adjusted) terms. A 7% real return assumption already nets out an inflation rate of ~3%; the nominal return that produces it is ~10%."
+      },
+      {
+        "q": "I'm coasting — can I really stop saving?",
+        "a": "Mathematically, yes, if your assumptions hold and you have no major spending shocks. Practically: most coasters keep saving SOMETHING (maybe employer 401(k) match only) because the future is uncertain. Sequence-of-returns risk in the first 5–10 years is the main reason — a bad market run early can permanently dent the trajectory. A safer rule is 'coast until you can afford to lose 30% of the portfolio and still hit FIRE.'"
+      },
+      {
+        "q": "What's the difference between Coast FIRE and Barista FIRE?",
+        "a": "Coast FIRE: enough invested today to reach FIRE later without further contributions, regardless of work income. Barista FIRE: working part-time at a job mainly for health benefits, with savings covering only current expenses (not future growth). Coast FIRE is about the portfolio's autopilot trajectory; Barista FIRE is about labour strategy in the meantime. Many people do both at the same time."
+      },
+      {
+        "q": "USA vs UK vs South Africa: does Coast FIRE work everywhere?",
+        "a": "The math is identical everywhere — compound growth is currency-agnostic. The execution differs by tax wrapper. USA: max out Roth IRA + 401(k) for tax-free or tax-deferred Coast growth. UK: ISA (£20k/year, fully tax-free) + workplace pension are the Coast vehicles. South Africa: TFSA (R36k/year, R500k lifetime) is the only fully-tax-free wrapper — most SA Coast plans involve broader use of taxable accounts and offshore allocations subject to Reserve Bank limits."
+      },
+      {
+        "q": "What if my real return turns out lower than 7%?",
+        "a": "Re-run the calculator with a 5% (or 4%) real return to stress-test your Coast number. At 5% real, a $1.5M FIRE target at age 65 for a 35-year-old requires about $356k today (vs $197k at 7%) — nearly double. Most veteran Coasters set their Coast number at the more conservative rate and treat the higher-rate scenario as upside, not the plan."
+      },
+      {
+        "q": "I just hit my Coast number — what's the actual next step?",
+        "a": "First, sanity-check the assumptions you used (real return, coast age, FIRE number all reasonable for your context). Then make the lifestyle change Coast FIRE enables — switch to lower-pay/higher-meaning work, take a sabbatical, drop to part-time, or fully step back if your current spending is already covered. Many veterans recommend a 6–12 month transition rather than a hard stop, both to test the lifestyle change and to provide a buffer against an early-coasting bear market."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://walletburst.com/coast-fire-calculator/",
+        "label": "Walletburst — Coast FIRE explained"
+      },
+      {
+        "url": "https://www.bogleheads.org/wiki/Historical_and_expected_returns",
+        "label": "Bogleheads Wiki — Historical & Expected Returns"
+      },
+      {
+        "url": "https://www.aaii.com/files/pdf/6794_retirement-savings-choosing-a-withdrawal-rate-that-is-sustainable.pdf",
+        "label": "Trinity Study (Cooley, Hubbard, Walz)"
+      }
+    ],
+    "related": [
+      "fire-calculator",
+      "retirement-savings",
+      "compound-interest",
+      "401k-calculator",
+      "investment-growth",
+      "roth-ira-calculator"
+    ],
+    "scenarios": [
+      {
+        "label": "35yo aiming for $1.5M at 65, 7% real",
+        "query": "fireNumber=1500000&currentAge=35&coastAge=65&realReturnPct=7&currentPortfolio=0"
+      },
+      {
+        "label": "Already coasting: 35yo with $300k",
+        "query": "fireNumber=1500000&currentAge=35&coastAge=65&realReturnPct=7&currentPortfolio=300000"
+      },
+      {
+        "label": "Aggressive: 30yo coasting at 50",
+        "query": "fireNumber=1000000&currentAge=30&coastAge=50&realReturnPct=7&currentPortfolio=0"
+      }
+    ],
+    "keyConcepts": "<p><strong>The Coast FIRE concept.</strong> Coast FIRE is the smallest amount you need invested today so that compound growth alone — with no further contributions — reaches a full FIRE number by your chosen retirement age. The formula is the present-value version of compound growth: Coast Number = FIRE Number / (1 + r)<sup>years</sup>.</p><p><strong>Why it matters.</strong> Once you hit your Coast number you've earned the option to stop saving without giving up future financial independence. That option is a powerful career and lifestyle lever — it lets you take a sabbatical, switch to lower-pay meaningful work, or scale down hours years before traditional FIRE.</p><p><strong>Real vs nominal return.</strong> Coast FIRE math uses REAL return (after inflation) because your future spending will inflate alongside your portfolio. A 7% nominal return at 3% inflation is 4% real. Most planners use 5–7% real for long-horizon accumulation projections.</p><p><strong>Coast vs Barista vs full FIRE.</strong> Coast FIRE = portfolio on autopilot to full FIRE by target age. Barista FIRE = part-time work mainly for health benefits, savings covering only current expenses. Full FIRE = portfolio covers all spending now. Many people use Coast and Barista in combination as a transition between high-income years and full retirement.</p><p><strong>Common Coast FIRE mistake.</strong> Coasting on optimistic assumptions. If you use 8% real return and the actual return turns out to be 5%, your Coast number was wrong by a factor of ~1.7×. Most veteran Coasters use 5% real for planning and treat anything above as upside.</p>"
+  },
   "isa-calculator": {
     "slug": "isa-calculator",
     "name": "🇬🇧 ISA Calculator",
