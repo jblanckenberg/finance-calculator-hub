@@ -29,6 +29,8 @@ EXPECTED_SLUGS = {
     "simple-interest-calculator",
     # 2026-05-24 Phase 4A: UK Pension Calculator (49,500 vol, KD 27)
     "pension-calculator-uk",
+    # 2026-05-24 Phase 4B: Traditional IRA Calculator (60,500 vol, KD 37)
+    "traditional-ira-calculator",
 }
 
 def test_calculators_file_exists():
