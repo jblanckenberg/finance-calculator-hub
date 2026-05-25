@@ -35,6 +35,8 @@ EXPECTED_SLUGS = {
     "hourly-to-salary-calculator",
     # 2026-05-25 Phase 5B: Future Value Calculator (40,500 vol, KD 38)
     "future-value-calculator",
+    # 2026-05-25 Phase 5C: Refinance Calculator (49,500 vol, KD 40) — closes Phase 5
+    "refinance-calculator",
 }
 
 def test_calculators_file_exists():

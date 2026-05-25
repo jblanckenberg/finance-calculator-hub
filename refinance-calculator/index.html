@@ -1,0 +1,609 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refinance Calculator: Break-Even + Lifetime Savings</title>
+  <meta name="description" content="Free refinance calculator. See your monthly savings, break-even point, and the honest lifetime cost of refinancing — including the term-reset trap where a lower payment costs you more overall.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/refinance-calculator/">
+
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <meta property="og:title" content="Refinance Calculator: Break-Even + Lifetime Savings">
+  <meta property="og:description" content="Free refinance calculator. See your monthly savings, break-even point, and the honest lifetime cost of refinancing — including the term-reset trap where a lower payment costs you more overall.">
+  <meta property="og:url" content="https://finncalc.com/refinance-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Refinance Calculator: Break-Even + Lifetime Savings">
+  <meta name="twitter:description" content="Free refinance calculator. See your monthly savings, break-even point, and the honest lifetime cost of refinancing — including the term-reset trap where a lower payment costs you more overall.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-17", "description": "Free refinance calculator. See your monthly savings, break-even point, and the honest lifetime cost of refinancing \u2014 including the term-reset trap where a lower payment costs you more overall.", "name": "\ud83c\udfe0 Refinance Calculator", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/refinance-calculator/"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Refinancing replaces your existing mortgage with a new loan, usually to capture a lower rate, change your term, or pull out equity. The new lender pays off your old balance and you start payments on the new loan. You re-do underwriting and pay closing costs of roughly 2\u20136% of the loan. Crucially, a refinance resets your amortisation clock: refinance ten years into a 30-year loan back into a new 30-year loan and you\u0027re at year one of 30 again, which can lower the payment while raising the total cost."}, "name": "How does refinancing work?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The break-even point is how long it takes your monthly savings to recoup the upfront cash you spent refinancing. Spend $4,000 in closing costs to save $200 a month and you break even in 20 months \u2014 after that the saving is pure benefit. It matters because refinancing only pays off if you keep the loan past break-even. If you might move or refinance again sooner, you\u0027ll spend more on costs than you recover, so the refinance loses money even with a lower payment."}, "name": "What\u0027s the break-even point and why does it matter?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Paying upfront keeps your balance and total interest lower but requires cash and creates a break-even period. Rolling costs into the loan means no cash today, but you finance those costs at the mortgage rate for the full term, raising your balance and payment. For a short break-even and a rate you\u0027ll keep for decades, rolling in is convenient. If you have the cash and plan to stay, paying upfront is cheaper overall. A no-closing-cost refinance is a third route: the lender covers costs in exchange for a slightly higher rate."}, "name": "Should I roll closing costs into the loan or pay upfront?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 this is the costliest refinancing mistake. A lower payment can come from a lower rate (genuine saving) or a longer term that stretches the balance over more years (lower payment, higher total cost). Refinance 8 years into a 30-year loan back into a fresh 30-year loan and you can pay tens of thousands more in interest, even at a lower rate, because you\u0027re now paying for 38 years instead of 30. This calculator reports lifetime savings with its true sign: if it\u0027s negative, you aren\u0027t saving \u2014 refinance into a shorter term that matches the years you had left."}, "name": "Does a lower monthly payment always mean I\u0027m saving money?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A conventional rate-and-term refinance generally needs a score of at least 620, with the best rates reserved for 740+. Because the rate you\u0027re offered drives whether the refinance pays off, score matters a lot. Government options are more flexible: an FHA streamline can work in the 500s\u2013580s, and a VA IRRRL has no VA-set minimum (lenders set their own). Lenders also weigh your debt-to-income ratio (usually under 43\u201350%), home equity (20%+ avoids PMI on a conventional loan), and payment history. Check your credit and fix errors before applying."}, "name": "What credit score do I need to refinance?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A no-closing-cost refinance means you don\u0027t pay closing costs out of pocket at signing. There\u0027s no free lunch: the lender recovers them by adding them to your balance or, more commonly, by giving you a higher interest rate \u2014 which means a higher payment for the life of the loan. It can make sense if you\u0027re short on cash, if you might move or refinance again within a few years (so you\u0027d never reach break-even on upfront costs anyway), or if the rate bump is small relative to your savings. If you\u0027ll keep the loan long term and have the cash, paying upfront at the lower rate is almost always cheaper."}, "name": "What\u0027s a no-closing-cost refinance?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Refinancing from a 30-year into a 15- or 20-year term is often the smartest refinance, because shorter-term loans carry lower rates and you pay interest for fewer years. The trade-off is a higher monthly payment, since you repay the same balance over less time. If you can afford it, a shorter term can save a six-figure sum on a large mortgage. It\u0027s also the antidote to the term-reset trap: if you have 22 years left, refinancing into a fresh 30-year loan can cost more overall even at a lower rate, but refinancing into a 20-year term keeps the lower rate while shrinking the total cost. Compare the lifetime saving, not just the payment."}, "name": "Should I refinance to a shorter term?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Closing costs typically run 2\u20136% of the loan amount \u2014 on a $300,000 loan that\u0027s roughly $6,000 to $18,000, though many land toward the lower end. They include the origination/underwriting fee, appraisal ($300\u2013$700), title search and insurance, credit-report and application fees, recording fees, and any discount points. You can pay upfront, roll them in, or take a no-closing-cost option for a higher rate. Ask each lender for a standardised Loan Estimate so you can compare total costs and APR side by side. A common rule of thumb: investigate refinancing when you can drop your rate by at least 0.75\u20131% and you\u0027ll stay past the break-even point."}, "name": "How much does refinancing cost?"}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/refinance-calculator/", "name": "\ud83c\udfe0 Refinance Calculator", "position": 2}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "description": "Step-by-step guide to using the \ud83c\udfe0 Refinance Calculator.", "name": "How to use the Refinance Calculator", "step": [{"@type": "HowToStep", "name": "Enter your current loan balance, interest rate", "position": 1, "text": "Enter your current loan balance, interest rate, and the number of years remaining", "url": "https://finncalc.com/refinance-calculator/#step-1"}, {"@type": "HowToStep", "name": "Enter the new rate you\u0027d refinance into", "position": 2, "text": "Enter the new rate you\u0027d refinance into and the new loan term (10, 15, 20, or 30 years)", "url": "https://finncalc.com/refinance-calculator/#step-2"}, {"@type": "HowToStep", "name": "Enter your estimated closing costs, then choose", "position": 3, "text": "Enter your estimated closing costs, then choose to pay them upfront or roll them into the loan", "url": "https://finncalc.com/refinance-calculator/#step-3"}, {"@type": "HowToStep", "name": "Read off your monthly savings and the", "position": 4, "text": "Read off your monthly savings and the break-even point \u2014 the months it takes the lower payment to recoup your costs", "url": "https://finncalc.com/refinance-calculator/#step-4"}, {"@type": "HowToStep", "name": "Check the lifetime savings figure: if it\u0027s", "position": 5, "text": "Check the lifetime savings figure: if it\u0027s negative, a lower monthly payment is actually costing you more over the life of the loan", "url": "https://finncalc.com/refinance-calculator/#step-5"}, {"@type": "HowToStep", "name": "If you see the term-reset warning, try", "position": 6, "text": "If you see the term-reset warning, try a shorter new term to keep both the rate and the lifetime saving", "url": "https://finncalc.com/refinance-calculator/#step-6"}], "totalTime": "PT1M"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "dateModified": "2026-05-17", "datePublished": "2025-08-01", "description": "Free refinance calculator. See your monthly savings, break-even point, and the honest lifetime cost of refinancing \u2014 including the term-reset trap where a lower payment costs you more overall.", "headline": "\ud83c\udfe0 Refinance Calculator", "inLanguage": "en", "mainEntityOfPage": {"@id": "https://finncalc.com/refinance-calculator/", "@type": "WebPage"}, "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://finncalc.com/og-image.png"}, "name": "FinCalcHub", "url": "https://finncalc.com/"}, "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "url": "https://finncalc.com/refinance-calculator/"}</script>
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/compound-interest/">Compound Interest</a>
+    <a href="/retirement-savings/">Retirement</a>
+    <a href="/take-home-pay/">Take-Home Pay</a>
+    <a href="/mortgage/">Mortgage</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+<main id="content">
+<!-- Ad slot top (leaderboard above H1) -->
+<div class="container">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="4461919959"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> › 🏠 Refinance Calculator</p>
+  <h1>🏠 Refinance Calculator</h1>
+  <p class="subtitle">Work out whether refinancing your mortgage actually pays off. Enter your current loan and a proposed new rate and term to see your monthly saving, your break-even point (how long the lower payment takes to recoup closing costs), and the true lifetime cost — because a lower monthly payment from a fresh, longer term can quietly cost you tens of thousands more.</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Refinance Calculator -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#e8f5e9;border-left:4px solid #2e7d32;margin-bottom:16px">
+    <strong>&#127968; Refinance Calculator</strong> &mdash; work out whether refinancing your mortgage actually pays off. Enter your current loan and a proposed new rate and term, and this tool shows your monthly saving, the <strong>break-even point</strong> (how long the lower payment takes to recoup your closing costs), and &mdash; the part most calculators hide &mdash; the <strong>honest lifetime cost</strong>. A lower monthly payment is not always a saving: stretching a loan back out to a fresh 30-year term can cost you tens of thousands more over its life even while the monthly bill drops.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Current Loan</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentBalance">Current Loan Balance ($) <span class="hint">remaining principal</span></label>
+        <input type="number" id="currentBalance" value="300000" min="0" step="1000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="currentRatePct">Current Interest Rate (%) <span class="hint">your rate today</span></label>
+        <input type="number" id="currentRatePct" value="7" min="0" max="30" step="0.01" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="currentRemainingYears">Years Remaining on Current Loan <span class="hint">0.5 to 40</span></label>
+        <input type="number" id="currentRemainingYears" value="28" min="0.5" max="40" step="0.5" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">The New Loan</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="newRatePct">New Interest Rate (%) <span class="hint">rate you'd refinance into</span></label>
+        <input type="number" id="newRatePct" value="5" min="0" max="30" step="0.01" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="newTermYears">New Loan Term <span class="hint">years</span></label>
+        <select id="newTermYears" onchange="calculate()">
+          <option value="10">10 years</option>
+          <option value="15">15 years</option>
+          <option value="20">20 years</option>
+          <option value="30" selected>30 years</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="closingCosts">Closing Costs ($) <span class="hint">lender fees, appraisal, title, etc.</span></label>
+        <input type="number" id="closingCosts" value="4000" min="0" step="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>Closing Costs</label>
+        <div style="display:flex;gap:16px;padding-top:6px;flex-wrap:wrap">
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px">
+            <input type="radio" name="rollCosts" value="upfront" checked onchange="calculate()"> Pay upfront <span class="hint">cash now</span>
+          </label>
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px">
+            <input type="radio" name="rollCosts" value="roll" onchange="calculate()"> Roll into loan <span class="hint">add to balance</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Should You Refinance?</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">Recommendation</div>
+      <div id="r-recommendation" style="font-size:1.6em;font-weight:700;color:#1B3A5C;margin-top:4px">&mdash;</div>
+    </div>
+
+    <!-- Honest-cost warning: lower monthly but higher lifetime cost. -->
+    <div id="trap-warning" style="display:none;background:#fdecea;border-left:4px solid #c0392b;padding:14px;margin-bottom:16px;border-radius:6px">
+      <strong>&#9888;&#65039; Lower monthly payment, but you&rsquo;ll pay more over the life of the loan.</strong>
+      <div style="margin-top:6px;font-size:0.95em;color:#444">Your payment drops because you&rsquo;re resetting the clock to a fresh, longer term &mdash; so you pay interest for more years and the total cost rises. Consider a shorter new term (e.g. 15 or 20 years) to keep both the rate <em>and</em> the lifetime saving.</div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card" style="border:2px solid #2e7d32">
+        <div class="result-label">Monthly Savings</div>
+        <div class="result-value" id="r-monthly-savings" style="color:#2e7d32">&mdash;</div>
+        <div class="result-hint">Current payment &minus; new payment</div>
+      </div>
+      <div class="result-card" style="border:2px solid #1B3A5C">
+        <div class="result-label">Break-Even Point</div>
+        <div class="result-value" id="r-breakeven" style="color:#1B3A5C">&mdash;</div>
+        <div class="result-hint">Months to recoup your closing costs</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Current Monthly Payment</div>
+        <div class="result-value" id="r-current-payment">&mdash;</div>
+        <div class="result-hint">P&amp;I on your existing loan</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">New Monthly Payment</div>
+        <div class="result-value" id="r-new-payment">&mdash;</div>
+        <div class="result-hint">P&amp;I on the refinanced loan</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Lifetime Savings</div>
+        <div class="result-value" id="r-lifetime">&mdash;</div>
+        <div class="result-hint">Total cost current loan &minus; new loan</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Interest Saved</div>
+        <div class="result-value" id="r-interest">&mdash;</div>
+        <div class="result-hint">Interest difference over the loans</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;padding:16px;background:#fff;border-radius:8px;border:1px dashed #1B3A5C">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d;margin-bottom:6px">How break-even works</div>
+      <div style="font-size:0.95em;color:#444">Break-even months = <strong>upfront cash spent &divide; monthly saving</strong>. If you stay in the home past the break-even point, the lower payment more than covers what you paid to refinance. If you might move or refinance again before then, the upfront cost outweighs the saving. When you roll closing costs into the loan you spend no cash today, so a payment-lowering refi breaks even immediately &mdash; but you finance those costs at the new rate, which the lifetime figure already accounts for.</div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>Both the current and new monthly payments use the standard fully-amortising principal-and-interest formula <code>M = P &times; i(1+i)<sup>n</sup> / ((1+i)<sup>n</sup> &minus; 1)</code>, where <code>P</code> is the loan principal, <code>i</code> is the monthly interest rate (annual rate &divide; 12), and <code>n</code> is the number of months. The current payment is computed on your remaining balance over the years you have left; the new payment is computed on the new principal &mdash; your remaining balance plus closing costs if you roll them in &mdash; over the new term. When the rate is exactly 0%, the formula would divide by zero, so the payment falls back to <code>principal &divide; n</code>.</p>
+    <p>The <strong>break-even point</strong> is the upfront cash you spend refinancing divided by the monthly saving. If you do not lower your payment, there is no break-even and the headline reason to refinance is gone. The <strong>lifetime saving</strong> compares the total of all remaining payments on your current loan against the total of all payments on the new loan (plus any closing costs you paid in cash). This figure is reported with its true sign: it can be <strong>negative even when your monthly payment drops</strong>, because extending a loan with (say) 22 years left into a fresh 30-year term restarts the amortisation clock &mdash; you pay interest for eight extra years, and the total can exceed what you would have paid by simply keeping the old loan. This is the single most common refinancing mistake and the calculator surfaces it honestly with a warning.</p>
+    <p>The model covers principal and interest only. It does not include property taxes, homeowners insurance, private mortgage insurance (PMI), escrow, or the opportunity cost of paying closing costs in cash instead of investing that money. It also does not model cash-out proceeds beyond rolling closing costs into the balance. Conventions here follow US refinancing practice (rate-and-term and cash-out refinances, fixed-rate amortisation). UK borrowers should use the <a href="/mortgage-repayment-calculator/">UK Mortgage Repayment Calculator</a>, as remortgaging there works differently (product fees, SVR reversion, early-repayment charges).</p>
+    <ul style="margin:12px 0">
+      <li><strong>Refinancing fundamentals &amp; break-even:</strong> <a href="https://www.consumerfinance.gov/owning-a-home/" rel="noopener">Consumer Financial Protection Bureau &mdash; Owning a Home / Refinance Guide</a></li>
+      <li><strong>Mortgage rate survey:</strong> <a href="https://www.freddiemac.com/pmms" rel="noopener">Freddie Mac &mdash; Primary Mortgage Market Survey (PMMS)</a></li>
+      <li><strong>Mortgage data &amp; interest-rate trends:</strong> <a href="https://www.federalreserve.gov/releases/h15/" rel="noopener">Federal Reserve &mdash; Selected Interest Rates (H.15)</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">How does refinancing work?</div>
+      <div class="faq-a">Refinancing replaces your existing mortgage with a brand-new loan, usually to capture a lower interest rate, change your term, or pull out equity (a cash-out refinance). The new lender pays off your old balance, and you start making payments on the new loan under its rate and term. You go through underwriting again &mdash; credit check, income verification, and a home appraisal &mdash; and you pay closing costs, typically 2&ndash;6% of the loan amount. The key thing to understand is that a refinance resets your amortisation schedule: if you are ten years into a 30-year mortgage and refinance into a new 30-year loan, you are back to year one of a 30-year clock. That can lower your monthly payment while increasing what you pay overall, which is why the lifetime-cost figure matters as much as the monthly saving.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s the break-even point and why does it matter?</div>
+      <div class="faq-a">The break-even point is how long it takes for your monthly savings to recoup the upfront cash you spent refinancing. If your closing costs are $4,000 and refinancing lowers your payment by $200 a month, you break even in 20 months &mdash; after that, the lower payment is pure benefit. It matters because refinancing only pays off if you stay in the home (and keep the loan) past break-even. If you expect to move, sell, or refinance again before then, you will spend more on closing costs than you recover in savings, and the refinance loses money even though the monthly bill went down. As a rule of thumb, make sure your expected time in the home comfortably exceeds the break-even point before pulling the trigger.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Should I roll closing costs into the loan or pay upfront?</div>
+      <div class="faq-a">Paying closing costs upfront in cash keeps your loan balance lower, so your payment and total interest are smaller &mdash; but it requires cash on hand, and there is a break-even period before you recoup it. Rolling the costs into the loan means no cash out of pocket today, but you finance those costs at the mortgage rate for the full term, so you pay interest on them for years and your balance (and payment) is higher. For a short break-even and a rate you will keep for decades, rolling in is convenient and the extra interest is modest. If you have the cash and plan to stay put, paying upfront is cheaper overall. A &ldquo;no-closing-cost&rdquo; refinance is a third option: the lender covers the costs in exchange for a slightly higher rate, which is effectively rolling the costs in through the rate rather than the balance.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does a lower monthly payment always mean I&rsquo;m saving money?</div>
+      <div class="faq-a">No &mdash; and this is the most expensive refinancing mistake people make. A lower monthly payment can come from two very different sources: a lower interest rate (genuinely saves money) or a longer term that stretches the same balance over more years (lowers the payment but raises the total cost). If you are 8 years into a 30-year mortgage and refinance into a fresh 30-year loan, you reset the clock and can easily pay tens of thousands more in interest over the life of the loan, even at a lower rate, simply because you are now paying for 38 years instead of 30. This calculator reports lifetime savings with its true sign so you can see when a tempting lower payment actually costs you more. If the lifetime figure is negative, you are not saving &mdash; consider refinancing into a shorter term that matches the years you had left.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What credit score do I need to refinance?</div>
+      <div class="faq-a">For a conventional rate-and-term refinance, lenders generally want a credit score of at least 620, but the best rates go to borrowers above 740. The higher your score, the lower the rate you will be offered, which directly affects whether the refinance pays off. Government-backed options have more flexibility: an FHA streamline refinance can work with scores in the 500s&ndash;580s, and a VA Interest Rate Reduction Refinance Loan (IRRRL) has no minimum credit score set by the VA (though individual lenders set their own). Beyond the score, lenders look at your debt-to-income ratio (typically under 43&ndash;50%), your home equity (you usually need at least 20% to avoid PMI on a conventional loan), and your payment history. Pull your credit and clean up any errors before applying, since even a small score improvement can move you into a better rate tier.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s a no-closing-cost refinance?</div>
+      <div class="faq-a">A no-closing-cost refinance means you do not pay the lender fees, appraisal, title, and other closing costs out of pocket at signing. There is no free lunch, though &mdash; the lender recovers those costs in one of two ways: by adding them to your loan balance (so you finance them over the term) or, more commonly, by giving you a slightly higher interest rate than you would otherwise qualify for. The higher rate means a higher monthly payment for the entire life of the loan. A no-closing-cost refinance can make sense if you are short on cash, if you might move or refinance again within a few years (so you would never reach break-even on upfront costs anyway), or if the rate bump is small relative to your savings. If you plan to keep the loan long term and have the cash, paying costs upfront at the lower rate is almost always cheaper overall.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Should I refinance to a shorter term?</div>
+      <div class="faq-a">Refinancing from a 30-year into a 15- or 20-year term is often the smartest refinance you can make, because it attacks both halves of the cost: shorter-term loans carry lower rates than 30-year loans, and you pay interest for far fewer years. The trade-off is a higher monthly payment, since you are repaying the same balance over less time. If you can comfortably afford the higher payment, a shorter term can save you a six-figure sum in interest over the life of a large mortgage. It is also the antidote to the term-reset trap: if you have 22 years left and refinance into a fresh 30-year loan, you can end up paying more overall even at a lower rate &mdash; but refinancing those 22 years into a 20-year (or shorter) term lets you keep the lower rate while still shrinking the total cost. Run both scenarios in the calculator above and compare the lifetime saving, not just the monthly payment.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How much does refinancing cost?</div>
+      <div class="faq-a">Refinancing closing costs typically run 2&ndash;6% of the loan amount &mdash; on a $300,000 loan that is roughly $6,000 to $18,000, though many refinances land toward the lower end. The costs include the loan origination or underwriting fee, a home appraisal ($300&ndash;$700), title search and title insurance, credit-report and application fees, recording fees, and sometimes discount points if you choose to buy down the rate. You can usually pay these upfront, roll them into the loan balance, or take a no-closing-cost option in exchange for a higher rate. Always ask each lender for a Loan Estimate (a standardised three-page form lenders are required to provide) so you can compare total costs and the annual percentage rate (APR) side by side &mdash; the APR folds the fees into a single comparable rate. A common rule of thumb is that refinancing is worth investigating when you can drop your rate by at least 0.75&ndash;1% and you will stay in the home past the break-even point.</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/mortgage/" class="related-card">&#127968; Mortgage</a>
+      <a href="/mortgage-repayment-calculator/" class="related-card">&#128181; Mortgage Repayment (UK)</a>
+      <a href="/mortgage-overpayment-calculator/" class="related-card">&#9203; Mortgage Overpayment</a>
+      <a href="/loan-payoff/" class="related-card">&#128184; Loan Payoff</a>
+      <a href="/compound-interest/" class="related-card">&#128200; Compound Interest</a>
+      <a href="/net-worth/" class="related-card">&#128202; Net Worth</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="refinance-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/refinance.js" defer></script>
+<script>
+function fmtUSD(n) {
+  if (n === null || n === undefined || isNaN(n)) return '$0';
+  var v = Math.round(n);
+  var sign = v < 0 ? '-' : '';
+  return sign + '$' + Math.abs(v).toLocaleString('en-US');
+}
+function getRollCosts() {
+  var radios = document.getElementsByName('rollCosts');
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) return radios[i].value === 'roll';
+  }
+  return false;
+}
+function calculate() {
+  if (!window.FCH_REFINANCE) return;
+  var p = {
+    currentBalance: +document.getElementById('currentBalance').value || 0,
+    currentRatePct: +document.getElementById('currentRatePct').value || 0,
+    currentRemainingYears: +document.getElementById('currentRemainingYears').value || 0,
+    newRatePct: +document.getElementById('newRatePct').value || 0,
+    newTermYears: +document.getElementById('newTermYears').value || 0,
+    closingCosts: +document.getElementById('closingCosts').value || 0,
+    rollCostsIntoLoan: getRollCosts(),
+  };
+  var R = window.FCH_REFINANCE.calc(p);
+  var errEl = document.getElementById('error-message');
+  var trapEl = document.getElementById('trap-warning');
+  var resultIds = ['r-recommendation','r-monthly-savings','r-breakeven','r-current-payment','r-new-payment','r-lifetime','r-interest'];
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    trapEl.style.display = 'none';
+    resultIds.forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-recommendation').textContent = R.recommendation;
+  document.getElementById('r-monthly-savings').textContent = fmtUSD(R.monthlySavings);
+  document.getElementById('r-breakeven').textContent =
+    (R.breakEvenMonths === null) ? 'No break-even' :
+    (R.breakEvenMonths === 0 ? 'Immediate' : R.breakEvenMonths.toFixed(1) + ' months');
+  document.getElementById('r-current-payment').textContent = fmtUSD(R.currentMonthlyPayment);
+  document.getElementById('r-new-payment').textContent = fmtUSD(R.newMonthlyPayment);
+  document.getElementById('r-lifetime').textContent = fmtUSD(R.lifetimeSavings);
+  document.getElementById('r-interest').textContent = fmtUSD(R.interestSavings);
+  // Honest-cost warning: lower monthly payment but higher lifetime cost.
+  if (R.monthlySavings > 0 && R.lifetimeSavings < 0) {
+    trapEl.style.display = 'block';
+  } else {
+    trapEl.style.display = 'none';
+  }
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="7963163804"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 1 minute.</p>
+    
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter your current loan balance, interest rate, and the number of years remaining</li>
+      
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Enter the new rate you&#39;d refinance into and the new loan term (10, 15, 20, or 30 years)</li>
+      
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Enter your estimated closing costs, then choose to pay them upfront or roll them into the loan</li>
+      
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Read off your monthly savings and the break-even point — the months it takes the lower payment to recoup your costs</li>
+      
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Check the lifetime savings figure: if it&#39;s negative, a lower monthly payment is actually costing you more over the life of the loan</li>
+      
+      <li id="step-6" class="how-to-step" style="margin-bottom:6px">If you see the term-reset warning, try a shorter new term to keep both the rate and the lifetime saving</li>
+      
+    </ol>
+  </section>
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="try-scenarios" aria-labelledby="try-scenarios-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#f4f6fb;border-radius:8px">
+    <h2 id="try-scenarios-heading" style="margin:0 0 6px;color:#1B3A5C;font-size:1.25rem">Try these scenarios</h2>
+    <p style="margin:0 0 12px;font-size:0.95em;color:#444">Tap a scenario to load it into the calculator above.</p>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      
+      <li>
+        <a class="try-scenario-link" href="?currentBalance=300000&amp;currentRatePct=7&amp;currentRemainingYears=28&amp;newRatePct=5&amp;newTermYears=30&amp;closingCosts=4000#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Clear win: $300k 7%→5%, 28yr left → 30yr</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?currentBalance=200000&amp;currentRatePct=6&amp;currentRemainingYears=15&amp;newRatePct=5&amp;newTermYears=30&amp;closingCosts=3000#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Term-reset trap: $200k 6%, 15yr left → 30yr 5%</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?currentBalance=250000&amp;currentRatePct=6.5&amp;currentRemainingYears=25&amp;newRatePct=5&amp;newTermYears=15&amp;closingCosts=4000#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Shorter term: $250k 6.5%, 25yr left → 15yr 5%</a>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>Refinancing replaces your existing mortgage with a new loan, and the only question that matters is whether the new loan leaves you better off — which is rarely answered by the monthly payment alone.</strong> A refinance pays off your current balance and starts a fresh loan at a new rate and term. The headline appeal is almost always a lower monthly payment, but that lower payment can come from two very different sources: a genuinely lower interest rate, or simply a longer term that spreads the same debt over more years. The first saves you money; the second can quietly cost you far more. A sound refinancing decision rests on three numbers working together — the monthly saving, the break-even point, and the honest lifetime cost — not on the payment in isolation.</p><p><strong>Break-even analysis is the first gate.</strong> The break-even point is the upfront cash you spend refinancing divided by the monthly saving: closing costs of $4,000 against a $200 monthly saving break even in 20 months. Past that point, the lower payment is pure benefit; before it, you are still underwater on the cost of the refinance. The practical rule is simple: only refinance if you expect to stay in the home, and keep the loan, comfortably beyond the break-even point. If you might sell or refinance again before then, you will have spent more on closing costs than you ever recover, and the refinance loses money even though the monthly bill went down. Rolling closing costs into the loan changes the arithmetic — you spend no cash today, so a payment-lowering refinance breaks even immediately — but you then finance those costs at the mortgage rate for the full term, which the lifetime figure captures.</p><p><strong>The term-reset trap is the single most expensive refinancing mistake, and it is invisible if you only watch the payment.</strong> Amortisation front-loads interest: in the early years of a loan, most of each payment is interest and little goes to principal. When you refinance, you restart that clock. If you are ten years into a 30-year mortgage and refinance into a fresh 30-year loan, you reset to year one of a new 30-year amortisation — you will now pay on the house for 40 years total instead of 30. Even at a lower rate, the extra decade of interest can exceed the rate saving, so your lifetime cost rises while your monthly payment falls. This calculator reports lifetime savings with its true sign precisely so this trap is visible: a negative lifetime saving alongside a positive monthly saving is the warning that you are trading a smaller bill today for a larger total tomorrow. The fix is to refinance into a term that matches the years you had left or shorter — a borrower with 22 years remaining should compare a 20-year refinance, which keeps the lower rate while shrinking the total cost.</p><p><strong>No-closing-cost refinances trade upfront cash for a higher rate, and the trade is not always worth it.</strong> A no-closing-cost refinance does not eliminate the costs — the lender recovers them either by adding them to your balance or, more commonly, by quoting a rate a quarter-point or so higher. That higher rate raises your payment for the entire life of the loan. The option shines when you are short on cash or expect to keep the loan only a few years (so you would never reach break-even on upfront costs anyway). It works against you when you plan to hold the loan for decades and could have afforded the lower rate by paying costs upfront. Always compare lenders using the standardised Loan Estimate, which shows total costs and the annual percentage rate (APR) — the figure that folds fees into a single comparable rate.</p><p><strong>Two broad kinds of refinance serve different goals.</strong> A <em>rate-and-term</em> refinance keeps the loan amount roughly the same and changes the rate, the term, or both — this is the classic money-saving refinance. A <em>cash-out</em> refinance replaces your mortgage with a larger one and hands you the difference in cash, drawing on your home equity to fund renovations, debt consolidation, or other spending; it raises your balance, your payment, and usually your rate, and should be weighed against cheaper alternatives like a HELOC. Across both, the conventional rule of thumb is to investigate refinancing when you can lower your rate by at least 0.75 to 1 percentage point <em>and</em> you will stay in the home past the break-even point. Two caveats frame every result here: this model covers principal and interest only — it excludes property taxes, insurance, PMI, and escrow — and it follows US conventions, so UK borrowers should use a dedicated remortgage calculator, where product fees, SVR reversion, and early-repayment charges change the maths. Treat the output as a disciplined comparison of two amortisation schedules, and let the lifetime figure, not the monthly payment, have the final word.</p><p><strong>So when does refinancing actually make sense?</strong> Stack the conditions and the answer falls out cleanly. First, the rate drop has to be real: a reduction of at least 0.75 to 1 percentage point is the traditional threshold, because anything smaller rarely overcomes the closing costs within a reasonable horizon. Second, you must intend to stay in the home, with this loan, well past the break-even point — a refinance that breaks even in 24 months is a poor idea if you expect to sell in 18. Third, the lifetime saving has to be positive, which in practice means refinancing into a term no longer than the years you have left rather than resetting to a fresh 30-year clock. When all three line up, refinancing is one of the highest-return financial moves a homeowner can make, often saving tens of thousands of dollars for a few hours of paperwork. When even one fails — the rate barely moves, you might relocate soon, or the lower payment is only an illusion created by a longer term — the calculator's lifetime and break-even figures will tell you to wait. Run several scenarios above, varying the new term in particular, and choose the one with the best lifetime saving you can comfortably afford each month.</p>
+  </section>
+</div>
+
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="1620134192"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-17">17 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+
+
+
+
+
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/mortgage/">🏠 Mortgage Calculator</a> — Calculate your monthly repayment, total interest, and full amortisation schedule for any home loan.</li>
+      <li><a href="/mortgage-repayment-calculator/">🇬🇧 UK Mortgage Repayment Calculator</a> — Monthly payment, total interest over the term, and the balance at the end of any fixed-rate period — using UK convention (monthly-paid-in-arrears).</li>
+      <li><a href="/mortgage-overpayment-calculator/">💰 UK Mortgage Overpayment Calculator</a> — Model the interest you&#x27;ll save and the years you&#x27;ll cut from your mortgage term by overpaying monthly, with a lump sum, or both. ERC caveat: most UK fixes allow 10% per year before charges kick in.</li>
+      <li><a href="/loan-payoff/">📉 Loan Payoff Calculator</a> — See exactly when your loan is paid off, how much interest you&#x27;ll pay, and how extra payments slash your debt.</li>
+      <li><a href="/compound-interest/">Compound Interest Calculator</a> — See how your money grows over time with the power of compounding. Add monthly contributions to maximise your results.</li>
+      <li><a href="/net-worth/">🏦 Net Worth Calculator</a> — Calculate your total net worth by entering your assets and liabilities below.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="5980987973"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+</main>
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>
