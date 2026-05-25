@@ -50,11 +50,32 @@ EXCLUDE_PATHS = {
 }
 EXCLUDE_SUFFIXES = ('.png', '.svg', '.jpg', '.jpeg', '.webp', '.txt', '.xml', '.ico', '.css', '.js', '.yml', '.yaml')
 
+# Path prefixes that must never be submitted to IndexNow. Two reasons:
+#   - Build sources / tooling / deps are NOT deployed, so their URLs 404
+#     (e.g. _build/bodies/*.html and _build/templates/*.html are Jinja
+#     source, not public pages). --all walks the whole tree via rglob,
+#     so without this guard it submits ~25 phantom _build/ URLs.
+#   - embed/* widget pages are noindex,nofollow — submitting them
+#     contradicts the robots directive and wastes crawl budget (same
+#     rationale as the privacy/ and search/ entries in EXCLUDE_PATHS).
+EXCLUDE_DIR_PREFIXES = (
+    '_build/',        # Jinja templates, bodies, data, tests — build source, not served
+    'node_modules/',  # dependencies
+    'scripts/',       # tooling (this script lives here)
+    'docs/',          # internal docs / superpowers plans
+    '.git/',
+    '.github/',
+    '.claude/',
+    'embed/',         # noindex,nofollow embeddable widgets
+)
+
 
 def path_to_url(rel: str) -> str | None:
     """Convert a repo-relative file path to a public URL, or None if not indexable."""
     rel = rel.replace('\\', '/').lstrip('./').lstrip('/')
     if rel in EXCLUDE_PATHS:
+        return None
+    if rel.startswith(EXCLUDE_DIR_PREFIXES):
         return None
     if rel.endswith(EXCLUDE_SUFFIXES):
         return None
