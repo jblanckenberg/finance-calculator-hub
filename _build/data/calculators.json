@@ -3383,5 +3383,107 @@
       }
     ],
     "keyConcepts": "<p><strong>Future value is the forward-looking core of the time value of money (TVM) &mdash; what a sum today, or a stream of payments, becomes after a period of compounding.</strong> The foundational idea is that money has a time dimension: a dollar in hand today is worth more than a dollar promised next year, because today&rsquo;s dollar can be invested to earn a return. Future value quantifies that growth. For a single lump sum the formula is <code>FV = PV &times; (1 + r/n)<sup>n&times;t</sup></code>, where PV is the present value, r the nominal annual rate, n the number of compounding periods per year, and t the number of years. A $10,000 deposit at 7% compounded monthly becomes about $20,097 in ten years &mdash; the original principal plus roughly $10,097 of compounded growth, more than doubling the money without adding a cent.</p><p><strong>Future value and present value are inverses of each other.</strong> Where future value multiplies by the growth factor to move money forward in time, present value <em>divides</em> by the same factor to move money backward &mdash; a process called discounting. <code>PV = FV / (1 + r/n)<sup>nt</sup></code>. The two operations are mirror images: ask &ldquo;what will $10,000 be worth in 10 years?&rdquo; and you compute future value; ask &ldquo;how much must I invest today to have $20,000 in 10 years?&rdquo; and you compute present value. This FV/PV duality underpins almost every quantitative decision in finance: valuing bonds (the price is the present value of future coupons plus principal), capital budgeting (net present value discounts a project&rsquo;s future cash flows), pension valuation, and loan amortisation. Mastering the future-value direction first makes the discounting direction intuitive, because it is simply the same equation solved for the other variable.</p><p><strong>When the money arrives as a series of equal payments rather than a single lump, you use the annuity future-value formula.</strong> An annuity is any sequence of equal cash flows at regular intervals &mdash; monthly 401(k) contributions, an annual ISA top-up, a fixed pension deposit. Its future value is <code>FV = PMT &times; [((1 + i)<sup>N</sup> &minus; 1) / i]</code>, where i is the periodic rate (the annual rate divided by the number of payments per year) and N is the total number of payments. The bracketed term is the annuity future-value factor, and it is derived by summing a geometric series: each payment compounds for a different number of periods (the first payment compounds the longest, the last barely at all), and the closed-form expression collapses that sum into a single factor. A subtle but important variant is <em>timing</em>: the standard formula assumes payments at the <em>end</em> of each period (an ordinary annuity). If instead you pay at the <em>start</em> of each period (an annuity-due, as with rent or insurance), every cash flow earns one extra period of compounding, so you multiply the result by <code>(1 + i)</code> &mdash; making an annuity-due always worth marginally more than the otherwise-identical ordinary annuity.</p><p><strong>Compounding frequency matters, but less than people expect.</strong> The more often interest is added to the balance, the more often that interest itself earns interest, so a higher n produces a higher future value &mdash; but with steeply diminishing returns. At 7% over ten years, $10,000 grows to about $19,672 with annual compounding, $20,097 with monthly, and $20,136 with daily; the mathematical ceiling of continuous compounding (<code>FV = PV &times; e<sup>rt</sup></code>) is about $20,138. The first step up (annual to monthly) is worth roughly ten times the second (monthly to daily). The honest way to compare accounts that compound differently is the <strong>effective annual rate (EAR)</strong>, <code>((1 + r/n)<sup>n</sup> &minus; 1)</code>, which restates any nominal-plus-frequency combination as a single once-a-year rate. A 7% nominal rate compounded monthly is a 7.229% effective rate; comparing EARs prevents a lower headline rate with daily compounding from looking better than it is.</p><p><strong>Real-world future-value applications span personal finance and corporate finance alike.</strong> In <em>retirement planning</em>, FV combines a starting balance (lump sum) with ongoing contributions (an annuity) to project a pot decades out &mdash; and over a 30-to-40-year horizon the compounded interest typically dwarfs the contributions, which is the entire argument for starting early. In <em>education funding</em>, parents work out what regular deposits will accumulate to by the time a child reaches university. In <em>bond pricing</em>, the future (maturity) value and coupon stream are discounted back to a present price. In <em>capital budgeting</em>, future cash flows from a project are projected and compared. Two limitations are worth holding in mind: a future-value figure is <em>nominal</em>, so it ignores inflation &mdash; $20,000 in 20 years buys far less than $20,000 today, which is why a real-purchasing-power adjustment matters &mdash; and it assumes a <em>constant</em> rate, whereas real returns vary year to year. Treat the output as a disciplined projection, not a guarantee, and pair it with an inflation adjustment and a range of rate assumptions for serious planning.</p>"
+  },
+  "refinance-calculator": {
+    "slug": "refinance-calculator",
+    "name": "\ud83c\udfe0 Refinance Calculator",
+    "title": "Refinance Calculator: Break-Even + Lifetime Savings",
+    "description": "Free refinance calculator. See your monthly savings, break-even point, and the honest lifetime cost of refinancing \u2014 including the term-reset trap where a lower payment costs you more overall.",
+    "h1": "\ud83c\udfe0 Refinance Calculator",
+    "subtitle": "Work out whether refinancing your mortgage actually pays off. Enter your current loan and a proposed new rate and term to see your monthly saving, your break-even point (how long the lower payment takes to recoup closing costs), and the true lifetime cost \u2014 because a lower monthly payment from a fresh, longer term can quietly cost you tens of thousands more.",
+    "metaDescription": "Free mortgage refinance calculator. Monthly savings, break-even months, and honest lifetime savings \u2014 with a warning when a lower payment actually costs more because you reset the loan term. Roll-in vs upfront closing costs supported.",
+    "regions": [
+      "USA"
+    ],
+    "primaryKeyword": "refinance calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "Refinance Calculator",
+      "description": "Compare your current mortgage to a proposed refinance: monthly savings, break-even point, and honest lifetime cost including the term-reset trap. Supports rolling closing costs into the loan or paying upfront.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to use the Refinance Calculator",
+      "totalTime": "PT1M",
+      "steps": [
+        "Enter your current loan balance, interest rate, and the number of years remaining",
+        "Enter the new rate you'd refinance into and the new loan term (10, 15, 20, or 30 years)",
+        "Enter your estimated closing costs, then choose to pay them upfront or roll them into the loan",
+        "Read off your monthly savings and the break-even point \u2014 the months it takes the lower payment to recoup your costs",
+        "Check the lifetime savings figure: if it's negative, a lower monthly payment is actually costing you more over the life of the loan",
+        "If you see the term-reset warning, try a shorter new term to keep both the rate and the lifetime saving"
+      ]
+    },
+    "faq": [
+      {
+        "q": "How does refinancing work?",
+        "a": "Refinancing replaces your existing mortgage with a new loan, usually to capture a lower rate, change your term, or pull out equity. The new lender pays off your old balance and you start payments on the new loan. You re-do underwriting and pay closing costs of roughly 2\u20136% of the loan. Crucially, a refinance resets your amortisation clock: refinance ten years into a 30-year loan back into a new 30-year loan and you're at year one of 30 again, which can lower the payment while raising the total cost."
+      },
+      {
+        "q": "What's the break-even point and why does it matter?",
+        "a": "The break-even point is how long it takes your monthly savings to recoup the upfront cash you spent refinancing. Spend $4,000 in closing costs to save $200 a month and you break even in 20 months \u2014 after that the saving is pure benefit. It matters because refinancing only pays off if you keep the loan past break-even. If you might move or refinance again sooner, you'll spend more on costs than you recover, so the refinance loses money even with a lower payment."
+      },
+      {
+        "q": "Should I roll closing costs into the loan or pay upfront?",
+        "a": "Paying upfront keeps your balance and total interest lower but requires cash and creates a break-even period. Rolling costs into the loan means no cash today, but you finance those costs at the mortgage rate for the full term, raising your balance and payment. For a short break-even and a rate you'll keep for decades, rolling in is convenient. If you have the cash and plan to stay, paying upfront is cheaper overall. A no-closing-cost refinance is a third route: the lender covers costs in exchange for a slightly higher rate."
+      },
+      {
+        "q": "Does a lower monthly payment always mean I'm saving money?",
+        "a": "No \u2014 this is the costliest refinancing mistake. A lower payment can come from a lower rate (genuine saving) or a longer term that stretches the balance over more years (lower payment, higher total cost). Refinance 8 years into a 30-year loan back into a fresh 30-year loan and you can pay tens of thousands more in interest, even at a lower rate, because you're now paying for 38 years instead of 30. This calculator reports lifetime savings with its true sign: if it's negative, you aren't saving \u2014 refinance into a shorter term that matches the years you had left."
+      },
+      {
+        "q": "What credit score do I need to refinance?",
+        "a": "A conventional rate-and-term refinance generally needs a score of at least 620, with the best rates reserved for 740+. Because the rate you're offered drives whether the refinance pays off, score matters a lot. Government options are more flexible: an FHA streamline can work in the 500s\u2013580s, and a VA IRRRL has no VA-set minimum (lenders set their own). Lenders also weigh your debt-to-income ratio (usually under 43\u201350%), home equity (20%+ avoids PMI on a conventional loan), and payment history. Check your credit and fix errors before applying."
+      },
+      {
+        "q": "What's a no-closing-cost refinance?",
+        "a": "A no-closing-cost refinance means you don't pay closing costs out of pocket at signing. There's no free lunch: the lender recovers them by adding them to your balance or, more commonly, by giving you a higher interest rate \u2014 which means a higher payment for the life of the loan. It can make sense if you're short on cash, if you might move or refinance again within a few years (so you'd never reach break-even on upfront costs anyway), or if the rate bump is small relative to your savings. If you'll keep the loan long term and have the cash, paying upfront at the lower rate is almost always cheaper."
+      },
+      {
+        "q": "Should I refinance to a shorter term?",
+        "a": "Refinancing from a 30-year into a 15- or 20-year term is often the smartest refinance, because shorter-term loans carry lower rates and you pay interest for fewer years. The trade-off is a higher monthly payment, since you repay the same balance over less time. If you can afford it, a shorter term can save a six-figure sum on a large mortgage. It's also the antidote to the term-reset trap: if you have 22 years left, refinancing into a fresh 30-year loan can cost more overall even at a lower rate, but refinancing into a 20-year term keeps the lower rate while shrinking the total cost. Compare the lifetime saving, not just the payment."
+      },
+      {
+        "q": "How much does refinancing cost?",
+        "a": "Closing costs typically run 2\u20136% of the loan amount \u2014 on a $300,000 loan that's roughly $6,000 to $18,000, though many land toward the lower end. They include the origination/underwriting fee, appraisal ($300\u2013$700), title search and insurance, credit-report and application fees, recording fees, and any discount points. You can pay upfront, roll them in, or take a no-closing-cost option for a higher rate. Ask each lender for a standardised Loan Estimate so you can compare total costs and APR side by side. A common rule of thumb: investigate refinancing when you can drop your rate by at least 0.75\u20131% and you'll stay past the break-even point."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.consumerfinance.gov/owning-a-home/",
+        "label": "Consumer Financial Protection Bureau \u2014 Owning a Home / Refinance Guide"
+      },
+      {
+        "url": "https://www.freddiemac.com/pmms",
+        "label": "Freddie Mac \u2014 Primary Mortgage Market Survey (PMMS)"
+      },
+      {
+        "url": "https://www.federalreserve.gov/releases/h15/",
+        "label": "Federal Reserve \u2014 Selected Interest Rates (H.15)"
+      }
+    ],
+    "related": [
+      "mortgage",
+      "mortgage-repayment-calculator",
+      "mortgage-overpayment-calculator",
+      "loan-payoff",
+      "compound-interest",
+      "net-worth"
+    ],
+    "scenarios": [
+      {
+        "label": "Clear win: $300k 7%\u21925%, 28yr left \u2192 30yr",
+        "query": "currentBalance=300000&currentRatePct=7&currentRemainingYears=28&newRatePct=5&newTermYears=30&closingCosts=4000"
+      },
+      {
+        "label": "Term-reset trap: $200k 6%, 15yr left \u2192 30yr 5%",
+        "query": "currentBalance=200000&currentRatePct=6&currentRemainingYears=15&newRatePct=5&newTermYears=30&closingCosts=3000"
+      },
+      {
+        "label": "Shorter term: $250k 6.5%, 25yr left \u2192 15yr 5%",
+        "query": "currentBalance=250000&currentRatePct=6.5&currentRemainingYears=25&newRatePct=5&newTermYears=15&closingCosts=4000"
+      }
+    ],
+    "keyConcepts": "<p><strong>Refinancing replaces your existing mortgage with a new loan, and the only question that matters is whether the new loan leaves you better off \u2014 which is rarely answered by the monthly payment alone.</strong> A refinance pays off your current balance and starts a fresh loan at a new rate and term. The headline appeal is almost always a lower monthly payment, but that lower payment can come from two very different sources: a genuinely lower interest rate, or simply a longer term that spreads the same debt over more years. The first saves you money; the second can quietly cost you far more. A sound refinancing decision rests on three numbers working together \u2014 the monthly saving, the break-even point, and the honest lifetime cost \u2014 not on the payment in isolation.</p><p><strong>Break-even analysis is the first gate.</strong> The break-even point is the upfront cash you spend refinancing divided by the monthly saving: closing costs of $4,000 against a $200 monthly saving break even in 20 months. Past that point, the lower payment is pure benefit; before it, you are still underwater on the cost of the refinance. The practical rule is simple: only refinance if you expect to stay in the home, and keep the loan, comfortably beyond the break-even point. If you might sell or refinance again before then, you will have spent more on closing costs than you ever recover, and the refinance loses money even though the monthly bill went down. Rolling closing costs into the loan changes the arithmetic \u2014 you spend no cash today, so a payment-lowering refinance breaks even immediately \u2014 but you then finance those costs at the mortgage rate for the full term, which the lifetime figure captures.</p><p><strong>The term-reset trap is the single most expensive refinancing mistake, and it is invisible if you only watch the payment.</strong> Amortisation front-loads interest: in the early years of a loan, most of each payment is interest and little goes to principal. When you refinance, you restart that clock. If you are ten years into a 30-year mortgage and refinance into a fresh 30-year loan, you reset to year one of a new 30-year amortisation \u2014 you will now pay on the house for 40 years total instead of 30. Even at a lower rate, the extra decade of interest can exceed the rate saving, so your lifetime cost rises while your monthly payment falls. This calculator reports lifetime savings with its true sign precisely so this trap is visible: a negative lifetime saving alongside a positive monthly saving is the warning that you are trading a smaller bill today for a larger total tomorrow. The fix is to refinance into a term that matches the years you had left or shorter \u2014 a borrower with 22 years remaining should compare a 20-year refinance, which keeps the lower rate while shrinking the total cost.</p><p><strong>No-closing-cost refinances trade upfront cash for a higher rate, and the trade is not always worth it.</strong> A no-closing-cost refinance does not eliminate the costs \u2014 the lender recovers them either by adding them to your balance or, more commonly, by quoting a rate a quarter-point or so higher. That higher rate raises your payment for the entire life of the loan. The option shines when you are short on cash or expect to keep the loan only a few years (so you would never reach break-even on upfront costs anyway). It works against you when you plan to hold the loan for decades and could have afforded the lower rate by paying costs upfront. Always compare lenders using the standardised Loan Estimate, which shows total costs and the annual percentage rate (APR) \u2014 the figure that folds fees into a single comparable rate.</p><p><strong>Two broad kinds of refinance serve different goals.</strong> A <em>rate-and-term</em> refinance keeps the loan amount roughly the same and changes the rate, the term, or both \u2014 this is the classic money-saving refinance. A <em>cash-out</em> refinance replaces your mortgage with a larger one and hands you the difference in cash, drawing on your home equity to fund renovations, debt consolidation, or other spending; it raises your balance, your payment, and usually your rate, and should be weighed against cheaper alternatives like a HELOC. Across both, the conventional rule of thumb is to investigate refinancing when you can lower your rate by at least 0.75 to 1 percentage point <em>and</em> you will stay in the home past the break-even point. Two caveats frame every result here: this model covers principal and interest only \u2014 it excludes property taxes, insurance, PMI, and escrow \u2014 and it follows US conventions, so UK borrowers should use a dedicated remortgage calculator, where product fees, SVR reversion, and early-repayment charges change the maths. Treat the output as a disciplined comparison of two amortisation schedules, and let the lifetime figure, not the monthly payment, have the final word.</p><p><strong>So when does refinancing actually make sense?</strong> Stack the conditions and the answer falls out cleanly. First, the rate drop has to be real: a reduction of at least 0.75 to 1 percentage point is the traditional threshold, because anything smaller rarely overcomes the closing costs within a reasonable horizon. Second, you must intend to stay in the home, with this loan, well past the break-even point \u2014 a refinance that breaks even in 24 months is a poor idea if you expect to sell in 18. Third, the lifetime saving has to be positive, which in practice means refinancing into a term no longer than the years you have left rather than resetting to a fresh 30-year clock. When all three line up, refinancing is one of the highest-return financial moves a homeowner can make, often saving tens of thousands of dollars for a few hours of paperwork. When even one fails \u2014 the rate barely moves, you might relocate soon, or the lower payment is only an illusion created by a longer term \u2014 the calculator's lifetime and break-even figures will tell you to wait. Run several scenarios above, varying the new term in particular, and choose the one with the best lifetime saving you can comfortably afford each month.</p>"
   }
 }

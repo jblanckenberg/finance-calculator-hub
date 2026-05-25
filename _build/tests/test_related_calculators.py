@@ -60,7 +60,8 @@ def test_calculator_pages_exist():
     # +traditional-ira-calculator (33) — Phase 4B 2026-05-24.
     # +hourly-to-salary-calculator (34) — Phase 4C 2026-05-24 (closes Phase 4).
     # +future-value-calculator (35) — Phase 5B 2026-05-25 (40,500 vol, KD 38).
-    assert len(CALC_PAGES) == 35, f"Expected 35 calculator pages, found {len(CALC_PAGES)}"
+    # +refinance-calculator (36) — Phase 5C 2026-05-25 (49,500 vol, KD 40), closes Phase 5.
+    assert len(CALC_PAGES) == 36, f"Expected 36 calculator pages, found {len(CALC_PAGES)}"
 
 
 def test_variant_pages_exist():
