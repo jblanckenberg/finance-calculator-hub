@@ -25,6 +25,8 @@ EXPECTED_SLUGS = {
     "paye-calculator",
     "dividend-calculator",
     "roth-ira-conversion-calculator",
+    "fire-number-calculator",
+    "simple-interest-calculator",
 }
 
 def test_calculators_file_exists():
