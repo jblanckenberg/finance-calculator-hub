@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dividend Calculator: DRIP, Growth &amp; Tax Wrappers</title>
+  <meta name="description" content="Free dividend calculator with DRIP, dividend growth, and tax wrappers (Roth IRA, Traditional IRA, TFSA, ISA, taxable). Year-1 income, total dividends, ending value.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/dividend-calculator/">
+
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <meta property="og:title" content="Dividend Calculator: DRIP, Growth &amp; Tax Wrappers">
+  <meta property="og:description" content="Free dividend calculator with DRIP, dividend growth, and tax wrappers (Roth IRA, Traditional IRA, TFSA, ISA, taxable). Year-1 income, total dividends, ending value.">
+  <meta property="og:url" content="https://finncalc.com/dividend-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dividend Calculator: DRIP, Growth &amp; Tax Wrappers">
+  <meta name="twitter:description" content="Free dividend calculator with DRIP, dividend growth, and tax wrappers (Roth IRA, Traditional IRA, TFSA, ISA, taxable). Year-1 income, total dividends, ending value.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-17", "description": "Free dividend calculator with DRIP, dividend growth, and tax wrappers (Roth IRA, Traditional IRA, TFSA, ISA, taxable). Year-1 income, total dividends, ending value.", "name": "\ud83d\udcb0 Dividend Calculator", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/dividend-calculator/"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A dividend is a slice of a company\u0027s after-tax profit paid out to shareholders, usually in cash and usually quarterly. If you own 100 shares of a stock that pays $4 a year in dividends, you collect $400 a year \u2014 $100 every three months in the US, where quarterly is standard. Companies that pay reliable, growing dividends are often called dividend stocks or, at the top end, dividend aristocrats (25+ years of consecutive raises). Not all companies pay dividends \u2014 many growth-stage businesses reinvest 100% of profit instead, so you\u0027re betting on share-price appreciation rather than cash income."}, "name": "What is a dividend?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "DRIP (Dividend Reinvestment Plan) automatically uses your dividend payments to buy more shares of the same stock at each payment date \u2014 usually commission-free and with fractional shares. It\u0027s the cleanest form of dollar-cost averaging and turns dividends into compound interest: more shares \u2192 bigger next dividend \u2192 even more shares. Over 20-30 years the difference is dramatic. The trade-off: you lose the cash, so DRIP is only worth it if you don\u0027t need the income now. Most retirement-accumulation investors keep DRIP on; retirees usually switch it off and live on the cash."}, "name": "What is DRIP and is it worth it?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "In the US, qualified dividends (most US large-cap stocks held more than 60 days) are taxed at the long-term capital gains rate \u2014 0%, 15%, or 20% depending on income band. Ordinary dividends (REITs, MLPs, short holding periods, some foreign stocks) are taxed at your marginal income rate \u2014 10% to 37%. The qualified treatment is a major reason buy-and-hold dividend investors do well in taxable brokerage accounts: a 22%-marginal earner pays 15% on most dividends instead of 22%. Form 1099-DIV breaks the two categories out for you each year."}, "name": "Qualified vs ordinary dividend tax \u2014 what\u0027s the difference?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 these are tax wrappers that shelter the income inside the account. A Roth IRA pays 0% tax on dividends and 0% on qualified withdrawals after age 59\u00bd. A UK Stocks \u0026 Shares ISA pays 0% tax on dividends with no withdrawal restriction. A South African TFSA pays 0% tax on dividends (and is exempt from the 20% SA dividend withholding). A Traditional IRA also pays 0% in-account, but dividends + growth are taxed as ordinary income when you withdraw in retirement \u2014 so it\u0027s tax-deferred, not tax-free. The wrapper hierarchy for dividend investors is generally: Roth / ISA / TFSA \u003e Traditional IRA \u003e Taxable brokerage."}, "name": "Do I pay tax on dividends in a Roth IRA, ISA, or TFSA?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The ex-dividend date (ex-date) is the first trading day on which a new buyer is NOT entitled to the upcoming dividend. If you buy the stock the day before the ex-date you get the next dividend; buy on or after the ex-date and the seller keeps it. The share price typically drops by roughly the dividend amount on the ex-date to reflect the value that\u0027s about to leave the company. Net result: buying the dividend right before the ex-date is usually pointless \u2014 you get the cash but lose the same amount on the share price (and pay tax on the dividend in a taxable account). Long-term DRIP investors don\u0027t care about ex-dates."}, "name": "Ex-dividend date \u2014 what does it mean for me?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "For income today, yield matters: a 4% yield on a $10,000 position pays $400 next year, a 2% yield pays $200. For income in 20 years, growth matters more: a stock starting at 2% yield and growing dividends 8% a year overtakes a 4%-yield-no-growth stock in roughly 9 years and crushes it by year 20. The Dividend Growth Investing (DGI) school favours growth over starting yield; the high-yield school (REITs, BDCs, utilities) favours starting yield. The sensible middle ground is a yield + growth \u2265 8% rule: 3% yield + 6% growth qualifies; so does 5% yield + 3% growth."}, "name": "Dividend yield vs dividend growth \u2014 which matters more?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "In the US, most blue-chip dividends are quarterly (4\u00d7/year), some are monthly (mostly REITs and a few specialty funds like Realty Income, $O), and a few are annual or semi-annual. In the UK, twice-a-year (an interim and a final dividend) is the norm. In South Africa, most JSE-listed companies pay twice yearly. Each dividend has four dates: declaration (board announces), ex-date (first day a new buyer doesn\u0027t get it), record date (registrar confirms shareholders), and pay date (cash hits your brokerage account). Pay-date is usually 2-6 weeks after declaration."}, "name": "When are dividends paid?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Dividend coverage ratio = earnings per share \u00f7 dividend per share. A ratio above 2 means the company earns at least 2\u00d7 the dividend it\u0027s paying out \u2014 comfortable. A ratio between 1 and 2 means the dividend is covered but tight. Below 1 means the company is paying out more than it earns, usually funded by debt or asset sales \u2014 a classic dividend-cut warning sign. Equivalent measure: payout ratio (dividend \u00f7 earnings) below 60% is the conservative target for most sectors; REITs are an exception (legally required to pay out 90% of taxable income, so a 90%+ payout ratio is normal there)."}, "name": "What\u0027s the dividend coverage ratio and why does it matter?"}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/dividend-calculator/", "name": "\ud83d\udcb0 Dividend Calculator", "position": 2}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "description": "Step-by-step guide to using the \ud83d\udcb0 Dividend Calculator.", "name": "How to calculate dividend income with DRIP and tax wrappers", "step": [{"@type": "HowToStep", "name": "Enter shares owned and annual dividend per", "position": 1, "text": "Enter shares owned and annual dividend per share", "url": "https://finncalc.com/dividend-calculator/#step-1"}, {"@type": "HowToStep", "name": "Pick the payment frequency (quarterly is the", "position": 2, "text": "Pick the payment frequency (quarterly is the US default)", "url": "https://finncalc.com/dividend-calculator/#step-2"}, {"@type": "HowToStep", "name": "Choose whether to reinvest dividends (DRIP) and", "position": 3, "text": "Choose whether to reinvest dividends (DRIP) and set an annual dividend growth rate", "url": "https://finncalc.com/dividend-calculator/#step-3"}, {"@type": "HowToStep", "name": "Pick your tax wrapper \u2014 Taxable, Roth", "position": 4, "text": "Pick your tax wrapper \u2014 Taxable, Roth IRA, Traditional IRA, TFSA, or ISA", "url": "https://finncalc.com/dividend-calculator/#step-4"}, {"@type": "HowToStep", "name": "Read off year-1 monthly income, total dividends", "position": 5, "text": "Read off year-1 monthly income, total dividends over the horizon, total tax, and ending position value", "url": "https://finncalc.com/dividend-calculator/#step-5"}], "totalTime": "PT2M"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "dateModified": "2026-05-17", "datePublished": "2025-08-01", "description": "Free dividend calculator with DRIP, dividend growth, and tax wrappers (Roth IRA, Traditional IRA, TFSA, ISA, taxable). Year-1 income, total dividends, ending value.", "headline": "\ud83d\udcb0 Dividend Calculator", "inLanguage": "en", "mainEntityOfPage": {"@id": "https://finncalc.com/dividend-calculator/", "@type": "WebPage"}, "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://finncalc.com/og-image.png"}, "name": "FinCalcHub", "url": "https://finncalc.com/"}, "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "url": "https://finncalc.com/dividend-calculator/"}</script>
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/compound-interest/">Compound Interest</a>
+    <a href="/retirement-savings/">Retirement</a>
+    <a href="/take-home-pay/">Take-Home Pay</a>
+    <a href="/mortgage/">Mortgage</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+<main id="content">
+<!-- Ad slot top (leaderboard above H1) -->
+<div class="container">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="4461919959"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> › 💰 Dividend Calculator</p>
+  <h1>💰 Dividend Calculator</h1>
+  <p class="subtitle">Project dividend income at any cadence, switch DRIP on or off, apply a dividend growth rate, and compare tax wrappers (Taxable, Roth IRA, Traditional IRA, TFSA, ISA).</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Dividend Calculator (multi-region: USA / UK / SA) -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#e8f5e9;border-left:4px solid #2e7d32;margin-bottom:16px">
+    <strong>💰 Dividend Calculator</strong> — model dividend income at any cadence, switch DRIP (reinvestment) on or off, factor in annual dividend growth, and pick a tax wrapper (Taxable, Roth IRA, Traditional IRA, TFSA, ISA). Outputs year-1 income, total dividends, total tax, ending position, and effective yield.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Position</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="shares">Shares Owned</label>
+        <input type="number" id="shares" value="100" min="0" placeholder="100" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="dividendPerShare">Annual Dividend per Share <span class="hint">(currency-agnostic)</span></label>
+        <input type="number" id="dividendPerShare" value="4" min="0" step="0.01" placeholder="4" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="frequency">Payment Frequency</label>
+        <select id="frequency" onchange="calculate()">
+          <option value="quarterly" selected>Quarterly (4×/yr)</option>
+          <option value="monthly">Monthly (12×/yr)</option>
+          <option value="semiannual">Semi-annual (2×/yr)</option>
+          <option value="annual">Annual (1×/yr)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="years">Investment Horizon <span class="hint">(years, 1-50)</span></label>
+        <input type="number" id="years" value="10" min="1" max="50" oninput="calculate()" inputmode="numeric">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="expectedSharePrice">Current Share Price <span class="hint">(for DRIP reinvestment)</span></label>
+        <input type="number" id="expectedSharePrice" value="100" min="0.01" step="0.01" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="dividendGrowthPct">Annual Dividend Growth % <span class="hint">aristocrats average ~5%</span></label>
+        <input type="number" id="dividendGrowthPct" value="5" step="0.1" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="drip">Reinvest Dividends (DRIP)?</label>
+        <select id="drip" onchange="calculate()">
+          <option value="yes" selected>Yes — buy more shares each payment</option>
+          <option value="no">No — take cash income</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="wrapper">Tax Wrapper</label>
+        <select id="wrapper" onchange="calculate(); toggleTax()">
+          <option value="taxable" selected>Taxable brokerage</option>
+          <option value="roth_ira">Roth IRA (USA)</option>
+          <option value="traditional_ira">Traditional IRA (USA)</option>
+          <option value="tfsa">TFSA (South Africa)</option>
+          <option value="isa">Stocks &amp; Shares ISA (UK)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group" id="taxRateRow">
+      <label for="taxRatePct">Dividend Tax Rate % <span class="hint">qualified div ~15-20% US; ordinary ~22-37%; SA 20% withholding; UK basic 8.75% / higher 33.75%</span></label>
+      <input type="number" id="taxRatePct" value="15" min="0" max="50" step="0.1" oninput="calculate()" inputmode="decimal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Dividend Income Projection</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Year-1 Monthly Income</div>
+        <div class="result-value" id="r-monthly">—</div>
+        <div class="result-hint">Gross / 12, before tax</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Year-1 Annual Income</div>
+        <div class="result-value" id="r-annual">—</div>
+        <div class="result-hint">Year 1 gross dividends</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Dividends Received</div>
+        <div class="result-value" id="r-total">—</div>
+        <div class="result-hint">Gross sum over horizon</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Tax Paid</div>
+        <div class="result-value" id="r-tax">—</div>
+        <div class="result-hint">In-account tax (0 in wrappers)</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Shares at End</div>
+        <div class="result-value" id="r-shares">—</div>
+        <div class="result-hint">Higher if DRIP is on</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Ending Position Value</div>
+        <div class="result-value" id="r-value">—</div>
+        <div class="result-hint">Shares × current price</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Effective Yield</div>
+        <div class="result-value" id="r-yield">—</div>
+        <div class="result-hint">Y1 income / position value</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>Year-N dividends = shares-at-start-of-year × DPS-for-year-N. DPS grows annually at the dividend growth rate you set (so $1 DPS at 5% growth becomes $1.05 in year 2, $1.10 in year 3, and so on). Tax is deducted at each payment only when the wrapper is set to Taxable. Roth IRA, Traditional IRA, TFSA, and ISA are treated as 0% in-account — Traditional IRA dividends are taxed on withdrawal but that's outside this calc's scope. DRIP buys fractional shares at the assumed share price using the net (after-tax) payment, so shares compound silently between paydays. Share price is held flat — share-price appreciation lives in <a href="/investment-growth/">/investment-growth/</a>.</p>
+    <ul style="margin:12px 0">
+      <li><strong>US dividend tax (qualified vs ordinary):</strong> <a href="https://www.irs.gov/publications/p550" rel="noopener">IRS Publication 550 — Investment Income and Expenses</a></li>
+      <li><strong>UK dividend tax (basic / higher / additional bands):</strong> <a href="https://www.gov.uk/tax-on-dividends" rel="noopener">HMRC — Tax on Dividends</a></li>
+      <li><strong>SA dividend withholding tax (20% flat):</strong> <a href="https://www.sars.gov.za/types-of-tax/dividends-tax/" rel="noopener">SARS — Dividends Tax</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is a dividend?</div>
+      <div class="faq-a">A dividend is a slice of a company's after-tax profit paid out to shareholders, usually in cash and usually quarterly. If you own 100 shares of a stock that pays $4 a year in dividends, you collect $400 a year — $100 every three months in the US, where quarterly is standard. Companies that pay reliable, growing dividends are often called "dividend stocks" or, at the top end, "dividend aristocrats" (25+ years of consecutive raises). Not all companies pay dividends — many growth-stage businesses reinvest 100% of profit instead, so you're betting on share-price appreciation rather than cash income.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is DRIP and is it worth it?</div>
+      <div class="faq-a">DRIP (Dividend Reinvestment Plan) automatically uses your dividend payments to buy more shares of the same stock at each payment date — usually commission-free and with fractional shares. It's the cleanest form of dollar-cost averaging and turns dividends into compound interest: more shares → bigger next dividend → even more shares. Over 20-30 years the difference is dramatic. The trade-off: you lose the cash, so DRIP is only "worth it" if you don't need the income now. Most retirement-accumulation investors keep DRIP on; retirees usually switch it off and live on the cash.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Qualified vs ordinary dividend tax — what's the difference?</div>
+      <div class="faq-a">In the US, "qualified" dividends (most US large-cap stocks held more than 60 days) are taxed at the long-term capital gains rate — 0%, 15%, or 20% depending on income band. "Ordinary" dividends (REITs, MLPs, short holding periods, some foreign stocks) are taxed at your marginal income rate — 10% to 37%. The qualified treatment is a major reason buy-and-hold dividend investors do well in taxable brokerage accounts: a 22%-marginal earner pays 15% on most dividends instead of 22%. Form 1099-DIV breaks the two categories out for you each year.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I pay tax on dividends in a Roth IRA, ISA, or TFSA?</div>
+      <div class="faq-a">No — these are "tax wrappers" that shelter the income inside the account. A Roth IRA pays 0% tax on dividends and 0% on qualified withdrawals after age 59½. A UK Stocks &amp; Shares ISA pays 0% tax on dividends with no withdrawal restriction. A South African TFSA pays 0% tax on dividends (and is exempt from the 20% SA dividend withholding). A Traditional IRA also pays 0% in-account, but dividends + growth are taxed as ordinary income when you withdraw in retirement — so it's tax-deferred, not tax-free. The wrapper hierarchy for dividend investors is generally: Roth/ISA/TFSA &gt; Traditional IRA &gt; Taxable brokerage.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Ex-dividend date — what does it mean for me?</div>
+      <div class="faq-a">The ex-dividend date (ex-date) is the first trading day on which a new buyer is NOT entitled to the upcoming dividend. If you buy the stock the day before the ex-date you get the next dividend; buy on or after the ex-date and the seller keeps it. The share price typically drops by roughly the dividend amount on the ex-date to reflect the value that's about to leave the company. Net result: "buying the dividend" right before the ex-date is usually pointless — you get the cash but lose the same amount on the share price (and pay tax on the dividend in a taxable account). Long-term DRIP investors don't care about ex-dates.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Dividend yield vs dividend growth — which matters more?</div>
+      <div class="faq-a">For income today, yield matters: a 4% yield on a $10,000 position pays $400 next year, a 2% yield pays $200. For income in 20 years, growth matters more: a stock starting at 2% yield and growing dividends 8% a year overtakes a 4%-yield-no-growth stock in roughly 9 years and crushes it by year 20. The Dividend Growth Investing (DGI) school favours growth over starting yield; the high-yield school (REITs, BDCs, utilities) favours starting yield. The sensible middle ground is a "yield + growth ≥ 8%" rule: 3% yield + 6% growth qualifies; so does 5% yield + 3% growth.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When are dividends paid?</div>
+      <div class="faq-a">In the US, most blue-chip dividends are quarterly (4×/year), some are monthly (mostly REITs and a few specialty funds like Realty Income, $O), and a few are annual or semi-annual. In the UK, twice-a-year (an "interim" and a "final" dividend) is the norm. In South Africa, most JSE-listed companies pay twice yearly. Each dividend has four dates: declaration (board announces), ex-date (first day a new buyer doesn't get it), record date (registrar confirms shareholders), and pay date (cash hits your brokerage account). Pay-date is usually 2-6 weeks after declaration.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What's the dividend coverage ratio and why does it matter?</div>
+      <div class="faq-a">Dividend coverage ratio = earnings per share ÷ dividend per share. A ratio above 2 means the company earns at least 2× the dividend it's paying out — comfortable. A ratio between 1 and 2 means the dividend is covered but tight. Below 1 means the company is paying out more than it earns, usually funded by debt or asset sales — a classic dividend-cut warning sign. Equivalent measure: payout ratio (dividend ÷ earnings) below 60% is the conservative target for most sectors; REITs are an exception (legally required to pay out 90% of taxable income, so a 90%+ payout ratio is normal there).</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/investment-growth/" class="related-card">📊 Investment Growth</a>
+      <a href="/roth-ira-calculator/" class="related-card">🇺🇸 Roth IRA</a>
+      <a href="/tfsa-calculator/" class="related-card">🇿🇦 TFSA</a>
+      <a href="/fire-calculator/" class="related-card">🔥 FIRE Number</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="dividend-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/dividend.js" defer></script>
+<script>
+function fmt$(n) {
+  if (n === null || n === undefined || isNaN(n)) return '$0';
+  var v = Math.round(n);
+  var sign = v < 0 ? '-' : '';
+  return sign + '$' + Math.abs(v).toLocaleString('en-US');
+}
+function fmtShares(n) {
+  if (n === null || n === undefined || isNaN(n)) return '0';
+  return (Math.round(n * 100) / 100).toLocaleString('en-US');
+}
+function toggleTax() {
+  var wrapper = document.getElementById('wrapper').value;
+  var row = document.getElementById('taxRateRow');
+  row.style.display = (wrapper === 'taxable') ? '' : 'none';
+}
+function calculate() {
+  if (!window.FCH_DIVIDEND) return;
+  var p = {
+    shares: +document.getElementById('shares').value || 0,
+    dividendPerShare: +document.getElementById('dividendPerShare').value || 0,
+    frequency: document.getElementById('frequency').value,
+    years: +document.getElementById('years').value || 0,
+    drip: document.getElementById('drip').value === 'yes',
+    dividendGrowthPct: +document.getElementById('dividendGrowthPct').value || 0,
+    expectedSharePrice: +document.getElementById('expectedSharePrice').value || 0,
+    taxRatePct: +document.getElementById('taxRatePct').value || 0,
+    wrapper: document.getElementById('wrapper').value,
+  };
+  var R = window.FCH_DIVIDEND.calc(p);
+  var errEl = document.getElementById('error-message');
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    ['r-monthly','r-annual','r-total','r-tax','r-shares','r-value','r-yield'].forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-monthly').textContent = fmt$(R.monthlyIncomeYear1);
+  document.getElementById('r-annual').textContent = fmt$(R.annualIncomeYear1);
+  document.getElementById('r-total').textContent = fmt$(R.totalDividendsReceived);
+  document.getElementById('r-tax').textContent = fmt$(R.totalTaxPaid);
+  document.getElementById('r-shares').textContent = fmtShares(R.sharesAtEnd);
+  document.getElementById('r-value').textContent = fmt$(R.endingValue);
+  document.getElementById('r-yield').textContent = R.effectiveYieldPct.toFixed(2) + '%';
+}
+document.addEventListener('DOMContentLoaded', function () {
+  toggleTax();
+  if (typeof calculate === 'function') calculate();
+});
+</script>
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="7963163804"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter shares owned and annual dividend per share</li>
+      
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Pick the payment frequency (quarterly is the US default)</li>
+      
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Choose whether to reinvest dividends (DRIP) and set an annual dividend growth rate</li>
+      
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Pick your tax wrapper — Taxable, Roth IRA, Traditional IRA, TFSA, or ISA</li>
+      
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Read off year-1 monthly income, total dividends over the horizon, total tax, and ending position value</li>
+      
+    </ol>
+  </section>
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="try-scenarios" aria-labelledby="try-scenarios-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#f4f6fb;border-radius:8px">
+    <h2 id="try-scenarios-heading" style="margin:0 0 6px;color:#1B3A5C;font-size:1.25rem">Try these scenarios</h2>
+    <p style="margin:0 0 12px;font-size:0.95em;color:#444">Tap a scenario to load it into the calculator above.</p>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      
+      <li>
+        <a class="try-scenario-link" href="?shares=100&amp;dividendPerShare=4&amp;frequency=quarterly&amp;years=20&amp;drip=yes&amp;dividendGrowthPct=5&amp;expectedSharePrice=100&amp;wrapper=taxable&amp;taxRatePct=15#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">100 shares of $100 stock, 4% yield, DRIP on, 20yr</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?shares=5000&amp;dividendPerShare=3&amp;frequency=monthly&amp;years=15&amp;drip=no&amp;dividendGrowthPct=2&amp;expectedSharePrice=50&amp;wrapper=taxable&amp;taxRatePct=22#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Retiree taking cash: 5,000 shares of REIT, 6% yield, no DRIP</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?shares=200&amp;dividendPerShare=3&amp;frequency=quarterly&amp;years=30&amp;drip=yes&amp;dividendGrowthPct=8&amp;expectedSharePrice=100&amp;wrapper=roth_ira&amp;taxRatePct=0#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">Roth IRA dividend growth: $20k position, 3% yield, 8% growth, 30yr DRIP</a>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>DRIP is dividend compounding's best friend.</strong> Without reinvestment a 3% dividend yield gives you exactly 3% income per year — flat forever (absent growth). Turn DRIP on and that same 3% yield becomes a 3% compounding rate: after 24 years your share count has doubled at zero new capital, and at year 30 a starting $10,000 position holds about 2.43× the shares (assuming flat share price). Layer in 5% annual dividend growth on top of DRIP and the same $10,000 position throws off roughly $2,300 of income in year 30 — 7.7× the year-1 income on an unchanged starting capital base. The catch is opportunity cost: cash dividends spent today have higher present value than reinvested ones; DRIP only makes sense if you genuinely don't need the income for 10+ years.</p><p><strong>Dividend Growth Investing (DGI) beats yield-chasing for long horizons.</strong> A 2%-yield stock growing dividends 8% a year produces more income than a 5%-yield stock growing 0% within 14 years and crushes it by year 25. The reason is exponentials: dividend growth compounds on a base that also compounds (via DRIP), so a small growth advantage stacks fast. The DGI rule of thumb is yield + 5-year dividend growth ≥ 8%: 3% yield + 6% growth qualifies; so does 5% yield + 3% growth. Dividend aristocrats (25+ consecutive years of raises) and kings (50+) are the canonical DGI universe; the iShares Select Dividend ETF (DVY) and Vanguard Dividend Appreciation ETF (VIG) are passive proxies.</p><p><strong>Tax wrapper hierarchy: Roth / ISA / TFSA > Traditional IRA > Taxable.</strong> Roth IRAs (US), ISAs (UK), and TFSAs (SA) all charge zero in-account tax AND zero withdrawal tax, making them mathematically dominant for dividend strategies — every dollar of DPS turns into a dollar of compounding shares. Traditional IRAs / 401(k)s defer tax (0% in-account, but ordinary-income tax on withdrawal), which is still better than taxable in most cases because the larger compounding base outweighs the back-end tax for long horizons. Taxable brokerage accounts pay every payment — but US qualified dividends get the long-term-cap-gains rate (0/15/20%), so they're not the disaster ordinary-income REIT dividends are. Annual contribution caps for 2026: Roth IRA $7,000 (under 50), ISA £20,000, TFSA R36,000.</p><p><strong>Dividend safety: coverage ratio and payout ratio.</strong> A dividend is only safe if the company actually earns enough to pay it. Dividend coverage ratio (EPS / DPS) above 2× is comfortable; below 1× means the dividend is funded by debt or asset sales — a cut is usually 6-18 months away. Equivalent measure: payout ratio (DPS / EPS) below 60% is the conservative target for industrials, consumer staples, and tech; 60-80% is the danger zone; 80%+ is sustainable only in regulated utilities and REITs (REITs are required to pay out 90% of taxable income). Always check the trailing 5-year payout ratio trend — a steadily rising payout is the slow-motion version of a dividend cut.</p><p><strong>Dividend FIRE: $1m at 4% yield = $40k/yr.</strong> The classic Financial Independence dividend math is to live entirely on dividend income — usually targeting 3-4% yield-on-cost from a diversified DGI portfolio. To replace $40,000 of annual spending you need roughly $1,000,000 invested at 4% yield, or $1,300,000 at 3%. DGI advocates argue this is more robust than the 4% safe-withdrawal rule because you never sell shares (so market crashes don't force selling at a low), and a growing dividend keeps pace with inflation organically. Critics argue the math is identical at the portfolio level — a $40k dividend and a $40k withdrawal both reduce future compounding by the same amount. Either way, this calculator's DRIP-off output is the cleanest way to model the income side of a dividend-FIRE strategy.</p>
+  </section>
+</div>
+
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="1620134192"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-17">17 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+
+
+
+
+
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/compound-interest/">Compound Interest Calculator</a> — See how your money grows over time with the power of compounding. Add monthly contributions to maximise your results.</li>
+      <li><a href="/investment-growth/">🚀 Investment Growth Calculator</a> — See how your investment portfolio grows over time with regular contributions and compound returns.</li>
+      <li><a href="/roth-ira-calculator/">💰 Roth IRA Calculator</a> — See your tax-free retirement balance with 2026 IRS contribution limits and MAGI phase-out applied automatically. USA.</li>
+      <li><a href="/tfsa-calculator/">🇿🇦 TFSA Calculator</a> — Project your tax-free TFSA growth with the R36,000 annual cap and R500,000 lifetime cap enforced. SARS s12T rules applied.</li>
+      <li><a href="/fire-calculator/">🔥 FIRE Calculator</a> — Lean, Regular, Fat, and Coast FIRE in one calculator. Set your spending, savings rate, and SWR — see exactly when you reach financial independence.</li>
+      <li><a href="/retirement-savings/">🏖 Retirement Savings Calculator</a> — Find out if you&#x27;re on track to retire comfortably - and exactly how much you need to save each month.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="5980987973"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+</main>
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>
