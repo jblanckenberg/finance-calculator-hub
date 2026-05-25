@@ -1773,6 +1773,120 @@
     ],
     "keyConcepts": "<p><strong>Tax stack.</strong> A 401(k) withdrawal triggers up to three federal/state taxes: ordinary income tax at your marginal federal bracket, state income tax (0% in 8 states), and the 10% early-withdrawal penalty (IRC §72(t)) if you're under 59½ without an exemption. The combined effective rate stacks rather than averages.</p><p><strong>Marginal vs effective rate.</strong> Your marginal bracket is the rate on your LAST dollar. Your effective rate is total tax ÷ total income. Because 401(k) withdrawals are added on top of your existing income, the withdrawal is almost entirely taxed at your top marginal bracket. A $50k withdrawal on top of $80k salary is taxed at 22-24% — not the lower average bracket implied by your full income.</p><p><strong>The 10% penalty isn't tax-deductible.</strong> Federal and state income tax can sometimes be reduced by deductions, credits, or timing. The 10% early-withdrawal penalty cannot — it's a flat 10% on the gross amount no matter what. The only way to avoid it is to qualify for an exemption (Rule of 55, hardship, SEPP, disability, etc.).</p><p><strong>2026 federal brackets (single filer).</strong> 10% to $11,925; 12% to $48,475; 22% to $103,350; 24% to $197,300; 32% to $250,525; 35% to $626,350; 37% above. Married-filing-jointly brackets are roughly 2x the singles. Large 401(k) withdrawals can push you into a higher bracket — split across years if possible.</p><p><strong>State variation matters.</strong> The 8 no-state-tax states (AK, FL, NV, NH, SD, TN, TX, WY) impose 0%. The top end: California 13.3%, Hawaii 11%, New York 10.9%, New Jersey 10.75%. A $100k withdrawal saves $13,300 by being a Texas resident vs Californian — significant enough that some pre-retirees time a state move around large withdrawals.</p>"
   },
+  "mortgage-repayment-calculator": {
+    "slug": "mortgage-repayment-calculator",
+    "name": "🇬🇧 UK Mortgage Repayment Calculator",
+    "title": "UK Mortgage Repayment Calculator + Fixed-End Balance",
+    "description": "Free UK mortgage repayment calculator. Monthly payment, total interest, and the balance you'll be remortgaging when your fixed-rate period ends.",
+    "h1": "🇬🇧 UK Mortgage Repayment Calculator",
+    "subtitle": "Monthly payment, total interest over the term, and the balance at the end of any fixed-rate period — using UK convention (monthly-paid-in-arrears).",
+    "metaDescription": "Free UK mortgage repayment calculator. Monthly payment, total interest, and the balance you'll be remortgaging when your fixed-rate period ends.",
+    "regions": ["UK"],
+    "primaryKeyword": "mortgage loan repayment calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "UK Mortgage Repayment Calculator",
+      "description": "Calculate UK mortgage monthly payment, total interest, and balance at the end of a fixed-rate period.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to calculate a UK mortgage repayment",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your mortgage balance in pounds",
+        "Set your interest rate (annual %)",
+        "Enter the total term in years",
+        "Optionally enter the fixed-rate period (2, 5, or 10 years)",
+        "Review monthly payment, total interest, and balance at fixed-end"
+      ]
+    },
+    "faq": [
+      { "q": "How is a UK mortgage repayment calculated?", "a": "UK mortgages use the standard amortisation formula: M = P × r(1+r)^n / ((1+r)^n − 1), where P is the loan amount, r is the monthly interest rate (annual ÷ 12), and n is the total number of monthly payments. The same payment is made every month, but the split between interest and capital shifts over time — early payments are mostly interest, later ones mostly capital." },
+      { "q": "UK vs US mortgage — what's the difference?", "a": "Maths is identical. What differs is the rate environment: UK borrowers typically take a 2/3/5/10-year fixed-rate deal then revert to the lender's Standard Variable Rate (SVR) — a step-up that doesn't exist in the US 30-year-fixed market. UK mortgages also charge in arrears (end of month), US in advance (start of month). Both differences are sub-percent annual cost — the headline rate matters far more than the convention." },
+      { "q": "What happens when my fixed-rate period ends?", "a": "Your mortgage reverts to your lender's Standard Variable Rate (SVR) — typically 6–9% in 2026, well above current fixed-rate deals. Options: remortgage to a new fixed-rate deal (usual choice, costs £500–£1,500 in fees) or stay on SVR temporarily if you're planning to sell or repay imminently. Most borrowers start shopping 6 months before fix-end." },
+      { "q": "How does APRC differ from interest rate?", "a": "APRC (Annual Percentage Rate of Charge) is the all-in cost including arrangement fees, valuation fees, and other charges, expressed as an annual rate. The headline rate is the rate on the borrowing only. Two products at the same headline rate can have meaningfully different APRC. For comparison shopping, APRC is the honest number; for budgeting your monthly, use the headline rate." },
+      { "q": "What affects what I can borrow?", "a": "UK lenders cap mortgages at typically 4.5× joint income, with stress-tests at a higher rate. Deposit size matters: 5–10% deposit gets high-LTV at higher rate; 20–25% deposit unlocks materially cheaper deals. Credit history, employment type, affordability of other debt, and property type all affect approval and rate." },
+      { "q": "What is an interest-only mortgage?", "a": "An interest-only mortgage pays ONLY the monthly interest — the principal stays the same for the whole term, repaid at term-end via investment vehicle or property sale. Cheaper monthly than repayment, but you owe the full balance at the end. Now mostly restricted to buy-to-let or high-net-worth residential with proven repayment vehicles. This calculator models REPAYMENT mortgages." },
+      { "q": "What's the difference between repayment and overpayment?", "a": "A repayment mortgage pays off both interest and capital each month over the agreed term. An overpayment is an additional payment on top of the scheduled monthly that goes 100% against capital. Most UK fixes allow up to 10% of outstanding balance per year in overpayments without an ERC. Use the linked Overpayment Calculator to model impact." },
+      { "q": "Should I take a 2, 5, or 10-year fix?", "a": "Trade-off between rate certainty and rate exposure. 2-year fixes have lower headline rates and more choice but expose you to remortgage every 2 years (and ~£1k in fees). 5-year fixes give 60 months of certainty at a small premium. 10-year fixes cost more upfront but lock in cheap money if rates rise. Around 60% of UK borrowers take a 5-year fix as the middle-ground default." }
+    ],
+    "sources": [
+      { "url": "https://www.fca.org.uk/consumers/mortgages", "label": "FCA — Mortgages" },
+      { "url": "https://www.gov.uk/stamp-duty-land-tax", "label": "GOV.UK — Stamp Duty Land Tax" },
+      { "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate", "label": "Bank of England — Bank Rate" }
+    ],
+    "related": [
+      "mortgage-overpayment-calculator",
+      "mortgage",
+      "isa-calculator",
+      "take-home-pay",
+      "savings-goal",
+      "compound-interest"
+    ],
+    "scenarios": [
+      { "label": "£200k 25yr @ 5%, 5yr fix", "query": "balance=200000&ratePct=5&termYears=25&fixedYears=5" },
+      { "label": "£350k 30yr @ 4.5%, 2yr fix", "query": "balance=350000&ratePct=4.5&termYears=30&fixedYears=2" },
+      { "label": "£150k 20yr @ 6%, 10yr fix", "query": "balance=150000&ratePct=6&termYears=20&fixedYears=10" }
+    ],
+    "keyConcepts": "<p><strong>The amortisation formula.</strong> Every UK mortgage uses the same standard formula: M = P × r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup> − 1). Same payment every month but the interest/capital split shifts — early years are mostly interest, later years mostly capital. The first year of a 25-year £200k mortgage at 5% pays ~£10k interest and ~£4k capital; the last year pays the inverse.</p><p><strong>The fixed-rate cliff.</strong> UK mortgages typically come with a 2-, 5-, or 10-year fixed rate, then revert to the lender's Standard Variable Rate (SVR) — which in 2026 is 6–9%, well above current fixed deals. The fixed-rate-end balance is what you'll be remortgaging. If you don't remortgage on time, you'll be paying the SVR — which on a £150k balance at SVR 7% vs a 5% remortgage is around £150/month wasted.</p><p><strong>APRC vs headline rate.</strong> APRC is the lender's all-in cost including arrangement fees, valuation fees, and other charges, expressed as an annual rate. The headline rate is the borrowing rate only. APRC is the honest comparison number; the headline rate determines your monthly payment.</p><p><strong>Affordability stress-tests.</strong> UK lenders test your ability to pay at SVR + 1% (or 6.99% minimum) — meaning your true borrowing capacity is roughly 4.5× joint income at TODAY's rates, not at the rate of a cheap 2-year fix. This is why borrowers get materially smaller offers in high-rate environments.</p><p><strong>Common UK borrower mistake.</strong> Letting your fix expire onto SVR without remortgaging. The fee for remortgaging is £500–£1,500; the SVR penalty is often £100–£300/month — i.e. the fee pays for itself in 3–6 months. Set a calendar reminder for 6 months before fix-end and shop around.</p>"
+  },
+  "mortgage-overpayment-calculator": {
+    "slug": "mortgage-overpayment-calculator",
+    "name": "💰 UK Mortgage Overpayment Calculator",
+    "title": "UK Mortgage Overpayment Calculator: Interest Saved",
+    "description": "Free UK mortgage overpayment calculator. See how much interest you save and how many years come off your term by overpaying monthly or with a lump sum.",
+    "h1": "💰 UK Mortgage Overpayment Calculator",
+    "subtitle": "Model the interest you'll save and the years you'll cut from your mortgage term by overpaying monthly, with a lump sum, or both. ERC caveat: most UK fixes allow 10% per year before charges kick in.",
+    "metaDescription": "Free UK mortgage overpayment calculator. See how much interest you save and how many years come off your term by overpaying monthly or with a lump sum.",
+    "regions": ["UK"],
+    "primaryKeyword": "mortgage overpayment calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "UK Mortgage Overpayment Calculator",
+      "description": "Calculate the interest saved and term reduction from overpaying a UK mortgage monthly or with a lump sum.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to calculate UK mortgage overpayment savings",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter your current mortgage balance, rate, and remaining term",
+        "Enter the monthly overpayment you can afford",
+        "Optionally add a one-off lump sum (e.g. bonus, inheritance)",
+        "Review interest saved, years saved, and new payoff date",
+        "Check your mortgage offer for the 10% ERC-free overpayment limit"
+      ]
+    },
+    "faq": [
+      { "q": "How does overpaying my mortgage actually save money?", "a": "Every £1 overpaid goes straight against the principal — it doesn't pay interest. Because future monthly interest is calculated on the smaller balance, you'll pay less interest in every remaining month. The compound effect is large: a £200/month overpayment on a £200k 25-year mortgage at 5% saves around £33,000 in interest AND shortens the term by 5+ years." },
+      { "q": "What is the 10% overpayment rule?", "a": "Most UK fixed-rate mortgages allow up to 10% of the outstanding balance per year in overpayments without an Early Repayment Charge (ERC). For a £200,000 balance, that's £20,000/year (£1,667/month). Overpay above this and the lender charges 1–5% of the excess. Tracker, discount, and SVR mortgages often have no cap. Check your offer document for the exact rule." },
+      { "q": "Overpay the mortgage or invest instead?", "a": "Compare your mortgage rate against expected after-tax investment return. Overpaying a 5% mortgage gives a guaranteed 5% return (no tax). Investing in an ISA at 6% real return gives a higher EXPECTED return — but with risk. Conservative rule: pay off debt above 4%; consider investing for debt below 4%. The decision also weights debt-free certainty against liquidity (overpaid mortgage isn't accessible without remortgaging)." },
+      { "q": "What is an Early Repayment Charge (ERC)?", "a": "A fee charged if you repay more than the permitted overpayment limit during the fixed period. Typical schedule: 5% in year 1, 4% in year 2, 3% in year 3, 2% in year 4, 1% in year 5 of a 5-year fix. Overpaying £20k in year 2 at 4% ERC = £800 charge. ERCs disappear once the fixed period ends. For most overpayments under the 10% rule, no ERC applies." },
+      { "q": "Monthly overpayments or lump sums?", "a": "Monthly overpayments compound faster — every month they reduce the balance further. A £200/month overpayment beats a £2,400 annual lump sum in interest saved, because monthly start working in month 1 vs month 12. Lump sums suit windfalls (bonus, tax refund, inheritance); monthly suits regular income. Either beats doing nothing." },
+      { "q": "Will overpaying shorten my term or reduce my payment?", "a": "Default is shorten the term. Some lenders offer the alternative of reducing the monthly payment (recalculate a smaller monthly over the original term). Most UK mortgages default to shortening; you must call to switch. Reducing the payment provides cash-flow relief but saves less interest overall." },
+      { "q": "Does overpaying improve my credit score?", "a": "Indirectly. Your score doesn't track mortgage overpayments specifically, but reducing the balance lowers your debt-to-credit ratio. More importantly: when you remortgage at fix-end, a lower LTV unlocks materially cheaper deals (60% LTV is typically 0.3–0.5% cheaper than 75% LTV). For a £200k borrower, that's £600–£1000/year saved." },
+      { "q": "When does overpaying NOT make sense?", "a": "Three scenarios. (1) No emergency fund — overpayments aren't liquid; if you lose your job you can't extract the cash without remortgaging. Build 3–6 months of expenses first. (2) Higher-rate debt (credit cards, personal loans) — pay those first. (3) Maxed tax-shelter room — £20k/year of ISA at 7% beats 4–5% mortgage payoff after tax. Overpay AFTER these are covered." }
+    ],
+    "sources": [
+      { "url": "https://www.fca.org.uk/consumers/mortgages", "label": "FCA — Mortgages" },
+      { "url": "https://www.moneysavingexpert.com/mortgages/mortgage-overpayment-calculator/", "label": "MoneySavingExpert — Overpayment + ERC explainer" },
+      { "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate", "label": "Bank of England — Bank Rate" }
+    ],
+    "related": [
+      "mortgage-repayment-calculator",
+      "mortgage",
+      "isa-calculator",
+      "compound-interest",
+      "investment-growth",
+      "savings-goal"
+    ],
+    "scenarios": [
+      { "label": "£200 monthly on £200k 25yr @ 5%", "query": "balance=200000&ratePct=5&termYears=25&monthlyOverpayment=200&lumpSum=0" },
+      { "label": "£10k lump + £100/mo on £200k", "query": "balance=200000&ratePct=5&termYears=25&monthlyOverpayment=100&lumpSum=10000" },
+      { "label": "£500 monthly aggressive payoff", "query": "balance=200000&ratePct=5&termYears=25&monthlyOverpayment=500&lumpSum=0" }
+    ],
+    "keyConcepts": "<p><strong>How overpayment saves money.</strong> Every £1 overpaid goes straight against capital and reduces every future month's interest. The compound effect is enormous: £200/month on a £200k 25yr at 5% saves around £33,000 in interest AND shortens the term by 5+ years. The interest saving alone is a guaranteed risk-free 5% return on the overpayment.</p><p><strong>The 10% ERC-free rule.</strong> Most UK fixed-rate mortgages allow overpayments up to 10% of the OUTSTANDING balance per year (not original balance) without an Early Repayment Charge. For £200k that's £20k/year. Tracker, discount, and SVR mortgages typically have no cap. Always check your offer document — penalty for breaching the cap is 1–5% of the excess.</p><p><strong>Overpay vs invest decision.</strong> Treat the mortgage rate as the hurdle rate for your alternative investment. Mortgage at 5% means you need an after-tax expected return above 5% to make investing the better choice. Stocks & Shares ISA historically returns 6–7% real (after inflation), which BEATS most mortgage rates — but with risk. Cash ISA at 4–5% LOSES to a 5% mortgage rate. Pay-off-the-mortgage is the conservative play; invest is the higher-expected-return play.</p><p><strong>The cash-flow trap.</strong> Overpaying ties up money. If you lose your job or face a big expense, you can't reclaim the overpayment without remortgaging (which takes 4–8 weeks and costs £500+). Most planners recommend building a 3–6-month emergency fund in an ISA or savings account BEFORE making meaningful overpayments. Overpayments aren't liquid.</p><p><strong>Shorten term vs reduce payment.</strong> Default UK lender behaviour: keep monthly payment the same, shorten the term (saves more interest). Alternative: recalculate a smaller monthly payment over the original term (better cash flow but saves less). Most lenders need you to call to switch from shortening to reducing. For most borrowers, shortening is mathematically better.</p>"
+  },
   "isa-calculator": {
     "slug": "isa-calculator",
     "name": "🇬🇧 ISA Calculator",

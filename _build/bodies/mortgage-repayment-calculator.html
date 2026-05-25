@@ -1,0 +1,166 @@
+<!-- UK Mortgage Repayment Calculator -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#fff8e1;border-left:4px solid #f5b800;margin-bottom:16px">
+    <strong>🇬🇧 UK Mortgage Repayment Calculator</strong> — Monthly payment, total interest, and balance at the end of any fixed-rate period. Uses UK convention (monthly-paid-in-arrears).
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Mortgage Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="balance">Mortgage Balance <span class="hint">(£)</span></label>
+        <input type="number" id="balance" value="200000" min="0" placeholder="200000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="ratePct">Interest Rate (%, annual)</label>
+        <input type="number" id="ratePct" value="5" min="0" max="30" step="0.01" placeholder="5" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="termYears">Term (years)</label>
+        <input type="number" id="termYears" value="25" min="1" max="40" placeholder="25" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="fixedYears">Fixed-Rate Period (years) <span class="hint">optional — leave 0 for none</span></label>
+        <input type="number" id="fixedYears" value="5" min="0" max="40" placeholder="5" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Results</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Monthly Payment</div>
+        <div class="result-value" id="r-monthly">—</div>
+        <div class="result-hint">Capital + interest, paid in arrears</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Interest Over Term</div>
+        <div class="result-value" id="r-interest">—</div>
+        <div class="result-hint">Across all years at this rate</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Paid Over Term</div>
+        <div class="result-value" id="r-total">—</div>
+        <div class="result-hint">Capital + total interest</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Balance at End of Fixed Period</div>
+        <div class="result-value" id="r-fixedBalance">—</div>
+        <div class="result-hint" id="r-fixedHint">The amount you'll be remortgaging</div>
+      </div>
+    </div>
+
+    <div class="breakdown" style="margin-top:16px">
+      <div class="card-title">Year-end balance snapshots</div>
+      <table class="breakdown-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th class="td-right">Year-end balance</th>
+            <th class="td-right">Interest this year</th>
+            <th class="td-right">Capital this year</th>
+          </tr>
+        </thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>Standard UK amortisation formula: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:0.95em">M = P × r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup> − 1)</code>, where P is the balance, r is the monthly rate (annual ÷ 12), and n is total months (years × 12). UK lenders charge monthly in arrears — payment at month-end. The fixed-period balance is what you'll be remortgaging when your initial fix ends and the loan reverts to the lender's Standard Variable Rate (SVR), which is typically 1–4 percentage points higher.</p>
+    <ul style="margin:12px 0">
+      <li><strong>FCA mortgage rules:</strong> <a href="https://www.fca.org.uk/consumers/mortgages" rel="noopener">Financial Conduct Authority — Mortgages</a></li>
+      <li><strong>Stamp Duty Land Tax (separate calc):</strong> <a href="https://www.gov.uk/stamp-duty-land-tax" rel="noopener">GOV.UK — SDLT</a></li>
+      <li><strong>Bank of England base rate:</strong> <a href="https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate" rel="noopener">BoE — Bank Rate</a> (drives variable-rate mortgages)</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How is a UK mortgage repayment calculated?</div><div class="faq-a">UK mortgages use the standard amortisation formula: M = P × r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup> − 1), where P is the loan amount, r is the monthly interest rate (annual ÷ 12), and n is the total number of monthly payments. The same payment is made every month, but the split between interest and capital shifts over time — early payments are mostly interest, later ones mostly capital.</div></div><div class="faq-item"><div class="faq-q">UK vs US mortgage — what's the difference?</div><div class="faq-a">Maths is identical (same amortisation formula). What differs is the rate environment: UK borrowers typically take a 2/3/5/10-year fixed-rate deal then revert to the lender's Standard Variable Rate (SVR) — a step-up that doesn't exist in the US 30-year-fixed market. UK mortgages also charge in arrears (end of month), US in advance (start of month). Both differences are sub-percent annual cost — the headline rate matters far more than the convention.</div></div><div class="faq-item"><div class="faq-q">What happens when my fixed-rate period ends?</div><div class="faq-a">Your mortgage reverts to your lender's Standard Variable Rate (SVR) — typically 6–9% in 2026, well above current fixed-rate deals. Two options: (1) Remortgage to a new fixed-rate deal with the same or a different lender (usual choice, costs £500–£1,500 in fees) or (2) Stay on SVR temporarily if you're planning to sell or repay imminently. Most borrowers start shopping for a new fix 6 months before fix-end.</div></div><div class="faq-item"><div class="faq-q">How does APRC differ from interest rate?</div><div class="faq-a">APRC (Annual Percentage Rate of Charge) is the all-in cost of the mortgage including arrangement fees, valuation fees, and any other charges, expressed as an annual rate. The headline interest rate is just the rate on the borrowing itself. Two products at the same headline rate can have meaningfully different APRC. For comparison shopping, the APRC is the honest number; for budgeting your monthly payment, use the headline rate.</div></div><div class="faq-item"><div class="faq-q">What affects what I can borrow?</div><div class="faq-a">UK lenders cap mortgages at typically 4.5× joint income, with stress-tests at a higher rate (usually fix rate + 1% or SVR + 1%, whichever is greater). Deposit size matters: 5–10% deposit gets you a high-LTV product at higher rate; 20–25% deposit unlocks materially cheaper deals. Credit history, employment type (self-employed faces more scrutiny), affordability of other debt, and the property type (flats above commercial, ex-local-authority, non-standard construction) all affect approval and rate.</div></div><div class="faq-item"><div class="faq-q">What is an interest-only mortgage?</div><div class="faq-a">An interest-only mortgage pays ONLY the monthly interest — the principal balance stays the same for the whole term. You're expected to repay the principal at term-end via an investment vehicle (ISA, pension) or property sale. Cheaper monthly than repayment, but you owe the full balance at the end. Now mostly restricted to buy-to-let mortgages or high-net-worth residential borrowers with proven repayment vehicles. This calculator models REPAYMENT (capital + interest) mortgages.</div></div><div class="faq-item"><div class="faq-q">What's the difference between repayment and overpayment?</div><div class="faq-a">A repayment mortgage pays off both interest and capital each month over the agreed term. An overpayment is an additional payment on top of the scheduled monthly payment that goes 100% against the capital. Most UK fixed-rate mortgages allow up to 10% of the outstanding balance per year in overpayments without an Early Repayment Charge — beyond that, lenders charge a percentage of the excess. Use the Mortgage Overpayment Calculator to model the impact.</div></div><div class="faq-item"><div class="faq-q">Should I take a 2, 5, or 10-year fix?</div><div class="faq-a">Trade-off between rate certainty and rate exposure. 2-year fixes typically have lower headline rates and more product choice but expose you to remortgage risk every 2 years (and ~£1k in fees each time). 5-year fixes give 60 months of certainty at a small premium. 10-year fixes cost more upfront but if rates rise materially you've locked in cheap money for a decade. Most UK borrowers (around 60%) take a 5-year fix as the middle-ground default.</div></div><div class="faq-item"><div class="faq-q">Can I switch lenders mid-fix?</div><div class="faq-a">Yes, but with an Early Repayment Charge (ERC) — typically 1–5% of outstanding balance, decreasing as the fix nears end. For a £200k mortgage at 3% ERC, that's £6,000 — usually more than the savings from switching, unless rates have dropped substantially or your circumstances have changed. ERC is the reason most borrowers wait for fix-end before remortgaging.</div></div></div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/mortgage-overpayment-calculator/" class="related-card">💰 Mortgage Overpayment</a>
+      <a href="/mortgage/" class="related-card">🏠 Standard Mortgage</a>
+      <a href="/stamp-duty-calculator/" class="related-card">📑 Stamp Duty (SDLT)</a>
+      <a href="/isa-calculator/" class="related-card">🇬🇧 ISA Calculator</a>
+      <a href="/take-home-pay/" class="related-card">💵 UK Take-Home Pay</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="mortgage-repayment-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/mortgage-uk.js" defer></script>
+<script>
+function fmt(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+function calculate() {
+  if (!window.FCH_MORTGAGE_UK) return;
+  var fy = +document.getElementById('fixedYears').value;
+  var p = {
+    balance: +document.getElementById('balance').value,
+    ratePct: +document.getElementById('ratePct').value,
+    termYears: +document.getElementById('termYears').value,
+    fixedYears: fy > 0 ? fy : null,
+  };
+  var R = window.FCH_MORTGAGE_UK.payment(p);
+  var errEl = document.getElementById('error-message');
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    ['r-monthly', 'r-interest', 'r-total', 'r-fixedBalance'].forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    document.getElementById('breakdown-body').innerHTML = '';
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-monthly').textContent = fmt(R.monthlyPayment);
+  document.getElementById('r-interest').textContent = fmt(R.totalInterest);
+  document.getElementById('r-total').textContent = fmt(R.totalPaid);
+  if (R.balanceAtFixedEnd !== null) {
+    document.getElementById('r-fixedBalance').textContent = fmt(R.balanceAtFixedEnd);
+    document.getElementById('r-fixedHint').textContent = 'After ' + (p.fixedYears) + ' year' + (p.fixedYears === 1 ? '' : 's') + ' you remortgage this amount';
+  } else {
+    document.getElementById('r-fixedBalance').textContent = '—';
+    document.getElementById('r-fixedHint').textContent = 'Set a fixed-rate period above to see this';
+  }
+  // Year-end snapshots: derive interest/capital this year from cumulative schedule
+  var rows = R.schedule;
+  var html = '';
+  var prevBal = p.balance;
+  for (var i = 0; i < rows.length; i++) {
+    var row = rows[i];
+    var thisYearInterest = 0;
+    var thisYearCapital = 0;
+    // Schedule entries are year-end snapshots already, so for each year:
+    // Interest this year ≈ 12 × interest at month 12*(year-1)+12 -- rough but useful
+    // Actually we have per-month rows only at year-ends, so reconstruct from balance delta:
+    var balDrop = prevBal - row.balance;
+    // Total paid this year = 12 × monthlyPayment (approx)
+    var paidThisYear = R.monthlyPayment * 12;
+    thisYearInterest = Math.max(0, paidThisYear - balDrop);
+    thisYearCapital = balDrop;
+    html += '<tr><td>' + row.year + '</td><td class="td-right">' + fmt(row.balance) + '</td><td class="td-right">' + fmt(thisYearInterest) + '</td><td class="td-right">' + fmt(thisYearCapital) + '</td></tr>';
+    prevBal = row.balance;
+  }
+  document.getElementById('breakdown-body').innerHTML = html;
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>

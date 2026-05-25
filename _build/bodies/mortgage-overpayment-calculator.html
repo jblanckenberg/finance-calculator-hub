@@ -1,0 +1,150 @@
+<!-- UK Mortgage Overpayment Calculator -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#fff8e1;border-left:4px solid #f5b800;margin-bottom:16px">
+    <strong>💰 UK Mortgage Overpayment Calculator</strong> — See how much interest you save and how many years come off your term by overpaying monthly or with a lump sum. Most UK fixes allow up to 10% per year before ERC kicks in.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Mortgage Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="balance">Current Mortgage Balance <span class="hint">(£)</span></label>
+        <input type="number" id="balance" value="200000" min="0" placeholder="200000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="ratePct">Interest Rate (%, annual)</label>
+        <input type="number" id="ratePct" value="5" min="0" max="30" step="0.01" placeholder="5" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="termYears">Remaining Term (years)</label>
+        <input type="number" id="termYears" value="25" min="1" max="40" placeholder="25" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="monthlyOverpayment">Monthly Overpayment <span class="hint">(£)</span></label>
+        <input type="number" id="monthlyOverpayment" value="200" min="0" placeholder="200" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lumpSum">One-off Lump Sum Now <span class="hint">(£, optional)</span></label>
+      <input type="number" id="lumpSum" value="0" min="0" placeholder="0" oninput="calculate()" inputmode="decimal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Results</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Interest Saved</div>
+        <div class="result-value" id="r-interestSaved">—</div>
+        <div class="result-hint">vs paying the scheduled amount only</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Years Off the Term</div>
+        <div class="result-value" id="r-yearsSaved">—</div>
+        <div class="result-hint" id="r-monthsHint">Months removed from the mortgage</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">New Monthly Outgoing</div>
+        <div class="result-value" id="r-newMonthly">—</div>
+        <div class="result-hint">Scheduled payment + your overpayment</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">New Payoff Date</div>
+        <div class="result-value" id="r-payoff">—</div>
+        <div class="result-hint" id="r-payoffHint">Years from today</div>
+      </div>
+    </div>
+    <div class="breakdown" style="margin-top:16px">
+      <div class="card-title">Year-end balance under your overpayment plan</div>
+      <table class="breakdown-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th class="td-right">Year-end balance</th>
+          </tr>
+        </thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>The calculator runs the amortisation schedule twice — once at your scheduled monthly payment, once with your overpayment(s) added — and reports the difference. Monthly overpayments are applied EVERY month for the remaining term; the lump sum is applied at month 1. Most UK fixed-rate mortgages allow overpayments up to 10% of the OUTSTANDING balance per year without an Early Repayment Charge (ERC) — beyond that, you'll pay a percentage of the excess. Check your mortgage offer for the exact 10%-rule and ERC schedule before overpaying.</p>
+    <ul style="margin:12px 0">
+      <li><strong>FCA mortgage rules:</strong> <a href="https://www.fca.org.uk/consumers/mortgages" rel="noopener">FCA — Mortgages</a></li>
+      <li><strong>MoneySavingExpert ERC guide:</strong> <a href="https://www.moneysavingexpert.com/mortgages/mortgage-overpayment-calculator/" rel="noopener">MSE — Mortgage Overpayment Calculator + ERC explainer</a></li>
+      <li><strong>Bank of England base rate:</strong> <a href="https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate" rel="noopener">BoE — Bank Rate</a> (determines variable-rate moves)</li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">How does overpaying my mortgage actually save money?</div><div class="faq-a">Every £1 overpaid goes straight against the principal balance — it doesn't pay interest. Because future monthly interest is calculated on the (now smaller) balance, you'll pay less interest in every remaining month. The compound effect is large: a £200/month overpayment on a £200k 25-year mortgage at 5% saves around £33,000 in interest over the original term AND shortens the term by 5+ years.</div></div><div class="faq-item"><div class="faq-q">What is the 10% overpayment rule?</div><div class="faq-a">Most UK fixed-rate mortgages allow you to overpay up to 10% of the outstanding balance per year without an Early Repayment Charge (ERC). For a £200,000 balance, that's £20,000/year (£1,667/month). Overpay above this and the lender charges a percentage of the excess (typically 1–5%, decreasing as the fix nears end). Tracker, discount, and SVR mortgages often have no overpayment cap. Always check your offer document for the exact rule.</div></div><div class="faq-item"><div class="faq-q">Overpay the mortgage or invest instead?</div><div class="faq-a">Compare your mortgage rate against your expected after-tax investment return. Overpaying a 5% mortgage gives you a guaranteed 5% return (no tax on the savings). Investing in a Stocks & Shares ISA at 6% real return (after inflation) gives you a higher EXPECTED return — but with risk. Conservative rule: pay off debt above 4%; consider investing for debt below 4%. The decision also weights emotional preferences (debt-free certainty) against optionality (an invested £100k is liquid; an overpaid mortgage isn't).</div></div><div class="faq-item"><div class="faq-q">What is an Early Repayment Charge (ERC)?</div><div class="faq-a">An ERC is a fee charged by the lender if you repay more than the permitted overpayment limit during the fixed-rate period. Typical ERC schedule: 5% in year 1, 4% in year 2, 3% in year 3, 2% in year 4, 1% in year 5 of a 5-year fix. So overpaying £20k in year 2 of a 5-year fix at 4% ERC = £800 charge. ERCs disappear once the fixed period ends. For most overpayments under the 10% rule, no ERC applies.</div></div><div class="faq-item"><div class="faq-q">Should I make monthly overpayments or save up for a lump sum?</div><div class="faq-a">Monthly overpayments compound faster — every month they reduce the balance further. A £200/month overpayment beats a £2,400 annual lump sum in interest saved, because the monthly payments start working in month 1 vs month 12. Lump sums make sense for windfalls (bonus, tax refund, inheritance) but for regular income, monthly is mathematically optimal. Either way, both beat doing nothing.</div></div><div class="faq-item"><div class="faq-q">Will overpaying shorten my term or reduce my payment?</div><div class="faq-a">Default is to shorten the term (lender keeps your monthly payment the same; overpayment accelerates payoff). Some lenders offer the alternative of \"reduce the term\" or \"reduce the monthly\" — the latter recalculates a smaller monthly payment over the original term. Most UK mortgages default to shortening; you have to call the lender to reduce the payment instead. Reducing the payment provides cash-flow relief but saves less interest overall.</div></div><div class="faq-item"><div class="faq-q">Does overpaying improve my credit score?</div><div class="faq-a">Indirectly. Your credit score doesn't track mortgage overpayments specifically, but reducing the outstanding balance lowers your debt-to-credit ratio, which is a factor in credit scoring. More importantly: when you remortgage at the end of your fix, a lower LTV unlocks materially cheaper deals (60% LTV products are typically 0.3–0.5% cheaper than 75% LTV). For a £200k borrower, that's £600–£1000/year saved on the next 5-year fix.</div></div><div class="faq-item"><div class="faq-q">Are mortgage overpayments tax-deductible in the UK?</div><div class="faq-a">No. Mortgage interest hasn't been deductible against income for owner-occupied residential mortgages in the UK since the abolition of MIRAS in 2000. Buy-to-let landlords used to deduct mortgage interest from rental income but Section 24 (phased in 2017–2020) replaced this with a basic-rate tax credit, eliminating most of the benefit for higher-rate landlords. The interest saved from overpayment is your full return — no tax adjustments needed.</div></div><div class="faq-item"><div class="faq-q">When does overpaying NOT make sense?</div><div class="faq-a">Three scenarios. (1) You don't yet have an emergency fund — overpaying isn't liquid; if you lose your job you can't extract the cash without remortgaging. Build 3–6 months of expenses in a savings account first. (2) You have higher-rate debt (credit cards at 20%+, personal loans at 8%+) — pay those first. (3) You've not maxed out higher-return tax-shelters — £20,000/year of ISA room growing at 7% beats a 4–5% mortgage payoff after tax considerations. Overpay AFTER these are covered.</div></div></div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/mortgage-repayment-calculator/" class="related-card">🇬🇧 UK Repayment Calculator</a>
+      <a href="/mortgage/" class="related-card">🏠 Standard Mortgage</a>
+      <a href="/stamp-duty-calculator/" class="related-card">📑 Stamp Duty (SDLT)</a>
+      <a href="/isa-calculator/" class="related-card">🇬🇧 ISA Calculator</a>
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/savings-vs-investing-calculator/" class="related-card">💰 Save vs Invest</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="mortgage-overpayment-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/mortgage-uk.js" defer></script>
+<script>
+function fmt(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+function calculate() {
+  if (!window.FCH_MORTGAGE_UK) return;
+  var p = {
+    balance: +document.getElementById('balance').value,
+    ratePct: +document.getElementById('ratePct').value,
+    termYears: +document.getElementById('termYears').value,
+    monthlyOverpayment: +document.getElementById('monthlyOverpayment').value || 0,
+    lumpSum: +document.getElementById('lumpSum').value || 0,
+  };
+  var R = window.FCH_MORTGAGE_UK.overpayment(p);
+  var errEl = document.getElementById('error-message');
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    ['r-interestSaved', 'r-yearsSaved', 'r-newMonthly', 'r-payoff'].forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    document.getElementById('breakdown-body').innerHTML = '';
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-interestSaved').textContent = fmt(R.interestSaved);
+  document.getElementById('r-yearsSaved').textContent = R.yearsSaved + ' yrs';
+  document.getElementById('r-monthsHint').textContent = R.monthsSaved + ' months saved off the original ' + R.baselineMonths + '-month term';
+  document.getElementById('r-newMonthly').textContent = fmt(R.newMonthlyOutgoing);
+  document.getElementById('r-payoff').textContent = R.newYears + ' yrs';
+  document.getElementById('r-payoffHint').textContent = 'Down from ' + (R.baselineMonths / 12).toFixed(1) + ' yrs';
+  var html = '';
+  for (var i = 0; i < R.schedule.length; i++) {
+    var row = R.schedule[i];
+    html += '<tr><td>' + row.year + '</td><td class="td-right">' + fmt(row.balance) + '</td></tr>';
+  }
+  document.getElementById('breakdown-body').innerHTML = html;
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>
