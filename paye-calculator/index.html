@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAYE Calculator 2026/27 South Africa | SARS Tax + UIF</title>
+  <meta name="description" content="Free PAYE calculator for South Africa. SARS 2026/27 tax tables, primary + age rebates, medical scheme credits, UIF, and Retirement Annuity deduction. Monthly-first.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/paye-calculator/">
+
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <meta property="og:title" content="PAYE Calculator 2026/27 South Africa | SARS Tax + UIF">
+  <meta property="og:description" content="Free PAYE calculator for South Africa. SARS 2026/27 tax tables, primary + age rebates, medical scheme credits, UIF, and Retirement Annuity deduction. Monthly-first.">
+  <meta property="og:url" content="https://finncalc.com/paye-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PAYE Calculator 2026/27 South Africa | SARS Tax + UIF">
+  <meta name="twitter:description" content="Free PAYE calculator for South Africa. SARS 2026/27 tax tables, primary + age rebates, medical scheme credits, UIF, and Retirement Annuity deduction. Monthly-first.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+
+  <!-- Google AdSense: paste your code here after approval -->
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "applicationCategory": "FinanceApplication", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-17", "description": "Free PAYE calculator for South Africa. SARS 2026/27 tax tables, primary + age rebates, medical scheme credits, UIF, and Retirement Annuity deduction. Monthly-first.", "name": "\ud83c\uddff\ud83c\udde6 PAYE Calculator (South Africa 2026/27)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "operatingSystem": "Web Browser", "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/paye-calculator/"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "PAYE (Pay As You Earn) is the income tax your employer deducts from your salary each month and pays to SARS on your behalf. The calculation: gross salary minus deductible Retirement Annuity contributions equals taxable income; SARS applies seven progressive brackets (18% up to 45%) to that taxable income; then the primary rebate (R17,235 for 2026/27), any age-based rebates, and medical scheme tax credits are subtracted from the gross tax. The remainder, divided by 12, is your monthly PAYE."}, "name": "What is PAYE and how is it calculated in South Africa?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "UIF (Unemployment Insurance Fund) is 1% of monthly remuneration, but the contribution is capped at R177.12/month (R2,125.44/year). The cap exists because UIF is benefit-linked \u2014 you can only ever claim UIF benefits up to a maximum amount, so the contribution is capped to match. Employers contribute an additional 1% (same cap). If you earn above R17,712/month, you pay the full R177.12 cap regardless of your salary."}, "name": "What is the UIF cap for 2026/27 and why is it so low?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "R35,000/month = R420,000/year gross. SARS 2026/27 calculation (under 65, 1 medical member, no RA): taxable income R420,000 \u2192 gross tax R97,338 \u2192 less primary rebate R17,235 \u2192 less medical credit R4,512 \u2192 annual PAYE R75,591 \u2192 monthly PAYE R6,299. Plus UIF R177.12/month. Monthly take-home: ~R28,524 (\u224881.5% of gross). Adding a R3,000/month RA contribution drops monthly PAYE to ~R5,388 and take-home to ~R26,435 (after the RA cash outflow)."}, "name": "How much PAYE do I pay on a R35,000/month salary?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Your marginal rate is the bracket your top rand falls in (the rate on the next rand you earn). Your effective rate is total tax divided by gross salary \u2014 always lower than marginal because the lower brackets pulled down the average. Example at R500k under 65: marginal rate 31%, effective rate ~20.4%. The marginal rate matters for raise/bonus decisions; the effective rate matters for budgeting."}, "name": "What\u0027s the difference between marginal and effective tax rate?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "RA contributions are deductible from taxable income up to the lesser of (a) 27.5% of your remuneration or (b) R350,000 per tax year. Because the deduction reduces taxable income BEFORE the brackets apply, the saving equals your marginal rate \u00d7 contribution amount. For someone in the 31% bracket contributing R3,000/month (R36,000/year), the tax saving is R36,000 \u00d7 31% = R11,160/year \u2014 the effective cost of the R36,000 contribution is only ~R24,840. Excess contributions above the cap roll forward to future tax years."}, "name": "How does a Retirement Annuity reduce my PAYE?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "For 2026/27, the filing threshold is R500,000 gross remuneration per year if all of the following apply: your income is only from one employer, you don\u0027t claim any deductions other than the pension/RA on your IRP5, and you don\u0027t have other income sources (rental, freelance, capital gains, interest above R23,800 for under-65s). If you fall outside any of those, you must file. SARS auto-assessment also pre-fills a return for most salaried taxpayers \u2014 accept it, or file your own if it\u0027s wrong."}, "name": "When am I required to file a SARS tax return?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A direct reduction in PAYE (not a deduction from taxable income) for paying medical scheme contributions. For 2026/27: R376/month for the main member, R376/month for the first dependant, R254/month for each additional dependant. A four-person family (you + spouse + 2 kids) gets R1,260/month = R15,120/year off PAYE. This applies whether you pay the scheme privately or via payroll \u2014 but if you pay privately, you must claim it manually on your annual return (a commonly missed credit)."}, "name": "What is the medical scheme fees tax credit?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "PAYE is monthly withholding from salary by your employer. Provisional tax is twice-yearly self-assessment (end August + end February) for taxpayers with non-salary income \u2014 rental, freelance, investment, or business income above R30,000/year of non-PAYE income. If you have both salary AND side income, you\u0027re a provisional taxpayer for the side income only; your salary still has PAYE deducted normally. Under-estimating in August triggers a penalty when you reconcile in February."}, "name": "How is PAYE different from provisional tax?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Bonuses are treated as additional remuneration and PAYE is calculated on the annualised total. SARS allows employers to apply two methods: (a) average rate \u2014 bonus added to YTD gross, total tax recalculated, difference is the bonus PAYE; or (b) marginal rate \u2014 bonus taxed at your highest marginal bracket. Method (a) is more common and slightly more taxpayer-friendly when your bonus pushes you near (but not into) a new bracket."}, "name": "Does PAYE include tax on bonuses and 13th cheques?"}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://finncalc.com/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://finncalc.com/paye-calculator/", "name": "\ud83c\uddff\ud83c\udde6 PAYE Calculator (South Africa 2026/27)", "position": 2}]}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "description": "Step-by-step guide to using the \ud83c\uddff\ud83c\udde6 PAYE Calculator (South Africa 2026/27).", "name": "How to calculate PAYE in South Africa", "step": [{"@type": "HowToStep", "name": "Enter your gross salary in Rand and", "position": 1, "text": "Enter your gross salary in Rand and pick monthly or annual", "url": "https://finncalc.com/paye-calculator/#step-1"}, {"@type": "HowToStep", "name": "Select your age band so the correct", "position": 2, "text": "Select your age band so the correct SARS rebate (primary / secondary / tertiary) applies", "url": "https://finncalc.com/paye-calculator/#step-2"}, {"@type": "HowToStep", "name": "Pick how many medical scheme members you", "position": 3, "text": "Pick how many medical scheme members you cover (you + dependants)", "url": "https://finncalc.com/paye-calculator/#step-3"}, {"@type": "HowToStep", "name": "Add your monthly Retirement Annuity contribution to", "position": 4, "text": "Add your monthly Retirement Annuity contribution to claim the s11(k) deduction", "url": "https://finncalc.com/paye-calculator/#step-4"}, {"@type": "HowToStep", "name": "Read off your monthly PAYE, UIF, take-home", "position": 5, "text": "Read off your monthly PAYE, UIF, take-home and effective + marginal tax rates", "url": "https://finncalc.com/paye-calculator/#step-5"}], "totalTime": "PT2M"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "dateModified": "2026-05-17", "datePublished": "2025-08-01", "description": "Free PAYE calculator for South Africa. SARS 2026/27 tax tables, primary + age rebates, medical scheme credits, UIF, and Retirement Annuity deduction. Monthly-first.", "headline": "\ud83c\uddff\ud83c\udde6 PAYE Calculator (South Africa 2026/27)", "inLanguage": "en", "mainEntityOfPage": {"@id": "https://finncalc.com/paye-calculator/", "@type": "WebPage"}, "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://finncalc.com/og-image.png"}, "name": "FinCalcHub", "url": "https://finncalc.com/"}, "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}, "url": "https://finncalc.com/paye-calculator/"}</script>
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder \u0026 Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5FSP8WRB3C');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script src="/js/newsletter.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">FinCalcHub</a>
+  <nav>
+    <a href="/personal-finance-calculators/">All Calculators</a>
+    <a href="/compound-interest/">Compound Interest</a>
+    <a href="/retirement-savings/">Retirement</a>
+    <a href="/take-home-pay/">Take-Home Pay</a>
+    <a href="/mortgage/">Mortgage</a>
+  </nav>
+</header>
+
+<!-- Region Bar -->
+<div class="region-wrap">
+  <div class="region-bar">
+    <button class="region-btn active" id="btn-USA" onclick="setRegion('USA')"><img src="/img/flags/us.svg" alt="" width="24" height="16" class="flag"> USA</button>
+    <button class="region-btn" id="btn-UK"  onclick="setRegion('UK')"><img src="/img/flags/gb.svg" alt="" width="24" height="16" class="flag"> United Kingdom</button>
+    <button class="region-btn" id="btn-SA"  onclick="setRegion('SA')"><img src="/img/flags/za.svg" alt="" width="24" height="16" class="flag"> South Africa</button>
+  </div>
+</div>
+
+
+<main id="content">
+<!-- Ad slot top (leaderboard above H1) -->
+<div class="container">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-top" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="4461919959"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+<!-- Page Hero -->
+<div class="container" style="padding-top:0">
+  <p class="breadcrumb"><a href="https://finncalc.com/">Home</a> › 🇿🇦 PAYE Calculator (South Africa 2026/27)</p>
+  <h1>🇿🇦 PAYE Calculator (South Africa)</h1>
+  <p class="subtitle">Work out your monthly PAYE for the 2026/27 SARS tax year. Includes UIF (1% capped), medical scheme tax credits, age-based rebates, and the s11(k) Retirement Annuity deduction.</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- PAYE Calculator (South Africa, 2026/27) -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#e8f5e9;border-left:4px solid #2e7d32;margin-bottom:16px">
+    <strong>🇿🇦 PAYE Calculator (South Africa)</strong> — SARS 2026/27 tax tables, primary + age rebates, medical scheme tax credits, UIF (1% capped at R177.12/mo), and the s11(k) Retirement Annuity deduction. Defaults shown in Rand (ZAR), monthly-first.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="grossSalary">Gross Salary <span class="hint">(R)</span></label>
+        <input type="number" id="grossSalary" value="35000" min="0" placeholder="35000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="inputFrequency">Salary Frequency</label>
+        <select id="inputFrequency" onchange="calculate()">
+          <option value="monthly" selected>Monthly</option>
+          <option value="annual">Annual</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="ageBand">Age Band <span class="hint">controls SARS rebate</span></label>
+        <select id="ageBand" onchange="calculate()">
+          <option value="1" selected>Under 65 (primary rebate)</option>
+          <option value="2">65 – 74 (primary + secondary)</option>
+          <option value="3">75 or older (primary + secondary + tertiary)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="medicalMembers">Medical Scheme Members <span class="hint">incl. yourself</span></label>
+        <select id="medicalMembers" onchange="calculate()">
+          <option value="0">None</option>
+          <option value="1" selected>1 (just me)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 or more</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="raContributionMonthly">Retirement Annuity Contribution (R, per month)</label>
+      <input type="number" id="raContributionMonthly" value="0" min="0" placeholder="0" oninput="calculate()" inputmode="decimal">
+      <span class="hint">Tax-deductible up to 27.5% of gross or R350,000 per year, whichever is lower (s11(k)).</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">PAYE Breakdown</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Monthly Take-Home</div>
+        <div class="result-value" id="r-netMonthly">—</div>
+        <div class="result-hint">After PAYE, UIF, RA cash outflow</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Annual Take-Home</div>
+        <div class="result-value" id="r-netAnnual">—</div>
+        <div class="result-hint">Gross − PAYE − UIF − RA</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Monthly PAYE</div>
+        <div class="result-value" id="r-payeMonthly">—</div>
+        <div class="result-hint">After rebate + medical credit</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Effective Tax Rate</div>
+        <div class="result-value" id="r-effective">—</div>
+        <div class="result-hint">PAYE + UIF ÷ gross</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">UIF (capped)</div>
+        <div class="result-value" id="r-uifMonthly">—</div>
+        <div class="result-hint">1% capped at R177.12/mo</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Marginal Rate</div>
+        <div class="result-value" id="r-marginal">—</div>
+        <div class="result-hint">Rate on next rand earned</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Rebates (annual)</div>
+        <div class="result-value" id="r-rebate">—</div>
+        <div class="result-hint">SARS primary + age rebates</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Medical Credit (annual)</div>
+        <div class="result-value" id="r-medical">—</div>
+        <div class="result-hint">R376/R376/R254 per month</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>SARS 2026/27 progressive brackets (18% on first R245,100 rising to 45% above R1,878,600). Primary rebate R17,235 (under 65), secondary +R9,444 (65–74), tertiary +R3,145 (75+). Medical scheme fees tax credit: R376/month main member, R376/month first dependant, R254/month each additional. UIF: 1% of monthly remuneration capped at R177.12/month (R2,125.44/year). Retirement Annuity deduction (s11(k)): lesser of 27.5% of remuneration or R350,000 per year. Excess RA contributions roll forward (no current-year tax benefit).</p>
+    <ul style="margin:12px 0">
+      <li><strong>SARS tax tables:</strong> <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" rel="noopener">SARS — Rates of Tax for Individuals</a></li>
+      <li><strong>UIF Act:</strong> <a href="https://www.gov.za/documents/unemployment-insurance-act" rel="noopener">Unemployment Insurance Contributions Act</a></li>
+      <li><strong>Medical credits:</strong> <a href="https://www.sars.gov.za/individuals/tax-during-all-life-stages-and-events/medical-and-disability-expenses/" rel="noopener">SARS — Medical Scheme Fees Tax Credit</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is PAYE and how is it calculated in South Africa?</div>
+      <div class="faq-a">PAYE (Pay As You Earn) is the income tax your employer deducts from your salary each month and pays to SARS on your behalf. The calculation: gross salary minus deductible Retirement Annuity contributions equals taxable income; SARS applies seven progressive brackets (18% up to 45%) to that taxable income; then the primary rebate (R17,235 for 2026/27), any age-based rebates, and medical scheme tax credits are subtracted from the gross tax. The remainder, divided by 12, is your monthly PAYE.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the UIF cap for 2026/27 and why is it so low?</div>
+      <div class="faq-a">UIF (Unemployment Insurance Fund) is 1% of monthly remuneration, but the contribution is capped at R177.12/month (R2,125.44/year). The cap exists because UIF is benefit-linked — you can only ever claim UIF benefits up to a maximum amount (currently ~R17,712/month for 238 days), so the contribution is capped to match. Employers contribute an additional 1% (same cap). If you earn above R17,712/month, you pay the full R177.12 cap regardless of your salary.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How much PAYE do I pay on a R35,000/month salary?</div>
+      <div class="faq-a">R35,000/month = R420,000/year gross. SARS 2026/27 calculation (under 65, 1 medical member, no RA): taxable income R420,000 → gross tax R97,338 → less primary rebate R17,235 → less medical credit R4,512 → annual PAYE R75,591 → monthly PAYE R6,299. Plus UIF R177.12/month. Monthly take-home: ~R28,524 (≈81.5% of gross). Adding a R3,000/month RA contribution drops monthly PAYE to ~R5,388 and take-home to ~R26,435 (after the RA cash outflow).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What's the difference between marginal and effective tax rate?</div>
+      <div class="faq-a">Your <em>marginal</em> rate is the bracket your top rand falls in (the rate on the next rand you earn). Your <em>effective</em> rate is total tax divided by gross salary — always lower than marginal because the lower brackets pulled down the average. Example at R500k under 65: marginal rate 31%, effective rate ~20.4%. The marginal rate matters for decisions ("if I get a R10k raise, how much do I keep?"); the effective rate matters for budgeting ("what's my real take-home?").</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does a Retirement Annuity reduce my PAYE?</div>
+      <div class="faq-a">RA contributions are deductible from taxable income up to the lesser of (a) 27.5% of your remuneration or (b) R350,000 per tax year. Because the deduction reduces taxable income BEFORE the brackets apply, the saving equals your marginal rate × contribution amount. For someone in the 31% bracket contributing R3,000/month (R36,000/year), the tax saving is R36,000 × 31% = R11,160/year — the effective cost of the R36,000 contribution is only ~R24,840. Excess contributions above the cap roll forward to future tax years.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When am I required to file a SARS tax return?</div>
+      <div class="faq-a">For 2026/27, the filing threshold is R500,000 gross remuneration per year if all of the following apply: your income is only from one employer, you don't claim any deductions other than the pension/RA on your IRP5, and you don't have other income sources (rental, freelance, capital gains, interest above R23,800 for under-65s). If you fall outside any of those, you must file. SARS auto-assessment also pre-fills a return for most salaried taxpayers — accept it, or file your own if it's wrong.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the medical scheme fees tax credit?</div>
+      <div class="faq-a">A direct reduction in PAYE (not a deduction from taxable income) for paying medical scheme contributions. For 2026/27: R376/month for the main member, R376/month for the first dependant, R254/month for each additional dependant. A four-person family (you + spouse + 2 kids) gets R1,260/month = R15,120/year off PAYE. This applies whether you pay the scheme privately or via payroll — but if you pay privately, you must claim it manually on your annual return (a commonly missed credit).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How is PAYE different from provisional tax?</div>
+      <div class="faq-a">PAYE is monthly withholding from salary by your employer. Provisional tax is twice-yearly self-assessment (end August + end February) for taxpayers with non-salary income — rental, freelance, investment, or business income above R30,000/year of non-PAYE income. If you have both salary AND side income, you're a provisional taxpayer for the side income only; your salary still has PAYE deducted normally. Under-estimating in August triggers a penalty when you reconcile in February.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does PAYE include tax on bonuses and 13th cheques?</div>
+      <div class="faq-a">Yes. Bonuses are treated as additional remuneration and PAYE is calculated on the annualised total. SARS allows employers to apply two methods: (a) average rate — bonus added to YTD gross, total tax recalculated, difference is the bonus PAYE; or (b) marginal rate — bonus taxed at your highest marginal bracket. Method (a) is more common and slightly more taxpayer-friendly when your bonus pushes you near (but not into) a new bracket.</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/sa-tax-calculator/" class="related-card">🇿🇦 SA Tax (full annual)</a>
+      <a href="/take-home-pay/" class="related-card">💸 Take-Home Pay (multi-region)</a>
+      <a href="/tfsa-calculator/" class="related-card">📦 TFSA</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+      <a href="/compound-interest/" class="related-card">📈 Compound Interest</a>
+      <a href="/inflation-impact/" class="related-card">📉 Inflation Impact</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="paye-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/paye-sa.js" defer></script>
+<script>
+function fmtR(n) {
+  if (n === null || n === undefined || isNaN(n)) return 'R0';
+  var v = Math.round(n);
+  var sign = v < 0 ? '-' : '';
+  return sign + 'R' + Math.abs(v).toLocaleString('en-ZA');
+}
+function calculate() {
+  if (!window.FCH_PAYE_SA) return;
+  var p = {
+    grossSalary: +document.getElementById('grossSalary').value || 0,
+    inputFrequency: document.getElementById('inputFrequency').value,
+    ageBand: +document.getElementById('ageBand').value || 1,
+    medicalMembers: +document.getElementById('medicalMembers').value || 0,
+    raContributionMonthly: +document.getElementById('raContributionMonthly').value || 0,
+  };
+  var R = window.FCH_PAYE_SA.calc(p);
+  var errEl = document.getElementById('error-message');
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    ['r-netMonthly','r-netAnnual','r-payeMonthly','r-effective','r-uifMonthly','r-marginal','r-rebate','r-medical'].forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-netMonthly').textContent = fmtR(R.netMonthly);
+  document.getElementById('r-netAnnual').textContent = fmtR(R.netAnnual);
+  document.getElementById('r-payeMonthly').textContent = fmtR(R.payeMonthly);
+  document.getElementById('r-effective').textContent = R.effectiveTaxRatePct.toFixed(1) + '%';
+  document.getElementById('r-uifMonthly').textContent = fmtR(R.uifMonthly);
+  document.getElementById('r-marginal').textContent = R.marginalRatePct + '%';
+  document.getElementById('r-rebate').textContent = fmtR(R.rebate);
+  document.getElementById('r-medical').textContent = fmtR(R.medicalCredit);
+}
+document.addEventListener('DOMContentLoaded', function () { if (typeof calculate === 'function') calculate(); });
+</script>
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-results" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="7963163804"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+<div class="container" style="padding-top:0">
+  <section class="how-to-steps" aria-labelledby="how-to-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px">
+    <h2 id="how-to-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">How to use this calculator</h2>
+    
+    <p style="margin:0 0 12px;font-size:0.9em;color:#6c757d">Takes about 2 minutes.</p>
+    
+    <ol style="margin:0;padding-left:1.4em;line-height:1.6">
+      
+      <li id="step-1" class="how-to-step" style="margin-bottom:6px">Enter your gross salary in Rand and pick monthly or annual</li>
+      
+      <li id="step-2" class="how-to-step" style="margin-bottom:6px">Select your age band so the correct SARS rebate (primary / secondary / tertiary) applies</li>
+      
+      <li id="step-3" class="how-to-step" style="margin-bottom:6px">Pick how many medical scheme members you cover (you + dependants)</li>
+      
+      <li id="step-4" class="how-to-step" style="margin-bottom:6px">Add your monthly Retirement Annuity contribution to claim the s11(k) deduction</li>
+      
+      <li id="step-5" class="how-to-step" style="margin-bottom:6px">Read off your monthly PAYE, UIF, take-home and effective + marginal tax rates</li>
+      
+    </ol>
+  </section>
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="try-scenarios" aria-labelledby="try-scenarios-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#f4f6fb;border-radius:8px">
+    <h2 id="try-scenarios-heading" style="margin:0 0 6px;color:#1B3A5C;font-size:1.25rem">Try these scenarios</h2>
+    <p style="margin:0 0 12px;font-size:0.95em;color:#444">Tap a scenario to load it into the calculator above.</p>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      
+      <li>
+        <a class="try-scenario-link" href="?grossSalary=35000&amp;inputFrequency=monthly&amp;ageBand=1&amp;medicalMembers=1&amp;raContributionMonthly=0#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">R35k/month, under 65, 1 medical member</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?grossSalary=60000&amp;inputFrequency=monthly&amp;ageBand=1&amp;medicalMembers=4&amp;raContributionMonthly=5000#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">R60k/month, under 65, family of 4, R5k RA</a>
+      </li>
+      
+      <li>
+        <a class="try-scenario-link" href="?grossSalary=1200000&amp;inputFrequency=annual&amp;ageBand=2&amp;medicalMembers=2&amp;raContributionMonthly=27500#step-1" style="display:inline-block;padding:8px 12px;background:#fff;border:1px solid #d6dbe4;border-radius:6px;color:#1B3A5C;text-decoration:none;font-weight:500">R1.2m/year, 65-74, max RA</a>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="key-concepts" aria-labelledby="key-concepts-heading" style="max-width:760px;margin:24px auto 0;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;line-height:1.7">
+    <h2 id="key-concepts-heading" style="margin:0 0 12px;color:#1B3A5C;font-size:1.25rem">Key concepts</h2>
+    <p><strong>SARS 2026/27 brackets at a glance.</strong> 18% to R245,100; 26% to R370,500; 31% to R512,800; 36% to R673,000; 39% to R857,900; 41% to R1,878,600; 45% above. The 18% entry rate is high by international standards (UK starts at 20% but only after a £12,570 personal allowance; US starts at 10% with $15,000 standard deduction), which is why South African middle incomes face heavier marginal tax than equivalent US/UK earners.</p><p><strong>Rebates, not deductions.</strong> The primary rebate (R17,235) and the age-based secondary (+R9,444) / tertiary (+R3,145) rebates are subtracted directly from gross tax — they're not income deductions. This means everyone gets the same primary rebate value regardless of marginal rate, unlike an RA contribution where the value scales with your bracket. The under-65 break-even point (where PAYE = 0) is roughly R95,750 gross income for 2026/27.</p><p><strong>UIF is benefit-capped, not income-capped.</strong> The R177.12/month UIF cap exists because UIF benefits themselves are capped — you can only ever claim up to ~R17,712/month for 238 days if unemployed. The contribution cap matches the benefit ceiling. If you earn above R17,712/month you pay the same R177.12 as a R17,712 earner — UIF is regressive above that threshold.</p><p><strong>RA contributions are the highest-leverage tax move.</strong> Up to the lesser of 27.5% of remuneration or R350,000/year, RA contributions reduce taxable income at your full marginal rate. A 39% marginal-bracket earner contributing the max R350,000 saves R136,500 in tax — almost 40% of the contribution funded by SARS. This is why R350k is the magic number for high-income tax planning; pair it with a low-cost passive RA (Sygnia / 10X / Easy Equities) to compound for retirement.</p><p><strong>Medical credit beats medical deduction.</strong> Pre-2012 medical contributions were income deductions (worth more to high earners). SARS reformed to a flat tax credit (R376/R376/R254 per month) so that the value is identical regardless of marginal bracket. A R4,512/year primary-member credit is worth ~R4,512 to anyone — vs the old deduction which gave a 45% earner R2,030 and an 18% earner R812 on the same R4,512. Equitable, but it means high-earners no longer get a big PAYE break from medical aid.</p>
+  </section>
+</div>
+
+
+
+<div class="container" style="padding-top:0">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-edu" style="min-height:250px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:250px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="1620134192"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+
+
+
+
+<div class="container" style="padding-top:0">
+  <section class="editorial-block" style="max-width:760px;margin:24px auto 0;padding:14px 0 0;border-top:1px solid var(--border,#e5e7eb);font-size:13px;color:var(--muted,#666);line-height:1.6">
+    <p class="byline" style="margin:0 0 4px">
+      Written and maintained by <a href="/authors/james-blanckenberg/" rel="author" style="color:var(--accent,#1B3A5C);text-decoration:none"><strong>James Blanckenberg</strong></a>, Founder &amp; Editor, FinCalcHub.
+    </p>
+    <p class="last-reviewed" style="margin:0">Last reviewed: <time datetime="2026-05-17">17 May 2026</time> &middot; See <a href="/editorial-policy/" style="color:var(--accent,#1B3A5C);text-decoration:none">editorial policy</a></p>
+  </section>
+</div>
+
+
+
+
+
+
+<section class="related-calculators" aria-labelledby="related-calculators-heading">
+  <div class="container">
+    <h2 id="related-calculators-heading">Related calculators</h2>
+    <ul>
+      <li><a href="/sa-tax-calculator/">South Africa Tax Calculator (PAYE + UIF)</a> — Work out your South African income tax for the 2026/27 tax year. Includes PAYE, UIF, medical scheme tax credits, retirement-annuity deductions, and SARS rebates for age 65+.</li>
+      <li><a href="/take-home-pay/">💰 Take-Home Pay Calculator</a> — See your exact salary after all taxes and deductions — updated for 2026/27 tax rules in the USA, UK, and South Africa.</li>
+      <li><a href="/tfsa-calculator/">🇿🇦 TFSA Calculator</a> — Project your tax-free TFSA growth with the R36,000 annual cap and R500,000 lifetime cap enforced. SARS s12T rules applied.</li>
+      <li><a href="/retirement-savings/">🏖 Retirement Savings Calculator</a> — Find out if you&#x27;re on track to retire comfortably - and exactly how much you need to save each month.</li>
+      <li><a href="/compound-interest/">Compound Interest Calculator</a> — See how your money grows over time with the power of compounding. Add monthly contributions to maximise your results.</li>
+      <li><a href="/inflation-impact/">📊 Inflation Impact Calculator</a> — See how inflation erodes the value of money over time — and what it means for your savings.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Ad slot footer (desktop-only leaderboard, mirrors buscalctools P1.7) -->
+<div class="container ad-footer-desktop">
+  
+  
+
+
+
+
+<div class="ad-slot ad-slot-footer" style="min-height:90px;text-align:center;margin:16px auto">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-5092336325075679"
+       data-ad-slot="5980987973"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+</div>
+<style>
+  .ad-footer-desktop { display: none; }
+  @media (min-width: 768px) { .ad-footer-desktop { display: block; } }
+</style>
+</main>
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff">FinCalcHub</a>
+      <div class="footer-links"><a href="/">All Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div>
+    </div>
+      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        — free profit margin, pricing, and cash flow calculators.
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 FinCalcHub. All rights reserved.</p>
+      <p class="footer-disclaimer">All calculations are for informational purposes only and do not constitute financial advice. Always consult a qualified financial adviser before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/region.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>
