@@ -1660,6 +1660,119 @@
     ],
     "keyConcepts": "<p><strong>The Coast FIRE concept.</strong> Coast FIRE is the smallest amount you need invested today so that compound growth alone — with no further contributions — reaches a full FIRE number by your chosen retirement age. The formula is the present-value version of compound growth: Coast Number = FIRE Number / (1 + r)<sup>years</sup>.</p><p><strong>Why it matters.</strong> Once you hit your Coast number you've earned the option to stop saving without giving up future financial independence. That option is a powerful career and lifestyle lever — it lets you take a sabbatical, switch to lower-pay meaningful work, or scale down hours years before traditional FIRE.</p><p><strong>Real vs nominal return.</strong> Coast FIRE math uses REAL return (after inflation) because your future spending will inflate alongside your portfolio. A 7% nominal return at 3% inflation is 4% real. Most planners use 5–7% real for long-horizon accumulation projections.</p><p><strong>Coast vs Barista vs full FIRE.</strong> Coast FIRE = portfolio on autopilot to full FIRE by target age. Barista FIRE = part-time work mainly for health benefits, savings covering only current expenses. Full FIRE = portfolio covers all spending now. Many people use Coast and Barista in combination as a transition between high-income years and full retirement.</p><p><strong>Common Coast FIRE mistake.</strong> Coasting on optimistic assumptions. If you use 8% real return and the actual return turns out to be 5%, your Coast number was wrong by a factor of ~1.7×. Most veteran Coasters use 5% real for planning and treat anything above as upside.</p>"
   },
+  "401k-withdrawal-calculator": {
+    "slug": "401k-withdrawal-calculator",
+    "name": "💼 401(k) Withdrawal Calculator",
+    "title": "401(k) Withdrawal Calculator: Net After Tax + Penalty",
+    "description": "Free 401(k) withdrawal calculator. See your net amount after federal tax, state tax, and the 10% early-withdrawal penalty. Rule of 55 + hardship exemptions modelled.",
+    "h1": "💼 401(k) Withdrawal Calculator",
+    "subtitle": "How much you actually keep after federal + state tax and the 10% early-withdrawal penalty. Models the Rule of 55, hardship, and disability exemptions.",
+    "metaDescription": "Free 401(k) withdrawal calculator. See your net amount after federal tax, state tax, and the 10% early-withdrawal penalty. Rule of 55 + hardship exemptions modelled.",
+    "regions": ["USA"],
+    "primaryKeyword": "401k withdrawals calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "401(k) Withdrawal Calculator",
+      "description": "Calculate the net amount you receive from a 401(k) withdrawal after federal tax, state tax, and the 10% early-withdrawal penalty.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to use the 401(k) Withdrawal Calculator",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter the withdrawal amount you're considering",
+        "Enter your current age (drives the early-withdrawal penalty)",
+        "Set your federal marginal tax bracket and state tax rate",
+        "Pick a penalty exemption if you qualify (Rule of 55, hardship, SEPP)",
+        "Review your net amount, effective tax rate, and tax breakdown"
+      ]
+    },
+    "faq": [
+      { "q": "How much tax do I pay on a 401(k) withdrawal?", "a": "Traditional 401(k) withdrawals are taxed as ordinary income at your federal marginal bracket, plus any state income tax. If you're under age 59½ AND don't qualify for an exemption, an additional 10% federal penalty applies. For a $50,000 withdrawal at 22% federal + 5% state + 10% penalty, you'd keep $31,500 net out of $50,000 gross — a 37% effective rate." },
+      { "q": "When does the 10% early-withdrawal penalty apply?", "a": "The 10% penalty (IRC §72(t)) applies to traditional 401(k) withdrawals before age 59½, on top of regular income tax. Exemptions include separation from employer at age 55+ (Rule of 55), permanent disability, qualified hardship, Substantially Equal Periodic Payments (SEPPs), and certain birth/adoption distributions up to $5,000. The exemption applies to the penalty only — regular income tax is still owed." },
+      { "q": "What is the Rule of 55?", "a": "The Rule of 55 lets you take penalty-free 401(k) withdrawals if you separate from your employer in the calendar year you turn 55 or later (50 for qualified public-safety employees). The exemption applies ONLY to the 401(k) of the employer you left — older 401(k)s rolled into an IRA lose the exemption, and your current employer's 401(k) doesn't qualify if you're still working there." },
+      { "q": "Can I avoid the early-withdrawal penalty?", "a": "Six common ways: wait until 59½; Rule of 55 if you separate at 55+; qualified hardship withdrawal; Substantially Equal Periodic Payments (SEPP) — locks you in for 5+ years; medical expenses exceeding 7.5% of AGI; qualified birth/adoption distribution up to $5,000. Each has strict eligibility — verify with a tax pro before relying." },
+      { "q": "Should I withhold extra tax on the withdrawal?", "a": "Your plan administrator typically withholds 20% federal mandatory on direct distributions. If your marginal rate is higher than 20% (which it usually is for any meaningful withdrawal), you'll owe additional tax at filing time. Many planners recommend instructing the administrator to withhold at your full marginal rate plus state to avoid an underpayment penalty." },
+      { "q": "What about Roth 401(k) withdrawals?", "a": "Different rules. Qualified Roth 401(k) distributions (account held 5+ years AND you're 59½+ or disabled) are completely tax-free and penalty-free. Non-qualified Roth withdrawals: contributions come out tax-free, but earnings are taxable + subject to the 10% penalty. This calculator is calibrated for TRADITIONAL 401(k) only." },
+      { "q": "Should I take a 401(k) loan instead of a withdrawal?", "a": "A 401(k) loan lets you borrow up to $50,000 or 50% of your vested balance (whichever is less) without triggering tax or penalty. You pay yourself back with interest over 5 years. Risk: if you leave the employer before repaying, the balance becomes a deemed distribution — taxed + penalty if under 59½. Loans avoid the immediate tax hit but create job-mobility risk." },
+      { "q": "Why does this calculator show such a high effective tax rate?", "a": "Early withdrawals carry three stacked costs: federal income tax at your marginal bracket (22-32% typical for working-age earners), state income tax (0-13%), and the 10% early-withdrawal penalty. The combined effective rate frequently lands in the 35-50% range. That's why financial advisors uniformly recommend leaving 401(k)s alone until 59½ unless you have no alternative." }
+    ],
+    "sources": [
+      { "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/topics-401k-and-profit-sharing-plan-contribution-limits", "label": "IRS — 401(k) limits and rules" },
+      { "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-tax-on-early-distributions", "label": "IRS — Topic 558 / §72(t) early-distribution penalty" }
+    ],
+    "related": [
+      "401k-calculator",
+      "roth-ira-calculator",
+      "take-home-pay",
+      "retirement-savings",
+      "fire-calculator",
+      "coast-fire-calculator"
+    ],
+    "scenarios": [
+      { "label": "Retirement: 65yo $50k, 22% fed + 5% state", "query": "withdrawalAmount=50000&age=65&federalBracketPct=22&stateTaxPct=5&currentBalance=200000&exemption=none" },
+      { "label": "Early: 45yo $50k with penalty", "query": "withdrawalAmount=50000&age=45&federalBracketPct=22&stateTaxPct=5&currentBalance=200000&exemption=none" },
+      { "label": "Rule of 55: 57yo separated at 55+", "query": "withdrawalAmount=50000&age=57&federalBracketPct=22&stateTaxPct=5&currentBalance=200000&exemption=ruleOf55" }
+    ],
+    "keyConcepts": "<p><strong>The 3 stacked costs.</strong> 401(k) withdrawals are hit by three taxes simultaneously: federal income tax at your marginal bracket, state income tax, and the 10% early-withdrawal penalty if you're under 59½. The combined rate frequently exceeds 35% — making early 401(k) withdrawals the most expensive cash source for most people.</p><p><strong>The 59½ cliff.</strong> The 10% penalty (IRC §72(t)) vanishes at age 59½. Even a six-month delay can save thousands. If you're 58 or 59 and considering a withdrawal, waiting until your 59½ birthday is often the highest-return decision you'll make all year.</p><p><strong>The Rule of 55 escape hatch.</strong> The single most powerful exemption: separate from employer at age 55+ and take penalty-free withdrawals from THAT employer's 401(k). Doesn't apply to IRAs or other employers' plans. Worth structuring a job change around if you're 54-55 considering early retirement.</p><p><strong>Mandatory 20% withholding ≠ your actual tax.</strong> The plan administrator withholds 20% federal on direct distributions by default. If your marginal rate is 22% + 5% state + 10% penalty = 37%, you'll owe an additional 17% at filing. Set higher withholding upfront or expect a tax bill.</p><p><strong>Lowest-cost cash alternatives.</strong> In order of cost: emergency fund > taxable brokerage > HELOC > 401(k) loan > Roth IRA contribution withdrawal > traditional IRA early withdrawal > 401(k) hardship withdrawal. The 401(k) loan is often overlooked — no tax hit if you stay employed, but you re-enter the workforce having committed your future income to repayment.</p>"
+  },
+  "401k-tax-calculator": {
+    "slug": "401k-tax-calculator",
+    "name": "📊 401(k) Tax Calculator",
+    "title": "401(k) Tax Calculator: Federal + State + Early-Withdrawal",
+    "description": "Free 401(k) tax calculator. Federal bracket + state tax + 10% early-withdrawal penalty broken down by component, with effective tax rate.",
+    "h1": "📊 401(k) Tax Calculator",
+    "subtitle": "Exactly how much tax you'll owe on a 401(k) withdrawal: federal bracket, state tax, and the 10% early-withdrawal penalty if you're under 59½.",
+    "metaDescription": "Free 401(k) tax calculator. Federal bracket + state tax + 10% early-withdrawal penalty broken down by component, with effective tax rate.",
+    "regions": ["USA"],
+    "primaryKeyword": "taxes on 401k withdrawal calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "401(k) Tax Calculator",
+      "description": "Tax-focused view of a 401(k) withdrawal — federal + state + early-withdrawal penalty broken down by component.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to calculate tax on a 401(k) withdrawal",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter the withdrawal amount",
+        "Enter your current age (sets the early-withdrawal penalty status)",
+        "Enter your federal marginal tax bracket",
+        "Enter your state tax rate (0 if no state income tax)",
+        "Pick an exemption if you qualify",
+        "Review total tax, effective rate, and component breakdown"
+      ]
+    },
+    "faq": [
+      { "q": "How are 401(k) withdrawals taxed?", "a": "Traditional 401(k) withdrawals are taxed as ordinary income at your federal marginal bracket, plus any state income tax (0% in 8 states). If you're under age 59½ AND don't qualify for an exemption, an additional 10% federal penalty applies. The combined effective rate frequently lands in the 35-50% range for working-age early withdrawals." },
+      { "q": "Do I pay state tax on 401(k) withdrawals?", "a": "Yes, in most states. The 8 states with no state income tax (Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Wyoming) impose 0%. Some states like Illinois exempt retirement income for residents 65+. State rates vary from 0% to ~13% (California top bracket)." },
+      { "q": "Is the 10% penalty in addition to or instead of regular tax?", "a": "In addition to. The 10% early-withdrawal penalty is a separate federal tax that stacks on top of regular income tax. A $50,000 early withdrawal at 22% federal + 5% state + 10% penalty results in $18,500 total tax — $11,000 federal + $2,500 state + $5,000 penalty." },
+      { "q": "What federal bracket should I use?", "a": "Use your MARGINAL rate at filing — i.e. the rate on your last dollar of income for the year, including the 401(k) withdrawal. 2026 brackets (single): 10% to $11,925; 12% to $48,475; 22% to $103,350; 24% to $197,300; 32% to $250,525; 35% to $626,350; 37% above. Larger withdrawals may push you into a higher bracket — use the average if uncertain." },
+      { "q": "Why is my effective rate higher than my federal bracket?", "a": "Three stacked taxes inflate the effective rate: federal marginal (e.g. 22%), state income tax (e.g. 5%), and the 10% early-withdrawal penalty (if applicable). 22% + 5% + 10% = 37% effective rate on early withdrawals. For at-retirement withdrawals (59½+), only federal + state apply — typically 22-27% combined." },
+      { "q": "Does my plan administrator withhold tax automatically?", "a": "Yes, 20% federal mandatory withholding on direct distributions (not rollovers). State withholding varies. The 10% early-withdrawal penalty is NOT auto-withheld — you owe it at filing time. Most planners recommend instructing the administrator to withhold at your full marginal rate plus state to avoid an underpayment penalty." },
+      { "q": "Can I reduce 401(k) withdrawal tax?", "a": "Several strategies: time the withdrawal for a low-income year; spread across multiple tax years to stay in lower brackets; use Rule of 55 if eligible to skip the 10% penalty; combine with deductions/credits; convert to Roth IRA in low-income years (still pay income tax but future growth is tax-free)." },
+      { "q": "Roth 401(k) tax — same rules?", "a": "No. Qualified Roth 401(k) distributions (5+ years AND 59½+ or disabled) are completely tax-free and penalty-free. Non-qualified Roth: contributions come out tax-free, earnings are taxable + subject to penalty. This calc is for TRADITIONAL 401(k) only." }
+    ],
+    "sources": [
+      { "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/topics-401k-and-profit-sharing-plan-contribution-limits", "label": "IRS — 401(k) rules" },
+      { "url": "https://www.irs.gov/forms-pubs/about-publication-17", "label": "IRS Publication 17 — federal brackets" }
+    ],
+    "related": [
+      "401k-withdrawal-calculator",
+      "401k-calculator",
+      "take-home-pay",
+      "roth-ira-calculator",
+      "retirement-savings",
+      "fire-calculator"
+    ],
+    "scenarios": [
+      { "label": "Early: 45yo $50k, 22% + 5% + 10%", "query": "withdrawalAmount=50000&age=45&federalBracketPct=22&stateTaxPct=5&exemption=none" },
+      { "label": "Retirement: 65yo $30k, 22% + 5%", "query": "withdrawalAmount=30000&age=65&federalBracketPct=22&stateTaxPct=5&exemption=none" },
+      { "label": "TX resident early: 45yo $20k, 22% + 0%", "query": "withdrawalAmount=20000&age=45&federalBracketPct=22&stateTaxPct=0&exemption=none" }
+    ],
+    "keyConcepts": "<p><strong>Tax stack.</strong> A 401(k) withdrawal triggers up to three federal/state taxes: ordinary income tax at your marginal federal bracket, state income tax (0% in 8 states), and the 10% early-withdrawal penalty (IRC §72(t)) if you're under 59½ without an exemption. The combined effective rate stacks rather than averages.</p><p><strong>Marginal vs effective rate.</strong> Your marginal bracket is the rate on your LAST dollar. Your effective rate is total tax ÷ total income. Because 401(k) withdrawals are added on top of your existing income, the withdrawal is almost entirely taxed at your top marginal bracket. A $50k withdrawal on top of $80k salary is taxed at 22-24% — not the lower average bracket implied by your full income.</p><p><strong>The 10% penalty isn't tax-deductible.</strong> Federal and state income tax can sometimes be reduced by deductions, credits, or timing. The 10% early-withdrawal penalty cannot — it's a flat 10% on the gross amount no matter what. The only way to avoid it is to qualify for an exemption (Rule of 55, hardship, SEPP, disability, etc.).</p><p><strong>2026 federal brackets (single filer).</strong> 10% to $11,925; 12% to $48,475; 22% to $103,350; 24% to $197,300; 32% to $250,525; 35% to $626,350; 37% above. Married-filing-jointly brackets are roughly 2x the singles. Large 401(k) withdrawals can push you into a higher bracket — split across years if possible.</p><p><strong>State variation matters.</strong> The 8 no-state-tax states (AK, FL, NV, NH, SD, TN, TX, WY) impose 0%. The top end: California 13.3%, Hawaii 11%, New York 10.9%, New Jersey 10.75%. A $100k withdrawal saves $13,300 by being a Texas resident vs Californian — significant enough that some pre-retirees time a state move around large withdrawals.</p>"
+  },
   "isa-calculator": {
     "slug": "isa-calculator",
     "name": "🇬🇧 ISA Calculator",
