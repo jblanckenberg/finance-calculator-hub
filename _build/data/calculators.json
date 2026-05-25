@@ -2422,5 +2422,106 @@
       }
     ],
     "keyConcepts": "<p><strong>DRIP is dividend compounding's best friend.</strong> Without reinvestment a 3% dividend yield gives you exactly 3% income per year — flat forever (absent growth). Turn DRIP on and that same 3% yield becomes a 3% compounding rate: after 24 years your share count has doubled at zero new capital, and at year 30 a starting $10,000 position holds about 2.43× the shares (assuming flat share price). Layer in 5% annual dividend growth on top of DRIP and the same $10,000 position throws off roughly $2,300 of income in year 30 — 7.7× the year-1 income on an unchanged starting capital base. The catch is opportunity cost: cash dividends spent today have higher present value than reinvested ones; DRIP only makes sense if you genuinely don't need the income for 10+ years.</p><p><strong>Dividend Growth Investing (DGI) beats yield-chasing for long horizons.</strong> A 2%-yield stock growing dividends 8% a year produces more income than a 5%-yield stock growing 0% within 14 years and crushes it by year 25. The reason is exponentials: dividend growth compounds on a base that also compounds (via DRIP), so a small growth advantage stacks fast. The DGI rule of thumb is yield + 5-year dividend growth ≥ 8%: 3% yield + 6% growth qualifies; so does 5% yield + 3% growth. Dividend aristocrats (25+ consecutive years of raises) and kings (50+) are the canonical DGI universe; the iShares Select Dividend ETF (DVY) and Vanguard Dividend Appreciation ETF (VIG) are passive proxies.</p><p><strong>Tax wrapper hierarchy: Roth / ISA / TFSA > Traditional IRA > Taxable.</strong> Roth IRAs (US), ISAs (UK), and TFSAs (SA) all charge zero in-account tax AND zero withdrawal tax, making them mathematically dominant for dividend strategies — every dollar of DPS turns into a dollar of compounding shares. Traditional IRAs / 401(k)s defer tax (0% in-account, but ordinary-income tax on withdrawal), which is still better than taxable in most cases because the larger compounding base outweighs the back-end tax for long horizons. Taxable brokerage accounts pay every payment — but US qualified dividends get the long-term-cap-gains rate (0/15/20%), so they're not the disaster ordinary-income REIT dividends are. Annual contribution caps for 2026: Roth IRA $7,000 (under 50), ISA £20,000, TFSA R36,000.</p><p><strong>Dividend safety: coverage ratio and payout ratio.</strong> A dividend is only safe if the company actually earns enough to pay it. Dividend coverage ratio (EPS / DPS) above 2× is comfortable; below 1× means the dividend is funded by debt or asset sales — a cut is usually 6-18 months away. Equivalent measure: payout ratio (DPS / EPS) below 60% is the conservative target for industrials, consumer staples, and tech; 60-80% is the danger zone; 80%+ is sustainable only in regulated utilities and REITs (REITs are required to pay out 90% of taxable income). Always check the trailing 5-year payout ratio trend — a steadily rising payout is the slow-motion version of a dividend cut.</p><p><strong>Dividend FIRE: $1m at 4% yield = $40k/yr.</strong> The classic Financial Independence dividend math is to live entirely on dividend income — usually targeting 3-4% yield-on-cost from a diversified DGI portfolio. To replace $40,000 of annual spending you need roughly $1,000,000 invested at 4% yield, or $1,300,000 at 3%. DGI advocates argue this is more robust than the 4% safe-withdrawal rule because you never sell shares (so market crashes don't force selling at a low), and a growing dividend keeps pace with inflation organically. Critics argue the math is identical at the portfolio level — a $40k dividend and a $40k withdrawal both reduce future compounding by the same amount. Either way, this calculator's DRIP-off output is the cleanest way to model the income side of a dividend-FIRE strategy.</p>"
+  },
+  "roth-ira-conversion-calculator": {
+    "slug": "roth-ira-conversion-calculator",
+    "name": "🔄 Roth IRA Conversion Calculator",
+    "title": "Roth IRA Conversion Calculator: Convert Now or Later?",
+    "description": "Free Roth IRA conversion calculator. Compare Traditional IRA vs Roth IRA after-tax growth, conversion tax bill, break-even retirement rate, and net advantage.",
+    "h1": "🔄 Roth IRA Conversion Calculator",
+    "subtitle": "Should you convert pre-tax IRA / 401(k) money to a Roth today? Model the conversion tax, tax-free Roth growth, and the Traditional after-tax alternative side-by-side — with a plain-English recommendation and the break-even retirement tax rate.",
+    "metaDescription": "Free Roth IRA conversion calculator. Conversion tax bill, Roth vs Traditional after-tax retirement balance, net advantage, break-even retirement rate.",
+    "regions": [
+      "USA"
+    ],
+    "primaryKeyword": "roth ira conversion calculator",
+    "schemaWebApp": {
+      "@type": "WebApplication",
+      "name": "Roth IRA Conversion Calculator",
+      "description": "Compare converting a Traditional IRA / 401(k) balance to a Roth IRA today vs leaving it tax-deferred. Includes conversion tax, after-tax balances, net advantage, and break-even retirement rate.",
+      "applicationCategory": "FinanceApplication"
+    },
+    "schemaHowTo": {
+      "name": "How to evaluate a Roth IRA conversion",
+      "totalTime": "PT2M",
+      "steps": [
+        "Enter the dollar amount you're considering converting from Traditional IRA / 401(k) to Roth IRA",
+        "Set your current age, planned retirement age, and an expected annual return",
+        "Enter your current marginal federal tax rate and your best guess for your retirement marginal rate",
+        "Choose whether the conversion tax is paid from outside funds (preferred) or from the converted amount",
+        "Read off the recommendation (Convert / Don't convert / Roughly equal), net advantage, and break-even retirement rate"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What IS a Roth IRA conversion?",
+        "a": "A Roth conversion is the act of moving money from a Traditional IRA (or a Traditional 401(k) you've rolled into an IRA) into a Roth IRA. You pay ordinary federal income tax on the entire converted amount in the year you do the conversion, and from then on the money grows tax-free and comes out tax-free at retirement. There are no income limits on conversions (unlike direct Roth contributions) and no annual conversion cap — you can convert $10,000 or $1,000,000 in a single year. The decision boils down to one question: do you expect your marginal tax rate to be higher or lower in retirement than it is today?"
+      },
+      {
+        "q": "When does a conversion make financial sense?",
+        "a": "Three classic green-light scenarios. (1) Your current marginal rate is unusually low — a gap year between jobs, an early-retirement year before Social Security kicks in, or a sabbatical. (2) You expect tax rates to rise generally (the 2017 TCJA brackets sunset back to pre-2018 levels at the end of 2025 unless renewed). (3) You have outside cash to pay the conversion tax, the time horizon is long (15+ years), and your retirement marginal rate is similar to or higher than today's. The longer the horizon, the more powerful the tax-free compounding becomes, especially if the conversion tax is paid from outside funds."
+      },
+      {
+        "q": "When should I NOT convert?",
+        "a": "Five red flags. (1) You expect a meaningfully lower marginal rate in retirement — converting at 32% to withdraw at 12% is just paying extra tax. (2) You'd have to pay the conversion tax out of the IRA itself — that drains the compounding base and roughly cancels the Roth advantage unless rates rise. (3) The conversion pushes you into IRMAA (Medicare premium surcharges) or over the ACA premium-credit cliff. (4) You're close to retirement and the 5-year-rule clock won't finish before you need the money. (5) You have a large Traditional balance with nondeductible contributions mixed in — the pro-rata rule will make a partial conversion painful and you'll need to model it case-by-case."
+      },
+      {
+        "q": "What's the 5-year rule and does this calc account for it?",
+        "a": "Each Roth conversion starts its own 5-year clock; you must wait 5 calendar years from January 1 of the conversion year before you can withdraw that converted principal without a 10% early-withdrawal penalty (assuming you're under 59½). Earnings have their own separate 5-year-and-age-59½ rule. This calculator assumes you wait at least 5 years and do not touch the money before retirement age — if you plan to use conversion-ladder withdrawals before 59½ (common in FIRE), be deliberate about timing each year's conversion so the ladder rungs are reachable in order."
+      },
+      {
+        "q": "Should I pay the conversion tax from the IRA or from outside money?",
+        "a": "From outside money — almost always. Paying from outside lets the entire conversion amount enter the Roth and compound tax-free, which is where the real Roth advantage lives. Paying from inside the IRA shrinks the Roth balance up front and roughly cancels the conversion benefit when current and retirement marginal rates are equal (try the toggle in this calculator on the same scenario to see the math). The only time paying from inside is acceptable is when you have no outside cash, a long horizon, and you're confident your retirement rate will be materially higher than today's. If you're under 59½ and pay the tax from inside, the IRA dollars you peel off to pay the tax are themselves treated as an early distribution subject to the 10% penalty — another reason to use outside funds."
+      },
+      {
+        "q": "What about the pro-rata rule?",
+        "a": "The pro-rata rule (also called the cream-in-the-coffee rule) says the IRS treats all your Traditional IRA balances (deductible + nondeductible across every Traditional IRA you own) as one big pool when you do a conversion. If 80% of that pool was pre-tax money, then 80% of any conversion is taxable — regardless of which account it physically came from. This wrecks the backdoor Roth strategy for people who already hold large pre-tax Traditional balances. Workarounds: roll the pre-tax Traditional IRA balance into your current 401(k) (which is excluded from the pro-rata calc), do the backdoor in a clean year, or accept the pro-rata tax hit. This calculator assumes pro-rata does not apply — if it does for you, model the post-pro-rata taxable portion as the conversion amount."
+      },
+      {
+        "q": "Can I undo (recharacterize) a Roth conversion?",
+        "a": "No — not since 2018. The Tax Cuts and Jobs Act of 2017 eliminated the ability to recharacterize a Roth conversion. Once you convert, it's permanent. Pre-TCJA you could undo a conversion if the market crashed before October 15 of the following year (the do-over); that escape hatch is gone. The practical consequence: only convert what you're absolutely sure you want to convert, and consider spreading large conversions across multiple tax years to stay in lower brackets and to give yourself optionality each year."
+      },
+      {
+        "q": "Are there income limits on conversions?",
+        "a": "No. Direct Roth IRA contributions have a modified-AGI phase-out ($161,000 single / $240,000 married-filing-jointly for 2026), but conversions have no income limit and no annual cap. This is why the backdoor Roth works: high earners contribute to a Traditional IRA (which has no income limit on contributions, just on the deduction) and then immediately convert it. The conversion creates a taxable event, but for nondeductible contributions converted in the same year the taxable amount is roughly zero (the cost basis equals the conversion amount). The pro-rata rule is the one big but here — see the FAQ above."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.irs.gov/publications/p590a",
+        "label": "IRS Publication 590-A — Contributions to Individual Retirement Arrangements"
+      },
+      {
+        "url": "https://www.irs.gov/publications/p590b",
+        "label": "IRS Publication 590-B — Distributions from IRAs (5-year rule, ordering rules)"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/26/408A",
+        "label": "Internal Revenue Code §408A — Roth IRAs"
+      }
+    ],
+    "related": [
+      "roth-ira-calculator",
+      "401k-calculator",
+      "401k-withdrawal-calculator",
+      "401k-tax-calculator",
+      "fire-calculator",
+      "retirement-savings"
+    ],
+    "scenarios": [
+      {
+        "label": "Mid-career, flat-rate, tax from outside ($50k @ 22%/22%, 30yr, 7%)",
+        "query": "conversionAmount=50000&currentAge=35&retirementAge=65&currentMarginalRatePct=22&retirementMarginalRatePct=22&expectedReturnPct=7&taxPaidFromConversion=outside"
+      },
+      {
+        "label": "Gap-year conversion ($60k @ 12% now, 24% retirement, 25yr)",
+        "query": "conversionAmount=60000&currentAge=40&retirementAge=65&currentMarginalRatePct=12&retirementMarginalRatePct=24&expectedReturnPct=7&taxPaidFromConversion=outside"
+      },
+      {
+        "label": "Backdoor Roth ($7k high-earner, 35% now, outside funds, 25yr)",
+        "query": "conversionAmount=7000&currentAge=40&retirementAge=65&currentMarginalRatePct=35&retirementMarginalRatePct=24&expectedReturnPct=7&taxPaidFromConversion=outside"
+      }
+    ],
+    "keyConcepts": "<p><strong>The Roth conversion math reduces to one question: will your marginal rate be higher or lower in retirement?</strong> If higher, converting today locks in today's lower rate and the Roth balance compounds tax-free — pure win. If lower, converting today pays a premium tax bill to dodge a cheaper future one — pure loss. If the rates are equal, the answer hinges entirely on whether you pay the conversion tax from outside funds (Roth wins by the amount the prepaid tax would have grown to in the Traditional) or from inside the conversion (mathematical wash — try the toggle in the calculator above on a 22%/22%/30yr scenario to see it). The headline US tax-policy backdrop matters here: the Tax Cuts and Jobs Act of 2017 set today's brackets unusually low and they sunset back to pre-2018 levels at the end of 2025 unless renewed. Many practitioners view 2024-2025 as a strategic conversion window for that reason.</p><p><strong>Pay the conversion tax from outside funds — almost always.</strong> The single biggest mistake people make on Roth conversions is paying the tax out of the IRA being converted. This drains the compounding base by the amount of the tax (22% of a $50k conversion = $11k that never enters the Roth) and roughly cancels the Roth advantage at flat tax rates. Worse, if you're under 59½, the IRA dollars used to pay the tax are themselves a taxable distribution subject to the 10% early-withdrawal penalty. The clean play is to have at least a year's worth of conversion taxes in a taxable brokerage or savings account before you start a conversion ladder, and to convert only as much each year as you can pay tax on from outside. Backdoor Roth contributions ($7k/yr for under-50s in 2026) are the rare exception where the conversion is immediate and the tax base is roughly zero anyway.</p><p><strong>The 5-year rule has two flavours and you must respect both.</strong> The first 5-year rule applies to each conversion separately: converted principal cannot be withdrawn without the 10% penalty until 5 calendar years from January 1 of the conversion year (so a conversion in November 2026 unlocks January 1, 2031). The second 5-year rule applies to earnings: Roth earnings can be withdrawn tax-free only after both 5 years from your first Roth contribution AND age 59½. These two clocks run independently. The practical effect for early retirees is the &ldquo;Roth conversion ladder&rdquo; — convert a year's worth of expenses every year starting 5 years before you need it, and you can fund early retirement out of seasoned Roth conversions before age 59½ without penalty.</p><p><strong>Backdoor Roth basics for high earners.</strong> Direct Roth IRA contributions phase out at modified-AGI of $161,000 single / $240,000 married-filing-jointly for 2026, which excludes most dual-income professionals. The backdoor route: make a nondeductible contribution to a Traditional IRA ($7,000 in 2026, $8,000 if 50+), then immediately convert it to a Roth IRA. Because the contribution wasn't deducted, the conversion has zero (or near-zero) taxable amount — you've essentially made a Roth contribution that the income limits would have blocked. The catch is the pro-rata rule: if you already hold pre-tax money in any Traditional IRA, the IRS treats all your Traditional IRA balances as one pool and pro-rates the taxable portion of any conversion against that pool. The fix is usually to roll your pre-tax Traditional IRA balances into a 401(k) (which is excluded from the pro-rata calc) before doing the backdoor, then keep the Traditional IRA empty except for fresh nondeductible contributions.</p><p><strong>Conversion ladders fund early retirement before 59½.</strong> The FIRE community's favourite Roth move is the &ldquo;Roth conversion ladder&rdquo;: starting five years before you plan to retire (or each year of early retirement), convert exactly one year's worth of spending from Traditional IRA / 401(k) to Roth IRA. Five years later, that converted principal becomes withdrawable penalty-free (per the per-conversion 5-year rule above). Run the ladder annually and you can fund a 30-year early retirement entirely from seasoned Roth conversions — taxed at unusually low brackets (you have no W-2 income in early retirement), with no 10% penalty, no Social Security clawback, no required minimum distributions. The calculator above models a single conversion in isolation; for a multi-year ladder, run it once per year with that year's tax-rate assumption.</p><p><strong>Three common mistakes that wreck a conversion.</strong> First, the IRMAA cliff: large conversions can push your modified-AGI into one of the higher Medicare Part B / D premium brackets, which adds $1,000-$5,000 of surcharge per spouse for two years. Second, the ACA premium-credit cliff: for early retirees on a Marketplace plan, a conversion that pushes household income over 400% of the federal poverty line eliminates premium tax credits entirely — often a $10,000-$20,000 effective tax bump on the conversion. Third, the pro-rata rule blindspot: people who built up pre-tax Traditional IRA balances over decades and then try to backdoor-Roth $7,000 a year discover the entire conversion is largely taxable, not nondeductible-contribution-tax-free. None of these are deal-breakers; they're just inputs the simple Convert-vs-Don't math doesn't catch. Always model the conversion year's full federal return — not just the marginal-rate decision — before pulling the trigger.</p>"
   }
 }

@@ -24,6 +24,7 @@ EXPECTED_SLUGS = {
     "california-paycheck-calculator",
     "paye-calculator",
     "dividend-calculator",
+    "roth-ira-conversion-calculator",
 }
 
 def test_calculators_file_exists():

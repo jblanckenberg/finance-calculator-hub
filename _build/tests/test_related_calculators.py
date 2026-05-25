@@ -54,8 +54,8 @@ def test_calculator_pages_exist():
     # 2026-05-24: +coast-fire (20), +401k-withdrawal (21), +401k-tax (22),
     # +mortgage-repayment (23), +mortgage-overpayment (24),
     # +texas-paycheck (25), +california-paycheck (26), +paye-calculator (27),
-    # +dividend-calculator (28).
-    assert len(CALC_PAGES) == 28, f"Expected 28 calculator pages, found {len(CALC_PAGES)}"
+    # +dividend-calculator (28), +roth-ira-conversion-calculator (29).
+    assert len(CALC_PAGES) == 29, f"Expected 29 calculator pages, found {len(CALC_PAGES)}"
 
 
 def test_variant_pages_exist():
