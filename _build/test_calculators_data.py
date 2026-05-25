@@ -20,6 +20,8 @@ EXPECTED_SLUGS = {
     "401k-tax-calculator",
     "mortgage-repayment-calculator",
     "mortgage-overpayment-calculator",
+    "texas-paycheck-calculator",
+    "california-paycheck-calculator",
 }
 
 def test_calculators_file_exists():

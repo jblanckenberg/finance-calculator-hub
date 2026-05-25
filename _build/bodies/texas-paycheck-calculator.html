@@ -1,0 +1,163 @@
+<!-- Texas Paycheck Calculator -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#fff8e1;border-left:4px solid #f5b800;margin-bottom:16px">
+    <strong>🤠 Texas Paycheck Calculator</strong> — Federal tax + FICA only. Texas has NO state income tax, which is why net pay is materially higher than California or New York for the same gross salary.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Details</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="grossAnnual">Annual Gross Salary <span class="hint">($)</span></label>
+        <input type="number" id="grossAnnual" value="80000" min="0" placeholder="80000" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="filingStatus">Filing Status</label>
+        <select id="filingStatus" onchange="calculate()">
+          <option value="single">Single</option>
+          <option value="married">Married Filing Jointly</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="contribution401kPct">401(k) Contribution (%) <span class="hint">reduces federal tax, not FICA</span></label>
+        <input type="number" id="contribution401kPct" value="0" min="0" max="100" step="0.5" placeholder="0" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label for="contributionHsaAnnual">HSA Annual Contribution <span class="hint">($, reduces both)</span></label>
+        <input type="number" id="contributionHsaAnnual" value="0" min="0" max="10000" placeholder="0" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="payPeriodsPerYear">Pay Period</label>
+      <select id="payPeriodsPerYear" onchange="calculate()">
+        <option value="52">Weekly (52)</option>
+        <option value="26">Bi-weekly (26)</option>
+        <option value="24">Semi-monthly (24)</option>
+        <option value="12" selected>Monthly (12)</option>
+        <option value="1">Annual</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Texas Paycheck Breakdown</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Net Pay (per period)</div>
+        <div class="result-value" id="r-netPeriod">—</div>
+        <div class="result-hint" id="r-periodHint">Take-home in your paycheck</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Net Annual</div>
+        <div class="result-value" id="r-netAnnual">—</div>
+        <div class="result-hint">After all federal + FICA</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Effective Tax Rate</div>
+        <div class="result-value" id="r-effective">—</div>
+        <div class="result-hint">All tax ÷ gross</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">State Tax</div>
+        <div class="result-value">$0</div>
+        <div class="result-hint">Texas — no state income tax 🎉</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Federal Income Tax</div>
+        <div class="result-value" id="r-federal">—</div>
+        <div class="result-hint">Progressive 10–37% brackets</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">FICA (Social Security + Medicare)</div>
+        <div class="result-value" id="r-fica">—</div>
+        <div class="result-hint" id="r-ficaHint">6.2% SS + 1.45% Medicare</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Pre-tax 401(k)</div>
+        <div class="result-value" id="r-401k">—</div>
+        <div class="result-hint">Reduces federal taxable wages</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Pre-tax HSA</div>
+        <div class="result-value" id="r-hsa">—</div>
+        <div class="result-hint">Reduces federal AND FICA</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>2026 IRS federal brackets, $15,000 standard deduction (single) / $30,000 (married). FICA: 6.2% Social Security on wages up to $176,100, 1.45% Medicare on all wages, plus 0.9% additional Medicare above $200,000 single / $250,000 married. Texas-specific: no state income tax, no state disability insurance, no franchise tax on personal income. Property tax (not modelled here) is the offsetting cost — Texas has the 6th highest effective property-tax rate in the US.</p>
+    <ul style="margin:12px 0">
+      <li><strong>2026 IRS brackets:</strong> <a href="https://www.irs.gov/forms-pubs/about-publication-17" rel="noopener">IRS Publication 17</a></li>
+      <li><strong>FICA wage base:</strong> <a href="https://www.ssa.gov/oact/cola/cbb.html" rel="noopener">SSA — Contribution + Benefit Base</a></li>
+      <li><strong>Texas tax (none):</strong> <a href="https://comptroller.texas.gov/taxes/" rel="noopener">Texas Comptroller — Taxes Overview</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">Why does Texas have no state income tax?</div><div class="faq-a">Texas funds state government primarily through sales tax (6.25% state + up to 2% local), property tax (6th highest in the US, averaging 1.6–1.8% of assessed value), and severance taxes on oil and gas extraction. The Texas constitution prohibits a personal income tax — implementing one would require a constitutional amendment ratified by two-thirds of the Legislature plus a majority of voters. The trade-off: lower income-tax burden but higher property + sales tax than most states.</div></div><div class="faq-item"><div class="faq-q">What's the total tax burden in Texas?</div><div class="faq-a">For someone earning $80,000: federal income tax ~$9,200, FICA ~$6,100, state $0 — total ~$15,300 (19% effective rate). Compared to California at the same gross ($19,700 total, 24.6% effective), Texas saves you ~$4,400/year. Property tax can claw that back: a $400k home at 1.7% property tax = $6,800/year, eating most of the income-tax savings for middle-income homeowners. Renters keep the full income-tax win.</div></div><div class="faq-item"><div class="faq-q">Does Texas have a payroll tax?</div><div class="faq-a">Yes — Texas employers pay a state unemployment insurance (SUI) tax that ranges from 0.31% to 6.31% on the first $9,000 of each employee's wages. This is paid by the EMPLOYER, not the employee, so it doesn't appear on your paycheck. Texas also has the Reemployment & Employment Service tax (~0.13%) and Smart Jobs Fund assessment, both employer-paid. From the employee's perspective, Texas paychecks have no state withholding beyond federal + FICA.</div></div><div class="faq-item"><div class="faq-q">Should I max out 401(k) or HSA first in Texas?</div><div class="faq-a">HSA usually wins on a dollar-for-dollar basis because it's TRIPLE tax-advantaged: pre-tax going in, tax-free growth, tax-free out for qualified medical expenses. HSA contributions also reduce both federal AND FICA (saving you 22% federal + 7.65% FICA = 29.65% combined). 401(k) only reduces federal tax (the 7.65% FICA is still owed). 2026 HSA limits: $4,300 single / $8,550 family + $1,000 catch-up at 55+. Once HSA is maxed, capture full employer 401(k) match (typically 100% return), THEN consider Roth IRA, then traditional 401(k) up to the $23,000 limit.</div></div><div class="faq-item"><div class="faq-q">What about Texas franchise tax?</div><div class="faq-a">The Texas Franchise Tax applies to BUSINESSES, not individuals. Businesses with total revenue under $2.47 million (2026 threshold) owe no franchise tax. Above that, the rate is 0.375% for retail/wholesale and 0.75% for most other businesses on margin (revenue − COGS or revenue − comp, with caps). The franchise tax doesn't apply to W-2 wages — that's what makes Texas so attractive for high-income earners.</div></div><div class="faq-item"><div class="faq-q">How does Texas compare to other no-income-tax states?</div><div class="faq-a">Texas, Florida, Nevada, Washington, South Dakota, Tennessee, New Hampshire, Wyoming, Alaska all have no broad state income tax. The trade-offs vary: Florida has lower property tax than Texas; Washington has 7% capital gains tax above $250k; New Hampshire has a 4% tax on interest+dividends (phased out by 2027); Alaska sometimes pays residents a Permanent Fund dividend. For W-2 income only, Texas, Florida, and Nevada are typically the cheapest combined state burden.</div></div><div class="faq-item"><div class="faq-q">Do I still need to file a Texas state tax return?</div><div class="faq-a">No. Texas doesn't have a state income tax, so there's no state return for personal income. You only file federal (Form 1040). Texas residents who work in another state may owe taxes to that other state and need to file there. Texas residents who work remotely for a company headquartered in another state generally owe no state tax to that state, but rules vary — consult a tax pro if you're a remote worker living in TX for a CA, NY, or NJ employer.</div></div><div class="faq-item"><div class="faq-q">Self-employed in Texas — what changes?</div><div class="faq-a">As a sole proprietor or independent contractor, you owe Self-Employment (SE) tax in place of FICA — 15.3% (12.4% Social Security up to wage base + 2.9% Medicare, plus 0.9% additional Medicare above threshold). Half of SE tax is deductible against federal income. Texas business owners with revenue above $2.47M may also owe franchise tax. No state income tax still applies, so the combined federal + SE rate is your full burden on self-employment income.</div></div><div class="faq-item"><div class="faq-q">What's the biggest paycheck mistake Texans make?</div><div class="faq-a">Under-contributing to retirement accounts because the take-home pay looks so healthy that there's no perceived 'pain' to motivate saving. Texans miss out on the federal tax shelter that high-tax-state residents are forced to use — but the math still favours saving. A 25-year-old in Texas earning $80k who saves nothing because 'rent is cheap' will retire with ~$0 vs the same person in California who maxes 401k (a behavioural quirk) and retires with $1.5M+. The state-tax savings should be the ROCKET FUEL for retirement savings, not the EXCUSE not to save.</div></div></div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/california-paycheck-calculator/" class="related-card">🌴 California Paycheck</a>
+      <a href="/take-home-pay/" class="related-card">💵 USA Take-Home Pay</a>
+      <a href="/401k-calculator/" class="related-card">💼 401(k) Contribution</a>
+      <a href="/401k-withdrawal-calculator/" class="related-card">📊 401(k) Withdrawal</a>
+      <a href="/roth-ira-calculator/" class="related-card">🏦 Roth IRA</a>
+      <a href="/retirement-savings/" class="related-card">🏖️ Retirement Savings</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="texas-paycheck-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/state-paycheck.js" defer></script>
+<script>
+function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+function calculate() {
+  if (!window.FCH_STATE_PAYCHECK) return;
+  var p = {
+    grossAnnual: +document.getElementById('grossAnnual').value,
+    filingStatus: document.getElementById('filingStatus').value,
+    contribution401kPct: +document.getElementById('contribution401kPct').value || 0,
+    contributionHsaAnnual: +document.getElementById('contributionHsaAnnual').value || 0,
+    payPeriodsPerYear: +document.getElementById('payPeriodsPerYear').value,
+    state: 'TX',
+  };
+  var R = window.FCH_STATE_PAYCHECK.calc(p);
+  var errEl = document.getElementById('error-message');
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    ['r-netPeriod', 'r-netAnnual', 'r-effective', 'r-federal', 'r-fica', 'r-401k', 'r-hsa'].forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-netPeriod').textContent = fmt(R.netPerPeriod);
+  var periodLabel = { 52: 'weekly', 26: 'bi-weekly', 24: 'semi-monthly', 12: 'monthly', 1: 'annual' }[p.payPeriodsPerYear];
+  document.getElementById('r-periodHint').textContent = 'Take-home per ' + periodLabel + ' paycheck';
+  document.getElementById('r-netAnnual').textContent = fmt(R.netAnnual);
+  document.getElementById('r-effective').textContent = R.effectiveTaxRatePct.toFixed(1) + '%';
+  document.getElementById('r-federal').textContent = fmt(R.federalIncomeTax);
+  document.getElementById('r-fica').textContent = fmt(R.totalFica);
+  document.getElementById('r-ficaHint').textContent = 'SS ' + fmt(R.socialSecurity) + ' + Medicare ' + fmt(R.medicare) + (R.additionalMedicare > 0 ? ' + addl ' + fmt(R.additionalMedicare) : '');
+  document.getElementById('r-401k').textContent = fmt(R.preTax401k);
+  document.getElementById('r-hsa').textContent = fmt(R.preTaxHsa);
+}
+document.addEventListener('DOMContentLoaded', function () { if (typeof calculate === 'function') calculate(); });
+</script>
