@@ -1,0 +1,266 @@
+<!-- Hourly to Salary Calculator -->
+<div class="container" style="padding-top:0">
+
+  <div class="card" style="background:#e8f5e9;border-left:4px solid #2e7d32;margin-bottom:16px">
+    <strong>💼 Hourly to Salary Calculator</strong> &mdash; convert an hourly wage to an annual salary (or vice versa) with FLSA-compliant 1.5&times; overtime, paid time off, holidays, unpaid weeks, and a rough US take-home preview. PTO doesn&rsquo;t reduce salary but it does raise your <em>effective</em> hourly rate, which is the most useful number for comparing offers.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Enter Your Scenario</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Direction</label>
+        <div style="display:flex;gap:16px;padding-top:6px">
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px">
+            <input type="radio" name="direction" value="hourly_to_salary" checked onchange="onDirectionChange()"> Hourly &rarr; Salary
+          </label>
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px">
+            <input type="radio" name="direction" value="salary_to_hourly" onchange="onDirectionChange()"> Salary &rarr; Hourly
+          </label>
+        </div>
+      </div>
+      <div class="form-group" id="grp-hourlyRate">
+        <label for="hourlyRate">Hourly Rate ($) <span class="hint">pre-tax base wage</span></label>
+        <input type="number" id="hourlyRate" value="25" min="0" step="0.5" oninput="calculate()" inputmode="decimal">
+      </div>
+      <div class="form-group" id="grp-salaryInput" style="display:none">
+        <label for="salaryInput">Annual Salary ($) <span class="hint">pre-tax base salary</span></label>
+        <input type="number" id="salaryInput" value="52000" min="0" step="500" oninput="calculate()" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="hoursPerWeek">Hours per Week <span class="hint">standard 40</span></label>
+        <input type="number" id="hoursPerWeek" value="40" min="1" max="80" step="1" oninput="calculate()" inputmode="numeric">
+      </div>
+      <div class="form-group">
+        <label for="weeksPerYear">Weeks per Year <span class="hint">52 standard, 50 if 2wk unpaid</span></label>
+        <input type="number" id="weeksPerYear" value="52" min="1" max="52" step="1" oninput="calculate()" inputmode="numeric">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="unpaidWeeks">Unpaid Weeks <span class="hint">sabbatical / unpaid leave</span></label>
+        <input type="number" id="unpaidWeeks" value="0" min="0" max="52" step="1" oninput="calculate()" inputmode="numeric">
+      </div>
+      <div class="form-group">
+        <label for="overtimeHoursPerWeek">Overtime Hours / Week <span class="hint">1.5&times; federal FLSA rule</span></label>
+        <input type="number" id="overtimeHoursPerWeek" value="0" min="0" max="40" step="1" oninput="calculate()" inputmode="numeric">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="holidayPaidDays">Paid Holidays (days) <span class="hint">~10 typical US</span></label>
+        <input type="number" id="holidayPaidDays" value="10" min="0" max="30" step="1" oninput="calculate()" inputmode="numeric">
+      </div>
+      <div class="form-group">
+        <label for="vacationPaidDays">Paid Vacation (days) <span class="hint">~10 entry / 20+ tenured</span></label>
+        <input type="number" id="vacationPaidDays" value="10" min="0" max="40" step="1" oninput="calculate()" inputmode="numeric">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Wage Conversion</div>
+    <div id="error-message" style="display:none;background:#fff3cd;border-left:4px solid #f5b800;padding:12px;margin-bottom:12px;border-radius:4px"></div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">Annual Salary</div>
+      <div id="r-annual" style="font-size:2.2em;font-weight:700;color:#1B3A5C;margin-top:4px">&mdash;</div>
+      <div style="font-size:0.9em;color:#444;margin-top:6px">Pre-tax gross &mdash; base pay + overtime, after unpaid weeks subtracted</div>
+    </div>
+
+    <div style="margin-bottom:16px;padding:20px;background:#fff;border-radius:8px;border-left:4px solid #2e7d32;text-align:center">
+      <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em;color:#6c757d">Effective Hourly Rate</div>
+      <div id="r-effective" style="font-size:1.9em;font-weight:700;color:#2e7d32;margin-top:4px">&mdash;</div>
+      <div style="font-size:0.9em;color:#444;margin-top:6px">Annual salary &divide; hours actually worked (PTO factored in)</div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Base Hourly Rate</div>
+        <div class="result-value" id="r-hourly">&mdash;</div>
+        <div class="result-hint">Pre-tax base wage</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Weekly (base)</div>
+        <div class="result-value" id="r-weekly">&mdash;</div>
+        <div class="result-hint">Hourly &times; standard hours</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Weekly (with OT)</div>
+        <div class="result-value" id="r-weekly-ot">&mdash;</div>
+        <div class="result-hint">Base + overtime at 1.5&times;</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Biweekly</div>
+        <div class="result-value" id="r-biweekly">&mdash;</div>
+        <div class="result-hint">Two standard weeks</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Monthly</div>
+        <div class="result-value" id="r-monthly">&mdash;</div>
+        <div class="result-hint">Annual &divide; 12</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Hours Worked / Year</div>
+        <div class="result-value" id="r-hours-worked">&mdash;</div>
+        <div class="result-hint">Excludes PTO + unpaid time</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Take-Home (annual)</div>
+        <div class="result-value" id="r-takehome-annual">&mdash;</div>
+        <div class="result-hint">Rough; use <a href="/take-home-pay/">/take-home-pay/</a> for precise</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Take-Home (monthly)</div>
+        <div class="result-value" id="r-takehome-monthly">&mdash;</div>
+        <div class="result-hint">22% flat federal+FICA estimate</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="methodology" style="margin:32px 0;padding:20px;background:#f8f9fa;border-radius:8px;border-left:4px solid #1B3A5C">
+    <h2 style="margin-top:0;color:#1B3A5C">Methodology &amp; Sources</h2>
+    <p>Annual salary is computed as <code>hourlyRate &times; hoursPerWeek &times; (weeksPerYear &minus; unpaidWeeks) + overtimeHoursPerWeek &times; hourlyRate &times; 1.5 &times; workedWeeks</code>. The 1.5&times; overtime multiplier reflects the federal Fair Labor Standards Act (FLSA) rule for non-exempt employees on hours above 40 per week; state-specific overtime rules (e.g. California&rsquo;s daily overtime at 8 hours, double-time at 12) are not modelled and would require a state-aware engine. Paid holidays and vacation days are <em>inside</em> the contracted <code>weeksPerYear</code> &mdash; they do not reduce annual salary, but they do reduce the hours you actually work, which is why the effective hourly rate (annualSalary &divide; hoursActuallyWorked) is always &ge; your nominal hourly rate when PTO is positive.</p>
+    <p>Hours per day for PTO accounting is calculated as <code>hoursPerWeek &divide; 5</code> &mdash; standard for a 5-day work week. The effective hourly rate is the single most useful comparison number between offers because it normalises across different PTO policies: a $50,000 salary with 25 PTO days is meaningfully more valuable per hour worked than a $50,000 salary with 10 PTO days, even though the headline numbers look identical. For reverse direction (salary to hourly), the calculator divides the input salary by <code>hoursPerWeek &times; workedWeeks</code> to derive the implied base hourly rate, then layers overtime on top using that derived rate.</p>
+    <p>The take-home preview applies a flat 22% combined federal income + FICA assumption to the gross annual figure. This is intentionally rough &mdash; real take-home depends on filing status, state income tax (zero in TX/FL/NV/etc., 13.3% top in CA), pre-tax benefits (401(k), HSA, FSA), local tax (NYC, Philadelphia, etc.), and W-4 withholding choices. For state-aware modelling use the <a href="/take-home-pay/">Take-Home Pay Calculator</a> (multi-region) or the state-specific paycheck calculators (<a href="/texas-paycheck-calculator/">Texas</a>, <a href="/california-paycheck-calculator/">California</a>). For UK PAYE see <a href="/paye-calculator/">PAYE Calculator</a>.</p>
+    <p>This calculator intentionally does <strong>not</strong> model: bonus and commission income (they don&rsquo;t fit the rate-conversion framing), employer benefit value (health insurance, 401(k) match, equity), self-employment taxes for 1099 contractors (you owe the full 15.3% FICA self-employed, not the employee half), short-term disability, FSA / dependent-care contributions, or pre-tax 401(k) deferrals (which shift your effective hourly rate but don&rsquo;t change gross). If you&rsquo;re a 1099 contractor benchmarking a W-2 offer, add ~15% to the W-2 hourly rate as a rough adjustment for employer-side FICA and the absence of employer benefits.</p>
+    <ul style="margin:12px 0">
+      <li><strong>Overtime + minimum wage law:</strong> <a href="https://www.dol.gov/agencies/whd/flsa" rel="noopener">U.S. Department of Labor &mdash; Fair Labor Standards Act (FLSA) Wages and Hours</a></li>
+      <li><strong>Employer tax + payroll withholding context:</strong> <a href="https://www.irs.gov/publications/p15" rel="noopener">IRS Publication 15 &mdash; Employer&rsquo;s Tax Guide (Circular E)</a></li>
+      <li><strong>Wage benchmarking by occupation:</strong> <a href="https://www.bls.gov/oes/" rel="noopener">BLS Occupational Employment and Wage Statistics</a></li>
+    </ul>
+    <p style="font-size:0.9em;color:#6c757d;margin-bottom:0"><em>Last verified: May 2026.</em></p>
+  </section>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">How do I convert hourly to annual salary?</div>
+      <div class="faq-a">The shortcut: hourly rate &times; 40 hours &times; 52 weeks = annual salary. So $25/hr becomes $52,000, $50/hr becomes $104,000, $100/hr becomes $208,000. That assumes a full 52-week year of 40-hour weeks with no unpaid time off. If you take 2 weeks of unpaid vacation a year (which a lot of people do without thinking about it that way), drop to 50 worked weeks &mdash; $25/hr &times; 40 &times; 50 = $50,000, a $2,000 difference per year. The mental model that survives in the real world is to use 50 weeks unless your employer pays your full vacation, which most salaried-exempt employers do but most hourly W-2 employers do not. Overtime layers on top: if you regularly work 5 hours of overtime per week at 1.5&times;, that adds $25 &times; 5 &times; 1.5 &times; 52 = $9,750 to the annual figure.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does PTO affect my &ldquo;real&rdquo; hourly rate?</div>
+      <div class="faq-a">Yes &mdash; and this is the most useful number for comparing offers. PTO doesn&rsquo;t change your annual salary (you get paid the same whether you take vacation or not), but it does change the hours you actually work, which means your <em>effective</em> hourly rate goes up. A $52,000 salary with 20 PTO days (10 holiday + 10 vacation) means you actually worked 1,920 hours, not 2,080 &mdash; your effective hourly rate is $27.08, not $25.00. Two offers can be identical on paper ($60,000, 40-hour weeks) but differ by $3+/hour effectively because one offers 15 PTO days and the other offers 30. When recruiters lead with the salary number, ask about PTO + holidays in the same breath. Especially relevant when comparing a salaried-exempt offer (often has more PTO and no overtime) against an hourly W-2 offer (less PTO, but overtime above 40).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What&rsquo;s the federal overtime rule (FLSA)?</div>
+      <div class="faq-a">Under the federal Fair Labor Standards Act (FLSA), non-exempt employees must be paid at least 1.5&times; their regular rate for all hours worked above 40 in a single workweek. The workweek is defined by the employer (any fixed 168-hour period) and overtime is calculated weekly &mdash; not by pay period, not bi-weekly. There&rsquo;s no federal daily overtime: working 12 hours one day and 4 the next is the same 16-hour week as working 8+8. Some states layer additional rules: California has daily overtime at 8 hours, double-time after 12 hours, and a 7th-consecutive-day rule. Colorado, Nevada, Alaska, and a few others have daily-overtime rules at 8 or 12 hours. Exempt employees (salaried-exempt under the FLSA white-collar exemptions) don&rsquo;t get overtime regardless of hours worked &mdash; the trade-off for the predictable salary and (usually) better benefits. The salary threshold for exempt status as of 2024 is $43,888/year, scheduled to rise to $58,656 in 2025 (subject to ongoing legal challenges).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Salaried-exempt vs hourly &mdash; what&rsquo;s the difference?</div>
+      <div class="faq-a">Hourly (non-exempt under FLSA): you get paid by the hour, time-and-a-half above 40 hours, but typically less PTO, fewer benefits, and often no employer 401(k) match. Salaried-exempt: predictable annual salary, full benefits package (health, 401(k) match, more PTO), but no overtime regardless of hours worked &mdash; you eat 50-hour weeks for free. The tipping point is hours: if a salaried-exempt offer pays $80,000 but the team routinely works 55 hours/week, the effective hourly rate is $28/hr ($80k &divide; (55 &times; 50)), which might actually be worse than an $30/hr hourly offer with strict 40-hour weeks. Salaried-exempt usually wins for benefits, predictability, and career trajectory; hourly usually wins for work-life-balance enforcement and easier overtime stacking in certain industries (trades, healthcare, manufacturing). The status is set by job duties + salary threshold under FLSA &mdash; you can&rsquo;t just &ldquo;become salaried&rdquo; by mutual agreement.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do bonuses and commissions affect annual income?</div>
+      <div class="faq-a">Add them on top of the base annual salary the calculator outputs. A $52,000 base + $5,000 annual bonus = $57,000 total cash compensation. Sales-heavy roles can have base + commission structures where commissions are 50%+ of total comp &mdash; in those cases the base is the floor and the commission is variable. Two practical points: (1) bonuses are taxed as supplemental wages, which means a flat 22% federal withholding (or 37% above $1 million per year), so the withholding rate is usually higher than your marginal rate, which produces a smaller-than-expected paycheck. You get the difference back at tax time. (2) For lender qualification (mortgages, auto loans), most lenders count only base salary + a 2-year average of bonuses, not your most recent year. If you&rsquo;re shopping for a mortgage and just got a $20k bonus, that won&rsquo;t fully count toward your qualifying income.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How many weeks should I use &mdash; 52 or 50?</div>
+      <div class="faq-a">Use 52 if you&rsquo;re salaried-exempt with PTO inside the year (the headline standard), use 50 if you&rsquo;re hourly W-2 with 2 weeks of unpaid vacation, use 48 if you&rsquo;re hourly contractor / freelance where you take roughly a month off per year unpaid. The mental shortcut: <em>weeks paid</em> is what matters. A salaried employee with 4 weeks of paid vacation is still paid 52 weeks &mdash; their employer just doesn&rsquo;t deduct anything for the vacation time. An hourly employee with 4 weeks of <em>unpaid</em> vacation is only paid 48 weeks &mdash; that&rsquo;s an 8% pay cut relative to the headline hourly rate. The default of 52 is correct for most US salaried-exempt workers and an over-estimate for most hourly workers. If your real number is somewhere between, use 50 or 51 to be honest with yourself when you&rsquo;re benchmarking against headline figures other people quote.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are my benefits worth a higher hourly rate?</div>
+      <div class="faq-a">Often yes, and it&rsquo;s the single biggest blind spot when 1099 contractors benchmark against W-2 offers. Employer-provided health insurance is worth $7,000-$15,000 per year for a single person, $20,000-$30,000 for a family &mdash; in pre-tax dollars, which means after-tax it&rsquo;s worth more. A 6% 401(k) match on a $60k salary is $3,600/year. Paid sick leave, short-term disability, life insurance, dental + vision, FSA, commuter benefits &mdash; another $2,000-$5,000 combined. Conservatively, a W-2 benefits package adds 25-35% to the headline salary for total compensation. Translation: a $60,000 W-2 offer is roughly worth $75,000-$80,000 in 1099 contractor terms, before even accounting for the contractor having to pay the full 15.3% self-employment FICA tax themselves. The rule of thumb that survives in practice: 1099 hourly rate &gt;= 1.4-1.5&times; the equivalent W-2 hourly rate to break even.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">W-2 vs 1099 &mdash; do these calculations apply?</div>
+      <div class="faq-a">The wage-conversion math is the same (hourly &times; hours &times; weeks = annual), but the tax math is dramatically different. As a W-2 employee, your employer pays half of FICA (7.65%) and withholds your half &mdash; your headline hourly rate excludes the employer-paid portion. As a 1099 independent contractor, you pay both halves yourself (15.3% self-employment tax) on top of federal + state income tax, with no employer-paid benefits and no unemployment insurance backstop. You CAN deduct half of self-employment tax + business expenses + QBI (20% pass-through deduction if you qualify), which softens the blow somewhat. Quick rule for benchmarking: take the W-2 hourly figure, multiply by 1.4-1.5&times; to get a 1099 equivalent that covers self-employment tax + roughly approximates lost benefits. So a $30/hr W-2 role is roughly equivalent in net take-home to $42-$45/hr as a 1099 contractor &mdash; lower than that and you&rsquo;re taking a real pay cut for the privilege of being your own boss.</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Calculators</h2>
+    <div class="related-grid">
+      <a href="/take-home-pay/" class="related-card">💵 Take-Home Pay</a>
+      <a href="/texas-paycheck-calculator/" class="related-card">🤠 Texas Paycheck</a>
+      <a href="/california-paycheck-calculator/" class="related-card">🌴 California Paycheck</a>
+      <a href="/401k-calculator/" class="related-card">💼 401(k)</a>
+      <a href="/401k-tax-calculator/" class="related-card">🧾 401(k) Tax</a>
+      <a href="/savings-goal/" class="related-card">🎯 Savings Goal</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0">
+  <div id="embed-cta-slot" data-slug="hourly-to-salary-calculator"></div>
+</div>
+<script src="/js/embed-cta.js" defer></script>
+
+<script src="/js/calc/hourly-to-salary.js" defer></script>
+<script>
+function fmtUSD(n) {
+  if (n === null || n === undefined || isNaN(n)) return '$0';
+  var v = Math.round(n);
+  var sign = v < 0 ? '-' : '';
+  return sign + '$' + Math.abs(v).toLocaleString('en-US');
+}
+function fmtUSDcents(n) {
+  if (n === null || n === undefined || isNaN(n)) return '$0.00';
+  var sign = n < 0 ? '-' : '';
+  return sign + '$' + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function fmtHrs(n) {
+  if (n === null || n === undefined || isNaN(n)) return '0';
+  return Math.round(n).toLocaleString('en-US') + ' hrs';
+}
+function getDirection() {
+  var radios = document.getElementsByName('direction');
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) return radios[i].value;
+  }
+  return 'hourly_to_salary';
+}
+function onDirectionChange() {
+  var dir = getDirection();
+  document.getElementById('grp-hourlyRate').style.display = dir === 'hourly_to_salary' ? '' : 'none';
+  document.getElementById('grp-salaryInput').style.display = dir === 'salary_to_hourly' ? '' : 'none';
+  calculate();
+}
+function calculate() {
+  if (!window.FCH_HOURLY_TO_SALARY) return;
+  var dir = getDirection();
+  var p = {
+    direction: dir,
+    hourlyRate: +document.getElementById('hourlyRate').value || 0,
+    salaryInput: +document.getElementById('salaryInput').value || 0,
+    hoursPerWeek: +document.getElementById('hoursPerWeek').value || 0,
+    weeksPerYear: +document.getElementById('weeksPerYear').value || 0,
+    unpaidWeeks: +document.getElementById('unpaidWeeks').value || 0,
+    overtimeHoursPerWeek: +document.getElementById('overtimeHoursPerWeek').value || 0,
+    holidayPaidDays: +document.getElementById('holidayPaidDays').value || 0,
+    vacationPaidDays: +document.getElementById('vacationPaidDays').value || 0,
+  };
+  var R = window.FCH_HOURLY_TO_SALARY.calc(p);
+  var errEl = document.getElementById('error-message');
+  var resultIds = ['r-annual','r-effective','r-hourly','r-weekly','r-weekly-ot','r-biweekly','r-monthly','r-hours-worked','r-takehome-annual','r-takehome-monthly'];
+  if (R.error) {
+    errEl.style.display = 'block';
+    errEl.textContent = R.error;
+    resultIds.forEach(function (id) {
+      document.getElementById(id).textContent = '—';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-annual').textContent = fmtUSD(R.annualSalary);
+  document.getElementById('r-effective').textContent = fmtUSDcents(R.effectiveHourlyRate) + '/hr';
+  document.getElementById('r-hourly').textContent = fmtUSDcents(R.hourlyRate) + '/hr';
+  document.getElementById('r-weekly').textContent = fmtUSD(R.weeklyEarnings);
+  document.getElementById('r-weekly-ot').textContent = fmtUSD(R.weeklyWithOvertime);
+  document.getElementById('r-biweekly').textContent = fmtUSD(R.biweeklyEarnings);
+  document.getElementById('r-monthly').textContent = fmtUSD(R.monthlyEarnings);
+  document.getElementById('r-hours-worked').textContent = fmtHrs(R.totalAnnualHoursWorked);
+  document.getElementById('r-takehome-annual').textContent = fmtUSD(R.takeHomeEstimateAnnual);
+  document.getElementById('r-takehome-monthly').textContent = fmtUSD(R.takeHomeEstimateMonthly);
+}
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof calculate === 'function') calculate();
+});
+</script>

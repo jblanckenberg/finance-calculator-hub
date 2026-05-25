@@ -31,6 +31,8 @@ EXPECTED_SLUGS = {
     "pension-calculator-uk",
     # 2026-05-24 Phase 4B: Traditional IRA Calculator (60,500 vol, KD 37)
     "traditional-ira-calculator",
+    # 2026-05-24 Phase 4C: Hourly to Salary Calculator (49,500 vol, KD 37) — closes Phase 4
+    "hourly-to-salary-calculator",
 }
 
 def test_calculators_file_exists():
