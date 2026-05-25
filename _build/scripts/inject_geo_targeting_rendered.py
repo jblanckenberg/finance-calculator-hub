@@ -115,6 +115,10 @@ for parent_slug, locales in CLUSTERS.items():
 #    so the page itself is the only hreflang tag emitted).
 STANDALONE_CALCS: list[tuple[str, str]] = [
     ("isa-calculator/index.html", "en-GB"),
+    ("mortgage-overpayment-calculator/index.html", "en-GB"),
+    ("mortgage-repayment-calculator/index.html", "en-GB"),
+    ("paye-calculator/index.html", "en-ZA"),
+    ("pension-calculator-uk/index.html", "en-GB"),
     ("sa-tax-calculator/index.html", "en-ZA"),
     ("stamp-duty-calculator/index.html", "en-GB"),
     ("tfsa-calculator/index.html", "en-ZA"),
@@ -146,6 +150,15 @@ for rel_html, locale in BLOG_POSTS:
         "schema_type": "Article",
     }
 
+# 4. og:locale-only pages. These are multi-region hub pages that should NOT
+#    carry single-country geo signals (no hreflang, no areaServed) but render
+#    on an older OG template layout that never emitted an `og:locale` tag at
+#    all. They get a default `en_US` og:locale inserted (US = primary locale),
+#    nothing else. Keyed by rel_html.
+OG_LOCALE_ONLY_PAGES: dict[str, str] = {
+    "compare/index.html": "en-US",
+}
+
 
 # Regex helpers (rendered HTML uses mixed indentation depending on page age,
 # so the patterns are lenient on leading whitespace).
@@ -167,6 +180,20 @@ JSON_LD_BLOCK = re.compile(
     r'<script type="application/ld\+json">(.*?)</script>',
     re.IGNORECASE | re.DOTALL,
 )
+
+# Match the existing og:locale meta tag (the head_meta partial hardcodes
+# `en_US`; this patcher overwrites the value per page). Captures the leading
+# indentation + the `content="..."` value so we can rewrite just the value
+# and keep formatting stable.
+OG_LOCALE_LINE = re.compile(
+    r'([ \t]*)<meta\s+property="og:locale"\s+content="[^"]*"\s*/?>',
+    re.IGNORECASE,
+)
+
+# OG locale codes use an underscore (`en_GB`); hreflang/BCP-47 uses a hyphen
+# (`en-GB`). The injector's locale map is hyphenated, so convert at emit time.
+def _og_locale(locale_code: str) -> str:
+    return locale_code.replace("-", "_")
 
 
 def _build_hreflang_block(page_meta: dict, indent: str) -> str:
@@ -268,15 +295,67 @@ def _augment_schema(text: str, page_meta: dict) -> tuple[str, bool]:
     return new_text, changed
 
 
-def patch_one(path: Path, page_meta: dict) -> tuple[bool, bool]:
-    """Apply both patches to a single page. Returns (hreflang_changed,
-    schema_changed)."""
+def _patch_og_locale(text: str, locale_code: str) -> tuple[str, bool]:
+    """Overwrite the value of the existing `og:locale` meta tag to match this
+    page's locale (e.g. `en_GB` for UK pages, `en_ZA` for SA pages). The
+    head_meta partial hardcodes `en_US`, so every non-US page needs this.
+
+    Idempotent: if the tag already carries the desired value, no change. If the
+    tag is absent (an older template layout that never emitted og:locale), the
+    text is returned unchanged here — see `_ensure_og_locale` for the insert
+    path used by og-locale-only hub pages. Returns (new_text, changed)."""
+    desired = _og_locale(locale_code)
+    changed = False
+
+    def _replace(match: re.Match) -> str:
+        nonlocal changed
+        indent = match.group(1)
+        new_tag = f'{indent}<meta property="og:locale" content="{desired}">'
+        if match.group(0) == new_tag:
+            return match.group(0)
+        changed = True
+        return new_tag
+
+    new_text = OG_LOCALE_LINE.sub(_replace, text, count=1)
+    return new_text, changed
+
+
+# Insert anchor for og:locale-only pages: place the tag immediately after the
+# last og:image* meta (mirrors head_meta.html ordering, where og:locale follows
+# the og:image block) or, failing that, after og:type.
+OG_INSERT_ANCHOR = re.compile(
+    r'^([ \t]*)<meta\s+property="og:(?:image[^"]*|type)"\s+content="[^"]*"\s*/?>\s*\n',
+    re.IGNORECASE | re.MULTILINE,
+)
+
+
+def _ensure_og_locale(text: str, locale_code: str) -> tuple[str, bool]:
+    """Set the `og:locale` value, inserting the tag if the page has none.
+    Used for og:locale-only hub pages whose template never emitted the tag.
+    Idempotent. Returns (new_text, changed)."""
+    if OG_LOCALE_LINE.search(text):
+        return _patch_og_locale(text, locale_code)
+    desired = _og_locale(locale_code)
+    anchors = list(OG_INSERT_ANCHOR.finditer(text))
+    if not anchors:
+        return text, False
+    last = anchors[-1]
+    indent = last.group(1)
+    insertion = last.end()
+    tag = f'{indent}<meta property="og:locale" content="{desired}">\n'
+    return text[:insertion] + tag + text[insertion:], True
+
+
+def patch_one(path: Path, page_meta: dict) -> tuple[bool, bool, bool]:
+    """Apply all patches to a single page. Returns (hreflang_changed,
+    schema_changed, og_locale_changed)."""
     text = path.read_text(encoding="utf-8")
     text, hreflang_changed = _inject_hreflang(text, page_meta)
     text, schema_changed = _augment_schema(text, page_meta)
-    if hreflang_changed or schema_changed:
+    text, og_changed = _patch_og_locale(text, page_meta["locale"])
+    if hreflang_changed or schema_changed or og_changed:
         path.write_text(text, encoding="utf-8")
-    return hreflang_changed, schema_changed
+    return hreflang_changed, schema_changed, og_changed
 
 
 def main() -> int:
@@ -290,14 +369,31 @@ def main() -> int:
         if not path.exists():
             missing.append(rel)
             continue
-        href_c, sch_c = patch_one(path, page_meta)
-        if href_c or sch_c:
+        href_c, sch_c, og_c = patch_one(path, page_meta)
+        if href_c or sch_c or og_c:
             tags = []
             if href_c:
                 tags.append("hreflang")
             if sch_c:
                 tags.append("areaServed")
+            if og_c:
+                tags.append("og:locale")
             print(f"  patched ({'+'.join(tags)}): {rel}")
+            updated.append(rel)
+        else:
+            already_current.append(rel)
+
+    # og:locale-only hub pages (no geo signals, just a default locale tag).
+    for rel, locale_code in OG_LOCALE_ONLY_PAGES.items():
+        path = REPO / rel
+        if not path.exists():
+            missing.append(rel)
+            continue
+        text = path.read_text(encoding="utf-8")
+        new_text, og_c = _ensure_og_locale(text, locale_code)
+        if og_c:
+            path.write_text(new_text, encoding="utf-8")
+            print(f"  patched (og:locale): {rel}")
             updated.append(rel)
         else:
             already_current.append(rel)
