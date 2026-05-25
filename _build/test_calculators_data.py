@@ -27,6 +27,8 @@ EXPECTED_SLUGS = {
     "roth-ira-conversion-calculator",
     "fire-number-calculator",
     "simple-interest-calculator",
+    # 2026-05-24 Phase 4A: UK Pension Calculator (49,500 vol, KD 27)
+    "pension-calculator-uk",
 }
 
 def test_calculators_file_exists():

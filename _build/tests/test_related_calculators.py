@@ -56,7 +56,8 @@ def test_calculator_pages_exist():
     # +texas-paycheck (25), +california-paycheck (26), +paye-calculator (27),
     # +dividend-calculator (28), +roth-ira-conversion-calculator (29),
     # +fire-number-calculator (30), +simple-interest-calculator (31).
-    assert len(CALC_PAGES) == 31, f"Expected 31 calculator pages, found {len(CALC_PAGES)}"
+    # +pension-calculator-uk (32) — Phase 4A 2026-05-24.
+    assert len(CALC_PAGES) == 32, f"Expected 32 calculator pages, found {len(CALC_PAGES)}"
 
 
 def test_variant_pages_exist():
