@@ -1,6 +1,6 @@
 # finncalc.com — Phase 3: CWV Root-Cause + Retirement Content Cluster
 
-> **STATUS: ACTIVE (resumed 2026-05-28)** — Operator lifted the backlog hold. Executing now via subagent-driven flow.
+> **STATUS: COMPLETE (2026-05-28)** — All 13 tasks executed. Operator-side P1.5 (post-deploy CWV re-verify) folds into James's next regular PSI check. Full execution audit in `2026-05-28-finncalc-phase-3-log.md`.
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use `superpowers:subagent-driven-development` (recommended) or `superpowers:executing-plans` to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 

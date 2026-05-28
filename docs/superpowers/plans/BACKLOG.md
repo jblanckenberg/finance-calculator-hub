@@ -8,11 +8,11 @@ Plans that are written and reviewed but deferred from execution. Pull from here 
 |---|---|---|---|
 | 2026-05-28 | **TBD — finncalc Phase 4: mobile JS performance** (plan not yet drafted) | Surfaced by PSI run during Phase 3 P0 — mobile score 37/100 because of third-party JS (Google Ads + GTM + FundingChoices = 254 KiB unused, TBT 7,270ms, LCP-element render delay 6,890ms). Out of Phase 3 scope; operator deferred to a separate plan. Scope sketch: (1) defer/lazy-load Ads until first interaction; (2) move Clarity behind cookie consent; (3) audit FundingChoices CMP for lazy-load; (4) investigate LCP-element render delay root cause; (5) raise `--accent` color contrast to WCAG AA 4.5:1. Target: mobile Performance ≥70. Full PSI baseline + decision in `2026-05-28-finncalc-phase-3-log.md` under "New performance findings exposed by this PSI run". | ~6-10 hours (mostly investigation + careful deferred-loading) |
 
-## Resumed
+## Completed
 
-| Date added | Date resumed | Plan | Notes |
+| Date added | Date completed | Plan | Notes |
 |---|---|---|---|
-| 2026-05-28 | 2026-05-28 | [2026-05-28-finncalc-phase-3-cwv-and-content-cluster.md](2026-05-28-finncalc-phase-3-cwv-and-content-cluster.md) | Operator lifted hold after the Agentic OS Enhancement plan completed. |
+| 2026-05-28 | 2026-05-28 | [2026-05-28-finncalc-phase-3-cwv-and-content-cluster.md](2026-05-28-finncalc-phase-3-cwv-and-content-cluster.md) | Operator resumed and executed same day. 4 articles, 9 stock images, 42 tests added. |
 
 ## Lifecycle
 
