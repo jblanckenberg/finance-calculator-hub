@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="theme-color" content="#1B3A5C"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much to Retire at 62? Social Security Early-Claim Math</title>
+  <meta name="description" content="Retire at 62: the Social Security early-claim 30% penalty math, ACA bridge for three years, and the break-even age for claiming early vs full retirement.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finncalc.com/blog/how-much-to-retire-at-62/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/finncalc.svg" type="image/svg+xml">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FSP8WRB3C"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-5FSP8WRB3C");</script>
+<script>
+(function(){
+  var loaded=false;
+  function loadAds(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092336325075679';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){loadAds();obs.disconnect();}});
+    },{rootMargin:'200px'});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.ad-slot').forEach(function(el){obs.observe(el);});
+    });
+  } else {
+    window.addEventListener('load',loadAds);
+  }
+})();
+</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "articleSection": "Retirement", "author": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "dateModified": "2026-05-28", "datePublished": "2026-05-28", "description": "How Much Do You Need to Retire at 62? Social Security Early-Claim Math", "headline": "How Much Do You Need to Retire at 62? Social Security Early-Claim Math", "image": ["https://finncalc.com/blog/how-much-to-retire-at-62/hero.jpg"], "inLanguage": "en", "mainEntityOfPage": {"@id": "https://finncalc.com/blog/how-much-to-retire-at-62/", "@type": "WebPage"}, "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "height": 630, "url": "https://finncalc.com/og-image.png", "width": 1200}, "name": "FinCalcHub", "url": "https://finncalc.com/"}, "reviewedBy": {"@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "name": "James Blanckenberg"}, "url": "https://finncalc.com/blog/how-much-to-retire-at-62/"}</script>
+  <style>
+.article-wrap{max-width:740px;margin:0 auto;padding:0 16px}
+.article-meta{font-size:13px;color:var(--muted);margin-bottom:28px}
+.article-wrap h2{color:var(--navy);font-size:1.2rem;margin:28px 0 10px}
+.article-wrap p{color:var(--text);line-height:1.8;margin-bottom:14px}
+.article-wrap ul,.article-wrap ol{color:var(--text);line-height:1.8;margin:0 0 14px 22px}
+.article-wrap li{margin-bottom:6px}
+.cta-box{background:linear-gradient(135deg,#1B3A5C 0%,#2a5298 100%);border-radius:12px;padding:28px 32px;margin:36px 0;text-align:center}
+.cta-box h3{color:#fff;font-size:1.05rem;margin:0 0 8px}
+.cta-box p{color:rgba(255,255,255,.8);margin-bottom:18px}
+.cta-box a{display:inline-block;text-decoration:none}
+.key-box{background:var(--surface);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0}
+.key-box p{margin:0;color:var(--text)}
+.art-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
+.art-table th{background:#1B3A5C;color:#fff;padding:9px 12px;text-align:left}
+.art-table td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--text)}
+.art-table tr:nth-child(even) td{background:var(--surface)}
+</style>
+  <meta property="og:title" content="How Much to Retire at 62? Social Security Early-Claim Math">
+  <meta property="og:description" content="Retire at 62: the Social Security early-claim 30% penalty math, ACA bridge for three years, and the break-even age for claiming early vs full retirement.">
+  <meta property="og:url" content="https://finncalc.com/blog/how-much-to-retire-at-62/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="FinCalcHub">
+  <meta property="og:image" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://finncalc.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="FinCalcHub — free financial calculators for USA, UK and South Africa">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Much to Retire at 62? Social Security Math">
+  <meta name="twitter:description" content="Retire at 62: the Social Security early-claim 30% penalty math, ACA bridge for three years, and the break-even age for claiming early vs full retirement.">
+  <meta name="twitter:image" content="https://finncalc.com/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finncalc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://finncalc.com/blog/"},{"@type":"ListItem","position":3,"name":"How Much Do You Need to Retire at 62?","item":"https://finncalc.com/blog/how-much-to-retire-at-62/"}]}
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://finncalc.com/authors/james-blanckenberg/#person", "@type": "Person", "jobTitle": "Founder & Editor, FinCalcHub", "name": "James Blanckenberg", "sameAs": ["https://www.linkedin.com/in/james-blanckenberg-154a1312/"], "url": "https://finncalc.com/authors/james-blanckenberg/"}</script>
+<!-- Microsoft Clarity -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpt2jq739l");
+</script>
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
+  <script defer data-domain="finncalc.com" src="https://plausible.io/js/script.js"></script>
+  <script src="/js/newsletter.js" defer></script>
+  <link rel="preconnect" href="https://finncalc.com" crossorigin>
+  <link rel="preload" as="style" href="/css/main.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should I take Social Security at 62?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your life expectancy, cash needs, and other income. Claiming at 62 cuts your monthly benefit by about 30% versus your Full Retirement Age of 67 (for those born 1960 or later). Claiming early makes sense if you have health concerns, urgent cashflow needs, or expect to die before the break-even age in your late 70s. Otherwise waiting wins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Social Security break-even age between claiming at 62 vs 67?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most workers born in 1960 or later, the break-even point sits between ages 78 and 80. If you live past that age, cumulative lifetime benefits are higher from claiming at 67 than from claiming at 62. SSA actuarial life expectancy at 62 is about 21 more years for men and 24 more for women, so most people who reach 62 will live past the break-even."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 2024 Social Security earnings test rules at 62?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you claim Social Security before your Full Retirement Age and keep working, SSA withholds $1 for every $2 you earn over the annual limit. In 2024 that limit is $22,320. The withheld amount is not lost forever — SSA recalculates your benefit at Full Retirement Age and credits back the withheld months. But in cash-flow terms, working full-time at 62 while claiming usually wipes out most of the check."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I delay claiming Social Security after retiring at 62?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely — and many financial planners recommend it. You can retire at 62 (stop earned income), live off taxable savings and 401(k)/IRA withdrawals, and delay claiming Social Security until 67 or even 70. Each year you delay past Full Retirement Age adds 8% in delayed retirement credits up to age 70. That's an effective 32% boost from FRA to 70, or roughly 77% more than claiming at 62."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Roth conversion math change at 62?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the years between retirement at 62 and Required Minimum Distributions at 73 or 75 are the prime Roth conversion window. With earned income gone, your taxable income is whatever you choose to recognise, and you can fill the 12% and 22% federal brackets with traditional-to-Roth conversions before RMDs and Social Security stack on top. This often saves five-figure sums in lifetime tax."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do I need for healthcare from 62 to 65?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Budget about $1,000 to $1,800 per person per month for ACA marketplace coverage if you do not qualify for subsidies, or $300 to $700 with subsidies. Across three years for a couple that is roughly $70,000 to $130,000 unsubsidised. Subsidy eligibility resets each year based on Modified Adjusted Gross Income, so structuring withdrawals to stay below 400% of Federal Poverty Level is a major lever."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will Social Security still be there when I retire at 62?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 2024 SSA Trustees report projects the combined OASI trust fund can pay full benefits through 2035, after which payroll taxes alone would cover roughly 83% of scheduled benefits unless Congress acts. Most plausible reforms grandfather current and near-retirees, so a 62-year-old today is highly unlikely to see a benefit cut to their own check, even in a no-action scenario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is my Full Retirement Age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you were born in 1960 or later, your Full Retirement Age (FRA) is 67. For 1955 to 1959 the FRA ranges from 66 and 2 months up to 66 and 10 months. FRA is the age at which you receive 100% of your Primary Insurance Amount (PIA). Claiming earlier reduces the benefit by 5/9 of 1% per month for the first 36 months early, and 5/12 of 1% per month beyond that."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I work part-time at 62?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and many semi-retirees do. If you have not yet claimed Social Security, there is no earnings limit at all. If you have claimed, the 2024 earnings test only withholds benefits above $22,320 — earnings up to that figure are fully kept. Part-time income of $20,000 to $30,000 a year materially reduces the portfolio required and keeps health benefits or HSA contributions in play."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do spousal Social Security benefits work at 62?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A non-working or lower-earning spouse can claim a spousal benefit equal to up to 50% of the higher earner's Primary Insurance Amount, but only after the higher earner has filed. Claiming the spousal benefit at 62 instead of FRA reduces it to about 32.5% of the PIA rather than 50%. The pre-2015 file-and-suspend strategy is closed except for those grandfathered in under the Bipartisan Budget Act of 2015."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about survivor benefits if I claim early?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claiming your own retirement benefit early at 62 does not reduce the survivor benefit your spouse will eventually receive — that is based on your benefit at the time of death, capped at what you would have received at FRA. However, if the higher earner claims early, the survivor amount can be lower for life. For couples where one earner dominates, delaying that claim protects the surviving spouse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Social Security taxed at 62?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Federal taxation of Social Security depends on combined income (AGI plus tax-exempt interest plus half of benefits). For 2024, a single filer with combined income above $25,000 sees up to 50% of benefits taxed; above $34,000 up to 85% is taxable. Married filing jointly thresholds are $32,000 and $44,000. These thresholds are not indexed to inflation, so more retirees become taxable over time."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header><a href="/" class="logo">FinCalcHub</a><nav><a href="/personal-finance-calculators/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage</a><a href="/tax/">Tax</a><a href="/blog/">Blog</a></nav></header>
+<div class="container">
+  <div class="ad-slot">Advertisement</div>
+  <p class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; How Much Do You Need to Retire at 62?</p>
+  <div class="article-wrap">
+    <h1>How Much Do You Need to Retire at 62?</h1>
+
+    <div class="article-meta">By <a href="/about/">James Blanckenberg</a> &nbsp;&middot;&nbsp; May 2026 &nbsp;&middot;&nbsp; 9 min read</div>
+
+    <figure class="article-figure">
+      <img src="/blog/how-much-to-retire-at-62/hero.jpg"
+           alt="Person at desk reviewing Social Security statement and retirement projections"
+           width="940" height="650"
+           loading="eager" fetchpriority="high" decoding="async">
+      <figcaption>Illustrative hero image &mdash; Social Security statement review at 62.</figcaption>
+    </figure>
+
+    <p>Age 62 is the single most important number in US retirement planning that nobody talks about precisely. It is the earliest age at which the Social Security Administration (SSA) will pay a worker's retirement benefit &mdash; and the cost of claiming that day is roughly a 30% permanent cut versus waiting to Full Retirement Age. Retiring at 62 is therefore a two-question problem: do you have enough savings to bridge to your chosen Social Security claim date, and if you claim early, do you understand what you are paying for that?</p>
+
+    <h2>The headline number: how much retirement savings at 62</h2>
+    <p>Start with the same 4% rule baseline used by most planners, but adjust the horizon. SSA period life tables put life expectancy at 62 at roughly 21 additional years for men and 24 for women, with a couple's joint planning horizon comfortably reaching 85 to 90. That means a retirement at 62 needs to fund 23 to 28 years of spending &mdash; longer than the original 30-year Trinity Study window only at the upper end, and broadly within the 4% rule's tested range.</p>
+    <p>The simple version: multiply your desired pre-tax annual spending by 25 to get the savings target if you plan to claim Social Security at or near 62, or by 22 if you are confident in waiting until Full Retirement Age and letting SSA carry more of the load after 67. Here is the same arithmetic in table form.</p>
+    <table class="art-table"><thead><tr><th>Desired annual spending</th><th>Target with SS at 62 (4% rule)</th><th>Target if delaying SS to 67 (4% rule)</th></tr></thead>
+    <tbody>
+    <tr><td>$50,000</td><td>$1,250,000</td><td>$1,100,000</td></tr>
+    <tr><td>$70,000</td><td>$1,750,000</td><td>$1,540,000</td></tr>
+    <tr><td>$90,000</td><td>$2,250,000</td><td>$1,980,000</td></tr>
+    <tr><td>$120,000</td><td>$3,000,000</td><td>$2,640,000</td></tr>
+    </tbody></table>
+    <p>Two caveats. First, the gap between "claim at 62" and "delay to 67" targets shrinks once you remember the bridge bucket: delaying Social Security means drawing harder on the portfolio between 62 and 67, so the portfolio carries more risk for those five years even if it ends up smaller in steady state. Second, the 4% rule was tested on a balanced 60/40 portfolio over rolling 30-year windows ending in the early 1990s. A retirement at 62 is shorter than 30 years but starts in a different valuation environment. Run a probability check before committing.</p>
+    <p>The cleanest way to settle the number for your actual income profile is the <a href="/retirement-savings/">Retirement Savings Calculator</a> with retirement age set to 62, then a follow-up pass with the <a href="/retirement-drawdown-calculator/">retirement drawdown calculator</a> to test withdrawal sequencing under different Social Security claim dates.</p>
+
+    <div class="cta-box" data-fc-calc-cta="top">
+      <h3>Get your retire-at-62 target in 60 seconds</h3>
+      <p>Plug in your current savings, desired income, and Social Security plan. Free, no signup.</p>
+      <a href="/retirement-savings/" class="btn-calc">Open the Retirement Savings Calculator &rarr;</a>
+    </div>
+
+    <h2>Social Security at 62: the 25-30% early-claim cut</h2>
+    <p>Social Security retirement benefits are calculated from your Primary Insurance Amount (PIA), which is the monthly amount you would receive if you claimed at exactly your Full Retirement Age (FRA). For workers born in 1960 or later, FRA is 67. The SSA reduces the PIA when you claim earlier and increases it when you claim later, using a precisely defined formula.</p>
+    <p>The formula (per SSA's "Early or Late Retirement" publication): your PIA is reduced by 5/9 of 1% per month for the first 36 months you claim before FRA, and by 5/12 of 1% per month for each additional month. For someone born in 1960 or later, claiming at exactly 62 means 60 months early &mdash; 36 months at 5/9% plus 24 months at 5/12% &mdash; for a total reduction of 30%. You receive 70% of PIA for life, plus any subsequent cost-of-living adjustments.</p>
+    <p>A worked example. Linda was born in 1962 and has a PIA of $2,800/month at her FRA of 67. If she claims the day she turns 62, her monthly benefit is $2,800 &times; 0.70 = $1,960. That is $840/month less than waiting to FRA, or $10,080/year less, every year, indexed to inflation. By comparison, delayed retirement credits between FRA and 70 add 8% per year of additional benefit, so claiming at 70 would give Linda $2,800 &times; 1.24 = $3,472/month &mdash; almost 77% more than claiming at 62.</p>
+    <p>For workers born between 1955 and 1959 the math is slightly gentler. Their FRA falls between 66 and 2 months and 66 and 10 months, so claiming at 62 is 50 to 58 months early, which the SSA formula scores at a reduction of 25.8% to 28.3%. The headline "25 to 30% cut" covers the realistic range for anyone retiring at 62 today.</p>
+    <p>This permanent reduction is the single biggest cost of retiring at 62. Before you assume the cut, model the break-even.</p>
+
+    <h2>The Social Security break-even calculation</h2>
+    <p>The break-even age is the point at which cumulative lifetime Social Security benefits from claiming later exceed cumulative benefits from claiming early. It is straightforward arithmetic. Take the monthly benefit at 62 (70% of PIA for FRA-67 workers) versus the monthly benefit at FRA (100% of PIA). The FRA claimant starts five years later, so they need enough years of higher payments to overcome the 60 months of zero benefit they missed.</p>
+    <p>For Linda above, the early claim pays $1,960/month from age 62. The FRA claim pays $2,800/month from age 67. By age 67 the early claimant has banked 60 &times; $1,960 = $117,600. From that point, the late claimant gets $840/month more. $117,600 &divide; $840 = 140 months, or 11 years and 8 months. The break-even is age 78 years and 8 months.</p>
+    <p>Comparing claiming at 62 to claiming at 70 (the maximum delay) shifts the math further. The age-70 benefit is 124% of PIA, or $3,472/month for Linda. By age 70 the early claimant has $1,960 &times; 96 = $188,160 banked. From 70 onwards the late claimant gets $1,512/month more. Break-even: 124 months, or 10 years and 4 months past 70 &mdash; age 80 years and 4 months.</p>
+    <p>The SSA's own period life tables show life expectancy at 62 of about 21 more years for men (to 83) and 24 more for women (to 86). Most workers who reach 62 will live past their personal break-even age. For couples, the survivor benefit math tilts the case for delaying even further, because the survivor inherits the larger of the two benefits for life. The break-even is therefore not a single age &mdash; it is a probability-weighted decision against your own health, family history, and need for current cash.</p>
+
+    <h2>The three-year healthcare bridge to Medicare</h2>
+    <p>Medicare eligibility starts at age 65. Retiring at 62 means three years of private healthcare without an employer subsidy. The cheapest path for most early retirees is the ACA marketplace, where premiums are needs-tested against Modified Adjusted Gross Income (MAGI). For a 62-year-old without subsidies, a Silver plan typically runs $1,000 to $1,800 per month depending on state and household composition.</p>
+    <p>The crucial planning move is engineering MAGI to qualify for ACA premium tax credits. Subsidies phase out above 400% of the Federal Poverty Level (FPL), which for a household of two in 2024 is $81,760. A retiree drawing $80,000 of income from a mix of brokerage capital gains, qualified dividends, and a small traditional-IRA withdrawal can land in subsidy territory, dropping premiums to perhaps $300 to $600/month. Pushing MAGI to $90,000 in the same year can cost $10,000+ in lost subsidies. Roth withdrawals do not count toward MAGI, which is why an early-retiree Roth bucket is so valuable.</p>
+    <p>COBRA is a short-term option but rarely the right one. It covers up to 18 months at the employer's full premium plus a 2% admin fee, which often exceeds unsubsidised ACA pricing for a healthy 62-year-old. COBRA's main use case is bridging a few months from a planned mid-year retirement to the next ACA open enrollment, or staying on a specific provider network for a continuing course of treatment.</p>
+    <p>A Health Savings Account (HSA) is the third leg. If you held an HSA-qualified plan in your final working years, the balance can pay Medicare premiums, dental, vision, and out-of-pocket medical from 65 onwards on a tax-free basis. Aggressive HSA funders enter retirement with $50,000 to $150,000 in tax-free medical reserves &mdash; effectively a fourth retirement account.</p>
+    <p>Across three years at $1,200/month unsubsidised plus deductibles and out-of-pocket spend, a couple should budget $90,000 to $130,000 for the 62 to 65 healthcare bridge if subsidies are out of reach, or $25,000 to $50,000 if MAGI planning brings subsidies in.</p>
+
+    <h2>Earnings test if you keep working</h2>
+    <p>If you claim Social Security before your Full Retirement Age and keep working, the SSA's earnings test applies. For 2024, the limit is $22,320 of earned income per year (per SSA's "How Work Affects Your Benefits" publication). For every $2 you earn above that limit, SSA withholds $1 of Social Security benefit. The test only counts earned income &mdash; wages and self-employment net profit. Pension distributions, IRA withdrawals, dividends, capital gains, and rental income do not count.</p>
+    <p>A second, higher limit applies in the calendar year you reach FRA: $59,520 in 2024, with $1 withheld for every $3 over the limit, and only earnings prior to the FRA month count. After the month you hit FRA, no earnings test applies at all &mdash; you can earn unlimited income with no Social Security clawback.</p>
+    <p>The withheld amount is not permanently lost. At your FRA, the SSA recalculates your benefit upward to credit back the months in which benefits were fully withheld. In effect, the earnings test functions as a forced deferral &mdash; you get the dollars back as a higher monthly check from FRA onwards. But in cash terms, working a full-time $80,000/year job at 62 while claiming Social Security will wipe out almost the entire check, which is why most planners advise either retiring fully and claiming, or delaying the claim while you keep working.</p>
+    <p>The cleanest play: retire from full-time work at 62, delay the Social Security claim, live off taxable savings and a controlled mix of pre-tax and Roth withdrawals during the bridge years, and start Social Security on a date that maximises lifetime household benefits given your health and spousal situation.</p>
+
+    <figure class="article-figure">
+      <img src="/blog/how-much-to-retire-at-62/mid.jpg"
+           alt="Retired couple reviewing Social Security and Medicare paperwork on a tablet at home"
+           width="940" height="650"
+           loading="lazy" decoding="async">
+      <figcaption>Illustrative mid-article image &mdash; couple reviewing claim options.</figcaption>
+    </figure>
+
+    <h2>401(k) and IRA access rules at 62</h2>
+    <p>One large variable is removed at 62: you are already past 59&frac12;, so the 10% early-withdrawal penalty on traditional 401(k) and IRA distributions no longer applies. Every dollar in those accounts is fully accessible. The remaining constraints are tax-side, not penalty-side.</p>
+    <p>Traditional 401(k) and IRA distributions are taxed as ordinary income in the year of withdrawal. Roth 401(k) and Roth IRA distributions are tax-free provided the account is at least five years old, which it almost always is at 62. The structural opportunity between 62 and the start of Required Minimum Distributions (RMDs) is to engineer total taxable income across pre-tax withdrawals, Roth conversions, and capital gains realisation so that you fill the 12% and 22% federal brackets in low-income years &mdash; before Social Security and RMDs stack on top.</p>
+    <p>The SECURE Act 2.0 (passed late 2022) pushed the RMD start age out. For workers born 1951 to 1959 the RMD age is 73. For workers born in 1960 or later the RMD age is 75. That gives a 62-year-old born in 1960+ a 13-year window of voluntary withdrawal control before RMDs force the issue &mdash; a long Roth conversion runway, much longer than the era when RMDs started at 70&frac12;.</p>
+    <p>A practical sequence: in the years between retiring at 62 and claiming Social Security (say 67), draw enough from a taxable brokerage to cover basic living costs, convert traditional-IRA balances to Roth up to the top of the 22% federal bracket, and pay the conversion tax from the taxable account. After 67, Social Security covers a chunk of base spending and Roth balances cover variable needs, keeping ordinary income (and Medicare IRMAA surcharges) under control.</p>
+
+    <h2>Spousal claiming strategy &mdash; file-and-suspend after 2015</h2>
+    <p>Social Security spousal strategy changed materially with the Bipartisan Budget Act of 2015, and most pre-2015 guides are now wrong. The classic "file-and-suspend" play &mdash; where the higher earner filed at FRA, suspended their own benefit to keep earning delayed credits, and let the spouse claim a spousal benefit on top &mdash; was closed to anyone who reached FRA after April 30, 2016. Anyone retiring at 62 today is well past that grandfather window.</p>
+    <p>What is still available. A spouse can claim a spousal benefit equal to up to 50% of the higher earner's PIA, but only after the higher earner has filed. Claiming the spousal benefit before FRA reduces it &mdash; at 62, the spousal benefit is roughly 32.5% of the higher earner's PIA rather than 50%. There is no incentive to delay a spousal benefit past FRA, because spousal benefits do not earn delayed retirement credits.</p>
+    <p>The "restricted application" strategy &mdash; where a worker at FRA could file for only a spousal benefit and let their own benefit grow with delayed credits &mdash; is still allowed only for those born before January 2, 1954. Everyone else is deemed to be filing for whichever benefit (own or spousal) is highest at the time they file.</p>
+    <p>Survivor benefits are where the math gets interesting for couples retiring at 62. The survivor benefit is based on the deceased spouse's benefit at the time of death &mdash; with the cap that it cannot exceed what the deceased would have received at FRA. If the higher earner claims at 62 (locking in a 30% reduction), the surviving spouse inherits a smaller benefit for the rest of their life. For couples where one spouse strongly out-earns the other, delaying the higher earner's claim is the single biggest survivor-protection move available.</p>
+
+    <h2>A worked example: retiring at 62 with $900K + Social Security</h2>
+    <p>David and Karen, both 62 in 2026 (born 1964), have $900,000 across his 401(k), her IRA, and a joint taxable brokerage. They want $72,000/year of after-tax spending in retirement. David's PIA at FRA 67 is $2,500/month; Karen's is $1,400/month. They are deciding whether to retire fully now and how to sequence Social Security.</p>
+    <p>Option A &mdash; claim Social Security at 62. David receives $2,500 &times; 0.70 = $1,750/month. Karen receives $1,400 &times; 0.70 = $980/month. Combined Social Security: $2,730/month or $32,760/year. Portfolio needs to cover $72,000 &minus; $32,760 = $39,240/year. Using a 4% withdrawal rate that requires a portfolio of $981,000 &mdash; effectively right at their savings. Sustainable but no margin.</p>
+    <p>Option B &mdash; both retire at 62, both delay Social Security to 67. From 62 to 67 the portfolio has to cover all $72,000/year of spending, plus the ACA bridge of perhaps $12,000/year if subsidies are achieved. Call it $84,000/year for five years = $420,000 of withdrawals. Starting balance $900,000, ending balance after withdrawals and a 5% real return is roughly $720,000 at 67. Then both Social Security benefits kick in at 100% of PIA: $2,500 + $1,400 = $3,900/month = $46,800/year. Portfolio needs to cover $72,000 &minus; $46,800 = $25,200/year &mdash; a 3.5% withdrawal on the $720,000 balance. Sustainable with margin.</p>
+    <p>Option C &mdash; David delays to 70, Karen claims at 67. From 62 to 67 the portfolio covers everything. From 67 to 70 Karen's benefit starts ($1,400/month = $16,800/year), and the portfolio covers the gap. From 70 onwards David's benefit kicks in at $2,500 &times; 1.24 = $3,100/month. Combined: $4,500/month = $54,000/year. Portfolio needs to cover only $18,000/year &mdash; a 2.5% withdrawal rate.</p>
+    <p>Option C is the strongest plan if David and Karen both expect to live to average life expectancy or beyond, and the survivor benefit (Karen would inherit David's $3,100/month for life) is sharply higher than under Option A.</p>
+
+    <h2>Regional note: this article is US-centric</h2>
+    <p>The Social Security mathematics in this article are specific to the US system. UK readers face a different calendar: the State Pension currently starts at 66 (rising to 67 by 2028) with no early-claim option, and pension access age is 55 rising to 57 in 2028. South African readers can already access RA and preservation funds at 55, but the Old-Age Grant starts at 60 and is means-tested. Use our age-series guides for jurisdiction-specific cases.</p>
+
+    <figure class="article-figure">
+      <img src="/blog/how-much-to-retire-at-62/bottom.jpg"
+           alt="Calculator, pen and retirement-planning notebook with Social Security earnings statement"
+           width="940" height="650"
+           loading="lazy" decoding="async">
+      <figcaption>Illustrative bottom image &mdash; retirement worksheets and Social Security statement.</figcaption>
+    </figure>
+
+    <h2>Common mistakes when retiring at 62</h2>
+    <ul>
+      <li><strong>Claiming Social Security automatically at 62.</strong> The 30% permanent reduction is a high price for cashflow you may not need. Run the break-even before defaulting to the early claim.</li>
+      <li><strong>Ignoring the ACA bridge.</strong> Three years of unsubsidised marketplace premiums is $70,000 to $130,000 for a couple. Engineer MAGI deliberately.</li>
+      <li><strong>Skipping Roth conversions during low-income years.</strong> The 62-to-67 window before Social Security and the 62-to-73/75 window before RMDs is the prime tax-optimisation runway of a lifetime.</li>
+      <li><strong>Triggering the earnings test by accident.</strong> Working part-time at $40,000/year while claiming Social Security at 62 wipes out roughly $9,000 of benefits per year.</li>
+      <li><strong>Not protecting the surviving spouse.</strong> If one earner is materially higher, an early claim by that spouse permanently shrinks the survivor benefit. Often the right move is to delay the higher earner's claim and let the lower earner claim earlier.</li>
+    </ul>
+
+    <h2>Actionable next steps</h2>
+    <ol>
+      <li>Pull your Social Security statement at <a href="https://www.ssa.gov/myaccount/" rel="noopener nofollow">ssa.gov/myaccount</a>. Your PIA is the foundation of every calculation in this article.</li>
+      <li>Run the <a href="/retirement-savings/">Retirement Savings Calculator</a> at retirement age 62 with two scenarios: claim Social Security at 62, and claim at 67. Compare the required portfolio sizes.</li>
+      <li>Run the <a href="/retirement-drawdown-calculator/">retirement drawdown calculator</a> to test withdrawal sequencing under each claim date and estimate end-of-plan balances.</li>
+      <li>Model the ACA bridge separately. Subsidy math is income-bracket-sensitive, so engineer MAGI before committing to a withdrawal mix.</li>
+      <li>Map a five-year Roth conversion plan covering 62 to 67. Fill the 12% and 22% federal brackets without spilling into 24%, and pay conversion tax from taxable assets.</li>
+    </ol>
+
+    <h2>Sources and methodology</h2>
+    <p>Social Security claim mathematics, Primary Insurance Amount calculation, and delayed retirement credits per Social Security Administration "Early or Late Retirement" publication (SSA Publication No. 05-10147). Earnings test thresholds and rules per "How Work Affects Your Benefits" (SSA Publication No. 05-10069), 2024 figures. Life expectancy data from SSA Period Life Table 2021 (latest published 2024). Required Minimum Distribution ages per SECURE Act 2.0 of 2022. ACA premium subsidy thresholds per IRS Section 36B and KFF Health Insurance Marketplace Calculator data. Survivor benefit rules per SSA "Survivors Benefits" publication.</p>
+    <p>This article is illustrative only and not financial advice. The figures and examples are general planning estimates, not personal recommendations. Tax thresholds, Social Security rules, and benefit formulas can change. Consult a licensed financial planner, CPA, or registered investment adviser before making retirement decisions.</p>
+
+    <section class="age-series-nav" aria-label="Retirement-age series">
+      <h2>Compare retirement ages</h2>
+      <p>Wondering what changes if you retire earlier or later than 62?</p>
+      <ul>
+        <li><a href="/blog/how-much-to-retire-at-55/">How much to retire at 55</a> &mdash; the early-retirement extreme, longest healthcare bridge, full FIRE math</li>
+        <li><a href="/blog/how-much-to-retire-at-60/">How much to retire at 60</a> &mdash; two years before Social Security, five years before Medicare</li>
+        <li><a href="/blog/how-much-to-retire-at-65/">How much to retire at 65</a> &mdash; Medicare eligibility kicks in, no healthcare bridge needed</li>
+      </ul>
+    </section>
+
+  </div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="related"><h2>Related Calculators</h2><div class="related-grid"><a href="/retirement-savings/" class="related-card">&#127958; Retirement Savings</a><a href="/investment-growth/" class="related-card">&#128640; Investment Growth</a><a href="/compound-interest/" class="related-card">&#128200; Compound Interest</a><a href="/savings-goal/" class="related-card">&#127919; Savings Goal</a></div></div>
+</div>
+<footer><div class="footer-inner"><div class="footer-top"><a href="/" class="logo" style="color:#fff">FinCalcHub</a><div class="footer-links"><a href="/">All Calculators</a><a href="/retirement/">Retirement</a><a href="/mortgage-calculators/">Mortgage &amp; Loans</a><a href="/tax/">Tax &amp; Pay</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/disclosure/">Disclosure</a></div></div>      <div id="newsletter-slot"></div>
+      <div class="footer-cross-link" style="margin:24px 0;padding:16px;background:rgba(255,255,255,0.05);border-radius:6px">
+        <strong>Run a business?</strong>
+        Try our sister site
+        <a href="https://buscalctools.com/" rel="noopener" style="color:#fff;text-decoration:underline">BusCalcTools</a>
+        &mdash; free profit margin, pricing, and cash flow calculators.
+      </div>
+<div class="footer-bottom"><p>&copy; 2026 FinCalcHub</p><p class="footer-disclaimer">For informational purposes only. Not financial advice.</p></div></div></footer>
+</body></html>
