@@ -40,6 +40,9 @@
   {% set slot_name = 'edu' %}
   {% include "partials/ad_slot.html" %}
 </div>
+{# Variant-specific FAQ replaces the parent's (stripped from body_html in
+   render_variant) so no FAQ block is duplicated across the cluster. #}
+{% if variant_faq_html %}{{ variant_faq_html | safe }}{% endif %}
 {{ _body_below_keyconcepts | safe }}
 {% if region_lock %}
 <script>

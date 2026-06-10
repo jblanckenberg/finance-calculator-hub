@@ -225,6 +225,22 @@ def build_faq_ld(faq: Iterable[dict]) -> dict:
     }
 
 
+def build_faq_html(faq: Iterable[dict]) -> str:
+    """Render a variant-specific FAQ block in the same markup the parent body
+    files use, so a variant's own FAQ is visually identical to the parent's but
+    carries different (non-duplicated) questions. AdSense de-dup."""
+    parts = ['<div class="faq"><h2>Frequently Asked Questions</h2>']
+    for item in faq:
+        q = _html.escape(item["q"])
+        a = _html.escape(item["a"])
+        parts.append(
+            f'<div class="faq-item"><div class="faq-q">{q}</div>'
+            f'<div class="faq-a">{a}</div></div>'
+        )
+    parts.append("</div>")
+    return "".join(parts)
+
+
 def build_person_ld(author: dict) -> dict:
     """Canonical Person JSON-LD for the editorial author. Uses a stable @id
     so HowTo and Article blocks can reference the same node by URL."""
@@ -483,7 +499,22 @@ class Renderer:
             (parent_data["name"], f"{SITE_URL}/{parent_slug}/"),
             (variant_data["label"], canonical),
         ])
-        ctx["faq_ld"] = None
+        # Variant-specific FAQ (AdSense de-dup): when a variant carries its own
+        # `faq`, strip the parent's single-line FAQ block out of the reused body
+        # and render the variant's own FAQ + FAQPage schema instead, so no FAQ
+        # block repeats verbatim across the parent and every variant.
+        variant_faq = variant_data.get("faq")
+        if variant_faq:
+            _above, _sep, _below = body_html.partition("<!-- KEYCONCEPTS_BEFORE_FAQ -->")
+            _below = "\n".join(
+                ln for ln in _below.split("\n") if '<div class="faq">' not in ln
+            )
+            body_html = _above + _sep + _below
+            ctx["variant_faq_html"] = build_faq_html(variant_faq)
+            ctx["faq_ld"] = build_faq_ld(variant_faq)
+        else:
+            ctx["variant_faq_html"] = ""
+            ctx["faq_ld"] = None
         ctx["howto_ld"] = None
         ctx["article_ld"] = None
         # Variant pages reuse the parent calc's body (same widget, same prose,

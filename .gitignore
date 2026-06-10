@@ -28,3 +28,23 @@ __pycache__/
 
 # Node
 node_modules/
+
+# Credentials & secrets — NEVER commit (added 2026-06-10)
+.env
+*.env.bak
+.gsc_service_account.json
+.gsc_oauth_client.json
+.gsc_token.json
+*service_account*.json
+*oauth_client*.json
+*.key
+*.pem
+
+# Local agent tooling, runtime logs & state
+.claude/
+*.log
+*.jsonl
+logs/kpi_etl_state.json
+
+# Stray dump files
+*intros_dump.txt
